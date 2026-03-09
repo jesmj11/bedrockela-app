@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "cd journal-backend && node server-pg.js",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}

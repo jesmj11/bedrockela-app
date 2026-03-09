@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 31: Sir Gareth and the Kitchen Knight</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson31Config = {
+            lessonId: '5th-grade-lesson-31',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 31: Sir Gareth and the Kitchen Knight',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 31</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Sir Gareth and the Kitchen Knight
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 31!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Sir Gareth and the Kitchen Knight</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Anonymity</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Perseverance</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Merit</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Anonymity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Anonymity</div><div class="match-word" data-word="Perseverance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Perseverance</div><div class="match-word" data-word="Merit" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merit</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Perseverance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The ability to keep going despite difficulty, opposition, or discouragement; refusing to give up.</div><div class="match-def" data-word="Merit" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being good, worthy, or deserving of praise; value based on ability and effort rather than background.</div><div class="match-def" data-word="Anonymity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The condition of being unknown or unrecognized; hiding your true identity.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Sir Gareth and the Kitchen Knight</p>
+      <div class="story-text">
+        <p>He arrived at Camelot with no name, no armor, and no horse. He was tall and strong, with the broad shoulders of a man who had done hard physical labor, and he wore the rough clothes of a commoner. He walked through the castle gates on foot, covered in road dust, and presented himself at the entrance to the great hall with nothing to recommend him but a pair of honest brown eyes and an iron determination that practically radiated from his skin.</p>
+<p>&quot;I wish to serve King Arthur,&quot; the young man told the guards. &quot;In any capacity. I\'ll do anything.&quot;</p>
+<p>Sir Kay, who was in charge of the household and who had never entirely outgrown his habit of looking down on people, examined the newcomer with open contempt. &quot;You wish to serve? Very well. We need help in the kitchens. You can wash pots and turn spits until we find a use for you.&quot; He gave the young man a mocking name — Beaumains, meaning &quot;fair hands&quot; — because the stranger\'s hands were suspiciously smooth and uncalloused for a commoner.</p>
+<p>The young man accepted without protest. He spent the next year working in the kitchens of Camelot, scrubbing pots, hauling water, chopping vegetables, and enduring Kay\'s constant ridicule with a patience that amazed everyone who witnessed it. The kitchen staff loved him — he was strong, willing, and unfailingly kind. The knights ignored him, except for Lancelot, who occasionally paused by the kitchen door and watched Beaumains work with a thoughtful expression.</p>
+<p>&quot;There\'s something about that boy,&quot; Lancelot told Arthur one evening. &quot;He carries himself like a trained fighter. And his hands — Kay calls them fair, but I\'ve seen calluses like those before. Those are a swordsman\'s hands.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Watch him,&quot; Arthur said, intrigued. &quot;But don\'t interfere. If he\'s hiding something, he\'ll reveal it in his own time.&quot;</p>
+<p>The revelation came on a spring morning, when a noblewoman named Lady Lyonesse arrived at court in desperate need of a champion. Her castle was besieged by a knight called the Red Knight of the Red Lands — a brutal warrior who had killed five of Lady Lyonesse\'s defenders and sworn to starve the castle into submission. She needed a knight of the Round Table to save her people.</p>
+<p>Before any of the senior knights could volunteer, Beaumains stepped forward from behind a pillar. He had been serving wine, and he still held a pitcher in one hand.</p>
+<p>&quot;I\'ll go,&quot; he said.</p>
+<p>The hall erupted in laughter. Kay nearly fell off his chair. &quot;The kitchen boy? You want to fight the Red Knight? You can barely carry a soup cauldron!&quot;</p>
+<p>But Arthur raised his hand, and the laughter stopped. The king looked at Beaumains — really looked, the way Merlin had taught him to look at people, past the surface and into the truth beneath — and he saw what Lancelot had seen: a warrior hiding in a servant\'s clothes.</p>
+<p>&quot;You may go,&quot; Arthur said. &quot;But you will need armor, a horse, and a sword.&quot;</p>
+<p>&quot;I have my own,&quot; Beaumains said quietly. &quot;I left them hidden outside the city when I arrived.&quot; He set down the wine pitcher, straightened to his full height — which was considerable — and walked out of the hall with the stride of a man who had been waiting a very long time for this moment.</p>
+<p>He returned an hour later transformed. The rough kitchen clothes were gone, replaced by a suit of gleaming armor that bore no crest — deliberately blank, deliberately anonymous. He sat a fine warhorse with the easy confidence of a born rider, and the sword at his hip was not a common weapon but a blade of exceptional quality, its hilt wrapped in green leather.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Lady Lyonesse stared. Kay\'s mouth fell open. Even Lancelot looked impressed.</p>
+<p>They rode north together, the lady and the kitchen knight, and along the way they encountered three challenges — three knights who guarded bridges and passes and demanded combat from any who would pass. Beaumains defeated each one with a skill and ferocity that left Lady Lyonesse speechless. He fought like a man trained from birth, with technique and power that far exceeded anything a kitchen servant should have possessed.</p>
+<p>After the third victory, Lady Lyonesse confronted him. &quot;Who are you? Really?&quot;</p>
+<p>Beaumains removed his helmet. His face was bruised from the fights but his eyes were clear. &quot;My name is Gareth. I am the youngest son of King Lot of Orkney, brother to Sir Gawain, nephew to King Arthur.&quot;</p>
+<p>&quot;You\'re a prince? Then why on earth did you spend a year washing pots?&quot;</p>
+<p>Gareth smiled — a tired, honest smile. &quot;Because I didn\'t want to be given a seat at the Round Table because of my name. I wanted to earn it. My brother Gawain won his seat through courage. Sir Lancelot won his through skill. I wanted to prove that I deserved mine — not because I\'m the king\'s nephew, but because of who I am.&quot;</p>
+<p>Lady Lyonesse looked at him for a long moment, and something in her expression shifted from curiosity to respect. &quot;Then let\'s go earn it.&quot;</p>
+<p>The battle with the Red Knight was the hardest fight of Gareth\'s young life. The Red Knight was enormous, experienced, and fueled by a cruel confidence that came from years of easy victories. The combat lasted an hour — a brutal, exhausting hour of sword against sword, shield against shield, will against will. Gareth was knocked down three times. Each time, he got back up.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>On the fourth knockdown, when his shield was shattered and his left arm hung numb at his side, Gareth looked up at the Red Knight standing over him and thought of the year he had spent in the kitchen. The ridicule. The patience. The quiet, burning determination to prove himself worthy.</p>
+<p>He stood up one more time.</p>
+<p>The Red Knight hesitated — just for a moment, startled by the sheer, stubborn refusal to stay down — and in that moment, Gareth struck. A single, devastating blow that caught the Red Knight beneath his raised arm and sent him crashing to the ground.</p>
+<p>&quot;Yield,&quot; Gareth said, standing over his fallen opponent with a broken shield in one hand and a battered sword in the other. &quot;Yield, and I will show you the mercy of the Round Table.&quot;</p>
+<p>The Red Knight yielded. Lady Lyonesse\'s castle was freed. And Sir Gareth rode back to Camelot as a hero.</p>
+<p>Arthur welcomed him with open arms. &quot;Your seat at the Round Table has been waiting for you, nephew. You have earned it ten times over.&quot;</p>
+<p>Gareth took his seat beside his brother Gawain, who was grinning so widely that his face threatened to split. Kay, to his credit, approached Gareth privately and apologized for a year of mockery — though he never quite managed to stop calling him Beaumains.</p>
+<p>&quot;That\'s all right,&quot; Gareth said, smiling. &quot;I\'ve been called worse things. And the soup really was terrible.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Gareth spends a full year working in the kitchen to prove he deserves his place. Do you think this was necessary, or could he have proven himself another way? Defend your answer.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Gareth’s story connect to Arthur’s belief that the Round Table should be based on merit, not birthright?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Gareth gets knocked down four times in his fight with the Red Knight and gets up each time. What does this pattern reveal about what the author values more — talent or determination?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 31 Complete!</h1>
+        <p class="completion-message">Great work on \"Sir Gareth and the Kitchen Knight\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson31Config);
+        });
+    <\/script>
+</body>
+</html>

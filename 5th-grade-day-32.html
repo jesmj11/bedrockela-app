@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 32: The Tournament at Camelot</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson32Config = {
+            lessonId: '5th-grade-lesson-32',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 32: The Tournament at Camelot',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 32</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Tournament at Camelot
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 32!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Tournament at Camelot</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Tournament</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Revelation</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Ominous</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Anonymity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Anonymity</div><div class="match-word" data-word="Perseverance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Perseverance</div><div class="match-word" data-word="Merit" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merit</div><div class="match-word" data-word="Tournament" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Tournament</div><div class="match-word" data-word="Revelation" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Revelation</div><div class="match-word" data-word="Ominous" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Ominous</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Merit" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being good, worthy, or deserving of praise; value based on ability and effort rather than background.</div><div class="match-def" data-word="Ominous" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Giving the feeling that something bad is about to happen; threatening or menacing.</div><div class="match-def" data-word="Perseverance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The ability to keep going despite difficulty, opposition, or discouragement; refusing to give up.</div><div class="match-def" data-word="Tournament" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A medieval contest where knights competed in jousting, sword fighting, and other martial skills for honor and prizes.</div><div class="match-def" data-word="Anonymity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The condition of being unknown or unrecognized; hiding your true identity.</div><div class="match-def" data-word="Revelation" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A surprising and previously unknown fact that is made known; the act of revealing something hidden.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Tournament at Camelot</p>
+      <div class="story-text">
+        <p>Camelot\'s great <span class="vocab-highlight">tournament</span> was the event of the year — a week-long celebration of chivalry, skill, and barely controlled violence that drew knights from every corner of Britain and beyond. Lords came from France and Germany, from the wild north of Scotland and the green valleys of Wales, all seeking glory, honor, and the chance to test themselves against the finest warriors in the world.</p>
+<p>Arthur loved the tournaments. Not because he enjoyed violence — he didn\'t — but because they gave his knights a way to channel their competitive energy without actually going to war. Better to break lances in a controlled field, he reasoned, than to break them on a real battlefield. The tournaments also served a diplomatic purpose: foreign knights who came to compete often left as allies, having discovered that the knights of the Round Table were not just skilled fighters but honorable men.</p>
+<p>This year\'s <span class="vocab-highlight">tournament</span> was special. Arthur had decreed that the grand prize would be Camelot\'s highest honor: the right to sit in the Siege Perilous, the one empty seat at the Round Table that Merlin had said was reserved for the greatest knight in the world. It was a bold gesture — and a risky one. Many of his existing knights felt they deserved the seat, and the competition for it would be fierce.</p>
+<p>&quot;You\'re going to start a war inside your own court,&quot; Kay warned.</p>
+<p>&quot;I\'m going to find out what my knights are really made of,&quot; Arthur replied. &quot;There\'s a difference.&quot;</p>
+<p>The <span class="vocab-highlight">tournament</span> opened with jousting — the most spectacular and dangerous of all knightly competitions. Two knights on horseback, armored from head to toe, charging at each other with twelve-foot lances. The goal was to unhorse your opponent, but the reality was a collision of wood and steel at thirty miles an hour that could shatter bones, crush armor, and occasionally kill. It was terrifying to watch and exhilarating to compete in, which explained why knights loved it so much.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The first days were dominated by familiar names. Sir Gawain, fighting with his usual midday ferocity, unhorsed seven opponents before lunch. Sir Lancelot, who competed with an almost lazy grace, defeated twelve without apparent effort. Sir Gareth, the former kitchen knight, proved himself again by beating three experienced fighters in succession, each one bigger and older than him.</p>
+<p>But the real surprise came on the third day, when a knight appeared at the <span class="vocab-highlight">tournament</span> field wearing black armor and bearing no crest. He was tall and lean, with a fighting style that nobody recognized — quick, precise, and devastatingly effective. He defeated his first opponent in a single pass. Then his second. Then his third.</p>
+<p>&quot;Who is he?&quot; Arthur asked, leaning forward in the royal box.</p>
+<p>&quot;Nobody knows,&quot; said Sir Bedivere. &quot;He entered under no name. He won\'t raise his visor.&quot;</p>
+<p>The mystery knight fought his way through the <span class="vocab-highlight">tournament</span> with methodical, almost mechanical precision. He unhorsed Sir Bors, who was one of the strongest jousters in Britain. He defeated Sir Percival in a swordfight that lasted twenty minutes and left the crowd breathless. He even pressed Gawain to the limit before conceding the match — and that only because the sun was setting and Gawain\'s strength was at its peak.</p>
+<p>By the final day, only two knights remained: the mystery knight in black and Sir Lancelot.</p>
+<p>The great hall was silent as the two champions faced each other across the <span class="vocab-highlight">tournament</span> field. Every seat was filled. Lords and ladies leaned forward. Squires pressed against the barriers. Even the horses seemed tense.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The jousting was inconclusive — three passes, three broken lances, neither man unhorsed. They dismounted and drew swords, and what followed was the finest display of swordsmanship anyone at Camelot had ever witnessed. The two knights moved like dancers — or like mirror images of each other, each anticipating the other\'s moves, each countering with perfect timing.</p>
+<p>The fight lasted forty minutes. Forty extraordinary minutes during which the entire world seemed to shrink to two men and two swords and the ring of steel on steel. The crowd forgot to breathe. Arthur gripped the arms of his chair until his knuckles turned white.</p>
+<p>In the end, Lancelot won — barely. A final, lunging strike that slipped past the mystery knight\'s guard and struck his helmet, staggering him. The black knight dropped to one knee, raised his hand, and yielded.</p>
+<p>&quot;Remove your helmet,&quot; Arthur commanded from the royal box. &quot;Let us honor you as you deserve.&quot;</p>
+<p>The mystery knight hesitated. Then he reached up with gauntleted hands and lifted the black helmet from his head.</p>
+<p>A gasp swept through the crowd. The face beneath the helmet was young — no more than eighteen — with sharp features, pale skin, and eyes that were startlingly, unmistakably like Arthur\'s own.</p>
+<p>&quot;My name is Mordred,&quot; the young man said, looking directly at the king. &quot;And I believe you are my father.&quot;</p>
+<p>The <span class="vocab-highlight">tournament</span> field went silent. Arthur stared at the young man kneeling before him, and Merlin\'s warning crashed through his mind like a wave: &quot;His name will be Mordred, and he is your son.&quot;</p>
+<p>The golden afternoon seemed to darken, though not a single cloud had crossed the sun. Arthur rose slowly from his seat, feeling the weight of prophecy and parenthood and kingship pressing down on him all at once.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Rise, Mordred,&quot; Arthur said, and his voice was steady even though his heart was not. &quot;You have fought with extraordinary skill and honor. You are welcome at Camelot.&quot;</p>
+<p>Mordred rose, and his eyes — those familiar, unsettling eyes — held something that Arthur couldn\'t quite read. Gratitude? Anger? Hope? All three?</p>
+<p>&quot;Thank you, Father,&quot; Mordred said, and the word sounded like both a greeting and a challenge.</p>
+<p>Arthur descended from the royal box and did the only thing he could do — the thing his heart demanded, regardless of what his wizard\'s warning advised. He embraced his son.</p>
+<p>Watching from the edge of the field, Sir Gawain turned to Sir Lancelot. &quot;Did you know?&quot; he asked.</p>
+<p>&quot;I suspected,&quot; Lancelot said quietly. &quot;The way he fights — the footwork, the instincts. He fights like Arthur.&quot;</p>
+<p>&quot;This changes everything,&quot; Gawain said.</p>
+<p>Lancelot nodded. &quot;Yes. It does.&quot;</p>
+<p>And in the shadows at the far end of the field, unseen by anyone, Morgan le Fay smiled.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Mordred reveals himself at the tournament as Arthur’s son. Why do you think he chose this public moment to reveal his identity? What advantage does it give him?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur embraces Mordred despite Merlin’s warning. Is this a courageous decision or a foolish one? Explain using evidence from both this chapter and Chapter 7.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The chapter ends with Morgan le Fay smiling in the shadows. What does this detail suggest about Mordred’s arrival at Camelot? Is Mordred acting on his own, or is he part of a larger plan?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 32 Complete!</h1>
+        <p class="completion-message">Great work on \"The Tournament at Camelot\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson32Config);
+        });
+    <\/script>
+</body>
+</html>

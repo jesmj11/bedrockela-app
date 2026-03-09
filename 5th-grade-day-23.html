@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23: The Gift of Excalibur</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson23Config = {
+            lessonId: '5th-grade-lesson-23',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 23: The Gift of Excalibur',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 23</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Gift of Excalibur
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 23!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Gift of Excalibur</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Enchantment</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Scabbard</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Reverence</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Destiny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Destiny</div><div class="match-word" data-word="Rightborn" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rightborn</div><div class="match-word" data-word="Bewildered" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Bewildered</div><div class="match-word" data-word="Usurper" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Usurper</div><div class="match-word" data-word="Alliance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Alliance</div><div class="match-word" data-word="Sincerity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sincerity</div><div class="match-word" data-word="Enchantment" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Enchantment</div><div class="match-word" data-word="Scabbard" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Scabbard</div><div class="match-word" data-word="Reverence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reverence</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Usurper" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who takes a position of power illegally or by force, without having the right to it.</div><div class="match-def" data-word="Enchantment" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A magical spell or charm; the state of being under a magical influence.</div><div class="match-def" data-word="Alliance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An agreement between groups or countries to work together for a common purpose, especially in war.</div><div class="match-def" data-word="Destiny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A predetermined course of events; the hidden power believed to control what will happen in the future.</div><div class="match-def" data-word="Reverence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Deep respect and admiration, often mixed with awe; the feeling of being in the presence of something sacred.</div><div class="match-def" data-word="Rightborn" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Having the legitimate right to something by birth; the true and lawful heir.</div><div class="match-def" data-word="Bewildered" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Completely confused and puzzled; unable to understand what is happening.</div><div class="match-def" data-word="Sincerity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being honest and genuine; meaning what you say without pretending or deceiving.</div><div class="match-def" data-word="Scabbard" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A protective sheath or case for a sword blade, usually worn at the hip.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Gift of Excalibur</p>
+      <div class="story-text">
+        <p>The sword Arthur had pulled from the stone was a fine weapon, but it was not meant to last. In his first year as king, during a skirmish with Saxon raiders on the eastern coast, the blade shattered — snapping clean in half when it struck a shield at the wrong angle. Arthur stared at the broken pieces in his hand, stunned, as if a part of himself had broken with it.</p>
+<p>&quot;Don\'t mourn it,&quot; Merlin told him that evening, as Arthur sat by the fire turning the broken hilt over and over in his hands. &quot;That sword served its purpose. It proved who you are. But it was never meant to be your true weapon. Your true sword is waiting for you.&quot;</p>
+<p>&quot;Waiting where?&quot; Arthur asked.</p>
+<p>Merlin\'s eyes took on that distant, otherworldly look that meant he was seeing something beyond the walls of the room, beyond the boundaries of the ordinary world. &quot;In a lake,&quot; he said. &quot;A very particular lake, in the heart of the old forest. Come with me tomorrow, and I\'ll show you.&quot;</p>
+<p>They rode at dawn — just the two of them, king and wizard, on horseback through a landscape still touched with the silver light of early morning. Merlin led them away from the roads and into the deep, ancient forest that covered the heart of Britain like a green blanket. The trees here were old beyond counting — massive oaks and towering beeches whose roots plunged into the earth like the pillars of underground cathedrals.</p>
+<p>They rode for hours, following paths that Arthur couldn\'t see and probably didn\'t exist for anyone except Merlin. The forest grew denser and stranger. The light changed, becoming softer, greener, as if they were moving underwater. The birdsong faded, replaced by a deep, humming silence that felt alive.</p>
+<p>&quot;Where are we?&quot; Arthur whispered.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Between the world you know and the world you don\'t,&quot; Merlin answered. &quot;This is the old country, Arthur. The land that existed before the Romans, before the Saxons, before anyone thought to build a castle or draw a border on a map. Magic lives here the way fish live in water — it\'s everywhere, all the time, so natural that you almost don\'t notice it.&quot;</p>
+<p>They came at last to a lake.</p>
+<p>It was the most beautiful place Arthur had ever seen. The lake was perfectly still, its surface like a mirror of dark glass, reflecting the overhanging trees and the pale sky above. Mist drifted across the water in slow, ghostly ribbons. The air smelled of moss and deep water and something else — something electric and ancient, like the air before a thunderstorm.</p>
+<p>&quot;Watch,&quot; Merlin said.</p>
+<p>Arthur watched. For a long moment, nothing happened. The lake was still. The mist drifted. The silence hummed.</p>
+<p>Then a hand rose from the water.</p>
+<p>It was a woman\'s hand — slender, pale, draped in white silk that floated on the surface like lilies. The hand held a sword, and the sword was the most extraordinary thing Arthur had ever seen.</p>
+<p>The blade was silver-white, long and perfectly straight, and it shone with a light that didn\'t come from the sun or the sky but from the metal itself — a cold, clear radiance that made the air around it shimmer. The hilt was worked in gold, set with a single sapphire the size of a robin\'s egg, and the crossguard was etched with symbols in a language Arthur didn\'t recognize. The <span class="vocab-highlight">scabbard</span> — the sheath that covered the blade — was dark blue leather, embossed with golden patterns that seemed to move and shift when you weren\'t looking directly at them.</p>
+<p>&quot;That is Excalibur,&quot; Merlin said, his voice hushed with <span class="vocab-highlight">reverence</span>. &quot;Forged in the fires of the old world, tempered with <span class="vocab-highlight">enchantment</span>, and given to those who are worthy to carry it. The Lady of the Lake has kept it safe for many years, waiting for the right king.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;How do I get it?&quot; Arthur asked, unable to take his eyes off the glowing blade.</p>
+<p>&quot;You ask.&quot;</p>
+<p>Arthur dismounted and walked to the water\'s edge. The lake lapped gently at his boots. He looked at the hand rising from the dark water, at the impossible sword burning with its own light, and he felt the strangeness of this moment settle over him like a cloak — the feeling of standing on the threshold between the ordinary world and something much, much larger.</p>
+<p>&quot;My lady,&quot; Arthur said, and his voice was steady despite the trembling in his hands. &quot;I am Arthur, King of Britain. I have come to ask for the sword, if you will give it to me. I will use it to protect my people and to fight for justice. I swear this on my life.&quot;</p>
+<p>The hand tilted, offering the sword. Arthur reached out and wrapped his fingers around the golden hilt.</p>
+<p>The moment he touched it, he felt something rush through him — a surge of warmth and power and clarity that was like waking from a dream you didn\'t know you were having. The sword was light in his hand, lighter than any weapon he had ever held, and it hummed with a faint, musical vibration, as if the metal were alive and singing.</p>
+<p>The hand released the sword and slid beneath the water without a ripple. The lake was still again.</p>
+<p>Arthur lifted Excalibur and watched the light play along its blade. The symbols on the crossguard glowed faintly — gold on gold, like letters written in fire.</p>
+<p>&quot;The sword is powerful,&quot; Merlin said, coming to stand beside him. &quot;It will never break, and it will cut through any armor ever forged. But Arthur — listen to me carefully — the <span class="vocab-highlight">scabbard</span> is more valuable than the blade.&quot;</p>
+<p>&quot;The <span class="vocab-highlight">scabbard</span>?&quot; Arthur looked at the dark blue sheath. &quot;It\'s beautiful, but it\'s just a <span class="vocab-highlight">scabbard</span>. What can it do?&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;While you wear it, you cannot be mortally wounded. No sword, no arrow, no weapon of any kind can kill you as long as the <span class="vocab-highlight">scabbard</span> is on your person. The sword is a weapon of war. The <span class="vocab-highlight">scabbard</span> is a gift of protection. Remember that. Guard the <span class="vocab-highlight">scabbard</span> even more carefully than you guard the blade.&quot;</p>
+<p>Arthur strapped Excalibur to his side. It felt right — the weight of it, the balance, the way it settled against his hip as if it had always been there. He felt, for the first time since pulling the sword from the stone, that he was truly prepared for what lay ahead.</p>
+<p>&quot;Thank you,&quot; he said — to Merlin, to the Lady of the Lake, to the ancient forest and the magic that lived within it.</p>
+<p>Merlin nodded. &quot;You have the sword and the <span class="vocab-highlight">scabbard</span>. Now comes the hard part.&quot;</p>
+<p>&quot;Harder than fighting six kings?&quot;</p>
+<p>&quot;Much harder. You have to learn to rule.&quot;</p>
+<p>They rode home through the enchanted forest, the new king and the old wizard, and Excalibur sang softly at Arthur\'s side. Ahead of them lay Camelot, and the Round Table, and all the glory and sorrow that would follow. But for now, riding through the green silence of the ancient wood, Arthur felt something he had never felt before: the quiet, certain knowledge that he was ready.</p>
+<p>Whatever came next, he had the sword. He had the <span class="vocab-highlight">scabbard</span>. He had Merlin.</p>
+<p>And he had the promise he had made to the Lady of the Lake — to protect his people and fight for justice — burning in his heart like an unquenchable flame.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Merlin says the scabbard is more valuable than the sword itself. Why would protection be more important than power? What lesson is Merlin trying to teach Arthur?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The Lady of the Lake gives Excalibur only to those “who are worthy.” Based on what you know about Arthur, what makes him worthy?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How is Excalibur different from the sword Arthur pulled from the stone? What does each sword represent in Arthur’s journey?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 23 Complete!</h1>
+        <p class="completion-message">Great work on \"The Gift of Excalibur\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson23Config);
+        });
+    <\/script>
+</body>
+</html>

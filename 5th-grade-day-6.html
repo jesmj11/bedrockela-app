@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: The Rescue of Will Stutely</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson6Config = {
+            lessonId: '5th-grade-lesson-6',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 6: The Rescue of Will Stutely',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 6</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Rescue of Will Stutely
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 6!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Rescue of Will Stutely</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Gallows</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Rally</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Sentiment</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Gallows" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gallows</div><div class="match-word" data-word="Rally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rally</div><div class="match-word" data-word="Sentiment" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sentiment</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Rally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To come together for a common purpose, especially during a difficult time.</div><div class="match-def" data-word="Sentiment" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A feeling or emotion, especially one that is shared by a group of people.</div><div class="match-def" data-word="Gallows" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A wooden frame used for hanging people as punishment; a place of execution.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Rescue of Will Stutely</p>
+      <div class="story-text">
+        <p>Not all of Robin Hood\'s adventures ended in laughter. There came a dark day when one of his dearest friends was nearly lost forever, and it taught every man in Sherwood Forest that the life of an outlaw, for all its freedom and merriment, carried a price that could be paid in blood.</p>
+<p>Will Stutely had been with Robin from the very beginning — one of the first men to seek him out in Sherwood Forest after Robin became an outlaw. He was a lean, quick-witted man with a fox-sharp face, hair the color of a copper penny, and a tongue that could cut deeper than his sword. He was clever, he was brave, and he was utterly loyal to Robin Hood. He served as Robin\'s chief scout, the man who went ahead to spy out the roads, who kept watch when the camp slept, and who could disappear into the forest like a shadow melting into darkness.</p>
+<p>Will had a gift for blending in. He could walk into any tavern in Nottingham, adopt the accent of a local farmer, and have the innkeeper telling him secrets within an hour. He had disguised himself as a merchant, a beggar, a traveling preacher, and once — memorably — as an elderly washerwoman, which had fooled everyone except a cat, who had bitten him on the ankle. The Merry Men still told that story at feasts.</p>
+<p>But one autumn morning, Will\'s extraordinary luck ran out in the most ordinary way possible.</p>
+<p>He had gone to the Blue Boar Inn in Nottingham, disguised as a farmer, to listen for news about the Sheriff\'s latest plans. He sat in a dark corner nursing a mug of ale, his farmer\'s hat pulled low, keeping his ears open and his head down. The inn was busy — farmers, merchants, a few off-duty soldiers — and Will was gathering useful information. He had already learned that the Sheriff was planning a new tax and that a shipment of gold was expected from London next Tuesday.</p>
+<p>All was well until a ginger cat rubbed against his leg under the table. Will, who had never forgotten the ankle-biting incident, flinched and shifted his legs to push the cat away. In doing so, his cloak fell open — just for a moment, just a flash — revealing the Lincoln green tunic underneath.</p>
+<p>A sharp-eyed serving girl saw the flash of green. Her name was Bess, and she had a cousin who worked for the Sheriff, and the Sheriff paid good money for information about Robin Hood\'s men. Bess put down her tray, slipped out the back door, and ran straight to the Sheriff\'s guardhouse.</p>
+<p>Within minutes, a dozen soldiers burst through the front door of the Blue Boar with swords drawn and murder in their eyes. The inn erupted in chaos — tables overturned, mugs shattered, patrons scrambled for the exits.</p>
+<p>Will fought like a wildcat. He threw his mug of ale into the first soldier\'s face, blinding him. He overturned a heavy table into the path of three more, sending them sprawling. He grabbed a stool and swung it with both hands, cracking it across the helmet of a fourth soldier with a sound like a church bell. He made it halfway to the back door before they overwhelmed him — six men piling on at once, bearing him to the ground under their combined weight.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>They chained his hands behind his back and dragged him through the streets to Nottingham Castle, where the Sheriff was waiting with a smile that would have frozen a bonfire.</p>
+<p>&quot;At last!&quot; the Sheriff crowed, pacing around Will like a cat circling a mouse. &quot;One of Robin Hood\'s own men, caught red-handed — or should I say, green-handed?&quot; He laughed at his own joke. Nobody else did. &quot;We\'ll hang him at noon tomorrow, in the town square, where everyone can see. And when Robin comes to watch — because he will come, he always does — we\'ll catch him too.&quot;</p>
+<p>Will Stutely stood in chains before the Sheriff, his face bruised and one eye already swelling shut from the fight, and he said nothing. He didn\'t beg. He didn\'t plead. He didn\'t give the Sheriff the satisfaction of a single word. He simply looked at the man who planned to kill him with steady, unafraid eyes, and the Sheriff — though he would never admit it — felt a chill.</p>
+<p>News reached Sherwood Forest that very evening. A woodcutter named Thomas, who had been drinking in the inn when Will was taken, came running through the forest trails, breathless and pale with terror, and told Robin everything. He described the soldiers, the chains, the Sheriff\'s gloating.</p>
+<p>Robin listened in silence. His face went white as ash. Then it went red as fire. He stood up from the log where he\'d been sitting, and every man in the camp fell silent, because they had never seen Robin Hood look like that before. His eyes were burning. His hands were shaking. And his voice, when he spoke, was quiet and cold and utterly terrifying.</p>
+<p>&quot;We ride at dawn,&quot; Robin said. &quot;Every man. Full weapons. Every bow strung, every blade sharpened. We are going to Nottingham, and we are bringing Will Stutely home.&quot;</p>
+<p>Nobody argued. Nobody suggested caution or patience or alternative plans. Will Stutely was one of their own, and the code of the Merry Men was absolute: no one gets left behind.</p>
+<p>Little John laid a heavy hand on Robin\'s shoulder. &quot;We\'ll get him back,&quot; he said, his deep voice steady as stone. &quot;I swear it on my life.&quot;</p>
+<p>They spent the night preparing. Arrows were sharpened. Swords were cleaned. Disguises were chosen with more care than usual, because this time the stakes were not gold or pride — they were a man\'s life. Robin sat apart from the others, staring into the fire, and did not sleep. He kept seeing Will\'s face — that sharp, clever, loyal face — and imagining it at the end of a rope.</p>
+<p>The next morning, an hour before noon, the town square of Nottingham was packed with people. A <span class="vocab-highlight">gallows</span> had been erected in the center — a crude wooden structure, hastily built, with a thick hemp rope dangling from the crossbeam. Will Stutely stood upon the platform with his hands bound behind his back and a noose around his neck. His face was bruised and bloody from the beating the guards had given him overnight, but he stood straight and proud, refusing to slump or cower.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>When the crowd fell silent, Will lifted his chin and said in a clear, ringing voice that carried to every corner of the square: &quot;I am Will Stutely, a free man of Sherwood Forest, a Merry Man, and I am not afraid to die. Tell Robin Hood — tell him I said it was worth it. Every day in that forest, every adventure, every laugh. It was worth everything.&quot;</p>
+<p>A woman in the crowd began to cry. Several men removed their hats.</p>
+<p>The Sheriff sat in his high seat, surrounded by fifty armed soldiers. He was grinning with satisfaction, drumming his fingers on his armrest, scanning the crowd for Robin Hood. He gestured impatiently for the hangman to proceed. The hangman, a hooded figure in black, reached for the lever that would open the trapdoor beneath Will\'s feet.</p>
+<p>And then an arrow came out of nowhere — singing through the morning air like a green-feathered bird — and severed the hangman\'s rope clean in two.</p>
+<p>The rope fell in coils around Will\'s feet. The crowd gasped. The Sheriff leaped to his feet so fast that he knocked over his wine. And from every corner of the square — from behind market stalls, from inside carts, from beneath awnings and cloaks — men in Lincoln green threw off their disguises and drew their weapons. There were fifty of them, appearing as if by magic, bows drawn and arrows nocked.</p>
+<p>Robin Hood stood on the roof of the inn overlooking the square, his bow in his hand and another arrow already fitted to the string. The morning sun was behind him, turning his outline golden. &quot;Good morning, Sheriff!&quot; he called down, his voice carrying with the clarity of a trumpet. &quot;I believe you have something that belongs to me!&quot;</p>
+<p>What followed was brief, furious, and completely one-sided. The Sheriff\'s soldiers, though they equaled Robin\'s men in number, were caught utterly off guard. They had been watching for outlaws sneaking in, not for outlaws who had been standing next to them all morning. Arrows rained down from the rooftops where Robin\'s archers had positioned themselves before dawn. Little John waded into the soldiers like a bear among hounds, swinging his quarterstaff in great horizontal arcs that sent men flying in every direction. Friar Tuck drew his broadsword and held an entire street single-handedly, bellowing hymns at the top of his lungs as he fought, his three dogs snarling at his heels.</p>
+<p>In the chaos, Robin leaped from the rooftop — a drop of twelve feet that he landed in a roll — sprinted across the square, vaulted onto the <span class="vocab-highlight">gallows</span> platform, and cut Will\'s bonds with his dagger. The rope around Will\'s neck fell away. Will was weak, his knees buckling, but he managed a bloody, beautiful grin.</p>
+<p>&quot;Took you long enough,&quot; Will croaked.</p>
+<p>&quot;Traffic was terrible,&quot; Robin said, and he wrapped his arm around his friend\'s waist and half-carried him down the steps.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Little John was holding the escape route open at the east end of the square, his staff creating a zone of absolute destruction that no soldier dared enter. Robin pushed Will through the gap. Friar Tuck fell back in good order, still singing, his dogs providing rear-guard defense that consisted mostly of enthusiastic barking and strategic ankle-biting.</p>
+<p>Within ten minutes, it was over. Robin\'s men melted back into the crowd like drops of water into an ocean and disappeared through the city gates and into the forest beyond. The Sheriff was left standing in the ruined square, surrounded by groaning soldiers, overturned market stalls, and cheering townsfolk — for the people of Nottingham loved Robin Hood, even if the Sheriff did not, and they had just witnessed the most daring rescue in living memory.</p>
+<p>That night, around a great fire in Sherwood Forest, the Merry Men celebrated Will Stutely\'s rescue with the biggest, loudest, most joyful feast they had ever held. Venison and fresh bread, blackberry wine and apple cider, music and laughter and stories told three times over. Will, his wounds cleaned and bandaged by Friar Tuck\'s surprisingly gentle hands, sat in the place of honor and told the story of his capture again and again, each telling featuring more dramatic details and more heroic resistance.</p>
+<p>Robin sat beside Little John, watching his friend laugh and eat and live, and felt a fierce, overwhelming love for every single person in this camp — every man and woman who had risked their lives that morning without hesitation, without being asked twice, because one of their own was in danger.</p>
+<p>&quot;No one gets left behind,&quot; Robin said quietly, watching the firelight dance on the faces of his people.</p>
+<p>&quot;No one,&quot; Little John agreed, his deep voice warm with feeling. &quot;Not today. Not ever.&quot;</p>
+<p>It was a promise they would keep for the rest of their days. And it was a promise that every new member of the Merry Men learned on their first night in camp: we take care of our own. Always. No matter the cost.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Will Stutely’s behavior on the gallows show his character? What does his speech to the crowd reveal about what he values most?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Describe the Merry Men’s rescue plan. What makes it effective? What could have gone wrong?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin says “No one gets left behind.” Why is this promise so important to the Merry Men? How does it affect the way they see themselves as a group?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 6 Complete!</h1>
+        <p class="completion-message">Great work on \"The Rescue of Will Stutely\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson6Config);
+        });
+    <\/script>
+</body>
+</html>

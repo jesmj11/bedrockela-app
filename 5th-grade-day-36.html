@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 36: Sir Galahad's Journey</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson36Config = {
+            lessonId: '5th-grade-lesson-36',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 36: Sir Galahad\'s Journey',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 36</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Sir Galahad\'s Journey
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 36!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Sir Galahad\'s Journey</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Vessel</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Transcend</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Humblest</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Vessel" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vessel</div><div class="match-word" data-word="Transcend" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Transcend</div><div class="match-word" data-word="Humblest" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humblest</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Transcend" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To go beyond the limits of something; to rise above ordinary experience into something higher.</div><div class="match-def" data-word="Humblest" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The superlative form of humble; the most modest, simple, or lowly in rank or appearance.</div><div class="match-def" data-word="Vessel" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A container, especially one used to hold liquid; also a person regarded as carrying or embodying a particular quality.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Sir Galahad\'s Journey</p>
+      <div class="story-text">
+        <p>Sir Galahad was the son of Sir Lancelot, though Lancelot had not known of his existence until the boy appeared at Camelot like a ghost from a dream. Galahad\'s mother was Elaine of Corbenic, a noblewoman of gentle spirit who had raised her son in seclusion, far from the courts and the wars, in a small castle surrounded by apple orchards and fields of wildflowers.</p>
+<p>Galahad was unlike any knight the Round Table had ever seen. He was quiet where others were loud, gentle where others were fierce, and possessed of a serenity that unnerved people who were accustomed to the boisterous energy of warriors. He did not boast. He did not compete for glory. He did not seem particularly interested in fighting, tournaments, or any of the things that normally occupied a knight\'s attention.</p>
+<p>But when he sat in the Siege Perilous — the empty chair at the Round Table that had destroyed every other knight who attempted it — the chair accepted him. Golden letters appeared in the wood: &quot;Sir Galahad.&quot; The chair that had been waiting, all these years, had found its occupant.</p>
+<p>Galahad\'s quest for the Holy Grail was different from every other knight\'s. Where Gawain fought monsters and Lancelot endured spiritual trials, Galahad simply walked. He walked through the wild lands of Britain with his sword sheathed and his heart open, and the world seemed to rearrange itself around him. Dangers that would have destroyed other knights simply melted away in his presence. Enchantments that had trapped men for years dissolved like morning mist.</p>
+<p>This was not because Galahad was powerful. It was because Galahad was pure — not in the way of someone who has never been tested, but in the way of someone who has looked at the darkness of the world and chosen, absolutely and completely, to be a <span class="vocab-highlight">vessel</span> for light. He had no anger. He had no ambition. He had no desire for anything except to serve others and to find the truth that the Grail represented.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He traveled for months, walking the length of Britain, sleeping under hedgerows and in the homes of poor families who sensed something extraordinary in this quiet young knight and gave him their best bread and their warmest blankets. Along the way, he performed acts of kindness so simple and so genuine that they didn\'t seem heroic — feeding a hungry child, mending a broken fence, sitting with an old woman who was dying alone and holding her hand until she passed.</p>
+<p>He found Sir Percival on the road, half-starved and lost in an enchanted forest that had been leading him in circles for weeks. Galahad took his hand and walked him out of the forest in an hour. The enchantment, which had resisted Percival\'s strength and will, simply could not hold against Galahad\'s calm, unwavering goodness.</p>
+<p>He found Sir Bors imprisoned in a tower by a sorceress who fed on the despair of captured knights. Galahad walked through the tower\'s locked doors as if they were curtains, freed Bors, and the sorceress — confronted for the first time by someone she could not make afraid — fled and was never seen again.</p>
+<p>The three knights — Galahad, Percival, and Bors — traveled together to the castle of Corbenic, where the Grail was kept. The castle was ancient and half-ruined, its stones worn by centuries of wind and rain, but a light burned in its highest tower — a light that was not fire, not sun, not any earthly thing, but the same golden radiance that had filled the hall of Camelot on the night the Grail first appeared.</p>
+<p>They climbed the tower stairs together. The air grew warmer and brighter with every step, until they were walking through light as thick as water, as warm as an embrace. And at the top of the stairs, in a small, bare room with no furniture and no decoration, they found it.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The Holy Grail sat on a simple wooden table, uncovered now, no longer hidden by its cloth of white samite. It was a cup — just a cup, plain and unadorned, made of dark wood that had been worn smooth by centuries of use. There was nothing magnificent about it. Nothing that would catch the eye in a market or a treasure house. It was the <span class="vocab-highlight">humblest</span> object in the <span class="vocab-highlight">humblest</span> room in the most ruined castle in Britain.</p>
+<p>And it was filled with a light that could have illuminated the world.</p>
+<p>Galahad knelt before the Grail. Percival and Bors knelt beside him. And in that moment of silence and reverence, the three knights understood what the Grail truly was — not a magical object, not a source of power, but a symbol. A symbol of the idea that the greatest things in the world are the simplest: kindness, sacrifice, love, service to others. The Grail was not extraordinary because of what it was. It was extraordinary because of what it meant.</p>
+<p>Galahad reached out and touched the cup. The light intensified until it filled not just the room but the entire castle, pouring from every window like golden waterfalls, flooding the surrounding countryside, touching every living thing within miles with a warmth that felt like being remembered by someone who loves you.</p>
+<p>&quot;It\'s time for me to go,&quot; Galahad said softly. His face was radiant. He did not look sad. He looked complete — a man who had found what he was looking for and was ready for whatever came next.</p>
+<p>&quot;Go where?&quot; Percival asked, his eyes full of tears.</p>
+<p>&quot;Beyond,&quot; Galahad said. &quot;The Grail was never meant to stay in the world. It was meant to show us what\'s possible — and then to be carried beyond, so that we would have to build that possibility ourselves, without magic, without miracles, with nothing but our own hands and hearts.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He lifted the Grail, and the light gathered around him like a cloak. Percival and Bors watched as Galahad and the Grail dissolved into the light together — not disappearing, exactly, but becoming part of it, becoming the light itself, ascending beyond the walls and the tower and the sky.</p>
+<p>The room was empty. The light was gone. The Grail was gone. And Sir Galahad, the purest knight who ever lived, was gone with it.</p>
+<p>Percival and Bors rode back to Camelot in silence, carrying the story of what they had witnessed. When they told Arthur, the king sat alone for a long time, thinking about a cup on a wooden table and a young man who had shown the world what goodness looked like.</p>
+<p>&quot;He was the best of us,&quot; Arthur said at last. &quot;And now we have to be the best of ourselves without him.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The Holy Grail turns out to be a plain, simple cup — not a golden treasure. What is the author saying about the relationship between appearance and value?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Galahad succeeds where stronger, more experienced knights fail. What qualities does Galahad have that the others lack? Are those qualities something a person can develop, or are they innate?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Galahad says the Grail was meant to “show us what’s possible” and then be taken away so people must build goodness themselves. Do you agree that people grow more when they have to work without help? Explain.</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 36 Complete!</h1>
+        <p class="completion-message">Great work on \"Sir Galahad\'s Journey\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson36Config);
+        });
+    <\/script>
+</body>
+</html>

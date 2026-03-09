@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 27: The Quest of Sir Gawain</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson27Config = {
+            lessonId: '5th-grade-lesson-27',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 27: The Quest of Sir Gawain',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 27</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Quest of Sir Gawain
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 27!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Quest of Sir Gawain</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Tyranny</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Valor</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Mercy</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Champion" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Champion</div><div class="match-word" data-word="Humility" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humility</div><div class="match-word" data-word="Vulnerability" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vulnerability</div><div class="match-word" data-word="Tyranny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Tyranny</div><div class="match-word" data-word="Valor" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Valor</div><div class="match-word" data-word="Mercy" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Mercy</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Vulnerability" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being open to emotional hurt or attack; the willingness to show weakness.</div><div class="match-def" data-word="Mercy" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Compassion and forgiveness shown toward someone you have the power to punish or harm.</div><div class="match-def" data-word="Humility" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being humble; not thinking you are better than others, even when you have great skill or ability.</div><div class="match-def" data-word="Tyranny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The cruel and oppressive use of power by a ruler; governing through fear and force rather than justice.</div><div class="match-def" data-word="Champion" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A knight or warrior who fights on behalf of another person, especially in matters of honor; also the best in a competition.</div><div class="match-def" data-word="Valor" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Great courage and bravery, especially in battle or dangerous situations.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Quest of Sir Gawain</p>
+      <div class="story-text">
+        <p>Sir Gawain was Arthur\'s nephew — the son of King Lot of Orkney, who had once been Arthur\'s enemy but had made peace after the great battle. Gawain was as different from Lancelot as fire is from water. Where Lancelot was measured and precise, Gawain was passionate and impulsive. Where Lancelot thought before he acted, Gawain acted first and thought about it afterward — usually while nursing a bruise.</p>
+<p>He was a magnificent fighter — not as technically skilled as Lancelot, perhaps, but possessed of a peculiar gift: his strength grew with the sun. In the morning hours, he fought like any other knight. But as the sun climbed toward noon, Gawain\'s power increased, doubling, tripling, until at the peak of midday he was virtually unstoppable. By evening, his strength returned to normal, and he was often found slumped in a chair, exhausted, wondering why he had challenged four men to a wrestling match before lunch.</p>
+<p>Gawain\'s quest began, as many quests do, with a wrong that needed to be righted.</p>
+<p>A young woman named Lady Ettard arrived at Camelot in tears, her dress torn and her horse lathered from hard riding. She threw herself at Arthur\'s feet and begged for help. A rogue knight named Sir Carados had seized her family\'s castle, imprisoned her father, and declared himself lord of her lands. He had given Lady Ettard three days to bring a champion to fight for her, or her father would be executed.</p>
+<p>&quot;I\'ll go,&quot; said Lancelot immediately, rising from his seat.</p>
+<p>&quot;No,&quot; Arthur said gently. &quot;You are needed here, my friend. The Saxon ambassadors arrive tomorrow, and I need you at the negotiations.&quot; He looked around the table. &quot;This quest requires a knight who can travel fast and fight hard.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Gawain stood. &quot;I\'ll go,&quot; he said. &quot;And I\'ll bring her father home.&quot;</p>
+<p>He rode north that very hour, with nothing but his sword, his armor, and a burning desire to prove himself worthy of the Round Table. Lady Ettard rode beside him, guiding him through the forests and valleys of the northern country, and as they rode, she told him more about Sir Carados.</p>
+<p>&quot;He was once a good knight,&quot; she said, her voice bitter. &quot;My father trusted him. But power changed him. He began to see the people around him as tools to be used, not people to be served. When my father refused to give him more land, Carados took it by force.&quot;</p>
+<p>Gawain listened and felt his blood heat with righteous anger. This was exactly the kind of injustice that the Round Table existed to fight — a powerful man preying on those weaker than himself, twisting loyalty into <span class="vocab-highlight">tyranny</span>.</p>
+<p>They reached Lady Ettard\'s castle on the second day. It was a strong fortress of gray stone, perched on a hill above a river, and Sir Carados had garrisoned it with fifty soldiers. His banner — a black serpent on a red field — flew from every tower.</p>
+<p>Gawain rode to the gate alone and issued his challenge in a voice that echoed off the castle walls. &quot;Sir Carados! I am Sir Gawain of the Round Table, nephew of King Arthur! Release Lord Ettard and surrender this castle, or face me in single combat!&quot;</p>
+<p>Carados appeared on the battlements. He was a big man, broad and heavy, with a scarred face and the cold eyes of a man who enjoyed violence. He looked down at Gawain and laughed. &quot;One knight? Arthur sends one knight against me? I expected better.&quot;</p>
+<p>&quot;One knight of the Round Table is more than enough for a bully and a coward,&quot; Gawain said.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Carados stopped laughing.</p>
+<p>The combat was held at noon — Gawain\'s idea, though he didn\'t explain why. The two knights faced each other in the field below the castle, mounted and armored, with lances couched and visors down. The castle garrison watched from the walls. Lady Ettard watched from the tree line, her hands clasped in prayer.</p>
+<p>The first charge was devastating. Both lances struck true, both knights rocked in their saddles, but neither fell. They wheeled their horses and charged again. This time, Gawain\'s lance shattered against Carados\'s shield, and Carados\'s lance caught Gawain on the shoulder, nearly unhorsing him.</p>
+<p>They dismounted and drew swords. Carados was strong — genuinely, dangerously strong — and he fought with the brutal efficiency of a man who had won many fights through sheer force. His blows drove Gawain backward, and for the first few minutes, Gawain was on the defensive.</p>
+<p>But the sun was climbing. And with every minute that passed, Gawain\'s strength grew.</p>
+<p>By the time the sun reached its peak, Gawain was a force of nature. His sword moved so fast it blurred. His shield turned Carados\'s blows as easily as a wall turns rain. He drove the rogue knight across the field, step by step, blow by blow, until Carados stumbled and fell.</p>
+<p>Gawain stood over him, breathing hard, his sword at Carados\'s throat. The temptation to end it was fierce — this man had imprisoned an innocent lord, terrorized a family, betrayed every principle a knight should uphold. The world would be better without him.</p>
+<p>But the code of the Round Table was clear: show <span class="vocab-highlight">mercy</span> to a defeated enemy.</p>
+<p>&quot;Yield,&quot; Gawain said. &quot;Yield, and I will spare your life. You will release Lord Ettard, surrender this castle, and leave these lands forever. If you refuse, or if you ever return, I will finish what I started today.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Carados looked up at Gawain — at the blazing determination in his eyes, at Excalibur\'s light reflected in his armor — and yielded.</p>
+<p>Lord Ettard was freed from the dungeon that afternoon, thin and pale but alive. He embraced his daughter and wept, and then he turned to Gawain and bowed so deeply that his forehead nearly touched the ground. &quot;You have saved my family,&quot; he said. &quot;I owe you everything.&quot;</p>
+<p>&quot;You owe me nothing,&quot; Gawain said. &quot;This is what the Round Table is for.&quot;</p>
+<p>He rode home to Camelot with the satisfaction of a job well done and the knowledge that he had honored his oath. Arthur met him at the gates, and the look of pride on the king\'s face was worth more to Gawain than any treasure.</p>
+<p>&quot;You did well,&quot; Arthur said simply.</p>
+<p>&quot;I did what any knight of the Round Table would have done.&quot;</p>
+<p>&quot;That\'s exactly the point,&quot; Arthur said, smiling. &quot;That\'s exactly the point.&quot;</p>
+<p>It was the first of many quests that the knights would undertake — riding out from Camelot to right wrongs, rescue the helpless, and prove that the dream of the Round Table was more than just words carved in wood. It was a living, breathing commitment, renewed with every act of courage and <span class="vocab-highlight">mercy</span>.</p>
+<p>And Gawain, the impulsive, hot-tempered, big-hearted nephew of the king, was proud to be part of it.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Gawain has the chance to kill Sir Carados but chooses to show mercy instead. How does this decision reflect the code of the Round Table? What message does it send?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Gawain’s strength grows with the sun. How does the author use this magical ability to create suspense during the fight with Carados?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Gawain says “This is what the Round Table is for” when Lord Ettard thanks him. In your own words, explain what the Round Table is “for” based on this chapter.</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 27 Complete!</h1>
+        <p class="completion-message">Great work on \"The Quest of Sir Gawain\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson27Config);
+        });
+    <\/script>
+</body>
+</html>

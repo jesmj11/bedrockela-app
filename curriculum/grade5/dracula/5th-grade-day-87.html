@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade - Lesson 87: Good News and Bad</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="../../../firebase-config.js"></script>
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script src="../../../js/lesson-completion.js"></script>
+    <script src="../../../js/lesson-autosave.js"></script>
+    
+    <script>
+        const lessonConfig = {
+            lessonId: '5th-grade-day-87',
+            gradeLevel: '5th-grade',
+            title: 'Day 87 - Dracula',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            
+                            <h1>Lesson 87</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Dracula
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Chapter 8: Good News and Bad
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 87!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read from <em>Chapter 8: Good News and Bad</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Read an informational text</li>
+                                <li>Practice grammar and writing skills</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            
+                            <div style="margin: 30px 0;">
+                                
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">invaluable</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">confidential</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">deteriorate</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today's reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Unusual or odd in behavior; different from normal</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Done in a careful, organized, step-by-step way</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something remarkable that is observed or experienced</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Extremely useful; having great value</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Meant to be kept secret</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To become gradually worse</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                            
+                            
+                        </div>
+                    `
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 1 of 3)</h2>
+            <p>Chapter 8: Good News and Bad</p>
+        </div>
+        <div class="reading-text">
+            <p>Two wonderful things happened in the same week.</p>
+<p>Jonathan was found.</p>
+<p>He had collapsed in the street in Budapest, in Hungary, and had been taken to a hospital run by nuns. He had a fever and was confused, and could remember very little of what had happened to him. He had his journal, which he refused to let the nurses take.</p>
+<p>A nun named Sister Agatha wrote to me, because she found my name in his belongings. I took the first train east.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 2 of 3)</h2>
+            <p>Chapter 8: Good News and Bad</p>
+        </div>
+        <div class="reading-text">
+            <p>When I arrived, Jonathan was sitting up in bed. He was thin and pale, and his hair had gone partly white — he was only in his twenties, and this shocked me more than anything. But his eyes, when he saw me, were the same eyes I remembered. He reached for my hand.</p>
+<p>We were married quietly in the hospital chapel, and it was the happiest moment of my life despite everything surrounding it.</p>
+<p>Jonathan told me he did not want to read his journal. He said he feared that what was in it might have been a sickness — a dream, something that had broken in his mind. He asked me to keep it safe but not tell him what was in it. Not yet.</p>
+<p>I said yes. But I read it myself.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 3 of 3)</h2>
+            <p>Chapter 8: Good News and Bad</p>
+        </div>
+        <div class="reading-text">
+            <p>And then I understood why Van Helsing was frightened.</p>
+<p>The second thing that happened that week was terrible. Lucy died.</p>
+<p>She had declined rapidly after Jonathan was found, as if whatever was drawing her away had grown bolder and more powerful. Arthur was at her side at the end. Van Helsing was there too, his face grave.</p>
+<p>I received the letter with the news as Jonathan and I traveled back to England, and I wept for most of the train journey.</p>
+<p>But Van Helsing had written too, in a careful hand: Do not bury Lucy yet. Wait for me. There is something more to be done.</p>
+        </div>`
+                },
+                                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Two things happen in the same week: Jonathan is found alive (wonderful news), and Lucy dies (terrible news). Why might the author have placed these two events together? How does experiencing both joy and grief so close together feel different from experiencing them separately?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Jonathan's hair has gone 'partly white' even though he's only in his twenties, and he refuses to read his journal because he fears what was in it 'might have been a sickness.' What does this tell you about how his experience in Castle Dracula affected him psychologically, not just physically?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Van Helsing writes to Mina: 'Do not bury Lucy yet. Wait for me. There is something more to be done.' What do you think he plans to do? Why might this be necessary even though Lucy has died?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📰 Informational Text</h2>
+            <p>Connect Story to Reality</p>
+        </div>
+        <div class="informational-section">
+            <h3>Women in Victorian Society: Mina and Lucy</h3>
+            <p>Dracula's two main female characters — Mina Murray and Lucy Westenra — represent different aspects of Victorian womanhood, and their contrasting fates reflect Victorian society's complex attitudes toward women.</p><p>Lucy is beautiful, wealthy, and social. She's playful and affectionate, writing letters about her three marriage proposals in one day. She represents the Victorian ideal of decorative femininity — pretty, charming, and focused on romance. But she's also portrayed as somewhat passive, needing to be protected and saved.</p><p>Mina, in contrast, is practical, intelligent, and hardworking. She's learned shorthand and typing — professional skills that were just becoming available to women in the 1890s. She works as a teacher. She organizes information, keeps records, and actively contributes to the group's fight against Dracula. Professor Van Helsing calls her 'one of God's women' with a 'man's brain.'</p><p>This compliment, which sounds strange to modern readers, reflects Victorian assumptions: intelligence was considered primarily masculine, so praising a smart woman meant comparing her to a man. Stoker seems to admire Mina's capabilities, but he still describes them using Victorian gender stereotypes.</p><p>The 1890s was a time of changing roles for women. The 'New Woman' movement argued for education, property rights, and professional opportunities. Women were entering universities, demanding the right to vote, and challenging the idea that they should be confined to home and family.</p><p>Conservative Victorians found this threatening. They worried that educated, independent women would destroy traditional family structures. This anxiety appears in Dracula: Lucy, the traditional beauty, becomes a vampire — transformed into something monstrous and sexually aggressive, needing to be destroyed. Some scholars read this as reflecting Victorian fears about women's changing roles.</p><p>But Mina, who combines traditional virtue with modern capabilities, survives. She's loyal to her husband but also intellectually valuable to the group. She represents perhaps Stoker's ideal: a woman who uses modern skills while maintaining Victorian values.</p><p>Real Victorian women's lives varied enormously by class. Wealthy women like Lucy might never work for pay and had servants managing their households. Working-class women worked in factories, as domestic servants, or in shops — often in difficult conditions for low pay. Middle-class women like Mina, who worked as teachers or typists, were navigating new territory, creating professional roles that hadn't existed for women before.</p><p>The suffragette movement was growing throughout this period. Women wouldn't get the vote in Britain until 1918 (and then only women over 30; full voting equality came in 1928). Dracula was published right in the middle of this long struggle for women's rights.</p>
+        </div>
+        
+        <div class="questions-section" style="margin-top: 30px;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">✍️ Comprehension Questions</h3>
+            
+            <div class="question">
+                <p><strong>1.</strong> The article explains that Professor Van Helsing compliments Mina by saying she has 'a man's brain,' which sounds strange today but reflected Victorian assumptions. What does this tell you about how ideas of gender and intelligence have changed? What assumptions might we hold today that future people will find equally strange?</p>
+                <textarea 
+                                      id="info1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info1', 'word-count-info1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> According to the article, some scholars believe Lucy's transformation into a vampire reflects Victorian fears about women's changing roles in society. Do you think this interpretation makes sense based on what you've read? Why or why not?</p>
+                <textarea 
+                                      id="info2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info2', 'word-count-info2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+            
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✏️ Language Skills</h2>
+            <p>Week 17 Focus: Greek and Latin Roots: 'Trans-' and 'Morph'</p>
+        </div>
+        <div class="language-section">
+            <div class="skill-explanation">
+                <h3>📚 What You're Learning:</h3>
+                <p>Many English words come from Greek and Latin roots. 'Trans-' means 'across' or 'beyond' (Transylvania = beyond the forest). 'Morph' means 'form' or 'shape' (metamorphosis = change in form).</p>
+            </div>
+            
+            <div class="skill-examples">
+                <h3>✨ Examples:</h3>
+                <p class="language-example">Transport = carry across, Transform = change form across states</p>
+<p class="language-example">Transfusion = transfer (of blood) across from one person to another</p>
+<p class="language-example">Morphology = study of forms and shapes</p>
+            </div>
+            
+            <div class="skill-practice">
+                <h3>🎯 Your Turn:</h3>
+                
+                <div class="practice-item">
+                    <p><strong>1.</strong> What does 'transcribe' mean if 'trans-' means 'across' and 'scribe' means 'write'?</p>
+                    <textarea 
+                                      id="grammar1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar1', 'word-count-grammar1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>2.</strong> What does 'transformation' mean? How does it relate to what happens to Dracula's victims?</p>
+                    <textarea 
+                                      id="grammar2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar2', 'word-count-grammar2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>3.</strong> Find another word in this week's story that uses a Latin or Greek root and explain its meaning:</p>
+                    <textarea 
+                                      id="grammar3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar3', 'word-count-grammar3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+                
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✍️ Journal Reflection</h2>
+            <p>Personal Response</p>
+        </div>
+        <div class="writing-section">
+            <div class="writing-prompt">
+                <h3>📝 Your Prompt:</h3>
+                <p>Mina Murray is separated from Jonathan for months without knowing if he's alive or safe. She writes in her journal: 'I tell myself there are reasonable explanations... I tell myself this every night before I go to sleep.' Think about a time you were worried about someone or something important. How did you cope with that worry? What did you tell yourself to stay hopeful?</p>
+            </div>
+            <div class="writing-space">
+                <textarea id="writing-response" rows="12" placeholder="Write your response here..."></textarea>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>🎉 Lesson Complete!</h2>
+            <p>Day 87 - Chapter 8: Good News and Bad</p>
+        </div>
+        <div class="completion-section">
+            <h3>Great work today!</h3>
+            <p>You've completed:</p>
+            <ul>
+                <li>✅ Learned 3 new vocabulary words</li>
+                <li>✅ Read Chapter 8 of Dracula</li>
+                <li>✅ Answered comprehension questions</li>
+                <li>✅ Explored informational text about women in victorian society: mina and lucy</li>
+                <li>✅ Practiced language skills</li>
+                <li>✅ Completed journal reflection</li>
+            </ul>
+            <p class="next-lesson-note">📚 Tomorrow: Chapter 9 awaits!</p>
+        </div>`
+                }
+            ]
+        };
+
+        // Initialize lesson viewer
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lessonConfig);
+        } else {
+            console.error('lesson-viewer.js not loaded! Check file paths.');
+        }
+    </script>
+</body>
+</html>

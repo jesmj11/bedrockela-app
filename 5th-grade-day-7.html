@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: Alan-a-Dale's Wedding</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson7Config = {
+            lessonId: '5th-grade-lesson-7',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 7: Alan-a-Dale\'s Wedding',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 7</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Alan-a-Dale\'s Wedding
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 7!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Alan-a-Dale\'s Wedding</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Minstrel</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Matrimony</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Thwarted</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Gallows" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gallows</div><div class="match-word" data-word="Rally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rally</div><div class="match-word" data-word="Sentiment" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sentiment</div><div class="match-word" data-word="Minstrel" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Minstrel</div><div class="match-word" data-word="Matrimony" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Matrimony</div><div class="match-word" data-word="Thwarted" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Thwarted</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Sentiment" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A feeling or emotion, especially one that is shared by a group of people.</div><div class="match-def" data-word="Thwarted" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Prevented from accomplishing a goal; stopped or blocked from succeeding.</div><div class="match-def" data-word="Rally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To come together for a common purpose, especially during a difficult time.</div><div class="match-def" data-word="Minstrel" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A traveling musician and singer who performs songs and tells stories, often about heroes and adventures.</div><div class="match-def" data-word="Gallows" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A wooden frame used for hanging people as punishment; a place of execution.</div><div class="match-def" data-word="Matrimony" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The formal union of two people in marriage; a wedding ceremony.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Alan-a-Dale\'s Wedding</p>
+      <div class="story-text">
+        <p>Spring had come to Sherwood Forest, painting the world in shades of green so bright they almost hurt to look at. The bluebells were out, carpeting the forest floor in rivers of purple. The birds sang from dawn to dusk, competing with each other in volume and enthusiasm. And everything smelled of new growth and warm earth and possibility.</p>
+<p>It was into this perfect spring morning that Robin Hood found a young man who was quite possibly the most miserable person in all of England.</p>
+<p>Robin was walking the forest paths alone, enjoying the sunshine and the birdsong, when he came upon the young man sitting on a mossy stone beside the road, weeping into his hands. He was a slender fellow, not much older than twenty, with golden hair that curled at his temples and the long, graceful fingers of a musician. A lute hung on his back — a beautiful instrument, its dark wood gleaming — and his clothes, though travel-stained and rumpled from sleeping outdoors, were those of a gentleman. A fine embroidered doublet, good leather boots, a velvet cap that had seen better days. Everything about him spoke of someone who had once been comfortable and was now distinctly not.</p>
+<p>&quot;What\'s the matter, friend?&quot; Robin asked, sitting down on the stone beside him with the easy familiarity of a man who has never met a stranger. &quot;You look as though the world has ended.&quot;</p>
+<p>&quot;It has,&quot; said the young man, and he told Robin his story between sobs and hiccups and occasional nose-blowing into an increasingly inadequate handkerchief.</p>
+<p>His name was Alan-a-Dale, and he was a <span class="vocab-highlight">minstrel</span> — a traveling singer and musician who made his living performing at fairs, weddings, and the households of the minor gentry. He was, by his own modest assessment, the finest singer in three counties. Other people\'s assessments were even more generous — there were those who said that when Alan-a-Dale sang, the birds stopped to listen, and that his voice could make stone walls weep.</p>
+<p>Alan had fallen deeply, hopelessly, completely in love with a maiden named Ellen, the daughter of a farmer in the village of Plympton, about five miles south of the forest. Ellen was kind and clever and laughed at Alan\'s jokes, which he considered the most important quality a person could have. She loved him back — loved him with the fierce, certain love of someone who knows exactly what she wants — and they had planned to marry in the spring.</p>
+<p>But Ellen\'s father had other ideas. A wealthy old knight named Sir Stephen of Trent had offered a large bag of gold for Ellen\'s hand in marriage. Sir Stephen was sixty-three years old, sour-faced, miserly, and about as romantic as a tax bill. He wanted a young wife to manage his household, and Ellen\'s father wanted gold to pay his debts. The deal was struck over Ellen\'s protests, her tears, and her increasingly desperate pleas.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The wedding was set for that very afternoon, at the little stone church in Plympton. Ellen was to be married against her will to a man old enough to be her grandfather.</p>
+<p>&quot;Can you not stop it?&quot; Robin asked, his brow furrowed.</p>
+<p>&quot;How?&quot; Alan cried, fresh tears spilling down his cheeks. &quot;Sir Stephen has twenty men-at-arms. Twenty! And I have nothing. Nothing but my lute and my voice and a heart that\'s breaking in two. I can\'t fight. I\'ve never held a sword in my life. I can\'t even afford to hire someone who can. All I can do is sing, and what good is singing against swords and armor?&quot;</p>
+<p>Robin Hood looked at this young man — this skinny, weeping, utterly helpless musician who had nothing to fight with except love and music — and something stirred in his chest. Because Robin knew, better than most, that the world was full of powerful people who took what they wanted from those too weak to stop them. That was the world the Sheriff lived in. That was the world Robin had sworn to fight against.</p>
+<p>&quot;You\'d be surprised what music can do,&quot; Robin said, and he smiled his most dangerous smile — the one that made Little John nervous and the Sheriff reach for his wine. &quot;Come with me, Alan-a-Dale. I think I can help.&quot;</p>
+<p>Two hours later, the little stone church at Plympton was full to bursting. Every pew was packed with villagers, farmers, and curious neighbors who had come to witness the wedding of the richest knight in the county to the prettiest girl in the village. The church was decorated with white ribbons and spring flowers, and candles burned in every alcove, filling the air with warm, honeyed light.</p>
+<p>Sir Stephen of Trent stood at the altar, looking like a dried apple in a fur-trimmed cloak. He was thin, stooped, and perpetually sour, with a face that suggested he had never in his life found anything amusing. His twenty men-at-arms lined the walls of the church, their hands on their sword hilts, their faces blank and professional.</p>
+<p>Ellen\'s father sat in the front row, his thick fingers wrapped around a purse of gold coins, counting them for the third time. He did not look at his daughter. Perhaps he couldn\'t.</p>
+<p>Ellen herself stood at the back of the church in a white dress that should have made her glow. Instead, she looked like a ghost. Her face was as pale as the dress itself, her eyes red from crying, and she clutched a handkerchief so tightly that her knuckles were white as bone. Her mother stood beside her, patting her hand helplessly, her own eyes bright with unshed tears.</p>
+<p>The bishop — a thin, nervous man who had been paid handsomely to perform the ceremony quickly and without awkward questions — opened his heavy book and began to read the marriage service. He had just gotten to the part about &quot;if anyone present knows a reason why these two should not be lawfully joined together&quot; when the church doors burst open with a bang that made every candle flame jump.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>A friar the size of a small barn waddled in, beaming at the astonished congregation as if he had been personally invited. &quot;Terribly sorry I\'m late!&quot; boomed Friar Tuck, his voice filling the little church like an organ. &quot;Traffic on the forest road. Absolutely dreadful. Now, I couldn\'t help but notice that you\'re about to perform a wedding, and I thought to myself, \'Tuck, old boy, that bishop looks exhausted. Why don\'t you lend a hand?\'&quot;</p>
+<p>&quot;Who are you?&quot; the bishop sputtered, clutching his book to his chest.</p>
+<p>&quot;Just a humble friar, here to serve the Lord and perform a wedding.&quot; Tuck positioned himself at the altar with the confidence of a man who has never once questioned whether he belongs somewhere. He gently but firmly moved the bishop aside — like a boulder redirecting a stream — and placed his enormous hands on the altar. &quot;Now then, where\'s the bride?&quot;</p>
+<p>Sir Stephen\'s face had gone an alarming shade of purple, like a plum left too long in the sun. &quot;This is outrageous! I am Sir Stephen of Trent! I demand — Guards! Remove this enormous, this ridiculous —&quot;</p>
+<p>But his guards had problems of their own. While every eye in the church had been fixed on Friar Tuck\'s magnificent entrance, two dozen men in Lincoln green had slipped in through the side doors, the vestry, and — in one impressive case — the window above the baptismal font. They now stood among Sir Stephen\'s twenty soldiers with drawn bows and exceedingly friendly smiles.</p>
+<p>&quot;I wouldn\'t move if I were you,&quot; Little John suggested pleasantly to the nearest guard, resting his quarterstaff on the man\'s shoulder with the gentle pressure of a falling tree. &quot;Weddings should be joyful occasions. Let\'s keep it that way.&quot;</p>
+<p>Robin Hood walked up the aisle, leading Alan-a-Dale by the hand. The <span class="vocab-highlight">minstrel</span> was pale and trembling, but his eyes were bright. When Alan\'s gaze found Ellen\'s across the church, her face — which had been so deathly pale — bloomed like a rose in sunlight. She broke free from her mother and ran to him, throwing her arms around his neck, and for a moment the two of them existed in a world that contained only each other.</p>
+<p>&quot;Dearly beloved,&quot; Friar Tuck announced, his voice filling the little church like a trumpet on a clear morning, &quot;we are gathered here today to join this young man and this young woman in the bonds of holy <span class="vocab-highlight">matrimony</span>.&quot; He beamed at the congregation. &quot;Does anyone object?&quot;</p>
+<p>He looked pointedly at Sir Stephen. Sir Stephen opened his mouth to deliver what would undoubtedly have been a very loud objection. Then he looked at the twenty-four arrows pointed at his head and closed it again. His face cycled through several more shades of purple before settling on a defeated gray.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Wonderful!&quot; said Tuck. &quot;I do love a cooperative congregation. Shall we proceed?&quot;</p>
+<p>The wedding was the shortest on record. Alan and Ellen said their vows so fast that they tripped over the words, laughing and crying at the same time, their hands clasped so tightly together that their fingers went white. Tuck pronounced them married with a flourish and a grin. Alan kissed his bride, and the church erupted in cheers — because the common folk in the pews were absolutely delighted to see the greedy old knight <span class="vocab-highlight">thwarted</span> and young love triumph.</p>
+<p>Robin bowed to Sir Stephen, who was sputtering like a kettle. &quot;My sincerest apologies for the inconvenience, Sir Knight. I\'m sure this isn\'t how you planned your afternoon. But I think even you would agree — if you searched your heart very, very deeply — that this young lady deserves a husband who will make her smile. And I don\'t think that\'s you.&quot;</p>
+<p>&quot;You\'ll pay for this, Robin Hood!&quot; Sir Stephen hissed, his thin lips white with fury. &quot;Mark my words, I\'ll see you hang for this!&quot;</p>
+<p>&quot;Put it on my tab,&quot; Robin said cheerfully, and he led the newlyweds out into the spring sunshine, where the birds were singing and the bluebells were blooming and the world, for once, felt exactly right.</p>
+<p>Alan-a-Dale joined the Merry Men that very day, and he brought with him the greatest gift of all — music. From that day forward, the greenwood was filled with his songs. He sang of Robin\'s adventures and Little John\'s strength, of Friar Tuck\'s appetite and Will Stutely\'s wit, and of the love that had brought him and Ellen together against impossible odds.</p>
+<p>His ballads spread across England, carried by travelers and sung in taverns from Nottingham to London. They made Robin Hood more than an outlaw — they made him a legend. Because there is something about a good song that goes where swords and arrows cannot: into the hearts of people, into their memories, into the stories they tell their children.</p>
+<p>Some legends are born from great deeds and mighty battles. But the legend of Robin Hood? That one was born from a love song, sung by a skinny <span class="vocab-highlight">minstrel</span> who had nothing to fight with except his voice, and who won the greatest battle of all.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Robin decide to help Alan-a-Dale? What principle or value drives his decision?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Robin’s band use teamwork to stop the wedding? Describe each person’s role in the plan.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The chapter ends by saying Robin Hood’s legend “was born from a love song.” What does this mean? Why might stories and songs be more powerful than swords in building a legend?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 7 Complete!</h1>
+        <p class="completion-message">Great work on \"Alan-a-Dale\'s Wedding\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson7Config);
+        });
+    <\/script>
+</body>
+</html>

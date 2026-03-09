@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 26: Sir Lancelot's Arrival</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson26Config = {
+            lessonId: '5th-grade-lesson-26',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 26: Sir Lancelot\'s Arrival',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 26</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Sir Lancelot\'s Arrival
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 26!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Sir Lancelot\'s Arrival</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Champion</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Humility</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Vulnerability</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Champion" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Champion</div><div class="match-word" data-word="Humility" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humility</div><div class="match-word" data-word="Vulnerability" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vulnerability</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Humility" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being humble; not thinking you are better than others, even when you have great skill or ability.</div><div class="match-def" data-word="Vulnerability" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being open to emotional hurt or attack; the willingness to show weakness.</div><div class="match-def" data-word="Champion" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A knight or warrior who fights on behalf of another person, especially in matters of honor; also the best in a competition.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Sir Lancelot\'s Arrival</p>
+      <div class="story-text">
+        <p>The greatest knight in the world came to Camelot on a summer afternoon, riding a white horse through the castle gates as if he owned the place. He was tall and handsome, with dark hair that fell to his shoulders and eyes the color of a deep lake — and he carried himself with the effortless confidence of a man who had never lost a fight, because he hadn\'t.</p>
+<p>His name was Lancelot du Lac — Lancelot of the Lake — and he had been raised far from the courts of men, in a hidden castle beneath the waters of an enchanted lake, by the same Lady who had given Arthur his sword. He had been trained in every art of war since childhood, and by the time he was twenty, he was, quite simply, the finest warrior anyone had ever seen. He could unseat any knight in a joust, defeat any swordsman in single combat, and track a deer through a forest in the dark. He was also well-read, well-spoken, and annoyingly good-looking, which made him somewhat difficult for other knights to be around.</p>
+<p>He presented himself to Arthur in the great hall, kneeling before the throne with his sword offered across both palms. &quot;Your Majesty,&quot; he said, &quot;I have heard of the Round Table and the code by which your knights live. I have come to offer my sword and my service, if you will have me.&quot;</p>
+<p>Arthur looked at this young knight — at the quiet intensity in his eyes, at the worn hilt of his sword that spoke of years of use, at the calluses on his hands that told the story of endless training — and felt the same instinct that had guided him in choosing all his best knights: this man was genuine. His desire to serve was real.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;You are welcome at Camelot, Sir Lancelot,&quot; Arthur said. &quot;But understand that the Round Table demands more than skill with a sword. It demands honor, mercy, and truth. Can you swear to uphold our code?&quot;</p>
+<p>&quot;I swear it with all my heart,&quot; Lancelot said, and Arthur believed him.</p>
+<p>Lancelot proved himself almost immediately. Within his first week at Camelot, he rescued a merchant\'s daughter from bandits on the north road, defeated three of Arthur\'s best knights in friendly jousting, and found a lost child in the forest when every other search party had given up. He did all of this without boasting, without seeking praise, and without making the other knights feel inferior — which was perhaps his most impressive feat.</p>
+<p>The knights of the Round Table were not easily impressed. They were proud men who had earned their seats through years of service and sacrifice. But one by one, they came to respect Lancelot — not just for his skill, but for his <span class="vocab-highlight">humility</span>. He trained with the youngest squires. He volunteered for the most dangerous patrols. He sat at the Round Table and listened more than he spoke, and when he did speak, his words were thoughtful and measured.</p>
+<p>&quot;He\'s almost too perfect,&quot; Sir Kay muttered one evening, watching Lancelot practice swordwork in the courtyard. &quot;Nobody\'s that good.&quot;</p>
+<p>&quot;He is,&quot; said Sir Gawain, who had sparred with Lancelot that morning and been defeated in less than a minute. &quot;He\'s that good. And it\'s incredibly annoying.&quot;</p>
+<p>But Arthur saw something in Lancelot that the others missed — or perhaps something they chose not to see. Behind the skill and the courtesy and the quiet confidence, there was a sadness. A loneliness. Lancelot had been raised apart from the world, in a magical place that existed outside of normal life, and there was a part of him that didn\'t quite know how to be human. He could fight like a god, but he struggled with the simple things — small talk, friendship, the messy, complicated business of connecting with other people.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Arthur made it his mission to change that. He invited Lancelot to ride with him, to dine with him, to join his private councils. They spent long evenings talking — about kingship, about justice, about the world they wanted to build. And slowly, carefully, like a wild animal learning to trust, Lancelot began to open up.</p>
+<p>&quot;I don\'t know how to be ordinary,&quot; Lancelot confessed one night, sitting with Arthur on the castle battlements, watching the stars wheel overhead. &quot;I was trained to be a weapon. The Lady of the Lake made me strong, fast, skilled — but she didn\'t teach me how to have friends. How to laugh without wondering if I\'m doing it wrong. How to be part of something without standing apart from it.&quot;</p>
+<p>Arthur was quiet for a moment. Then he said, &quot;You\'re doing it right now.&quot;</p>
+<p>Lancelot looked at him.</p>
+<p>&quot;This,&quot; Arthur said. &quot;Sitting here. Talking. Being honest about what scares you. That\'s not standing apart, Lancelot. That\'s being part of something. And you\'re better at it than you think.&quot;</p>
+<p>Something shifted in Lancelot\'s eyes — a softening, a warmth that hadn\'t been there before. &quot;Thank you, Arthur.&quot;</p>
+<p>&quot;Don\'t thank me. Just keep being honest. That\'s worth more than all the swordwork in the world.&quot;</p>
+<p>From that night forward, Lancelot and Arthur were the closest of friends — a bond that would become the foundation of Camelot\'s greatest triumphs and, eventually, its deepest sorrows. But that darkness was still years away. For now, in the golden early days of the Round Table, they were simply two young men who had found in each other something rare and precious: a friend who understood.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Lancelot rose quickly through the ranks of the Round Table, becoming Arthur\'s <span class="vocab-highlight">champion</span> — the knight who fought on the king\'s behalf in matters of honor, who led the most dangerous missions, who stood at Arthur\'s right hand in peace and war alike. He was, by universal consensus, the greatest knight who had ever lived.</p>
+<p>But the greatest knight who ever lived had a flaw. It was buried deep, hidden beneath layers of discipline and duty, and it would not show itself for years. When it did, it would shake the foundations of Camelot.</p>
+<p>For now, though, the sun was shining on the kingdom. The Round Table was complete. The greatest knights in the world sat side by side as equals. And Camelot blazed like a beacon on the hill, a light in a dark world, a promise that things could be better.</p>
+<p>It was, everyone agreed, the beginning of a golden age.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Lancelot tells Arthur he doesn’t know how to “be ordinary.” What does he mean by this, and why is being ordinary actually harder than being extraordinary?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur says that being honest about what scares you is “worth more than all the swordwork in the world.” Do you agree? Why or why not?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The chapter says Lancelot has a hidden flaw that will eventually cause problems. Based on what you’ve read, what do you predict this flaw might be? What clues does the author give?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 26 Complete!</h1>
+        <p class="completion-message">Great work on \"Sir Lancelot\'s Arrival\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson26Config);
+        });
+    <\/script>
+</body>
+</html>

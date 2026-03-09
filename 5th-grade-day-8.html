@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8: Robin Hood and the Bishop</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson8Config = {
+            lessonId: '5th-grade-lesson-8',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 8: Robin Hood and the Bishop',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 8</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Robin Hood and the Bishop
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 8!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Robin Hood and the Bishop</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Bishop</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Charity</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Forfeit</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Gallows" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gallows</div><div class="match-word" data-word="Rally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rally</div><div class="match-word" data-word="Sentiment" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sentiment</div><div class="match-word" data-word="Minstrel" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Minstrel</div><div class="match-word" data-word="Matrimony" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Matrimony</div><div class="match-word" data-word="Thwarted" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Thwarted</div><div class="match-word" data-word="Bishop" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Bishop</div><div class="match-word" data-word="Charity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Charity</div><div class="match-word" data-word="Forfeit" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Forfeit</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Minstrel" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A traveling musician and singer who performs songs and tells stories, often about heroes and adventures.</div><div class="match-def" data-word="Bishop" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A high-ranking leader in the Christian church who oversees churches and clergy in a large area.</div><div class="match-def" data-word="Matrimony" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The formal union of two people in marriage; a wedding ceremony.</div><div class="match-def" data-word="Gallows" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A wooden frame used for hanging people as punishment; a place of execution.</div><div class="match-def" data-word="Forfeit" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To lose or give up something as a penalty or consequence.</div><div class="match-def" data-word="Rally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To come together for a common purpose, especially during a difficult time.</div><div class="match-def" data-word="Sentiment" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A feeling or emotion, especially one that is shared by a group of people.</div><div class="match-def" data-word="Thwarted" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Prevented from accomplishing a goal; stopped or blocked from succeeding.</div><div class="match-def" data-word="Charity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of giving help, money, or kindness to those in need; generosity toward others.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Robin Hood and the Bishop</p>
+      <div class="story-text">
+        <p>The <span class="vocab-highlight">Bishop</span> of Hereford was one of the richest men in England, and he had absolutely no patience for outlaws, legends, or anything else that interfered with the smooth accumulation of his personal fortune. He was a tall, thin man with a long nose that seemed designed for looking down, cold gray eyes, and hands that were always either counting coins or clasped in prayer — though his prayers, Robin suspected, were mostly about getting more coins to count.</p>
+<p>The <span class="vocab-highlight">Bishop</span> had heard the stories of Robin Hood — how the outlaw and his band of ruffians lurked in Sherwood Forest, robbing wealthy travelers and distributing the proceeds to the ungrateful poor. The <span class="vocab-highlight">Bishop</span> considered this the most offensive concept he had ever encountered. The poor were poor because God intended them to be poor. The rich were rich because God loved them more. This was basic theology, and the <span class="vocab-highlight">Bishop</span> was personally insulted that some outlaw in a green hat was disrupting the natural order.</p>
+<p>&quot;Stealing is stealing,&quot; the <span class="vocab-highlight">Bishop</span> told his servants as his grand carriage rolled through the English countryside on a fine September morning, heavy with gold collected from the churches of three counties. &quot;I don\'t care what fairy tales the peasants tell about this Robin Hood fellow. He\'s a common criminal, and if I ever meet him, I shall have him arrested on the spot and delivered to the Sheriff with my compliments.&quot;</p>
+<p>His servants, who had more sense than their master, exchanged nervous glances. They were, after all, about to travel through Sherwood Forest.</p>
+<p>The <span class="vocab-highlight">Bishop</span>\'s carriage was impossible to miss. It was enormous, gilded, and painted with religious scenes in bright blue and gold. It was pulled by four white horses with silver bridles, and its wheels were larger than a man is tall. Behind it rode a dozen armed monks — not ordinary monks who spent their days in prayer and contemplation, but warrior monks who wore chainmail under their brown robes and carried swords and crossbows instead of rosaries. The <span class="vocab-highlight">Bishop</span> believed in being prepared.</p>
+<p>Robin Hood, as it happened, was sitting in an oak tree directly above the forest road, eating an apple and watching the <span class="vocab-highlight">Bishop</span>\'s procession approach. He had been tipped off by Margaret the peddler, who had seen the carriage that morning and sent word through the network. Robin dangled his legs from the branch and took another bite of apple, thoroughly enjoying the spectacle.</p>
+<p>&quot;Little John,&quot; Robin whispered to his companion, who was somehow balanced in the tree beside him despite being approximately the size and weight of a small horse. The branch was creaking alarmingly. &quot;Do you see what I see?&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;I see a man with more gold than sense,&quot; Little John whispered back, eyeing the gilded carriage. &quot;And armed monks. That\'s new. I thought monks weren\'t supposed to carry swords.&quot;</p>
+<p>&quot;These are the <span class="vocab-highlight">Bishop</span> of Hereford\'s monks. They carry whatever the <span class="vocab-highlight">Bishop</span> tells them to carry.&quot; Robin grinned. &quot;I think the <span class="vocab-highlight">Bishop</span> needs an invitation to dinner. Our special dinner.&quot;</p>
+<p>Little John groaned softly. Robin\'s &quot;special dinners&quot; for wealthy travelers had become legendary — not just for the food, which was excellent, but for the bills, which were steep. &quot;The last time you held a special dinner, the guest tried to stab you with a bread knife.&quot;</p>
+<p>&quot;That was Sir Geoffrey, and he apologized later. Well, he apologized after Little John held him upside down over a bridge. Same thing.&quot;</p>
+<p>An hour later, the <span class="vocab-highlight">Bishop</span>\'s magnificent carriage rounded a bend in the forest road and came upon a peculiar sight. An old woman sat in the middle of the road, wailing at the top of her lungs. Her cart had overturned, and apples were scattered everywhere — dozens of them, rolling into ditches and under bushes and forming a treacherous carpet on the packed dirt road.</p>
+<p>&quot;Oh, mercy!&quot; the old woman wailed, wringing her gnarled hands. &quot;My cart is broken and I\'ll lose all my apples! Won\'t someone help a poor old grandmother? Is there no kindness left in the world?&quot;</p>
+<p>The <span class="vocab-highlight">Bishop</span>\'s driver hauled on the reins. &quot;Out of the way, old woman! We haven\'t time for this!&quot;</p>
+<p>But the <span class="vocab-highlight">Bishop</span>, who wanted to appear charitable in front of his men — and who was also aware that the common folk were watching from the edges of the road — sighed theatrically and ordered the carriage to stop. &quot;Help her quickly,&quot; he snapped. &quot;We haven\'t got all day. Move those apples. Right the cart. And someone give the woman a penny so she\'ll stop that infernal noise.&quot;</p>
+<p>His armed monks dismounted, propped their crossbows against the carriage, and went to help right the overturned cart. It was heavier than it looked — Much the Miller\'s Son had packed rocks under the apples — and it took all twelve of them, straining and grunting, to lift it. And the moment all twelve monks were on one side of the road, bent over and struggling, with their weapons twenty feet away and their attention completely absorbed by the stubborn cart, Robin Hood and thirty of his Merry Men stepped out of the forest on the other side.</p>
+<p>&quot;Good afternoon, your Grace!&quot; Robin called cheerfully, doffing his feathered cap with a flourish. &quot;Welcome to Sherwood Forest! I do hope you\'ll stay for dinner. We\'re having venison.&quot;</p>
+<p>The old woman straightened up, pulled off her bonnet, and turned out to be Will Stutely in a dress and a wig of gray yarn. He gave the <span class="vocab-highlight">Bishop</span> a cheeky curtsy that was entirely unconvincing and seemed very pleased with himself.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The <span class="vocab-highlight">Bishop</span>\'s face underwent a remarkable transformation. It went white, then red, then purple, then a sort of grayish green that suggested his last meal was considering a return visit. His armed monks reached for their swords — only to find them surrounded by archers with arrows nocked and aimed with professional steadiness.</p>
+<p>&quot;I wouldn\'t do that if I were you,&quot; Friar Tuck said kindly to the nearest monk, man of the cloth to man of the cloth. &quot;Professional courtesy and all that. Besides, dinner really is quite good. Much has outdone himself.&quot;</p>
+<p>The <span class="vocab-highlight">Bishop</span> was escorted, with elaborate politeness, to Robin Hood\'s camp in the heart of the forest. He protested vigorously the entire way. &quot;You cannot do this! I am a man of God! I am the <span class="vocab-highlight">Bishop</span> of Hereford! I am under the protection of the Church and the Crown! This is kidnapping! This is robbery! This is —&quot;</p>
+<p>&quot;This is dinner,&quot; Robin said pleasantly. &quot;And I promise you, your Grace, our hospitality is far more comfortable than anything the Sheriff could offer. Please, sit.&quot;</p>
+<p>The camp had been prepared for the occasion. A long table had been set in the clearing, draped in white cloth (borrowed, not stolen — Robin was particular about the distinction), with candles and wildflowers and the finest wooden plates the Merry Men owned. Venison roasted over a great fire, filling the air with an aroma that would have made a dead man hungry. Much had also prepared fresh bread, roasted vegetables, forest mushrooms in butter, and — the masterpiece — a blackberry pie so beautiful it nearly made Friar Tuck weep.</p>
+<p>The <span class="vocab-highlight">Bishop</span> was given the seat of honor at the head of the table. He was served first, served most, and served with a degree of courtesy that gradually — against his will, against his principles, against every instinct he possessed — began to wear down his resistance. The food was extraordinary. The wine was excellent. Robin\'s men were surprisingly good company. Alan-a-Dale played his lute and sang ballads, and even the <span class="vocab-highlight">Bishop</span> had to admit — silently, privately, and with great reluctance — that the boy had a magnificent voice.</p>
+<p>After dinner, when the candles burned low and the conversation had mellowed from hostile silence to cautious small talk, Robin leaned forward with the look of a man about to discuss business.</p>
+<p>&quot;Now then, your Grace. The matter of your bill.&quot;</p>
+<p>&quot;My bill?&quot; the <span class="vocab-highlight">Bishop</span> squeaked, and the warmth that had been creeping into his expression vanished instantly.</p>
+<p>&quot;Dinner, entertainment, the pleasure of our company, fresh air, exercise — it all adds up, I\'m afraid. But don\'t worry, I\'m sure a man of your extraordinary means can afford it. Shall we see what\'s in that lovely carriage of yours?&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The <span class="vocab-highlight">Bishop</span>\'s carriage, when opened, contained three hundred gold pieces in locked chests, a silver candlestick of exquisite craftsmanship, and a jeweled cross that would have fed a village for a year. Robin counted the gold carefully, his lips moving silently, while the <span class="vocab-highlight">Bishop</span> watched with the expression of a man having a tooth pulled.</p>
+<p>Robin counted out exactly half — one hundred and fifty pieces — and placed them in a leather sack. The rest he put back in the chest and returned to the <span class="vocab-highlight">Bishop</span>, along with the candlestick and the cross.</p>
+<p>&quot;I\'m only taking half,&quot; Robin explained. &quot;Half of this gold you collected honestly, from churches that gave willingly to support the work of the Lord. That half is yours, and I wouldn\'t touch it. But this half&quot; — he hefted the sack — &quot;was squeezed out of poor parishes that could barely afford candles for their altars. Villages where children go hungry while the church roof leaks. That money was taken, not given. And it\'s going back where it belongs.&quot;</p>
+<p>The <span class="vocab-highlight">Bishop</span> stared at him. For a long, silent moment, something moved behind those cold gray eyes — something that might have been recognition, might have been shame, might have been the flickering ghost of the young man who had entered the clergy because he genuinely wanted to help people, before ambition and greed had buried that young man under layers of silk and gold.</p>
+<p>Then the <span class="vocab-highlight">Bishop</span> straightened his robes and huffed. &quot;You are a scoundrel, Robin Hood. A thief and a scoundrel.&quot;</p>
+<p>&quot;So they tell me,&quot; Robin said, with a grin that held no malice. &quot;But I\'m a scoundrel who sleeps well at night. Can you say the same, your Grace?&quot;</p>
+<p>The <span class="vocab-highlight">Bishop</span> was escorted safely back to his carriage and sent on his way, poorer by exactly one hundred and fifty gold pieces but unharmed, well-fed, and — though he would have died before admitting it — strangely thoughtful.</p>
+<p>He never did answer Robin\'s question. But the gold was distributed to the poorest parishes in the county within the week. And the <span class="vocab-highlight">Bishop</span> of Hereford, though he cursed Robin Hood\'s name loudly and publicly at every opportunity, never again collected more than his fair share from the churches under his care.</p>
+<p>Some lessons are best taught with a sword. Some are best taught with a sermon. But the best lessons of all, Robin believed, were taught over dinner — with good food, good conversation, and a bill that makes you think about where your money really comes from.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin only takes half of the Bishop’s gold. Why doesn’t he take all of it? What does this choice tell us about Robin’s sense of justice?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Will Stutely’s disguise as the old woman help the plan succeed? Why is misdirection so important to Robin’s strategies?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin asks the Bishop, “I’m a scoundrel who sleeps well at night. Can you say the same?” What is Robin really asking? Do you think the Bishop understands the question?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 8 Complete!</h1>
+        <p class="completion-message">Great work on \"Robin Hood and the Bishop\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson8Config);
+        });
+    <\/script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 19: The King Returns</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson19Config = {
+            lessonId: '5th-grade-lesson-19',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 19: The King Returns',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 19</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The King Returns
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 19!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The King Returns</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Pardon</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Tyranny</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Restoration</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Merciless" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merciless</div><div class="match-word" data-word="Composure" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Composure</div><div class="match-word" data-word="Adversary" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Adversary</div><div class="match-word" data-word="Infiltrate" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Infiltrate</div><div class="match-word" data-word="Espionage" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Espionage</div><div class="match-word" data-word="Audacity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Audacity</div><div class="match-word" data-word="Demoralize" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Demoralize</div><div class="match-word" data-word="Guerrilla" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Guerrilla</div><div class="match-word" data-word="Terrain" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Terrain</div><div class="match-word" data-word="Pardon" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Pardon</div><div class="match-word" data-word="Tyranny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Tyranny</div><div class="match-word" data-word="Restoration" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Restoration</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Pardon" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An official act of forgiveness that frees someone from punishment for a crime.</div><div class="match-def" data-word="Tyranny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Cruel and unfair use of power by a ruler or government; oppressive control over people.</div><div class="match-def" data-word="Composure" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being calm and in control of your emotions, especially in a difficult situation.</div><div class="match-def" data-word="Demoralize" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To weaken someone’s confidence, courage, or spirit; to make someone feel hopeless or defeated.</div><div class="match-def" data-word="Restoration" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of returning something to its original or proper condition; bringing something back.</div><div class="match-def" data-word="Merciless" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Showing no mercy or kindness; cruel and unforgiving.</div><div class="match-def" data-word="Infiltrate" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To secretly enter or join a group or place in order to gather information or cause change from the inside.</div><div class="match-def" data-word="Adversary" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An enemy or opponent, especially one in a conflict or contest.</div><div class="match-def" data-word="Audacity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Bold, daring behavior that shows a willingness to take risks, sometimes to a shocking degree.</div><div class="match-def" data-word="Terrain" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The physical features of a stretch of land, such as hills, rivers, forests, and valleys.</div><div class="match-def" data-word="Espionage" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The practice of spying; secretly gathering information about an enemy or competitor.</div><div class="match-def" data-word="Guerrilla" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A type of fighting where a smaller group uses surprise attacks, ambushes, and hit-and-run tactics against a larger force.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The King Returns</p>
+      <div class="story-text">
+        <p>Spring came early that year, and with it came rumors — wonderful, impossible, heart-pounding rumors that swept through England like a fire through dry grass.</p>
+<p>King Richard was coming home.</p>
+<p>The news arrived in fragments, each one brighter and more certain than the last. A merchant from Dover swore he had seen ships in the English Channel flying the royal standard — the three golden lions of England. A pilgrim claimed to have spoken to a knight from Richard\'s personal guard at an inn in Canterbury. Letters began to arrive at noble households across the country, sealed with the royal seal, confirming what everyone had hoped for and hardly dared believe.</p>
+<p>Richard the Lionheart — warrior king, crusader, the most famous monarch in Christendom — had endured years of war in the Holy Land and months of imprisonment by the Duke of Austria on his way home. A ransom had been paid. He was free. And he was coming to reclaim his throne from his scheming brother, Prince John.</p>
+<p>Prince John reacted to the news with predictable panic. He withdrew to London with his most loyal supporters, barricaded himself in the Tower, and began writing frantic letters to every ally he had, promising titles and lands and gold to anyone who would stand with him against his brother. Most of those allies, sensing which way the wind was blowing, politely declined.</p>
+<p>The Sheriff of Nottingham, who had built his entire career on Prince John\'s patronage, found himself in an uncomfortable position. His patron was about to be overthrown. His crimes — the illegal taxes, the corruption, the cruelty — were about to be exposed. And the outlaw he had spent years trying to destroy was about to become a hero in the eyes of the returning king.</p>
+<p>The Sheriff locked himself in Nottingham Castle and hoped, with the desperate optimism of a drowning man, that everyone would forget about him.</p>
+<p>In Sherwood Forest, Robin Hood allowed himself, for the first time in years, to hope.</p>
+<p>&quot;If Richard is truly coming back,&quot; he told his men, gathered around the evening fire on a night when the stars seemed brighter than usual, &quot;then everything changes. Richard is a just king — hard, sometimes, and proud, but just. He\'ll set things right. The illegal taxes will end. The corrupt officials will be removed. The people will be protected, the way they should have been all along.&quot;</p>
+<p>&quot;And us?&quot; Little John asked the question that hung in the air like smoke. &quot;We\'re still outlaws, Robin. Even under a just king, we\'ve broken the law. We\'ve stolen. We\'ve fought. We\'ve — well, you know the list.&quot;</p>
+<p>Robin was quiet for a moment. It was the question he had been wrestling with in the dark hours of the night, the question that had no easy answer. He had killed a man. He had stolen from hundreds. He had defied the law openly and proudly for years, and no amount of good intentions could erase the simple fact that he had broken it.</p>
+<p>A just king might <span class="vocab-highlight">pardon</span> him. Or a just king might hang him. There was no way to know.</p>
+<p>&quot;We\'ll face it when it comes,&quot; Robin said. &quot;Whatever happens, we face it together. That\'s always been our way.&quot;</p>
+<p>The King\'s army reached Nottingham on a bright April morning that felt, to everyone who witnessed it, like the first day of a new world. Richard rode at the head of his column on a great white charger, and he looked every inch the king that legend said he was — tall, broad-shouldered, with a golden crown on his head and the lion standard snapping in the wind above him. His armor was dented and scarred from a hundred battles in foreign lands, and his face was weathered by desert sun and prison cold, but his eyes were fierce and bright and alive.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Behind him rode five hundred knights, battle-hardened and loyal, their armor gleaming and their lances standing straight as a forest of steel. The thunder of their horses\' hooves on the road could be heard for miles.</p>
+<p>The people of Nottingham flooded into the streets. They poured from every house, every shop, every alley. They climbed on walls and rooftops for a better view. Women wept. Men fell to their knees. Children were hoisted onto shoulders and told to remember this day, because they would tell their grandchildren about it. After years of Prince John\'s <span class="vocab-highlight">tyranny</span> — years of crushing taxes and corrupt officials and the constant, grinding fear of saying the wrong thing to the wrong person — the true king had come home, and hope, which had been guttering like a candle in a draft, blazed up into a bonfire.</p>
+<p>Richard rode straight to the castle gates. The gates, which the Sheriff had barred, were opened on the King\'s command — not by the Sheriff\'s men, but by the castle\'s own servants, who had been waiting for this moment and who threw the bolts with something approaching glee.</p>
+<p>The Sheriff was brought before the King in the great hall — the same hall where he had feasted while his people starved, the same hall where he had plotted against Robin Hood while children went hungry in the streets below. He looked small now, Robin thought. Small and gray and frightened, like a rat caught in a lantern\'s light.</p>
+<p>King Richard sat in the high seat and listened. He listened to the people of Nottingham — one by one, they came forward and told their stories. The widow whose home had been burned. The farmer whose tools had been confiscated. The merchant who had been bankrupted by illegal taxes. The mother whose son had been imprisoned for speaking Robin Hood\'s name.</p>
+<p>The Sheriff tried to defend himself. He babbled about outlaws, about threats to public order, about the difficult decisions required of men in positions of authority. But his words were weak and hollow, and they died in the air like sparks from a dead fire.</p>
+<p>Richard silenced him with a single look — a look that carried the weight of years of warfare and the moral authority of a king who had fought for what he believed in, however imperfect his wars had been.</p>
+<p>&quot;You were entrusted with the welfare of my people,&quot; the King said, and his voice was low and terrible, like thunder on the horizon. &quot;That trust was sacred. And you betrayed it in every way a man can betray a sacred trust. You enriched yourself while they suffered. You punished them for the crime of seeking justice. You turned the law — my law — into a weapon against the very people it was meant to protect.&quot;</p>
+<p>The Sheriff opened his mouth. Richard raised a hand, and the Sheriff\'s mouth closed.</p>
+<p>&quot;You are relieved of your office. Your lands are forfeit to the Crown. You will spend the remainder of your days reflecting on the harm you have done. And you will thank whatever God you pray to that I am a more merciful man than you deserve.&quot;</p>
+<p>The Sheriff was led away by the King\'s guards, his fine clothes suddenly hanging on him like rags on a scarecrow. He did not struggle. He did not protest. He simply walked, head bowed, shoulders hunched, through the great hall and out of the story — not with a dramatic last stand or a defiant speech, but with the quiet, pathetic shuffle of a man who had built his life on cruelty and found, in the end, that it could not support his weight.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Then the King spoke the words that everyone had been waiting for.</p>
+<p>&quot;And where is Robin Hood? The outlaw who defied my brother, who stood against corruption, who protected my people when their own government would not? I wish to see him. I wish to see this man.&quot;</p>
+<p>Robin had been standing in the crowd, dressed in his Lincoln green, with Marian on his right side and Little John on his left. He had entered Nottingham with the throng of citizens, just another face in the crowd, though his heart had been hammering so hard he was surprised it couldn\'t be heard.</p>
+<p>Now, at the King\'s words, he felt every eye in the hall turn toward him — because the people of Nottingham knew where Robin Hood was. They always knew. And now, one by one, they stepped aside, creating a path from the crowd to the throne — a path made not of stone or carpet but of people, ordinary people, who parted like water to let their champion through.</p>
+<p>Robin walked forward. People reached out as he passed — touching his arm, his shoulder, his hand. Small gestures of gratitude and love, wordless acknowledgments of everything he had done and everything he had meant to them. A woman pressed a flower into his hand. An old man nodded, tears on his cheeks. A child whispered, &quot;It\'s him. It\'s really him.&quot;</p>
+<p>Robin walked up the steps to the great hall, through the doors, and into the presence of King Richard the Lionheart. The hall was packed — nobles, soldiers, citizens, all watching in breathless silence.</p>
+<p>Robin knelt. The stone floor was cold and hard under his knees.</p>
+<p>&quot;Rise,&quot; the King said.</p>
+<p>Robin rose and met the King\'s eyes. Richard studied him for a long moment — this young man in his forest green, lean and scarred, with steady eyes and calloused hands and the weight of a thousand adventures on his shoulders. Not a nobleman. Not a knight. Just a man who had made a choice, years ago, to stand for something, and who had never stopped standing.</p>
+<p>&quot;You broke the law,&quot; the King said.</p>
+<p>&quot;Yes, your Majesty.&quot;</p>
+<p>&quot;You killed the King\'s deer. You robbed travelers on the King\'s roads. You defied the authority of my appointed officials and made a mockery of the King\'s justice.&quot;</p>
+<p>&quot;Yes, your Majesty. All of it.&quot;</p>
+<p>&quot;And you fed the hungry. You sheltered the homeless. You stood between the powerful and the helpless. You gave people hope when they had none, and courage when they had forgotten what courage looked like.&quot;</p>
+<p>Robin said nothing. He couldn\'t. His throat had closed up, and his eyes were burning.</p>
+<p>King Richard rose from his throne and descended the steps. He was half a head taller than Robin and twice as broad, and up close he radiated a physical power that was almost overwhelming. But his eyes, when they met Robin\'s, were not hard. They were warm, and tired, and deeply, surprisingly kind.</p>
+<p>&quot;I have heard your story from a hundred lips,&quot; Richard said. &quot;Every village between Dover and Nottingham knows the name of Robin Hood. You gave people hope, Robin of Locksley. In the darkest time, when everything seemed lost, you showed them that one man — one stubborn, reckless, impossibly idealistic man — could make a difference. That is not a small thing. That is, in fact, the greatest thing a man can do.&quot;</p>
+<p>He drew his sword. The crowd gasped. Robin\'s hand twitched toward his belt — old instincts — but the King shook his head slightly and smiled.</p>
+<p>He laid the flat of the blade on Robin\'s right shoulder, then his left.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;I <span class="vocab-highlight">pardon</span> you, Robin Hood. You and all your men. Every crime, every offense, every broken law — forgiven, as of this moment. Your lands are restored. Your name is cleared. And you are hereby appointed Lord Protector of Sherwood Forest, charged with the defense of its people, its creatures, and its ancient trees. Serve them well.&quot;</p>
+<p>Robin sank to his knees again — not because he was expected to, not because protocol demanded it, but because his legs simply gave out. The relief, the joy, the sheer overwhelming weight of everything he had carried for years suddenly lifted from his shoulders, and for a moment he couldn\'t do anything but kneel on the cold stone floor and breathe.</p>
+<p>The great hall erupted. The sound was unlike anything Robin had ever heard — a tidal wave of cheering, clapping, stomping, weeping, and laughing that shook the walls and rattled the windows. Little John\'s roar could be heard above everything else, a sound of pure, raw, uncontainable joy. Friar Tuck was sobbing openly and hugging anyone within reach. Alan-a-Dale had his lute out and was already composing, tears streaming down his face. Will Stutely was standing on a bench, punching the air. Marian was —</p>
+<p>Marian was standing at the foot of the steps, looking up at him, and she was smiling. Not grinning, not laughing, just smiling — a quiet, radiant, profound smile that said everything words could not. She had believed in this moment when Robin hadn\'t. She had worked for it, fought for it, risked everything for it. And now it was here.</p>
+<p>Robin stood up. He walked down the steps. The crowd parted. And he took Marian\'s hand.</p>
+<p>&quot;We did it,&quot; he said.</p>
+<p>&quot;You did it,&quot; she said.</p>
+<p>&quot;We,&quot; Robin insisted. &quot;All of us. Every single person in this room, and a hundred more in the forest. This was never just my story, Marian. It was theirs. It was ours.&quot;</p>
+<p>Outside, the bells of Nottingham began to ring — every church, every chapel, every bell tower in the city, ringing together in a symphony of celebration that carried across the fields and into the forest, where the ancient oaks stood tall and patient and enduring, as they always had.</p>
+<p>In Sherwood Forest, the Merry Men who had stayed behind to guard the camp heard the bells. They looked at each other. And then they began to cheer — a cheer that rose through the canopy and scattered the birds and echoed off the hills, a sound of freedom and relief and joy that had been years in the making.</p>
+<p>Robin Hood\'s story didn\'t end that day. There would be new adventures, new challenges, new villains to face and new friends to make. But the darkest chapter was over. The forest was safe. The people were free. And the outlaw who had become a legend had become, at last, what he had always truly been: a good man, in a green hood, standing up for what was right.</p>
+<p>Long live Robin Hood. Long live the Merry Men. And long live the greenwood that sheltered them all.</p>
+<p>The End</p>
+<p>Long live Robin Hood and his Merry Men.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">King Richard lists Robin’s crimes and then lists his good deeds. Why does the King choose to focus on the good deeds? What does this tell us about how Richard defines justice?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How do the people of Nottingham react when Robin walks through the hall? Why do you think the author describes this scene in such detail?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Think about the entire book: How has Robin changed from Chapter 1 to Chapter 16? In what ways has he stayed the same? Use specific evidence from at least two chapters to support your answer.</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 19 Complete!</h1>
+        <p class="completion-message">Great work on \"The King Returns\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson19Config);
+        });
+    <\/script>
+</body>
+</html>

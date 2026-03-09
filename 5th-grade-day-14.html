@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: The Sheriff's Tax Collectors</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson14Config = {
+            lessonId: '5th-grade-lesson-14',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 14: The Sheriff\'s Tax Collectors',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 14</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Sheriff\'s Tax Collectors
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 14!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Sheriff\'s Tax Collectors</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Confiscate</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Simultaneously</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Redistribute</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Intelligence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Intelligence</div><div class="match-word" data-word="Reconnaissance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reconnaissance</div><div class="match-word" data-word="Ally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Ally</div><div class="match-word" data-word="Collateral" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Collateral</div><div class="match-word" data-word="Generosity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Generosity</div><div class="match-word" data-word="Gratitude" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gratitude</div><div class="match-word" data-word="Warrant" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Warrant</div><div class="match-word" data-word="Resourceful" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Resourceful</div><div class="match-word" data-word="Indispensable" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Indispensable</div><div class="match-word" data-word="Confiscate" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Confiscate</div><div class="match-word" data-word="Simultaneously" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Simultaneously</div><div class="match-word" data-word="Redistribute" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Redistribute</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Confiscate" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To take someone’s property away, usually by someone in authority, as a punishment or to collect a debt.</div><div class="match-def" data-word="Simultaneously" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">At the same time; happening together at the same moment.</div><div class="match-def" data-word="Reconnaissance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of scouting or exploring an area to gather information, especially about an enemy.</div><div class="match-def" data-word="Warrant" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An official document that gives someone legal authority to do something, such as arrest a person.</div><div class="match-def" data-word="Redistribute" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To share or spread something out differently, especially to make things more equal or fair.</div><div class="match-def" data-word="Intelligence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Secret information gathered about an enemy’s plans and activities; also means the ability to learn and understand.</div><div class="match-def" data-word="Collateral" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something valuable that a borrower promises to give up if they cannot repay a loan.</div><div class="match-def" data-word="Ally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person or group that joins with another for a shared purpose; a partner in a common cause.</div><div class="match-def" data-word="Gratitude" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The feeling of being thankful and appreciative for something someone has done for you.</div><div class="match-def" data-word="Indispensable" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Absolutely necessary; so important that you cannot manage without it.</div><div class="match-def" data-word="Generosity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being willing to give freely and abundantly to others without expecting anything in return.</div><div class="match-def" data-word="Resourceful" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Able to find quick and clever ways to overcome difficulties; good at solving problems with what’s available.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Sheriff\'s Tax Collectors</p>
+      <div class="story-text">
+        <p>It was the cruelest time of year in Nottinghamshire — tax season. The Sheriff had sent his collectors out across the county with orders to squeeze every last penny from the common folk, and his instructions were brutally simple: bring back the money, or don\'t come back at all.</p>
+<p>The collectors were not gentle men. They traveled in groups of three or four, each accompanied by a squad of soldiers, and they carried lists of every household in their assigned district — lists that showed exactly what each family owed and exactly what could be taken if they couldn\'t pay. If a family was short on coins, the collectors took livestock. If there was no livestock, they took tools. If there were no tools, they took furniture, clothing, food — anything of value, and some things of no value at all, just to make a point.</p>
+<p>Robin Hood had watched this happen every autumn for three years, and every year it made his blood boil hotter. But this year was different. This year, the Sheriff had raised the taxes yet again — for the third time in twelve months — and the villages were being bled dry. Families that had been scraping by were now being crushed. Robin had seen children in the villages with hollow cheeks and dull eyes, and he had seen their parents staring at empty cupboards with the helpless, hopeless look of people who have tried everything and failed.</p>
+<p>&quot;This stops today,&quot; Robin told his men, gathered around the morning fire on a cold October dawn. His voice was calm, but his eyes burned with a fierce, steady anger that every person in the camp recognized and respected. Robin was at his most dangerous when he was quiet. &quot;The Sheriff is robbing people who have nothing left to give. Widows. Orphans. Families who can barely survive as it is. He\'s not collecting taxes — he\'s stealing the food out of children\'s mouths. And we are going to take every penny back.&quot;</p>
+<p>The plan was bold, even by Robin Hood\'s standards. The Sheriff had three tax collectors working the county <span class="vocab-highlight">simultaneously</span>, each covering a different district with a small guard of soldiers and a heavy cart for hauling away the seized goods. Robin would hit all three on the same day, at the same hour, so the Sheriff couldn\'t send reinforcements from one group to another. It was the kind of plan that required perfect timing, absolute coordination, and a healthy dose of insanity.</p>
+<p>&quot;Little John, you take the northern road and the collector working the Edwinstowe district. Will Stutely, the eastern road and the Blidworth district. I\'ll handle the western route and the villages around Papplewick. Friar Tuck, you stay at camp and prepare for guests — we\'ll be sending the townsfolk to you for their refunds.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Refunds?&quot; Tuck asked, eyebrows raised.</p>
+<p>&quot;We\'re returning their money. All of it. Every coin, every chicken, every sack of grain. We take it from the collectors and give it straight back.&quot;</p>
+<p>Tuck smiled — a broad, beaming, deeply satisfied smile. &quot;Now that is a sermon I can get behind.&quot;</p>
+<p>Little John\'s group struck first, at the village of Edwinstowe, just as the church bell rang nine o\'clock. The tax collector assigned to this district was a thin, pinch-faced man named Grimsby who had a reputation for cruelty that exceeded even the Sheriff\'s expectations. He took visible pleasure in making people cry — especially old people and children, who were easier to intimidate — and he had been known to <span class="vocab-highlight">confiscate</span> family heirlooms, wedding rings, and even children\'s toys when the coins ran short.</p>
+<p>He was in the middle of confiscating an old widow\'s only cow — dragging the protesting animal by a rope while the widow clutched her shawl and wept — when a shadow fell over him. Grimsby looked up. And up. And up.</p>
+<p>Little John stood before him, seven feet of quiet fury, his quarterstaff resting across his shoulders.</p>
+<p>&quot;I believe that cow belongs to the lady,&quot; Little John said, his voice pleasant in the way that a thunderstorm is pleasant before the lightning starts.</p>
+<p>Grimsby went the color of old cheese. &quot;I — this is official business — I am here on the Sheriff\'s authority —&quot;</p>
+<p>&quot;And I am here on the authority of common decency,&quot; Little John replied. &quot;Which outranks the Sheriff, last I checked. Now, you can hand over the cow, the money, and everything else in that cart. Or I can tie you to a tree and let the village children throw acorns at you until Christmas. Your choice.&quot;</p>
+<p>Grimsby, showing a rare burst of wisdom, chose option one.</p>
+<p>On the eastern road, Will Stutely employed a strategy that was pure theater. He and a dozen of Robin\'s men had disguised themselves as a traveling troupe of players — actors and musicians who wandered the countryside performing for coins. They set up an impromptu show in the village square of Blidworth, right in the path of the tax collector\'s procession.</p>
+<p>The performance was magnificent. Alan-a-Dale sang. Two of the Merry Men juggled (badly, but with great enthusiasm). Will himself performed a one-man play about a foolish sheriff who taxed his people into poverty and was eventually outwitted by a clever fox. The audience — which included the tax collector and his bored soldiers — was enthralled.</p>
+<p>They were so enthralled, in fact, that nobody noticed when the &quot;stagehands&quot; — four of Robin\'s most light-fingered men — slipped behind the soldiers, unlocked the money chests, and quietly redistributed their contents to the delighted villagers standing at the back of the crowd.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The soldiers didn\'t realize what had happened until the &quot;troupe&quot; had packed up and vanished. Will left a note pinned to the empty chest: &quot;Thank you for your generous donation to the Robin Hood Fund for the Prevention of Sheriff-Related Misery. Tax-deductible!&quot;</p>
+<p>Robin\'s own encounter on the western road was the most dramatic of the three.</p>
+<p>The tax collector assigned to the Papplewick district was a man named Oswald — a brutal, heavy-set enforcer who was known throughout the county for one thing: he enjoyed his work. Where Grimsby was cruel out of petty malice and the Blidworth collector was merely following orders, Oswald genuinely liked hurting people. He was the Sheriff\'s fist, and he used that fist freely.</p>
+<p>Robin found him standing over a young farmer in a muddy yard, his boot on the man\'s chest, his fist raised. The farmer\'s wife crouched in the doorway of their cottage, shielding three small children behind her skirts. The children were crying. The woman\'s face was white with terror.</p>
+<p>Robin didn\'t announce himself. He didn\'t make a speech. He didn\'t offer a witty greeting or a charming smile. He simply stepped out of the trees and put an arrow into the dirt between Oswald\'s boots. The shaft buried itself to the feathers, humming like a plucked string.</p>
+<p>&quot;The next one goes higher,&quot; Robin said. His voice was ice.</p>
+<p>Oswald turned slowly. He was a big man, scarred and mean-looking, with the flattened nose of a brawler and fists like hams. He was not easily frightened, and the look he gave Robin was more curious than afraid. &quot;Robin Hood,&quot; he said, almost conversationally. &quot;The people\'s champion. How noble. How heroic. How completely pointless.&quot;</p>
+<p>&quot;Let the man up,&quot; Robin said.</p>
+<p>&quot;These people owe the Sheriff, and debts must be paid.&quot; Oswald pressed his boot harder into the farmer\'s chest. &quot;That\'s how the world works, Hood. The strong take from the weak. Always have, always will. You can\'t change that with a few arrows and a speech.&quot;</p>
+<p>&quot;Maybe not,&quot; Robin said. &quot;But I can change what happens today. And today, you\'re going to take your boot off that man, hand over everything in that cart, and walk away. Because the only difference between you and me, Oswald, is that I\'m honest about what I do.&quot;</p>
+<p>Twenty of Robin\'s men rose from the hedgerows, bows drawn and aimed with the steady patience of men who have done this many times before. The soldiers accompanying Oswald counted the arrows, counted their own numbers, and quietly put their hands in the air.</p>
+<p>Oswald looked at the arrows. He looked at Robin. He slowly, deliberately, lifted his boot off the farmer\'s chest.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The cart was emptied, and Robin personally returned every confiscated item to its rightful owner. The farmer\'s wife wept and tried to kiss Robin\'s hand. The three children stared at him with enormous eyes, as if a character from a bedtime story had just stepped off the page and into their muddy little yard.</p>
+<p>&quot;You have to eat,&quot; the farmer said, pressing a loaf of bread into Robin\'s hands. His face was bruised, his lip was split, but his eyes were bright with a gratitude so deep it was almost painful to look at. &quot;Please. It\'s all we have, but you\'ve given us so much more.&quot;</p>
+<p>Robin tried to refuse — the whole point was to help these people, not take from them. But the farmer insisted with a quiet, dignified pride that Robin recognized and respected. Generosity goes both ways. Sometimes accepting a gift is as important as giving one.</p>
+<p>He ate the bread on the walk back to camp, breaking it into pieces and sharing it with his men. It was rough bread, made from the cheapest flour, baked in a clay oven in a farmer\'s yard. But it tasted better than anything Much had ever made, because it had been given with love by a man who had nothing and shared it anyway.</p>
+<p>That evening, the Sheriff received three very angry, very empty-handed tax collectors, all demanding hazard pay and threatening to quit. His screams of rage echoed through Nottingham Castle for the better part of an hour and reportedly frightened the pigeons off the roof for three days running.</p>
+<p>In Sherwood Forest, the Merry Men feasted on venison and the knowledge that somewhere in the villages of Nottinghamshire, families were sitting down to meals they had been sure they would never eat, in homes they had been sure they would lose. And for the first time in months, children in those villages fell asleep with full stomachs and smiles on their faces.</p>
+<p>That, Robin thought, watching the stars appear through the canopy, was worth more than all the golden arrows in the world.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin’s plan involves hitting all three tax collectors at the same time. Why is the timing so important? What would happen if they attacked one at a time?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Compare the three different approaches used by Robin, Little John, and Will Stutely. Which approach do you think was most effective, and why?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The farmer offers Robin his only loaf of bread. Why does Robin accept it even though the Merry Men don’t need it? What does this moment teach us about the relationship between giving and receiving?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 14 Complete!</h1>
+        <p class="completion-message">Great work on \"The Sheriff\'s Tax Collectors\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson14Config);
+        });
+    <\/script>
+</body>
+</html>

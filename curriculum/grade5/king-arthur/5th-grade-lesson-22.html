@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 22: The Crowning of a King</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson22Config = {
+            lessonId: '5th-grade-lesson-22',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 22: The Crowning of a King',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 22</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Crowning of a King
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 22!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Crowning of a King</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Usurper</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Alliance</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Sincerity</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Destiny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Destiny</div><div class="match-word" data-word="Rightborn" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rightborn</div><div class="match-word" data-word="Bewildered" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Bewildered</div><div class="match-word" data-word="Usurper" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Usurper</div><div class="match-word" data-word="Alliance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Alliance</div><div class="match-word" data-word="Sincerity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sincerity</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Bewildered" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Completely confused and puzzled; unable to understand what is happening.</div><div class="match-def" data-word="Sincerity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being honest and genuine; meaning what you say without pretending or deceiving.</div><div class="match-def" data-word="Rightborn" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Having the legitimate right to something by birth; the true and lawful heir.</div><div class="match-def" data-word="Usurper" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who takes a position of power illegally or by force, without having the right to it.</div><div class="match-def" data-word="Destiny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A predetermined course of events; the hidden power believed to control what will happen in the future.</div><div class="match-def" data-word="Alliance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An agreement between groups or countries to work together for a common purpose, especially in war.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Crowning of a King</p>
+      <div class="story-text">
+        <p>The days that followed Arthur\'s drawing of the sword were the most confusing of his young life. One moment he had been a nobody — a squire, a servant, a boy without a family name — and the next, half of England was calling him king and the other half was calling him a fraud.</p>
+<p>The lords and barons who had spent years fighting over the throne were not pleased. They had expected the next king to be one of them — a powerful nobleman with armies and alliances and a bloodline they could verify. Instead, the enchanted sword had chosen a fifteen-year-old boy that nobody had ever heard of, raised by a minor knight in the countryside.</p>
+<p>&quot;This is a trick!&quot; bellowed King Lot of Orkney, a fierce northern lord with a red beard and a temper to match. &quot;The boy is no Pendragon! Someone has tampered with the stone!&quot;</p>
+<p>&quot;I agree,&quot; said King Uriens of Gore, a tall, cold man who looked at Arthur the way a hawk looks at a mouse. &quot;The throne cannot pass to an unknown child. It must go to a man of proven worth and noble birth.&quot;</p>
+<p>Six of the most powerful kings in Britain formed an <span class="vocab-highlight">alliance</span> against Arthur. They refused to recognize him, refused to swear loyalty, and began gathering their armies. War — the very thing that had been tearing Britain apart for years — seemed inevitable.</p>
+<p>Arthur sat in Sir Ector\'s lodgings and felt the weight of the world settling onto his shoulders like a suit of armor three sizes too large. He was fifteen. He had never led men in battle. He had never governed anything more complex than a stable full of horses. And now half the country wanted to crown him and the other half wanted to kill him.</p>
+<p>&quot;I can\'t do this,&quot; Arthur said to Merlin, who had taken up residence in a corner of the room and seemed to be reading three books simultaneously. &quot;I\'m not a king. I don\'t know how to be a king. I don\'t even know how to be a knight.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Merlin looked up from his books. His ancient eyes — which sometimes seemed kind and sometimes seemed terrifying and always seemed to be seeing more than they should — studied Arthur with a patience that was not quite human.</p>
+<p>&quot;Nobody knows how to be a king until they are one,&quot; Merlin said. &quot;Your father didn\'t. His father didn\'t. Every great king in history started as a frightened young person who thought the job was too big for them. The question isn\'t whether you\'re ready, Arthur. The question is whether you\'re willing to try.&quot;</p>
+<p>&quot;And if I fail?&quot;</p>
+<p>&quot;Then you fail. And you get up. And you try again. That\'s what kings do. That\'s what good people do.&quot;</p>
+<p>Arthur looked at the old wizard for a long moment. Then he straightened his spine, lifted his chin, and nodded. &quot;All right. Tell me what to do.&quot;</p>
+<p>Merlin smiled — a smile that carried the warmth of a hundred summers and the weight of a thousand years. &quot;First, we need allies. Then we need an army. And then, I\'m afraid, we need to fight.&quot;</p>
+<p>The weeks that followed were a blur of meetings, negotiations, and frantic preparation. Merlin, who seemed to know everyone in Britain and several people who probably didn\'t exist, arranged meetings with lords who were sympathetic to Arthur\'s cause. Sir Ector rallied his own small retinue. Kay, to his credit, swallowed his jealousy and stood at Arthur\'s side as his first sworn knight.</p>
+<p>But it was Arthur himself who made the difference. At each meeting, at each gathering of suspicious nobles and skeptical warriors, Arthur spoke — not with the polished rhetoric of a politician or the commanding bark of a general, but with the simple, honest <span class="vocab-highlight">sincerity</span> of a young man who wanted to do what was right.</p>
+<p>&quot;I know I\'m young,&quot; Arthur told a hall full of doubtful lords in Winchester. &quot;I know I wasn\'t raised in a castle. I know most of you have never heard my name. But I pulled the sword from the stone, and I believe — I truly believe — that it was meant for me. Not because I\'m stronger or smarter or better than any of you, but because Britain needs something that none of us can provide alone. It needs unity. It needs a king who will serve the people, not the other way around. I want to be that king. I\'m asking you to give me the chance.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Slowly, one by one, lords began to come to his side. Not because of his lineage or his power — he had neither — but because of his honesty. In a world of scheming politicians and ambitious warlords, Arthur\'s straightforward decency was like a breath of fresh air in a room that had been sealed shut for years.</p>
+<p>The rebel kings attacked on a gray March morning, their combined army sweeping down from the north like a dark tide. Arthur\'s forces were outnumbered, but they had two advantages: they were fighting for a cause they believed in, and they had Merlin.</p>
+<p>Arthur had never been in a battle before. The noise alone was overwhelming — the crash of steel, the screaming of horses, the terrible sounds that men make when they are hurt and frightened. He rode into the chaos on a borrowed horse with the sword from the stone in his hand, and for the first terrifying minutes, all he could do was stay alive.</p>
+<p>But something happened in the heart of that battle — something that Arthur could never fully explain afterward. The fear didn\'t vanish, but it shrank. It became a small, cold thing in the corner of his mind, still present but no longer in control. And in its place rose something larger: a fierce, burning certainty that he was exactly where he was supposed to be, doing exactly what he was supposed to do.</p>
+<p>He fought. Not with the practiced elegance of a trained knight, but with a raw, instinctive courage that inspired everyone who saw it. His sword blazed in the gray morning light. His voice carried over the din, rallying his men when they wavered, urging them forward when they faltered. He was everywhere at once — at the front line, at the flanks, wherever the fighting was thickest.</p>
+<p>The rebel kings had expected an easy victory over a boy and his ragtag followers. What they got was a battle that lasted until sunset, and by the time the sky turned red, it was their armies that were retreating. King Lot withdrew to the north with his remaining forces. King Uriens sued for peace. The rebellion was broken.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Arthur was crowned on Easter Sunday, in the great cathedral of London, with the Archbishop himself placing the golden crown on his head. The ceremony was solemn and ancient, heavy with the weight of tradition and the Latin prayers of the Church.</p>
+<p>But the moment Arthur would remember for the rest of his life was not the crown or the ceremony or the cheering crowds. It was the moment afterward, when Sir Ector — his foster father, the man who had raised him — approached the throne.</p>
+<p>Sir Ector knelt, stiffly, his old knees protesting. Arthur reached down and took his hand. &quot;Don\'t kneel to me,&quot; Arthur said, his voice thick. &quot;Not you. Never you.&quot;</p>
+<p>&quot;You are my king,&quot; Sir Ector said, looking up with tears in his eyes. &quot;But you will always be my boy.&quot;</p>
+<p>Arthur helped him to his feet and embraced him, right there in the cathedral, in front of every lord and lady in Britain. It was not the most dignified thing a king had ever done. But it was, everyone agreed, exactly the right thing.</p>
+<p>The new king was fifteen years old, and he had a kingdom to build.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The rebel kings refuse to accept Arthur because he is young and unknown. Is their concern reasonable, or are they just protecting their own power? Use evidence from the chapter.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Merlin tells Arthur that “nobody knows how to be a king until they are one.” What does he mean, and how does this advice help Arthur face his fears?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur wins allies not through strength but through honesty. Why is sincerity more powerful than force in this situation? Can you think of a real-world example where this is also true?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 22 Complete!</h1>
+        <p class="completion-message">Great work on \"The Crowning of a King\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson22Config);
+        });
+    <\/script>
+</body>
+</html>

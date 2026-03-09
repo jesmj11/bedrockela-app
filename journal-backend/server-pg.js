@@ -1,0 +1,1336 @@
+// BedrockELA Journal Backend with User Management - PostgreSQL Version
+// Complete API for parents, students, and journal entries
+
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const { Pool } = require('pg');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+const JWT_SECRET = process.env.JWT_SECRET || 'change-this-secret-in-production';
+
+// PostgreSQL connection
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+});
+
+// Test connection and initialize database
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error('❌ Error connecting to PostgreSQL:', err);
+  } else {
+    console.log('✅ Connected to PostgreSQL database');
+    release();
+    initializeDatabase();
+  }
+});
+
+// Initialize database tables if they don't exist
+async function initializeDatabase() {
+  console.log('🔧 Initializing database tables...');
+  
+  try {
+    // Parents table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS parents (
+        id SERIAL PRIMARY KEY,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password_hash VARCHAR(255) NOT NULL,
+        name VARCHAR(255) NOT NULL,
+        family_name VARCHAR(255),
+        account_type VARCHAR(50) DEFAULT 'family',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        last_login TIMESTAMP
+      )
+    `);
+    console.log('✅ Parents table ready');
+
+    // Students table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS students (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        username VARCHAR(255) UNIQUE NOT NULL,
+        grade_level VARCHAR(50) NOT NULL,
+        pin_code VARCHAR(10),
+        current_lesson INTEGER DEFAULT 1,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        last_login TIMESTAMP
+      )
+    `);
+    console.log('✅ Students table ready');
+
+    // Parent-student relationship table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS parent_students (
+        id SERIAL PRIMARY KEY,
+        parent_id INTEGER NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
+        student_id INTEGER NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+        relationship VARCHAR(50) DEFAULT 'child',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(parent_id, student_id)
+      )
+    `);
+    console.log('✅ Parent-student relationship table ready');
+
+    // Journal entries table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS journal_entries (
+        id SERIAL PRIMARY KEY,
+        student_id INTEGER NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+        grade VARCHAR(50) NOT NULL,
+        lesson_number INTEGER NOT NULL,
+        unit_number INTEGER,
+        book_title VARCHAR(255),
+        entry_date DATE DEFAULT CURRENT_DATE,
+        entry_text TEXT NOT NULL,
+        word_count INTEGER,
+        revised BOOLEAN DEFAULT FALSE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(student_id, grade, lesson_number)
+      )
+    `);
+    console.log('✅ Journal entries table ready');
+
+    // Journal prompts table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS journal_prompts (
+        id SERIAL PRIMARY KEY,
+        grade VARCHAR(50) NOT NULL,
+        lesson_number INTEGER NOT NULL,
+        prompt_text TEXT NOT NULL,
+        UNIQUE(grade, lesson_number)
+      )
+    `);
+    console.log('✅ Journal prompts table ready');
+
+    // Reading progress table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS reading_progress (
+        id SERIAL PRIMARY KEY,
+        student_id INTEGER NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+        book_id VARCHAR(255) NOT NULL,
+        pages_read INTEGER[] DEFAULT '{}',
+        total_pages INTEGER NOT NULL,
+        completed BOOLEAN DEFAULT FALSE,
+        last_read_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(student_id, book_id)
+      )
+    `);
+    console.log('✅ Reading progress table ready');
+
+    // Lesson progress table
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS lesson_progress (
+        id SERIAL PRIMARY KEY,
+        student_id INTEGER NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+        lesson_id VARCHAR(255) NOT NULL,
+        grade_level VARCHAR(50) NOT NULL,
+        story_completed BOOLEAN DEFAULT FALSE,
+        letter_explorer_completed BOOLEAN DEFAULT FALSE,
+        flashcard_completed BOOLEAN DEFAULT FALSE,
+        lesson_completed BOOLEAN DEFAULT FALSE,
+        current_page INTEGER DEFAULT 0,
+        total_pages INTEGER,
+        last_page_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        completed_at TIMESTAMP,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE(student_id, lesson_id)
+      )
+    `);
+    console.log('✅ Lesson progress table ready');
+    console.log('✨ Database initialization complete!');
+    
+    // Add test students if database is empty
+    await initializeTestStudents();
+    
+  } catch (err) {
+    console.error('❌ Error initializing database:', err);
+  }
+}
+
+// Initialize test students if database is empty
+async function initializeTestStudents() {
+  try {
+    const existing = await pool.query('SELECT COUNT(*) FROM students');
+    if (parseInt(existing.rows[0].count) > 0) {
+      console.log('ℹ️  Students already exist');
+      return;
+    }
+
+    console.log('🔧 Adding test students...');
+    
+    const students = [
+      { name: 'Emmett', username: 'emmett', grade_level: '1st', pin_code: '2020' },
+      { name: 'Asher', username: 'asher', grade_level: '4th', pin_code: '1111' },
+      { name: 'Lucas', username: 'lucas', grade_level: '6th', pin_code: '2222' },
+      { name: 'Levi', username: 'levi', grade_level: '8th', pin_code: '3333' },
+      { name: 'Riley', username: 'riley', grade_level: '9th', pin_code: '4444' },
+      { name: 'Bryton', username: 'bryton', grade_level: '11th', pin_code: '5555' }
+    ];
+
+    for (const student of students) {
+      await pool.query(
+        'INSERT INTO students (name, username, grade_level, pin_code, current_lesson) VALUES ($1, $2, $3, $4, 1)',
+        [student.name, student.username, student.grade_level, student.pin_code]
+      );
+      console.log(`✅ Added ${student.name} (${student.grade_level} grade)`);
+    }
+
+    console.log('✨ Test students initialized!');
+  } catch (error) {
+    console.error('⚠️  Error initializing test students:', error.message);
+  }
+}
+
+// Middleware
+app.set('trust proxy', true); // Required for Railway/proxies
+app.use(helmet());
+
+// CORS configuration - allow bedrockela.com and localhost
+const corsOptions = {
+  origin: [
+    'https://bedrockela.com',
+    'http://localhost:3000',
+    'http://localhost:5000',
+    'http://127.0.0.1:5000'
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+app.use(express.json());
+
+// Serve static files from parent directory (the website)
+app.use(express.static(path.join(__dirname, '..')));
+
+// Rate limiting (configured for Railway proxy)
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false,
+  validate: { trustProxy: false } // Disable validation warning for Railway
+});
+app.use('/api/', limiter);
+
+// Stricter rate limiting for auth endpoints
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20, // 20 login attempts per 15 minutes (increased for development/testing)
+  message: 'Too many login attempts. Please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+  validate: { trustProxy: false }
+});
+
+// ========================================
+// AUTHENTICATION MIDDLEWARE
+// ========================================
+
+function authenticateParent(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+
+  if (!token) {
+    return res.status(401).json({ success: false, error: 'No token provided' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ success: false, error: 'Invalid or expired token' });
+    }
+    
+    req.parentId = decoded.parent_id;
+    next();
+  });
+}
+
+// ========================================
+// HEALTH CHECK
+// ========================================
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    success: true,
+    message: 'BedrockELA Journal API is running',
+    version: '2.0 (PostgreSQL with user management)'
+  });
+});
+
+// ========================================
+// PARENT/TEACHER ENDPOINTS
+// ========================================
+
+// Parent Signup
+app.post('/api/parent/signup', authLimiter, async (req, res) => {
+  const { email, password, name, familyName } = req.body;
+
+  if (!email || !password || !name) {
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
+  }
+
+  try {
+    // Check if email exists
+    const existing = await pool.query('SELECT id FROM parents WHERE email = $1', [email]);
+    if (existing.rows.length > 0) {
+      return res.status(409).json({ success: false, error: 'Email already registered' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create parent
+    const result = await pool.query(
+      'INSERT INTO parents (email, password_hash, name, family_name, account_type) VALUES ($1, $2, $3, $4, $5) RETURNING id, email, name, family_name',
+      [email, hashedPassword, name, familyName || null, 'family']
+    );
+
+    const parent = result.rows[0];
+
+    // Generate JWT
+    const token = jwt.sign({ parent_id: parent.id }, JWT_SECRET, { expiresIn: '7d' });
+
+    res.status(201).json({
+      success: true,
+      parent_id: parent.id,
+      name: parent.name,
+      token: token,
+      message: 'Account created successfully!'
+    });
+
+  } catch (error) {
+    console.error('Error creating parent:', error);
+    res.status(500).json({ success: false, error: 'Failed to create account' });
+  }
+});
+
+// Parent Login
+app.post('/api/parent/login', authLimiter, async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ success: false, error: 'Email and password required' });
+  }
+
+  try {
+    const result = await pool.query('SELECT * FROM parents WHERE email = $1', [email]);
+    
+    if (result.rows.length === 0) {
+      return res.status(401).json({ success: false, error: 'Invalid email or password' });
+    }
+
+    const parent = result.rows[0];
+
+    // Verify password
+    const validPassword = await bcrypt.compare(password, parent.password_hash);
+    if (!validPassword) {
+      return res.status(401).json({ success: false, error: 'Invalid email or password' });
+    }
+
+    // Update last login
+    await pool.query('UPDATE parents SET last_login = CURRENT_TIMESTAMP WHERE id = $1', [parent.id]);
+
+    // Generate JWT
+    const token = jwt.sign({ parent_id: parent.id }, JWT_SECRET, { expiresIn: '7d' });
+
+    res.json({
+      success: true,
+      parent_id: parent.id,
+      name: parent.name,
+      email: parent.email,
+      family_name: parent.family_name,
+      token: token,
+      message: 'Login successful!'
+    });
+
+  } catch (error) {
+    console.error('Error logging in:', error);
+    res.status(500).json({ success: false, error: 'Login failed' });
+  }
+});
+
+// Family Login (alias for parent login using family_name)
+app.post('/api/family/login', authLimiter, async (req, res) => {
+  const { family_name, password } = req.body;
+
+  if (!family_name || !password) {
+    return res.status(400).json({ success: false, error: 'Family name and password required' });
+  }
+
+  try {
+    const result = await pool.query('SELECT * FROM parents WHERE family_name = $1', [family_name]);
+    
+    if (result.rows.length === 0) {
+      return res.status(401).json({ success: false, error: 'Invalid family name or password' });
+    }
+
+    const parent = result.rows[0];
+
+    // Verify password
+    const validPassword = await bcrypt.compare(password, parent.password_hash);
+    if (!validPassword) {
+      return res.status(401).json({ success: false, error: 'Invalid family name or password' });
+    }
+
+    // Update last login
+    await pool.query('UPDATE parents SET last_login = CURRENT_TIMESTAMP WHERE id = $1', [parent.id]);
+
+    // Get all students for this parent
+    const studentsResult = await pool.query(`
+      SELECT s.id, s.name, s.username, s.grade_level, s.current_lesson
+      FROM students s
+      JOIN parent_students ps ON s.id = ps.student_id
+      WHERE ps.parent_id = $1
+      ORDER BY s.name
+    `, [parent.id]);
+
+    // Generate JWT
+    const token = jwt.sign({ parent_id: parent.id }, JWT_SECRET, { expiresIn: '7d' });
+
+    res.json({
+      success: true,
+      family: {
+        id: parent.id,
+        family_name: parent.family_name
+      },
+      students: studentsResult.rows,
+      token: token,
+      message: 'Login successful!'
+    });
+
+  } catch (error) {
+    console.error('Error logging in with family name:', error);
+    res.status(500).json({ success: false, error: 'Login failed' });
+  }
+});
+
+// Create Family Account
+app.post('/api/family/create', authLimiter, async (req, res) => {
+  const { family_name, password, parent_name, email } = req.body;
+
+  if (!family_name || !password) {
+    return res.status(400).json({ success: false, error: 'Family name and password required' });
+  }
+
+  try {
+    // Check if family name already exists
+    const existing = await pool.query('SELECT id FROM parents WHERE family_name = $1', [family_name]);
+    
+    if (existing.rows.length > 0) {
+      return res.status(400).json({ success: false, error: 'Family name already exists' });
+    }
+
+    // Hash password
+    const password_hash = await bcrypt.hash(password, 10);
+
+    // Create parent account
+    const result = await pool.query(
+      'INSERT INTO parents (email, password_hash, name, family_name) VALUES ($1, $2, $3, $4) RETURNING id',
+      [email || `${family_name}@bedrockela.local`, password_hash, parent_name || family_name, family_name]
+    );
+
+    const parent_id = result.rows[0].id;
+
+    // Generate JWT
+    const token = jwt.sign({ parent_id }, JWT_SECRET, { expiresIn: '7d' });
+
+    res.json({
+      success: true,
+      family: {
+        id: parent_id,
+        family_name
+      },
+      token: token,
+      message: 'Family account created successfully!'
+    });
+
+  } catch (error) {
+    console.error('Error creating family:', error);
+    res.status(500).json({ success: false, error: 'Failed to create family account' });
+  }
+});
+
+// Add Student to Family
+app.post('/api/family/add-student', async (req, res) => {
+  const { family_id, name, grade_level } = req.body;
+
+  if (!family_id || !name || !grade_level) {
+    return res.status(400).json({ success: false, error: 'Family ID, name, and grade level required' });
+  }
+
+  try {
+    // Verify family (parent) exists
+    const parentCheck = await pool.query('SELECT id FROM parents WHERE id = $1', [family_id]);
+    if (parentCheck.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Family not found' });
+    }
+
+    // Generate username from name
+    const username = name.toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random() * 1000);
+
+    // Create student
+    const studentResult = await pool.query(
+      'INSERT INTO students (name, username, grade_level, current_lesson) VALUES ($1, $2, $3, $4) RETURNING *',
+      [name, username, grade_level, 1]
+    );
+
+    const student = studentResult.rows[0];
+
+    // Link student to parent
+    await pool.query(
+      'INSERT INTO parent_students (parent_id, student_id, relationship) VALUES ($1, $2, $3)',
+      [family_id, student.id, 'child']
+    );
+
+    res.json({
+      success: true,
+      student: student,
+      message: `${name} added successfully!`
+    });
+
+  } catch (error) {
+    console.error('Error adding student to family:', error);
+    res.status(500).json({ success: false, error: 'Failed to add student' });
+  }
+});
+
+// Verify Email (for password reset)
+app.post('/api/parent/verify', authLimiter, async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ success: false, error: 'Email required' });
+  }
+
+  try {
+    const result = await pool.query('SELECT id, email, name FROM parents WHERE email = $1', [email]);
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'No account found with that email' });
+    }
+
+    const parent = result.rows[0];
+
+    res.json({
+      success: true,
+      message: 'Account verified',
+      name: parent.name
+    });
+
+  } catch (error) {
+    console.error('Error verifying email:', error);
+    res.status(500).json({ success: false, error: 'Verification failed' });
+  }
+});
+
+// Reset Password
+app.post('/api/parent/reset-password', authLimiter, async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  if (!email || !newPassword) {
+    return res.status(400).json({ success: false, error: 'Email and new password required' });
+  }
+
+  if (newPassword.length < 6) {
+    return res.status(400).json({ success: false, error: 'Password must be at least 6 characters' });
+  }
+
+  try {
+    // Verify email exists
+    const result = await pool.query('SELECT id FROM parents WHERE email = $1', [email]);
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Account not found' });
+    }
+
+    // Hash new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update password
+    await pool.query('UPDATE parents SET password_hash = $1 WHERE email = $2', [hashedPassword, email]);
+
+    res.json({
+      success: true,
+      message: 'Password reset successfully!'
+    });
+
+  } catch (error) {
+    console.error('Error resetting password:', error);
+    res.status(500).json({ success: false, error: 'Password reset failed' });
+  }
+});
+
+// Get Parent Profile + Students
+app.get('/api/parent/:id', authenticateParent, async (req, res) => {
+  const parentId = parseInt(req.params.id);
+
+  if (req.parentId !== parentId) {
+    return res.status(403).json({ success: false, error: 'Unauthorized' });
+  }
+
+  try {
+    // Get parent profile
+    const parentResult = await pool.query(
+      'SELECT id, email, name, family_name, account_type, created_at FROM parents WHERE id = $1',
+      [parentId]
+    );
+
+    if (parentResult.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Parent not found' });
+    }
+
+    const parent = parentResult.rows[0];
+
+    // Get students
+    const studentsResult = await pool.query(`
+      SELECT s.*, ps.relationship FROM students s
+      JOIN parent_students ps ON s.id = ps.student_id
+      WHERE ps.parent_id = $1
+      ORDER BY s.name
+    `, [parentId]);
+
+    res.json({
+      success: true,
+      parent: parent,
+      students: studentsResult.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching parent profile:', error);
+    res.status(500).json({ success: false, error: 'Server error' });
+  }
+});
+
+// Get Parent Stats
+app.get('/api/parent/:id/stats', authenticateParent, async (req, res) => {
+  const parentId = parseInt(req.params.id);
+
+  if (req.parentId !== parentId) {
+    return res.status(403).json({ success: false, error: 'Unauthorized' });
+  }
+
+  try {
+    const statsResult = await pool.query(`
+      SELECT 
+        COUNT(DISTINCT s.id) as total_students,
+        SUM(s.current_lesson) as total_lessons_completed,
+        COUNT(DISTINCT je.id) as total_journal_entries,
+        COALESCE(SUM(je.word_count), 0) as total_words_written
+      FROM students s
+      JOIN parent_students ps ON s.id = ps.student_id
+      LEFT JOIN journal_entries je ON s.id = je.student_id
+      WHERE ps.parent_id = $1
+    `, [parentId]);
+
+    const stats = statsResult.rows[0];
+
+    res.json({
+      success: true,
+      stats: {
+        total_students: parseInt(stats.total_students) || 0,
+        total_lessons_completed: parseInt(stats.total_lessons_completed) || 0,
+        total_journal_entries: parseInt(stats.total_journal_entries) || 0,
+        total_words_written: parseInt(stats.total_words_written) || 0
+      }
+    });
+
+  } catch (error) {
+    console.error('Error fetching stats:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch stats' });
+  }
+});
+
+// Add Student to Parent Account
+app.post('/api/parent/student/add', authenticateParent, async (req, res) => {
+  const { name, username, grade_level, pin_code } = req.body;
+  const parentId = req.parentId;
+
+  if (!name || !username || !grade_level) {
+    return res.status(400).json({ success: false, error: 'Name, username, and grade level required' });
+  }
+
+  try {
+    // Check if username exists
+    const existing = await pool.query('SELECT id FROM students WHERE username = $1', [username]);
+    if (existing.rows.length > 0) {
+      return res.status(409).json({ success: false, error: 'Username already exists' });
+    }
+
+    // Create student
+    const studentResult = await pool.query(
+      'INSERT INTO students (name, username, grade_level, pin_code) VALUES ($1, $2, $3, $4) RETURNING *',
+      [name, username, grade_level, pin_code || null]
+    );
+
+    const student = studentResult.rows[0];
+
+    // Link student to parent
+    await pool.query(
+      'INSERT INTO parent_students (parent_id, student_id, relationship) VALUES ($1, $2, $3)',
+      [parentId, student.id, 'child']
+    );
+
+    res.status(201).json({
+      success: true,
+      student: student,
+      message: `${name} added successfully!`
+    });
+
+  } catch (error) {
+    console.error('Error adding student:', error);
+    res.status(500).json({ success: false, error: 'Failed to add student' });
+  }
+});
+
+// Update Student (name, username, grade, PIN)
+app.put('/api/parent/student/:id', authenticateParent, async (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const { name, username, grade_level, pin_code } = req.body;
+  const parentId = req.parentId;
+
+  try {
+    // Verify parent owns this student
+    const linkResult = await pool.query(
+      'SELECT * FROM parent_students WHERE parent_id = $1 AND student_id = $2',
+      [parentId, studentId]
+    );
+
+    if (linkResult.rows.length === 0) {
+      return res.status(403).json({ success: false, error: 'Unauthorized' });
+    }
+
+    const updates = [];
+    const values = [];
+    let paramCount = 1;
+
+    if (name) {
+      updates.push(`name = $${paramCount++}`);
+      values.push(name);
+    }
+    if (username) {
+      updates.push(`username = $${paramCount++}`);
+      values.push(username);
+    }
+    if (grade_level) {
+      updates.push(`grade_level = $${paramCount++}`);
+      values.push(grade_level);
+    }
+    if (pin_code !== undefined) {
+      updates.push(`pin_code = $${paramCount++}`);
+      values.push(pin_code);
+    }
+
+    if (updates.length === 0) {
+      return res.status(400).json({ success: false, error: 'No fields to update' });
+    }
+
+    values.push(studentId);
+
+    await pool.query(
+      `UPDATE students SET ${updates.join(', ')} WHERE id = $${paramCount}`,
+      values
+    );
+
+    res.json({
+      success: true,
+      message: 'Student updated successfully!'
+    });
+
+  } catch (error) {
+    console.error('Error updating student:', error);
+    res.status(500).json({ success: false, error: 'Failed to update student' });
+  }
+});
+
+// Delete Student
+app.delete('/api/parent/student/:id', authenticateParent, async (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const parentId = req.parentId;
+
+  try {
+    // Verify parent owns this student
+    const linkResult = await pool.query(
+      'SELECT * FROM parent_students WHERE parent_id = $1 AND student_id = $2',
+      [parentId, studentId]
+    );
+
+    if (linkResult.rows.length === 0) {
+      return res.status(403).json({ success: false, error: 'Unauthorized' });
+    }
+
+    // Delete student (CASCADE will delete relationships and journal entries)
+    await pool.query('DELETE FROM students WHERE id = $1', [studentId]);
+
+    res.json({
+      success: true,
+      message: 'Student deleted successfully'
+    });
+
+  } catch (error) {
+    console.error('Error deleting student:', error);
+    res.status(500).json({ success: false, error: 'Failed to delete student' });
+  }
+});
+
+// Reset Student Progress
+app.post('/api/parent/student/:id/reset', authenticateParent, async (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const parentId = req.parentId;
+
+  try {
+    // Verify parent owns this student
+    const linkResult = await pool.query(
+      'SELECT * FROM parent_students WHERE parent_id = $1 AND student_id = $2',
+      [parentId, studentId]
+    );
+
+    if (linkResult.rows.length === 0) {
+      return res.status(403).json({ success: false, error: 'Unauthorized' });
+    }
+
+    // Delete all journal entries for this student
+    await pool.query('DELETE FROM journal_entries WHERE student_id = $1', [studentId]);
+
+    // Reset current lesson
+    await pool.query('UPDATE students SET current_lesson = 1 WHERE id = $1', [studentId]);
+
+    res.json({
+      success: true,
+      message: 'Student progress reset successfully'
+    });
+
+  } catch (error) {
+    console.error('Error resetting progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to reset progress' });
+  }
+});
+
+// ========================================
+// STUDENT ENDPOINTS
+// ========================================
+
+// Student Login
+app.post('/api/student/login', async (req, res) => {
+  const { username, pin_code } = req.body;
+
+  if (!username) {
+    return res.status(400).json({ success: false, error: 'Username required' });
+  }
+
+  try {
+    const result = await pool.query('SELECT * FROM students WHERE username = $1', [username]);
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Student not found' });
+    }
+
+    const student = result.rows[0];
+
+    // Check PIN if required
+    if (student.pin_code && student.pin_code !== pin_code) {
+      return res.status(401).json({ success: false, error: 'Incorrect PIN' });
+    }
+
+    // Update last login
+    await pool.query('UPDATE students SET last_login = CURRENT_TIMESTAMP WHERE id = $1', [student.id]);
+
+    res.json({
+      success: true,
+      student: {
+        id: student.id,
+        name: student.name,
+        username: student.username,
+        grade_level: student.grade_level,
+        current_lesson: student.current_lesson
+      }
+    });
+
+  } catch (error) {
+    console.error('Error student login:', error);
+    res.status(500).json({ success: false, error: 'Login failed' });
+  }
+});
+
+// Get Student Progress
+app.get('/api/student/:id/progress', async (req, res) => {
+  const studentId = parseInt(req.params.id);
+
+  try {
+    const studentResult = await pool.query('SELECT * FROM students WHERE id = $1', [studentId]);
+
+    if (studentResult.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Student not found' });
+    }
+
+    const student = studentResult.rows[0];
+
+    // Get journal stats
+    const statsResult = await pool.query(`
+      SELECT 
+        COUNT(*) as total_entries,
+        COALESCE(SUM(word_count), 0) as total_words
+      FROM journal_entries
+      WHERE student_id = $1
+    `, [studentId]);
+
+    const stats = statsResult.rows[0];
+
+    res.json({
+      success: true,
+      student: student,
+      stats: {
+        current_lesson: student.current_lesson,
+        total_journal_entries: parseInt(stats.total_entries) || 0,
+        total_words_written: parseInt(stats.total_words) || 0
+      }
+    });
+
+  } catch (error) {
+    console.error('Error fetching progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch progress' });
+  }
+});
+
+// ========================================
+// JOURNAL ENDPOINTS
+// ========================================
+
+// Save Journal Entry
+app.post('/api/journal/save', async (req, res) => {
+  const { student_id, grade, lesson_number, unit_number, book_title, entry_text } = req.body;
+
+  if (!student_id || !grade || !lesson_number || !entry_text) {
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
+  }
+
+  const word_count = entry_text.trim().split(/\s+/).length;
+
+  try {
+    // Check if entry exists
+    const existingResult = await pool.query(
+      'SELECT id FROM journal_entries WHERE student_id = $1 AND grade = $2 AND lesson_number = $3',
+      [student_id, grade, lesson_number]
+    );
+
+    if (existingResult.rows.length > 0) {
+      // Update existing entry
+      await pool.query(`
+        UPDATE journal_entries 
+        SET entry_text = $1, word_count = $2, unit_number = $3, book_title = $4, 
+            revised = TRUE, updated_at = CURRENT_TIMESTAMP
+        WHERE student_id = $5 AND grade = $6 AND lesson_number = $7
+      `, [entry_text, word_count, unit_number, book_title, student_id, grade, lesson_number]);
+
+      res.json({
+        success: true,
+        message: 'Journal entry updated!',
+        word_count: word_count
+      });
+    } else {
+      // Create new entry
+      const result = await pool.query(`
+        INSERT INTO journal_entries (student_id, grade, lesson_number, unit_number, book_title, entry_text, word_count)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        RETURNING id
+      `, [student_id, grade, lesson_number, unit_number, book_title, entry_text, word_count]);
+
+      // Update student's current lesson
+      await pool.query(
+        'UPDATE students SET current_lesson = $1 WHERE id = $2 AND current_lesson < $1',
+        [lesson_number, student_id]
+      );
+
+      res.status(201).json({
+        success: true,
+        message: 'Journal entry saved!',
+        entry_id: result.rows[0].id,
+        word_count: word_count
+      });
+    }
+
+  } catch (error) {
+    console.error('Error saving journal:', error);
+    res.status(500).json({ success: false, error: 'Failed to save journal entry' });
+  }
+});
+
+// Get Specific Journal Entry
+app.get('/api/journal/entry/:student_id/:grade/:lesson_number', async (req, res) => {
+  const { student_id, grade, lesson_number } = req.params;
+
+  try {
+    const result = await pool.query(
+      'SELECT * FROM journal_entries WHERE student_id = $1 AND grade = $2 AND lesson_number = $3',
+      [student_id, grade, lesson_number]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, error: 'Entry not found' });
+    }
+
+    res.json({
+      success: true,
+      entry: result.rows[0]
+    });
+
+  } catch (error) {
+    console.error('Error fetching entry:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch entry' });
+  }
+});
+
+// Get All Entries for Student
+app.get('/api/journal/:student_id', async (req, res) => {
+  const studentId = req.params.student_id;
+  const { grade, unit } = req.query;
+
+  try {
+    let query = 'SELECT * FROM journal_entries WHERE student_id = $1';
+    const params = [studentId];
+    let paramCount = 2;
+
+    if (grade) {
+      query += ` AND grade = $${paramCount++}`;
+      params.push(grade);
+    }
+    if (unit) {
+      query += ` AND unit_number = $${paramCount++}`;
+      params.push(unit);
+    }
+
+    query += ' ORDER BY lesson_number ASC';
+
+    const result = await pool.query(query, params);
+
+    res.json({
+      success: true,
+      entries: result.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching entries:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch entries' });
+  }
+});
+
+// Get Recent Entries
+app.get('/api/journal/:student_id/recent', async (req, res) => {
+  const studentId = req.params.student_id;
+  const limit = parseInt(req.query.limit) || 10;
+
+  try {
+    const result = await pool.query(
+      'SELECT * FROM journal_entries WHERE student_id = $1 ORDER BY created_at DESC LIMIT $2',
+      [studentId, limit]
+    );
+
+    res.json({
+      success: true,
+      entries: result.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching recent entries:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch recent entries' });
+  }
+});
+
+// ========================================
+// TEXT-TO-SPEECH (ElevenLabs)
+// ========================================
+
+app.post('/api/text-to-speech', async (req, res) => {
+  const { text, voice, voiceId, lessonId } = req.body;
+
+  if (!text) {
+    return res.status(400).json({ success: false, error: 'Text required' });
+  }
+
+  const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+  if (!ELEVENLABS_API_KEY) {
+    console.error('❌ ELEVENLABS_API_KEY not set');
+    return res.status(500).json({ success: false, error: 'TTS service not configured' });
+  }
+
+  // Voice ID mapping (can be extended)
+  const voiceIds = {
+    'Rachel': '21m00Tcm4TlvDq8ikWAM',
+    'Domi': 'AZnzlk1XvdvUeBnXmlld',
+    'Bella': 'EXAVITQu4vr4xnSDxMaL',
+    'Antoni': 'ErXwobaYiN019PkySvjV',
+    'Elli': 'MF3mGyEYCl7XYWbV9V6O',
+    'Josh': 'TxGEqnHWrfWFTfGW9XjX',
+    'Adam': 'pNInz6obpgDQGcFmaJgB'
+  };
+
+  // Use provided voiceId, or map from voice name, or default to Adam
+  const selectedVoiceId = voiceId || voiceIds[voice] || voiceIds['Adam'];
+
+  console.log(`🎤 Generating TTS for lesson ${lessonId || 'unknown'} with voice ${selectedVoiceId}`);
+
+  try {
+    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${selectedVoiceId}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'audio/mpeg',
+        'Content-Type': 'application/json',
+        'xi-api-key': ELEVENLABS_API_KEY
+      },
+      body: JSON.stringify({
+        text: text,
+        model_id: 'eleven_monolingual_v1',
+        voice_settings: {
+          stability: 0.5,
+          similarity_boost: 0.75,
+          style: 0.0,
+          use_speaker_boost: true
+        }
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`ElevenLabs API error: ${response.status}`, errorText);
+      throw new Error(`ElevenLabs API error: ${response.status}`);
+    }
+
+    // Stream the audio back to client
+    res.setHeader('Content-Type', 'audio/mpeg');
+    res.setHeader('Cache-Control', 'public, max-age=86400'); // Cache for 24 hours
+    
+    const buffer = await response.arrayBuffer();
+    res.send(Buffer.from(buffer));
+
+    console.log(`✅ TTS generated successfully for lesson ${lessonId || 'unknown'}`);
+
+  } catch (error) {
+    console.error('TTS error:', error);
+    res.status(500).json({ success: false, error: 'TTS generation failed' });
+  }
+});
+
+// ========================================
+// READING PROGRESS
+// ========================================
+
+// Get reading progress for a student and book
+app.get('/api/reading-progress/:studentId/:bookId', async (req, res) => {
+  const { studentId, bookId } = req.params;
+
+  try {
+    const result = await pool.query(
+      `SELECT * FROM reading_progress 
+       WHERE student_id = $1 AND book_id = $2`,
+      [studentId, bookId]
+    );
+
+    if (result.rows.length === 0) {
+      return res.json({ success: true, progress: null });
+    }
+
+    res.json({
+      success: true,
+      progress: result.rows[0]
+    });
+
+  } catch (error) {
+    console.error('Error fetching reading progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch reading progress' });
+  }
+});
+
+// Save/update reading progress
+app.post('/api/reading-progress', async (req, res) => {
+  const { student_id, book_id, pages_read, total_pages, completed } = req.body;
+
+  if (!student_id || !book_id || !pages_read || !total_pages) {
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
+  }
+
+  try {
+    // Upsert (insert or update)
+    const result = await pool.query(
+      `INSERT INTO reading_progress (student_id, book_id, pages_read, total_pages, completed, last_read_at)
+       VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
+       ON CONFLICT (student_id, book_id)
+       DO UPDATE SET 
+         pages_read = $3,
+         total_pages = $4,
+         completed = $5,
+         last_read_at = CURRENT_TIMESTAMP
+       RETURNING *`,
+      [student_id, book_id, pages_read, total_pages, completed]
+    );
+
+    res.json({
+      success: true,
+      progress: result.rows[0]
+    });
+
+  } catch (error) {
+    console.error('Error saving reading progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to save reading progress' });
+  }
+});
+
+// Get all reading progress for a student
+app.get('/api/reading-progress/:studentId', async (req, res) => {
+  const { studentId } = req.params;
+
+  try {
+    const result = await pool.query(
+      `SELECT * FROM reading_progress 
+       WHERE student_id = $1 
+       ORDER BY last_read_at DESC`,
+      [studentId]
+    );
+
+    res.json({
+      success: true,
+      books: result.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching all reading progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch reading progress' });
+  }
+});
+
+// ========================================
+// LESSON PROGRESS
+// ========================================
+
+// Get lesson progress for a student and lesson
+app.get('/api/lesson-progress/:studentId/:lessonId', async (req, res) => {
+  const { studentId, lessonId } = req.params;
+
+  try {
+    const result = await pool.query(
+      `SELECT * FROM lesson_progress 
+       WHERE student_id = $1 AND lesson_id = $2`,
+      [studentId, lessonId]
+    );
+
+    if (result.rows.length === 0) {
+      return res.json({ success: true, progress: null });
+    }
+
+    res.json({
+      success: true,
+      progress: result.rows[0]
+    });
+
+  } catch (error) {
+    console.error('Error fetching lesson progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch lesson progress' });
+  }
+});
+
+// Save/update lesson progress
+app.post('/api/lesson-progress', async (req, res) => {
+  const { 
+    student_id, 
+    lesson_id, 
+    grade_level,
+    story_completed,
+    letter_explorer_completed,
+    flashcard_completed,
+    current_page,
+    total_pages
+  } = req.body;
+
+  if (!student_id || !lesson_id || !grade_level) {
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
+  }
+
+  try {
+    // Calculate if lesson is fully completed
+    const lesson_completed = story_completed && letter_explorer_completed && flashcard_completed;
+
+    // Upsert (insert or update)
+    const result = await pool.query(
+      `INSERT INTO lesson_progress (
+        student_id, lesson_id, grade_level, 
+        story_completed, letter_explorer_completed, flashcard_completed,
+        lesson_completed, current_page, total_pages, last_page_at, completed_at
+      )
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, CURRENT_TIMESTAMP, 
+         CASE WHEN $7 = true THEN CURRENT_TIMESTAMP ELSE NULL END)
+       ON CONFLICT (student_id, lesson_id)
+       DO UPDATE SET 
+         story_completed = $4,
+         letter_explorer_completed = $5,
+         flashcard_completed = $6,
+         lesson_completed = $7,
+         current_page = $8,
+         total_pages = $9,
+         last_page_at = CURRENT_TIMESTAMP,
+         completed_at = CASE WHEN $7 = true THEN CURRENT_TIMESTAMP ELSE lesson_progress.completed_at END
+       RETURNING *`,
+      [student_id, lesson_id, grade_level, 
+       story_completed, letter_explorer_completed, flashcard_completed,
+       lesson_completed, current_page, total_pages]
+    );
+
+    res.json({
+      success: true,
+      progress: result.rows[0]
+    });
+
+  } catch (error) {
+    console.error('Error saving lesson progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to save lesson progress' });
+  }
+});
+
+// Get all lesson progress for a student
+app.get('/api/lesson-progress/:studentId', async (req, res) => {
+  const { studentId } = req.params;
+
+  try {
+    const result = await pool.query(
+      `SELECT * FROM lesson_progress 
+       WHERE student_id = $1 
+       ORDER BY lesson_id ASC`,
+      [studentId]
+    );
+
+    res.json({
+      success: true,
+      lessons: result.rows
+    });
+
+  } catch (error) {
+    console.error('Error fetching all lesson progress:', error);
+    res.status(500).json({ success: false, error: 'Failed to fetch lesson progress' });
+  }
+});
+
+// ========================================
+// START SERVER
+// ========================================
+
+app.listen(PORT, () => {
+  console.log(`🚀 BedrockELA Journal API v2.0 running on port ${PORT}`);
+  console.log(`📍 http://localhost:${PORT}`);
+  console.log(`🔐 JWT Secret: ${JWT_SECRET === 'change-this-secret-in-production' ? '⚠️  CHANGE IN PRODUCTION!' : '✅ Custom secret set'}`);
+  console.log('\n📝 Endpoints:');
+  console.log('   POST /api/parent/signup - Create parent account');
+  console.log('   POST /api/parent/login - Parent login');
+  console.log('   POST /api/parent/student/add - Add student');
+  console.log('   POST /api/student/login - Student login');
+  console.log('   POST /api/journal/save - Save journal entry');
+  console.log('   GET  /api/health - Health check');
+  console.log('\n✨ Ready for requests!');
+});

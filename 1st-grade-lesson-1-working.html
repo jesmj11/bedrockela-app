@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Letters A, M, T, S - BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1772643711933">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container">
+        <!-- Navigation will be inserted here -->
+    </div>
+
+    <script>
+        // Lesson pages as HTML strings (not functions!)
+        const pages = [
+            // Page 1: Title
+            `<div class="lesson-page-card title-page">
+                <div class="character">🌱</div>
+                <h1>Lesson 1</h1>
+                <div class="subtitle">Letters A, M, T, S</div>
+                <p style="color: #5B7C99; font-size: 18px; margin-top: 20px;">
+                    Building your reading foundation!<br>
+                    Start reading "The Enormous Turnip"
+                </p>
+            </div>`,
+            
+            // Page 2: Learning Objectives
+            `<div class="lesson-page-card content-page">
+                <h2>🎯 Today You Will...</h2>
+                <div style="text-align: left; max-width: 500px; margin: 20px auto;">
+                    <p style="margin: 15px 0; font-size: 18px;">
+                        ✓ Learn 4 letter sounds: <strong>A, M, T, S</strong>
+                    </p>
+                    <p style="margin: 15px 0; font-size: 18px;">
+                        ✓ Blend sounds: <strong>"am"</strong> and <strong>"at"</strong>
+                    </p>
+                    <p style="margin: 15px 0; font-size: 18px;">
+                        ✓ Read your first words!
+                    </p>
+                    <p style="margin: 15px 0; font-size: 18px;">
+                        ✓ Start the story: <strong>"The Enormous Turnip"</strong>
+                    </p>
+                </div>
+            </div>`,
+            
+            // Page 3: Letter A
+            `<div class="lesson-page-card content-page">
+                <h2>🔤 Letter A</h2>
+                <div style="font-size: 96px; margin: 20px 0; color: #D4A68F;">A a</div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>A says "/a/" like in <span style="color: #D4A68F;">apple</span></strong>
+                </p>
+                <div style="font-size: 48px; margin: 20px 0;">🍎</div>
+                <p style="font-size: 20px;">
+                    Say it with me: <strong>/a/ /a/ apple!</strong>
+                </p>
+            </div>`,
+            
+            // Page 4: Letter M
+            `<div class="lesson-page-card content-page">
+                <h2>🔤 Letter M</h2>
+                <div style="font-size: 96px; margin: 20px 0; color: #9BC5DB;">M m</div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>M says "/m/" like in <span style="color: #9BC5DB;">moon</span></strong>
+                </p>
+                <div style="font-size: 48px; margin: 20px 0;">🌙</div>
+                <p style="font-size: 20px;">
+                    Say it with me: <strong>/m/ /m/ moon!</strong>
+                </p>
+            </div>`,
+            
+            // Page 5: Letter T
+            `<div class="lesson-page-card content-page">
+                <h2>🔤 Letter T</h2>
+                <div style="font-size: 96px; margin: 20px 0; color: #E5A8A8;">T t</div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>T says "/t/" like in <span style="color: #E5A8A8;">tiger</span></strong>
+                </p>
+                <div style="font-size: 48px; margin: 20px 0;">🐯</div>
+                <p style="font-size: 20px;">
+                    Say it with me: <strong>/t/ /t/ tiger!</strong>
+                </p>
+            </div>`,
+            
+            // Page 6: Letter S
+            `<div class="lesson-page-card content-page">
+                <h2>🔤 Letter S</h2>
+                <div style="font-size: 96px; margin: 20px 0; color: #B8D4B8;">S s</div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>S says "/s/" like in <span style="color: #B8D4B8;">sun</span></strong>
+                </p>
+                <div style="font-size: 48px; margin: 20px 0;">☀️</div>
+                <p style="font-size: 20px;">
+                    Say it with me: <strong>/s/ /s/ sun!</strong>
+                </p>
+            </div>`,
+            
+            // Page 7: Blending - am
+            `<div class="lesson-page-card content-page">
+                <h2>🎯 Let's Blend!</h2>
+                <p style="font-size: 20px; margin-bottom: 30px;">Put the sounds together!</p>
+                <div style="font-size: 72px; margin: 20px 0; color: #5B7C99;">
+                    <span style="color: #D4A68F;">a</span><span style="color: #9BC5DB;">m</span>
+                </div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>/a/ + /m/ = am</strong>
+                </p>
+                <p style="font-size: 20px; margin-top: 30px;">
+                    "I <strong style="color: #5B7C99;">am</strong> happy!"
+                </p>
+            </div>`,
+            
+            // Page 8: Blending - at
+            `<div class="lesson-page-card content-page">
+                <h2>🎯 One More!</h2>
+                <p style="font-size: 20px; margin-bottom: 30px;">Blend these sounds!</p>
+                <div style="font-size: 72px; margin: 20px 0; color: #5B7C99;">
+                    <span style="color: #D4A68F;">a</span><span style="color: #E5A8A8;">t</span>
+                </div>
+                <p style="font-size: 24px; margin: 20px 0;">
+                    <strong>/a/ + /t/ = at</strong>
+                </p>
+                <p style="font-size: 20px; margin-top: 30px;">
+                    "Look <strong style="color: #5B7C99;">at</strong> me!"
+                </p>
+            </div>`,
+            
+            // Page 9: Story Introduction
+            `<div class="lesson-page-card content-page">
+                <h2>📖 Our Story</h2>
+                <div style="font-size: 64px; margin: 20px 0;">🥕</div>
+                <h3 style="color: #5B7C99; font-size: 28px; margin: 20px 0;">
+                    The Enormous Turnip
+                </h3>
+                <p style="font-size: 18px; line-height: 1.6; max-width: 500px; margin: 20px auto;">
+                    A farmer plants a tiny turnip seed. It grows... and grows... 
+                    and grows into an ENORMOUS turnip! 
+                </p>
+                <p style="font-size: 18px; margin-top: 20px;">
+                    Let's start reading! →
+                </p>
+            </div>`,
+            
+            // Page 10: Story Part 1
+            `<div class="lesson-page-card content-page">
+                <h2>📖 Part 1</h2>
+                <div style="text-align: left; max-width: 500px; margin: 20px auto; font-size: 18px; line-height: 1.8;">
+                    <p style="margin-bottom: 15px;">
+                        A man plants a tiny turnip seed.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        The turnip grows and grows.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        It becomes ENORMOUS!
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        The man tries to pull it up.
+                    </p>
+                    <p style="font-style: italic; color: #5B7C99;">
+                        But it won't come out!
+                    </p>
+                </div>
+            </div>`,
+            
+            // Page 11: Practice Page
+            `<div class="lesson-page-card content-page">
+                <h2>✍️ Let's Practice!</h2>
+                <p style="font-size: 18px; margin-bottom: 30px;">Can you read these words?</p>
+                <div style="font-size: 48px; margin: 20px 0;">
+                    <div style="margin: 15px 0;"><strong style="color: #5B7C99;">am</strong></div>
+                    <div style="margin: 15px 0;"><strong style="color: #5B7C99;">at</strong></div>
+                </div>
+                <p style="font-size: 18px; margin-top: 30px;">Great job! 🎉</p>
+            </div>`,
+            
+            // Page 12: Completion
+            `<div class="lesson-page-card content-page">
+                <h2>🎉 Lesson Complete!</h2>
+                <div style="font-size: 64px; margin: 20px 0;">⭐</div>
+                <p style="font-size: 20px; margin: 20px 0;">
+                    You learned 4 letters today!
+                </p>
+                <div style="font-size: 48px; margin: 20px 0; color: #5B7C99;">
+                    A M T S
+                </div>
+                <p style="font-size: 18px; margin: 20px 0;">
+                    And you can read: <strong>am, at</strong>
+                </p>
+                <button 
+                    onclick="window.location.href='student-dashboard-live.html'" 
+                    style="margin-top: 30px; padding: 15px 30px; background: linear-gradient(135deg, #5B7C99 0%, #2E4057 100%); color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer;"
+                >
+                    Back to Dashboard
+                </button>
+            </div>`
+        ];
+        
+        let currentPage = 0;
+        
+        function renderPage() {
+            const container = document.getElementById('lesson-container');
+            container.innerHTML = `
+                <div class="lesson-nav">
+                    <button class="nav-arrow" onclick="prevPage()" ${currentPage === 0 ? 'disabled' : ''}>←</button>
+                    <span class="page-number">Page ${currentPage + 1} of ${pages.length}</span>
+                    <button class="nav-arrow" onclick="nextPage()" ${currentPage === pages.length - 1 ? 'disabled' : ''}>→</button>
+                </div>
+                <div class="lesson-content">
+                    ${pages[currentPage]}
+                </div>
+            `;
+        }
+        
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                renderPage();
+            }
+        }
+        
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                renderPage();
+            }
+        }
+        
+        // Initial render
+        renderPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sign In - BedrockELA Mountain Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #FFFFFF;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .mountain-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, #8B7355 0%, #A0522D 50%, #D2B48C 100%);
+            clip-path: polygon(0 100%, 20% 60%, 35% 80%, 50% 40%, 65% 70%, 80% 30%, 100% 50%, 100% 100%);
+            z-index: -1;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #305853 0%, #305853 100%);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            flex: 1;
+            text-align: center;
+        }
+        
+        .parent-signin-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .parent-signin-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+        
+        /* Popup Modal (same as landing page) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #305853;
+        }
+        
+        .popup-title {
+            color: #1B2A30;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .popup-input {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        
+        .popup-btn {
+            background: linear-gradient(135deg, #305853 0%, #1B2A30 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(48, 88, 83, 0.3);
+        }
+        
+        .signin-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 4px solid #511B18;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signin-header {
+            background: linear-gradient(135deg, #B06821 0%, #9E2C21 100%);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .billy-mascot {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .signin-header h2 {
+            margin: 0 0 10px 0;
+            color: #511B18;
+            font-size: 36px;
+        }
+        
+        .signin-header p {
+            margin: 0;
+            color: #1B2A30;
+            font-size: 16px;
+        }
+        
+        .signin-form {
+            padding: 40px;
+        }
+        
+        .parent-link {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #305853;
+        }
+        
+        .parent-link a {
+            color: #305853;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .parent-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1B2A30;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #DDD;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #305853;
+            box-shadow: 0 0 10px rgba(48, 88, 83, 0.2);
+        }
+        
+        .username-examples {
+            font-size: 14px;
+            color: #305853;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .password-input {
+            position: relative;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #305853;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .forgot-password {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password a {
+            color: #305853;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .signin-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #B06821 0%, #9E2C21 100%);
+            border: none;
+            border-radius: 10px;
+            color: #1B2A30;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(176, 104, 33, 0.3);
+            text-transform: uppercase;
+        }
+        
+        .signin-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(176, 104, 33, 0.4);
+        }
+        
+        .signup-options {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #EEE;
+        }
+        
+        .signup-options p {
+            margin-bottom: 15px;
+            color: #305853;
+        }
+        
+        .signup-options a {
+            color: #305853;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .signup-options a:hover {
+            text-decoration: underline;
+        }
+        
+        .mountain-clouds {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 60px;
+            opacity: 0.1;
+        }
+        
+        /* Mobile Responsive Improvements */
+        @media (max-width: 768px) {
+            .signin-container {
+                margin: 15px;
+                max-width: calc(100% - 30px);
+                border-radius: 15px;
+            }
+            
+            .signin-header {
+                padding: 20px 15px;
+                text-align: center;
+            }
+            
+            .signin-header h2 {
+                font-size: 24px;
+            }
+            
+            .signin-header p {
+                font-size: 14px;
+            }
+            
+            .signin-form {
+                padding: 20px 15px;
+            }
+            
+            .form-input {
+                font-size: 16px;
+                padding: 14px 16px;
+            }
+            
+            .signin-btn {
+                font-size: 1.1rem;
+                padding: 16px;
+                margin-top: 10px;
+            }
+            
+            .demo-buttons {
+                padding: 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .demo-buttons button {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .signin-container {
+                margin: 10px;
+                max-width: calc(100% - 20px);
+                border-radius: 12px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+                order: 1;
+            }
+            
+            .parent-signin-btn {
+                order: 2;
+                align-self: center;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+            
+            .signin-header h2 {
+                font-size: 22px;
+            }
+            
+            .popup-content {
+                padding: 20px;
+                max-width: 90%;
+                margin: 15px auto;
+                border-radius: 12px;
+            }
+            
+            .popup-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .signin-container {
+                margin: 5px;
+                max-width: calc(100% - 10px);
+            }
+            
+            .signin-header h2 {
+                font-size: 20px;
+            }
+            
+            .signin-form {
+                padding: 15px;
+            }
+            
+            .form-group {
+                margin-bottom: 12px;
+            }
+            
+            .signin-btn {
+                font-size: 1rem;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div></div> <!-- Spacer for flex layout -->
+        <h1>🏔️ BedrockELA Mountain Learning Adventure</h1>
+        <button onclick="openParentPopup()" class="parent-signin-btn">
+            👨‍👩‍👧‍👦 Parent Login
+        </button>
+    </div>
+    
+    <div class="signin-container">
+        <div class="signin-header">
+            <img src="images/little-billy-goat.jpg" alt="Little Billy Goat" class="billy-mascot">
+            <h2>Student Sign In</h2>
+            <p>Ready to climb the reading mountains with Billy?</p>
+            <div class="mountain-clouds">☁️</div>
+        </div>
+        
+        <div class="signin-form">
+            <!-- Main focus is on student sign-in -->
+            
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your climbing name">
+                    <div class="username-examples">e.g. MountainClimber23, BillyReader, NorwegianExplorer</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Your secret climbing code">
+                        <button type="button" class="password-toggle" onclick="togglePassword()">👁️</button>
+                    </div>
+                </div>
+                
+                <div class="forgot-password">
+                    Forgot your password? <a href="#" onclick="resetPassword()">Reset password.</a>
+                </div>
+                
+                <button type="submit" class="signin-button">
+                    🚀 Start My Adventure!
+                </button>
+                
+                <div class="signup-options">
+                    <p>Don't have an account? <a href="#" onclick="enrollNow()">Enroll now</a> or <a href="#" onclick="tryDemo()">try it out</a>.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Parent Login Popup -->
+    <div id="parentPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeParentPopup()">&times;</button>
+            <h2 class="popup-title">👨‍👩‍👧‍👦 Parent Portal</h2>
+            <form class="popup-form" onsubmit="parentLogin(event)">
+                <input type="email" class="popup-input" placeholder="Parent Email" required>
+                <input type="password" class="popup-input" placeholder="Password" required>
+                <button type="submit" class="popup-btn">Sign In</button>
+                <p style="text-align: center; margin-top: 10px; color: #305853; font-size: 14px;">
+                    New parent? <a href="#" onclick="parentSignup()" style="color: #305853;">Create Account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <div class="mountain-background"></div>
+    
+    <!-- Offline Storage -->
+    <script src="/js/offline-storage.js"></script>
+    
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleButton = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleButton.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleButton.textContent = '👁️';
+            }
+        }
+        
+        function resetPassword() {
+            alert('🏔️ Billy says: "Ask your parent to help reset your climbing password!"');
+        }
+        
+        function enrollNow() {
+            alert('🐐 Little Billy says: "Ask your parent to sign you up for the full mountain adventure!"');
+        }
+        
+        function tryDemo() {
+            window.location.href = 'clean-village-dashboard.html';
+        }
+        
+        // Parent popup functions
+        function openParentPopup() {
+            document.getElementById("parentPopup").style.display = "flex";
+        }
+        
+        function closeParentPopup() {
+            document.getElementById("parentPopup").style.display = "none";
+        }
+        
+        function parentLogin(event) {
+            event.preventDefault();
+            closeParentPopup();
+            setTimeout(() => {
+                window.location.href = "/parent-dashboard.html";
+            }, 200);
+        }
+        
+        function parentSignup() {
+            alert('🏔️ Welcome to BedrockELA!\n\nParent Account Features:\n• Track up to 6 children\n• Monitor progress and achievements\n• Set learning goals\n• Access curriculum overview\n• Offline sync capabilities\n\nDemo access available - just use any email/password combination!');
+        }
+        
+        // Close popup when clicking outside
+        document.getElementById("parentPopup").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("parentPopup")) {
+                closeParentPopup();
+            }
+        });
+        
+        // Student form submission with offline support
+        document.querySelector('form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                // Save student session offline
+                if (window.bedrockStorage) {
+                    const studentData = {
+                        id: username.toLowerCase().replace(/\s+/g, ''),
+                        username: username,
+                        lastLogin: new Date().toISOString(),
+                        isOffline: !navigator.onLine
+                    };
+                    
+                    await bedrockStorage.saveStudentProfile(studentData);
+                    
+                    // Store in sessionStorage for current session
+                    sessionStorage.setItem('bedrockStudent', JSON.stringify(studentData));
+                }
+                
+                const offlineMsg = navigator.onLine ? '' : ' (Offline Mode - Progress will sync when connected)';
+                alert('🎉 Velkommen! Welcome back, ' + username + '! Let\'s explore our Norwegian mountain village!' + offlineMsg);
+                window.location.href = 'clean-village-dashboard.html';
+            } else {
+                alert('🐐 Billy says: "Don\'t forget your username and password, little climber!"');
+            }
+        });
+    </script>
+</body>
+</html>

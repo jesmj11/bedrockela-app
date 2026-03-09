@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade - Lesson 86: Professor Van Helsing</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-viewer.js"></script>
+    <script src="js/lesson-completion.js"></script>
+    <script src="js/lesson-autosave.js"></script>
+    
+    <script>
+        const lessonConfig = {
+            lessonId: '5th-grade-day-86',
+            gradeLevel: '5th-grade',
+            title: 'Day 86 - Dracula',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            
+                            <h1>Lesson 86</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Dracula
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Chapter 7: Professor Van Helsing
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 86!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read from <em>Chapter 7: Professor Van Helsing</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Read an informational text</li>
+                                <li>Practice grammar and writing skills</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            
+                            <div style="margin: 30px 0;">
+                                
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">eccentric</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">methodical</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">phenomenon</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today's reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Unusual or odd in behavior; different from normal</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Done in a careful, organized, step-by-step way</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something remarkable that is observed or experienced</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                            
+                            
+                        </div>
+                    `
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 1 of 3)</h2>
+            <p>Chapter 7: Professor Van Helsing</p>
+        </div>
+        <div class="reading-text">
+            <p>Professor Van Helsing returned to Whitby several times over the following weeks, and each time he brought flowers. Garlic flowers, specifically — bunches and bunches of them, which he arranged around Lucy's room, hung above the windows, and wove into a wreath for her neck.</p>
+<p>Lucy's mother thought this was eccentric. Lucy thought it was funny, and teased Van Helsing gently about his "smelly decorations."</p>
+<p>But I noticed that on the nights when the garlic was in place and the windows were closed, Lucy slept soundly. Her color improved. She seemed more herself.</p>
+<p>Then one night, Lucy's mother — not understanding the reason for the garlic — opened the windows to let in fresh air and moved the flowers because she thought they smelled too strong.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 2 of 3)</h2>
+            <p>Chapter 7: Professor Van Helsing</p>
+        </div>
+        <div class="reading-text">
+            <p>The next morning, Lucy was worse than she had ever been.</p>
+<p>Van Helsing arrived and did not say "I told you so." He simply began again, re-hanging the garlic, closing the windows, sitting beside Lucy's bed. He looked at her for a long time, then asked that Arthur be sent for.</p>
+<p>Lucy needed a blood transfusion — her blood had grown dangerously thin. Arthur gave blood willingly, and it helped. But Lucy continued to weaken.</p>
+<p>I finally asked Van Helsing directly what was happening to her.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 3 of 3)</h2>
+            <p>Chapter 7: Professor Van Helsing</p>
+        </div>
+        <div class="reading-text">
+            <p>He sat with me for a long time in silence. Then he said, very carefully: "Miss Murray, I need you to tell me — do you believe there are things in the world that science does not yet fully explain?"</p>
+<p>I thought of Jonathan, lost somewhere in Eastern Europe. I thought of the dark shape in the churchyard.</p>
+<p>"Yes," I said. "I believe that."</p>
+<p>Van Helsing nodded. "Good. Because what is attacking your friend is very old, and very real, and we must be clear-eyed about what it is before we can stop it."</p>
+        </div>`
+                },
+                                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Van Helsing carefully hangs garlic flowers around Lucy's room, and on nights when the garlic is in place and windows are closed, Lucy improves. But Lucy's mother, 'not understanding the reason,' opens windows and removes the flowers because she thinks they smell bad. What does this misunderstanding tell you about how dangerous good intentions can be when someone doesn't know the full truth?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Van Helsing asks Mina: 'Do you believe there are things in the world that science does not yet fully explain?' Why is this question important? What is Van Helsing really asking Mina to do?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The chapter shows Van Helsing as both eccentric (bringing garlic flowers, performing strange rituals) and genuinely caring about Lucy. How does this combination make him more believable as a character? Why might readers trust someone who is both unusual and clearly good-hearted?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📰 Informational Text</h2>
+            <p>Connect Story to Reality</p>
+        </div>
+        <div class="informational-section">
+            <h3>Transylvania: Real Geography, Real History</h3>
+            <p>Transylvania is a real region in central Romania, surrounded by the Carpathian Mountains. Its name comes from Latin: 'trans' (across) and 'silva' (forest), meaning 'across the forest' or 'beyond the forest.' The name itself sounds mysterious — a land beyond the woods, isolated and remote.</p><p>Historically, Transylvania was always a borderland — a place between empires. At different times it was controlled by the Kingdom of Hungary, the Ottoman Empire, and later became part of Romania. This position made it both culturally rich (Hungarian, Romanian, Saxon German, and Roma communities all lived there) and politically unstable.</p><p>The Carpathian Mountains that surround Transylvania are genuine wilderness. Dense forests, high peaks, deep valleys, and harsh winters made the region difficult to access. Even today, parts of the Carpathians are home to Europe's largest populations of brown bears, wolves, and lynx — the same predators that prowled there in medieval times.</p><p>Medieval Transylvania was dotted with fortified castles and churches. Because the region faced frequent invasions, communities built strong defensive structures. Many of these castles still stand today, perched on cliff edges or mountain passes, looking just as dramatic as Stoker described.</p><p>The Saxon Germans who settled in Transylvania during the Middle Ages built distinctive fortified churches — entire church complexes surrounded by thick walls where villagers could shelter during attacks. UNESCO now recognizes several of these as World Heritage Sites for their unique architecture and historical importance.</p><p>One of Transylvania's most famous legends is about Prince Vlad III (Vlad the Impaler), whose fortress at Poenari Castle was a real mountain stronghold. While there's little historical evidence connecting Vlad to vampire legends during his lifetime, his reputation for cruelty and the dramatic landscape of his territory made him perfect inspiration for Stoker's Count Dracula.</p><p>Today, Transylvania embraces its Gothic reputation. Tourism based on Dracula brings visitors from around the world. However, locals often note the irony: Dracula the vampire is fiction, created by an Irish author who never visited Romania, yet the story has become permanently attached to their real homeland.</p><p>The actual Transylvania is a beautiful region with medieval towns, mountain hiking, traditional crafts, and vibrant culture — quite different from the purely Gothic setting of Stoker's imagination, yet just as interesting.</p>
+        </div>
+        
+        <div class="questions-section" style="margin-top: 30px;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">✍️ Comprehension Questions</h3>
+            
+            <div class="question">
+                <p><strong>1.</strong> The article describes Transylvania as a 'borderland' between empires, culturally rich but politically unstable. How might this real history have contributed to the region's mysterious reputation and its folklore about creatures like vampires?</p>
+                <textarea 
+                                      id="info1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info1', 'word-count-info1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> According to the article, modern Transylvania embraces tourism based on Dracula even though the vampire story was fiction created by someone who never visited. What does this tell you about how fiction can affect real places and real economies?</p>
+                <textarea 
+                                      id="info2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info2', 'word-count-info2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+            
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✏️ Grammar</h2>
+            <p>Week 17 Focus: Using Commas in Complex Sentences</p>
+        </div>
+        <div class="grammar-section">
+            <div class="skill-explanation">
+                <h3>📚 What You're Learning:</h3>
+                <p>When a dependent clause comes BEFORE the independent clause, use a comma to separate them. When it comes AFTER, usually no comma is needed. Example: 'Although Jonathan was frightened, he continued forward.' vs 'Jonathan continued forward although he was frightened.'</p>
+            </div>
+            
+            <div class="skill-examples">
+                <h3>✨ Examples:</h3>
+                <p class="language-example">When the Count appeared in the doorway, Jonathan felt a chill run down his spine.</p>
+<p class="language-example">Jonathan felt a chill run down his spine when the Count appeared in the doorway.</p>
+<p class="language-example">Because Mina organized all the records, the group could see patterns they had missed before.</p>
+            </div>
+            
+            <div class="skill-practice">
+                <h3>🎯 Your Turn:</h3>
+                
+                <div class="practice-item">
+                    <p><strong>1.</strong> Add commas where needed: 'Before Dracula could escape the group destroyed most of his hiding places.'</p>
+                    <textarea 
+                                      id="grammar1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar1', 'word-count-grammar1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>2.</strong> Add commas where needed: 'Although Van Helsing seemed eccentric Mina trusted his knowledge completely.'</p>
+                    <textarea 
+                                      id="grammar2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar2', 'word-count-grammar2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>3.</strong> Write a complex sentence about the story with the dependent clause FIRST (requiring a comma):</p>
+                    <textarea 
+                                      id="grammar3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar3', 'word-count-grammar3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+                
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✍️ Writing Skills</h2>
+            <p>Standard: W.5.2 - Informative/Explanatory Writing</p>
+        </div>
+        <div class="writing-section">
+            <div class="writing-prompt">
+                <h3>📝 Your Prompt:</h3>
+                <p>Professor Van Helsing becomes the leader of the group fighting Dracula because he has specialized knowledge about vampires. Write an informative paragraph explaining what makes Van Helsing a good leader. What skills and knowledge does he bring? How does he combine old wisdom (folklore, religious faith) with modern thinking (science, medical knowledge)? Use specific examples from the story.</p>
+            </div>
+            <div class="writing-space">
+                <textarea id="writing-response" rows="12" placeholder="Write your response here..."></textarea>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>🎉 Lesson Complete!</h2>
+            <p>Day 86 - Chapter 7: Professor Van Helsing</p>
+        </div>
+        <div class="completion-section">
+            <h3>Great work today!</h3>
+            <p>You've completed:</p>
+            <ul>
+                <li>✅ Learned 3 new vocabulary words</li>
+                <li>✅ Read Chapter 7 of Dracula</li>
+                <li>✅ Answered comprehension questions</li>
+                <li>✅ Explored informational text about transylvania: real geography, real history</li>
+                <li>✅ Practiced grammar skills</li>
+                <li>✅ Completed writing exercise</li>
+            </ul>
+            <p class="next-lesson-note">📚 Tomorrow: Chapter 8 awaits!</p>
+        </div>`
+                }
+            ]
+        };
+
+        // Initialize lesson viewer
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lessonConfig);
+        } else {
+            console.error('lesson-viewer.js not loaded! Check file paths.');
+        }
+    </script>
+</body>
+</html>

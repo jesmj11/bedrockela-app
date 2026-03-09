@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade - Lesson 80: Welcome to Castle Dracula</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="../../../firebase-config.js"></script>
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script src="../../../js/lesson-completion.js"></script>
+    <script src="../../../js/lesson-autosave.js"></script>
+    
+    <script>
+        const lessonConfig = {
+            lessonId: '5th-grade-day-80',
+            gradeLevel: '5th-grade',
+            title: 'Day 80 - Dracula',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            
+                            <h1>Lesson 80</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Dracula
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Weekly Assessment
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 16 - Day 2 of 5</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's New Words</h3>
+            <p class="vocab-intro">Learn these 3 words before reading. They appear in today's story!</p>
+
+            <div class="vocab-word">
+                <h4>1. angular</h4>
+                <div class="vocab-input-section">
+                    <label><strong>Definition:</strong></label>
+                    <p class="vocab-definition">Having sharp corners or edges; thin and bony</p>
+                    <label><strong>Write the definition in your own words:</strong></label>
+                    <textarea 
+                                      id="vocab1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('vocab1', 'word-count-vocab1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-vocab1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-vocab1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+            </div>
+
+            <div class="vocab-word">
+                <h4>2. gracious</h4>
+                <div class="vocab-input-section">
+                    <label><strong>Definition:</strong></label>
+                    <p class="vocab-definition">Being kind, polite, and pleasant toward others</p>
+                    <label><strong>Write the definition in your own words:</strong></label>
+                    <textarea 
+                                      id="vocab2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('vocab2', 'word-count-vocab2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-vocab2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-vocab2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+            </div>
+
+            <div class="vocab-word">
+                <h4>3. reflection</h4>
+                <div class="vocab-input-section">
+                    <label><strong>Definition:</strong></label>
+                    <p class="vocab-definition">An image seen in a mirror or still water</p>
+                    <label><strong>Write the definition in your own words:</strong></label>
+                    <textarea 
+                                      id="vocab3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('vocab3', 'word-count-vocab3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-vocab3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-vocab3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+            </div>
+
+            <div class="vocab-tracker">
+                <p><strong>📚 This Week's Words:</strong> 6 of 12 learned</p>
+                <p class="tracker-note">Keep reviewing! Quiz on Friday (Day 83).</p>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 1 of 3)</h2>
+            <p>Chapter 2: Welcome to Castle Dracula</p>
+        </div>
+        <div class="reading-text">
+            <p>The coach stopped before a great arched doorway. The driver vanished — I don't know exactly how, one moment he was there and the next the coach was empty — and before I could wonder about it, the castle door opened.</p>
+<p>A tall man stood in the doorway, holding a lamp. He was very tall — nearly as tall as the doorframe. His face was pale and angular, with a sharp nose, heavy dark eyebrows, and a thin, precise mustache. His eyes were dark red, like old rubies. He was dressed entirely in black.</p>
+<p>"Welcome to my house," he said. His voice was deep and perfectly controlled. "Come in freely, of your own will."</p>
+<p>I thought the phrasing was a little strange, but I stepped inside.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 2 of 3)</h2>
+            <p>Chapter 2: Welcome to Castle Dracula</p>
+        </div>
+        <div class="reading-text">
+            <p>Count Dracula shook my hand, and I was startled by how cold his grip was — cold and very strong. He guided me through stone corridors lit by flickering candles, up a sweeping staircase, and into a warm sitting room where a fire blazed and supper was laid out on a long table.</p>
+<p>I was very hungry after the long journey. The Count gestured for me to eat. I noticed he did not eat anything himself. He sat in a tall chair and watched me with those dark eyes, asking polite questions about my journey and my plans.</p>
+<p>I stayed for several days. The Count was a gracious host. He had a vast library filled with books about England — its history, its customs, its geography. He was fascinated by everything English and asked me endless questions.</p>
+<p>But there were things I began to notice.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 3 of 3)</h2>
+            <p>Chapter 2: Welcome to Castle Dracula</p>
+        </div>
+        <div class="reading-text">
+            <p>The Count had no servants. I never saw him eat. I noticed there were no mirrors in the castle — and one morning, when I was shaving with my small travel mirror, the Count approached behind me, and I realized with a jolt that he cast no reflection at all.</p>
+<p>I said nothing. I kept shaving.</p>
+<p>But that night, I walked to the great front door to get some air, and found that it was locked from the outside.</p>
+<p>I was a guest who could not leave.</p>
+        </div>`
+                },
+                                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Jonathan notices that Count Dracula casts no reflection in the mirror. Instead of confronting the Count about this impossible thing, Jonathan says nothing and keeps shaving. Why might he choose to stay quiet? What would you have done?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The Count is described as being a 'gracious host' who provides good food and interesting conversation, yet Jonathan also notices troubling details (no servants, no reflection, locked doors). How does this combination of hospitality and horror make the situation more frightening than if the Count were obviously evil from the start?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">At the end of the chapter, Jonathan discovers the front door is locked from the outside — meaning he is 'a guest who could not leave.' How does this realization change everything about his situation?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📰 Informational Text</h2>
+            <p>Connect Story to Reality</p>
+        </div>
+        <div class="informational-section">
+            <h3>Victorian England: Life in the 1890s</h3>
+            <p>Bram Stoker wrote Dracula in 1897, during what we call the Victorian Era — named after Queen Victoria, who ruled Britain from 1837 to 1901. This was a time of tremendous change and contradiction.</p><p>The Victorian Era saw incredible technological advances. Electric lights were replacing gas lamps. The telephone had just been invented. Trains could take you across entire countries in a single day. Photography was becoming common. For the first time in human history, ordinary people could capture and preserve images of their lives.</p><p>But Victorian society was also deeply concerned with manners, propriety, and strict social rules. Men and women had very defined roles. People were expected to dress formally in public — women wore long dresses with corsets, men wore suits and top hats. Showing emotion publicly was considered improper.</p><p>This era was fascinated by science and reason, yet also obsessed with the supernatural. Séances (attempts to contact the dead) were popular entertainment. Gothic novels — dark, mysterious stories set in old castles — were bestsellers. People wanted to believe they were modern and rational, but they also loved being frightened by ghost stories.</p><p>Medicine was improving but still limited. Blood transfusions, mentioned in Dracula, were a real but risky new procedure. Doctors were just beginning to understand how diseases spread. Mental illness was poorly understood and often treated harshly.</p><p>Transportation had transformed society. Steamships could cross the Atlantic in about a week. This meant goods, people, and ideas moved between countries faster than ever before. In Dracula, this modern transportation lets an ancient evil travel from remote Transylvania to the heart of London — old darkness meeting modern civilization.</p>
+        </div>
+        
+        <div class="questions-section" style="margin-top: 30px;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">✍️ Comprehension Questions</h3>
+            
+            <div class="question">
+                <p><strong>1.</strong> The article describes Victorian England as a time of 'contradiction' — modern technology alongside strict traditional rules, scientific thinking alongside supernatural beliefs. Give an example from the article of this contradiction and explain why both might have existed at the same time.</p>
+                <textarea 
+                                      id="info1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info1', 'word-count-info1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> According to the article, improved transportation like steamships helped goods and ideas move faster between countries. How does this connect to the plot of Dracula? What does this suggest about Victorian fears?</p>
+                <textarea 
+                                      id="info2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info2', 'word-count-info2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+            
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✏️ Language Skills</h2>
+            <p>Week 16 Focus: Context Clues: Using Surrounding Words to Determine Meaning</p>
+        </div>
+        <div class="language-section">
+            <div class="skill-explanation">
+                <h3>📚 What You're Learning:</h3>
+                <p>When you encounter an unfamiliar word, look at the words and sentences around it for clues about its meaning. Context clues include definitions, examples, synonyms, antonyms, or explanations.</p>
+            </div>
+            
+            <div class="skill-examples">
+                <h3>✨ Examples:</h3>
+                <p class="language-example">The landscape became more forbidding — jagged mountains, dark forests, and steep cliffs made the area look dangerous and unwelcoming.</p>
+<p class="language-example">Jonathan felt an uneasiness, a growing worry and discomfort that something was wrong.</p>
+<p class="language-example">The Count moved with an angular grace, his thin, sharp-featured face catching the firelight.</p>
+            </div>
+            
+            <div class="skill-practice">
+                <h3>🎯 Your Turn:</h3>
+                
+                <div class="practice-item">
+                    <p><strong>1.</strong> Read this sentence and figure out what 'methodical' means from context: 'Van Helsing worked in a methodical way, carefully completing each step in exact order.' What does methodical mean?</p>
+                    <textarea 
+                                      id="grammar1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar1', 'word-count-grammar1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>2.</strong> What does 'proximity' mean in this sentence: 'The asylum's proximity to Carfax made it convenient — the two properties were very close to each other.'</p>
+                    <textarea 
+                                      id="grammar2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar2', 'word-count-grammar2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>3.</strong> Write a sentence using a vocabulary word from this week with context clues that help explain its meaning:</p>
+                    <textarea 
+                                      id="grammar3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar3', 'word-count-grammar3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+                
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✍️ Journal Reflection</h2>
+            <p>Personal Response</p>
+        </div>
+        <div class="writing-section">
+            <div class="writing-prompt">
+                <h3>📝 Your Prompt:</h3>
+                <p>Count Dracula appears to be a polite, educated gentleman, yet small details reveal he is something far more dangerous. Think about your own life: have you ever met someone or been in a situation where things seemed fine on the surface but small details made you uneasy? What did you notice? How did you respond? What does your gut feeling tell you in uncertain situations?</p>
+            </div>
+            <div class="writing-space">
+                <textarea id="writing-response" rows="12" placeholder="Write your response here..."></textarea>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>🎉 Lesson Complete!</h2>
+            <p>Day 80 - Chapter 2: Welcome to Castle Dracula</p>
+        </div>
+        <div class="completion-section">
+            <h3>Great work today!</h3>
+            <p>You've completed:</p>
+            <ul>
+                <li>✅ Learned 3 new vocabulary words</li>
+                <li>✅ Read Chapter 2 of Dracula</li>
+                <li>✅ Answered comprehension questions</li>
+                <li>✅ Explored informational text about victorian england: life in the 1890s</li>
+                <li>✅ Practiced language skills</li>
+                <li>✅ Completed journal reflection</li>
+            </ul>
+            <p class="next-lesson-note">📚 Tomorrow: Chapter 3 awaits!</p>
+        </div>`
+                }
+            ]
+        };
+
+        // Initialize lesson viewer
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lessonConfig);
+        } else {
+            console.error('lesson-viewer.js not loaded! Check file paths.');
+        }
+    </script>
+</body>
+</html>

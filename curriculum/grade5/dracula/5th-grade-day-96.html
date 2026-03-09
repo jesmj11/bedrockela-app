@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade - Lesson 96: Castle Dracula at Last</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="../../../firebase-config.js"></script>
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script src="../../../js/lesson-completion.js"></script>
+    <script src="../../../js/lesson-autosave.js"></script>
+    
+    <script>
+        const lessonConfig = {
+            lessonId: '5th-grade-day-96',
+            gradeLevel: '5th-grade',
+            title: 'Day 96 - Dracula',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            
+                            <h1>Lesson 96</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Dracula
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Chapter 15: Castle Dracula at Last
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 96!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read from <em>Chapter 15: Castle Dracula at Last</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Read an informational text</li>
+                                <li>Practice grammar and writing skills</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            
+                            <div style="margin: 30px 0;">
+                                
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">forbidding</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">meticulous</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">consecrate</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today's reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Looking dangerous or unwelcoming</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Very careful and precise; paying attention to every detail</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To officially make something holy</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                            
+                            
+                        </div>
+                    `
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 1 of 3)</h2>
+            <p>Chapter 15: Castle Dracula at Last</p>
+        </div>
+        <div class="reading-text">
+            <p>Van Helsing and I reached the castle in the late afternoon. It was even more forbidding than Jonathan had described — massive and dark, jutting from the cliff edge like a broken tooth. The sky behind it was the pale gold of a winter sunset.</p>
+<p>The driver would not come past the bend in the road. He handed down our bags and turned his horses around almost before we were fully off the coach. We stood alone on the mountain road.</p>
+<p>Van Helsing took a moment to study the castle.</p>
+<p>"I expected to feel afraid," he said calmly. "But I find I feel rather determined. Interesting."</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 2 of 3)</h2>
+            <p>Chapter 15: Castle Dracula at Last</p>
+        </div>
+        <div class="reading-text">
+            <p>We approached. The great door, as Jonathan had described, was unlocked from outside — meant to keep people in, not out. Van Helsing and I went through it.</p>
+<p>Inside, the castle was cold and empty. Our footsteps echoed on stone floors. Van Helsing moved through each room methodically, examining everything, leaving holy water at every doorway and window.</p>
+<p>In the cellar, we found what we were looking for.</p>
+<p>Three boxes. Three of the boxes that the creature women at the castle used as resting places.</p>
+<p>Van Helsing was thorough and gentle and respectful in his work, even here. He treated each box with care, speaking quietly, as though performing a religious ceremony.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 3 of 3)</h2>
+            <p>Chapter 15: Castle Dracula at Last</p>
+        </div>
+        <div class="reading-text">
+            <p>Afterward, we went back to the upper rooms and built a fire. Night was coming, and with it, the cold. Van Helsing drew a careful circle around our fire using salt and herbs, and explained that within this circle, nothing could harm us without our invitation.</p>
+<p>"We wait here," he said. "The others will come tomorrow."</p>
+<p>I nodded. I could feel the link in my mind pulling faintly, like a current.</p>
+<p>"He is close," I said.</p>
+<p>"Yes," Van Helsing agreed. "But so is tomorrow."</p>
+        </div>`
+                },
+                                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Mina and Van Helsing reach Castle Dracula ahead of the others. Van Helsing methodically goes through each room, 'leaving holy water at every doorway and window.' Why is this careful, thorough preparation important? What does it tell you about how to approach danger?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Van Helsing draws a protective circle around their fire using salt and herbs, explaining that within it 'nothing could harm us without our invitation.' Why might protection and boundaries be important themes in this story? What do they tell you about safety and vulnerability?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The chapter ends with Van Helsing saying 'The others will come tomorrow. We wait here.' What does this simple statement tell you about faith, trust, and teamwork? Why is waiting sometimes as important as action?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📰 Informational Text</h2>
+            <p>Connect Story to Reality</p>
+        </div>
+        <div class="informational-section">
+            <h3>The Role of Faith: Religion in Dracula</h3>
+            <p>Christian religious symbols — crucifixes, holy water, communion wafers — are powerful weapons against Dracula. But the novel's treatment of faith is more complex and interesting than just 'good magic versus bad magic.' What is Stoker really saying about religion's role in fighting evil?</p><p>First, it's worth noting that Stoker was Irish Protestant, writing in Victorian England where religion was central to social life and moral identity. Church attendance was expected; religious doubt was controversial. The novel reflects this context but also questions it in subtle ways.</p><p>Professor Van Helsing is the most explicitly religious character. He's Dutch Catholic (unusual in a predominantly Protestant British story), and he explains vampire lore through Christian theology. He believes Dracula is a 'creature of the devil,' corrupted soul trapped between life and death. The religious weapons work, he suggests, because they represent sacred power against unholy evil.</p><p>But Van Helsing also values scientific observation, medical knowledge, and rational investigation. He doesn't just pray — he experiments, records data, and develops strategy. His faith and his science work together; he sees no contradiction between them.</p><p>This dual approach reflected Victorian debates about faith and science. Darwin's theory of evolution (published in 1859) had challenged literal biblical interpretation. Geological discoveries showed Earth was far older than biblical timelines suggested. Many Victorians struggled to reconcile religious faith with scientific evidence. Van Helsing represents a solution: using both faith and reason, seeing them as complementary rather than opposed.</p><p>The religious symbols in the novel work through belief and will as much as inherent power. When characters hold crucifixes with genuine faith, they're effective. When they're used mechanically without understanding or conviction, they're less potent. This suggests that it's the spiritual commitment behind the symbol, not just the object itself, that matters.</p><p>Interestingly, Dracula himself has religious knowledge. He's lived for centuries in a Christian culture. He knows what the symbols mean and why they repel him. He's bound by religious rules — unable to enter homes without invitation, unable to approach the sacred Host, weakened by holy ground. His evil is defined in relation to the sacred; he's not an alien force but a corruption of the religious order itself.</p><p>The novel also shows faith as community. The prayers, the shared rituals, the mutual support — these bind the heroes together and give them strength. When they sanctify Lucy's tomb or surround Mina with protective symbols, they're not just performing magic; they're affirming shared values and commitment to each other.</p><p>Modern readers from various religious backgrounds (or none) might interpret the religious elements differently. Some see them as metaphorical — representing moral clarity, courage, and the power of good versus evil. Others read them literally, as Stoker probably intended. Either way, the novel suggests that what you believe in — what you're willing to sacrifice for and stand against evil for — matters deeply.</p>
+        </div>
+        
+        <div class="questions-section" style="margin-top: 30px;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">✍️ Comprehension Questions</h3>
+            
+            <div class="question">
+                <p><strong>1.</strong> The article describes how Van Helsing combines religious faith with scientific investigation, seeing no contradiction between them. Why was this combination important in Victorian times? How does this relate to debates about faith and science that continue today?</p>
+                <textarea 
+                                      id="info1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info1', 'word-count-info1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> According to the article, religious symbols in the novel work through belief and will, not just as objects. What does this suggest about the source of their power? How is this different from treating them as simply 'good magic'?</p>
+                <textarea 
+                                      id="info2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info2', 'word-count-info2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+            
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✏️ Grammar</h2>
+            <p>Week 19 Focus: Using Commas in Complex Sentences</p>
+        </div>
+        <div class="grammar-section">
+            <div class="skill-explanation">
+                <h3>📚 What You're Learning:</h3>
+                <p>When a dependent clause comes BEFORE the independent clause, use a comma to separate them. When it comes AFTER, usually no comma is needed. Example: 'Although Jonathan was frightened, he continued forward.' vs 'Jonathan continued forward although he was frightened.'</p>
+            </div>
+            
+            <div class="skill-examples">
+                <h3>✨ Examples:</h3>
+                <p class="language-example">When the Count appeared in the doorway, Jonathan felt a chill run down his spine.</p>
+<p class="language-example">Jonathan felt a chill run down his spine when the Count appeared in the doorway.</p>
+<p class="language-example">Because Mina organized all the records, the group could see patterns they had missed before.</p>
+            </div>
+            
+            <div class="skill-practice">
+                <h3>🎯 Your Turn:</h3>
+                
+                <div class="practice-item">
+                    <p><strong>1.</strong> Add commas where needed: 'Before Dracula could escape the group destroyed most of his hiding places.'</p>
+                    <textarea 
+                                      id="grammar1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar1', 'word-count-grammar1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>2.</strong> Add commas where needed: 'Although Van Helsing seemed eccentric Mina trusted his knowledge completely.'</p>
+                    <textarea 
+                                      id="grammar2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar2', 'word-count-grammar2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>3.</strong> Write a complex sentence about the story with the dependent clause FIRST (requiring a comma):</p>
+                    <textarea 
+                                      id="grammar3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar3', 'word-count-grammar3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+                
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✍️ Writing Skills</h2>
+            <p>Standard: W.5.2 - Informative/Explanatory Writing</p>
+        </div>
+        <div class="writing-section">
+            <div class="writing-prompt">
+                <h3>📝 Your Prompt:</h3>
+                <p>Professor Van Helsing becomes the leader of the group fighting Dracula because he has specialized knowledge about vampires. Write an informative paragraph explaining what makes Van Helsing a good leader. What skills and knowledge does he bring? How does he combine old wisdom (folklore, religious faith) with modern thinking (science, medical knowledge)? Use specific examples from the story.</p>
+            </div>
+            <div class="writing-space">
+                <textarea id="writing-response" rows="12" placeholder="Write your response here..."></textarea>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>🎉 Lesson Complete!</h2>
+            <p>Day 96 - Chapter 15: Castle Dracula at Last</p>
+        </div>
+        <div class="completion-section">
+            <h3>Great work today!</h3>
+            <p>You've completed:</p>
+            <ul>
+                <li>✅ Learned 3 new vocabulary words</li>
+                <li>✅ Read Chapter 15 of Dracula</li>
+                <li>✅ Answered comprehension questions</li>
+                <li>✅ Explored informational text about the role of faith: religion in dracula</li>
+                <li>✅ Practiced grammar skills</li>
+                <li>✅ Completed writing exercise</li>
+            </ul>
+            <p class="next-lesson-note">📚 Tomorrow: Chapter 16 awaits!</p>
+        </div>`
+                }
+            ]
+        };
+
+        // Initialize lesson viewer
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lessonConfig);
+        } else {
+            console.error('lesson-viewer.js not loaded! Check file paths.');
+        }
+    </script>
+</body>
+</html>

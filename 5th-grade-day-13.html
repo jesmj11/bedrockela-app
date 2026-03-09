@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13: The Tinker, the Peddler, and the Cook</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson13Config = {
+            lessonId: '5th-grade-lesson-13',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 13: The Tinker, the Peddler, and the Cook',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 13</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Tinker, the Peddler, and the Cook
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 13!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Tinker, the Peddler, and the Cook</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Warrant</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Resourceful</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Indispensable</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Intelligence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Intelligence</div><div class="match-word" data-word="Reconnaissance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reconnaissance</div><div class="match-word" data-word="Ally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Ally</div><div class="match-word" data-word="Collateral" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Collateral</div><div class="match-word" data-word="Generosity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Generosity</div><div class="match-word" data-word="Gratitude" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gratitude</div><div class="match-word" data-word="Warrant" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Warrant</div><div class="match-word" data-word="Resourceful" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Resourceful</div><div class="match-word" data-word="Indispensable" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Indispensable</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Collateral" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something valuable that a borrower promises to give up if they cannot repay a loan.</div><div class="match-def" data-word="Warrant" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An official document that gives someone legal authority to do something, such as arrest a person.</div><div class="match-def" data-word="Generosity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being willing to give freely and abundantly to others without expecting anything in return.</div><div class="match-def" data-word="Intelligence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Secret information gathered about an enemy’s plans and activities; also means the ability to learn and understand.</div><div class="match-def" data-word="Indispensable" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Absolutely necessary; so important that you cannot manage without it.</div><div class="match-def" data-word="Reconnaissance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of scouting or exploring an area to gather information, especially about an enemy.</div><div class="match-def" data-word="Ally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person or group that joins with another for a shared purpose; a partner in a common cause.</div><div class="match-def" data-word="Gratitude" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The feeling of being thankful and appreciative for something someone has done for you.</div><div class="match-def" data-word="Resourceful" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Able to find quick and clever ways to overcome difficulties; good at solving problems with what’s available.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Tinker, the Peddler, and the Cook</p>
+      <div class="story-text">
+        <p>Not everyone who joined the Merry Men arrived through a dramatic swordfight on a bridge or a daring rescue from the gallows. Some of the band\'s most valuable members came to Sherwood Forest through accidents, misunderstandings, and — in one memorable case — a deep and passionate disagreement about the proper way to cook venison.</p>
+<p>Take the tinker, for instance.</p>
+<p>His name was Edward, and he was the most suspicious, nervous, twitchy little man that Robin Hood had ever encountered. He was small and thin, with darting eyes, a nose that seemed to be permanently sniffing for danger, and a way of looking over his shoulder every three seconds that suggested the entire world was out to get him. He traveled the country roads mending pots and pans, and the sound of his approach — a constant jangling and clanking of the metal wares hanging from his pack — could be heard a quarter mile away. He was, in other words, the exact opposite of stealthy.</p>
+<p>What Robin didn\'t know, on the afternoon he fell into step beside Edward on a forest road, was that the tinker was carrying something far more interesting than pots and pans. Tucked into his right boot was a <span class="vocab-highlight">warrant</span> for Robin Hood\'s arrest, signed by the Sheriff of Nottingham himself, and the tinker had been promised five gold pieces for its delivery to the garrison at Mansfield.</p>
+<p>Robin had no idea about any of this. He was simply walking through the forest, enjoying the autumn colors, and he saw a nervous little man with a jangling pack and thought he looked like he could use some company.</p>
+<p>&quot;Fine day for a walk,&quot; Robin said pleasantly, falling into step beside the tinker.</p>
+<p>Edward nearly jumped out of his skin. He leaped sideways, dropped three pans with a tremendous clatter, and stared at Robin with eyes the size of dinner plates. &quot;Who are you? What do you want? I haven\'t got any money! Well, I have a little, but not much. Well, actually I have five — I mean, I have nothing. Nothing at all. I\'m destitute. Poverty-stricken. I may actually be dead. Please go away.&quot;</p>
+<p>&quot;Calm down, friend. I\'m just a traveler, same as you. These roads can be dangerous — shall we walk together? Safety in numbers and all that.&quot;</p>
+<p>The tinker eyed Robin with deep suspicion but apparently decided that one companion was better than whatever he imagined lurking in the trees. They walked together for an hour, during which Robin learned that Edward was from Chester, that his mother was a terrifying woman who once chased a tax collector out of town with a rolling pin, and that Edward himself had a phobia of large dogs, loud noises, and anything that moved unexpectedly.</p>
+<p>Robin bought the tinker lunch at a roadside inn — bread, cheese, and a mug of ale that Edward drank with the desperate gratitude of a man who has been on the road for days. They talked about the weather, about the state of the roads, about the price of tin, and about Edward\'s mother (Robin was beginning to think the rolling pin story was an understatement). By the end of the meal, Edward had relaxed considerably and was telling Robin jokes — terrible jokes, mostly about blacksmiths and horses, but Robin laughed anyway because the little man told them with such earnest enthusiasm.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>It was only when Little John appeared at the inn door, filling the entire frame with his enormous body, and called out &quot;Robin! There you are!&quot; that the tinker realized who he had been dining with.</p>
+<p>Edward went white. His ale mug froze halfway to his mouth. His eyes traveled from Little John to Robin and back again, and Robin could practically see the gears turning behind those terrified eyes. The tinker\'s hand crept slowly toward his boot, where the <span class="vocab-highlight">warrant</span> was hidden.</p>
+<p>Robin watched this internal struggle with quiet compassion. He could see the fear, the calculation, and — beneath it all — the decency of a man who didn\'t really want to turn anyone in but was afraid of what would happen if he didn\'t.</p>
+<p>Edward\'s hand hovered over his boot for a long, agonizing moment. The inn was silent. Little John stood in the doorway, his hand resting casually on his quarterstaff.</p>
+<p>Then Edward pulled the <span class="vocab-highlight">warrant</span> out of his boot, looked at it, looked at Robin, and very deliberately tore it into tiny pieces. He dropped them into his mug of ale, where they floated sadly on the surface like miniature shipwrecks.</p>
+<p>&quot;I never liked the Sheriff anyway,&quot; Edward said. &quot;His mother\'s even worse than mine, and that\'s saying something.&quot;</p>
+<p>He joined the Merry Men that afternoon and turned out to be surprisingly handy — not just with pots and pans, but with locks, hinges, traps, and any mechanical device. He became the camp\'s unofficial engineer, building everything from rain shelters to an elaborate alarm system that involved tripwires, bells, and a very startled badger. He was still nervous about everything, but he was their nervous man, and the Merry Men protected their own.</p>
+<p>Then there was the peddler.</p>
+<p>Margaret arrived at Robin\'s camp not by capture or coincidence but by deliberate, determined choice. She was a stout, no-nonsense woman of about forty, with arms like a blacksmith\'s, a voice that could be heard across a field, and a face that radiated the particular kind of authority that comes from decades of tolerating absolutely nobody\'s foolishness.</p>
+<p>She sold ribbons, needles, thread, and small household goods from an enormous pack on her back, traveling from village to village on a circuit that covered most of Nottinghamshire. She knew every road, every market, and every person worth knowing in the county. She was, in other words, the most connected person for fifty miles.</p>
+<p>She had been robbed — not by Robin\'s men, but by the Sheriff\'s own soldiers. Three of them had stopped her on the road, taken every ribbon, every needle, every penny she possessed, and laughed when she protested. &quot;Be grateful we didn\'t take more,&quot; the sergeant had said, and his men had found this very amusing.</p>
+<p>Margaret was not amused. Margaret was furious with a cold, patient fury that was far more frightening than any hot rage. She walked to Sherwood Forest, found Robin\'s camp through sheer determination and a willingness to shout &quot;Robin Hood! I need to talk to you!&quot; at the top of her lungs until someone answered, and presented herself before Robin with her arms crossed and her jaw set.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Robin replaced her stock from the camp\'s supplies and gave her a purse of coins to restart her business. Margaret looked at the money, looked at Robin, and said, &quot;I\'m not leaving.&quot;</p>
+<p>&quot;I\'m sorry?&quot; Robin said.</p>
+<p>&quot;You need someone who can go into every village and every market in this county without raising suspicion. A peddler goes everywhere, talks to everyone, and nobody looks twice. You need eyes and ears in places your men can\'t go, and you need someone who actually understands how the common people live. That person is me. I\'m volunteering.&quot;</p>
+<p>Robin opened his mouth to politely decline, but Margaret cut him off with a raised hand. &quot;This isn\'t a request, young man. I\'m telling you what you need. You can accept my help, or you can spend the next year stumbling around in the dark while I do it anyway on my own. Your choice.&quot;</p>
+<p>Robin looked at Little John. Little John shrugged. &quot;She\'s not wrong.&quot;</p>
+<p>Margaret became Robin\'s most effective intelligence gatherer. She carried messages hidden in spools of thread, coded information woven into the patterns of her ribbons, and detailed reports of the Sheriff\'s movements disguised as inventory lists. Within six months, there wasn\'t a plan hatched in Nottingham Castle that Robin didn\'t know about within forty-eight hours.</p>
+<p>And finally, there was the cook.</p>
+<p>Much the Miller\'s Son was a round, cheerful, irrepressible young man who had worked in the Sheriff\'s own kitchen for three years. He was, by universal consensus, the finest cook in Nottingham — a master of roasting, baking, stewing, and any other technique that turned raw ingredients into something transcendent. His venison pies were legendary. His bread could make a grown man weep. His blackberry cobbler had once caused a minor riot at a harvest festival.</p>
+<p>He had been perfectly happy in his position — well-fed, well-paid, and largely ignored by the Sheriff, who cared about food only insofar as it appeared on his table — until the day the Sheriff ordered him to poison a meal.</p>
+<p>A visiting lord had spoken publicly in favor of Robin Hood, praising the outlaw\'s generosity to the poor. The Sheriff, incandescent with rage, ordered Much to add a particular powder to the lord\'s wine at dinner. Much looked at the powder, looked at the Sheriff, and said, &quot;No.&quot;</p>
+<p>The Sheriff was not accustomed to being refused, especially by cooks. &quot;Do as you\'re told,&quot; he snarled, &quot;or I\'ll have you thrown in the dungeon.&quot;</p>
+<p>&quot;I\'m a cook,&quot; Much said, with the quiet dignity of a man who has found his line and will not cross it. &quot;I create food. I don\'t destroy people with it. Find someone else to do your murdering.&quot;</p>
+<p>The Sheriff had him thrown into the street within the hour, with nothing but the clothes on his back and a rolling pin he\'d grabbed on the way out.</p>
+<p>Much wandered into Sherwood Forest more by accident than design, following the smell of roasting venison that drifted through the trees on the evening air. He walked in a daze, hungry and homeless and uncertain of everything except that he had done the right thing. The smell led him through the undergrowth, past a tripwire (which he stepped over without noticing), past a lookout post (whose occupant was asleep), and straight into the heart of Robin\'s camp.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He took one look at the charred, blackened, mangled remains of what Friar Tuck was attempting to cook over the central fire, and he burst into tears.</p>
+<p>&quot;What — what has that poor piece of venison ever done to deserve this?&quot; Much wailed, snatching the cooking spit away from a startled Tuck. &quot;This isn\'t cooking! This is arson! This is a crime against food itself! Oh, give me that knife. Everyone out of my way. Everyone. Now.&quot;</p>
+<p>An hour later, the Merry Men sat down to the finest meal they had ever eaten in the forest. The venison was tender and perfectly seasoned with wild rosemary, thyme, and garlic. There was fresh bread baked on hot stones — golden-crusted and soft within. A salad of forest greens dressed with a vinegar that Much had produced from somewhere about his person. And for dessert, a blackberry cobbler made with berries he had picked during the hour, sweetened with honey, that made grown outlaws weep with pleasure.</p>
+<p>&quot;You\'re hired,&quot; Robin said, through a mouthful of cobbler so good it bordered on the religious. &quot;You\'re absolutely, permanently, irrevocably hired.&quot;</p>
+<p>Friar Tuck handed over the cooking duties without a moment\'s argument. His talents were many and genuine, but cooking was not among them, and he had the self-awareness to admit it. &quot;Thank the Lord,&quot; Tuck said, helping himself to a third serving. &quot;My prayers have been answered.&quot;</p>
+<p>Much the Miller\'s Son became the heart of the camp in a way that no fighter or scout or strategist ever could. Because at the end of a long day of robbing the rich and outwitting the Sheriff and dodging arrows and sleeping on the ground — at the end of all of it — what every outlaw really needed was a good meal and the warmth of a fire and the knowledge that someone cared enough to make the food taste wonderful.</p>
+<p>And Much gave them all of that, three times a day, every day, without fail. He fed them when they were tired. He fed them when they were sad. He fed them when they came home from dangerous missions with empty hands and heavy hearts. He believed, with every fiber of his being, that food was love made visible, and he cooked accordingly.</p>
+<p>The tinker, the peddler, and the cook. Not warriors. Not legends. Just ordinary people who found their way to Sherwood Forest and discovered that they had extraordinary things to offer. And that, Robin often reflected, was the real secret of the Merry Men: the band was strongest not because of its fighters, but because of the people who kept it running, kept it fed, kept it connected, and kept it human.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Each of the three new members — Edward, Margaret, and Much — joins the Merry Men for a different reason. Compare their motivations. What do they have in common?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does the chapter argue that the cook is “the heart of the camp”? Do you agree that non-fighters can be just as important as warriors in a group? Explain.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Edward the tinker tears up the warrant instead of turning Robin in. What do you think made him change his mind? What does this scene show about the power of kindness?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 13 Complete!</h1>
+        <p class="completion-message">Great work on \"The Tinker, the Peddler, and the Cook\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson13Config);
+        });
+    <\/script>
+</body>
+</html>

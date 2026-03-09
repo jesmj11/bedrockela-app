@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Grade - Lesson 84: Mina's Worry</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="../../../firebase-config.js"></script>
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script src="../../../js/lesson-completion.js"></script>
+    <script src="../../../js/lesson-autosave.js"></script>
+    
+    <script>
+        const lessonConfig = {
+            lessonId: '5th-grade-day-84',
+            gradeLevel: '5th-grade',
+            title: 'Day 84 - Dracula',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            
+                            <h1>Lesson 84</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Dracula
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Chapter 5: Mina's Worry
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 84!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read from <em>Chapter 5: Mina's Worry</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Read an informational text</li>
+                                <li>Practice grammar and writing skills</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            
+                            <div style="margin: 30px 0;">
+                                
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">faithful</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">engaged</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">somber</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ></textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today's reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                    <div class="match-word" data-word="
+                " onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">
+                </div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The soft light just after sunset or before sunrise</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Unable to move or act, often from fear or shock</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Facts or signs that help show something is true</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To make something holy or sacred</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Hidden from view; kept secret</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Extremely dangerous in an unexpected way</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Remaining loyal and dependable over time</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Formally promised to marry someone</div>
+                                    <div class="match-def" data-word="
+                " onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Serious and sad in mood or appearance</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                            
+                            
+                        </div>
+                    `
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 1 of 3)</h2>
+            <p>Chapter 5: Mina's Worry</p>
+        </div>
+        <div class="reading-text">
+            <p>My name is Mina Murray, and Jonathan was supposed to be home weeks ago.</p>
+<p>I am writing in my own journal now, because writing helps me think, and I need very much to think clearly.</p>
+<p>Jonathan and I were engaged to be married. He left for Transylvania in good spirits — excited about his first important assignment, a little nervous, but confident. He said he would be back inside a month.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 2 of 3)</h2>
+            <p>Chapter 5: Mina's Worry</p>
+        </div>
+        <div class="reading-text">
+            <p>Three months have passed. His letters stopped halfway through his journey. I have written to his employer, to the train companies, to every contact I can think of. No one has heard anything.</p>
+<p>I tell myself there are reasonable explanations. The mail is slow in that part of the world. He may have had to stay longer. He is resourceful and sensible, and nothing bad has happened to him.</p>
+<p>I tell myself this every night before I go to sleep.</p>
+<p>My dearest friend in the world is a woman named Lucy Westenra. She is bright and funny and the most good-natured person I know. Lucy has three young men all very much in love with her — a doctor named John Seward, a good-natured American named Quincey Morris, and an English nobleman named Arthur Holmwood. She has chosen Arthur, and they are newly engaged.</p>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📚 Reading (Part 3 of 3)</h2>
+            <p>Chapter 5: Mina's Worry</p>
+        </div>
+        <div class="reading-text">
+            <p>I went to visit Lucy at her family home by the sea, in a Yorkshire town called Whitby. The air there is bracing and salty, and the cliffs are beautiful, and it helped a little.</p>
+<p>But then strange things began to happen in Whitby.</p>
+<p>A great ship came in during a storm, sailing wildly, with no living crew aboard. At the helm, lashed to the wheel, was the body of the captain. In the ship's hold were fifty boxes of dark foreign earth.</p>
+<p>Lucy began walking in her sleep.</p>
+        </div>`
+                },
+                                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Mina writes that she tells herself 'reasonable explanations' for why Jonathan hasn't returned, but she writes this in her journal each night before sleep. What does this tell you about how worried she really is? Why might she need to write these reassurances down?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">A ship arrives in Whitby during a storm with no living crew and fifty boxes of 'dark foreign earth' in the hold. Knowing what we learned from Jonathan's chapters, why is this arrival so ominous? What has arrived in England?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Mina describes her friend Lucy as 'bright and funny and the most good-natured person I know,' but then immediately says 'Lucy began walking in her sleep.' Why might the author introduce a happy, innocent character right before something bad starts happening to her? How does this make you feel as a reader?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>📰 Informational Text</h2>
+            <p>Connect Story to Reality</p>
+        </div>
+        <div class="informational-section">
+            <h3>Bram Stoker: The Man Behind Dracula</h3>
+            <p>Abraham 'Bram' Stoker was born in 1847 in Dublin, Ireland. As a child, he was frequently sick and bedridden, spending years unable to walk or play like other children. During this time, his mother told him ghost stories and Irish folk tales — dark, imaginative stories that would later influence his writing.</p><p>Mysteriously, when Bram was about seven years old, he suddenly recovered and became unusually strong and athletic. He attended Trinity College Dublin, where he excelled in athletics and became a champion runner and weightlifter. This transformation from sickly child to athletic young man fascinated him throughout his life.</p><p>Stoker never planned to become a novelist. He worked as a civil servant (a government employee) and wrote theater reviews in his spare time. His reviews caught the attention of Henry Irving, one of the most famous actors of the Victorian era. Irving hired Stoker as business manager for the Lyceum Theatre in London — a job Stoker held for 27 years.</p><p>Working in theater exposed Stoker to drama, storytelling, and spectacle. He met artists, writers, and travelers who shared stories from around the world. He also worked exhausting hours managing the theater's business affairs, traveling, and organizing tours. Writing was something he did late at night after everyone else had gone home.</p><p>Stoker published several novels and short story collections, but Dracula (1897) was his masterpiece. He spent seven years researching it, reading about Eastern European history, vampire folklore, geography, and travel routes. He kept detailed notes on everything from train schedules to castle architecture.</p><p>Interestingly, Stoker never visited Eastern Europe himself. His descriptions of Transylvania came entirely from books, maps, and travelers' accounts — yet they felt so real that readers believed he'd been there.</p><p>Stoker died in 1912, largely forgotten. Dracula sold moderately well but wasn't a huge success during his lifetime. It was only later — especially after the 1931 film starring Bela Lugosi — that Dracula became a cultural phenomenon. Today, it's one of the most influential horror novels ever written, adapted countless times for film, television, and theater.</p><p>Bram Stoker created a character that would outlive him by over a century, becoming a permanent part of world culture.</p>
+        </div>
+        
+        <div class="questions-section" style="margin-top: 30px;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">✍️ Comprehension Questions</h3>
+            
+            <div class="question">
+                <p><strong>1.</strong> The article describes how Stoker transformed from a sickly child who couldn't walk into a champion athlete. How might this experience have influenced his interest in the themes of life, death, and transformation in Dracula?</p>
+                <textarea 
+                                      id="info1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info1', 'word-count-info1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> According to the article, Stoker spent seven years researching Dracula and never visited Transylvania, yet his descriptions felt so real readers thought he'd been there. What does this tell you about the power of research and imagination in writing?</p>
+                <textarea 
+                                      id="info2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('info2', 'word-count-info2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-info2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-info2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+            </div>
+            
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✏️ Grammar</h2>
+            <p>Week 17 Focus: Complex Sentences with Subordinating Conjunctions</p>
+        </div>
+        <div class="grammar-section">
+            <div class="skill-explanation">
+                <h3>📚 What You're Learning:</h3>
+                <p>A complex sentence has an independent clause (complete thought) and a dependent clause (incomplete thought connected with words like 'because', 'although', 'while', 'when', 'if', 'since').</p>
+            </div>
+            
+            <div class="skill-examples">
+                <h3>✨ Examples:</h3>
+                <p class="language-example">Jonathan traveled to Transylvania because he needed to complete an assignment for his employer.</p>
+<p class="language-example">Although the villagers warned him, Jonathan continued to the castle.</p>
+<p class="language-example">The Count watched Jonathan carefully while he ate his dinner.</p>
+            </div>
+            
+            <div class="skill-practice">
+                <h3>🎯 Your Turn:</h3>
+                
+                <div class="practice-item">
+                    <p><strong>1.</strong> Combine these two sentences using the conjunction in parentheses: 'The coach stopped. Jonathan stepped into the castle.' (when)</p>
+                    <textarea 
+                                      id="grammar1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar1', 'word-count-grammar1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>2.</strong> Combine these two sentences using the conjunction in parentheses: 'The Count was very gracious. Jonathan felt increasingly uneasy.' (although)</p>
+                    <textarea 
+                                      id="grammar2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar2', 'word-count-grammar2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p><strong>3.</strong> Write your own complex sentence about the story using 'because':</p>
+                    <textarea 
+                                      id="grammar3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('grammar3', 'word-count-grammar3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-grammar3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-grammar3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                </div>
+                
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>✍️ Writing Skills</h2>
+            <p>Standard: W.5.1 - Opinion Writing</p>
+        </div>
+        <div class="writing-section">
+            <div class="writing-prompt">
+                <h3>📝 Your Prompt:</h3>
+                <p>Jonathan Harker receives several warnings not to go to Castle Dracula, but he continues anyway because he has a professional assignment. Write a paragraph arguing whether Jonathan made the right choice. Should duty to your job always come first, even when there are warnings of danger? Use evidence from the story and your own reasoning to support your opinion.</p>
+            </div>
+            <div class="writing-space">
+                <textarea id="writing-response" rows="12" placeholder="Write your response here..."></textarea>
+            </div>
+        </div>`
+                },
+                {
+                    render: () => `<div class="page-header">
+            <h2>🎉 Lesson Complete!</h2>
+            <p>Day 84 - Chapter 5: Mina's Worry</p>
+        </div>
+        <div class="completion-section">
+            <h3>Great work today!</h3>
+            <p>You've completed:</p>
+            <ul>
+                <li>✅ Learned 3 new vocabulary words</li>
+                <li>✅ Read Chapter 5 of Dracula</li>
+                <li>✅ Answered comprehension questions</li>
+                <li>✅ Explored informational text about bram stoker: the man behind dracula</li>
+                <li>✅ Practiced grammar skills</li>
+                <li>✅ Completed writing exercise</li>
+            </ul>
+            <p class="next-lesson-note">📚 Tomorrow: Chapter 6 awaits!</p>
+        </div>`
+                }
+            ]
+        };
+
+        // Initialize lesson viewer
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lessonConfig);
+        } else {
+            console.error('lesson-viewer.js not loaded! Check file paths.');
+        }
+    </script>
+</body>
+</html>

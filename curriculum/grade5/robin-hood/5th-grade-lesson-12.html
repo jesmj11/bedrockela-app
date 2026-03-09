@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12: The Poor Knight's Debt</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson12Config = {
+            lessonId: '5th-grade-lesson-12',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 12: The Poor Knight\'s Debt',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 12</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Poor Knight\'s Debt
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 12!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Poor Knight\'s Debt</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Collateral</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Generosity</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Gratitude</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Intelligence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Intelligence</div><div class="match-word" data-word="Reconnaissance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reconnaissance</div><div class="match-word" data-word="Ally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Ally</div><div class="match-word" data-word="Collateral" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Collateral</div><div class="match-word" data-word="Generosity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Generosity</div><div class="match-word" data-word="Gratitude" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Gratitude</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Ally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person or group that joins with another for a shared purpose; a partner in a common cause.</div><div class="match-def" data-word="Gratitude" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The feeling of being thankful and appreciative for something someone has done for you.</div><div class="match-def" data-word="Reconnaissance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of scouting or exploring an area to gather information, especially about an enemy.</div><div class="match-def" data-word="Collateral" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something valuable that a borrower promises to give up if they cannot repay a loan.</div><div class="match-def" data-word="Intelligence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Secret information gathered about an enemy’s plans and activities; also means the ability to learn and understand.</div><div class="match-def" data-word="Generosity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being willing to give freely and abundantly to others without expecting anything in return.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Poor Knight\'s Debt</p>
+      <div class="story-text">
+        <p>One rainy afternoon in late November, when the forest was gray and dripping and the Merry Men huddled around their fires in damp misery, Robin\'s scouts brought a traveler to camp. But this was no wealthy lord with jingling purses, no pompous bishop with a gilded carriage. This was the sorriest-looking knight Robin had ever seen.</p>
+<p>His name, he said, was Sir Richard of Lea. His armor was so rusted that it had turned the color of dried blood. His horse was a thin, sad creature with ribs showing through its coat and a look in its eyes that suggested it had given up on life some time ago. The knight\'s clothes were patched and mended so many times that they were more thread than fabric — a patchwork of different colors and textures that made him look like a quilt that had learned to walk.</p>
+<p>He sat at Robin\'s table with his head bowed and his hands trembling around the mug of warm cider that Much had pressed into them. Rain dripped from his gray hair onto his threadbare cloak. He was the picture of a man at the end of his rope.</p>
+<p>&quot;Forgive me,&quot; the knight said, his voice cracking like old leather. &quot;I know this is your forest, and I know you stop travelers for payment. But I have nothing worth stealing. Nothing worth anything at all. I am ruined.&quot;</p>
+<p>Robin studied the man with careful, compassionate eyes. He had seen poverty before — the Merry Men saw it every day in the villages they protected — but there was something about a knight brought so low that was especially heartbreaking. Knights were supposed to be strong, proud, unbreakable. This man looked as though a stiff wind would finish him.</p>
+<p>&quot;Tell me your story, Sir Knight,&quot; Robin said gently. &quot;In Sherwood Forest, we don\'t judge a man by his purse. And no one leaves this table hungry. Much — bring our guest some food.&quot;</p>
+<p>Much appeared almost instantly with a bowl of hot stew, fresh bread, and a wedge of cheese. The knight stared at the food for a moment, as if he couldn\'t quite believe it was real, and then ate with the desperate, grateful speed of a man who hadn\'t had a proper meal in weeks.</p>
+<p>Between bites, Sir Richard told his story. It was a common tale in those harsh times, but no less heartbreaking for being common.</p>
+<p>His only son, a young knight named Hugh, had gotten into terrible trouble at a tournament. During a jousting match, Hugh\'s lance had struck his opponent badly — a glancing blow to the neck that left the other knight paralyzed. It was an accident, a horrible piece of bad luck, but the injured knight\'s family had powerful friends and demanded justice. Hugh was arrested and thrown into prison, facing charges that could see him hanged.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>To save his son\'s life, Sir Richard had gone to the only person who would lend him money: the Abbot of St. Mary\'s Abbey, a wealthy and pitiless man who saw an opportunity to acquire prime farmland at a fraction of its value. The Abbot had lent Sir Richard four hundred gold pieces — an enormous sum — with Sir Richard\'s lands as <span class="vocab-highlight">collateral</span>. The terms were brutal: repay in full within one year, or forfeit everything.</p>
+<p>Sir Richard had used the gold to pay Hugh\'s fine and secure his release. His son was free. But now the debt was due in two weeks, and Sir Richard didn\'t have a single penny.</p>
+<p>&quot;If I cannot pay,&quot; the knight said, his voice barely above a whisper, &quot;the Abbot will take my lands. My family home. The fields my father farmed, and his father before him. My wife, my daughter — they\'ll be turned out into the street. Everything my family has built over three generations will be gone.&quot; He pressed his trembling hands together. &quot;I\'ve begged everyone I know. No one will help. No one wants to cross the Abbot.&quot;</p>
+<p>Robin looked at Little John. Little John looked at Friar Tuck. Friar Tuck looked at the empty plate in front of Sir Richard and sighed — the sigh of a man whose heart was too big for his belly, which was already considerable.</p>
+<p>&quot;Four hundred gold pieces,&quot; Robin said slowly, turning the number over in his mind. He turned to Little John. &quot;How much do we have in the treasury?&quot;</p>
+<p>Little John, who kept the accounts with the meticulous care of a man who understood the value of every coin, didn\'t need to check. &quot;Four hundred and twelve pieces. Give or take a few pennies that Much borrowed for cooking spices.&quot;</p>
+<p>&quot;Lend it to him,&quot; Robin said. No hesitation. No calculation. No weighing of pros and cons. Just a simple, immediate decision.</p>
+<p>&quot;All of it?&quot; Little John\'s eyebrows climbed toward his hairline. &quot;Robin, that\'s our entire treasury. Everything we\'ve saved over months of work. We need that money for food, for supplies, for —&quot;</p>
+<p>&quot;For what?&quot; Robin asked, not with irritation but with genuine curiosity. &quot;For sitting in a chest while a good man loses his home? We rob the rich to help those in need, John. That\'s not just what we do — it\'s who we are. And right here, sitting at our table, is a man who needs help more than anyone we\'ve ever met. What\'s the point of having money if we don\'t use it for this?&quot;</p>
+<p>Little John opened his mouth to argue. Then he closed it. He looked at the broken knight with the trembling hands and the threadbare cloak, and something softened behind those steady eyes. &quot;Aye,&quot; he said quietly. &quot;You\'re right. You\'re absolutely right.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>They counted out four hundred gold pieces into a leather sack, each coin clinking against the next with a sound like small bells. Friar Tuck blessed the money with a prayer that was short on theology and long on sincerity. Will Stutely threw in an extra gold piece &quot;for luck and road snacks.&quot; Alan-a-Dale contributed a lucky charm — a small wooden robin he had carved — that he insisted the knight carry in his pocket.</p>
+<p>Little John personally cleaned and polished Sir Richard\'s rusted armor until it gleamed like new. It took him most of the evening, working by firelight with oil and sand, but he did it without complaint and without being asked. When he finished, the armor looked like it belonged to a man who still had his pride.</p>
+<p>Much packed a saddlebag with food — enough for a week\'s travel, carefully wrapped in oilcloth against the rain. He also slipped in a small jar of honey, because Much believed that no one\'s journey should be entirely without sweetness.</p>
+<p>&quot;Take this to the Abbot,&quot; Robin told Sir Richard, placing the heavy leather sack in his hands. The knight\'s fingers closed around it like a drowning man gripping a rope. &quot;Pay your debt. Save your lands. Keep your family together. And when you can — when your fortunes have recovered and you\'re back on your feet — pay us back. But only when you can. There\'s no rush. A year, five years, ten years — it doesn\'t matter. The debt is between friends.&quot;</p>
+<p>Sir Richard stared at the gold, then at Robin, and tears rolled down his weathered cheeks. His shoulders shook. For a long moment, he couldn\'t speak.</p>
+<p>&quot;Why?&quot; he finally managed, his voice broken. &quot;You don\'t even know me. I\'m a stranger. I walked into your camp with nothing, and you\'re giving me everything you have. Why?&quot;</p>
+<p>Robin put his hand on the old knight\'s shoulder. &quot;Because you\'re a good man who\'s had bad luck. And that\'s not a crime, no matter what the Abbot or the Sheriff or anyone else says. Good people help other good people. That\'s how the world is supposed to work.&quot;</p>
+<p>Sir Richard rode away the next morning on a horse that Little John had personally fed and groomed until it looked like a different animal entirely. The knight sat straighter in his saddle than he had in months, his polished armor catching the pale November sun. He looked, for the first time in a long time, like a knight.</p>
+<p>Robin watched him go from the edge of the forest, his arms crossed, a quiet smile on his face.</p>
+<p>&quot;That was our entire treasury,&quot; Little John said, standing beside him.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;It was.&quot;</p>
+<p>&quot;We have enough food for maybe three weeks. After that, we\'ll need to start working the roads again.&quot;</p>
+<p>&quot;Then I suppose we\'d better get back to work,&quot; Robin said, his grin widening. &quot;I hear the Bishop of Hereford is traveling through next week. And a certain tax collector named Oswald is due to pass through on Thursday.&quot;</p>
+<p>Little John shook his head, but he was smiling. &quot;You\'re the most generous thief in England, you know that?&quot;</p>
+<p>&quot;I\'m not a thief. I\'m a redistributor of wealth. There\'s an important difference.&quot;</p>
+<p>&quot;The Sheriff doesn\'t think so.&quot;</p>
+<p>&quot;The Sheriff doesn\'t think much of anything. That\'s his problem.&quot;</p>
+<p>Six months later, on a bright May morning, Sir Richard of Lea returned to Sherwood Forest. He was barely recognizable. His armor gleamed. His horse was fat, glossy, and spirited. His clothes were new, his back was straight, and his eyes — which had been so hollow and defeated — were bright and full of life.</p>
+<p>He carried with him not only the four hundred gold pieces he owed, but an extra hundred as a gift of <span class="vocab-highlight">gratitude</span>. He also brought three barrels of the finest wine from his cellars, a wheel of cheese the size of a cartwheel, and a letter of thanks so heartfelt that Friar Tuck cried when he read it aloud.</p>
+<p>&quot;My son is free, my lands are safe, and my family is whole again,&quot; Sir Richard said, clasping Robin\'s hand with both of his. His grip was strong now — the grip of a man who had been given back his life. &quot;You saved us, Robin Hood. Not just with gold, but with faith. You believed in me when I had stopped believing in myself. I will never forget it, and I will spend the rest of my days trying to be worthy of your <span class="vocab-highlight">generosity</span>.&quot;</p>
+<p>He also brought something else — a knowing smile and a message from his daughter.</p>
+<p>&quot;My daughter Marian speaks very highly of you,&quot; Sir Richard said, his eyes twinkling. &quot;She tells me you are an honorable man. A kind man. A brave man.&quot; He paused. &quot;She also tells me you are occasionally an idiot, but she says that with great affection.&quot;</p>
+<p>&quot;I — well — I try to — I mean —&quot; Robin stammered, his legendary composure evaporating like morning dew.</p>
+<p>Little John, watching from behind a tree, laughed so hard that acorns fell from the branches above him.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin gives away the Merry Men’s entire treasury to help Sir Richard. Do you think this was a wise decision or a reckless one? Explain your reasoning.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How do the different Merry Men each contribute to helping Sir Richard? What does this tell us about the values of the group?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Sir Richard asks “Why?” when Robin gives him the gold. How does Robin’s answer reflect the central mission of the Merry Men?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 12 Complete!</h1>
+        <p class="completion-message">Great work on \"The Poor Knight\'s Debt\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson12Config);
+        });
+    <\/script>
+</body>
+</html>

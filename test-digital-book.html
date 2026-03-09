@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Digital Book</title>
+    <link rel="stylesheet" href="css/digital-book.css?v=1772643711933">
+</head>
+<body style="margin: 0; padding: 20px; background: #f5f5f5;">
+    <h1 style="text-align: center;">Digital Book Test</h1>
+    <div id="test-book"></div>
+
+    <script src="js/digital-book.js?v=1772643711933"></script>
+    <script>
+        console.log('Script loaded');
+        console.log('createDigitalBook function:', typeof createDigitalBook);
+        
+        const testBookConfig = {
+            coverTitle: "Test Book",
+            coverAuthor: "Testing 123",
+            coverEmoji: "📖",
+            coverColor: "#305853",
+            bookId: "test-book",
+            pages: [
+                {
+                    title: "Page 1",
+                    text: "This is the first page of our test book.",
+                    emoji: "🌟"
+                },
+                {
+                    title: "Page 2", 
+                    text: "This is the second page. If you can read this, the book is working!",
+                    emoji: "🎉"
+                }
+            ]
+        };
+
+        console.log('Book config:', testBookConfig);
+        console.log('Creating digital book...');
+        
+        try {
+            createDigitalBook('test-book', testBookConfig, {
+                maxPageIndex: 1,
+                onComplete: () => {
+                    console.log('Book completed!');
+                }
+            });
+            console.log('Digital book created successfully');
+        } catch (error) {
+            console.error('Error creating digital book:', error);
+        }
+    </script>
+</body>
+</html>

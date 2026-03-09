@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - BedrockELA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #305853 0%, #1B2A30 100%);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .student-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .btn-logout {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .btn-logout:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1B2A30;
+        }
+        
+        .current-lesson {
+            background: linear-gradient(135deg, #305853 0%, #1B2A30 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .current-lesson h3 {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .lesson-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        
+        .btn-continue {
+            background: white;
+            color: #305853;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .btn-continue:hover {
+            transform: scale(1.05);
+        }
+        
+        .progress-section {
+            margin-top: 20px;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #305853 0%, #1B2A30 100%);
+            height: 100%;
+            transition: width 0.5s;
+        }
+        
+        .progress-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #305853;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="student-title" id="studentName">📚 My Dashboard</div>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="dashboardContent">
+            <div class="loading">
+                <h2>Loading your dashboard...</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Railway backend removed - using Firebase only
+        let studentData = null;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const student = JSON.parse(localStorage.getItem('bedrockela_student') || 'null');
+            console.log('Loaded student from localStorage:', student);
+            
+            if (!student || !student.id || !student.name) {
+                // Clear old/invalid data and redirect
+                console.error('Invalid student data, redirecting to login');
+                localStorage.removeItem('bedrockela_student');
+                window.location.href = 'student-login.html';
+                return;
+            }
+
+            studentData = student;
+            document.getElementById('studentName').textContent = `📚 ${student.name}'s Dashboard`;
+            
+            loadStudentProgress();
+        });
+
+        async function loadStudentProgress() {
+            try {
+                console.log('Fetching from:', `${API_URL}/student/${studentData.id}/progress`);
+                const response = await fetch(`${API_URL}/student/${studentData.id}/progress`);
+                console.log('Response status:', response.status);
+                const data = await response.json();
+                console.log('Response data:', data);
+
+                if (data.success) {
+                    displayDashboard(data.student, data.stats);
+                } else {
+                    throw new Error(data.error || 'Failed to load progress');
+                }
+            } catch (error) {
+                console.error('Error loading progress:', error);
+                document.getElementById('dashboardContent').innerHTML = `
+                    <div class="card">
+                        <h2>Error Loading Dashboard</h2>
+                        <p>Unable to connect to server: ${error.message}</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: #999;">Check browser console (F12) for details</p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayDashboard(student, stats) {
+            // Update global studentData with fresh API data
+            studentData.current_lesson = student.current_lesson;
+            studentData.grade_level = student.grade_level;
+            
+            const currentLesson = student.current_lesson || 1;
+            const progress = (currentLesson / 180) * 100;
+            const remainingLessons = 180 - currentLesson;
+
+            const dashboardHTML = `
+                <div class="card current-lesson">
+                    <h3>🏔️ Current Lesson</h3>
+                    <div class="lesson-number">Lesson ${currentLesson}</div>
+                    <p style="font-size: 1.2rem; opacity: 0.9;">of 180</p>
+                    <button class="btn-continue" onclick="goToLesson()">
+                        Continue Reading →
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h2>📊 Your Progress</h2>
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${progress}%"></div>
+                        </div>
+                        <div class="progress-text">
+                            ${currentLesson} lessons completed • ${remainingLessons} to go!
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">${stats.total_journal_entries || 0}</div>
+                            <div class="stat-label">Journal Entries</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">${(stats.total_words_written || 0).toLocaleString()}</div>
+                            <div class="stat-label">Words Written</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>✏️ Quick Links</h2>
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                        <button class="btn-continue" style="background: #305853; color: white;" onclick="goToLesson()">
+                            📖 Continue to Lesson ${currentLesson}
+                        </button>
+                        <button class="btn-continue" style="background: #f8f9fa; color: #305853;" onclick="viewJournals()">
+                            📝 View My Journals
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('dashboardContent').innerHTML = dashboardHTML;
+        }
+
+        function goToLesson() {
+            const gradeLevel = studentData.grade_level;
+            const currentLesson = studentData.current_lesson || 1;
+            
+            // Route to appropriate lesson page based on grade
+            if (gradeLevel === '1st Grade' || gradeLevel === '1st' || gradeLevel === 'Grade 1') {
+                window.location.href = `1st-grade-lesson-${currentLesson}-v4.html`;
+            } else if (gradeLevel === '2nd Grade' || gradeLevel === '2nd' || gradeLevel === 'Grade 2') {
+                alert(`📚 Lessons for 2nd grade are coming soon!`);
+            } else if (gradeLevel === '3rd Grade' || gradeLevel === '3rd' || gradeLevel === 'Grade 3') {
+                alert(`📚 Lessons for 3rd grade are coming soon!`);
+            } else if (gradeLevel === '4th Grade' || gradeLevel === '4th' || gradeLevel === 'Grade 4') {
+                window.location.href = `4th-grade-day-${currentLesson}.html`;
+            } else if (gradeLevel === '5th Grade' || gradeLevel === '5th' || gradeLevel === 'Grade 5') {
+                alert(`📚 Lessons for 5th grade are coming soon!`);
+            } else if (gradeLevel === '6th Grade' || gradeLevel === '6th' || gradeLevel === 'Grade 6') {
+                window.location.href = `6th-grade-day-${currentLesson}.html`;
+            } else if (gradeLevel === '7th Grade' || gradeLevel === '7th' || gradeLevel === 'Grade 7') {
+                alert(`📚 Lessons for 7th grade are coming soon!`);
+            } else if (gradeLevel === '8th Grade' || gradeLevel === '8th' || gradeLevel === 'Grade 8') {
+                alert(`📚 Lessons for 8th grade are coming soon!`);
+            } else {
+                alert(`📚 Lessons for ${gradeLevel} are coming soon!`);
+            }
+        }
+
+        function viewJournals() {
+            // TODO: Implement journals view
+            alert('Journal viewer coming soon!');
+        }
+
+        function logout() {
+            localStorage.removeItem('bedrockela_student');
+            window.location.href = 'student-login.html';
+        }
+    </script>
+</body>
+</html>

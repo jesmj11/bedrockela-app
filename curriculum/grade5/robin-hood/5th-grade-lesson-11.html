@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: Maid Marian</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson11Config = {
+            lessonId: '5th-grade-lesson-11',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 11: Maid Marian',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 11</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Maid Marian
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 11!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Maid Marian</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Intelligence</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Reconnaissance</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Ally</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Intelligence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Intelligence</div><div class="match-word" data-word="Reconnaissance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reconnaissance</div><div class="match-word" data-word="Ally" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Ally</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Reconnaissance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of scouting or exploring an area to gather information, especially about an enemy.</div><div class="match-def" data-word="Ally" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person or group that joins with another for a shared purpose; a partner in a common cause.</div><div class="match-def" data-word="Intelligence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Secret information gathered about an enemy’s plans and activities; also means the ability to learn and understand.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Maid Marian</p>
+      <div class="story-text">
+        <p>For all his bravery and cleverness, Robin Hood had one weakness that his men teased him about endlessly, mercilessly, and with great affection: he could not speak a sensible word in the presence of Maid Marian.</p>
+<p>Marian Fitzwalter was the daughter of Sir Richard of Lea, a noble knight who lived in a modest manor on the eastern edge of Sherwood Forest. She had hair as dark as a raven\'s wing that she wore in a long braid down her back, eyes that sparkled like the river in sunlight, and a tongue as sharp as any sword in Robin\'s camp. She could ride a horse better than most of Robin\'s men, shoot an arrow nearly as well as Robin himself, and she had absolutely no patience for nonsense, flattery, or people who underestimated her because she happened to be a woman.</p>
+<p>Robin had known Marian since they were children, running through the fields together and climbing the same trees in the summers when Marian\'s family visited Locksley. She had been a wild, fearless girl who could outrun Robin in a footrace and who once pushed him into a pond for suggesting that girls couldn\'t climb as high as boys. She climbed higher than him that very afternoon, just to prove her point, and refused to come down until he apologized.</p>
+<p>But that was before Robin became an outlaw. Before the forest. Before everything changed. Now, years later, Robin watched her from the edges of the forest when she rode through on her white mare, and he sighed like a lovesick poet in one of Alan-a-Dale\'s ballads. He sighed at breakfast. He sighed at dinner. He sighed while polishing his bow, while planning robberies, while doing absolutely everything.</p>
+<p>&quot;Just go talk to her,&quot; Little John said one afternoon, as Robin sat in a tree watching Marian ride past on the road below. She sat straight and confident in the saddle, her dark braid swinging, and she looked — Robin thought miserably — like the most magnificent person who had ever lived.</p>
+<p>&quot;I can\'t just go talk to her,&quot; Robin said. &quot;What would I say?&quot;</p>
+<p>&quot;Hello. That\'s generally how people start conversations.&quot;</p>
+<p>&quot;She\'s not just anyone, John. She\'s Marian. She\'s clever and brave and beautiful, and I\'m a man who lives in a tree and robs people for a living. She probably doesn\'t even remember me.&quot;</p>
+<p>&quot;You face the Sheriff\'s soldiers without blinking. You walked into Nottingham in a beggar\'s costume and stole a golden arrow. But you can\'t say hello to a girl you\'ve known since you were ten?&quot;</p>
+<p>&quot;It\'s different.&quot;</p>
+<p>&quot;It\'s really not.&quot;</p>
+<p>&quot;You\'re not helping.&quot;</p>
+<p>&quot;I\'m helping enormously. You\'re just not listening.&quot;</p>
+<p>As it turned out, Robin didn\'t need to find the courage to approach Marian. She found him first. And she did it in the most Marian way possible.</p>
+<p>It happened on a misty morning in early autumn, when the trees were just beginning to turn gold and the air carried the first sharp bite of the coming cold. Robin was walking alone through the forest, following a deer trail that wound through a part of the woods he rarely visited. The mist hung in the air like curtains of white silk, muffling sounds and making the trees look like ghosts of themselves.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He came around a bend in the trail and found himself face to face with a young knight on horseback. The knight was slender and sat the horse well, with a sword at the belt and a dark cloak pulled up to hide the face beneath the helmet\'s visor. Something about the rider seemed familiar — the way the shoulders were set, the angle of the head — but Robin couldn\'t place it.</p>
+<p>&quot;Hold there, young knight!&quot; Robin called, stepping into the center of the trail with one hand raised and the other resting on his sword hilt. &quot;These are my woods, and all who pass through must pay a toll. It\'s a fair price — I promise you\'ll get your money\'s worth in scenery.&quot;</p>
+<p>The knight reined in the horse and looked down at Robin. &quot;And if I refuse?&quot; The voice was muffled by the cloak, pitched low and careful. &quot;What then?&quot;</p>
+<p>&quot;Then we settle it the traditional way. With swords.&quot;</p>
+<p>&quot;Very well.&quot; The knight dismounted with athletic grace and drew a sword — a fine blade, well-balanced and recently sharpened. The knight\'s stance was correct and confident, the mark of someone who had been properly trained.</p>
+<p>Robin drew his own blade, and they began to circle each other in the mist. For a moment, neither attacked. They were reading each other — watching footwork, studying stance, looking for openings. Then the knight lunged.</p>
+<p>It was a textbook attack — fast, precise, and aimed at Robin\'s left side, forcing him to turn. Robin parried and countered, but the knight was ready, deflecting his riposte with a clean beat that showed real skill. Robin pressed forward with a combination of cuts and thrusts, and the knight retreated smoothly, giving ground without losing form.</p>
+<p>This young knight was good. Very good. Robin\'s initial confidence began to give way to genuine respect. The knight\'s style was elegant and efficient — no wasted motion, no flashy tricks, just solid, classical swordsmanship executed with surprising speed.</p>
+<p>They fought through the misty trees for several minutes, their blades ringing in the silence like bells. Robin tried every trick in his considerable repertoire — feints, false openings, changes of tempo — but the knight countered each one. The knight fought defensively, waiting for Robin to overcommit, then striking at the gaps in his attack with sharp, punishing counters that came within inches of connecting.</p>
+<p>Then the knight executed a spinning parry-riposte that Robin had seen only once before, years ago. It was a specific technique — a flourish followed by a low cut that reversed into a high thrust — taught by an old swordmaster named Thomas who had come through Locksley the summer Robin was twelve. Thomas had spent three weeks teaching the children of the village, and his best students had been Robin and one other person. One specific person.</p>
+<p>Robin froze. His sword dropped an inch. His eyes went wide behind his guard.</p>
+<p>In that moment of recognition, the knight\'s sword caught Robin\'s blade in a disarming twist and sent it spinning out of his hand. It clattered on the rocky ground ten feet away. The knight\'s point came to rest at Robin\'s throat, steady and precise.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Yield,&quot; said the knight.</p>
+<p>Robin couldn\'t help it. Despite the sword at his throat, despite the embarrassment of being disarmed, despite everything — he started to laugh. &quot;I yield, Marian.&quot;</p>
+<p>The knight pulled back the hood and removed the helmet, and there she was — dark hair tumbling out in a cascade, eyes flashing with triumph and mischief, cheeks flushed from the fight. She was grinning — the exact same grin she\'d worn the day she climbed higher than Robin in the old oak tree, twenty years and a lifetime ago.</p>
+<p>&quot;How did you know?&quot; she demanded, sheathing her sword.</p>
+<p>&quot;Old Thomas the swordmaster taught you that spinning combination. He taught me the same one, the summer we were twelve. I\'d know it anywhere.&quot; Robin picked up his sword and sheathed it, shaking his head in wonder. &quot;You\'ve gotten better.&quot;</p>
+<p>&quot;I\'ve been practicing. While you\'ve been playing outlaw in the woods, some of us have been keeping up with our training.&quot; She crossed her arms. &quot;I\'ve been riding through this forest for three weeks, Robin. Three weeks! Hoping to run into you. Do you know how frustrating it is to look for the most famous outlaw in England and not be able to find him?&quot;</p>
+<p>&quot;Why were you looking for me?&quot; Robin asked, and his heart was beating faster than it had during the swordfight — which, considering that a sword had just been at his throat, was saying something.</p>
+<p>Marian\'s expression shifted from playful to grave. &quot;Because the Sheriff is planning something terrible. My father heard rumors at court — the Sheriff has petitioned Prince John for permission to burn Sherwood Forest. All of it, Robin. Every tree, every bush. He would rather destroy a thousand acres of ancient woodland than let you hide in it.&quot;</p>
+<p>Robin\'s smile vanished. Burn the forest? Sherwood was not just Robin\'s home — it was a living, breathing world. Thousands of creatures lived here. Dozens of villages bordered the forest, depending on its wood and game for their survival. Burning it would be an act of monstrous, spiteful destruction that would devastate the entire region.</p>
+<p>&quot;There\'s more,&quot; Marian said, her voice dropping. &quot;The Sheriff plans to arrest my father. He\'s been collecting evidence — manufactured evidence, lies and forged documents — claiming that my father has been supplying you with food and <span class="vocab-highlight">intelligence</span>. If the Sheriff gets his way, my father will lose his lands, his title, everything.&quot;</p>
+<p>&quot;Has your father been helping us?&quot; Robin asked carefully.</p>
+<p>Marian gave him a look that could have melted steel. &quot;He\'s been leaving food at the forest\'s edge for three years. Every week, without fail. Bread, cheese, dried meat. Of course he\'s been helping you. He believes in what you\'re doing. But he\'s too proud and too stubborn to admit it, because he\'s a knight and knights don\'t consort with outlaws.&quot; She paused. &quot;Apparently stubbornness is a quality I\'m attracted to, because here I am.&quot;</p>
+<p>Robin\'s heart performed a complicated maneuver in his chest. &quot;Marian, it\'s too dangerous for you to be here. If the Sheriff discovers that you\'ve been warning me —&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Then he discovers it. I didn\'t ride through this forest for three weeks to be told to go home and be safe.&quot; She stepped closer, and her eyes — those extraordinary, fierce, beautiful eyes — locked onto his. &quot;I know these lands better than anyone in your band. I can move freely between the court and the countryside. I have connections among the nobility that you don\'t. I can be your eyes and ears in places where you can\'t go. Let me help, Robin. Not because I need your permission, but because we\'ll be more effective as partners.&quot;</p>
+<p>Robin looked at her — this brave, brilliant, fearless woman who had ridden alone through outlaw-infested woods, challenged him to a swordfight, disarmed him, and was now standing in front of him demanding to be treated as an equal — and he knew she was right. He also knew, with a certainty that went deeper than thought, something he had known since he was twelve years old and too shy to say: he was completely and utterly in love with her.</p>
+<p>&quot;Stay,&quot; he said. &quot;Stay and help us. And Marian — I\'m glad you found me. I should have found you a long time ago.&quot;</p>
+<p>She smiled, and the misty forest seemed suddenly full of light.</p>
+<p>From that day forward, Marian became Robin Hood\'s most valuable <span class="vocab-highlight">ally</span>. She moved between the world of the court and the world of the greenwood like a ghost, carrying messages, gathering <span class="vocab-highlight">intelligence</span>, and warning Robin of the Sheriff\'s plans before they could be set in motion. She established a network of informants that stretched from Nottingham to London, connecting sympathetic nobles, disgruntled servants, and ordinary people who were tired of living under tyranny.</p>
+<p>The Merry Men adored her — partly because she could outshoot half of them and outsmart the other half, and partly because she was the only person alive who could make Robin Hood blush, stammer, and lose his legendary composure. Watching Robin try to be cool around Marian became one of the camp\'s favorite entertainments.</p>
+<p>&quot;You should just tell her how you feel,&quot; Little John said one evening, watching Robin trip over his own feet for the third time because Marian had smiled at him.</p>
+<p>&quot;I will. Eventually. When the time is right.&quot;</p>
+<p>&quot;The time has been right for about fifteen years.&quot;</p>
+<p>&quot;You\'re not helping, John.&quot;</p>
+<p>&quot;I\'m helping enormously. You\'re just not listening.&quot;</p>
+<p>And if Robin walked a little taller and sang a little louder in the days after Marian joined them — if his plans were bolder and his laughter came easier — well, even outlaws are allowed to be happy. Especially when the person who makes them happy can also beat them in a swordfight.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Marian prove herself to be Robin’s equal in this chapter? Give at least two specific examples.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why is Robin unable to speak normally around Marian, even though he is brave in every other situation? What does this tell us about the difference between physical courage and emotional courage?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Marian says she didn’t come to be safe — she came to help. How does this attitude challenge the way women were typically treated in medieval stories? Why is her role important to the Merry Men?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 11 Complete!</h1>
+        <p class="completion-message">Great work on \"Maid Marian\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson11Config);
+        });
+    <\/script>
+</body>
+</html>

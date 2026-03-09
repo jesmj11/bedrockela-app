@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Friar Tuck and the River Crossing</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson4Config = {
+            lessonId: '5th-grade-lesson-4',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 4: Friar Tuck and the River Crossing',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 4</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Friar Tuck and the River Crossing
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 4!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Friar Tuck and the River Crossing</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Friar</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Broadsword</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Humility</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Outlaw" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Outlaw</div><div class="match-word" data-word="Quarry" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Quarry</div><div class="match-word" data-word="Invincible" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Invincible</div><div class="match-word" data-word="Quarterstaff" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Quarterstaff</div><div class="match-word" data-word="Yield" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Yield</div><div class="match-word" data-word="Christened" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Christened</div><div class="match-word" data-word="Scheme" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Scheme</div><div class="match-word" data-word="Disguise" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Disguise</div><div class="match-word" data-word="Humiliation" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humiliation</div><div class="match-word" data-word="Friar" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Friar</div><div class="match-word" data-word="Broadsword" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Broadsword</div><div class="match-word" data-word="Humility" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humility</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Friar" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A member of a religious order who has taken vows of poverty and often travels to preach and help the poor.</div><div class="match-def" data-word="Broadsword" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A large, heavy sword with a wide blade, used for powerful cutting strikes.</div><div class="match-def" data-word="Quarry" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An animal or person being hunted or pursued.</div><div class="match-def" data-word="Scheme" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A secret or clever plan, especially one designed to trick someone.</div><div class="match-def" data-word="Humility" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being humble; not thinking you are better or more important than others.</div><div class="match-def" data-word="Outlaw" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who has broken the law and lives outside of society’s rules, often hiding to avoid capture.</div><div class="match-def" data-word="Quarterstaff" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A long, thick wooden pole used as a weapon, held with both hands.</div><div class="match-def" data-word="Invincible" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Too powerful to be defeated or overcome; feeling as though nothing can hurt you.</div><div class="match-def" data-word="Christened" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To give someone a name, often in a ceremony or celebration.</div><div class="match-def" data-word="Humiliation" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A feeling of deep embarrassment and shame, often caused by being made to look foolish in front of others.</div><div class="match-def" data-word="Yield" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To give up or surrender; to admit that someone else has won.</div><div class="match-def" data-word="Disguise" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A costume or change in appearance that hides who someone really is.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Friar Tuck and the River Crossing</p>
+      <div class="story-text">
+        <p>Robin Hood had heard tales of a certain <span class="vocab-highlight">friar</span> who lived near Fountain Abbey, beside the river that wound through the eastern edge of Sherwood Forest. This <span class="vocab-highlight">friar</span>, the travelers said, was no ordinary man of the cloth. He was as round as a barrel of ale, as strong as a plow horse, and as fond of a good fight as he was of a good meal — which was saying a great deal, because this particular <span class="vocab-highlight">friar</span> was extraordinarily fond of good meals.</p>
+<p>&quot;They say he eats enough for three men,&quot; reported Will Stutely, who had gathered the intelligence. &quot;And they say he once knocked out a knight with a leg of mutton.&quot;</p>
+<p>&quot;Accidentally or on purpose?&quot; Robin asked.</p>
+<p>&quot;On purpose. The knight insulted his cooking.&quot;</p>
+<p>&quot;I must meet this man,&quot; Robin announced to his band one morning, rising from the breakfast log with the look of a man who has just found a new purpose in life. &quot;Any <span class="vocab-highlight">friar</span> who can fight as well as he can pray is exactly the sort of fellow we need in this company.&quot;</p>
+<p>&quot;You said that about the last three people you recruited,&quot; Little John pointed out, not looking up from his porridge. &quot;And two of them tried to rob you.&quot;</p>
+<p>&quot;Third time\'s the charm,&quot; Robin said, and off he went before Little John could raise further objections.</p>
+<p>He found the <span class="vocab-highlight">friar</span> sitting on the grassy bank of the river, in a patch of warm sunshine, eating a meat pie the size of his own considerable head. The man was enormous — not tall like Little John, but wide in every direction, with a belly that strained magnificently against his brown robes and arms that would have looked more at home on a blacksmith than a holy man. His bald head gleamed in the sunlight like a polished stone. A <span class="vocab-highlight">broadsword</span> — an actual <span class="vocab-highlight">broadsword</span>, heavy enough to cut through armor — hung at his belt, which was unusual for a <span class="vocab-highlight">friar</span> and frankly alarming. Three dogs lay at his feet, watching the meat pie with the desperate, unwavering intensity that only dogs and hungry outlaws can achieve.</p>
+<p>&quot;Good morning, holy father,&quot; Robin called from the opposite bank, putting on his most charming smile. &quot;I find myself in need of crossing this river, and my boots are new. Fine calfskin, just bought. It would be a terrible shame to ruin them. Would you be so kind as to carry me across on your back?&quot;</p>
+<p>The <span class="vocab-highlight">friar</span> looked up from his pie. He had a round, ruddy face, small bright eyes, and the expression of a man who has been interrupted during something important and is trying to decide how annoyed to be. He studied Robin for a long moment — taking in the Lincoln green, the longbow, the confident stance — and seemed to arrive at some private conclusion.</p>
+<p>Without a word, he tucked the remainder of his pie into a fold of his robe, brushed the crumbs from his belly, waded into the river, and crouched down with his broad back to Robin. Robin, delighted that his charm had worked so easily, climbed onto the <span class="vocab-highlight">friar</span>\'s back.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The <span class="vocab-highlight">friar</span> carried him across the river without a single word of complaint. The water came up to the <span class="vocab-highlight">friar</span>\'s waist, but he moved through it as steadily as a barge, his sandaled feet finding solid ground on the rocky riverbed with practiced ease. When they reached the far bank, Robin hopped off and landed neatly on dry ground.</p>
+<p>&quot;Thank you, good <span class="vocab-highlight">friar</span>. Most kind of you. Now, I was wondering if —&quot;</p>
+<p>But the <span class="vocab-highlight">friar</span> held up one thick finger. &quot;My turn,&quot; he said, in a voice like a friendly avalanche. &quot;I find I need to go back across, and my sandals, while old, are extremely comfortable. I\'d hate to get them wet. Carry me.&quot;</p>
+<p>Robin stared at him. The <span class="vocab-highlight">friar</span> must have weighed close to three hundred pounds. Carrying him across the river would be like carrying a small horse through a rapids. But Robin Hood was not a man to back down from anything — it was his greatest strength and his most persistent flaw — so he gritted his teeth, bent down, and the <span class="vocab-highlight">friar</span> climbed onto his back.</p>
+<p>The weight was staggering. Robin\'s knees buckled. His boots, which he had been so concerned about protecting, immediately sank six inches into the muddy riverbed. He staggered forward, the water swirling around his waist, his every step an exercise in pure stubbornness. The <span class="vocab-highlight">friar</span>, perched on his back like an enormous, cheerful boulder, hummed a hymn and seemed entirely comfortable.</p>
+<p>&quot;Lovely day for a swim,&quot; the <span class="vocab-highlight">friar</span> observed pleasantly as Robin nearly went under.</p>
+<p>Robin couldn\'t reply. His teeth were clenched too tightly. But somehow, gasping and wobbling and making sounds that were not remotely dignified, he made it to the far bank and deposited the <span class="vocab-highlight">friar</span> on dry ground. His arms were shaking. His boots were ruined. His pride was intact, but only barely.</p>
+<p>&quot;Wonderful,&quot; said the <span class="vocab-highlight">friar</span>, adjusting his robe. &quot;Now carry me back again.&quot;</p>
+<p>&quot;What?&quot; Robin said, bent double and breathing hard.</p>
+<p>&quot;I\'ve changed my mind. I need to be on the other side after all. Terribly sorry for the inconvenience.&quot;</p>
+<p>Robin looked at the <span class="vocab-highlight">friar</span>. The <span class="vocab-highlight">friar</span> looked at Robin. There was a twinkle in the <span class="vocab-highlight">friar</span>\'s small, bright eyes that suggested he was enjoying this immensely.</p>
+<p>So Robin carried him back. And then the <span class="vocab-highlight">friar</span> carried Robin. And then Robin carried the <span class="vocab-highlight">friar</span> again. Back and forth, back and forth, across the river and back, like some absurd, exhausting game that neither man was willing to lose. By the third crossing, Robin\'s arms were shaking. By the fourth, his legs were jelly. By the fifth, he was fairly certain that he was going to die in this river, carrying a monk, and that his tombstone would read &quot;Here lies Robin Hood — he couldn\'t say no.&quot;</p>
+<p>The <span class="vocab-highlight">friar</span>, meanwhile, showed no sign of fatigue whatsoever. Each time he carried Robin, he did so with the same steady, unhurried ease. And each time Robin carried him, the <span class="vocab-highlight">friar</span> seemed to get heavier, as if he were secretly filling his pockets with river stones.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>On the sixth crossing, Robin had had enough. He was in the middle of the river, knee-deep in rushing water, with three hundred pounds of <span class="vocab-highlight">friar</span> on his back and absolutely no dignity left to lose. Something inside him snapped — not anger, exactly, but a sort of wild, desperate hilarity.</p>
+<p>He shifted his weight, bent forward, and dumped the <span class="vocab-highlight">friar</span> into the river with the most almighty splash either of them had ever heard. Water erupted in every direction. Fish fled. The three dogs on the bank began barking hysterically.</p>
+<p>The <span class="vocab-highlight">friar</span> came up like a whale breaching — roaring, water streaming from his bald head, his brown robes billowing around him like the sails of a very round ship. His face was a picture of outraged astonishment. And then, without a moment\'s hesitation, he drew his <span class="vocab-highlight">broadsword</span> from his belt — where it had apparently been hanging, completely dry, this entire time — and let out a war cry that sent the birds scattering from every tree within half a mile.</p>
+<p>&quot;Right then!&quot; the <span class="vocab-highlight">friar</span> bellowed, his voice echoing off the rocks. &quot;We\'ll settle this like men!&quot;</p>
+<p>Robin drew his own sword — thank heaven he\'d worn it — and they fought right there in the middle of the river, splashing and slashing and shouting like madmen. The <span class="vocab-highlight">friar</span> fought with an enthusiasm that was frankly terrifying. He swung his <span class="vocab-highlight">broadsword</span> in great, sweeping arcs, sending up curtains of spray with each stroke. His footwork in the rocky riverbed was astonishingly sure for a man of his size, and his blade moved with a speed and precision that spoke of serious training.</p>
+<p>Robin was hard-pressed. He was lighter, faster, and more technically skilled, but he was also exhausted from carrying three hundred pounds of <span class="vocab-highlight">friar</span> back and forth across a river five times. His arms felt like overcooked noodles. His footwork, usually his greatest asset, was hampered by the current and the slippery rocks.</p>
+<p>Still, they fought on — twenty minutes of the finest swordfight ever conducted knee-deep in a river, accompanied by the enthusiastic barking of three dogs who couldn\'t decide which human to support. Robin landed a cut on the <span class="vocab-highlight">friar</span>\'s sleeve. The <span class="vocab-highlight">friar</span> answered with a stroke that shaved a button off Robin\'s tunic. Back and forth they went, neither able to gain the upper hand, both unwilling to yield.</p>
+<p>Finally, Robin held up his hand. &quot;Enough! Enough! I yield — or at least I\'d like to stop before I drown. I am Robin Hood, and I came here to ask you to join my band of Merry Men. But first, would you please stop trying to kill me?&quot;</p>
+<p>The <span class="vocab-highlight">friar</span> lowered his sword. Water dripped from his blade. His eyes, which had been blazing with battle fury, softened into something warm and surprised. Then he threw back his head and laughed — a great, booming, joyful laugh that seemed to make the river itself dance.</p>
+<p>&quot;Robin Hood! Why didn\'t you say so in the first place? I\'ve been wanting to meet you for months! Heard all about you from the villagers. The man who robs the rich and feeds the poor. The thorn in the Sheriff\'s backside.&quot; He sheathed his sword and waded forward, extending a hand the size of a dinner plate. &quot;The name\'s Tuck. <span class="vocab-highlight">Friar</span> Tuck. And I\'ve been waiting for someone to come along and give me a reason to leave this riverbank.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Will you join us?&quot; Robin asked, shaking the enormous hand.</p>
+<p>&quot;Will there be food?&quot; asked <span class="vocab-highlight">Friar</span> Tuck, with the air of a man asking the only question that truly matters.</p>
+<p>&quot;The best venison in Sherwood Forest. And Much the Miller\'s Son is a fine cook.&quot;</p>
+<p>&quot;Then lead the way, my son. Lead the way.&quot;</p>
+<p>As they climbed out of the river, dripping and bruised and grinning like fools, Robin asked the question that had been nagging at him. &quot;Tuck — why did you make me carry you back and forth so many times? You knew who I was from the start, didn\'t you?&quot;</p>
+<p>Tuck smiled mysteriously and patted his round belly. &quot;I had my suspicions. But I wanted to see what kind of man you were. Any fool can shoot an arrow or swing a sword. But a man who will carry a three-hundred-pound <span class="vocab-highlight">friar</span> across a river five times without complaining — well, that\'s a man I can follow.&quot;</p>
+<p>&quot;I complained,&quot; Robin pointed out.</p>
+<p>&quot;Not as much as most would have. That\'s the point.&quot;</p>
+<p><span class="vocab-highlight">Friar</span> Tuck became one of the most beloved members of Robin\'s band. He said prayers over their meals, tended their wounds with surprising gentleness, performed wedding ceremonies for those who needed them, settled arguments with wisdom and humor, and ate roughly twice as much as any other man in camp. He also turned out to be one of the finest fighters in the group — his <span class="vocab-highlight">broadsword</span> work was exceptional, and his bare-knuckle boxing was even better.</p>
+<p>His three dogs — Fury, Beauty, and Fangs — became the unofficial guardians of the camp. Fury was fierce and territorial. Beauty was sweet and gentle, unless you threatened her master, in which case she transformed into a snarling fury that would make her namesake proud. And Fangs was old and mostly deaf but had an uncanny ability to find anyone trying to sneak into camp, usually by falling asleep on top of them.</p>
+<p>As for the river crossing, it became one of the most popular stories in camp. The Merry Men never tired of hearing how Robin Hood had been outsmarted by a fat <span class="vocab-highlight">friar</span> with a meat pie and a <span class="vocab-highlight">broadsword</span>. Robin bore the teasing with good grace, because he knew that the best stories are the ones where the hero doesn\'t always win.</p>
+<p>And whenever anyone asked <span class="vocab-highlight">Friar</span> Tuck why he\'d made Robin carry him back and forth so many times, Tuck would simply smile, pat his belly, and say, &quot;A little <span class="vocab-highlight">humility</span> is good for the soul. Even Robin Hood\'s soul.&quot;</p>
+<p>Especially Robin Hood\'s soul.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why do you think Friar Tuck makes Robin carry him back and forth across the river so many times? What is he trying to learn about Robin?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How is Friar Tuck different from what you might expect a friar to be like? List at least three ways he surprises Robin.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Tuck says “A little humility is good for the soul.” What does he mean by this, and how does it connect to one of Robin’s character flaws?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 4 Complete!</h1>
+        <p class="completion-message">Great work on \"Friar Tuck and the River Crossing\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson4Config);
+        });
+    <\/script>
+</body>
+</html>

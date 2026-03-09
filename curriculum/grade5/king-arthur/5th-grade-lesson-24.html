@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 24: The Knights of the Round Table</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson24Config = {
+            lessonId: '5th-grade-lesson-24',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 24: The Knights of the Round Table',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 24</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Knights of the Round Table
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 24!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Knights of the Round Table</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Chivalry</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Fellowship</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Hierarchy</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Destiny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Destiny</div><div class="match-word" data-word="Rightborn" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Rightborn</div><div class="match-word" data-word="Bewildered" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Bewildered</div><div class="match-word" data-word="Usurper" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Usurper</div><div class="match-word" data-word="Alliance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Alliance</div><div class="match-word" data-word="Sincerity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Sincerity</div><div class="match-word" data-word="Enchantment" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Enchantment</div><div class="match-word" data-word="Scabbard" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Scabbard</div><div class="match-word" data-word="Reverence" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reverence</div><div class="match-word" data-word="Chivalry" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Chivalry</div><div class="match-word" data-word="Fellowship" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Fellowship</div><div class="match-word" data-word="Hierarchy" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Hierarchy</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Chivalry" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A code of behavior followed by medieval knights that emphasized bravery, honor, courtesy, and protecting the weak.</div><div class="match-def" data-word="Fellowship" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A group of people sharing a common interest or purpose; a close bond of friendship and mutual support.</div><div class="match-def" data-word="Rightborn" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Having the legitimate right to something by birth; the true and lawful heir.</div><div class="match-def" data-word="Enchantment" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A magical spell or charm; the state of being under a magical influence.</div><div class="match-def" data-word="Hierarchy" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A system in which people are ranked one above another according to their status, power, or authority.</div><div class="match-def" data-word="Destiny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A predetermined course of events; the hidden power believed to control what will happen in the future.</div><div class="match-def" data-word="Usurper" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who takes a position of power illegally or by force, without having the right to it.</div><div class="match-def" data-word="Bewildered" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Completely confused and puzzled; unable to understand what is happening.</div><div class="match-def" data-word="Sincerity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being honest and genuine; meaning what you say without pretending or deceiving.</div><div class="match-def" data-word="Reverence" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Deep respect and admiration, often mixed with awe; the feeling of being in the presence of something sacred.</div><div class="match-def" data-word="Alliance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An agreement between groups or countries to work together for a common purpose, especially in war.</div><div class="match-def" data-word="Scabbard" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A protective sheath or case for a sword blade, usually worn at the hip.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Knights of the Round Table</p>
+      <div class="story-text">
+        <p>Arthur\'s first year as king was spent putting out fires — sometimes literally. Saxon raiders burned villages along the coast. Welsh princes tested the new king\'s borders. Bandits roamed the roads, growing bolder with each passing month. And the lords who had opposed Arthur\'s crowning, while defeated in battle, still grumbled in their castles and looked for signs of weakness.</p>
+<p>Arthur rode from one crisis to the next, Excalibur at his side, learning the art of kingship the way a swimmer learns to swim — by jumping in and trying not to drown. He made mistakes. He made decisions that he agonized over for days and decisions that he made in seconds and regretted for weeks. He learned that being a king meant being criticized by everyone, thanked by few, and understood by almost nobody.</p>
+<p>But he also learned something else: he could not do this alone.</p>
+<p>&quot;I need knights,&quot; Arthur told Merlin one evening, pacing the great hall of his castle at Camelot — a castle that was still half-built, its towers rising unevenly against the twilight sky. &quot;Good knights. Brave ones. Men who will fight for justice, not just for land or glory. Men I can trust.&quot;</p>
+<p>&quot;You need more than knights,&quot; Merlin said. He was sitting by the fire, feeding scraps to a raven that had appeared from nowhere and seemed to be listening to the conversation with unusual interest. &quot;You need a <span class="vocab-highlight">fellowship</span>. A brotherhood of the finest warriors in Britain, bound together by shared purpose and a code of honor.&quot;</p>
+<p>&quot;A code?&quot;</p>
+<p>&quot;Rules, Arthur. Principles. You can\'t just gather a bunch of men with swords and expect them to behave. Knights without a code are just well-armed bullies. You need to give them something to believe in — something higher than gold or glory.&quot;</p>
+<p>Arthur sat down and thought about this for a long time. What did he believe in? What principles had guided his own life? He thought about Sir Ector, who had taught him that a man\'s worth is measured by how he treats those weaker than himself. He thought about the common people he had met on his travels — farmers, smiths, shepherds — who asked for nothing from their king except justice and protection. He thought about the world he wanted to build, and slowly, the code took shape in his mind.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He wrote it down that night, by candlelight, in his own hand:</p>
+<p>The code was simple and demanding. Every knight of Arthur\'s order would swear to fight for justice, not for personal gain. They would protect the weak, the poor, and the helpless. They would show mercy to defeated enemies. They would speak the truth, even when it was dangerous. They would treat all people — noble and common, man and woman — with respect and courtesy. And they would never use their strength to bully, exploit, or terrorize.</p>
+<p>&quot;It\'s a high standard,&quot; Merlin observed, reading over Arthur\'s shoulder.</p>
+<p>&quot;It should be,&quot; Arthur said. &quot;If you\'re going to give a man a sword and a horse and the authority to act in the king\'s name, the least you can do is make sure he deserves it.&quot;</p>
+<p>Merlin smiled. &quot;Your father would be proud. Now, about the table.&quot;</p>
+<p>&quot;The table?&quot;</p>
+<p>This was Merlin\'s idea, and it was brilliant. In every court in Britain — in every court in Europe — the great lords sat at a long, rectangular table, with the most powerful lord at the head and everyone else arranged in descending order of importance. The position of every chair was a political statement. Men fought, schemed, and occasionally murdered each other over the right to sit six inches closer to the head of the table.</p>
+<p>&quot;Make it round,&quot; Merlin said.</p>
+<p>&quot;Round?&quot;</p>
+<p>&quot;A round table has no head. No seat is higher or lower than any other. Every knight who sits at a round table is equal — the youngest squire and the mightiest warrior, side by side, with the same voice and the same honor. No ranking. No <span class="vocab-highlight">hierarchy</span>. Just brotherhood.&quot;</p>
+<p>Arthur stared at Merlin. The idea was radical — so radical that half the nobility would probably choke on their wine when they heard it. A table where a farmer\'s son sat as an equal to a duke? Where merit mattered more than bloodline? It went against everything the aristocracy believed about the natural order of the world.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;I love it,&quot; Arthur said.</p>
+<p>The Round Table was built by the finest craftsmen in Britain — a massive circle of polished oak, twenty feet across, with seats for one hundred and fifty knights. Each seat was carved with the name of its occupant in letters of gold, and the back of each chair bore the knight\'s personal crest. At the center of the table, inlaid in silver, was the symbol of the new order: a crown encircled by a ring of swords, representing the unity of king and knights.</p>
+<p>Arthur chose his first knights with care. He wanted men of proven courage and genuine honor — not just the best fighters, but the best people. Sir Kay was the first, despite his flaws, because loyalty deserved recognition. Sir Bedivere came next — a one-handed knight whose missing hand had been lost saving a child from a burning house. Sir Ector, old and gray but steady as stone, took his seat with tears in his eyes.</p>
+<p>Others followed. Sir Gawain, the king\'s nephew, fierce and hot-tempered but devoted to justice. Sir Bors, who was as devout as a monk and as fierce as a lion. Sir Percival, a country boy who had walked to Camelot in homemade armor and proved himself the bravest man at the first tournament. One by one, the seats filled with men who had earned their place not through wealth or title but through deeds.</p>
+<p>On the evening the Round Table was completed, Arthur stood before his assembled knights in the great hall of Camelot. Torches burned in iron brackets along the walls, casting dancing shadows across the faces of a hundred brave men. The Round Table gleamed in the firelight, and each golden name shone like a small sun.</p>
+<p>&quot;You are the Knights of the Round Table,&quot; Arthur said, his voice carrying to every corner of the hall. &quot;You are the best of Britain — not because of your names or your lands or your bloodlines, but because of who you are. Each of you has proven your worth through courage, mercy, and honor.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>He drew Excalibur, and its light filled the hall like a second dawn. &quot;I ask you now to swear an oath. Swear that you will uphold our code. That you will protect the innocent. That you will fight for justice, even when it is hard, even when it is dangerous, even when the whole world tells you to look the other way. Swear it, and we will build something that has never existed before — a kingdom founded not on power, but on right.&quot;</p>
+<p>One hundred and fifty knights rose to their feet. One hundred and fifty swords were drawn and raised. And in one thundering voice, they swore the oath that would echo through history.</p>
+<p>&quot;We swear it!&quot;</p>
+<p>The sound shook the rafters. The torches flared. And Camelot — that bright, impossible, fragile dream of a better world — was born.</p>
+<p>Merlin, watching from the shadows, allowed himself a rare moment of hope. He had waited centuries for this — for a king worthy of the dream, for knights brave enough to pursue it. And now it was here. Imperfect, fragile, and already surrounded by enemies who would love nothing more than to see it fail.</p>
+<p>But it was here. And that was enough.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Merlin suggest a round table instead of a rectangular one? How does the shape of a table communicate a message about equality?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur’s code says knights must “never use their strength to bully, exploit, or terrorize.” Why is it important to include rules about what knights should NOT do, in addition to what they should do?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Compare Arthur’s method of choosing knights with how leaders choose people for important roles today. What are the advantages and disadvantages of choosing based on character rather than rank?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 24 Complete!</h1>
+        <p class="completion-message">Great work on \"The Knights of the Round Table\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson24Config);
+        });
+    <\/script>
+</body>
+</html>

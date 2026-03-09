@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 17: Little John Goes to the Fair</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson17Config = {
+            lessonId: '5th-grade-lesson-17',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 17: Little John Goes to the Fair',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 17</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Little John Goes to the Fair
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 17!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Little John Goes to the Fair</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Infiltrate</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Espionage</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Audacity</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (6 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Merciless" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merciless</div><div class="match-word" data-word="Composure" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Composure</div><div class="match-word" data-word="Adversary" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Adversary</div><div class="match-word" data-word="Infiltrate" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Infiltrate</div><div class="match-word" data-word="Espionage" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Espionage</div><div class="match-word" data-word="Audacity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Audacity</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Adversary" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An enemy or opponent, especially one in a conflict or contest.</div><div class="match-def" data-word="Audacity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Bold, daring behavior that shows a willingness to take risks, sometimes to a shocking degree.</div><div class="match-def" data-word="Composure" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being calm and in control of your emotions, especially in a difficult situation.</div><div class="match-def" data-word="Infiltrate" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To secretly enter or join a group or place in order to gather information or cause change from the inside.</div><div class="match-def" data-word="Merciless" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Showing no mercy or kindness; cruel and unforgiving.</div><div class="match-def" data-word="Espionage" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The practice of spying; secretly gathering information about an enemy or competitor.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Little John Goes to the Fair</p>
+      <div class="story-text">
+        <p>Little John was bored. This was a dangerous state of affairs, because a bored Little John was a Little John looking for trouble, and when a seven-foot man goes looking for trouble, he generally finds it in spectacular fashion.</p>
+<p>It was a gray, drizzly Tuesday in late March — the kind of day when the forest was muddy and cheerless, the fire wouldn\'t stay lit, and everyone was snappish and damp. Robin was off meeting with Marian about intelligence reports. Will Stutely was nursing a cold. Friar Tuck was reading aloud from a book of sermons, which nobody wanted to hear. Even Much\'s cooking couldn\'t lift the mood, though his mushroom soup was, as always, miraculous.</p>
+<p>&quot;I\'m going to the Nottingham Fair,&quot; Little John announced to the camp at large, standing up and stretching until his head nearly hit the branch above him.</p>
+<p>Robin, who had just returned, looked up from the map he was studying. &quot;The Nottingham Fair? The one happening inside the city where the Sheriff has a hundred soldiers actively looking for us?&quot;</p>
+<p>&quot;That\'s the one.&quot;</p>
+<p>&quot;The one where there will be wanted posters with our faces on them?&quot;</p>
+<p>&quot;I assume so.&quot;</p>
+<p>&quot;John, you\'re seven feet tall. You\'re probably the tallest man in England. What kind of disguise covers that?&quot;</p>
+<p>&quot;A very large one.&quot; Little John pulled a leather jerkin from his pack, along with a truly horrifying false beard made of horsehair that looked like something a horse had coughed up. &quot;I\'ll be Dodd of York. Traveling wrestler. Looking for fights.&quot;</p>
+<p>&quot;This is a terrible idea.&quot;</p>
+<p>&quot;You crashed the Sheriff\'s archery tournament. Twice.&quot;</p>
+<p>&quot;That\'s different.&quot;</p>
+<p>&quot;How?&quot;</p>
+<p>Robin opened his mouth, closed it, and sighed the sigh of a man who knows hypocrisy when he hears it. &quot;Fine. But be careful. And if you get caught, I\'m going to say I told you so.&quot;</p>
+<p>&quot;You won\'t need to.&quot; Little John grinned. &quot;Because I won\'t get caught.&quot;</p>
+<p>The Nottingham Fair was the biggest event of the spring season — three days of markets, entertainment, food, and competition that drew people from across the county. The streets were packed with vendors selling everything from ribbons to roasted nuts, and the air rang with the sounds of music, laughter, and the enthusiastic shouting of people trying to separate other people from their money.</p>
+<p>Little John entered the city through the east gate, walking with a pronounced stoop that brought him down to a mere six and a half feet. His false beard, while not convincing up close, was adequate in a crowd. He gave his name as Dodd of York to the bored gate guard, who waved him through without a second glance.</p>
+<p>The fair was magnificent. There were jugglers tossing flaming torches, a fire-eater with singed eyebrows and supreme confidence, puppet shows that made children shriek with laughter, and a pie-eating contest that Friar Tuck would have won with one hand behind his back. Little John wandered happily through the crowds, sampling roasted chestnuts and honeyed almonds, watching a troupe of acrobats, and generally having the best day he\'d had in months.</p>
+<p>Then he came upon the wrestling ring.</p>
+<p>It was set up in the center of the fairground — a circle of packed earth, twenty feet across, surrounded by a rope fence and an enthusiastic crowd. In the center stood the Sheriff\'s champion wrestler, a man called Eric the Red, who had just thrown his fifth consecutive opponent to the ground with bone-jarring force.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Eric was enormous — not as tall as Little John, but twice as wide, with arms like ship\'s cables, a neck like a tree stump, and a chest that looked like it had been carved from a side of beef. His red hair — which gave him his name — was cropped close to his skull, and his face wore the bored expression of a man who hasn\'t been challenged in years.</p>
+<p>&quot;Who else dares challenge Eric the Red?&quot; bellowed the announcer, a small man with an enormous voice. &quot;The prize is ten gold pieces and a silver belt! Step up, step up! Who among you has the courage?&quot;</p>
+<p>Little John\'s eyes lit up like lanterns. He shoved through the crowd, vaulted the rope fence, and landed in the ring with a thud that made the ground shake. &quot;I\'ll have a go,&quot; he said, remembering to hunch.</p>
+<p>Eric the Red looked him over — the false beard, the leather jerkin, the stooped posture that wasn\'t quite convincing — and smirked. &quot;This string bean? I\'ll finish him before my ale gets warm.&quot;</p>
+<p>The crowd laughed. Little John smiled. It was not a reassuring smile, though only Robin would have recognized the danger in it.</p>
+<p>The fight lasted exactly twelve seconds.</p>
+<p>Eric charged like a bull, head down, arms wide, expecting to barrel into Little John and drive him to the ground through sheer momentum. It was a technique that had worked against every previous opponent, because nobody could stand against three hundred pounds of muscle moving at full speed.</p>
+<p>Little John sidestepped. It was a small movement, barely a shift of weight, but it put him exactly where he needed to be — beside Eric, not in front of him. His enormous hand caught Eric\'s arm as the champion barreled past. He pivoted on one foot, using Eric\'s own momentum against him, and threw the champion over his shoulder with a hip toss that launched the big man six feet into the air.</p>
+<p>Eric landed on his back with a crash that rattled windows in the buildings around the fairground. He lay there, staring at the sky, his mouth opening and closing like a beached fish, trying to figure out what had just happened.</p>
+<p>The crowd went absolutely berserk. People screamed, stamped their feet, and threw their hats in the air. Nobody had ever beaten Eric the Red. Nobody had even come close. And this hunched stranger from York had done it in less time than it takes to sneeze.</p>
+<p>Little John collected his prize money and was about to slip back into the crowd — mission accomplished, pride satisfied, fun had — when a hand caught his arm. He turned to find the Sheriff of Nottingham himself standing there, flanked by two guards, his small eyes wide with amazement and greed.</p>
+<p>&quot;Magnificent!&quot; the Sheriff exclaimed, practically vibrating with excitement. &quot;Simply magnificent! In all my years, I\'ve never seen anyone handle Eric like that. Tell me, good fellow, what is your name?&quot;</p>
+<p>Little John\'s heart hammered, but his face remained calm. &quot;Dodd. Of York. Traveling wrestler, at your service, my lord.&quot;</p>
+<p>&quot;Well, Dodd of York, how would you like a job? I need men of your talents in my household. I\'ll pay you twenty gold pieces a month, all the food you can eat, and a comfortable room in the castle.&quot; The Sheriff leaned closer. &quot;Between you and me, I have an outlaw problem, and I could use a man who can throw people across a room.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Little John\'s mouth opened to refuse. Then it closed. And then, slowly, a magnificent, terrible, world-class bad idea formed in his mind. What if he accepted? What if he walked right into the Sheriff\'s castle, ate the Sheriff\'s food, slept under the Sheriff\'s roof — and sent every plan, every secret, every whispered scheme back to Robin through Marian\'s network?</p>
+<p>&quot;I\'d be honored, my lord,&quot; Little John said, bowing as low as his stooped posture would allow. &quot;Truly honored.&quot;</p>
+<p>For the next two weeks, Little John lived inside Nottingham Castle as the Sheriff\'s personal bodyguard. He ate at the Sheriff\'s table three times a day. He attended the Sheriff\'s meetings. He stood behind the Sheriff\'s chair during private conversations with visitors, and he heard every plan, every scheme, every secret that passed through those cold stone halls.</p>
+<p>He was perfect for the role. The Sheriff liked having an enormous, intimidating presence at his side — it made visitors nervous, which the Sheriff enjoyed. And &quot;Dodd&quot; was quiet, obedient, and always available, which made the Sheriff trust him more each day.</p>
+<p>The intelligence Little John gathered was extraordinary. He learned that the Sheriff was planning a new tax that would specifically target the poorest villages — the ones most likely to support Robin Hood. He learned the exact schedule of every gold shipment entering and leaving Nottingham for the next three months. He learned the names and locations of every spy the Sheriff had planted in the villages around Sherwood Forest. And he learned, most crucially, that the Sheriff had written to Prince John requesting an army — a real army, a thousand men — to finally destroy Robin Hood once and for all.</p>
+<p>Every piece of information was smuggled out through Margaret the peddler, who visited the castle kitchens regularly to sell ribbons and thread to the servants. Little John would pass her notes hidden in empty spice jars, and Margaret would carry them to the forest, where Robin read them with growing alarm and growing admiration for his friend\'s <span class="vocab-highlight">audacity</span>.</p>
+<p>Little John\'s cover was finally blown in the most spectacularly stupid way possible.</p>
+<p>The Sheriff\'s cook was a man of enormous pride and catastrophic skill. He considered himself an artist, and his dishes — which were universally terrible — were his masterworks. Nobody dared complain, because the cook had the Sheriff\'s ear and a vindictive streak that made the Sheriff look charitable.</p>
+<p>On his fourteenth evening in the castle, the cook served Little John a stew that tasted like boiled leather seasoned with regret. Little John had been eating Much the Miller\'s Son\'s cooking for five years. He had standards. And after two weeks of suffering in silence through meals that would have made Friar Tuck weep, something inside him finally snapped.</p>
+<p>He stood up at the dinner table — slowly rising to his full, un-hunched, absolutely enormous height of seven feet — and declared, in a voice that carried through the entire great hall and probably into the courtyard beyond: &quot;I have eaten better food from a pig trough! My friend Much the Miller\'s Son could cook circles around this slop with his eyes closed and one hand behind his back! This stew is an insult to stew! This bread is an insult to bread! This entire meal is an insult to the very concept of food!&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The great hall went dead silent. The cook stared. The servants stared. The Sheriff, who had been reaching for his wine, froze with his hand in midair.</p>
+<p>The cook attacked. He came flying across the hall with a ladle in one hand and a rolling pin in the other, screaming obscenities in three languages. Little John defended himself with a chair, which shattered on impact. In the commotion — the shouting, the crashing, the cook\'s creative profanity — Little John\'s false beard came unstuck and fell to the floor with a soft, damning thud.</p>
+<p>The Sheriff stared at the beard on the floor. Then at Little John\'s face — that familiar, enormous, unmistakable face. Recognition hit him like a physical blow.</p>
+<p>&quot;LITTLE JOHN!&quot; the Sheriff screamed, his voice hitting a note that only dogs should have been able to hear. &quot;GUARDS! SEIZE HIM! IT\'S LITTLE JOHN!&quot;</p>
+<p>&quot;Time to go,&quot; Little John said cheerfully, and he went.</p>
+<p>He went straight through the kitchen door, pausing only to grab the Sheriff\'s personal strongbox from the shelf where it sat (he\'d been eyeing it for two weeks). He went over the castle wall — a fifteen-foot drop that he landed in a roll. He went through the streets of Nottingham at a full sprint, his enormous legs eating up the distance while guards shouted and stumbled behind him. And he went straight into the darkness of Sherwood Forest, where the trees welcomed him like an old friend.</p>
+<p>He arrived at camp barely winded, carrying the strongbox under one arm like a parcel. Robin was sitting by the fire, waiting, because Margaret had sent word an hour ago that Little John\'s cover was blown.</p>
+<p>&quot;How was the fair?&quot; Robin asked, as if Little John had been gone for a pleasant afternoon.</p>
+<p>&quot;Wonderful,&quot; Little John said. &quot;I brought souvenirs.&quot;</p>
+<p>He opened the strongbox. It contained fifty gold pieces, the Sheriff\'s personal seal, and — best of all — a letter in the Sheriff\'s own handwriting detailing every secret plan for the next three months, including the request to Prince John for a thousand soldiers.</p>
+<p>Robin stared at the treasure, then at Little John, then back at the treasure. His mouth fell open. &quot;You absolute marvel,&quot; he said. &quot;You magnificent, reckless, brilliant, insane marvel.&quot;</p>
+<p>&quot;I try,&quot; said Little John, and he went to find Much, because after two weeks of the Sheriff\'s cook, he needed something decent to eat more urgently than he had ever needed anything in his life.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Little John decide to accept the Sheriff’s job offer instead of refusing? What makes this decision both brilliant and risky?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">What kinds of information does Little John gather while working inside the castle? Why is this intelligence so valuable to Robin?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Little John’s cover is blown because he criticizes the cook’s food. What does this funny moment reveal about Little John’s character and his loyalty to Much?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 17 Complete!</h1>
+        <p class="completion-message">Great work on \"Little John Goes to the Fair\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson17Config);
+        });
+    <\/script>
+</body>
+</html>

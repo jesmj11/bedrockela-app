@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 29: Morgan le Fay's Treachery</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson29Config = {
+            lessonId: '5th-grade-lesson-29',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 29: Morgan le Fay\'s Treachery',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 29</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Morgan le Fay\'s Treachery
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 29!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Morgan le Fay\'s Treachery</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Treachery</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Replica</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Vindictive</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Champion" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Champion</div><div class="match-word" data-word="Humility" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humility</div><div class="match-word" data-word="Vulnerability" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vulnerability</div><div class="match-word" data-word="Tyranny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Tyranny</div><div class="match-word" data-word="Valor" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Valor</div><div class="match-word" data-word="Mercy" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Mercy</div><div class="match-word" data-word="Prophecy" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Prophecy</div><div class="match-word" data-word="Legacy" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Legacy</div><div class="match-word" data-word="Inevitable" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Inevitable</div><div class="match-word" data-word="Treachery" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Treachery</div><div class="match-word" data-word="Replica" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Replica</div><div class="match-word" data-word="Vindictive" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vindictive</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Treachery" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A betrayal of trust; deception or disloyalty, especially by someone who pretends to be friendly.</div><div class="match-def" data-word="Replica" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An exact copy or reproduction of something, made to look identical to the original.</div><div class="match-def" data-word="Humility" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The quality of being humble; not thinking you are better than others, even when you have great skill or ability.</div><div class="match-def" data-word="Prophecy" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A prediction about what will happen in the future, often believed to come from a divine or supernatural source.</div><div class="match-def" data-word="Vindictive" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Having a strong desire for revenge; wanting to hurt someone who has hurt you.</div><div class="match-def" data-word="Champion" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A knight or warrior who fights on behalf of another person, especially in matters of honor; also the best in a competition.</div><div class="match-def" data-word="Tyranny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The cruel and oppressive use of power by a ruler; governing through fear and force rather than justice.</div><div class="match-def" data-word="Vulnerability" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being open to emotional hurt or attack; the willingness to show weakness.</div><div class="match-def" data-word="Mercy" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Compassion and forgiveness shown toward someone you have the power to punish or harm.</div><div class="match-def" data-word="Inevitable" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Certain to happen; impossible to avoid or prevent, no matter what actions are taken.</div><div class="match-def" data-word="Valor" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Great courage and bravery, especially in battle or dangerous situations.</div><div class="match-def" data-word="Legacy" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something handed down from the past; the lasting impact or influence a person leaves behind after they are gone.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Morgan le Fay\'s Treachery</p>
+      <div class="story-text">
+        <p>Morgan le Fay was Arthur\'s half-sister, and she hated him with a passion that burned like acid in her veins.</p>
+<p>She was beautiful — strikingly, dangerously beautiful, with hair as black as midnight, skin as pale as snow, and green eyes that seemed to glow with an inner fire. She was also brilliant, ambitious, and deeply gifted in the magical arts, having studied sorcery since she was a child. In another life, she might have been a great force for good. In this life, consumed by jealousy and rage, she was something else entirely.</p>
+<p>Her hatred of Arthur was not entirely without reason. Morgan was the daughter of Queen Igraine — Arthur\'s mother — by her first husband, the Duke of Cornwall. When Uther Pendragon had seized the throne and married Igraine, Morgan had been sent away, banished to a distant convent where she spent her childhood alone, forgotten, and burning with resentment. She believed — not without justification — that Uther had destroyed her family, and she extended that hatred to his son.</p>
+<p>&quot;Arthur sits on a throne that was built on my family\'s ruin,&quot; Morgan told her followers, a small but loyal circle of knights and sorcerers who shared her desire to see Camelot fall. &quot;He plays at being a just king, but justice begins at home, and he has never acknowledged the wrong done to me.&quot;</p>
+<p>This was not entirely fair. Arthur had tried to reach out to Morgan — he had invited her to Camelot, offered her a place of honor, and genuinely desired a relationship with his half-sister. But Morgan saw every gesture as a trick and every kindness as a weapon, and she rebuffed him at every turn.</p>
+<p>Now, with Merlin gone, she saw her opportunity.</p>
+<p>Her plan was elegant in its cruelty. She would steal Excalibur\'s scabbard — the enchanted sheath that protected Arthur from mortal wounds — and replace it with a perfect copy. Arthur would never know the difference until the moment he needed the scabbard\'s protection and found it was gone.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Morgan had spent months creating the <span class="vocab-highlight">replica</span>, using every ounce of her considerable magical talent. The fake scabbard was identical to the original in every visible detail — the same dark blue leather, the same golden embossing, the same weight and texture. Only a wizard of Merlin\'s power could have detected the difference, and Merlin was no longer there to detect anything.</p>
+<p>She came to Camelot in the guise of a visitor — a noblewoman from the northern provinces, seeking an audience with the king. She wore a dress of deep green silk and a smile that could have charmed a statue. Her manner was warm, her conversation was witty, and she showed a keen interest in Arthur\'s kingdom that flattered the young king\'s pride.</p>
+<p>&quot;I must confess,&quot; Morgan told Arthur over dinner, her green eyes wide with apparent sincerity, &quot;I have heard stories of Camelot\'s greatness, but the reality surpasses all of them. You have built something remarkable here, your Majesty.&quot;</p>
+<p>Arthur, who desperately wanted to believe the best of his sister, smiled and felt a warmth in his chest. &quot;Thank you. I hope we can put the past behind us, Morgan. Family shouldn\'t be enemies.&quot;</p>
+<p>&quot;I couldn\'t agree more,&quot; Morgan said, and the lie was so smooth, so perfectly delivered, that not even Sir Gawain — who trusted no one — suspected anything.</p>
+<p>The theft happened on the third night of Morgan\'s visit. She waited until the castle was deep in sleep, then crept to the royal chambers with the silence of a cat. The real scabbard hung on a stand beside Arthur\'s bed, next to Excalibur. Arthur slept soundly, exhausted from a long day of court business.</p>
+<p>Morgan\'s hands trembled as she lifted the scabbard from its stand. The magic in it hummed against her skin — a warm, protective vibration that seemed to resist her touch, as if the scabbard knew it was being taken by the wrong person. She wrapped it quickly in silk and placed the <span class="vocab-highlight">replica</span> on the stand, adjusting it until it hung at exactly the same angle.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>She was out of the castle before dawn, riding hard for the north, the stolen scabbard hidden in her saddlebags.</p>
+<p>Arthur didn\'t discover the theft for three days — and he might not have discovered it at all, if not for a stroke of luck. A young squire named Thomas, who had an unusually sharp eye for detail, noticed that the golden embossing on the scabbard seemed slightly different in candlelight. &quot;Your Majesty,&quot; Thomas said hesitantly, afraid of looking foolish, &quot;the patterns on your scabbard — they don\'t seem to move the way they used to.&quot;</p>
+<p>Arthur looked. At first he saw nothing wrong. But then he held the scabbard near a flame, and the golden patterns — which should have shifted and flowed like liquid — sat still and dead on the leather surface. The magic was gone.</p>
+<p>The blood drained from Arthur\'s face as Merlin\'s warning echoed in his mind: &quot;Guard the scabbard above all else.&quot;</p>
+<p>He had failed.</p>
+<p>Arthur dispatched his fastest riders immediately — Sir Gawain to the north, Sir Lancelot to the east, Sir Bedivere to the west. &quot;Find Morgan,&quot; he ordered, his voice tight with urgency and self-reproach. &quot;Find her and recover the scabbard. Whatever it takes.&quot;</p>
+<p>But Morgan was clever, and she had planned her escape route months in advance. When Gawain\'s riders closed in on her near a lake in the northern hills, she flung the scabbard into the deepest water rather than let it be recovered.</p>
+<p>&quot;If I cannot have the protection it offers,&quot; Morgan called to the knights as they watched the scabbard sink beneath the dark surface, &quot;then neither can he. Let the lake keep it, and let my brother face the future without his precious shield.&quot;</p>
+<p>Gawain rode back to Camelot with the bitter news. Arthur listened in silence. When Gawain finished, Arthur walked to the window and stood there for a long time, looking out at the green hills and the river and the kingdom he had built.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;She\'s my sister,&quot; Arthur said quietly. &quot;My own blood. And she would rather destroy something beautiful than see me protected by it.&quot;</p>
+<p>&quot;She may try again,&quot; Gawain warned. &quot;She won\'t stop at the scabbard.&quot;</p>
+<p>&quot;I know.&quot; Arthur touched the hilt of Excalibur, which still hung at his side — the blade unchanged, the blade undiminished, but the protection that had accompanied it now lost forever. &quot;But I won\'t become like her. I won\'t let hatred make me into something I\'m not. Morgan is my enemy, but she is also my sister, and I will not repay <span class="vocab-highlight">treachery</span> with cruelty.&quot;</p>
+<p>&quot;That\'s a dangerous policy,&quot; Gawain said.</p>
+<p>&quot;It\'s the right one,&quot; Arthur replied. &quot;And right is all we have.&quot;</p>
+<p>He turned from the window and straightened his crown. The kingdom needed governing. The people needed protecting. And the king — now without his wizard and without his magical protection — would face whatever came next with nothing but his courage, his sword, and the loyalty of his knights.</p>
+<p>It would have to be enough.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Morgan le Fay’s hatred for Arthur is partly based on real injustice done to her family. Does this make her actions understandable, even if they’re wrong? Explain your thinking.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur says he won’t “repay treachery with cruelty.” Gawain says this is dangerous. Who do you agree with, and why?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The loss of the scabbard means Arthur can now be mortally wounded. How does this change the stakes of the story going forward? Why did the author choose to have Arthur lose this protection?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 29 Complete!</h1>
+        <p class="completion-message">Great work on \"Morgan le Fay\'s Treachery\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson29Config);
+        });
+    <\/script>
+</body>
+</html>

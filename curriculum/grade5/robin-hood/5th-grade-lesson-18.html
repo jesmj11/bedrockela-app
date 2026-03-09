@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: The Great Forest Chase</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson18Config = {
+            lessonId: '5th-grade-lesson-18',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 18: The Great Forest Chase',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 18</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Great Forest Chase
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 18!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Great Forest Chase</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Demoralize</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Guerrilla</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Terrain</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Merciless" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merciless</div><div class="match-word" data-word="Composure" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Composure</div><div class="match-word" data-word="Adversary" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Adversary</div><div class="match-word" data-word="Infiltrate" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Infiltrate</div><div class="match-word" data-word="Espionage" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Espionage</div><div class="match-word" data-word="Audacity" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Audacity</div><div class="match-word" data-word="Demoralize" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Demoralize</div><div class="match-word" data-word="Guerrilla" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Guerrilla</div><div class="match-word" data-word="Terrain" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Terrain</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Infiltrate" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To secretly enter or join a group or place in order to gather information or cause change from the inside.</div><div class="match-def" data-word="Demoralize" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To weaken someone’s confidence, courage, or spirit; to make someone feel hopeless or defeated.</div><div class="match-def" data-word="Espionage" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The practice of spying; secretly gathering information about an enemy or competitor.</div><div class="match-def" data-word="Merciless" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Showing no mercy or kindness; cruel and unforgiving.</div><div class="match-def" data-word="Terrain" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The physical features of a stretch of land, such as hills, rivers, forests, and valleys.</div><div class="match-def" data-word="Composure" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being calm and in control of your emotions, especially in a difficult situation.</div><div class="match-def" data-word="Adversary" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An enemy or opponent, especially one in a conflict or contest.</div><div class="match-def" data-word="Audacity" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Bold, daring behavior that shows a willingness to take risks, sometimes to a shocking degree.</div><div class="match-def" data-word="Guerrilla" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A type of fighting where a smaller group uses surprise attacks, ambushes, and hit-and-run tactics against a larger force.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Great Forest Chase</p>
+      <div class="story-text">
+        <p>The Sheriff had finally had enough of clever plans and cunning traps and tournaments and schemes that always — always — ended with Robin Hood laughing at him. He was done with subtlety. He was going to crush Robin Hood with brute, overwhelming, irresistible force.</p>
+<p>He gathered an army. Three hundred of the best soldiers in Nottinghamshire, hand-picked for their discipline and ferocity. Fifty on horseback with lances and heavy swords. Two hundred foot soldiers with crossbows, shields, and the grim determination of men who had been promised triple pay and all the ale they could drink if they captured Robin Hood. And leading them all was the Hound — the best tracker in England, a grim, silent, weather-beaten man who could follow a trail across bare rock, through running water, and over solid stone. He had tracked wolves through blizzards and fugitives across deserts, and he had never, in twenty years, lost a quarry.</p>
+<p>The army marched into Sherwood Forest at dawn on a Tuesday, three hundred strong, their armor glinting in the pale morning light, their boots crushing the fallen leaves into mud. The sound of their approach — the rhythmic tramping, the clink of chainmail, the creak of leather — echoed through the trees like distant thunder.</p>
+<p>Robin had been warned, of course. Marian\'s spies had reported the army\'s assembly days before it marched, and Robin had used every hour to prepare. But three hundred soldiers was a force too large to fight, even for the Merry Men. Robin had a hundred and twenty fighters. They were skilled, they were brave, and they knew the forest — but they were outmatched nearly three to one. A direct battle would be suicide.</p>
+<p>&quot;We can\'t stand and face them,&quot; Robin told his captains around a late-night fire, his face lit by the flickering flames, a map of the forest spread on his knees. &quot;Not head-on. They\'d overwhelm us in minutes. But we don\'t have to fight them — we just have to outlast them. This is our forest. We know every tree, every stream, every hidden hollow, every animal trail. They don\'t. And three hundred men in armor are slow, loud, and hungry. We\'re going to use every one of those disadvantages.&quot;</p>
+<p>The plan was simple in concept and fiendishly complex in execution: don\'t be where the Sheriff expects you to be. Move constantly. Never stay in one place for more than a few hours. Strike from the shadows — not to kill, but to confuse, <span class="vocab-highlight">demoralize</span>, and exhaust. Make the soldiers chase ghosts until they\'re too tired, too hungry, and too frightened to continue.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;We\'re going to haunt them,&quot; Robin said, a glint in his eye that Little John recognized with a mixture of admiration and resignation. &quot;We\'re going to make them believe the forest itself is fighting them.&quot;</p>
+<p>On the first day, the Sheriff\'s army marched confidently into the heart of Sherwood Forest, following the Hound\'s lead. The tracker found Robin\'s main camp within hours — but it was empty. The fires were cold. The tents were struck. The food stores had been carried away. All that remained was a note pinned to an oak tree with one of Robin\'s green-feathered arrows: &quot;Sorry we missed you! We went for a walk. Beautiful day for it. — R.H.&quot;</p>
+<p>The Sheriff, riding at the center of his column on a horse that seemed to share its rider\'s perpetual irritation, turned purple and ordered his men deeper into the woods.</p>
+<p>On the second day, the army woke to discover that something had happened during the night. Every horse\'s saddle had been loosened — not removed, just loosened, so that they looked perfectly normal but would slide sideways the moment a rider mounted. When the cavalry attempted to mount up, fifty soldiers slid off their horses simultaneously, landing in a collective heap of armor, pride, and bad language that took twenty minutes to sort out.</p>
+<p>Robin\'s men, hidden in the trees above, struggled to contain their laughter. Several of them had to stuff their fists in their mouths to keep from being heard.</p>
+<p>On the third day, the army\'s supply wagon vanished. One moment it was there, trundling along at the rear of the column. The next, it was simply gone — along with all their food, their spare arrows, their cooking equipment, and their only map of the forest. They found the wagon that afternoon, on the far side of a ravine so steep and so deep that reaching it would have required ropes, pulleys, and approximately four hours of effort. Another note was pinned to the wagon: &quot;You looked hungry! Help yourselves. Actually, we already did. — R.H.&quot;</p>
+<p>By the fourth day, the soldiers were exhausted, hungry, hopelessly lost, and very, very nervous. The forest, which had seemed like an ordinary woodland on day one, had become something else entirely. It felt alive around them — watching, waiting, playing games. Arrows whistled out of nowhere, always missing the soldiers by inches — a warning, not an attack. Strange sounds echoed through the trees at night: wolf howls that seemed to come from every direction, owl screams that didn\'t quite sound like owls, and once, at three in the morning, the unmistakable sound of Alan-a-Dale singing a ballad so rude that several soldiers blushed in the dark.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The Hound tracked Robin\'s trail through a swamp that turned out to be deeper than it looked, over a cliff that required the soldiers to lower themselves on ropes, across a river where three men lost their boots, through the same swamp again (Robin had doubled back, just to be cruel), and into a dense thicket that turned out to be the home of a large and extremely territorial family of badgers.</p>
+<p>The soldiers who followed the Hound into the thicket came out running, covered head to toe in mud, badger scratches, and a deep desire to be somewhere — anywhere — else.</p>
+<p>&quot;The outlaws are leading us in circles,&quot; the Hound reported to the Sheriff on the fifth morning, his grim face grimmer than usual. &quot;Every trail is a trap. Every path is a dead end or a loop. I\'ve tracked men through the Sahara Desert and the Scottish Highlands, and I have never — never — encountered anything like this. It\'s like the forest itself is moving around us.&quot;</p>
+<p>&quot;That\'s because it is,&quot; muttered a soldier, and several of his companions nodded vigorously.</p>
+<p>On the sixth day, the Sheriff called a halt. His army was in shambles. Morale had collapsed. Half his soldiers had lost their weapons — dropped in the swamp, stolen in the night, or traded to invisible outlaws for food (three soldiers, too hungry to resist, had accepted sandwiches from a friendly voice in the bushes and only later realized they had traded their swords for lunch). A quarter of the men were nursing injuries from forest-related mishaps. And they hadn\'t seen a single outlaw the entire time.</p>
+<p>Then Robin Hood appeared.</p>
+<p>He walked out of the mist alone, unarmed, with his hands raised and a smile on his face. He looked rested. He looked well-fed. He looked, the soldiers thought with bitter resentment, like he had been on vacation while they suffered.</p>
+<p>&quot;Good morning, Sheriff!&quot; Robin called. &quot;How\'s the camping trip? I hope the badgers weren\'t too unfriendly. They\'re usually quite pleasant once you get to know them.&quot;</p>
+<p>The Sheriff\'s face was a masterwork of barely controlled fury. His eye twitched. His jaw clenched. &quot;Arrest him,&quot; he said, his voice trembling. &quot;Arrest. Him. Now.&quot;</p>
+<p>But his soldiers didn\'t move. They were looking at the trees — where, one by one, like flowers blooming in the morning sun, Robin\'s men were appearing. On every branch. Behind every trunk. On every rock and ridge. There were a hundred of them, maybe more, with arrows nocked and bows drawn and very steady hands. They had been there the whole time. The army had been surrounded for days.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Robin\'s smile didn\'t waver, but his voice, when he spoke, was firm. &quot;Here\'s what I suggest, Sheriff. You turn around and take your men home. They\'re tired. They\'re hungry. They\'re no threat to us, and we\'re no threat to them. This was never their fight — it\'s yours. And you can\'t win it. Not here. Not in this forest. This is our home, and we know it the way you know the inside of your castle. You\'ll never find us. You\'ll never catch us. And you\'ll never break us.&quot;</p>
+<p>The Sheriff looked at his exhausted, demoralized army. He looked at the hundred arrows pointed at his head from every direction. He looked at Robin Hood, standing alone and unarmed in the clearing, as calm and confident as if he were hosting a garden party.</p>
+<p>For once in his miserable, grasping life, Roger de Rainault chose wisely. He turned his horse around and marched his men out of the forest.</p>
+<p>Robin watched them go — the long, weary column of soldiers trudging back toward Nottingham, their heads down, their weapons drooping — and his smile faded. He knew this wasn\'t over. The Sheriff would come back. The letter Little John had stolen proved it — a thousand soldiers, an army that would make today\'s force look like a scouting party. The danger was growing, not shrinking.</p>
+<p>&quot;That was too close,&quot; Little John said quietly, appearing at Robin\'s side.</p>
+<p>&quot;It was brilliant,&quot; Robin said. &quot;But you\'re right. It was too close. We can\'t keep doing this forever, John. Eventually, the Sheriff will bring enough men that even the forest can\'t save us.&quot;</p>
+<p>&quot;Then what do we do?&quot;</p>
+<p>Robin was quiet for a long moment. The mist was lifting, and shafts of sunlight were beginning to break through the canopy, painting the forest floor in gold. Somewhere in the distance, a robin was singing.</p>
+<p>&quot;We wait,&quot; Robin said. &quot;We hold on. And we hope that when King Richard comes home — and he will come home, John, I believe that with everything I have — he\'ll set things right.&quot;</p>
+<p>Little John put his hand on Robin\'s shoulder. &quot;And if he doesn\'t?&quot;</p>
+<p>&quot;Then we keep fighting anyway. Because that\'s what we do.&quot;</p>
+<p>They walked back into the forest together, and the trees closed behind them like a curtain.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin says his plan is to make the soldiers believe “the forest itself is fighting them.” How does he accomplish this? Give at least three specific examples from the chapter.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Robin choose to appear unarmed in front of the Sheriff’s army at the end? What message is he sending by showing himself without weapons?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin tells Little John, “We can’t keep doing this forever.” What does this moment of doubt reveal about Robin? How is it different from his usual confident attitude?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 18 Complete!</h1>
+        <p class="completion-message">Great work on \"The Great Forest Chase\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson18Config);
+        });
+    <\/script>
+</body>
+</html>

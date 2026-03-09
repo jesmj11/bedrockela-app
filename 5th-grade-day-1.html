@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: How Robin Hood Became an Outlaw</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/billy-tts.js"></script>
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson1Config = {
+            lessonId: '5th-grade-lesson-1',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 1: How Robin Hood Became an Outlaw',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 1</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                How Robin Hood Became an Outlaw
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 1!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>How Robin Hood Became an Outlaw</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Outlaw</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Quarry</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Invincible</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Outlaw" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Outlaw</div><div class="match-word" data-word="Quarry" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Quarry</div><div class="match-word" data-word="Invincible" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Invincible</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Quarry" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An animal or person being hunted or pursued.</div><div class="match-def" data-word="Invincible" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Too powerful to be defeated or overcome; feeling as though nothing can hurt you.</div><div class="match-def" data-word="Outlaw" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who has broken the law and lives outside of society’s rules, often hiding to avoid capture.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">How Robin Hood Became an Outlaw</p>
+      <div class="story-text">
+        <p>In the days of good King Henry the Second, when England was still wild with thick forests and long stretches of untamed land, there lived a young man named Robin Hood in the town of Locksley, in Nottinghamshire. He was eighteen years old, tall and strong, with sharp eyes the color of a summer sky and hair as brown as an oak leaf in autumn. He could shoot an arrow straighter than any man in the county, and he walked through the greenwood as quietly as a deer.</p>
+<p>Robin lived a simple life with his father, a forester who served the king by tending the royal deer in Sherwood Forest. From his father, Robin had learned to love the woods — the way sunlight fell in golden patches through the canopy, the rustle of creatures in the underbrush, the sweet smell of moss after a rain. He knew every path and every stream for miles around, and by the time he was fifteen, there was no better archer in all of England.</p>
+<p>His father had taught him to shoot with a longbow before he could barely lift one. &quot;The bow doesn\'t care how strong you are, lad,&quot; his father would say, adjusting Robin\'s grip on the smooth yew wood. &quot;It cares how patient you are. How still you can be. An arrow finds its mark when your mind is quiet.&quot; Robin practiced every day until his fingers were calloused and his arms ached, until the bow felt like an extension of his own body, until he could hit a target at two hundred paces without thinking about it at all.</p>
+<p>One fine morning in May, Robin heard that the Sheriff of Nottingham was holding a great archery contest. The prize was a fine golden arrow, and Robin\'s heart leaped at the thought. He polished his best longbow until the wood gleamed, chose six of his straightest arrows from the quiver hanging by the door, and set off through the forest toward Nottingham town. His father called after him to be careful, but Robin just waved and laughed. He was eighteen years old and felt <span class="vocab-highlight">invincible</span>, which is a dangerous way to feel.</p>
+<p>The road wound through the king\'s forest, where great oaks stood like pillars holding up a green cathedral roof. Robin walked with a spring in his step, whistling a merry tune that startled the sparrows from the hedgerows. Wildflowers dotted the path — yellow primroses and white hawthorn blossoms — and the air was thick with the scent of fresh growth. Everything felt alive and promising. He was young, he was strong, and he could outshoot any man alive. What could possibly go wrong?</p>
+<p>He had not gone two miles when he came upon a group of fifteen foresters sitting beneath a spreading oak tree, eating their midday meal and drinking ale from leather flasks. They were rough men, thick-necked and red-faced from too much drink, and they wore the green coats of the king\'s forest service. Their bows and quivers were piled carelessly beside them, and the remains of a roasted rabbit lay scattered on a cloth between them.</p>
+<p>&quot;Well now,&quot; called out one of them, a big fellow with a black beard and small, mean eyes, &quot;where might you be heading, young pup, with that fine longbow on your shoulder? Going to hunt butterflies, are you?&quot; His companions snickered and elbowed each other.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;I\'m bound for Nottingham,&quot; Robin answered cheerfully, refusing to be baited. &quot;To win the golden arrow at the Sheriff\'s contest.&quot;</p>
+<p>The foresters burst into laughter. The black-bearded man slapped his knee so hard that ale sloshed from his flask. &quot;You?&quot; he howled. &quot;A boy barely old enough to shave? You\'ll win the golden arrow? That\'s the finest joke I\'ve heard all week!&quot; He turned to his companions, tears of laughter running into his beard. &quot;Did you hear that, lads? This little sparrow thinks he can shoot!&quot;</p>
+<p>Robin\'s face grew hot. He could feel the blood rising in his cheeks, and his hands tightened at his sides. He was not a boy to be laughed at. His father had always warned him about his temper — &quot;Your pride will be your downfall, Robin&quot; — but right now, with fifteen men laughing at him, his father\'s words seemed very far away.</p>
+<p>&quot;I\'ll take any wager you care to make,&quot; Robin said, his voice steady and cool despite the fire in his chest. &quot;Name your target.&quot;</p>
+<p>The black-bearded forester wiped his eyes and grinned a wolf\'s grin. &quot;Twenty marks of silver says you can\'t hit a deer at a hundred paces.&quot; He pointed through the trees to where a herd of the king\'s deer grazed in a sunny meadow. The meadow was a good hundred and fifty paces away, not a hundred, but the forester didn\'t seem concerned about honesty. &quot;See that fine hart there, the one with the great rack of antlers? Hit him, and I\'ll pay you twenty marks. Miss, and you owe me the same.&quot;</p>
+<p>Now, Robin knew he should not have taken the bet. The king\'s deer were protected by the forest laws — harsh, terrible laws that the Normans had brought to England. To kill a deer without permission was a serious crime. A man could lose his ears for it, or his eyes, or his freedom. Men had been hanged for less. Robin knew all of this. His father had told him a hundred times.</p>
+<p>But his pride had been stung, and when you are eighteen years old and your blood is hot and fifteen men are laughing at you, pride can make you very, very foolish.</p>
+<p>Robin nocked an arrow, feeling the familiar click as the shaft settled against the string. He drew the bowstring back to his ear, the way his father had taught him — smooth and steady, no jerking, no rushing. The world narrowed to a single point: the hart standing broadside in the meadow, its great antlers catching the sunlight. Robin breathed in. Breathed out. And let fly.</p>
+<p>The arrow sang through the air in a graceful arc, rising and falling with the inevitability of a stone dropped from a cliff. It struck the hart clean through the heart. The great animal took three staggering steps forward, its legs buckling, and fell heavily into the tall grass. The meadow went silent except for the startled bleating of the other deer as they scattered into the trees.</p>
+<p>The foresters went silent too. Fifteen jaws hung open. The black-bearded man\'s grin had frozen on his face like a mask, and his small eyes had gone very wide.</p>
+<p>&quot;A wager is a wager,&quot; Robin said quietly. &quot;Pay what you owe.&quot;</p>
+<p>The forester\'s face twisted with sudden rage. The laughter was gone now, replaced by something ugly and dangerous. He had no intention of paying twenty marks to a boy — twenty marks was more than he earned in a month. &quot;You fool!&quot; he snarled, lurching to his feet so fast that his flask went spinning. &quot;You\'ve killed one of the king\'s deer! That\'s a hanging offense, that is! I\'ll see you dragged before the Sheriff in chains!&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;You made the wager,&quot; Robin said, standing his ground even as the bigger man advanced on him. &quot;You pointed at the deer. You set the terms.&quot;</p>
+<p>But the forester had already snatched up his bow. &quot;Run, boy!&quot; he shouted, and without another word, he nocked an arrow and let it fly at Robin\'s head.</p>
+<p>Robin ducked, and the arrow hissed past his ear close enough to part his hair. He felt the wind of it on his skin, felt the cold shock of how close he had just come to dying. And something shifted inside him — something that had been tame and civilized went wild and fierce. Without thinking, acting on pure instinct, he pulled an arrow from his quiver, drew, and fired back.</p>
+<p>His aim, as always, was true. The arrow struck the forester in the chest, and the big man staggered backward, a look of pure surprise on his face, and fell with a crash that shook the ground.</p>
+<p>For a moment, everything was still. The birds had stopped singing. The wind had died. The other foresters stared at their fallen companion, then at Robin, their faces cycling through shock, disbelief, and then — slowly, terribly — rage. Robin saw their hands reaching for their bows, saw the murder gathering in their eyes, and he knew with absolute certainty that if he stood here one second longer, he would die.</p>
+<p>He ran. He ran faster than he had ever run in his life, crashing through the underbrush, leaping over fallen logs, dodging between the ancient oaks. Arrows whistled past him, thudding into trees and kicking up clods of earth at his feet. One grazed his sleeve, tearing the fabric. Another shattered against a rock inches from his ankle. But Robin knew these woods better than any man alive. He ducked into a ravine the foresters didn\'t know existed, splashed through a stream to kill his trail, and scrambled up a bank thick with brambles. He crawled through a gap in a fallen oak that was invisible unless you knew it was there.</p>
+<p>He ran and crawled and climbed until his lungs burned and his legs trembled and the shouts of the foresters had faded to nothing behind him, replaced by the quiet breathing of the forest.</p>
+<p>When at last he stopped, leaning against a mossy oak with his heart hammering against his ribs, Robin Hood realized that his old life was over. He had killed a man. He had slain one of the king\'s deer. He was an <span class="vocab-highlight">outlaw</span> now, and there was no going back. Not to Locksley. Not to his father\'s house. Not to the life he had known.</p>
+<p>Robin slid down the trunk of the oak and sat on the forest floor, his back against the rough bark. For a long time he just breathed. His hands were shaking. There was another man\'s blood on his arrow, and nothing in the world could wash it away. He thought about his father, who would hear the news by evening. He thought about the archery contest he would never attend. He thought about the simple, good life that had been snatched away in the space of a single foolish moment.</p>
+<p>But as he sat there in the green shade of Sherwood Forest, listening to the birdsong slowly returning and the gentle whisper of the wind through the canopy, something strange happened. Instead of despair, he felt a fierce, wild joy rising in his chest like a flame. The forest stretched around him in every direction, vast and deep and free. No walls. No master. No one to tell him what to do or where to go.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;Well then,&quot; Robin said aloud, and a grin spread across his face despite everything. &quot;If I must be an <span class="vocab-highlight">outlaw</span>, I\'ll be the best <span class="vocab-highlight">outlaw</span> England has ever seen. I\'ll rob from those who have too much and give to those who have too little. And I\'ll make this greenwood my kingdom.&quot;</p>
+<p>And that is exactly what he did.</p>
+<p>Word spread quickly through the villages and farms around Sherwood Forest. The story of Robin\'s flight grew with each telling — by the time it reached Nottingham, Robin had supposedly fought off fifty men single-handedly. Before long, other men who had fallen afoul of the harsh Norman laws began to seek Robin out. They came quietly, slipping into the forest at dusk, following whispered directions from sympathetic villagers.</p>
+<p>They were men who had been taxed until they had nothing left, men whose land had been stolen by greedy lords, men who had been thrown into prison for poaching a rabbit to feed their starving children. They were farmers and craftsmen, former soldiers and wandering laborers — ordinary men pushed past the breaking point by extraordinary cruelty.</p>
+<p>One by one, and then in groups of two and three, they came to join Robin Hood in Sherwood Forest. Within a year, he had gathered a band of over a hundred men, all dressed in suits of Lincoln green, all deadly with the longbow, and all loyal to Robin Hood and to each other unto death.</p>
+<p>Robin gave them rules. They would rob the rich — the corrupt lords, the greedy bishops, the dishonest merchants — but they would never harm the poor. They would take from those who had too much and give to those who had nothing. They would never kill except in self-defense. And they would treat every person, rich or poor, with courtesy and respect — right up until the moment they emptied their purses.</p>
+<p>They called themselves the Merry Men, and the forest rang with their laughter. For the first time in many of their lives, they were free. And for the first time in his life, Robin Hood had found his purpose.</p>
+<p>The Sheriff of Nottingham, meanwhile, ground his teeth and plotted his revenge. But that is a story for another chapter.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Robin take the forester’s bet even though he knows killing a king’s deer is against the law? What does this tell us about his character?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Robin’s life change after he kills the forester? Describe at least two specific ways his world is different.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">At the end of the chapter, Robin feels “a fierce, wild joy” instead of despair. Why do you think he feels this way? Do you think this reaction makes sense?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 1 Complete!</h1>
+        <p class="completion-message">Great work on \"How Robin Hood Became an Outlaw\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson1Config);
+        });
+    <\/script>
+</body>
+</html>

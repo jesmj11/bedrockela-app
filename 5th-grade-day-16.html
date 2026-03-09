@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: Robin Hood and Guy of Gisborne</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson16Config = {
+            lessonId: '5th-grade-lesson-16',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 16: Robin Hood and Guy of Gisborne',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 16</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                Robin Hood and Guy of Gisborne
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 16!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>Robin Hood and Guy of Gisborne</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Merciless</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Composure</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Adversary</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (3 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 3</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Merciless" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Merciless</div><div class="match-word" data-word="Composure" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Composure</div><div class="match-word" data-word="Adversary" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Adversary</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Composure" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The state of being calm and in control of your emotions, especially in a difficult situation.</div><div class="match-def" data-word="Adversary" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An enemy or opponent, especially one in a conflict or contest.</div><div class="match-def" data-word="Merciless" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Showing no mercy or kindness; cruel and unforgiving.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">Robin Hood and Guy of Gisborne</p>
+      <div class="story-text">
+        <p>Of all the enemies Robin Hood had made in his years as an outlaw, none was more dangerous than Sir Guy of Gisborne.</p>
+<p>Guy was a knight — or at least he called himself one, though he had earned his title not through honor or valor but through a cold, systematic willingness to do whatever needed doing, no matter how brutal. He was the Sheriff\'s enforcer, the man who handled the jobs that were too dirty, too dangerous, or too morally questionable for ordinary soldiers. While the Sheriff schemed and blustered from behind his castle walls, Guy was the blade that did the actual cutting.</p>
+<p>He was tall and lean, with a face like a hatchet and eyes the color of a frozen lake — pale gray, flat, and completely without warmth. He wore a cloak made from a horse\'s hide, rough and wild-looking, that gave him the appearance of something not entirely human — a beast that had learned to walk on two legs and carry a sword. He spoke rarely and smiled never, and when he entered a room, the temperature seemed to drop.</p>
+<p>He was also, Robin had to grudgingly admit, an exceptional fighter. Robin had faced many opponents — Little John, Friar Tuck, the Sheriff\'s soldiers, even Marian — and he knew what genuine skill looked like. Guy of Gisborne had it in abundance. His swordwork was precise, economical, and utterly lethal. He wasted no motion. He showed no emotion. He fought the way a machine works — relentlessly, efficiently, without passion or hesitation.</p>
+<p>The Sheriff had hired him with a single, specific instruction: bring Robin Hood\'s head. Not capture. Not arrest. The Sheriff was done with trials and dungeons and the possibility of escape. He wanted Robin Hood dead.</p>
+<p>Robin learned of Guy\'s arrival through Marian\'s intelligence network. She delivered the news on a gray November evening, her face more serious than Robin had ever seen it. &quot;He arrived in Nottingham three days ago,&quot; she said, sitting across from Robin at the council fire. &quot;He met with the Sheriff privately. He\'s been studying maps of the forest. And Robin — he\'s not like the others. He\'s not a blunderer. He\'s not incompetent. The villagers who have seen him are terrified.&quot;</p>
+<p>&quot;I can handle one knight,&quot; Robin said, though a cold knot had formed in his stomach.</p>
+<p>&quot;Don\'t be arrogant.&quot; Marian\'s voice was sharp with worry. &quot;Arrogance is what gets people killed. Guy of Gisborne has hunted outlaws before — in the forests of Yorkshire, in the Welsh marches. He always brings back his quarry. Always. Dead or alive, but usually dead.&quot;</p>
+<p>&quot;We have a hundred men. We have the advantage of —&quot;</p>
+<p>&quot;He\'s not coming with an army, Robin. He\'s coming alone. One man in the forest. No soldiers to slow him down, no supply wagons to track. Just him. That\'s what makes him dangerous. You can\'t ambush an army that isn\'t there.&quot;</p>
+<p>Robin looked at her, at the fear she was trying to hide behind pragmatism, and felt a cold finger trace down his spine. &quot;All right,&quot; he said quietly. &quot;We\'ll be careful. Double the sentries. Triple the patrols. Nobody goes anywhere alone.&quot;</p>
+<p>For three days, nothing happened. The forest was quiet. Robin\'s scouts found no tracks, no sign of an intruder, nothing out of place. It was as if Guy of Gisborne had vanished into thin air — or had never entered the forest at all.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Then Little John disappeared.</p>
+<p>He went out at dawn to check the perimeter traps, the same routine he followed every morning. He took his quarterstaff, his knife, and nothing else. He told Will Stutely he\'d be back by noon.</p>
+<p>Noon came and went. So did the afternoon. By sunset, Robin\'s stomach was a knot of ice. Little John never missed a check-in. Never. In five years of living in Sherwood Forest, through battles and blizzards and everything in between, Little John had never once failed to come back when he said he would.</p>
+<p>Robin organized search parties. Every available man fanned out through the forest, calling Little John\'s name, searching for tracks, checking every hiding place and secret camp. They found nothing. No footprints. No broken branches. No sign of a struggle. No blood. It was as if the biggest man in England had been erased from existence.</p>
+<p>Robin barely slept. He paced the camp in the dark, his mind racing through every terrible possibility. Little John was his best friend, his closest companion, the person he trusted above all others. The thought of losing him was like the thought of losing a limb — not just painful but fundamentally disorienting, a removal of something so essential that life without it seemed impossible.</p>
+<p>On the third morning, a message appeared, carved into the bark of a tree at the edge of camp. The letters were deep and precise, cut with a very sharp knife by a very steady hand: &quot;Come alone to the Hermit\'s Oak at dawn. Or your friend dies.&quot;</p>
+<p>Robin stared at the message. Around him, his men gathered in grim silence.</p>
+<p>&quot;It\'s a trap,&quot; Will Stutely said. The words had become so familiar in Robin\'s life that they had almost lost their meaning.</p>
+<p>&quot;Of course it\'s a trap,&quot; Robin replied. &quot;But John\'s in there.&quot;</p>
+<p>&quot;Then we all go,&quot; said Friar Tuck, his hand already on his broadsword. &quot;Every last one of us.&quot;</p>
+<p>&quot;No.&quot; Robin\'s voice was iron — hard, cold, and absolute. &quot;He said alone. Guy of Gisborne doesn\'t bluff. If he sees an army coming through the trees, he\'ll kill John before we get within arrow range. I know men like him. The threat isn\'t a negotiating tactic — it\'s a statement of fact.&quot;</p>
+<p>&quot;Robin —&quot; Marian began.</p>
+<p>&quot;I\'m going alone.&quot; He looked at each of them in turn — Will, Tuck, Marian, the rest — and his gaze was steady and calm, the gaze of a man who has accepted what he must do. &quot;If I\'m not back by midday, you\'ll know what happened. And then it\'s up to you.&quot;</p>
+<p>He left before dawn, walking through the dark forest with only his sword and his bow. The air was cold and still, and the trees stood like dark pillars around him. His footsteps made no sound on the carpet of fallen leaves. Above him, the stars were fading into a sky that was just beginning to lighten at the edges.</p>
+<p>The Hermit\'s Oak was the oldest and largest tree in Sherwood Forest — a massive, ancient oak that had been standing when the Normans came, when the Romans came, when the first people walked these hills. Its trunk was so wide that six men couldn\'t have encircled it with their arms. Its branches spread out like the arms of a giant, and its roots plunged deep into the earth like the foundations of a cathedral.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Guy of Gisborne was waiting in the clearing beneath the tree. The morning mist hung in the air like curtains of white gauze, and Guy stood motionless within it, his horse-hide cloak over his shoulders and a sword in his hand. He looked exactly like the predator he was — patient, still, and utterly focused.</p>
+<p>Behind him, tied to the great oak with thick rope, was Little John. The big man was bruised and bloody — his lip was split, one eye was swollen shut, and there were dark marks on his arms that suggested he had fought hard before being overcome. But he was alive, and when he saw Robin emerge from the mist, his one good eye went wide with a mixture of hope and terror.</p>
+<p>&quot;Don\'t!&quot; Little John shouted, his voice hoarse. &quot;Robin, it\'s a trap! He\'s going to —&quot;</p>
+<p>&quot;Quiet,&quot; Guy said. He didn\'t raise his voice. He didn\'t turn around. He simply spoke, and Little John went silent. There was something about Guy\'s calm — that absolute, inhuman <span class="vocab-highlight">composure</span> — that was more frightening than any amount of shouting or threats.</p>
+<p>Guy\'s pale eyes found Robin\'s and held them. &quot;Robin Hood,&quot; he said. &quot;I\'ve heard so much about you. The great hero. The champion of the poor. The scourge of the Sheriff.&quot; He tilted his head slightly, studying Robin with the detached interest of a collector examining a specimen. &quot;You\'re smaller than I expected.&quot;</p>
+<p>&quot;And you\'re uglier,&quot; Robin said, drawing his sword. &quot;Shall we get on with it?&quot;</p>
+<p>They fought.</p>
+<p>It was nothing like the playful quarterstaff fight with Little John on the bridge, or the splashing swordfight with Friar Tuck in the river. This was deadly earnest — blade against blade, skill against skill, with real hatred and real death behind every stroke. The mist swirled around them as they circled and struck, their swords ringing in the silence of the ancient forest.</p>
+<p>Guy was fast — faster than anyone Robin had ever faced. His blade moved in short, vicious arcs that gave Robin no time to think, only react. His footwork was immaculate, always balanced, always positioned for the next strike. And his eyes never changed — they stayed flat and cold and calculating, reading Robin\'s movements the way a hawk reads the wind.</p>
+<p>Robin fought with everything he had. Every trick, every technique, every ounce of skill he had built over years of fighting and training. He feinted left and struck right. He changed tempos, going from slow to explosive. He used the trees and the roots and the uneven ground to create openings. But Guy matched him move for move, countering every attack with a defense that was almost mechanical in its precision.</p>
+<p>Guy\'s sword caught Robin\'s arm — a shallow cut, but it burned like a brand. Then a slice across the ribs that left a line of fire. Then a blow to his sword hand that nearly knocked the weapon from his grip. Robin was losing. He could feel it — the slow, inexorable tide of the fight turning against him, his strength fading, his options narrowing.</p>
+<p>Robin stumbled on a root. His back hit a tree. Guy\'s sword came arcing down in a killing stroke aimed at Robin\'s head —</p>
+<p>And Robin dropped. He simply let his legs go and fell flat to the ground, and Guy\'s blade bit deep into the tree trunk where Robin\'s skull had been a fraction of a second earlier. The sword stuck — just for a moment, but a moment was enough.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Robin rolled. He came up behind Guy, inside the man\'s guard, and drove his sword point into the gap between Guy\'s shoulder armor and his breastplate. The blade sank in three inches.</p>
+<p>Guy gasped — the first sound of pain or surprise he had made during the entire fight. His sword fell from his hand. He sank to one knee, clutching his shoulder, and blood welled between his fingers.</p>
+<p>Robin stood over him, breathing hard, bleeding from half a dozen cuts, his sword arm shaking with exhaustion. &quot;It\'s over, Guy.&quot;</p>
+<p>Guy looked up at him. For the first time, something moved behind those pale, flat eyes — not fear, but something like curiosity. As if Robin had surprised him. As if Guy hadn\'t believed it was possible for someone to beat him, and now that it had happened, he wasn\'t sure what the world looked like anymore.</p>
+<p>&quot;Kill me, then,&quot; Guy said, his voice flat. &quot;I would, in your place.&quot;</p>
+<p>Robin looked at the man kneeling before him — this cold, dangerous, pitiless hunter who would have killed him without a moment\'s hesitation — and lowered his sword.</p>
+<p>&quot;No,&quot; Robin said. &quot;I\'m not you. That\'s the whole point. That\'s always been the whole point.&quot;</p>
+<p>He turned his back on Guy of Gisborne and walked to the ancient oak. He cut Little John\'s bonds with his dagger, and the big man sagged forward, exhausted and weak, but alive.</p>
+<p>&quot;You should have killed him,&quot; Little John said quietly, rubbing the raw rope burns on his wrists.</p>
+<p>&quot;Maybe,&quot; Robin said. &quot;But if I kill a man who\'s already beaten, then everything I\'ve been telling people — about justice, about mercy, about being better than the people we fight against — becomes a lie. And I won\'t do that. Not even for Guy of Gisborne.&quot;</p>
+<p>Behind them, Guy pulled himself to his feet, retrieved his sword with his good hand, and stumbled to his horse. He mounted with difficulty, his wounded shoulder hanging useless at his side. He looked back at Robin one last time — a long, unreadable look — and then rode slowly out of the clearing and into the mist.</p>
+<p>He would survive. But he would not return to Sherwood Forest.</p>
+<p>Little John looked at his friend — this stubborn, brave, impossibly idealistic man who had just fought the deadliest swordsman in England and then let him go — and felt something deeper than loyalty, deeper even than love. He felt awe.</p>
+<p>&quot;You\'re a good man, Robin Hood,&quot; Little John said.</p>
+<p>&quot;Don\'t tell anyone,&quot; Robin said, managing a tired grin. &quot;I have a reputation to maintain.&quot;</p>
+<p>They walked home together through the morning mist, leaning on each other, and the ancient forest was quiet around them — quiet, and safe, and theirs.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How is Guy of Gisborne different from the Sheriff as a villain? What makes him more dangerous?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Robin chooses not to kill Guy after defeating him. Do you think this was the right decision? What are the arguments for and against Robin’s choice?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Little John says Robin is “a good man.” How does Robin’s decision to show mercy prove this? How does it connect to the rules Robin set for the Merry Men in Chapter 1?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 16 Complete!</h1>
+        <p class="completion-message">Great work on \"Robin Hood and Guy of Gisborne\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson16Config);
+        });
+    <\/script>
+</body>
+</html>

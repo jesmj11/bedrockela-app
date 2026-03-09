@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: The Sheriff's First Scheme</title>
+    <link rel="stylesheet" href="../../../css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="../../../js/lesson-viewer.js"><\/script>
+    <script src="../../../firebase-config.js"><\/script>
+    <script src="../../../js/lesson-completion.js"><\/script>
+    <script src="../../../js/lesson-autosave.js"><\/script>
+    <script src="../../../js/save-button-injector.js"><\/script>
+    <script src="../../../js/answer-validation.js"><\/script>
+    <script src="../../../js/grade-normalizer.js"><\/script>
+    <script src="../../../js/offline-sync.js"><\/script>
+    <script src="../../../js/text-to-speech.js"><\/script>
+    <script src="../../../js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson3Config = {
+            lessonId: '5th-grade-lesson-3',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 3: The Sheriff\'s First Scheme',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 3</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                Robin Hood
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Sheriff\'s First Scheme
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 3!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Sheriff\'s First Scheme</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Scheme</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Disguise</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Humiliation</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (9 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Outlaw" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Outlaw</div><div class="match-word" data-word="Quarry" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Quarry</div><div class="match-word" data-word="Invincible" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Invincible</div><div class="match-word" data-word="Quarterstaff" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Quarterstaff</div><div class="match-word" data-word="Yield" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Yield</div><div class="match-word" data-word="Christened" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Christened</div><div class="match-word" data-word="Scheme" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Scheme</div><div class="match-word" data-word="Disguise" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Disguise</div><div class="match-word" data-word="Humiliation" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humiliation</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Quarterstaff" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A long, thick wooden pole used as a weapon, held with both hands.</div><div class="match-def" data-word="Scheme" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A secret or clever plan, especially one designed to trick someone.</div><div class="match-def" data-word="Yield" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To give up or surrender; to admit that someone else has won.</div><div class="match-def" data-word="Outlaw" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A person who has broken the law and lives outside of society’s rules, often hiding to avoid capture.</div><div class="match-def" data-word="Humiliation" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A feeling of deep embarrassment and shame, often caused by being made to look foolish in front of others.</div><div class="match-def" data-word="Quarry" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">An animal or person being hunted or pursued.</div><div class="match-def" data-word="Invincible" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Too powerful to be defeated or overcome; feeling as though nothing can hurt you.</div><div class="match-def" data-word="Christened" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To give someone a name, often in a ceremony or celebration.</div><div class="match-def" data-word="Disguise" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A costume or change in appearance that hides who someone really is.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Sheriff\'s First Scheme</p>
+      <div class="story-text">
+        <p>News of Robin Hood\'s growing band spread far and wide, and nowhere did it spread with more fury than in the halls of the Sheriff of Nottingham. The Sheriff was a stout, red-faced man named Roger de Rainault, and he was as greedy as he was cruel. He had small, sharp eyes that were always calculating, fingers that were always counting, and a voice that could curdle milk when he was angry — which was most of the time, these days.</p>
+<p>The Sheriff had a comfortable arrangement before Robin Hood came along. He taxed the poor until they had nothing left to give, skimmed a generous portion for himself, and sent the rest to Prince John in London with a letter explaining how terribly expensive it was to maintain law and order in Nottinghamshire. Nobody questioned him. Nobody dared. The Sheriff had soldiers, and soldiers had swords, and swords had a way of ending arguments.</p>
+<p>Then Robin Hood appeared, and everything went sideways.</p>
+<p>Every time the Sheriff sent a tax collector through Sherwood Forest, Robin and his men would stop the cart, count the money with polite thoroughness, keep the portion that had been unfairly squeezed from the poor, and send the collector running back to Nottingham in his underclothes. The collectors always arrived at the Sheriff\'s door shivering, embarrassed, and carrying a note from Robin that said something cheerful like &quot;Thank you for your generous donation!&quot; or &quot;Better luck next time!&quot;</p>
+<p>Every time a rich lord traveled through the greenwood, Robin would appear from behind a tree with a bow in his hand and a smile on his face and invite the lord to dinner. The dinners were excellent — Robin set a fine table — but the bill at the end was always steep. &quot;Think of it as a tax on selfishness,&quot; Robin would explain, while Little John counted gold coins into a leather sack.</p>
+<p>The Sheriff was losing money, losing face, and losing his temper. His superiors in London were asking pointed questions. His wealthy friends were refusing to travel through Nottinghamshire. Even his own soldiers were starting to whisper that maybe Robin Hood wasn\'t so bad after all, especially compared to their boss.</p>
+<p>&quot;This cannot continue!&quot; the Sheriff bellowed at a meeting of his officers one gray November morning. He pounded the oak table so hard that his wine cup jumped and left a red stain on the wood. &quot;This ragged outlaw is making me a laughingstock! Every peasant in the county whispers his name like he\'s some kind of saint! My own cook was humming one of those blasted ballads this morning — I had him whipped!&quot;</p>
+<p>His officers shifted uncomfortably in their seats. Several of them had already tried to capture Robin Hood. Sir Oswald had led a patrol into the forest and come home without his horse, his sword, or his trousers. Captain Grimsby had set an ambush at the bridge and waited three days, only to discover that Robin\'s men had been watching him the entire time and had robbed a merchant on the opposite road while Grimsby sat in the rain. The less said about Sir Geoffrey\'s attempt, the better — though the story about the beehive was still making the rounds in the taverns.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>&quot;I have a plan,&quot; said the Sheriff, lowering his voice to a conspiratorial whisper. &quot;If we cannot catch the fox in his forest, we will lure him out. I will hold a grand archery tournament, with a golden arrow as the prize. Not just any arrow — a masterwork, crafted by the finest goldsmith in London. Every man in Nottingham knows that Robin Hood is the finest archer in England. His pride — his insufferable, boundless, maddening pride — will not allow him to stay away. And when he shows his face, my men will seize him.&quot;</p>
+<p>The officers exchanged glances. It was, they had to admit, a better plan than the beehive.</p>
+<p>&quot;But sir,&quot; ventured Captain Grimsby, &quot;won\'t Robin Hood know it\'s a trap?&quot;</p>
+<p>The Sheriff smiled his most unpleasant smile. &quot;Of course he\'ll know it\'s a trap. That\'s the beauty of it. He\'ll come anyway, because he cannot resist proving that he\'s the best. That is Robin Hood\'s weakness, gentlemen. His pride.&quot;</p>
+<p>Word of the tournament reached Sherwood Forest within the week. Robin\'s scouts brought the news back to camp with great excitement — posters had been nailed to every tree and signpost within ten miles of Nottingham, announcing the contest in grand terms. A golden arrow! Open to all archers! By order of the Sheriff!</p>
+<p>&quot;It\'s a trap,&quot; said Little John flatly. He was sitting on a log, mending a bowstring with his big, careful fingers, and he didn\'t even look up. &quot;The Sheriff wants you to show up so he can grab you. A blind man could see it.&quot;</p>
+<p>&quot;Of course it\'s a trap,&quot; Robin agreed cheerfully. He was examining one of the posters, which featured a rather unflattering drawing of a generic archer. &quot;But what kind of archer would I be if I let a little thing like a trap keep me from winning a golden arrow?&quot;</p>
+<p>Little John sighed the long, deep sigh of a man who knows he is going to lose this argument but feels compelled to make it anyway. &quot;The kind of archer who stays alive?&quot;</p>
+<p>&quot;Where\'s the fun in that?&quot;</p>
+<p>&quot;Robin.&quot;</p>
+<p>&quot;John.&quot;</p>
+<p>They stared at each other. Little John sighed again. &quot;Fine. But we\'re going in <span class="vocab-highlight">disguise</span>, and we\'re bringing backup, and if anything goes wrong, we leave immediately. Agreed?&quot;</p>
+<p>&quot;Agreed,&quot; Robin said, in the tone of a man who had no intention of leaving immediately if things got interesting.</p>
+<p>The plan was simple but clever. Robin would dress as an old beggar, with a patched cloak borrowed from the camp\'s costume collection (every good outlaw band keeps disguises on hand) and a hood pulled low over his face. He would stoop and shuffle and cough and generally behave like a man who had no business holding a bow, let alone shooting one. Little John would go as a traveling friar, which required very little acting since he already ate like one. Will Stutely and a dozen others would scatter through the crowd dressed as farmers, merchants, and tradesmen, each one armed beneath his <span class="vocab-highlight">disguise</span>. If anything went wrong, they would be ready.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>On the morning of the tournament, the streets of Nottingham were packed with people. Farmers had come from miles around, leaving their fields and flocks for the excitement of a contest. The town square was bright with banners — red and gold and blue — and alive with the sound of trumpets and drums. Food vendors hawked meat pies and roasted nuts. Children ran between the legs of the crowd, shrieking with excitement. It was, by all accounts, the finest day Nottingham had seen in years.</p>
+<p>The Sheriff sat in a high seat draped in purple cloth, looking very pleased with himself. Beside him sat a velvet cushion, and on the cushion lay the golden arrow — a thing of extraordinary beauty, gleaming in the autumn sunlight. The Sheriff\'s soldiers lined the edges of the field in their chainmail and helmets, their eyes scanning every face in the crowd for Robin Hood. They had been given a description: young, brown-haired, sharp-eyed, likely wearing Lincoln green. They were watching for exactly that.</p>
+<p>They did not look twice at the stooped old beggar who shuffled up to the archery line, leaning on a crooked walking stick and coughing into a rag. His cloak was moth-eaten, his hood was pulled low, and he moved with the painful slowness of a man whose best years were long behind him. When he picked up a bow, the soldier at the registration table barely stifled a laugh.</p>
+<p>The contest began, and one by one the archers took their shots. There were some fine bowmen in Nottingham — the Sheriff had made sure of it, wanting the contest to look legitimate — and the crowd cheered as arrow after arrow thudded into the targets. But when the stooped old beggar stepped up to the line, pulled back his bowstring with arms that were surprisingly strong for such an ancient fellow, and sent his arrow sailing straight into the center of the target — dead center, splitting the bull\'s-eye like a knife through butter — a hush fell over the crowd.</p>
+<p>Round after round, the old beggar shot with impossible accuracy. His arrows flew like they had eyes, finding the center every single time. The other archers fell away one by one, outclassed and bewildered, until only the beggar and a tall forester from the Sheriff\'s own guard remained.</p>
+<p>The forester shot first. His arrow struck just a hair\'s width from the center — a magnificent shot that would have won any ordinary contest. The crowd roared. The Sheriff leaned forward in his seat, grinning.</p>
+<p>Then the old beggar stepped up. He seemed to take forever, squinting at the target with one eye closed, muttering to himself, adjusting his grip. The crowd grew restless. A few people shouted encouragement. The Sheriff drummed his fingers on the arm of his chair.</p>
+<p>The beggar drew back his string slowly, slowly, slowly... and let fly.</p>
+<p>The arrow struck the forester\'s shaft dead center and split it clean in two. The wooden halves fell away on either side, and the beggar\'s arrow stood quivering in the exact spot where the forester\'s had been. A perfect shot. An impossible shot. A shot that only one man in all of England could have made.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The crowd erupted. People screamed and threw their hats in the air. Women grabbed each other. Children stomped their feet. Even the Sheriff\'s soldiers forgot themselves and cheered, because they were archers too, and they knew magnificence when they saw it.</p>
+<p>The Sheriff had no choice but to award the golden arrow to the old beggar. He did so with a frozen smile and a jaw so tight that his teeth ached, still scanning the crowd desperately for Robin Hood. &quot;Fine shooting, old man,&quot; he said through gritted teeth. &quot;What is your name?&quot;</p>
+<p>&quot;Just a poor wanderer, my lord,&quot; croaked the beggar, pulling his hood even lower. &quot;Thank you kindly for the pretty arrow. I\'ll treasure it always.&quot; And he shuffled away into the crowd, hunched and slow, just another old man among hundreds.</p>
+<p>The Sheriff didn\'t realize he\'d been tricked until that evening, when a messenger arrived at his door carrying a letter. The letter was tied to one of Robin\'s green-feathered arrows, which had been shot clean through the Sheriff\'s bedroom window from the street below and had stuck in the headboard of his bed — one inch above his pillow.</p>
+<p>The letter read: &quot;Dear Sheriff — Thank you for the lovely golden arrow. The tournament was wonderful fun, and your hospitality was most generous. I especially enjoyed the meat pies. I do hope we can do it again sometime. Your humble and obedient friend, Robin Hood.&quot;</p>
+<p>The Sheriff\'s roar of rage could be heard three streets away. His servants said later that he broke two chairs, a table, and his personal record for continuous swearing.</p>
+<p>In Sherwood Forest, the Merry Men passed the golden arrow from hand to hand, marveling at its beauty, and laughed until their sides ached. Little John, despite himself, was grinning.</p>
+<p>&quot;All right,&quot; he admitted. &quot;That was worth it.&quot;</p>
+<p>Robin placed the arrow in a position of honor at the center of camp, where it caught the firelight and glowed like a small sun. &quot;This arrow isn\'t just a prize,&quot; he told his men. &quot;It\'s a message. It tells the Sheriff — it tells everyone — that we can go anywhere, do anything, and there\'s not a thing he can do about it.&quot;</p>
+<p>He was right. And the Sheriff knew it. And that, more than anything else, was what kept Roger de Rainault awake at night.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">The Sheriff says Robin’s weakness is his pride. Do you agree? Use evidence from the chapter to support your answer.</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">How does Robin use the Sheriff’s own plan against him? Describe the specific steps Robin takes to win the golden arrow without being caught.</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Why does Robin send a letter to the Sheriff after winning? What message is he really sending beyond the words on the page?</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 3 Complete!</h1>
+        <p class="completion-message">Great work on \"The Sheriff\'s First Scheme\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson3Config);
+        });
+    <\/script>
+</body>
+</html>

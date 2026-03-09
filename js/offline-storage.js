@@ -1,0 +1,686 @@
+// BedrockELA Offline Storage - IndexedDB for Progress Tracking
+class BedrockStorage {
+    constructor() {
+        this.dbName = 'BedrockELA';
+        this.dbVersion = 1;
+        this.db = null;
+        this.initDB();
+    }
+
+    // Initialize IndexedDB
+    async initDB() {
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(this.dbName, this.dbVersion);
+            
+            request.onerror = () => {
+                console.error('Failed to open BedrockELA database');
+                reject(request.error);
+            };
+            
+            request.onsuccess = () => {
+                this.db = request.result;
+                console.log('BedrockELA database ready for offline learning!');
+                this.initializeOfflineLimits();
+                resolve(this.db);
+            };
+            
+            request.onupgradeneeded = (event) => {
+                const db = event.target.result;
+                
+                // Student progress store
+                if (!db.objectStoreNames.contains('progress')) {
+                    const progressStore = db.createObjectStore('progress', { 
+                        keyPath: 'id', 
+                        autoIncrement: true 
+                    });
+                    progressStore.createIndex('studentId', 'studentId', { unique: false });
+                    progressStore.createIndex('lessonId', 'lessonId', { unique: false });
+                    progressStore.createIndex('timestamp', 'timestamp', { unique: false });
+                }
+                
+                // Student profiles store
+                if (!db.objectStoreNames.contains('students')) {
+                    const studentsStore = db.createObjectStore('students', { 
+                        keyPath: 'id' 
+                    });
+                    studentsStore.createIndex('username', 'username', { unique: true });
+                }
+                
+                // Cached curriculum content
+                if (!db.objectStoreNames.contains('curriculum')) {
+                    const curriculumStore = db.createObjectStore('curriculum', { 
+                        keyPath: 'lessonId' 
+                    });
+                    curriculumStore.createIndex('grade', 'grade', { unique: false });
+                }
+                
+                // Sync queue for offline actions
+                if (!db.objectStoreNames.contains('syncQueue')) {
+                    const syncStore = db.createObjectStore('syncQueue', { 
+                        keyPath: 'id', 
+                        autoIncrement: true 
+                    });
+                    syncStore.createIndex('action', 'action', { unique: false });
+                    syncStore.createIndex('timestamp', 'timestamp', { unique: false });
+                }
+                
+                // Offline limits tracking
+                if (!db.objectStoreNames.contains('offlineLimits')) {
+                    const limitsStore = db.createObjectStore('offlineLimits', { 
+                        keyPath: 'studentId' 
+                    });
+                    limitsStore.createIndex('lastReset', 'lastReset', { unique: false });
+                }
+                
+                console.log('BedrockELA database schema created!');
+            };
+        });
+    }
+
+    // Student Progress Methods
+    async saveProgress(studentId, lessonId, progressData) {
+        try {
+            const transaction = this.db.transaction(['progress'], 'readwrite');
+            const store = transaction.objectStore('progress');
+            
+            const progress = {
+                studentId: studentId,
+                lessonId: lessonId,
+                progress: progressData,
+                timestamp: new Date().toISOString(),
+                synced: navigator.onLine
+            };
+            
+            await store.add(progress);
+            
+            // Add to sync queue if offline
+            if (!navigator.onLine) {
+                await this.addToSyncQueue('saveProgress', progress);
+            }
+            
+            console.log(`Progress saved for ${studentId} - ${lessonId}`);
+            return true;
+        } catch (error) {
+            console.error('Failed to save progress:', error);
+            return false;
+        }
+    }
+
+    async getStudentProgress(studentId) {
+        try {
+            const transaction = this.db.transaction(['progress'], 'readonly');
+            const store = transaction.objectStore('progress');
+            const index = store.index('studentId');
+            
+            return new Promise((resolve, reject) => {
+                const request = index.getAll(studentId);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to get student progress:', error);
+            return [];
+        }
+    }
+
+    async getLessonProgress(studentId, lessonId) {
+        try {
+            const allProgress = await this.getStudentProgress(studentId);
+            return allProgress.filter(p => p.lessonId === lessonId);
+        } catch (error) {
+            console.error('Failed to get lesson progress:', error);
+            return [];
+        }
+    }
+
+    // Student Profile Methods
+    async saveStudentProfile(studentData) {
+        try {
+            const transaction = this.db.transaction(['students'], 'readwrite');
+            const store = transaction.objectStore('students');
+            
+            const student = {
+                ...studentData,
+                lastActive: new Date().toISOString(),
+                createdOffline: !navigator.onLine,
+                updatedAt: new Date().toISOString()
+            };
+            
+            await store.put(student);
+            
+            if (!navigator.onLine) {
+                await this.addToSyncQueue('saveStudent', student);
+            }
+            
+            console.log(`Student profile saved: ${student.username}`);
+            return true;
+        } catch (error) {
+            console.error('Failed to save student profile:', error);
+            return false;
+        }
+    }
+
+    async updateStudentProfile(studentId, updates) {
+        try {
+            const existingStudent = await this.getStudentProfile(studentId);
+            if (!existingStudent) {
+                throw new Error(`Student ${studentId} not found`);
+            }
+
+            const updatedStudent = {
+                ...existingStudent,
+                ...updates,
+                updatedAt: new Date().toISOString(),
+                lastActive: new Date().toISOString()
+            };
+
+            const transaction = this.db.transaction(['students'], 'readwrite');
+            const store = transaction.objectStore('students');
+            
+            await store.put(updatedStudent);
+            
+            if (!navigator.onLine) {
+                await this.addToSyncQueue('updateStudent', updatedStudent);
+            }
+            
+            console.log(`Student profile updated: ${studentId}`);
+            return updatedStudent;
+        } catch (error) {
+            console.error('Failed to update student profile:', error);
+            return null;
+        }
+    }
+
+    async deleteStudentProfile(studentId, archiveProgress = true) {
+        try {
+            // Get student data before deletion
+            const student = await this.getStudentProfile(studentId);
+            if (!student) {
+                throw new Error(`Student ${studentId} not found`);
+            }
+
+            // Handle progress data
+            if (archiveProgress) {
+                // Archive progress instead of deleting
+                const progress = await this.getStudentProgress(studentId);
+                const archiveData = {
+                    studentId: studentId,
+                    student: student,
+                    progress: progress,
+                    deletedAt: new Date().toISOString(),
+                    reason: 'aged_out'
+                };
+                
+                await this.addToSyncQueue('archiveStudent', archiveData);
+            } else {
+                // Delete all progress for this student
+                await this.deleteStudentProgress(studentId);
+            }
+
+            // Delete student profile
+            const transaction = this.db.transaction(['students'], 'readwrite');
+            const store = transaction.objectStore('students');
+            await store.delete(studentId);
+
+            // Also remove offline limits
+            const limitsTransaction = this.db.transaction(['offlineLimits'], 'readwrite');
+            const limitsStore = limitsTransaction.objectStore('offlineLimits');
+            await limitsStore.delete(studentId);
+
+            if (!navigator.onLine) {
+                await this.addToSyncQueue('deleteStudent', { 
+                    studentId: studentId, 
+                    archiveProgress: archiveProgress 
+                });
+            }
+            
+            console.log(`Student deleted: ${studentId} (archive: ${archiveProgress})`);
+            return true;
+        } catch (error) {
+            console.error('Failed to delete student profile:', error);
+            return false;
+        }
+    }
+
+    async deleteStudentProgress(studentId) {
+        try {
+            const transaction = this.db.transaction(['progress'], 'readwrite');
+            const store = transaction.objectStore('progress');
+            const index = store.index('studentId');
+            
+            const request = index.getAllKeys(studentId);
+            return new Promise((resolve, reject) => {
+                request.onsuccess = async () => {
+                    const keys = request.result;
+                    
+                    for (const key of keys) {
+                        await store.delete(key);
+                    }
+                    
+                    console.log(`Deleted ${keys.length} progress records for ${studentId}`);
+                    resolve(true);
+                };
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to delete student progress:', error);
+            return false;
+        }
+    }
+
+    async getStudentProfile(studentId) {
+        try {
+            const transaction = this.db.transaction(['students'], 'readonly');
+            const store = transaction.objectStore('students');
+            
+            return new Promise((resolve, reject) => {
+                const request = store.get(studentId);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to get student profile:', error);
+            return null;
+        }
+    }
+
+    async getAllStudents() {
+        try {
+            const transaction = this.db.transaction(['students'], 'readonly');
+            const store = transaction.objectStore('students');
+            
+            return new Promise((resolve, reject) => {
+                const request = store.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to get all students:', error);
+            return [];
+        }
+    }
+
+    // Curriculum Caching Methods
+    async cacheCurriculumContent(lessonId, content) {
+        try {
+            const transaction = this.db.transaction(['curriculum'], 'readwrite');
+            const store = transaction.objectStore('curriculum');
+            
+            const curriculumData = {
+                lessonId: lessonId,
+                content: content,
+                grade: content.grade || 'unknown',
+                cachedAt: new Date().toISOString()
+            };
+            
+            await store.put(curriculumData);
+            console.log(`Curriculum cached: ${lessonId}`);
+            return true;
+        } catch (error) {
+            console.error('Failed to cache curriculum:', error);
+            return false;
+        }
+    }
+
+    async getCachedCurriculum(lessonId) {
+        try {
+            const transaction = this.db.transaction(['curriculum'], 'readonly');
+            const store = transaction.objectStore('curriculum');
+            
+            return new Promise((resolve, reject) => {
+                const request = store.get(lessonId);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to get cached curriculum:', error);
+            return null;
+        }
+    }
+
+    // Sync Queue Methods
+    async addToSyncQueue(action, data) {
+        try {
+            const transaction = this.db.transaction(['syncQueue'], 'readwrite');
+            const store = transaction.objectStore('syncQueue');
+            
+            const syncItem = {
+                action: action,
+                data: data,
+                timestamp: new Date().toISOString(),
+                attempts: 0
+            };
+            
+            await store.add(syncItem);
+            console.log(`Added to sync queue: ${action}`);
+            
+            // Try to sync if online
+            if (navigator.onLine) {
+                this.processSyncQueue();
+            }
+            
+            return true;
+        } catch (error) {
+            console.error('Failed to add to sync queue:', error);
+            return false;
+        }
+    }
+
+    async processSyncQueue() {
+        try {
+            const transaction = this.db.transaction(['syncQueue'], 'readonly');
+            const store = transaction.objectStore('syncQueue');
+            
+            const syncItems = await new Promise((resolve, reject) => {
+                const request = store.getAll();
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+            
+            for (const item of syncItems) {
+                await this.syncItem(item);
+            }
+            
+            console.log(`Processed ${syncItems.length} sync items`);
+        } catch (error) {
+            console.error('Failed to process sync queue:', error);
+        }
+    }
+
+    async syncItem(item) {
+        try {
+            // Simulate API call for now
+            console.log(`Syncing ${item.action}:`, item.data);
+            
+            // In a real implementation, this would make HTTP requests to your server
+            // For now, we'll just mark as synced and remove from queue
+            
+            const transaction = this.db.transaction(['syncQueue'], 'readwrite');
+            const store = transaction.objectStore('syncQueue');
+            await store.delete(item.id);
+            
+            return true;
+        } catch (error) {
+            console.error(`Failed to sync ${item.action}:`, error);
+            
+            // Update attempt count
+            item.attempts = (item.attempts || 0) + 1;
+            
+            if (item.attempts < 3) {
+                const transaction = this.db.transaction(['syncQueue'], 'readwrite');
+                const store = transaction.objectStore('syncQueue');
+                await store.put(item);
+            } else {
+                console.log(`Giving up on sync item after 3 attempts:`, item);
+            }
+            
+            return false;
+        }
+    }
+
+    // Offline Lesson Limit Methods
+    async initializeOfflineLimits() {
+        try {
+            // Check if we need to initialize offline limits for current students
+            const students = await this.getAllStudents();
+            
+            for (const student of students) {
+                const limits = await this.getOfflineLimits(student.id);
+                if (!limits) {
+                    await this.resetOfflineLimits(student.id);
+                }
+            }
+            
+            // Set up online/offline status monitoring
+            this.setupConnectionMonitoring();
+        } catch (error) {
+            console.error('Failed to initialize offline limits:', error);
+        }
+    }
+
+    async getOfflineLimits(studentId) {
+        try {
+            const transaction = this.db.transaction(['offlineLimits'], 'readonly');
+            const store = transaction.objectStore('offlineLimits');
+            
+            return new Promise((resolve, reject) => {
+                const request = store.get(studentId);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        } catch (error) {
+            console.error('Failed to get offline limits:', error);
+            return null;
+        }
+    }
+
+    async resetOfflineLimits(studentId) {
+        try {
+            const transaction = this.db.transaction(['offlineLimits'], 'readwrite');
+            const store = transaction.objectStore('offlineLimits');
+            
+            const limits = {
+                studentId: studentId,
+                lessonsRemaining: 10,
+                totalLessonsUsed: 0,
+                lastReset: new Date().toISOString(),
+                wasOnlineWhenReset: navigator.onLine
+            };
+            
+            await store.put(limits);
+            console.log(`Offline limits reset for ${studentId}: 10 lessons available`);
+            return limits;
+        } catch (error) {
+            console.error('Failed to reset offline limits:', error);
+            return null;
+        }
+    }
+
+    async useOfflineLesson(studentId) {
+        try {
+            const limits = await this.getOfflineLimits(studentId);
+            
+            if (!limits) {
+                await this.resetOfflineLimits(studentId);
+                return await this.useOfflineLesson(studentId);
+            }
+            
+            // If online, don't count against offline limit
+            if (navigator.onLine) {
+                return { 
+                    allowed: true, 
+                    remaining: limits.lessonsRemaining,
+                    unlimited: true,
+                    message: "Unlimited lessons while online!"
+                };
+            }
+            
+            // Check if offline lessons remaining
+            if (limits.lessonsRemaining <= 0) {
+                return { 
+                    allowed: false, 
+                    remaining: 0,
+                    message: "Offline lesson limit reached. Connect to WiFi for unlimited lessons!"
+                };
+            }
+            
+            // Use one offline lesson
+            const transaction = this.db.transaction(['offlineLimits'], 'readwrite');
+            const store = transaction.objectStore('offlineLimits');
+            
+            limits.lessonsRemaining -= 1;
+            limits.totalLessonsUsed += 1;
+            limits.lastUsed = new Date().toISOString();
+            
+            await store.put(limits);
+            
+            console.log(`Offline lesson used for ${studentId}. Remaining: ${limits.lessonsRemaining}`);
+            
+            return { 
+                allowed: true, 
+                remaining: limits.lessonsRemaining,
+                message: `${limits.lessonsRemaining} offline lessons remaining`
+            };
+            
+        } catch (error) {
+            console.error('Failed to use offline lesson:', error);
+            return { allowed: false, remaining: 0, message: "Error checking lesson limits" };
+        }
+    }
+
+    setupConnectionMonitoring() {
+        let wasOffline = !navigator.onLine;
+        
+        window.addEventListener('online', async () => {
+            console.log('🌐 Back online! Syncing data...');
+            
+            // Sync any pending data
+            if (this.processSyncQueue) {
+                await this.processSyncQueue();
+            }
+            
+            wasOffline = false;
+        });
+        
+        window.addEventListener('offline', async () => {
+            console.log('📶 Gone offline! Offline lessons available.');
+            
+            // If we were online and now going offline, reset lesson count
+            if (!wasOffline) {
+                console.log('🔄 Resetting offline lesson count to 10...');
+                
+                const students = await this.getAllStudents();
+                for (const student of students) {
+                    await this.resetOfflineLimits(student.id);
+                }
+                
+                this.showOfflineResetNotification();
+            }
+            
+            wasOffline = true;
+        });
+    }
+
+    showOfflineResetNotification() {
+        const notification = document.createElement('div');
+        notification.innerHTML = '🎒 Offline Mode: 10 lessons available!';
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #32CD32 0%, #228B22 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+            animation: slideInLeft 0.5s ease-out;
+        `;
+
+        // Add CSS animation
+        if (!document.querySelector('#bedrockOfflineStyles')) {
+            const style = document.createElement('style');
+            style.id = 'bedrockOfflineStyles';
+            style.textContent = `
+                @keyframes slideInLeft {
+                    from { transform: translateX(-100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.style.animation = 'slideInLeft 0.3s ease-in reverse';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 4000);
+    }
+
+    async getOfflineStatus(studentId) {
+        const limits = await this.getOfflineLimits(studentId);
+        
+        if (!limits) {
+            return {
+                lessonsRemaining: 10,
+                isOnline: navigator.onLine,
+                unlimited: navigator.onLine
+            };
+        }
+        
+        return {
+            lessonsRemaining: limits.lessonsRemaining,
+            totalUsed: limits.totalLessonsUsed,
+            lastReset: limits.lastReset,
+            isOnline: navigator.onLine,
+            unlimited: navigator.onLine
+        };
+    }
+
+    // Utility Methods
+    async clearAllData() {
+        try {
+            const stores = ['progress', 'students', 'curriculum', 'syncQueue'];
+            const transaction = this.db.transaction(stores, 'readwrite');
+            
+            for (const storeName of stores) {
+                const store = transaction.objectStore(storeName);
+                await store.clear();
+            }
+            
+            console.log('All BedrockELA data cleared');
+            return true;
+        } catch (error) {
+            console.error('Failed to clear data:', error);
+            return false;
+        }
+    }
+
+    async getStorageSize() {
+        try {
+            if (!navigator.storage || !navigator.storage.estimate) {
+                return { used: 'unknown', available: 'unknown' };
+            }
+            
+            const estimate = await navigator.storage.estimate();
+            return {
+                used: this.formatBytes(estimate.usage || 0),
+                available: this.formatBytes(estimate.quota || 0)
+            };
+        } catch (error) {
+            console.error('Failed to get storage estimate:', error);
+            return { used: 'unknown', available: 'unknown' };
+        }
+    }
+
+    formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+}
+
+// Global instance
+let bedrockStorage;
+
+// Initialize storage when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    bedrockStorage = new BedrockStorage();
+    
+    // Process sync queue when coming back online
+    window.addEventListener('online', () => {
+        console.log('Back online! Processing sync queue...');
+        if (bedrockStorage && bedrockStorage.db) {
+            bedrockStorage.processSyncQueue();
+        }
+    });
+});
+
+// Export for use in other scripts
+window.BedrockStorage = BedrockStorage;

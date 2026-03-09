@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 39: The Once and Future King</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container" class="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"><\/script>
+    <script src="firebase-config.js"><\/script>
+    <script src="js/lesson-completion.js"><\/script>
+    <script src="js/lesson-autosave.js"><\/script>
+    <script src="js/save-button-injector.js"><\/script>
+    <script src="js/answer-validation.js"><\/script>
+    <script src="js/grade-normalizer.js"><\/script>
+    <script src="js/offline-sync.js"><\/script>
+    <script src="js/text-to-speech.js"><\/script>
+    <script src="js/digital-book.js"><\/script>
+        
+    <script>
+        const lesson39Config = {
+            lessonId: '5th-grade-lesson-39',
+            gradeLevel: '5th-grade',
+            title: 'Lesson 39: The Once and Future King',
+            pages: [
+                {
+                    render: () => `
+<div class="lesson-page-card title-page">
+                            <h1>Lesson 39</h1>
+                            <div class="subtitle">5th Grade ELA</div>
+                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
+                                King Arthur and His Knights
+                            </p>
+                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
+                                The Once and Future King
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Welcome to Lesson 39!</h2>
+                            <p>Today you will:</p>
+                            <ul style="margin: 20px 0; line-height: 2;">
+                                <li>Read <em>The Once and Future King</em></li>
+                                <li>Learn 3 new vocabulary words</li>
+                                <li>Answer reading comprehension questions</li>
+                                <li>Write a journal response</li>
+                            </ul>
+                            <p><strong>Time needed:</strong> About 45-60 minutes</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+<div class="lesson-page-card content-page">
+                            <h2>Vocabulary Words</h2>
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Avalon</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-1"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-1', 'vocab-count-1', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-1" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Enduring</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-2"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-2', 'vocab-count-2', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-2" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div><div style="margin-bottom: 30px; padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513;">
+                                    <div style="margin-bottom: 12px;">
+                                        <span style="font-size: 28px; font-weight: 800; color: #305853;">Symbol</span>
+                                    </div>
+                                    <p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                        Look up this word in a dictionary, then write the definition in your own words:
+                                    </p>
+                                    <textarea 
+                                      id="vocab-3"
+                                      style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px;"
+                                      oninput="updateWordCount('vocab-3', 'vocab-count-3', 10)"
+                                      onpaste="return false"
+                                      placeholder="Type the definition here (minimum 10 words, no pasting)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                      <span id="vocab-count-3" style="font-size: 13px; color: #666;">0 / 10 words</span>
+                                      <span id="vocab-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 15px; background: rgba(176,104,33,0.1); border-radius: 10px;">
+                                <p style="margin: 0;"><strong>Watch for these words</strong> in today\'s reading!</p>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+                            <h2>🎮 Vocabulary Game</h2>
+                            <p style="color: #666; margin-bottom: 5px;">Match each word to its definition! (12 words this week so far)</p>
+                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 12</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                                <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                    <div class="match-word" data-word="Vessel" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Vessel</div><div class="match-word" data-word="Transcend" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Transcend</div><div class="match-word" data-word="Humblest" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Humblest</div><div class="match-word" data-word="Manipulation" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Manipulation</div><div class="match-word" data-word="Faction" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Faction</div><div class="match-word" data-word="Usurp" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Usurp</div><div class="match-word" data-word="Catastrophe" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Catastrophe</div><div class="match-word" data-word="Momentum" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Momentum</div><div class="match-word" data-word="Reconciliation" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Reconciliation</div><div class="match-word" data-word="Avalon" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Avalon</div><div class="match-word" data-word="Enduring" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Enduring</div><div class="match-word" data-word="Symbol" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">Symbol</div>
+                                </div>
+                                <div id="defColumn" style="display: flex; flex-direction: column;">
+                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                    <div class="match-def" data-word="Avalon" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">In Arthurian legend, a mystical island where Arthur is taken to heal after his final battle; a place of rest and hope.</div><div class="match-def" data-word="Enduring" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Lasting over a long period of time; continuing to exist despite difficulties or challenges.</div><div class="match-def" data-word="Transcend" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To go beyond the limits of something; to rise above ordinary experience into something higher.</div><div class="match-def" data-word="Catastrophe" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A sudden, terrible disaster that causes great damage, suffering, or destruction.</div><div class="match-def" data-word="Symbol" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something that represents or stands for something else, especially an object that represents an idea or quality.</div><div class="match-def" data-word="Vessel" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A container, especially one used to hold liquid; also a person regarded as carrying or embodying a particular quality.</div><div class="match-def" data-word="Manipulation" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The act of influencing or controlling someone in a clever or dishonest way, often without them realizing it.</div><div class="match-def" data-word="Humblest" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The superlative form of humble; the most modest, simple, or lowly in rank or appearance.</div><div class="match-def" data-word="Usurp" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To take a position of power or authority illegally or by force; to seize what rightfully belongs to someone else.</div><div class="match-def" data-word="Reconciliation" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The restoration of friendly relations after a conflict; the act of making peace between opposing sides.</div><div class="match-def" data-word="Faction" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A small, organized group within a larger one that has different ideas and works against the main group.</div><div class="match-def" data-word="Momentum" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">The force or speed of movement; once something starts, momentum makes it difficult to stop.</div>
+                                </div>
+                            </div>
+                            
+                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                        </div>`
+                ,
+                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <p style="text-align: center; font-size: 15px; color: #8B4513; margin: 0 0 15px 0;">The Once and Future King</p>
+      <div class="story-text">
+        <p>Sir Bedivere was the last knight standing. He was wounded in a dozen places, his shield was gone, his helmet was cracked, and he could barely walk. But he was alive, and his king needed him.</p>
+<p>He found Arthur on the edge of the battlefield, propped against a fallen tree, with Mordred\'s sword wound bleeding through his armor. Excalibur lay across his knees, its light dimming like a candle in a wind. Arthur\'s face was gray, and his breathing was shallow, but his eyes were clear.</p>
+<p>&quot;Bedivere,&quot; Arthur said, and his voice was barely a whisper. &quot;I need you to do something for me.&quot;</p>
+<p>&quot;Anything, my lord.&quot;</p>
+<p>&quot;Take Excalibur to the lake — the lake where I received it, in the heart of the old forest. Throw it into the water. Return it to the Lady who gave it to me.&quot;</p>
+<p>Bedivere took the sword. It was lighter than he expected, even now, and the fading light in its blade cast pale shadows on his face. He walked toward the forest, carrying the last <span class="vocab-highlight">symbol</span> of Arthur\'s reign.</p>
+<p>But when he reached the water\'s edge and looked at the beautiful sword in his hands — at the golden hilt, the sapphire, the blade that still glowed with its dying light — he could not do it. How could he throw away Excalibur? How could he destroy the last tangible proof that Camelot had existed, that the Round Table had been real, that the dream had mattered?</p>
+<p>He hid the sword in the reeds and returned to Arthur. &quot;It\'s done,&quot; he said.</p>
+<p>Arthur looked at him with those gray, knowing eyes. &quot;What did you see when the sword struck the water?&quot;</p>
+<p>&quot;Nothing, my lord. Ripples.&quot;</p>
+<p>&quot;You didn\'t throw it. Go back, Bedivere. Please. I don\'t have much time.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Bedivere returned to the lake, and again he stood at the water\'s edge with Excalibur in his hands. And again, the beauty of the sword overwhelmed him. This time, he thought of all the battles it had won, all the injustices it had corrected, all the lives it had saved. Surely such a weapon should be preserved — placed in a cathedral, perhaps, or sealed in a vault where future generations could see it and remember.</p>
+<p>He hid the sword again and returned to Arthur with the same lie.</p>
+<p>Arthur\'s eyes, dimming now, found his. &quot;Bedivere. Old friend. You are the last of my knights, and I am asking you — not commanding you, asking — to do this one final thing. The sword is not mine to keep. It was a gift, given in trust, and it must be returned. Please.&quot;</p>
+<p>The pain in Arthur\'s voice broke through Bedivere\'s resistance. He walked to the lake a third time, and this time, with tears streaming down his face, he took Excalibur by the blade, drew back his arm, and hurled it as far as he could over the dark water.</p>
+<p>The sword spun through the air, catching the last light of the setting sun, flashing gold and silver against the darkening sky. And just before it struck the water, a hand rose from the lake — a pale, slender hand draped in white silk — and caught the sword by the hilt. The hand held Excalibur aloft for a moment, as if in salute, and then drew it gently beneath the surface. The water closed over it without a ripple, and the lake was still.</p>
+<p>Bedivere stared, his heart hammering, tears on his cheeks. Then he ran back to Arthur.</p>
+<p>&quot;I saw it,&quot; he gasped. &quot;A hand. It took the sword.&quot;</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>Arthur smiled — a peaceful, exhausted, profoundly grateful smile. &quot;Good. It\'s done.&quot;</p>
+<p>A boat appeared on the lake — a long, dark barge draped in black silk, gliding toward the shore without oars or sail. On the barge stood three women, robed in black, their faces hidden by dark hoods. They were weeping softly, and their tears fell into the water like drops of silver.</p>
+<p>&quot;Help me to the boat,&quot; Arthur whispered.</p>
+<p>Bedivere lifted his king — this man who had pulled a sword from a stone, who had built Camelot, who had dreamed of a world where might served right — and carried him to the water\'s edge. The barge drifted close, and the three women reached out their pale hands.</p>
+<p>Arthur lay down on the barge, and one of the women cradled his head in her lap. He looked up at Bedivere, standing alone on the shore, and his eyes held a love and a sorrow that encompassed everything — every triumph, every failure, every friend lost and every battle won.</p>
+<p>&quot;Don\'t grieve for me,&quot; Arthur said. &quot;I go to <span class="vocab-highlight">Avalon</span>, to heal my wounds. And perhaps — if Britain needs me again — I will return.&quot;</p>
+<p>&quot;How will we know?&quot; Bedivere asked, his voice breaking. &quot;How will we know if you\'re coming back?&quot;</p>
+<p>&quot;You\'ll know,&quot; Arthur said. &quot;Because the dream doesn\'t die. It can\'t die. As long as one person believes that the strong should protect the weak, that mercy matters more than vengeance, that justice is worth fighting for — Camelot lives. Not in stone or in crowns. In hearts. In the choices people make every single day.&quot;</p>
+<p>The barge began to drift away from the shore, carrying Arthur into the mist that was rising from the lake. Bedivere watched, standing alone in the gathering darkness, as the boat grew smaller and fainter and finally disappeared into the silver fog.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="story-text">
+        <p>The lake was still. The forest was silent. And Sir Bedivere — the last knight of the Round Table, the last witness to the age of heroes — sank to his knees on the shore and wept.</p>
+<p>He wept for Arthur. He wept for Gawain and Kay and Gareth and all the brave men who had sat at the Round Table and sworn to build a better world. He wept for Camelot, that bright, impossible, beautiful dream that had burned so fiercely and faded so fast.</p>
+<p>But when his tears were spent, and the stars had come out above the lake, Bedivere stood up. He wiped his eyes. He straightened his broken armor. And he walked away from the lake and into the world — carrying with him the story of a king, a sword, a round table, and an idea that could not be destroyed.</p>
+<p>Because Arthur was right. The dream doesn\'t die. It lives in every act of courage, every gesture of mercy, every time a strong person uses their strength to protect someone weaker. It lives in the stories we tell our children, and in the stories they tell theirs.</p>
+<p>The Once and Future King sleeps in <span class="vocab-highlight">Avalon</span>, waiting. And Camelot — that bright, impossible kingdom — lives on in every heart that dares to believe that the world can be better than it is.</p>
+<p>This is the end of the story. But it is not the end of the dream.</p>
+<p>The End</p>
+<p>The dream doesn’t die. It lives on in every heart that dares to believe.</p>
+      </div>
+    </div>`
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 1 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Bedivere tries twice to keep Excalibur instead of throwing it in the lake. Why is it so hard for him to let go? What does the sword represent to him?</p>
+                                    <textarea 
+                                      id="comp-1"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-1', 'word-count-comp-1', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-1" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-1-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 2 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Arthur says “the dream doesn’t die” as long as people believe in justice and protecting the weak. Do you think this is true? Can ideas really outlast kingdoms?</p>
+                                    <textarea 
+                                      id="comp-2"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-2', 'word-count-comp-2', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-2" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-2-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Reading Comprehension</h2>
+                            <p style="margin-bottom: 30px;">Question 3 of 3</p>
+                            
+                            <div style="margin: 30px 0;">
+                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #8B4513;">
+                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
+                                    <p style="margin-bottom: 12px; color: #444;">Think about the entire book: Arthur begins as a boy who says “I’m just Arthur” and ends as a king whose legacy will last forever. What is the most important lesson Arthur learned along the way? Use evidence from at least two chapters to support your answer.</p>
+                                    <textarea 
+                                      id="comp-3"
+                                      style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;"
+                                      oninput="updateWordCount('comp-3', 'word-count-comp-3', 50)"
+                                      placeholder="Write your answer here (minimum 50 words)..."
+                                    ><\/textarea>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                      <span id="word-count-comp-3" style="font-size: 14px; color: #666;">0 / 50 words</span>
+                                      <span id="word-count-comp-3-status" style="font-size: 14px; font-weight: 600;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `<div class="lesson-page-card content-page">
+      <div class="page-header">
+        <div class="unit-label">Journal Response</div>
+      </div>
+      <h2>✍️ Your Response</h2>
+      <div style="margin: 20px 0;">
+        <p><strong>Choose one:</strong></p>
+        <ul style="line-height: 2;">
+          <li>Which character in this chapter showed the most courage or wisdom? Explain with examples from the text.</li>
+          <li>If you could ask one character from today\'s reading a question, what would it be and why?</li>
+          <li>Write about a time in your own life that connects to something that happened in this chapter.</li>
+        </ul>
+      </div>
+      <textarea style="width: 100%; min-height: 150px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" placeholder="Write your response here (minimum 50 words)..." id="journal" oninput="updateWordCount('journal', 'journal-wc', 50)"><\/textarea>
+      <span id="journal-wc" style="font-size: 14px; color: #666;">0 / 50 words</span>
+    </div>`
+                },
+                {
+                    render: () => `<div class="lesson-page-card completion-page">
+      <div class="completion-container">
+        <div class="completion-icon">🎉</div>
+        <h1>Lesson 39 Complete!</h1>
+        <p class="completion-message">Great work on \"The Once and Future King\"!</p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">New Words</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Chapter Read</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Questions</div>
+          </div>
+        </div>
+        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
+        <div class="completion-footer">
+          <button class="nav-button prev-button" onclick="prevPage()">← Review Lesson</button>
+        </div>
+      </div>
+    </div>`
+                }
+            ]
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            createLessonViewer('lesson-container', lesson39Config);
+        });
+    <\/script>
+</body>
+</html>
