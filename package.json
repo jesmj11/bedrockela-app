@@ -1,27 +1,29 @@
 {
-  "name": "bedrockela-website",
+  "name": "bedrockela-app",
   "version": "1.0.0",
-  "description": "BedrockELA Website with Journal Backend",
+  "description": "BedrockELA - Complete K-8 ELA Curriculum Mobile App",
+  "author": "Jes Johnson",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
-    "start": "cd journal-backend && node server-pg.js"
-  },
-  "engines": {
-    "node": "18.x"
+    "serve": "npx http-server . -p 8080 -c-1",
+    "build": "echo 'Build step placeholder - web assets already in place'",
+    "cap:add:ios": "npx cap add ios",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open:ios": "npx cap open ios",
+    "cap:open:android": "npx cap open android"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cors": "^2.8.6",
-    "dotenv": "^16.3.1",
-    "express": "^4.22.1",
-    "express-rate-limit": "^7.1.5",
-    "firebase-admin": "^13.7.0",
-    "google-auth-library": "^10.6.1",
-    "helmet": "^7.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "node-fetch": "^2.7.0",
-    "pg": "^8.11.3"
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/ios": "^5.0.0",
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/app": "^5.0.0",
+    "@capacitor/splash-screen": "^5.0.0",
+    "@capacitor/status-bar": "^5.0.0"
   },
   "devDependencies": {
-    "jsdom": "^28.1.0"
+    "@capacitor/cli": "^5.0.0",
+    "http-server": "^14.1.1"
   }
 }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offline - BedrockELA</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,130 +14,108 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #305853 0%, #1B2A30 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            text-align: center;
             padding: 20px;
         }
         
-        .offline-card {
-            background: white;
-            border-radius: 25px;
-            padding: 50px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(48,88,83,0.2);
+        .offline-container {
+            max-width: 500px;
+        }
+        
+        .icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         
         h1 {
-            color: #305853;
             font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: 800;
         }
         
         p {
-            color: #666;
             font-size: 1.2rem;
             line-height: 1.6;
             margin-bottom: 30px;
-        }
-        
-        .status {
-            background: #FF9800;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            display: inline-block;
-            font-weight: 600;
-            margin-bottom: 30px;
+            opacity: 0.9;
         }
         
         .btn {
-            background: #305853;
-            color: white;
+            background: white;
+            color: #305853;
             border: none;
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-size: 18px;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
             transition: transform 0.2s;
+            font-family: 'Nunito', sans-serif;
         }
         
         .btn:hover {
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
         
-        .info {
-            background: #F5F9FF;
+        .cached-lessons {
+            margin-top: 40px;
             padding: 20px;
+            background: rgba(255,255,255,0.1);
             border-radius: 15px;
-            margin-top: 30px;
-            text-align: left;
         }
         
-        .info h3 {
-            color: #305853;
+        .cached-lessons h2 {
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
         
-        .info ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .info li {
-            padding: 8px 0;
-            color: #666;
-        }
-        
-        .info li::before {
-            content: "✓ ";
-            color: #4CAF50;
-            font-weight: bold;
-            margin-right: 8px;
+        .cached-lessons p {
+            font-size: 1rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <div class="offline-card">
-        <div class="status">Offline Mode</div>
-        
+    <div class="offline-container">
+        <div class="icon">📚</div>
         <h1>You're Offline</h1>
+        <p>It looks like you've lost your internet connection. Don't worry - you can still access lessons you've already opened!</p>
         
-        <p>
-            You're currently offline, but you can still access cached lessons!
-            Up to 10 lessons ahead are available for offline learning.
-        </p>
+        <button class="btn" onclick="location.reload()">
+            Try Again
+        </button>
         
-        <button class="btn" onclick="location.reload()">Try Again</button>
+        <button class="btn" onclick="goToLogin()" style="margin-left: 10px; background: transparent; color: white; border: 2px solid white;">
+            Go to Login
+        </button>
         
-        <div class="info">
-            <h3>Offline Features:</h3>
-            <ul>
-                <li>Continue with cached lessons</li>
-                <li>All your answers auto-save locally</li>
-                <li>Progress syncs when you're back online</li>
-                <li>Up to 10 lessons available offline</li>
-            </ul>
+        <div class="cached-lessons">
+            <h2>📖 Offline Learning</h2>
+            <p>Previously opened lessons are saved on your device and can be accessed offline.</p>
         </div>
-        
-        <p style="margin-top: 30px; font-size: 1rem; color: #999;">
-            Your progress will automatically sync when you reconnect to the internet.
-        </p>
     </div>
     
     <script>
-        // Auto-reload when back online
+        function goToLogin() {
+            window.location.href = '/student-login.html';
+        }
+        
+        // Check if we're back online
         window.addEventListener('online', () => {
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+            location.reload();
         });
     </script>
 </body>
