@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nav Test - Kindle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .test-container {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #305853;
+        }
+        
+        .info {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        /* Bottom Nav Test */
+        .test-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #305853;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .test-btn {
+            background: #B06821;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Billy Test */
+        .test-billy {
+            position: fixed;
+            bottom: 70px;
+            left: 15px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: gold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔧 Kindle Nav Test</h1>
+        
+        <div class="info">
+            <h2>Screen Info</h2>
+            <p><strong>Width:</strong> <span id="width"></span>px</p>
+            <p><strong>Height:</strong> <span id="height"></span>px</p>
+            <p><strong>User Agent:</strong> <span id="ua"></span></p>
+        </div>
+        
+        <div class="info">
+            <h2>What You Should See:</h2>
+            <p>✅ Green bar at bottom with 2 brown buttons</p>
+            <p>✅ Gold circle on left side (above green bar)</p>
+            <p>✅ This content above the green bar</p>
+        </div>
+        
+        <p style="margin-top: 100px; color: #999;">Scroll down to make sure content doesn't hide under nav...</p>
+        <p style="margin: 20px 0; color: #999;">Keep scrolling...</p>
+        <p style="margin: 20px 0; color: #999;">Almost there...</p>
+        <p style="margin: 20px 0; color: #999;">Last line! Bottom nav should still be visible.</p>
+    </div>
+    
+    <!-- Bottom Nav Test -->
+    <div class="test-nav">
+        <button class="test-btn">← Previous</button>
+        <div style="color: white; font-weight: bold;">Page 1 of 5</div>
+        <button class="test-btn">Next →</button>
+    </div>
+    
+    <!-- Billy Test -->
+    <div class="test-billy">
+        🔊
+    </div>
+    
+    <script>
+        document.getElementById('width').textContent = window.innerWidth;
+        document.getElementById('height').textContent = window.innerHeight;
+        document.getElementById('ua').textContent = navigator.userAgent;
+    </script>
+</body>
+</html>
