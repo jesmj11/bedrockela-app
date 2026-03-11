@@ -1,0 +1,74 @@
+{
+  "2": {
+    "topic": "Context Clues: Definition and Restatement",
+    "explanation": "Authors often define or restate unfamiliar words right in the sentence. In Tom Sawyer, Twain helps readers understand dialect and old-fashioned words by providing context. Look for words like 'or,' 'that is,' 'in other words,' or commas setting off definitions.",
+    "example": "From the text: 'She seldom or never looked through them'—the phrase 'seldom or never' helps define each other.",
+    "prompt": "Find three unfamiliar or difficult words in today's chapter. For each word, write the sentence it appears in, identify the context clues that help you understand it, and write the meaning in your own words."
+  },
+  "4": {
+    "topic": "Prefixes: un-, re-, pre-, dis-, mis-",
+    "explanation": "Prefixes change the meaning of base words. un- (not), re- (again), pre- (before), dis- (not/opposite), mis- (wrong). In Tom Sawyer, words like 'uncomfortable,' 'returned,' 'pretended,' 'disappeared,' and 'mischief' use these prefixes.",
+    "example": "'Uncomfortable' = un (not) + comfortable. 'Returned' = re (again) + turned.",
+    "prompt": "Find five words with these prefixes in today's reading. For each word: write the prefix, the base word, and the complete word's meaning. Then create two new words using these prefixes and use them in sentences."
+  },
+  "7": {
+    "topic": "Suffixes: -ful, -less, -ly, -ness, -ment",
+    "explanation": "Suffixes change a word's part of speech or meaning. -ful (full of), -less (without), -ly (in that manner), -ness (state of being), -ment (action/result). Examples from Tom Sawyer: 'carefully,' 'hopeless,' 'darkness,' 'excitement.'",
+    "example": "'Carefully' = careful + ly (in a careful manner). 'Darkness' = dark + ness (state of being dark).",
+    "prompt": "Find four words with these suffixes in today's chapter. For each: identify the base word, the suffix, and explain how the suffix changes the meaning. Then write a sentence using each word."
+  },
+  "9": {
+    "topic": "Synonyms and Word Choice",
+    "explanation": "Synonyms are words with similar meanings, but authors choose specific words for effect. Twain chooses 'trudged' instead of 'walked' and 'scowled' instead of 'frowned' to create specific images. Notice how word choice affects tone and meaning.",
+    "example": "Walk, stroll, trudge, march, wander—all mean moving on foot, but each creates a different picture.",
+    "prompt": "Find five descriptive verbs or adjectives in today's reading. For each word, write two synonyms and explain why Twain might have chosen his specific word instead of the synonyms. How does his choice affect the tone or imagery?"
+  },
+  "12": {
+    "topic": "Multiple Meaning Words (Homonyms)",
+    "explanation": "Many words have multiple meanings depending on context. In Tom Sawyer, words like 'play,' 'work,' 'run,' 'fence,' and 'beat' can mean different things. Context determines which meaning fits.",
+    "example": "'Play' can mean: (1) have fun, (2) perform in a show, (3) compete in a game. Context tells you which meaning applies.",
+    "prompt": "Find three words in today's chapter that have multiple meanings. For each word: write the sentence from the text, identify which meaning is used, and write a new sentence using a different meaning of the same word."
+  },
+  "14": {
+    "topic": "Figurative Language: Similes and Metaphors",
+    "explanation": "A simile compares using 'like' or 'as': 'Tom ran like the wind.' A metaphor says something IS something else: 'Tom was a lightning bolt.' Twain uses both to create vivid imagery. Similes are easier to spot; metaphors are more subtle.",
+    "example": "Simile: 'The fence stretched like an endless desert.' / Metaphor: 'Tom's heart was a stone when he saw the fence.'",
+    "prompt": "Find two examples of figurative language (similes or metaphors) in today's reading. Explain what is being compared and what image the comparison creates. Then write your own simile and metaphor about something from the chapter."
+  },
+  "17": {
+    "topic": "Idioms and Expressions",
+    "explanation": "Idioms are expressions that mean something different from their literal words. Tom Sawyer is full of 1800s American idioms: 'play hookey' (skip school), 'lay for' (wait to ambush), 'take a dare' (accept a challenge). Understanding idioms helps you understand the culture and time period.",
+    "example": "'Get hold of' doesn't mean literally grabbing—it means 'catch' or 'find.' 'Full of the Old Scratch' means mischievous (Old Scratch = the devil).",
+    "prompt": "Find three idioms or unusual expressions in today's chapter. For each: write the expression, explain what it literally says, explain what it actually means, and write a modern equivalent expression."
+  },
+  "19": {
+    "topic": "Greek and Latin Roots: port, ject, dict, scrib/script",
+    "explanation": "Many English words come from Greek and Latin roots. port (carry), ject (throw), dict (speak), scrib/script (write). Understanding roots helps you decode unfamiliar words. Examples: transport, project, predict, describe, scripture.",
+    "example": "'Transport' = trans (across) + port (carry) = carry across. 'Project' = pro (forward) + ject (throw) = throw forward.",
+    "prompt": "Learn these four roots and their meanings. Find or create five words using these roots (use a dictionary if needed). For each word: identify the root, write the definition, and use it in a sentence about Tom Sawyer."
+  },
+  "22": {
+    "topic": "Connotation vs. Denotation",
+    "explanation": "Denotation is a word's literal dictionary meaning. Connotation is the feeling or association the word creates. 'Cheap' and 'inexpensive' both mean low-cost (denotation), but 'cheap' suggests poor quality (negative connotation) while 'inexpensive' is neutral. Twain chooses words carefully for their connotations.",
+    "example": "'Childish' (negative) vs. 'youthful' (positive) both relate to being young, but have different connotations.",
+    "prompt": "Find five descriptive words in today's reading (adjectives or adverbs). For each: write the denotation (literal meaning) and the connotation (feeling it creates—positive, negative, or neutral). Explain how the connotation affects your understanding of the character or scene."
+  },
+  "24": {
+    "topic": "Dialect and Regional Language",
+    "explanation": "Tom Sawyer includes dialect—regional ways of speaking. Jim and other characters use Southern American English dialect from the 1840s. Twain writes it phonetically to show how it sounded. Understanding dialect reveals character, setting, and social class.",
+    "example": "Standard: 'I cannot do that, Master Tom.' / Dialect: 'I dasn't do that, Mars Tom.' (dasn't = dare not, Mars = Master)",
+    "prompt": "Find three examples of dialect in today's chapter. For each: write the dialect quote, translate it into standard English, and explain what the dialect tells you about the character who speaks it."
+  },
+  "27": {
+    "topic": "Cause and Effect Signal Words",
+    "explanation": "Authors use signal words to show cause and effect relationships: because, since, so, therefore, as a result, consequently. In Tom Sawyer, Twain often shows how Tom's actions lead to consequences. Finding these signals helps you understand plot and character motivation.",
+    "example": "'Tom didn't want to work, so he tricked his friends.' (Signal word: 'so'—shows cause leads to effect)",
+    "prompt": "Find three cause-and-effect relationships in today's chapter. For each: identify the cause, identify the effect, and write the signal word that connects them (or add one if it's implied). Then write two of your own cause-effect sentences about the chapter using different signal words."
+  },
+  "29": {
+    "topic": "Author's Word Choice and Tone",
+    "explanation": "Tone is the author's attitude toward the subject—humorous, serious, sarcastic, sad, etc. Authors create tone through word choice. Twain's tone in Tom Sawyer is often humorous and affectionate toward Tom's mischief. Notice how he describes Tom's tricks with amusement, not judgment.",
+    "example": "Serious tone: 'Tom deceived his friends.' / Humorous tone: 'Tom, that artful dodger, bamboozled his unsuspecting companions.'",
+    "prompt": "Identify the tone of today's chapter (humorous, suspenseful, sad, etc.). Find three specific word choices that create this tone. For each word: write the sentence, explain why that word creates the tone, and suggest an alternative word that would change the tone."
+  }
+}

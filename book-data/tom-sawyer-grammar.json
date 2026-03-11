@@ -1,0 +1,74 @@
+{
+  "1": {
+    "topic": "Complex Sentences",
+    "explanation": "A complex sentence contains one independent clause and at least one dependent clause. The dependent clause adds extra information but cannot stand alone. Example from Tom Sawyer: 'When Tom got home, Aunt Polly was waiting for him.'",
+    "example": "Although Tom was clever, he sometimes got into trouble.",
+    "prompt": "Write three complex sentences about a character from today's chapter. Use subordinating conjunctions like: although, because, when, if, since, while."
+  },
+  "3": {
+    "topic": "Independent vs. Dependent Clauses",
+    "explanation": "An independent clause can stand alone as a complete sentence. A dependent clause starts with a subordinating conjunction and needs an independent clause to complete its meaning. In Tom Sawyer, Twain uses both types to create varied sentence structures.",
+    "example": "Independent: 'Tom climbed the fence.' / Dependent: 'Because he wanted to escape' (needs more to be complete)",
+    "prompt": "Find two sentences in today's reading. Identify the independent and dependent clauses in each. Then write two of your own complex sentences and label the clauses."
+  },
+  "6": {
+    "topic": "Active and Passive Voice",
+    "explanation": "In active voice, the subject performs the action. In passive voice, the subject receives the action. Active: 'Tom painted the fence.' Passive: 'The fence was painted by Tom.' Twain mostly uses active voice to keep the story energetic.",
+    "example": "Active: 'Aunt Polly scolded Tom.' / Passive: 'Tom was scolded by Aunt Polly.'",
+    "prompt": "Find three sentences from today's chapter and identify whether they are active or passive voice. Then rewrite one active sentence in passive voice and one passive sentence in active voice."
+  },
+  "8": {
+    "topic": "Semicolons and Compound Sentences",
+    "explanation": "A semicolon joins two closely related independent clauses without a conjunction. It shows the ideas are connected: 'Tom loved adventure; Sid preferred safety.' Twain uses semicolons to create rhythm in his writing.",
+    "example": "Tom wanted to play; Aunt Polly wanted him to work.",
+    "prompt": "Write four compound sentences about today's chapter. Use semicolons in two sentences and coordinating conjunctions (and, but, or, so) in the other two."
+  },
+  "11": {
+    "topic": "Verb Moods: Indicative, Imperative, Subjunctive",
+    "explanation": "Indicative states facts: 'Tom climbed the fence.' Imperative gives commands: 'Climb the fence!' Subjunctive expresses wishes or hypotheticals: 'If Tom were here, he would climb the fence.' Twain uses all three to create dialogue and narration.",
+    "example": "Indicative: 'Tom is clever.' / Imperative: 'Be clever!' / Subjunctive: 'If Tom were more careful, he wouldn't get caught.'",
+    "prompt": "Write six sentences about today's chapter: two in indicative mood (statements), two in imperative mood (commands), and two in subjunctive mood (wishes or hypotheticals)."
+  },
+  "13": {
+    "topic": "Adjective and Adverb Clauses",
+    "explanation": "An adjective clause modifies a noun: 'Tom, who was very clever, tricked his friends.' An adverb clause modifies a verb, adjective, or adverb: 'Tom worked quickly because he wanted to finish.' Both add detail to sentences.",
+    "example": "Adjective: 'The fence that Tom painted stood in the yard.' / Adverb: 'Tom ran when he saw Aunt Polly.'",
+    "prompt": "Write four sentences about today's reading: two with adjective clauses (use who, which, that) and two with adverb clauses (use when, because, if, although)."
+  },
+  "16": {
+    "topic": "Parallel Structure",
+    "explanation": "Parallel structure means using the same grammatical form for items in a list or series. 'Tom liked swimming, fishing, and exploring' (all gerunds). Twain uses parallel structure to create rhythm: 'Tom was clever, brave, and mischievous.'",
+    "example": "Parallel: 'Tom ran, jumped, and shouted.' / Not parallel: 'Tom ran, jumped, and was shouting.'",
+    "prompt": "Find an example of parallel structure in today's chapter (or create one if you can't find one). Then write three sentences using parallel structure to describe characters, events, or settings from the story."
+  },
+  "18": {
+    "topic": "Restrictive vs. Non-Restrictive Clauses",
+    "explanation": "A restrictive clause is essential to the meaning and needs no commas: 'The boy who painted the fence is Tom.' A non-restrictive clause adds extra information and uses commas: 'Tom, who is Aunt Polly's nephew, painted the fence.'",
+    "example": "Restrictive: 'The chapter that we read today was exciting.' / Non-restrictive: 'Chapter 10, which we read today, was exciting.'",
+    "prompt": "Write four sentences about today's chapter: two with restrictive clauses (no commas) and two with non-restrictive clauses (with commas). Label each type."
+  },
+  "21": {
+    "topic": "Colons and Dashes for Emphasis",
+    "explanation": "A colon introduces a list, explanation, or quotation: 'Tom had one goal: freedom.' A dash creates emphasis or interruption: 'Tom—always clever—found a solution.' Both add style to writing.",
+    "example": "Colon: 'Tom needed three things: courage, wit, and luck.' / Dash: 'The fence—all thirty yards of it—needed whitewashing.'",
+    "prompt": "Write four sentences about today's reading: two using colons (for lists or explanations) and two using dashes (for emphasis or interruptions)."
+  },
+  "23": {
+    "topic": "Appositives",
+    "explanation": "An appositive is a noun or noun phrase that renames another noun right beside it. 'Tom, a clever boy, tricked his friends.' Appositives add detail without extra sentences. They're usually set off with commas.",
+    "example": "Tom's friend, Ben Rogers, fell for the trick.",
+    "prompt": "Write five sentences about characters or places from today's chapter. Each sentence should include an appositive that renames a noun. Use commas correctly."
+  },
+  "26": {
+    "topic": "Sentence Variety and Rhythm",
+    "explanation": "Good writers vary sentence length and structure to create rhythm. Short sentences create tension: 'Tom ran. He hid.' Long sentences provide detail: 'Tom, realizing he was in trouble, ran as fast as he could toward the garden.' Twain masters this technique.",
+    "example": "Varied: 'Tom waited. The fence stretched before him, thirty yards of blank board, and he sighed deeply.' / Monotonous: 'Tom waited. The fence was long. It was blank. He sighed.'",
+    "prompt": "Write a paragraph (5-7 sentences) about today's chapter. Vary your sentence lengths and structures. Include at least one short sentence (under 8 words), one medium sentence, and one long sentence (over 20 words)."
+  },
+  "28": {
+    "topic": "Subordinating Conjunctions and Sentence Combining",
+    "explanation": "Subordinating conjunctions (although, because, since, when, while, if, unless, until) connect dependent clauses to independent clauses. They help combine simple sentences into complex ones for more sophisticated writing.",
+    "example": "Simple: 'Tom was tired. He kept working.' / Combined: 'Although Tom was tired, he kept working.'",
+    "prompt": "Take five simple sentences from today's chapter (or write five about the chapter). Combine each pair into a complex sentence using different subordinating conjunctions. Underline the subordinating conjunction in each."
+  }
+}
