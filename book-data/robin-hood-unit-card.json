@@ -1,0 +1,1384 @@
+{
+  "unitInfo": {
+    "title": "The Merry Adventures of Robin Hood",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Based on legends retold by Howard Pyle (1883)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Historical Fiction / Legend",
+    "themes": [
+      "Justice",
+      "Loyalty",
+      "Courage",
+      "Leadership",
+      "Consequences of Pride"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-12T17:04:09.110Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 1-24 of any 6th-8th grade pocket"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (3 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "notes": "Each chapter maps to one lesson day"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "ROBIN BECOMES AN OUTLAW",
+      "summary": "In the green heart of England, in the days when King Henry ruled the land, there lived a young man named Robin of Locksley.  He was eighteen years old, strong and quick, with sharp eyes and a laugh that could be heard across a meadow.",
+      "text": "In the green heart of England, in the days when King Henry ruled the land, there lived a young man named Robin of Locksley. He was eighteen years old, strong and quick, with sharp eyes and a laugh that could be heard across a meadow. He was the finest archer in all of Nottinghamshire — and everyone knew it, including Robin himself.\nThat was the problem.\nOne spring morning, Robin set out through Sherwood Forest on his way to Nottingham, where the Sheriff was holding an archery contest. The prize was a fine barrel of ale and a purse of silver, and Robin intended to win both. He walked with a longbow over his shoulder, whistling, feeling like the world belonged to him.\nAt a crossroads he met a group of the King's foresters — rough men who patrolled the royal forest and enforced the harsh laws that protected the King's deer. In those days, killing one of the King's deer was a crime punishable by hanging, even if your family was starving. The foresters were hated by common people, and they knew it, and they didn't care.\n\"Where are you going, boy?\" the chief forester called out. He was a big man with a red face and mean eyes.\n\"To Nottingham, to win the shooting match,\" Robin said cheerfully.\nThe foresters laughed. \"You? You're just a beardless boy. I'll wager you couldn't hit a deer at a hundred paces.\"\nRobin's temper flared — a weakness that would follow him all his life. \"I'll bet you twenty marks I can hit any target you name.\"\nThe forester pointed to a herd of the King's deer grazing in a clearing a hundred yards away. \"Hit the finest buck in that herd, and I'll pay you twenty marks.\"\nRobin nocked an arrow, drew his great bow, and let fly. The arrow sang through the air and struck the buck cleanly. The animal fell without a sound.\nThe foresters' laughter died.\n\"You fool,\" the chief forester snarled. \"You've killed one of the King's deer. That's a hanging offense.\"\nRobin realized what he had done. In his pride and temper, he had committed a crime that could cost him his life. The foresters reached for their weapons.\nRobin ran.\nAn arrow whistled past his ear. He plunged into the thick woods, crashing through brambles and leaping over fallen logs. Behind him, the foresters shouted and cursed. Another arrow hissed by, close enough to clip a leaf beside his face. Robin turned, drew his own bow, and fired back. His arrow found its mark — one of the foresters fell.\nRobin stared in horror at what he had done. Then he disappeared into the deepest part of Sherwood Forest, where the oaks grew so thick that sunlight barely reached the ground.\nBy nightfall, Robin of Locksley was a wanted man. A price was on his head. He could never go home again.\nHe was eighteen years old, and his old life was over.",
+      "vocabulary": [
+        {
+          "word": "outlaw",
+          "partOfSpeech": "noun",
+          "definition": "a person who has broken the law and is living outside society's protection",
+          "contextSentence": "By nightfall, Robin of Locksley was a wanted man. A price was on his head. He could never go home again.",
+          "discussionQuestion": "How does becoming an outlaw change Robin's entire life in a single day?"
+        },
+        {
+          "word": "forester",
+          "partOfSpeech": "noun",
+          "definition": "an official responsible for patrolling and protecting a forest, especially royal hunting grounds",
+          "contextSentence": "He met a group of the King's foresters—rough men who patrolled the royal forest and enforced the harsh laws.",
+          "discussionQuestion": "Why were the foresters hated by common people?"
+        },
+        {
+          "word": "offense",
+          "partOfSpeech": "noun",
+          "definition": "a violation of the law; a crime",
+          "contextSentence": "You've killed one of the King's deer. That's a hanging offense.",
+          "discussionQuestion": "Why does Robin's offense seem unfair to a modern reader?"
+        },
+        {
+          "word": "temperament",
+          "partOfSpeech": "noun",
+          "definition": "a person's nature, especially as it affects their behavior",
+          "contextSentence": "Robin's temper flared—a weakness that would follow him all his life.",
+          "discussionQuestion": "How does Robin's temperament get him into trouble in this chapter?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What directly causes Robin to become an outlaw?",
+          "choices": [
+            "He refuses to pay his taxes to the Sheriff of Nottingham",
+            "He kills one of the King's deer on a bet and then injures a forester while escaping",
+            "He is accused of stealing from a nobleman's estate",
+            "He publicly insults the King's foresters at a village fair"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What character flaw leads Robin into trouble in this chapter?",
+          "choices": [
+            "His greed for money and prizes",
+            "His pride and quick temper, which make him accept the forester's bet",
+            "His laziness, which makes him take shortcuts through the royal forest",
+            "His loyalty to friends who are already outlaws"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin is only eighteen when his life changes forever. How does his age make this scene more powerful? What does this chapter suggest about how quickly a life can change?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "THE GREENWOOD",
+      "summary": "For weeks, Robin hid in Sherwood Forest, sleeping under trees, eating what he could hunt and forage.  He was alone and afraid, but he was also free — freer than he had ever been in his life.",
+      "text": "For weeks, Robin hid in Sherwood Forest, sleeping under trees, eating what he could hunt and forage. He was alone and afraid, but he was also free — freer than he had ever been in his life.\nAnd he was not the only outlaw in the greenwood.\nSherwood Forest was home to dozens of men who had been driven outside the law by the cruelty of the times. Some had poached deer to feed hungry families. Others had fallen into debt and been thrown off their land by greedy lords. A few were former soldiers, abandoned by the crown after years of service. They lived in the forest like ghosts, hunted by the Sheriff's men, surviving on whatever they could find.\nRobin found them — or they found him. Either way, within a month he had gathered around him a band of loyal followers. They recognized something in the young outlaw: courage, fairness, and a gift for leadership that went beyond his years.\nHe gave them rules.\n\"We rob from those who have too much,\" Robin declared, standing on a fallen oak in a forest clearing that would become their meeting place. \"We give to those who have too little. We never harm a woman or a child. We never rob a farmer, a craftsman, or any honest person who works for their bread. But lords, bishops, and tax collectors who grow fat on the suffering of common folk — they are fair game.\"\nThe men cheered.\n\"And one more thing,\" Robin added, his eyes serious. \"We answer to each other. Every man here has a voice. No one is above the law of the greenwood.\"\nThey made their camp in a hidden glen deep in the forest, beneath ancient oaks so massive that six men linking hands could not circle their trunks. They built shelters of branches and moss, dug a great cooking pit, and set lookouts on every trail. They wore green — Lincoln green, the color of the forest — so they could move through the trees like shadows.\nThe people of Nottinghamshire began to whisper the name Robin Hood. And the Sheriff of Nottingham began to grind his teeth.",
+      "vocabulary": [
+        {
+          "word": "greenwood",
+          "partOfSpeech": "noun",
+          "definition": "a forest of living trees; in medieval legend, the outlaw's forest home",
+          "contextSentence": "Robin hid in Sherwood Forest, sleeping under trees, eating what he could hunt and forage.",
+          "discussionQuestion": "Why does the greenwood represent both danger and freedom?"
+        },
+        {
+          "word": "poached",
+          "partOfSpeech": "verb",
+          "definition": "hunted or caught game illegally on someone else's land",
+          "contextSentence": "Some had poached deer to feed hungry families.",
+          "discussionQuestion": "Why did people risk the punishment for poaching?"
+        },
+        {
+          "word": "code",
+          "partOfSpeech": "noun",
+          "definition": "a set of rules or principles that a group agrees to follow",
+          "contextSentence": "We rob from those who have too much. We give to those who have too little.",
+          "discussionQuestion": "What makes Robin's code different from ordinary theft?"
+        },
+        {
+          "word": "democracy",
+          "partOfSpeech": "noun",
+          "definition": "a system where everyone has an equal voice in decisions",
+          "contextSentence": "Every man here has a voice. No one is above the law of the greenwood.",
+          "discussionQuestion": "How does Robin create a kind of democracy among outlaws?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What rule is at the heart of Robin's code for his band?",
+          "choices": [
+            "Never enter Nottingham under any circumstances",
+            "Rob from those who have too much and give to those who have too little",
+            "Every man must be able to shoot a bow before joining",
+            "Never take orders from anyone, including Robin himself"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why do so many men join Robin's band?",
+          "choices": [
+            "Robin pays them better than any lord in England",
+            "They are criminals who enjoy breaking the law",
+            "They have been driven outside the law by harsh rules, debts, and greedy lords",
+            "The King has ordered all young men to serve in Robin's forest army"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin says, \"Every man here has a voice. No one is above the law of the greenwood.\" How does Robin's leadership style compare to the way the Sheriff and the lords govern? What makes Robin's approach unusual for his time?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "LITTLE JOHN",
+      "summary": "Robin was walking alone through the forest one morning when he came to a narrow bridge over a rushing stream — just a single log, wide enough for one person to cross at a time. \nOn the other side stood the biggest man Robin had ever seen.",
+      "text": "Robin was walking alone through the forest one morning when he came to a narrow bridge over a rushing stream — just a single log, wide enough for one person to cross at a time.\nOn the other side stood the biggest man Robin had ever seen. He was nearly seven feet tall, broad as a barn door, with arms like tree limbs and a quarterstaff that looked like a young oak. His name, Robin would later learn, was John Little — though everyone would soon call him Little John, as a joke that never got old.\n\"Step aside,\" Robin called. \"I mean to cross this bridge.\"\n\"Step aside yourself,\" the big man replied. \"I was here first.\"\nNeither moved. Robin grinned. The stranger didn't.\n\"I'll tell you what,\" Robin said. \"We'll settle this the old-fashioned way. Quarterstaves. Whoever knocks the other into the stream gets the bridge.\"\nThe big man shrugged. \"Suits me. But you're half my size. It hardly seems fair.\"\nRobin cut himself a staff from a nearby oak — six feet of solid wood — and they met in the middle of the log bridge, balancing over the rushing water.\nThey fought for nearly half an hour. Robin was faster, darting in with quick strikes, dancing back before the big man could land a blow. But Little John was immovable — every hit Robin landed felt like striking a stone wall. And when Little John swung, the air whistled.\nOne massive blow caught Robin across the ribs. He staggered, slipped, and tumbled into the stream with a tremendous splash.\nHe came up sputtering, soaked from head to toe, his dignity considerably damaged. The big man looked down at him from the bridge with a faint smile.\nRobin burst out laughing.\n\"Well fought!\" he said, hauling himself out of the water. \"I haven't been beaten in years. What's your name?\"\n\"John Little.\"\n\"Well, John Little, how would you like to join a band of merry outlaws? We live in the greenwood, we rob from the rich, and we eat better than most lords.\"\nJohn thought about it for approximately two seconds. \"I'm in.\"\nRobin blew his hunting horn — three short blasts — and within minutes, his men appeared from the trees like green phantoms. They welcomed John Little with a feast, renamed him Little John, and from that day forward, he was Robin's closest friend and most trusted companion.\nHe never lost another fight on a bridge. Mostly because no one was foolish enough to challenge him.",
+      "vocabulary": [
+        {
+          "word": "quarterstaff",
+          "partOfSpeech": "noun",
+          "definition": "a long wooden pole used as a weapon, typically six to eight feet long",
+          "contextSentence": "He carried a quarterstaff that looked like a young oak.",
+          "discussionQuestion": "Why was the quarterstaff a common weapon for ordinary people in medieval England?"
+        },
+        {
+          "word": "immovable",
+          "partOfSpeech": "adjective",
+          "definition": "impossible to move; firmly fixed in place",
+          "contextSentence": "Little John was immovable—every hit Robin landed felt like striking a stone wall.",
+          "discussionQuestion": "How does the word immovable help the reader picture Little John?"
+        },
+        {
+          "word": "dignity",
+          "partOfSpeech": "noun",
+          "definition": "a sense of pride and self-respect",
+          "contextSentence": "He came up sputtering, soaked from head to toe, his dignity considerably damaged.",
+          "discussionQuestion": "How does Robin's reaction to losing show his character?"
+        },
+        {
+          "word": "companion",
+          "partOfSpeech": "noun",
+          "definition": "a person who accompanies or spends time with another; a close friend",
+          "contextSentence": "From that day forward, he was Robin's closest friend and most trusted companion.",
+          "discussionQuestion": "What qualities make Little John a good companion for Robin?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does the fight on the bridge end?",
+          "choices": [
+            "Robin knocks Little John into the stream with a clever trick",
+            "Little John knocks Robin into the stream with a powerful blow",
+            "Both men fall into the water at the same time",
+            "They agree to stop fighting and call it a draw"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Robin's reaction to losing the fight reveal about his character?",
+          "choices": [
+            "He is angry and swears revenge on Little John",
+            "He laughs, admires Little John's skill, and invites him to join the band",
+            "He pretends the loss didn't happen and changes the subject",
+            "He challenges Little John to a rematch with different weapons"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin loses this fight but gains his most loyal friend. What does this tell us about what Robin values in people? How does his response to defeat differ from what we might expect?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "THE SHOOTING MATCH",
+      "summary": "The Sheriff of Nottingham was furious.  Robin Hood was making him look like a fool.",
+      "text": "The Sheriff of Nottingham was furious. Robin Hood was making him look like a fool. The outlaw robbed travelers on the King's roads, gave the money to the poor, and vanished into the forest before the Sheriff's men could catch him. Worse, the common people loved Robin and helped hide him.\nThe Sheriff devised a plan.\n\"Robin Hood is vain about his archery,\" the Sheriff told his advisors. \"We'll hold a grand shooting match in Nottingham with a prize so fine he won't be able to resist. A golden arrow. When he shows up, we'll surround him and take him.\"\nWord of the contest spread across Nottinghamshire. The golden arrow would be awarded to the finest archer in England. Every bowman for fifty miles would compete.\nRobin's men warned him. \"It's a trap,\" said Will Stutely, one of his most loyal followers. \"The Sheriff wants your head.\"\n\"Of course it's a trap,\" Robin said cheerfully. \"That's what makes it fun.\"\nOn the day of the contest, the streets of Nottingham were packed. The Sheriff sat on a raised platform, surrounded by armed guards, scanning the crowd for Robin Hood. He was looking for a young man in Lincoln green with a feather in his cap.\nWhat he saw was a ragged old man with a patched cloak, a bent back, and a scraggly beard — shuffling to the shooting line with a battered bow that looked like it might fall apart.\nThe contest went on for hours. Archer after archer stepped forward. The targets were set at increasing distances. One by one, the competitors were eliminated until only three remained: a yeoman in brown, a tall stranger in scarlet, and the ragged old beggar.\nThe yeoman shot first. His arrow struck the inner ring — an excellent shot. The crowd cheered.\nThe stranger in scarlet shot next. His arrow struck the exact center. The crowd roared.\nThe old beggar stepped forward. He drew his battered bow with surprising strength, aimed for a long moment, and released. His arrow split the stranger's arrow down the middle, lodging in the exact same spot.\nThe crowd went wild. The Sheriff, puzzled but not suspicious, awarded the golden arrow to the ragged beggar, who shuffled away into the crowd and disappeared.\nThat evening, an arrow thudded into the wooden post outside the Sheriff's window. Attached to it was a note:\n\"Thank you for the golden arrow, my lord Sheriff. It was a lovely prize. — Robin Hood.\"\nThe Sheriff's scream could be heard across Nottingham.",
+      "vocabulary": [
+        {
+          "word": "disguise",
+          "partOfSpeech": "noun/verb",
+          "definition": "a costume or appearance used to hide one's identity; to change one's appearance",
+          "contextSentence": "What he saw was a ragged old man with a patched cloak, a bent back, and a scraggly beard.",
+          "discussionQuestion": "Why is disguise Robin's \"favorite weapon\"?"
+        },
+        {
+          "word": "vain",
+          "partOfSpeech": "adjective",
+          "definition": "having an excessively high opinion of oneself; also, producing no result",
+          "contextSentence": "Robin Hood is vain about his archery.",
+          "discussionQuestion": "Is the Sheriff right that Robin is vain? What evidence supports this?"
+        },
+        {
+          "word": "eliminated",
+          "partOfSpeech": "verb",
+          "definition": "removed from a competition; gotten rid of",
+          "contextSentence": "One by one, the competitors were eliminated.",
+          "discussionQuestion": "How does the elimination process build suspense?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Robin avoid being caught at the Sheriff's archery contest?",
+          "choices": [
+            "He sends Little John to compete in his place",
+            "He disguises himself as a ragged old beggar that no one recognizes",
+            "He competes from a hidden position in the trees",
+            "He bribes the Sheriff's guards to look the other way"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is the Sheriff's reaction when he discovers Robin won the golden arrow?",
+          "choices": [
+            "He laughs and admits Robin outsmarted him",
+            "He screams in rage after receiving Robin's mocking note",
+            "He pretends the contest never happened",
+            "He offers Robin a larger prize to come back"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin splits the other archer's arrow down the middle — a nearly impossible shot. Why does Robin take such extreme risks to show off his skill? What does this pattern of behavior suggest about a possible weakness in his character?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "WILL SCARLET",
+      "summary": "Robin was walking through the forest one afternoon when he spotted a young man striding down the path dressed in the finest scarlet silk, with a feathered cap and a jeweled sword at his hip.  He looked like a nobleman's son who had wandered into the wrong part of England.",
+      "text": "Robin was walking through the forest one afternoon when he spotted a young man striding down the path dressed in the finest scarlet silk, with a feathered cap and a jeweled sword at his hip. He looked like a nobleman's son who had wandered into the wrong part of England.\n\"Good day, friend,\" Robin called out, stepping into the path. \"That's a fine outfit. What brings a gentleman to Sherwood Forest?\"\nThe young man's hand went to his sword. \"Stand aside. I have business in Nottingham and no interest in being robbed.\"\n\"Robbed? I wouldn't dream of it. But you should know that this forest is full of outlaws. A man dressed like you is an invitation.\"\nThe stranger drew his sword. \"Let them come. I'll fight every one of them.\"\nRobin drew his own. \"Well, you can start with me.\"\nThey fought with swords, and Robin quickly discovered two things: the stranger was skilled, and the stranger was angry — not at Robin, but at something deeper. He fought with a fury that went beyond self-defense.\nAfter ten minutes of hard fighting, Robin disarmed him with a quick twist of his blade. The stranger's sword went spinning into the bushes. He stood there, breathing hard, his fine scarlet outfit torn and dirty.\n\"Who are you?\" Robin asked.\nThe young man's shoulders sagged. \"My name is Will Gamwell. My father is dead. His lands were seized by a corrupt lord who bribed the Sheriff. I have nothing left. I'm looking for my cousin — a man named Robin of Locksley. People say he's an outlaw now.\"\nRobin stared. \"Will? Will Gamwell? It's me. It's Robin.\"\nWill's eyes went wide. The two cousins embraced, laughing and pounding each other's backs. The band, who had been watching from the trees the entire time, came forward to welcome the newcomer.\n\"We'll call you Will Scarlet,\" Robin said, eyeing his cousin's ruined but still vivid outfit. \"And we'll get you some proper Lincoln green.\"\n\"I'd rather keep the scarlet,\" Will said stubbornly.\nHe did. And he fought in it for the rest of his life.",
+      "vocabulary": [
+        {
+          "word": "nobleman",
+          "partOfSpeech": "noun",
+          "definition": "a man of high social rank, usually with a title and land",
+          "contextSentence": "He looked like a nobleman's son who had wandered into the wrong part of England.",
+          "discussionQuestion": "How is Will Scarlet's background as a nobleman unusual for an outlaw?"
+        },
+        {
+          "word": "corrupt",
+          "partOfSpeech": "adjective",
+          "definition": "dishonest; willing to act illegally for personal gain",
+          "contextSentence": "His lands were seized by a corrupt lord who bribed the Sheriff.",
+          "discussionQuestion": "How does corruption drive people like Will to become outlaws?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why has Will Gamwell come to Sherwood Forest?",
+          "choices": [
+            "He is running from a crime he committed in London",
+            "His father is dead and his lands were seized by a corrupt lord who bribed the Sheriff",
+            "He was sent by King Richard to spy on Robin Hood",
+            "He is a traveling merchant who got lost on the forest roads"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Will's refusal to give up his scarlet clothing reveal?",
+          "choices": [
+            "He is too proud to wear the same clothes as common outlaws",
+            "He is stubborn and independent — he'll join the band on his own terms",
+            "He doesn't trust Robin enough to fully commit to the group",
+            "The scarlet clothing has magical properties that protect him"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Will Scarlet is a nobleman's son who becomes an outlaw. How does his story connect to the chapter's larger theme about how corruption in power creates outlaws?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "THE TINKER AND THE WARRANT",
+      "summary": "One day, a tinker came tramping down the forest road — a big, cheerful man who mended pots and pans for a living.  His name was Middle, and he carried a heavy cudgel and a rolled-up document tucked inside his shirt.",
+      "text": "One day, a tinker came tramping down the forest road — a big, cheerful man who mended pots and pans for a living. His name was Middle, and he carried a heavy cudgel and a rolled-up document tucked inside his shirt.\nRobin, disguised as a simple traveler, fell into step beside him.\n\"Good morning, friend. Where are you headed?\"\n\"To find Robin Hood,\" the tinker said proudly. \"I've got a warrant for his arrest, signed by the Sheriff himself. Fifty pounds reward if I bring him in.\"\nRobin nearly choked. \"Robin Hood! That's a dangerous man, I hear. You'd be wise to be careful.\"\n\"Careful?\" The tinker laughed. \"I've fought bears. I've wrestled bulls. One outlaw doesn't worry me.\"\nRobin suggested they stop at a tavern for a drink. The tinker happily agreed. Over several mugs of ale, Robin quietly slipped the warrant out of the tinker's shirt and hid it. When the tinker finally reached for the document and found it gone, he turned on Robin in a rage.\n\"You stole my warrant! You're one of his men!\"\n\"Worse than that,\" Robin said, grinning. \"I'm Robin Hood himself.\"\nThe tinker swung his cudgel. Robin ducked. What followed was a furious fight — cudgel against sword, strength against speed — that went crashing through the tavern and out into the road. Tables were overturned. Mugs were shattered. The tavern keeper dove behind the bar and stayed there.\nIn the end, they fought to a draw. Both men stood panting, bruised, and grinning at each other.\n\"You're a fine fighter,\" Robin said. \"Forget the warrant. Join us.\"\nThe tinker looked at the torn warrant, looked at Robin, looked at the beautiful forest stretching in every direction — and made his choice.\n\"The Sheriff can find someone else,\" he said.",
+      "vocabulary": [
+        {
+          "word": "warrant",
+          "partOfSpeech": "noun",
+          "definition": "an official document authorizing arrest or some other action",
+          "contextSentence": "I've got a warrant for his arrest, signed by the Sheriff himself.",
+          "discussionQuestion": "Why is the warrant useless once Robin steals it?"
+        },
+        {
+          "word": "cunning",
+          "partOfSpeech": "adjective/noun",
+          "definition": "clever in a sneaky or deceptive way; skill in achieving one's aims through trickery\nFrom the text: Robin tricks the tinker into drinking while stealing the warrant.\nHow does Robin use cunning instead of force in this chapter?\n3. RECRUIT  (verb/noun) — to persuade someone to join a group; a new member",
+          "contextSentence": "Forget the warrant. Join us.",
+          "discussionQuestion": "What does Robin look for when he recruits new members?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Robin deal with the tinker who has a warrant for his arrest?",
+          "choices": [
+            "He fights the tinker immediately and takes the warrant by force",
+            "He tricks the tinker into drinking at a tavern while stealing the warrant from his shirt",
+            "He disguises himself so the tinker doesn't recognize him and walks away",
+            "He offers the tinker more money than the Sheriff's reward"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What convinces the tinker to join Robin's band instead of arresting him?",
+          "choices": [
+            "Robin threatens him with a weapon",
+            "After fighting to a draw, the tinker respects Robin and prefers the outlaw's life to the Sheriff's pay",
+            "The tinker discovers that the Sheriff lied about the reward money",
+            "Little John forces the tinker to join by holding him prisoner"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin uses cleverness rather than violence to handle the tinker. How does this approach connect to Robin's larger character? What pattern do you see in how Robin recruits new members?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "FRIAR TUCK",
+      "summary": "Robin had heard rumors of a friar living near Fountain Abbey — a holy man who was also, supposedly, the best swordsman in the county.  Robin had to see for himself.",
+      "text": "Robin had heard rumors of a friar living near Fountain Abbey — a holy man who was also, supposedly, the best swordsman in the county. Robin had to see for himself.\nHe found the friar sitting by a stream, roasting a chicken. Friar Tuck was not what Robin expected. He was round and red-faced, with a bald head ringed by a fringe of brown hair. He wore the brown robes of his order, but beneath them were the shoulders and arms of a fighter. A broadsword hung at his side — unusual equipment for a man of God.\n\"Good friar,\" Robin said politely, \"I need to cross this stream, and I don't wish to get my feet wet. Would you be so kind as to carry me across on your back?\"\nThe friar looked Robin up and down. \"Very well,\" he said mildly. He hoisted Robin onto his broad back, waded into the stream — and halfway across, dumped him into the water.\nRobin came up sputtering. \"What was that for?\"\n\"You looked like you needed a bath,\" the friar said.\nRobin demanded the friar carry him back. The friar agreed — and dumped him again. This went on three times until both men were soaked, furious, and laughing so hard they could barely stand.\nThen they fought. Swords clashed, water sprayed, and for an hour they battled back and forth across the stream, neither able to gain the upper hand. Friar Tuck was faster than his round body suggested, and he fought with a joyful ferocity that delighted Robin even as it bruised him.\n\"Enough!\" Robin finally called. \"You're the finest fighting man I've met since Little John. Come join us in the greenwood. We need a chaplain — and apparently a swimming instructor.\"\nThe friar considered this. He looked at his lonely campfire, his half-eaten chicken, and the empty forest around him. He had been living alone for years, cast out by the Church for his temper and his unwillingness to bow to corrupt bishops.\n\"Will there be regular meals?\" he asked.\n\"The best venison in England.\"\n\"I'm your man.\"\nAnd so Friar Tuck joined the band — bringing with him his sword, his appetite, and three dogs that followed him everywhere.",
+      "vocabulary": [
+        {
+          "word": "friar",
+          "partOfSpeech": "noun",
+          "definition": "a member of a religious order, especially one who travels and lives among the people",
+          "contextSentence": "Friar Tuck was not what Robin expected.",
+          "discussionQuestion": "How is Friar Tuck different from what people expect a friar to be?"
+        },
+        {
+          "word": "ferocity",
+          "partOfSpeech": "noun",
+          "definition": "fierce, savage intensity",
+          "contextSentence": "He fought with a joyful ferocity that delighted Robin even as it bruised him.",
+          "discussionQuestion": "How can ferocity be joyful? What does this phrase tell us about Tuck?"
+        },
+        {
+          "word": "unconventional",
+          "partOfSpeech": "adjective",
+          "definition": "not based on or conforming to what is generally done or believed\nFrom the text: Friar Tuck carries a sword, fights travelers, and was cast out by the Church.\nIn what ways is Friar Tuck unconventional for a man of God?\n4. CHAPLAIN  (noun) — a religious leader attached to a group, institution, or military unit",
+          "contextSentence": "We need a chaplain—and apparently a swimming instructor.",
+          "discussionQuestion": "Why does Robin's band need a chaplain? What does this say about the band?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes Friar Tuck unusual for a member of the clergy?",
+          "choices": [
+            "He is extremely wealthy and lives in a palace",
+            "He is a skilled swordsman who fights with joyful energy and was cast out by the Church",
+            "He refuses to eat meat and lives only on bread and water",
+            "He travels with an army of monks who serve as his bodyguards"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How do Robin and Friar Tuck's relationship begin?",
+          "choices": [
+            "Robin politely asks Tuck to join and Tuck immediately agrees",
+            "They trick each other, fight, and develop mutual respect through combat",
+            "Friar Tuck seeks Robin out after hearing about the band's good deeds",
+            "Little John introduces them at a village festival"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Compare how Robin recruits Little John (Chapter 3), Will Scarlet (Chapter 5), the Tinker (Chapter 6), and Friar Tuck (Chapter 7). What pattern do you notice? What does this pattern reveal about what Robin values?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "THE SHERIFF'S FEAST",
+      "summary": "Robin loved a good disguise.  It was his favorite weapon — more useful than any bow or sword.",
+      "text": "Robin loved a good disguise. It was his favorite weapon — more useful than any bow or sword. He could be a beggar, a merchant, a potter, or a monk. He changed his voice, his walk, his entire manner. The Sheriff had posted Robin's description in every village in Nottinghamshire, but descriptions were useless against a man who could become anyone.\nOne market day, Robin dressed as a butcher — a broad-faced, cheerful fellow with a blood-stained apron and a cart full of meat. He drove into Nottingham, set up a stall, and began selling at prices so low that every housewife in the city came running.\n\"Best beef in England! Half price today only!\"\nThe other butchers were furious. The customers were delighted. And the Sheriff's wife, hearing about the bargains, sent a servant to buy their entire dinner from the generous newcomer.\nThe butcher was so charming, so funny, and so generous that the Sheriff himself invited him to dinner at Nottingham Castle. Robin accepted with a deep bow.\nHe sat at the Sheriff's own table, ate the Sheriff's food, drank the Sheriff's wine, and told the Sheriff outrageous stories about his \"cattle ranch\" deep in Sherwood Forest. The Sheriff, who was greedy above all things, grew very interested.\n\"You say you have hundreds of head of cattle? In the forest?\"\n\"Five hundred at least, my lord. Fine beasts, every one. I'd sell the whole herd for a fair price.\"\n\"Show me,\" the Sheriff said, his eyes gleaming with greed.\nRobin led the Sheriff and a small escort deep into Sherwood Forest — deeper and deeper, until the trees closed overhead and the paths disappeared. Then Robin put his fingers to his lips and blew three sharp blasts on his hunting horn.\nGreen-clad men appeared from behind every tree.\n\"Welcome to my cattle ranch, my lord Sheriff,\" Robin said, dropping the butcher's accent. \"I'm Robin Hood. And you are my guest.\"\nThe Sheriff's face went white. But Robin was true to his code — he didn't harm the Sheriff. He simply took every coin the man was carrying, fed him a fine dinner of roast venison, and sent him home on a donkey, with the laughter of the Merry Men ringing in his ears.\nThe Sheriff did not find it funny.",
+      "vocabulary": [
+        {
+          "word": "persona",
+          "partOfSpeech": "noun",
+          "definition": "a role or character adopted by a person, especially one that is different from their true self\nFrom the text: Robin adopts the persona of a butcher so convincingly that the Sheriff invites him to dinner.\nHow does Robin's persona as the butcher differ from his real personality?\n2. GREEDY  (adjective) — having an intense and selfish desire for something, especially wealth",
+          "contextSentence": "The Sheriff, who was greedy above all things, grew very interested.",
+          "discussionQuestion": "How does Robin use the Sheriff's greedy nature against him?"
+        },
+        {
+          "word": "irony",
+          "partOfSpeech": "noun",
+          "definition": "a situation where the outcome is opposite to what was expected; a form of humor\nFrom the text: The Sheriff is robbed by the very man he invited to dinner.\nWhat is ironic about the Sheriff's feast?\n4. ESCORT  (noun/verb) — a person or group accompanying someone for protection; to accompany",
+          "contextSentence": "Robin led the Sheriff and a small escort deep into Sherwood Forest.",
+          "discussionQuestion": "Why does the Sheriff's escort fail to protect him?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes Robin's butcher disguise successful?",
+          "choices": [
+            "He looks exactly like a real butcher because he used to work as one",
+            "He is so charming, generous, and convincing that no one questions him",
+            "The Sheriff is too stupid to recognize anyone in disguise",
+            "Marian distracts the Sheriff while Robin sneaks into the castle"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Robin use the Sheriff's own greed to trap him?",
+          "choices": [
+            "He offers to sell the Sheriff fake gold at a discount",
+            "He promises to show the Sheriff five hundred cattle in the forest, luring him into the greenwood",
+            "He bets the Sheriff he can eat more food than anyone at the feast",
+            "He convinces the Sheriff to invest money in a fake business"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin robs the Sheriff but doesn't harm him. Why does Robin follow this rule? What would happen to Robin's reputation if he used violence against the Sheriff?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "ALLAN-A-DALE",
+      "summary": "A young man came walking through the forest one morning, and Robin knew something was wrong before the stranger said a word.  He was young, barely twenty, and he carried a lute on his back.",
+      "text": "A young man came walking through the forest one morning, and Robin knew something was wrong before the stranger said a word. He was young, barely twenty, and he carried a lute on his back. His face was handsome but hollow with grief, and he walked like a man who no longer cared where his feet took him.\n\"Good morning, friend,\" Robin said, stepping out from behind a tree. \"You look like a man who's lost something.\"\n\"I've lost everything,\" the young man said quietly. His name was Allan-a-Dale, and he was a minstrel — a traveling musician. He had fallen in love with a young woman named Ellen, and she loved him back. They had planned to marry.\nBut Ellen's father owed money to a wealthy old knight named Sir Stephen of Trent. To pay the debt, the father had promised Ellen to Sir Stephen as a bride. The wedding was set for that very afternoon, at the church in Plympton, and there was nothing Allan could do to stop it.\n\"She doesn't love him,\" Allan said, his voice breaking. \"He's sixty years old and cruel. She wept when she told me. But her father says the debt must be paid.\"\nRobin's jaw tightened. \"Where is this church?\"\nOne hour later, Robin Hood and a dozen of his men appeared at the church in Plympton. Robin was disguised as a wandering harper. Little John stood guard at the door. Friar Tuck — an actual ordained friar — stood ready.\nThe ceremony had already begun. Sir Stephen, old and richly dressed, stood at the altar beside Ellen, who was pale and trembling. The bishop was reading the vows.\nRobin stepped forward and began to play his harp — loudly.\n\"What is the meaning of this?\" the bishop demanded.\n\"A small change of plans,\" Robin said. He threw off his disguise, and his men blocked every exit. Ellen's father protested. Sir Stephen sputtered with rage.\nRobin turned to Ellen. \"Do you love this man?\" he asked, pointing to Sir Stephen.\n\"No,\" she whispered.\n\"Do you love Allan-a-Dale?\"\n\"With all my heart.\"\nRobin turned to Friar Tuck. \"Marry them.\"\nTuck performed the ceremony right there, over the bishop's objections and Sir Stephen's threats. Allan and Ellen were married before sunset. Robin paid off Ellen's father's debt with money taken from the bishop's own saddlebags.\nAllan-a-Dale joined the band that day, becoming their minstrel. His songs about Robin Hood would be sung for centuries.",
+      "vocabulary": [
+        {
+          "word": "minstrel",
+          "partOfSpeech": "noun",
+          "definition": "a medieval musician who traveled from place to place, singing songs and telling stories",
+          "contextSentence": "His name was Allan-a-Dale, and he was a minstrel—a traveling musician.",
+          "discussionQuestion": "Why are minstrels important to how legends like Robin Hood spread?"
+        },
+        {
+          "word": "intervene",
+          "partOfSpeech": "verb",
+          "definition": "to become involved in a situation in order to change it\nFrom the text: Robin and his men intervene to stop the forced wedding.\nWhat gives Robin the right to intervene in someone else's wedding?\n3. INJUSTICE  (noun) — lack of fairness; a situation where rights are violated\nFrom the text: Ellen is being forced to marry a man she doesn't love to pay her father's debt.\nWhat forms of injustice does Allan-a-Dale's story reveal?\n4. ORDAINED  (adjective/verb) — officially appointed as a priest or minister through a religious ceremony",
+          "contextSentence": "Friar Tuck—an actual ordained friar—stood ready.",
+          "discussionQuestion": "Why is it important that Friar Tuck is an ordained friar for this scene to work?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why is Ellen being forced to marry Sir Stephen of Trent?",
+          "choices": [
+            "She is in love with Sir Stephen and chose him over Allan",
+            "Her father owes Sir Stephen money and has promised Ellen as payment for the debt",
+            "The King has ordered the marriage for political reasons",
+            "Ellen's family wants to gain Sir Stephen's title and wealth"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Robin stop the forced wedding?",
+          "choices": [
+            "He challenges Sir Stephen to a sword fight and wins",
+            "He disguises himself as a harper, interrupts the ceremony, and has Friar Tuck marry Allan and Ellen instead",
+            "He kidnaps Ellen before the wedding and hides her in the forest",
+            "He pays Sir Stephen more money than Ellen's father owes"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin intervenes in a personal matter — someone else's wedding. When is it right to get involved in other people's problems? Use evidence from this chapter to support your answer.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "THE GOLDEN ARROW",
+      "summary": "The Sheriff had not forgotten his humiliation.  He was a proud man, and Robin Hood had made a fool of him more times than he could count.",
+      "text": "The Sheriff had not forgotten his humiliation. He was a proud man, and Robin Hood had made a fool of him more times than he could count. He devised another plan — a second archery contest, but this time with a much more elaborate trap.\nThe prize was a golden arrow on a silver shaft. The contest would be held in a field outside Nottingham, surrounded by the Sheriff's men — hundreds of them, armed and ready. Every road into the city would be watched. Every traveler would be searched.\n\"This time,\" the Sheriff told his captain, \"Robin Hood will not escape.\"\nRobin's scouts brought word of the trap. Little John counseled caution. \"Don't go, Robin. He's laid this one carefully.\"\n\"If I don't go, he wins,\" Robin said. \"And I never let the Sheriff win.\"\nBut Robin didn't walk into the trap blindly. He sent his men into Nottingham in twos and threes over several days, disguised as farmers, merchants, and monks. By the day of the contest, more than forty of Robin's men were scattered through the crowd, armed and ready.\nRobin himself came disguised as a one-eyed beggar, so convincing that his own men had to look twice to recognize him.\nThe contest was fierce. Archers from across England competed. The Sheriff watched eagerly, certain that Robin would reveal himself.\nIn the final round, the one-eyed beggar stepped to the line. He drew a battered bow, aimed with his one good eye, and put his arrow into the exact center of the target.\nSilence. Then thunderous applause.\nThe Sheriff studied the beggar suspiciously but saw nothing familiar. He awarded the golden arrow.\nAs before, Robin waited until he was safely back in the forest before sending the Sheriff a mocking message. But this time, the Sheriff had planned ahead. He had men following every suspicious person who left the tournament. They tracked Robin's men to the edge of the forest and launched an ambush.\nArrows flew. Steel clashed. Two of Robin's men were wounded before the band could melt back into the deep woods. It was the closest the Sheriff had ever come to catching them.\nRobin sat by the campfire that night, cleaning a wound on his arm, and for the first time, he didn't laugh.",
+      "vocabulary": [
+        {
+          "word": "elaborate",
+          "partOfSpeech": "adjective",
+          "definition": "detailed and complicated; carefully planned",
+          "contextSentence": "This time with a much more elaborate trap.",
+          "discussionQuestion": "How is the Sheriff's trap more elaborate than his first attempt?"
+        },
+        {
+          "word": "flanking",
+          "partOfSpeech": "verb/adjective",
+          "definition": "attacking from the side rather than head-on\nFrom the text: Robin's men are scattered through the crowd, positioned to help from multiple angles.\nWhy is flanking more effective than a direct confrontation?\n3. AMBUSH  (noun/verb) — a surprise attack from a hidden position",
+          "contextSentence": "They launched an ambush.",
+          "discussionQuestion": "Why is the ambush at the end of this chapter more dangerous than the trap itself?"
+        },
+        {
+          "word": "consequence",
+          "partOfSpeech": "noun",
+          "definition": "a result or effect of an action, especially a negative one",
+          "contextSentence": "Two of Robin's men were wounded. For the first time, Robin didn't laugh.",
+          "discussionQuestion": "What consequences does Robin face that he hasn't faced before?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How is the Sheriff's second archery trap different from the first?",
+          "choices": [
+            "The prize is less valuable so Robin won't be interested",
+            "It has hundreds of armed soldiers, watched roads, and searched travelers",
+            "The Sheriff hires archers who know what Robin looks like",
+            "The contest is held in a secret location Robin doesn't know about"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What makes this chapter's ending different from Chapter 4's ending?",
+          "choices": [
+            "Robin loses the archery contest for the first time",
+            "Robin escapes but two of his men are wounded and Robin doesn't laugh",
+            "The Sheriff catches Robin but lets him go as a sign of respect",
+            "Robin decides to never attend another archery contest"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Compare the endings of Chapter 4 (the first shooting match) and Chapter 10 (the golden arrow). How has the mood changed? What does this shift reveal about the increasing stakes of Robin's life?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "GUY OF GISBOURNE",
+      "summary": "The Sheriff realized he could not catch Robin Hood with soldiers.  He needed someone who could match Robin skill for skill, cunning for cunning.",
+      "text": "The Sheriff realized he could not catch Robin Hood with soldiers. He needed someone who could match Robin skill for skill, cunning for cunning. He needed an assassin.\nHe found Guy of Gisbourne.\nGuy was a knight who had been stripped of his lands for acts of violence so extreme that even the other nobles were disgusted. He was tall, lean, and deadly — a master swordsman and archer who wore a cloak of rough horsehide and carried a black-handled dagger that had killed more men than anyone could count. He had no loyalty except to money, and no mercy at all.\n\"Kill Robin Hood,\" the Sheriff said. \"Bring me his head. I'll pay you his weight in silver.\"\n\"Done,\" said Guy of Gisbourne.\nGuy entered Sherwood Forest alone, something no hired killer had dared before. He moved quietly, watching, listening, reading the forest like a hunter reads tracks. He was patient. He was dangerous.\nRobin found him — or rather, they found each other, meeting on a narrow forest path as if the forest itself had arranged it.\nThey talked first. Both men took the measure of the other — the careful way a swordsman studies an opponent before the first blow. Guy pretended to be a traveler. Robin pretended to believe him.\nThen the pretending stopped.\nThe fight was unlike anything Robin had experienced. Guy was fast, brutal, and absolutely without hesitation. He fought to kill — no honor, no rules, no pauses. His sword cut through Robin's sleeve, drawing blood. His dagger nearly found Robin's throat.\nRobin had always fought with joy — the thrill of the contest, the pleasure of testing himself. Against Guy of Gisbourne, there was no joy. There was only survival.\nThe fight lasted twenty minutes. It ended when Robin caught Guy's sword arm in a bind, twisted, and drove his own blade home. Guy fell.\nRobin stood over him, breathing hard, blood running down his arm. He looked at the dead man's face and felt nothing but a cold, hollow relief.\nHe took Guy's horsehide cloak and wore it into Nottingham, disguised as the assassin. When the Sheriff eagerly asked for Robin Hood's body, Robin revealed himself, mocked the Sheriff one final time, and escaped in the chaos.\nBut the fight with Guy stayed with him. For the first time, Robin understood that this life — however merry they called it — had real consequences. People were trying to kill him, and someday, someone might succeed.",
+      "vocabulary": [
+        {
+          "word": "assassin",
+          "partOfSpeech": "noun",
+          "definition": "a person hired to kill someone",
+          "contextSentence": "He needed an assassin. He found Guy of Gisbourne.",
+          "discussionQuestion": "How does hiring an assassin show the Sheriff has changed his strategy?"
+        },
+        {
+          "word": "ruthless",
+          "partOfSpeech": "adjective",
+          "definition": "having no pity or compassion; cruel and determined",
+          "contextSentence": "He had no loyalty except to money, and no mercy at all.",
+          "discussionQuestion": "What makes Guy of Gisbourne ruthless where other enemies were merely dangerous?"
+        },
+        {
+          "word": "mortality",
+          "partOfSpeech": "noun",
+          "definition": "the state of being subject to death; the awareness that one can die",
+          "contextSentence": "Robin understood that this life had real consequences. People were trying to kill him.",
+          "discussionQuestion": "How does the fight with Guy force Robin to confront his own mortality?"
+        },
+        {
+          "word": "impersonation",
+          "partOfSpeech": "noun",
+          "definition": "the act of pretending to be another person",
+          "contextSentence": "Robin took Guy's horsehide cloak and wore it into Nottingham, disguised as the assassin.",
+          "discussionQuestion": "How does Robin's impersonation of Guy show his quick thinking under pressure?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes Guy of Gisbourne a more dangerous enemy than the Sheriff's soldiers?",
+          "choices": [
+            "He has a larger army than the Sheriff",
+            "He is a skilled fighter with no loyalty or mercy, motivated only by money",
+            "He uses poison arrows that can kill from a distance",
+            "He has supernatural powers from a deal with dark forces"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Robin defeat Guy of Gisbourne?",
+          "choices": [
+            "He outsmarts Guy with a clever trap in the forest",
+            "He wins a brutal, joyless sword fight that lasts twenty minutes",
+            "Little John and the Merry Men surround Guy and force him to surrender",
+            "Robin shoots Guy with an arrow from a hidden position"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin has always fought with joy — but against Guy, \"there was no joy. There was only survival.\" What has changed? How does this fight mark a turning point in the story?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "MAID MARIAN",
+      "summary": "Robin Hood had a secret that none of the ballad singers ever got quite right. \nBefore he became an outlaw — before the deer, the foresters, and the flight into the greenwood — Robin of Locksley had been in love.",
+      "text": "Robin Hood had a secret that none of the ballad singers ever got quite right.\nBefore he became an outlaw — before the deer, the foresters, and the flight into the greenwood — Robin of Locksley had been in love. Her name was Marian Fitzwalter, and she was the daughter of a minor nobleman whose estate bordered the forest. They had grown up together, climbing trees and shooting at targets in the meadow behind her father's house. She was better than Robin with a short bow, though he would never admit it publicly.\nWhen Robin was declared an outlaw, Marian's father forbade her from seeing him. He was afraid — not of Robin, but of the Sheriff, who punished anyone suspected of helping the outlaw. For two years, Robin and Marian saw each other only in stolen moments — a meeting at the forest's edge at dawn, a message carried by a trusted friend, a glimpse across a crowded market square.\nBut Marian was not the kind of woman who waited quietly.\nShe had been feeding information to Robin for months. She knew which roads the tax collectors would travel. She knew when the Sheriff planned his raids. She had a network of servants, farmers, and village women who passed messages through the countryside like a human telegraph.\nOne autumn afternoon, Robin was walking in the forest when he encountered a slim young knight in full armor — visor down, sword drawn. The knight challenged Robin to a fight. Robin accepted, because Robin always accepted.\nThey fought with swords, and Robin was startled by how good the knight was. Quick, precise, and relentlessly aggressive. Robin couldn't find an opening. Every attack was parried. Every feint was read.\nAfter fifteen minutes, Robin finally landed a blow that knocked the knight's helmet off.\nA cascade of dark hair tumbled out. Marian glared at him, breathing hard, a thin cut on her cheek from where Robin's blade had grazed her.\n\"You've gotten slower,\" she said.\nRobin stared. Then he laughed until he couldn't breathe.\nFrom that day forward, Marian was part of the band — not as a decoration or a damsel, but as a fighter, a strategist, and Robin's equal. She could outshoot half the men, outthink most of them, and out-argue all of them, including Robin.\nThe Merry Men learned quickly: when Robin Hood wanted to know what to do, he asked Marian Fitzwalter.",
+      "vocabulary": [
+        {
+          "word": "strategist",
+          "partOfSpeech": "noun",
+          "definition": "a person skilled in planning, especially for achieving a goal",
+          "contextSentence": "Marian was part of the band—not as a decoration or a damsel, but as a fighter, a strategist, and Robin's equal.",
+          "discussionQuestion": "What makes Marian a strategist rather than just a fighter?"
+        },
+        {
+          "word": "network",
+          "partOfSpeech": "noun",
+          "definition": "a group of interconnected people who exchange information",
+          "contextSentence": "She had a network of servants, farmers, and village women who passed messages through the countryside.",
+          "discussionQuestion": "How is Marian's network as valuable as Robin's archery?"
+        },
+        {
+          "word": "underestimate",
+          "partOfSpeech": "verb",
+          "definition": "to think something is less important, powerful, or capable than it really is\nFrom the text: Robin doesn't recognize the knight as Marian because he underestimates what she can do.\nWho else in the story underestimates Marian, and why?\n4. EQUAL  (noun/adjective) — a person with the same abilities, status, or rights as another",
+          "contextSentence": "Robin's equal.",
+          "discussionQuestion": "What does it mean for Marian to be Robin's equal in a time when women had very few rights?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How has Marian been helping Robin before she officially joins the band?",
+          "choices": [
+            "She has been training soldiers to fight for Robin's cause",
+            "She has been feeding him information about the Sheriff's plans through a network of spies",
+            "She has been smuggling weapons into Sherwood Forest",
+            "She has been writing letters to the King asking for Robin's pardon"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What happens when Robin fights the mysterious knight?",
+          "choices": [
+            "Robin easily defeats the knight and discovers it is Marian",
+            "Robin is outmatched by the knight until Marian's helmet comes off, revealing her identity",
+            "The knight surrenders when Robin reveals who he is",
+            "Little John has to rescue Robin from the knight"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Marian is described as \"Robin's equal.\" What evidence from this chapter supports that claim? Why is it significant that she can outshoot and outthink many of the men?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "THE BISHOP'S RANSOM",
+      "summary": "Winter came to Sherwood Forest, and with it, hardship.  The ground froze.",
+      "text": "Winter came to Sherwood Forest, and with it, hardship. The ground froze. Game grew scarce. The band huddled around smoky fires, mending their clothes and sharpening their weapons. Even Robin's good humor was tested by the cold.\nThen word came from Marian's network: the Bishop of Hereford was traveling through Sherwood Forest with a wagon full of gold — tax money collected from the poorest villages in the county, bound for the King's treasury. The Bishop traveled with only a small escort, confident that his holy office would protect him.\nHe was wrong.\nRobin and twenty of his men set an ambush at a narrow bend in the road where the forest pressed close on both sides. They dropped a tree across the path and waited.\nThe Bishop's wagon appeared, creaking under the weight of its cargo. Six armed guards rode alongside. The Bishop himself sat in the wagon, fat and comfortable, wrapped in furs against the cold.\n\"Good morning, Your Grace,\" Robin said, stepping out of the trees. \"Terrible weather for traveling. Perhaps you'd like to rest a while.\"\nThe guards reached for their swords. Little John stepped out behind them, his quarterstaff across his shoulders. Friar Tuck appeared on the other side of the road. Green-clad men rose from behind every bush and rock.\nThe guards lowered their weapons.\nRobin didn't take everything — that was his rule. He took half the gold and left the Bishop enough to continue his journey. But before letting him go, Robin made the Bishop sit on a log and eat a simple meal of bread and cold venison — the same food the peasants lived on.\n\"This is what the people you tax eat every day, Your Grace,\" Robin said. \"Remember it.\"\nThe Bishop left Sherwood Forest in a fury, vowing revenge. But the gold Robin took fed three villages through the winter. Children who would have gone hungry ate bread. Families who couldn't pay their rent were spared eviction.\nFriar Tuck, who had his own opinions about corrupt churchmen, said a prayer over the gold before it was distributed. \"The Lord works in mysterious ways,\" he said. \"Sometimes those ways involve highway robbery.\"",
+      "vocabulary": [
+        {
+          "word": "ransom",
+          "partOfSpeech": "noun/verb",
+          "definition": "a sum of money demanded for the release of a prisoner; also, money taken by force\nFrom the text: Robin takes half the Bishop's gold as a ransom for passage through his forest.\nHow is Robin's ransom different from a criminal's ransom?\n2. DISTRIBUTION  (noun) — the act of sharing or giving out something to a group",
+          "contextSentence": "The gold Robin took fed three villages through the winter.",
+          "discussionQuestion": "Why is the distribution of the gold important to Robin's mission?"
+        },
+        {
+          "word": "eviction",
+          "partOfSpeech": "noun",
+          "definition": "the act of forcing someone to leave their home",
+          "contextSentence": "Families who couldn't pay their rent were spared eviction.",
+          "discussionQuestion": "What makes eviction especially cruel during winter?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does Robin make the Bishop eat a meal of bread and cold venison?",
+          "choices": [
+            "Robin wants to punish the Bishop by making him eat terrible food",
+            "He wants the Bishop to experience what the common people he taxes eat every day",
+            "The band has no other food to offer because supplies are low",
+            "Friar Tuck insists that all guests eat simple food as a religious practice"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What happens to the gold Robin takes from the Bishop?",
+          "choices": [
+            "Robin keeps it to buy weapons and supplies for the band",
+            "It feeds three villages through the winter and saves families from eviction",
+            "Robin sends it to King Richard as a peace offering",
+            "The Merry Men divide it equally among themselves"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin takes half the Bishop's gold but leaves him enough to continue his journey. Why does Robin follow this rule of taking only half? What does this tell us about his moral code?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "THE POOR KNIGHT",
+      "summary": "Not all of Robin's encounters involved robbery.  Some involved justice of a different kind.",
+      "text": "Not all of Robin's encounters involved robbery. Some involved justice of a different kind.\nSir Richard of the Lea was a knight — an honest man who had fallen on hard times. His son had accidentally killed a man in a tournament, and Sir Richard had borrowed four hundred pounds from the Abbot of St. Mary's to pay the legal fees. The Abbot had charged ruinous interest, and now the debt had grown to a sum Sir Richard could never repay. If he didn't pay by Michaelmas — just three weeks away — the Abbot would seize his lands, his home, and everything he owned.\nSir Richard was riding through Sherwood Forest, head bowed, when Robin's men stopped him. They brought him to the camp, and Robin — following his custom of feeding every traveler before deciding whether to rob them — offered the knight dinner.\nOver roast venison, Sir Richard told his story. Robin listened carefully.\n\"How much do you owe?\" Robin asked.\n\"Four hundred pounds. I have seventeen.\"\nRobin looked at Little John. Little John looked at Marian. Marian nodded.\n\"We'll lend you the money,\" Robin said.\nSir Richard stared. \"You'll lend me four hundred pounds?\"\n\"We took it from people who stole it first. At least this way it goes to someone who deserves it. Pay us back when you can. No interest.\"\nRobin's men counted out four hundred pounds in silver and packed it in the knight's saddlebags. They gave him a new horse, a new cloak, and Little John as an escort to make sure he arrived safely.\nSir Richard rode to St. Mary's Abbey and paid the Abbot in full. The Abbot, who had been counting on seizing the knight's lands, was furious.\nSir Richard kept his home. And one year later, he rode back into Sherwood Forest and repaid Robin every penny — along with a gift of a hundred longbows and a hundred sheaves of arrows, the finest money could buy.\n\"You saved my family,\" Sir Richard said.\n\"That's what the greenwood is for,\" Robin replied.",
+      "vocabulary": [
+        {
+          "word": "ruinous",
+          "partOfSpeech": "adjective",
+          "definition": "causing or likely to cause great damage or financial loss",
+          "contextSentence": "The Abbot had charged ruinous interest.",
+          "discussionQuestion": "What makes the interest ruinous rather than just expensive?"
+        },
+        {
+          "word": "exploit",
+          "partOfSpeech": "verb",
+          "definition": "to use someone or something unfairly for one's own advantage\nFrom the text: The Abbot exploits Sir Richard's desperation by charging extreme interest.\nHow does the Abbot exploit the knight's situation?\n3. GENEROSITY  (noun) — the quality of being willing to give freely",
+          "contextSentence": "We'll lend you the money. No interest.",
+          "discussionQuestion": "How is Robin's generosity different from the Abbot's lending?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How is Robin's loan to Sir Richard different from the Abbot's loan?",
+          "choices": [
+            "Robin charges higher interest but gives more time to repay",
+            "Robin charges no interest and genuinely wants to help, while the Abbot wants to seize Sir Richard's lands",
+            "Robin lends less money but demands Sir Richard fight for him in return",
+            "There is no real difference — both are lending money for their own benefit"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Sir Richard do one year later?",
+          "choices": [
+            "He disappears and never repays the debt",
+            "He returns, repays every penny, and gives Robin a hundred longbows and arrows as a gift",
+            "He sends a letter apologizing that he cannot repay",
+            "He brings the King's army to arrest Robin for the bounty"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "This chapter shows Robin as a lender, not a thief. How does this scene complicate the simple idea that Robin Hood is just a robber? What does it reveal about what \"justice\" means to Robin?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "THE SILVER ARROW",
+      "summary": "Spring returned, and with it, another of the Sheriff's attempts to lure Robin into a trap.  This time the prize was a silver arrow, and this time the Sheriff had hired professional archers from London — men who had never seen Robin Hood and wouldn't recognize him.",
+      "text": "Spring returned, and with it, another of the Sheriff's attempts to lure Robin into a trap. This time the prize was a silver arrow, and this time the Sheriff had hired professional archers from London — men who had never seen Robin Hood and wouldn't recognize him.\nRobin went anyway. He couldn't help himself.\nBut Marian went with a plan. She positioned scouts at every exit from the tournament field. She arranged horses at three hidden points outside the city walls. She had Allan-a-Dale station himself in the crowd with a group of Robin's men, ready to create a distraction if things went wrong.\nRobin competed disguised as a tanner — a leather worker with rough hands and a simple brown tunic. He shot brilliantly, as always, and won the silver arrow.\nBut the Sheriff had learned from his mistakes. This time, he didn't wait for Robin to reveal himself. The moment the tanner won, guards moved to surround the field. Every gate was locked.\n\"Something's wrong,\" Robin murmured to Allan-a-Dale.\nAllan began to play his lute and sing — loudly, badly, and with great enthusiasm. The crowd gathered around him. In the confusion, Robin slipped through a gap in the guards and made it to the wall, where Will Scarlet was waiting with a rope.\nThey were over the wall and on horseback before the Sheriff realized what had happened. But it was close — closer than the last time. An arrow grazed Robin's shoulder as he rode. Another killed the horse behind him.\nBack in the forest, Marian tended Robin's wound and said what no one else dared: \"You're getting reckless. You go to these contests because you can't resist showing off. One day your pride will get you killed.\"\nRobin opened his mouth to argue. Then he closed it. She was right, and they both knew it.",
+      "vocabulary": [
+        {
+          "word": "reconnaissance",
+          "partOfSpeech": "noun",
+          "definition": "the observation of an area to gather information, especially before a military operation\nFrom the text: Marian positions scouts at every exit and arranges escape routes.\nHow does Marian's reconnaissance improve Robin's chances of survival?\n2. DISTRACTION  (noun) — something that draws attention away from the main focus\nFrom the text: Allan-a-Dale creates a distraction by singing loudly and badly.\nWhy is a distraction sometimes more effective than fighting?\n3. RECKLESS  (adjective) — acting without thinking about danger or consequences",
+          "contextSentence": "You're getting reckless. You go to these contests because you can't resist showing off.",
+          "discussionQuestion": "Is Marian right that Robin is being reckless? What evidence supports her claim?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What role does Marian play in Robin's plan for this contest?",
+          "choices": [
+            "She competes in the contest disguised as a male archer",
+            "She organizes scouts, escape routes, and a distraction plan to get Robin out safely",
+            "She stays at camp to guard it while the men go to the contest",
+            "She goes to the Sheriff and tries to negotiate Robin's freedom"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What warning does Marian give Robin after the contest?",
+          "choices": [
+            "She tells him the Sheriff has hired a new assassin",
+            "She says his pride and need to show off will get him killed",
+            "She warns him that Little John is planning to leave the band",
+            "She says the King has revoked his pardon"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Marian tells Robin, \"One day your pride will get you killed.\" Based on what you've read so far, do you think she's right? Trace the pattern of Robin's pride causing danger across multiple chapters.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "KING RICHARD",
+      "summary": "A remarkable rumor reached Sherwood Forest: King Richard himself was coming to Nottinghamshire. \nKing Richard the Lionheart had been away for years — first on Crusade, then imprisoned in Austria, then fighting to reclaim his throne from his scheming brother, Prince John.",
+      "text": "A remarkable rumor reached Sherwood Forest: King Richard himself was coming to Nottinghamshire.\nKing Richard the Lionheart had been away for years — first on Crusade, then imprisoned in Austria, then fighting to reclaim his throne from his scheming brother, Prince John. During his absence, men like the Sheriff of Nottingham had grown powerful, enriching themselves at the expense of the common people.\nNow the King was back, and he wanted to see this Robin Hood for himself.\nRichard came to Sherwood Forest in disguise — dressed as a simple abbot traveling with a small group of monks. Robin's men stopped them on the road, as they stopped everyone.\n\"Good day, Father Abbot,\" Robin said with a bow. \"Welcome to Sherwood Forest. We have a tradition here — every traveler shares a meal with us, and wealthy travelers share a portion of their gold.\"\nThe disguised King played along. He dined with Robin, drank with the Merry Men, and watched their archery contests with growing admiration. Robin's men put on a demonstration — shooting at small targets from impossible distances, splitting willow wands, even shooting at each other's arrows.\nThen the \"abbot\" challenged Robin to a boxing match.\nRobin laughed — but he accepted. The abbot threw off his cloak, and Robin discovered that this particular man of God had the shoulders of a warrior and a punch like a battering ram. The disguised King knocked Robin flat with one blow.\nThe Merry Men went for their swords. Little John stepped forward, quarterstaff raised.\nRobin held up his hand, grinning from the ground. \"Hold! A fair hit. This is no ordinary abbot.\"\nHe looked up at the big man standing over him — the broad shoulders, the commanding presence, the way his \"monks\" all carried themselves like trained soldiers.\n\"Your Majesty?\" Robin said quietly.",
+      "vocabulary": [],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does King Richard first encounter Robin Hood?",
+          "choices": [
+            "He summons Robin to London for a meeting",
+            "He comes to Sherwood disguised as an abbot and is stopped by Robin's men",
+            "The Sheriff brings Robin to the King in chains",
+            "Robin breaks into the King's castle to plead for a pardon"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What convinces the King that Robin is more than just a criminal?",
+          "choices": [
+            "Robin defeats the King in a sword fight",
+            "He sees Robin's archery skill and hears testimony from the band about feeding villages and fighting injustice",
+            "The Sheriff admits that Robin has never actually harmed an innocent person",
+            "Marian presents legal documents proving Robin's innocence"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The King says he's heard two stories about Robin — the Sheriff's and the people's. Why do these two stories about the same person differ so much? What determines which version someone believes?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "THE KING'S PARDON",
+      "summary": "King Richard threw back his hood and revealed himself.  The Merry Men dropped to their knees.",
+      "text": "King Richard threw back his hood and revealed himself. The Merry Men dropped to their knees. Even Little John bowed — and Little John bowed to no one.\n\"Rise,\" the King said. \"I didn't come here to be worshiped. I came to see the truth.\"\nThe truth, as Richard explained, was complicated. While he had been away, his brother Prince John and corrupt officials like the Sheriff had bled the country dry. The common people were suffering. And the one man who had stood against the injustice — Robin Hood — was a wanted criminal.\n\"I've heard two stories about you, Robin Hood,\" the King said, settling by the fire. \"The Sheriff says you're a murderer, a thief, and an enemy of the crown. The common people say you're the only honest man in Nottinghamshire. Which is it?\"\n\"A bit of both, Your Majesty,\" Robin said honestly. \"I've stolen. I've fought. I killed a man the day I became an outlaw, and I've never stopped regretting it. But everything I've taken has gone to people who needed it more than those I took it from.\"\nThe King listened. He questioned Little John, Friar Tuck, Allan-a-Dale, and Marian. He heard about the poor knight, the forced wedding, the starving villages fed with the Bishop's gold. He heard about the Sheriff's cruelty, the unjust taxes, the families driven from their homes.\nWhen he had heard enough, Richard stood.\n\"Robin of Locksley, I pardon you and every member of your band. Your crimes are forgiven. The Sheriff of Nottingham will answer for his own.\"\nA cheer went up that shook the ancient oaks of Sherwood Forest.\n\"But,\" the King continued, and the cheering stopped. \"I need men I can trust at court. Robin, I want you to come to London. Serve me as you've served these people. Bring your skills, your courage, and your loyalty to the crown.\"\nRobin looked at his men. He looked at Marian. He looked at the green canopy of Sherwood Forest — the only home he had known for years.\n\"Yes, Your Majesty,\" he said.\nHe didn't know it then, but it was the beginning of the end.",
+      "vocabulary": [
+        {
+          "word": "pardon",
+          "partOfSpeech": "noun/verb",
+          "definition": "the act of forgiving a crime and releasing someone from punishment",
+          "contextSentence": "Robin of Locksley, I pardon you and every member of your band.",
+          "discussionQuestion": "What makes a royal pardon different from simply being found not guilty?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What condition comes with the King's pardon?",
+          "choices": [
+            "Robin must leave England and never return",
+            "Robin must pay a fine equal to everything he has stolen",
+            "Robin must come to London and serve the King at court",
+            "Robin must capture the Sheriff and deliver him to the King"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why is the pardon described as \"bittersweet\"?",
+          "choices": [
+            "Robin is happy to be free but sad that some of his men were not pardoned",
+            "Robin is pardoned but must leave the forest — the only home he's known for years",
+            "The King forgives Robin but punishes Little John",
+            "Robin is pardoned but Marian must stay behind"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin accepts the pardon even though it means leaving Sherwood. Do you think he makes the right choice? What would you have done? Use evidence from the chapter.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "LIFE AT COURT",
+      "summary": "Robin tried.  He really did.",
+      "text": "Robin tried. He really did.\nHe went to London. He wore fine clothes. He attended banquets and councils and ceremonies. He smiled at lords who had grown rich by cheating peasants. He bowed to bishops who owned more land than the farmers they were supposed to care for. He stood in stone halls and breathed stale air and pretended that this was where he belonged.\nIt was a disaster.\nRobin Hood was built for the greenwood — for open sky and fresh air, for the crack of a bowstring and the laughter of friends, for the freedom of a man who answered to no one but his own conscience. Court life was the opposite of everything he loved.\nThe other nobles despised him. To them, he was a common criminal who had been elevated above his station by a sentimental king. They whispered behind his back, blocked his proposals, and excluded him from every decision that mattered.\nRobin's men fared no better. Little John nearly started a brawl with a duke who insulted the common people. Friar Tuck got into a loud theological argument with the Archbishop of Canterbury. Will Scarlet's scarlet outfit was mocked by every courtier in London.\nOnly Marian adapted. She had grown up in the world of minor nobility and understood its rules — even if she despised them. She navigated the court with skill, gathering information, making quiet alliances, and keeping Robin from punching anyone.\nBut even Marian could see the truth: Robin was dying inside. The light in his eyes — that restless, joyful spark — was fading. He spent more and more time staring out of windows, looking north toward the forests he had left behind.\n\"Go,\" Marian finally said, one evening as they stood on the castle walls.\n\"The King—\"\n\"The King gave you a pardon, not a leash. You've served him faithfully for over a year. Your heart is in Sherwood, Robin. And so is mine.\"",
+      "vocabulary": [
+        {
+          "word": "suffocating",
+          "partOfSpeech": "adjective",
+          "definition": "making it difficult to breathe; feeling trapped or confined",
+          "contextSentence": "The suffocating world of power.",
+          "discussionQuestion": "Why does Robin find court life suffocating when others would see it as a privilege?"
+        },
+        {
+          "word": "aristocracy",
+          "partOfSpeech": "noun",
+          "definition": "the highest social class, typically consisting of people with titles and wealth",
+          "contextSentence": "The other nobles despised him.",
+          "discussionQuestion": "Why does the aristocracy reject Robin even though the King accepted him?"
+        },
+        {
+          "word": "adapted",
+          "partOfSpeech": "verb",
+          "definition": "changed or adjusted to fit new conditions",
+          "contextSentence": "Only Marian adapted.",
+          "discussionQuestion": "What skills help Marian adapt to court when Robin cannot?"
+        },
+        {
+          "word": "restless",
+          "partOfSpeech": "adjective",
+          "definition": "unable to rest or relax; always wanting to move or do something",
+          "contextSentence": "That restless, joyful spark was fading.",
+          "discussionQuestion": "What makes Robin fundamentally restless, and why can't court life satisfy him?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does Robin fail at court life?",
+          "choices": [
+            "He doesn't have enough money to live among the nobles",
+            "He is built for freedom, open air, and action — court is suffocating, fake, and political",
+            "The King changes his mind and treats Robin as a prisoner",
+            "Marian convinces him to sabotage his position at court"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why is Marian the only one who adapts to court?",
+          "choices": [
+            "She enjoys luxury and wants to stay permanently",
+            "She grew up in minor nobility and understands the rules, even though she despises them",
+            "The Queen takes Marian under her protection",
+            "Marian secretly agrees with the other nobles about Robin"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Marian says, \"The King gave you a pardon, not a leash.\" What does this metaphor mean? What does it reveal about Marian's understanding of Robin?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "RETURN TO SHERWOOD",
+      "summary": "They left London before dawn, without permission and without farewell.  Robin, Marian, Little John, Friar Tuck, Will Scarlet, Allan-a-Dale, and a dozen others rode north through the spring rain, shedding their fine clothes mile by mile until they were back in Lincoln green.",
+      "text": "They left London before dawn, without permission and without farewell. Robin, Marian, Little John, Friar Tuck, Will Scarlet, Allan-a-Dale, and a dozen others rode north through the spring rain, shedding their fine clothes mile by mile until they were back in Lincoln green.\nWhen they reached the edge of Sherwood Forest, Robin stopped his horse and breathed deep. The smell of oak and moss and wet earth filled his lungs. A thrush sang from a high branch. Somewhere deep in the trees, a deer moved through the undergrowth.\nHe was home.\nWord spread quickly. Within a week, the band was back to full strength. Men who had tried to return to normal life drifted back to the greenwood — farmers who couldn't pay their taxes, soldiers who couldn't find work, young men who wanted something more than servitude and silence.\nRobin's return was not welcome everywhere. The new Sheriff of Nottingham — the old one had been removed by King Richard, but his replacement was no better — immediately sent word to London that the outlaw had broken his pardon.\nRobin didn't care. He was done with pardons and politics and the suffocating world of power. He picked up his bow, walked into the forest, and began again.\nMarian walked beside him. \"No regrets?\" she asked.\n\"Not one,\" he said.\nAnd for a while, the old days returned. The laughter in the greenwood, the adventures on the road, the songs around the fire at night. Allan-a-Dale composed new ballads. Friar Tuck blessed the venison. Little John challenged every stranger to a fight on the bridge, and usually won.\nBut the world was changing. Robin was no longer eighteen. And time, which spares no one, was beginning to make itself felt.",
+      "vocabulary": [
+        {
+          "word": "renewal",
+          "partOfSpeech": "noun",
+          "definition": "the act of beginning something again after a pause; restoring to a fresh condition\nFrom the text: Robin returns to the greenwood and the band reassembles.\nWhat aspects of Robin's life undergo renewal when he returns?\n2. DEFIANCE  (noun) — open resistance; bold disobedience\nFrom the text: Robin leaves London without permission, breaking his pardon.\nWhat does Robin's defiance of the King's wishes cost him?\n3. FUGITIVE  (noun/adjective) — a person who has escaped from captivity or is in hiding\nFrom the text: Robin becomes a fugitive again the moment he leaves London.\nHow is being a fugitive different now than when Robin was eighteen?\n4. NOSTALGIA  (noun) — a sentimental longing for the past; homesickness",
+          "contextSentence": "And for a while, the old days returned.",
+          "discussionQuestion": "Why does the phrase \"for a while\" undercut the nostalgia?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What does Robin risk by returning to Sherwood Forest without permission?",
+          "choices": [
+            "He risks losing his friendship with Little John",
+            "He risks breaking his pardon and becoming a wanted outlaw again",
+            "He risks angering Marian, who wanted to stay at court",
+            "He risks losing the golden arrow and silver arrow he won"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What warning does the narrator give about Robin's return?",
+          "choices": [
+            "The narrator says the new Sheriff is plotting to destroy Robin immediately",
+            "The narrator hints that Robin is aging and things have changed — \"for a while, the old days returned\"",
+            "The narrator reveals that one of Robin's men is already a spy",
+            "The narrator says the King has sent soldiers to follow Robin back"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The phrase \"for a while, the old days returned\" suggests the happiness won't last. What has changed about Robin and his world since the early chapters? Can anyone truly go back to the way things were?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "THE SHERIFF'S LAST STAND",
+      "summary": "The new Sheriff was a different kind of enemy — methodical, patient, and cruel.  He didn't set traps or hold archery contests.",
+      "text": "The new Sheriff was a different kind of enemy — methodical, patient, and cruel. He didn't set traps or hold archery contests. Instead, he burned the villages that supported Robin. He arrested families. He offered rewards so large that even loyal friends were tempted to betray the band.\nOne by one, the safe houses disappeared. The network of farmers and servants that Marian had built was dismantled through fear and force. Supplies grew scarce. The band was forced deeper into the forest, into territory that was harder to defend and harder to live in.\nThen the Sheriff gathered an army — not a patrol, not an escort, but a real army of two hundred soldiers — and marched into Sherwood Forest.\nThe battle that followed was the largest Robin had ever fought. His men were outnumbered three to one, but they knew the forest. They used every trick: false trails, hidden pits, rope traps, ambushes from the trees. Arrows rained down from invisible positions. Soldiers who chased shadows found themselves lost in the green maze of Sherwood.\nLittle John held a narrow bridge alone for thirty minutes, his quarterstaff cracking against swords and shields until the soldiers retreated rather than face him. Marian led a flanking attack that drove an entire company into a bog. Will Scarlet fought in his red outfit like a flame moving through the trees.\nBy nightfall, the Sheriff's army withdrew. They had lost dozens of men and accomplished nothing. Robin had won — but the cost was high. Several of his men were wounded. Their camp was destroyed. Their supplies were gone.\nRobin sat on a stump, exhausted, watching his people tend their wounds and rebuild their shelters. He was forty years old. His hair was beginning to gray. The wound on his arm from the silver arrow contest still ached in cold weather.\n\"How long can we keep doing this?\" he asked Marian.\nShe didn't answer. She didn't have to.",
+      "vocabulary": [
+        {
+          "word": "methodical",
+          "partOfSpeech": "adjective",
+          "definition": "done in a systematic, organized way",
+          "contextSentence": "The new Sheriff was a different kind of enemy—methodical, patient, and cruel.",
+          "discussionQuestion": "Why is a methodical enemy more dangerous than an impulsive one?"
+        },
+        {
+          "word": "dismantled",
+          "partOfSpeech": "verb",
+          "definition": "taken apart piece by piece; destroyed systematically",
+          "contextSentence": "The network Marian had built was dismantled through fear and force.",
+          "discussionQuestion": "What is lost when the support network is dismantled?"
+        },
+        {
+          "word": "guerrilla",
+          "partOfSpeech": "adjective",
+          "definition": "relating to a type of warfare using small groups, surprise attacks, and knowledge of local terrain\nFrom the text: Robin's men use guerrilla tactics — false trails, hidden pits, ambushes from trees.\nWhy are guerrilla tactics effective against a larger army?\n4. TOLL  (noun) — the cost or damage resulting from something; also, a charge for passage",
+          "contextSentence": "The cost was high.",
+          "discussionQuestion": "What physical and emotional toll has years of fighting taken on Robin?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How is the new Sheriff different from the old one?",
+          "choices": [
+            "He is kinder and tries to negotiate with Robin",
+            "He is methodical and patient — he destroys Robin's support network before attacking",
+            "He is weaker and relies on hired mercenaries",
+            "He ignores Robin and focuses on other criminals"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is the outcome of the battle in Sherwood Forest?",
+          "choices": [
+            "Robin wins decisively with no losses",
+            "Robin's men win but at a high cost — wounded men, destroyed camp, lost supplies",
+            "The Sheriff captures Robin and takes him to Nottingham",
+            "Both sides retreat without a clear winner"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin asks Marian, \"How long can we keep doing this?\" and she doesn't answer. What does her silence mean? What is the chapter suggesting about the future?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "BETRAYAL",
+      "summary": "The betrayal came from within. \nA man named Roger of Doncaster had joined the band six months earlier.",
+      "text": "The betrayal came from within.\nA man named Roger of Doncaster had joined the band six months earlier. He was clever and capable, and he had quickly made himself useful. Robin trusted him. That was Robin's nature — he saw the best in people, even when the best wasn't there.\nRoger was a spy. The Sheriff had planted him in the band, paying his family handsomely in exchange for information. For months, Roger had been reporting everything — the location of the camp, the patrol routes, the identities of Robin's supporters in the villages.\nThe Sheriff used this information to plan a devastating strike. Not at Robin directly — at his support network. In a single night, the Sheriff's men arrested twenty people who had been helping the outlaws: farmers who hid weapons, women who passed messages, a blacksmith who repaired their arrows.\nThe arrests shattered the band's connection to the outside world. Worse, they shattered Robin's faith. When the truth about Roger came out — discovered by Marian, who had always been wary of the newcomer — Robin was devastated.\n\"I brought him into our family,\" Robin said. \"I vouched for him.\"\n\"You trusted someone,\" Marian said gently. \"That's not a weakness. It's who you are.\"\n\"It's who I was,\" Robin said, and his voice was older than his years.\nRoger escaped into the night before Robin's men could catch him. The people who were arrested were eventually released — the Sheriff had no real evidence — but the damage was done. The invisible web that connected Robin Hood to the people of Nottinghamshire was torn, and it could not be easily mended.",
+      "vocabulary": [
+        {
+          "word": "infiltrated",
+          "partOfSpeech": "verb",
+          "definition": "secretly entered or gained access to a group in order to spy or cause harm\nFrom the text: Roger of Doncaster infiltrated the band as a spy for the Sheriff.\nWhy is being infiltrated more devastating than being attacked?\n2. DEVASTATED  (adjective) — severely shocked or upset; destroyed",
+          "contextSentence": "Robin was devastated.",
+          "discussionQuestion": "Why is Robin devastated by the betrayal when he's survived so many other threats?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Roger of Doncaster betray Robin's band?",
+          "choices": [
+            "He steals the band's treasure and escapes to London",
+            "He secretly reports the band's location, patrol routes, and supporters to the Sheriff",
+            "He poisons the food supply in the camp",
+            "He challenges Robin to a fight and tries to kill him"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is the most devastating effect of Roger's betrayal?",
+          "choices": [
+            "Robin loses most of his gold and weapons",
+            "Twenty innocent supporters are arrested, shattering the band's connection to the outside world",
+            "Little John is captured and held in Nottingham's prison",
+            "Marian is wounded trying to stop Roger from escaping"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin says, \"I brought him into our family. I vouched for him.\" Marian responds that trusting people \"is not a weakness.\" Who is right? Is Robin's trust a strength or a vulnerability? Use evidence from the story.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "THE PRIORESS",
+      "summary": "Robin was not well.  The wound on his arm had never healed properly, and now a fever had taken hold — burning and relentless, sapping his strength day by day.",
+      "text": "Robin was not well. The wound on his arm had never healed properly, and now a fever had taken hold — burning and relentless, sapping his strength day by day. Friar Tuck's medicines helped, but they couldn't cure what ailed him.\n\"You need proper care,\" Marian said. \"A physician. Medicine. A real bed.\"\nRobin resisted, but eventually his body overruled his will. He could barely stand.\nMarian knew of a place: Kirklees Priory, a convent run by Robin's cousin, the Prioress. In those days, convents and monasteries were often the only places with medical knowledge. The nuns practiced bloodletting — the common treatment for fever — and the Prioress had a reputation as a healer.\nRobin rode to Kirklees with Little John at his side. They arrived at the priory as the sun was setting. The building was old and cold, built of gray stone, surrounded by a high wall. The Prioress met them at the gate.\nShe was a thin woman with sharp eyes and a smile that didn't reach them. She welcomed Robin warmly — too warmly, Little John thought. Something felt wrong, but Robin was too ill to notice.\n\"Let me bleed you,\" the Prioress said, leading Robin to a private chamber. \"The fever must be drawn out.\"\nLittle John wanted to stay, but Robin waved him off. \"Wait outside. I'll be fine.\"\nLittle John waited. An hour passed. Two hours. Three. The sun set. The moon rose. No word came from inside.\nSomething was very wrong.\nLittle John pounded on the door. No answer. He broke it down with one massive kick.\nRobin lay on the bed, pale as death. His arm was bandaged, but the bandage was soaked through. The Prioress had opened a vein and left it bleeding — not to heal, but to kill. She had been paid by the Sheriff. Robin's own cousin had betrayed him.\n\"John,\" Robin whispered. His voice was barely audible. \"My bow. Bring me my bow.\"",
+      "vocabulary": [
+        {
+          "word": "priory",
+          "partOfSpeech": "noun",
+          "definition": "a religious house governed by a prior or prioress, smaller than an abbey",
+          "contextSentence": "Kirklees Priory, a convent run by Robin's cousin, the Prioress.",
+          "discussionQuestion": "Why does Robin go to the priory instead of staying in the forest?"
+        },
+        {
+          "word": "bloodletting",
+          "partOfSpeech": "noun",
+          "definition": "the medical practice of drawing blood from a patient, believed in medieval times to cure illness",
+          "contextSentence": "The nuns practiced bloodletting—the common treatment for fever.",
+          "discussionQuestion": "Why was bloodletting considered medicine in the Middle Ages?"
+        },
+        {
+          "word": "treachery",
+          "partOfSpeech": "noun",
+          "definition": "betrayal of trust; an act of deliberate disloyalty",
+          "contextSentence": "The Prioress had opened a vein and left it bleeding—not to heal, but to kill.",
+          "discussionQuestion": "How is the Prioress's treachery worse than any other betrayal in the story?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does Robin go to Kirklees Priory?",
+          "choices": [
+            "He is hiding from the Sheriff's men in the safest place he knows",
+            "He is too ill to treat in the forest and needs medical care from his cousin the Prioress",
+            "He wants to make peace with the Church before retiring",
+            "Marian sends him there to meet a secret ally"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the Prioress do to Robin?",
+          "choices": [
+            "She heals him with medicine and sends him back to the forest",
+            "She opens a vein and lets him bleed to death, paid by the Sheriff to kill him",
+            "She locks him in a dungeon and calls for the Sheriff's soldiers",
+            "She refuses to treat him and sends him away"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin is betrayed twice — by Roger (Chapter 21) and by his own cousin (Chapter 22). How do these two betrayals differ? Which one feels more devastating, and why?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "THE LAST ARROW",
+      "summary": "Little John carried Robin to the window.  The room overlooked a green meadow that sloped down to the edge of Sherwood Forest.",
+      "text": "Little John carried Robin to the window. The room overlooked a green meadow that sloped down to the edge of Sherwood Forest. The ancient oaks stood dark against the evening sky, their branches reaching upward like arms.\nRobin's great longbow was placed in his hands. He could barely hold it. The strength that had drawn that bow ten thousand times — that had won tournaments, defended the poor, and defied the most powerful men in England — was nearly gone.\n\"Open the window,\" Robin said.\nLittle John opened it. Cool forest air rushed in, carrying the scent of earth and leaves and rain. Robin breathed it in — the smell of home.\n\"Wherever this arrow falls,\" Robin said, his voice thin but steady, \"bury me there.\"\nHe nocked the arrow. His hands trembled. Little John steadied his arm.\nRobin drew the bow — not with the full power of his youth, but with everything he had left. He aimed high, toward the green line of the forest, and released.\nThe arrow flew.\nIt arced across the twilight sky, a dark line against the fading light, and sailed over the meadow in a long, graceful curve. It cleared the stone wall of the priory, crossed the open ground, and disappeared into the trees at the forest's edge.\nRobin watched it fly. A faint smile crossed his face.\n\"There,\" he whispered. \"Bury me there. Under the greenwood tree.\"\nHe closed his eyes. Little John held him. The great outlaw of Sherwood Forest — the archer, the trickster, the champion of the poor — was gone.",
+      "vocabulary": [],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What does Robin ask Little John to do with his final arrow?",
+          "choices": [
+            "Deliver it to the King as proof that Robin Hood has died",
+            "Bury Robin wherever the arrow lands",
+            "Shoot the arrow at the Prioress as punishment for her betrayal",
+            "Keep the arrow as a reminder of their friendship"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Robin shoot toward the forest rather than in any other direction?",
+          "choices": [
+            "The forest is the closest target and he is too weak to shoot far",
+            "The forest has been his true home, and he wants to rest at its edge forever",
+            "He is aiming at a specific tree where he hid treasure",
+            "Little John tells him to aim that direction"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Robin's last act is to shoot an arrow. Why is this the perfect ending for his character? What does the arrow symbolize about Robin's life, identity, and legacy?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "THE LEGEND",
+      "summary": "They buried Robin Hood where his arrow fell — at the edge of Sherwood Forest, beneath an ancient oak tree, with the green canopy overhead and the open meadow stretching away to the south.  Little John dug the grave himself.",
+      "text": "They buried Robin Hood where his arrow fell — at the edge of Sherwood Forest, beneath an ancient oak tree, with the green canopy overhead and the open meadow stretching away to the south. Little John dug the grave himself. Marian laid Robin's bow beside him.\nThe Merry Men gathered for the last time. Little John. Friar Tuck. Will Scarlet. Allan-a-Dale. And dozens of others — the men and women who had lived and fought and laughed together in the greenwood for more than twenty years.\nAllan-a-Dale played his lute. No one spoke. The music said everything.\nMarian stood at the grave for a long time after the others had gone. She touched the fresh earth with her hand and whispered something that no one else heard. Then she walked into the forest and disappeared among the trees.\nIn the weeks that followed, the band scattered. There was no one who could replace Robin Hood — not because no one was brave enough or skilled enough, but because Robin had been the one thing that held them all together. He was the idea that had made the greenwood more than just a hiding place for outlaws.\nLittle John went north. Some say he lived to be very old. Friar Tuck returned to the church — a small, poor church in a farming village, where he served the people Robin had always fought for. Will Scarlet traveled to the continent, still wearing his scarlet. Allan-a-Dale wandered England, singing songs about Robin Hood at every fair and market and manor house that would have him.\nAnd the songs survived.\nLong after the oaks of Sherwood Forest had grown old and fallen and been replaced by new trees, the story of Robin Hood lived on. Farmers told it to their children. Minstrels sang it in great halls and village squares. Scholars wrote it down. And every person who heard the tale understood the same simple truth that Robin had lived by:\nThe strong should protect the weak. The rich owe a debt to the poor. Courage means standing up for what is right, even when the powerful say it is wrong. And no law written by a tyrant is more just than the law written in a good person's heart.\nRobin Hood is buried at the edge of Sherwood Forest, beneath the greenwood tree, with his great bow beside him and an arrow's flight between him and the world.\nBut the legend never rests. The legend walks the roads of England still, looking for injustice, ready to fight, and always — always — wearing Lincoln green.\nTHE END",
+      "vocabulary": [
+        {
+          "word": "endure",
+          "partOfSpeech": "verb",
+          "definition": "to continue to exist; to survive through difficult conditions",
+          "contextSentence": "The story of Robin Hood lived on.",
+          "discussionQuestion": "What makes some stories endure for centuries while others are forgotten?"
+        },
+        {
+          "word": "principle",
+          "partOfSpeech": "noun",
+          "definition": "a fundamental truth or belief that guides behavior",
+          "contextSentence": "The strong should protect the weak.",
+          "discussionQuestion": "Which of Robin's principles is most important, and why?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What happens to the Merry Men after Robin's death?",
+          "choices": [
+            "They choose Little John as their new leader and continue Robin's mission",
+            "They scatter — each going their own way, because Robin was what held them together",
+            "They are captured by the Sheriff and imprisoned in Nottingham",
+            "They join King Richard's army and fight in foreign wars"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does the narrator say Robin Hood's legend is \"immortal\"?",
+          "choices": [
+            "Because Robin found a magical potion that made him live forever",
+            "Because his principles — protecting the weak and standing against injustice — are timeless",
+            "Because Allan-a-Dale wrote the story down in an official history book",
+            "Because the King ordered that Robin's story be taught in every school"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The book ends by saying Robin Hood's principles are needed in every age. Do you agree? Where in the modern world do you see the need for someone to \"rob from the rich and give to the poor\"? Explain using evidence from the book and your own experience.",
+          "sampleAnswer": ""
+        }
+      ]
+    }
+  ]
+}
