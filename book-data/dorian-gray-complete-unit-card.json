@@ -120,14 +120,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Complex Sentences with Subordination",
+        "explanation": "Complex Sentences with Subordination helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Complex Sentences with Subordination.",
+        "prompt": "Write sentences demonstrating Complex Sentences with Subordination using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Oscar Wilde: Aestheticism and Scandal",
+        "text": "[Comprehensive informational text about Oscar Wilde: Aestheticism and Scandal - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Oscar Wilde: Aestheticism and Scandal",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Oscar Wilde: Aestheticism and Scandal",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Oscar Wilde: Aestheticism and Scandal",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Corrupted Portrait. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about whether beauty and youth are worth any cost. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -178,14 +196,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Context Clues in Classic Literature",
+        "explanation": "Context Clues in Classic Literature in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Context Clues in Classic Literature in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Aesthetic Movement: Art for Art's Sake",
+        "text": "[Comprehensive informational text about The Aesthetic Movement: Art for Art's Sake - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Aesthetic Movement: Art for Art's Sake",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Aesthetic Movement: Art for Art's Sake",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Aesthetic Movement: Art for Art's Sake",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Artist's Obsession. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on how much appearance and image matter to you. Connect this to your own life or observations."
     },
     {
       "number": 3,
@@ -234,12 +270,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Active vs. Passive Voice",
+        "explanation": "Active vs. Passive Voice helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Active vs. Passive Voice.",
+        "prompt": "Write sentences demonstrating Active vs. Passive Voice using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Victorian Morality vs. Wilde's Philosophy",
+        "text": "[Comprehensive informational text about Victorian Morality vs. Wilde's Philosophy - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Victorian Morality vs. Wilde's Philosophy",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Victorian Morality vs. Wilde's Philosophy",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Victorian Morality vs. Wilde's Philosophy",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Philosopher of Pleasure. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -292,13 +346,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Latin and Greek Roots",
+        "explanation": "Latin and Greek Roots in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Latin and Greek Roots in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of The Fatal Wish. What would you have done differently?",
+      "informationalText": {
+        "title": "Beauty, Vanity, and Corruption",
+        "text": "[Comprehensive informational text about Beauty, Vanity, and Corruption - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Beauty, Vanity, and Corruption",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Beauty, Vanity, and Corruption",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Beauty, Vanity, and Corruption",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about influence of others on our moral choices. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -351,12 +423,25 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Portrait as Gothic Symbol",
+        "text": "[Comprehensive informational text about The Portrait as Gothic Symbol - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Portrait as Gothic Symbol",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Portrait as Gothic Symbol",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Portrait as Gothic Symbol",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The First Love. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on someone who influenced your choices, for better or worse. Connect this to your own life or observations."
     },
     {
       "number": 6,
@@ -405,12 +490,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Parallel Structure",
+        "explanation": "Parallel Structure helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Parallel Structure.",
+        "prompt": "Write sentences demonstrating Parallel Structure using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Hedonism: Pleasure as Life's Goal",
+        "text": "[Comprehensive informational text about Hedonism: Pleasure as Life's Goal - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Hedonism: Pleasure as Life's Goal",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Hedonism: Pleasure as Life's Goal",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Hedonism: Pleasure as Life's Goal",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Portrait's First Change. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -463,13 +566,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Connotation vs. Denotation",
+        "explanation": "Connotation vs. Denotation in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Connotation vs. Denotation in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of Sibyl's Tragedy. What would you have done differently?",
+      "informationalText": {
+        "title": "Influence and Corruption: Lord Henry's Role",
+        "text": "[Comprehensive informational text about Influence and Corruption: Lord Henry's Role - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Influence and Corruption: Lord Henry's Role",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Influence and Corruption: Lord Henry's Role",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Influence and Corruption: Lord Henry's Role",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about relationship between art and morality. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -519,15 +640,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Semicolons in Compound Sentences",
+        "explanation": "Semicolons in Compound Sentences helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Semicolons in Compound Sentences.",
+        "prompt": "Write sentences demonstrating Semicolons in Compound Sentences using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Wilde's Trial and Imprisonment",
+        "text": "[Comprehensive informational text about Wilde's Trial and Imprisonment - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Wilde's Trial and Imprisonment",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Wilde's Trial and Imprisonment",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Wilde's Trial and Imprisonment",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Yellow Book. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on temptation to prioritize pleasure over responsibility. Connect this to your own life or observations."
     },
     {
       "number": 9,
@@ -577,11 +716,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Figurative Language: Metaphors and Similes",
+        "explanation": "Figurative Language: Metaphors and Similes in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Figurative Language: Metaphors and Similes in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Soul and External Appearance",
+        "text": "[Comprehensive informational text about The Soul and External Appearance - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Soul and External Appearance",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Soul and External Appearance",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Soul and External Appearance",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Years of Hidden Decay. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -636,11 +793,24 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Victorian London's Underground Culture",
+        "text": "[Comprehensive informational text about Victorian London's Underground Culture - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Victorian London's Underground Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Victorian London's Underground Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Victorian London's Underground Culture",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Actress Destroyed. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about consequences of living only for pleasure. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -690,15 +860,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Appositives for Character Development",
+        "explanation": "Appositives for Character Development helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Appositives for Character Development.",
+        "prompt": "Write sentences demonstrating Appositives for Character Development using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Art's Relationship to Morality",
+        "text": "[Comprehensive informational text about Art's Relationship to Morality - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Art's Relationship to Morality",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Art's Relationship to Morality",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Art's Relationship to Morality",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Society's Darling. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on something about yourself you wish you could hide. Connect this to your own life or observations."
     },
     {
       "number": 12,
@@ -748,11 +936,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Precise Word Choice",
+        "explanation": "Precise Word Choice in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Precise Word Choice in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Faustian Bargain",
+        "text": "[Comprehensive informational text about The Faustian Bargain - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Faustian Bargain",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Faustian Bargain",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Faustian Bargain",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Sailor's Revenge. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -804,14 +1010,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Participial Phrases for Vivid Description",
+        "explanation": "Participial Phrases for Vivid Description helps create sophisticated prose in Dorian Gray.",
+        "example": "Example from Dorian Gray showing Participial Phrases for Vivid Description.",
+        "prompt": "Write sentences demonstrating Participial Phrases for Vivid Description using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Consequences of Narcissism",
+        "text": "[Comprehensive informational text about Consequences of Narcissism - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Consequences of Narcissism",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Consequences of Narcissism",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Consequences of Narcissism",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Friend's Concern. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about external appearance vs. internal character. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -862,14 +1086,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Thematic Vocabulary Analysis",
+        "explanation": "Thematic Vocabulary Analysis in Dorian Gray.",
+        "example": "Example from Dorian Gray.",
+        "prompt": "Analyze Thematic Vocabulary Analysis in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Wilde's Wit and Paradoxes",
+        "text": "[Comprehensive informational text about Wilde's Wit and Paradoxes - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Wilde's Wit and Paradoxes",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Wilde's Wit and Paradoxes",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Wilde's Wit and Paradoxes",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Opium Den. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on whether living for pleasure would make you happy. Connect this to your own life or observations."
     },
     {
       "number": 15,
@@ -921,9 +1163,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Picture of Dorian Gray's Legacy",
+        "text": "[Comprehensive informational text about The Picture of Dorian Gray's Legacy - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Picture of Dorian Gray's Legacy",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Picture of Dorian Gray's Legacy",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Picture of Dorian Gray's Legacy",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Portrait's Horror. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"

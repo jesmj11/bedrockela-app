@@ -120,14 +120,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Complex Sentences with Subordination",
+        "explanation": "Complex Sentences with Subordination helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Complex Sentences with Subordination.",
+        "prompt": "Write sentences demonstrating Complex Sentences with Subordination using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Robert Louis Stevenson and Victorian Duality",
+        "text": "[Comprehensive informational text about Robert Louis Stevenson and Victorian Duality - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Robert Louis Stevenson and Victorian Duality",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Robert Louis Stevenson and Victorian Duality",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Robert Louis Stevenson and Victorian Duality",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Mysterious Door. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about duality of human nature - good and evil coexisting. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -178,14 +196,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Context Clues in Classic Literature",
+        "explanation": "Context Clues in Classic Literature in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Context Clues in Classic Literature in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Victorian Repression and the Double Life",
+        "text": "[Comprehensive informational text about Victorian Repression and the Double Life - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Victorian Repression and the Double Life",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Victorian Repression and the Double Life",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Victorian Repression and the Double Life",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Strange Will. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on different sides of your personality in different contexts. Connect this to your own life or observations."
     },
     {
       "number": 3,
@@ -234,12 +270,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Active vs. Passive Voice",
+        "explanation": "Active vs. Passive Voice helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Active vs. Passive Voice.",
+        "prompt": "Write sentences demonstrating Active vs. Passive Voice using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Psychology of Split Personality",
+        "text": "[Comprehensive informational text about The Psychology of Split Personality - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Psychology of Split Personality",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Psychology of Split Personality",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Psychology of Split Personality",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Search for Mr. Hyde. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -292,13 +346,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Latin and Greek Roots",
+        "explanation": "Latin and Greek Roots in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Latin and Greek Roots in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of The Incident at the Window. What would you have done differently?",
+      "informationalText": {
+        "title": "Good vs. Evil: Philosophical Perspectives",
+        "text": "[Comprehensive informational text about Good vs. Evil: Philosophical Perspectives - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Good vs. Evil: Philosophical Perspectives",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Good vs. Evil: Philosophical Perspectives",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Good vs. Evil: Philosophical Perspectives",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about Victorian society's pressure to maintain respectability. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -351,12 +423,25 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Victorian Science: Early Psychology",
+        "text": "[Comprehensive informational text about Victorian Science: Early Psychology - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Victorian Science: Early Psychology",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Victorian Science: Early Psychology",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Victorian Science: Early Psychology",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Carew Murder. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on pressure to hide parts of yourself to fit in. Connect this to your own life or observations."
     },
     {
       "number": 6,
@@ -405,12 +490,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Parallel Structure",
+        "explanation": "Parallel Structure helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Parallel Structure.",
+        "prompt": "Write sentences demonstrating Parallel Structure using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "London's Dark Side: Respectability vs. Reality",
+        "text": "[Comprehensive informational text about London's Dark Side: Respectability vs. Reality - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about London's Dark Side: Respectability vs. Reality",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about London's Dark Side: Respectability vs. Reality",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about London's Dark Side: Respectability vs. Reality",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Jekyll's Reaction. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -463,13 +566,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Connotation vs. Denotation",
+        "explanation": "Connotation vs. Denotation in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Connotation vs. Denotation in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of The Scientific Experiment. What would you have done differently?",
+      "informationalText": {
+        "title": "The Gothic Novella Form",
+        "text": "[Comprehensive informational text about The Gothic Novella Form - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Gothic Novella Form",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Gothic Novella Form",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Gothic Novella Form",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about addiction and loss of self-control. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -519,15 +640,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Semicolons in Compound Sentences",
+        "explanation": "Semicolons in Compound Sentences helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Semicolons in Compound Sentences.",
+        "prompt": "Write sentences demonstrating Semicolons in Compound Sentences using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Addiction and Loss of Control",
+        "text": "[Comprehensive informational text about Addiction and Loss of Control - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Addiction and Loss of Control",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Addiction and Loss of Control",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Addiction and Loss of Control",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The First Taste of Freedom. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on temptation to do things you know are wrong. Connect this to your own life or observations."
     },
     {
       "number": 9,
@@ -577,11 +716,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Figurative Language: Metaphors and Similes",
+        "explanation": "Figurative Language: Metaphors and Similes in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Figurative Language: Metaphors and Similes in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Doppelganger in Literature",
+        "text": "[Comprehensive informational text about The Doppelganger in Literature - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Doppelganger in Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Doppelganger in Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Doppelganger in Literature",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Loss of Control. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -636,11 +793,24 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Victorian Morality and Hypocrisy",
+        "text": "[Comprehensive informational text about Victorian Morality and Hypocrisy - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Victorian Morality and Hypocrisy",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Victorian Morality and Hypocrisy",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Victorian Morality and Hypocrisy",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of Dr. Lanyon's Discovery. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about whether people can be purely good or evil. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -690,15 +860,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Appositives for Character Development",
+        "explanation": "Appositives for Character Development helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Appositives for Character Development.",
+        "prompt": "Write sentences demonstrating Appositives for Character Development using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Self and the Shadow",
+        "text": "[Comprehensive informational text about The Self and the Shadow - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Self and the Shadow",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Self and the Shadow",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Self and the Shadow",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Formula Fails. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on fear of losing control of yourself. Connect this to your own life or observations."
     },
     {
       "number": 12,
@@ -748,11 +936,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Precise Word Choice",
+        "explanation": "Precise Word Choice in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Precise Word Choice in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Transformation in Gothic Literature",
+        "text": "[Comprehensive informational text about Transformation in Gothic Literature - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Transformation in Gothic Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Transformation in Gothic Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Transformation in Gothic Literature",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Hyde's Rampage. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -804,14 +1010,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Participial Phrases for Vivid Description",
+        "explanation": "Participial Phrases for Vivid Description helps create sophisticated prose in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde showing Participial Phrases for Vivid Description.",
+        "prompt": "Write sentences demonstrating Participial Phrases for Vivid Description using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Novella's Influence on Horror",
+        "text": "[Comprehensive informational text about The Novella's Influence on Horror - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Novella's Influence on Horror",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Novella's Influence on Horror",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Novella's Influence on Horror",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of Utterson's Investigation. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about secrets and double lives in modern society. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -862,14 +1086,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Thematic Vocabulary Analysis",
+        "explanation": "Thematic Vocabulary Analysis in Jekyll & Hyde.",
+        "example": "Example from Jekyll & Hyde.",
+        "prompt": "Analyze Thematic Vocabulary Analysis in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Ethics of Scientific Experimentation",
+        "text": "[Comprehensive informational text about Ethics of Scientific Experimentation - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Ethics of Scientific Experimentation",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Ethics of Scientific Experimentation",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Ethics of Scientific Experimentation",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Locked Laboratory. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on which is worse: hypocrisy or honesty about flaws. Connect this to your own life or observations."
     },
     {
       "number": 15,
@@ -921,9 +1163,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Legacy: Jekyll & Hyde in Modern Culture",
+        "text": "[Comprehensive informational text about Legacy: Jekyll & Hyde in Modern Culture - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Legacy: Jekyll & Hyde in Modern Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Legacy: Jekyll & Hyde in Modern Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Legacy: Jekyll & Hyde in Modern Culture",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Breaking Down the Door. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"

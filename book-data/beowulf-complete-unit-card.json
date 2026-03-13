@@ -120,14 +120,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Complex Sentences with Subordination",
+        "explanation": "Complex Sentences with Subordination helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Complex Sentences with Subordination.",
+        "prompt": "Write sentences demonstrating Complex Sentences with Subordination using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Anglo-Saxon England: Culture and Society",
+        "text": "[Comprehensive informational text about Anglo-Saxon England: Culture and Society - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Anglo-Saxon England: Culture and Society",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Anglo-Saxon England: Culture and Society",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Anglo-Saxon England: Culture and Society",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Monster's Rage. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about heroism - physical courage vs. moral courage. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -178,14 +196,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Context Clues in Classic Literature",
+        "explanation": "Context Clues in Classic Literature in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Context Clues in Classic Literature in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Epic Tradition: Heroes and Oral Poetry",
+        "text": "[Comprehensive informational text about The Epic Tradition: Heroes and Oral Poetry - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Epic Tradition: Heroes and Oral Poetry",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Epic Tradition: Heroes and Oral Poetry",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Epic Tradition: Heroes and Oral Poetry",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Greatest Mead-Hall. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on what makes someone a hero in modern society. Connect this to your own life or observations."
     },
     {
       "number": 3,
@@ -234,12 +270,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Active vs. Passive Voice",
+        "explanation": "Active vs. Passive Voice helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Active vs. Passive Voice.",
+        "prompt": "Write sentences demonstrating Active vs. Passive Voice using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Good vs. Evil in Anglo-Saxon Worldview",
+        "text": "[Comprehensive informational text about Good vs. Evil in Anglo-Saxon Worldview - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Good vs. Evil in Anglo-Saxon Worldview",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Good vs. Evil in Anglo-Saxon Worldview",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Good vs. Evil in Anglo-Saxon Worldview",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Cry for Heroes. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -292,13 +346,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Latin and Greek Roots",
+        "explanation": "Latin and Greek Roots in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Latin and Greek Roots in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of The Hero's Calling. What would you have done differently?",
+      "informationalText": {
+        "title": "The Mead Hall: Center of Anglo-Saxon Life",
+        "text": "[Comprehensive informational text about The Mead Hall: Center of Anglo-Saxon Life - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Mead Hall: Center of Anglo-Saxon Life",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Mead Hall: Center of Anglo-Saxon Life",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Mead Hall: Center of Anglo-Saxon Life",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about loyalty to leaders and communities. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -351,12 +423,25 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Monsters in Medieval Literature",
+        "text": "[Comprehensive informational text about Monsters in Medieval Literature - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Monsters in Medieval Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Monsters in Medieval Literature",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Monsters in Medieval Literature",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Warriors Assemble. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on codes of honor or loyalty you follow. Connect this to your own life or observations."
     },
     {
       "number": 6,
@@ -405,12 +490,30 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Parallel Structure",
+        "explanation": "Parallel Structure helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Parallel Structure.",
+        "prompt": "Write sentences demonstrating Parallel Structure using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Warrior Code: Loyalty and Honor",
+        "text": "[Comprehensive informational text about The Warrior Code: Loyalty and Honor - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Warrior Code: Loyalty and Honor",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Warrior Code: Loyalty and Honor",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Warrior Code: Loyalty and Honor",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Hero's Arrival. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -463,13 +566,31 @@
         }
       ],
       "grammar": null,
-      "language": null,
-      "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+      "language": {
+        "topic": "Connotation vs. Denotation",
+        "explanation": "Connotation vs. Denotation in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Connotation vs. Denotation in today's chapter."
       },
-      "writingPrompt": "Reflect on the events of Meeting the King. What would you have done differently?",
+      "informationalText": {
+        "title": "Christianity and Paganism in Beowulf",
+        "text": "[Comprehensive informational text about Christianity and Paganism in Beowulf - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Christianity and Paganism in Beowulf",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Christianity and Paganism in Beowulf",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Christianity and Paganism in Beowulf",
+            "answer": ""
+          }
+        ]
+      },
+      "writingPrompt": "Write an analytical essay about legacy - what we leave behind when we die. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -519,15 +640,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Semicolons in Compound Sentences",
+        "explanation": "Semicolons in Compound Sentences helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Semicolons in Compound Sentences.",
+        "prompt": "Write sentences demonstrating Semicolons in Compound Sentences using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Old English Language and Kennings",
+        "text": "[Comprehensive informational text about Old English Language and Kennings - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Old English Language and Kennings",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Old English Language and Kennings",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Old English Language and Kennings",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Boasting Feast. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on what legacy you want to leave. Connect this to your own life or observations."
     },
     {
       "number": 9,
@@ -577,11 +716,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Figurative Language: Metaphors and Similes",
+        "explanation": "Figurative Language: Metaphors and Similes in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Figurative Language: Metaphors and Similes in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Oral Tradition and Scops",
+        "text": "[Comprehensive informational text about The Oral Tradition and Scops - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Oral Tradition and Scops",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Oral Tradition and Scops",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Oral Tradition and Scops",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Night of Truth. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -636,11 +793,24 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Treasure and Burial in Anglo-Saxon Culture",
+        "text": "[Comprehensive informational text about Treasure and Burial in Anglo-Saxon Culture - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Treasure and Burial in Anglo-Saxon Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Treasure and Burial in Anglo-Saxon Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Treasure and Burial in Anglo-Saxon Culture",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Battle with Grendel. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about facing inevitable challenges despite knowing the cost. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -690,15 +860,33 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Appositives for Character Development",
+        "explanation": "Appositives for Character Development helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Appositives for Character Development.",
+        "prompt": "Write sentences demonstrating Appositives for Character Development using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Women in Anglo-Saxon Society",
+        "text": "[Comprehensive informational text about Women in Anglo-Saxon Society - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Women in Anglo-Saxon Society",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Women in Anglo-Saxon Society",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Women in Anglo-Saxon Society",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Victory and Celebration. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on whether physical strength or wisdom matters more. Connect this to your own life or observations."
     },
     {
       "number": 12,
@@ -748,11 +936,29 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Precise Word Choice",
+        "explanation": "Precise Word Choice in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Precise Word Choice in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Legacy and Fame in Heroic Culture",
+        "text": "[Comprehensive informational text about Legacy and Fame in Heroic Culture - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Legacy and Fame in Heroic Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Legacy and Fame in Heroic Culture",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Legacy and Fame in Heroic Culture",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Mother's Grief. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -804,14 +1010,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Participial Phrases for Vivid Description",
+        "explanation": "Participial Phrases for Vivid Description helps create sophisticated prose in Beowulf.",
+        "example": "Example from Beowulf showing Participial Phrases for Vivid Description.",
+        "prompt": "Write sentences demonstrating Participial Phrases for Vivid Description using today's chapter."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Beowulf's Battles: Symbolism and Meaning",
+        "text": "[Comprehensive informational text about Beowulf's Battles: Symbolism and Meaning - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Beowulf's Battles: Symbolism and Meaning",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Beowulf's Battles: Symbolism and Meaning",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Beowulf's Battles: Symbolism and Meaning",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of Revenge in Darkness. What would you have done differently?",
+      "writingPrompt": "Write an analytical essay about greed and its consequences. Use evidence from today's chapter and your own reasoning.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -862,14 +1086,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Thematic Vocabulary Analysis",
+        "explanation": "Thematic Vocabulary Analysis in Beowulf.",
+        "example": "Example from Beowulf.",
+        "prompt": "Analyze Thematic Vocabulary Analysis in today's chapter."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Dragon: Mortality and Greed",
+        "text": "[Comprehensive informational text about The Dragon: Mortality and Greed - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about The Dragon: Mortality and Greed",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about The Dragon: Mortality and Greed",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about The Dragon: Mortality and Greed",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Mere of Monsters. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Reflect on how you want to be remembered. Connect this to your own life or observations."
     },
     {
       "number": 15,
@@ -921,9 +1163,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Beowulf's Influence on Modern Fantasy",
+        "text": "[Comprehensive informational text about Beowulf's Influence on Modern Fantasy - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]",
+        "questions": [
+          {
+            "question": "Question 1 about Beowulf's Influence on Modern Fantasy",
+            "answer": ""
+          },
+          {
+            "question": "Question 2 about Beowulf's Influence on Modern Fantasy",
+            "answer": ""
+          },
+          {
+            "question": "Question 3 about Beowulf's Influence on Modern Fantasy",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Descent into Hell. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
