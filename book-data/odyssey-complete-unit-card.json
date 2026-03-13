@@ -1,0 +1,1731 @@
+{
+  "unitInfo": {
+    "title": "The Odyssey",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Homer (c. 8th century BC)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Epic Poetry / Greek Mythology",
+    "themes": [
+      "Perseverance and Homecoming",
+      "Pride and Humility",
+      "Loyalty and Family",
+      "Wisdom vs. Strength",
+      "The Journey as Transformation"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-13T14:17:09.796Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 1-24 of any 6th-8th grade pocket"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (4 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + 3 Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "grammarDays": [
+      1,
+      3,
+      6,
+      8,
+      11,
+      13,
+      16,
+      18,
+      21,
+      23
+    ],
+    "languageDays": [
+      2,
+      4,
+      7,
+      9,
+      12,
+      14,
+      17,
+      19,
+      22,
+      24
+    ],
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "note": "This 24-lesson unit follows Bedrock Spine structure"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "day": 1,
+      "title": "THE FALL OF TROY",
+      "summary": "",
+      "text": "For ten long years, the Greeks had fought to capture the city of Troy.\nThe war had begun because of a woman — Helen, the most beautiful woman in the world, wife of the Greek king Menelaus. She had been taken to Troy by the Trojan prince Paris, and every Greek king and warrior had sailed across the sea to bring her back. Achilles, the greatest fighter alive. Ajax, the mountain of a man. And Odysseus, king of Ithaca — not the strongest, not the fastest, but the cleverest of them all.\nIt was Odysseus who ended the war.\nAfter ten years of siege, when brute force had failed, Odysseus devised a plan. He ordered the Greeks to build an enormous wooden horse — large enough to hold thirty warriors in its hollow belly. The Greeks left the horse at the gates of Troy and pretended to sail away. The Trojans, believing the war was over, dragged the horse inside their walls as a trophy.\nThat night, while Troy slept, Odysseus and his men climbed out of the horse, opened the gates, and let the Greek army pour in.\nTroy burned.\nWhen the smoke cleared, Odysseus stood on the ruined walls and looked west, toward Ithaca — his small, rocky island kingdom. His wife, Penelope, was waiting there. His son, Telemachus, whom he had left as an infant, was now ten years old.\n\"We go home,\" Odysseus told his men. He had twelve ships and over six hundred men.\nNone of them knew that the journey home would take another ten years. None of them knew that most of them would never see home at all.",
+      "vocabulary": [
+        {
+          "word": "siege",
+          "partOfSpeech": "noun",
+          "definition": "a military operation in which an enemy is surrounded to force surrender"
+        },
+        {
+          "word": "devise",
+          "partOfSpeech": "verb",
+          "definition": "to plan or invent a strategy or method"
+        },
+        {
+          "word": "reinforcements",
+          "partOfSpeech": "noun",
+          "definition": "additional soldiers sent to strengthen an army"
+        },
+        {
+          "word": "ambition",
+          "partOfSpeech": "noun",
+          "definition": "a strong desire to achieve something"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE FALL OF TROY?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Complex Sentences",
+        "explanation": "A complex sentence contains one independent clause and at least one dependent clause. Example from The Odyssey: 'When the smoke cleared, Odysseus stood on the ruined walls.'",
+        "example": "Although Odysseus was clever, he sometimes let pride cloud his judgment.",
+        "prompt": "Write three complex sentences about today's chapter using subordinating conjunctions like: although, because, when, if, since, while."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE FALL OF TROY. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 2,
+      "day": 2,
+      "title": "THE CICONES",
+      "summary": "",
+      "text": "The first stop was a disaster.\nOdysseus and his fleet landed at Ismarus, the city of the Cicones, allies of Troy. His men raided the city, took the treasure, and celebrated on the beach.\nOdysseus tried to stop them. \"Take what we need and leave. We're going home.\"\nHis men didn't listen. They feasted, drinking wine and roasting cattle.\nAt dawn, the Cicones returned with reinforcements. Six men from each ship were killed before they could push off. Seventy-two men, dead in a single morning — not to monsters or gods, but to greed and disobedience.\nThey sailed south into a storm that blew them far off course.",
+      "vocabulary": [
+        {
+          "word": "plunder",
+          "partOfSpeech": "verb",
+          "definition": "to steal goods from a place, especially during war"
+        },
+        {
+          "word": "disobedience",
+          "partOfSpeech": "noun",
+          "definition": "failure to follow rules or orders"
+        },
+        {
+          "word": "greed",
+          "partOfSpeech": "noun",
+          "definition": "excessive desire for wealth or possessions"
+        },
+        {
+          "word": "course",
+          "partOfSpeech": "noun",
+          "definition": "the path or direction taken"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE CICONES?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Context Clues",
+        "explanation": "Use surrounding words and sentences to figure out unfamiliar words.",
+        "example": "From the text, you can tell 'siege' means a long military blockade because it describes ten years of surrounding Troy.",
+        "prompt": "Find three unfamiliar words in today's reading. Use context clues to guess their meanings, then check a dictionary."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE CICONES. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 3,
+      "day": 3,
+      "title": "THE LOTUS EATERS",
+      "summary": "",
+      "text": "The storm raged for nine days. When it died, Odysseus found himself off an island with a sweet smell drifting from the interior. He sent three men ashore. They didn't come back.\nHe found them eating the flowers of the lotus plant, surrounded by people with dreamy eyes. The lotus erased memory — all desire to go home, all ambition, all purpose. The men who ate them forgot who they were.\nOdysseus didn't eat. He dragged his men back to the ships by force and ordered the fleet to leave immediately.\nThe lotus was the temptation to give up — a death not of the body but of the spirit.",
+      "vocabulary": [
+        {
+          "word": "lotus",
+          "partOfSpeech": "noun",
+          "definition": "a mythical plant that caused forgetfulness and loss of purpose"
+        },
+        {
+          "word": "erased",
+          "partOfSpeech": "verb",
+          "definition": "removed completely"
+        },
+        {
+          "word": "temptation",
+          "partOfSpeech": "noun",
+          "definition": "desire to do something wrong or unwise"
+        },
+        {
+          "word": "spirit",
+          "partOfSpeech": "noun",
+          "definition": "the inner self; soul or determination"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE LOTUS EATERS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Independent vs. Dependent Clauses",
+        "explanation": "An independent clause can stand alone; a dependent clause cannot. Homer uses both to create epic narratives.",
+        "example": "Independent: 'The Greeks built a wooden horse.' / Dependent: 'Because they couldn't breach the walls' (needs more)",
+        "prompt": "Find two sentences in today's reading. Identify the clauses. Write two of your own and label them."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE LOTUS EATERS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 4,
+      "day": 4,
+      "title": "THE CYCLOPS",
+      "summary": "",
+      "text": "The next island seemed like a gift — wild and fertile, with fat goats and enormous caves. Odysseus took twelve men and a skin of fine wine to explore.\nThey found a cave filled with cheeses and milk. The owner came home at dusk: Polyphemus, a one-eyed Cyclops, son of Poseidon. He rolled a boulder across the entrance, trapping them inside. Then he grabbed two men, smashed them against the floor, and ate them.\nOdysseus couldn't kill the sleeping giant — the boulder was too massive for the men to move. So he made a plan. He offered the Cyclops his powerful wine and told him his name was \"Nobody.\" When Polyphemus passed out drunk, they drove a sharpened stake into his eye.\nOther Cyclopes came running. \"Who is hurting you?\" — \"Nobody is hurting me!\" They shrugged and left.\nIn the morning, Odysseus's men escaped by clinging to the undersides of the giant's sheep.",
+      "vocabulary": [
+        {
+          "word": "cyclops",
+          "partOfSpeech": "noun",
+          "definition": "a one-eyed giant from Greek mythology"
+        },
+        {
+          "word": "fertile",
+          "partOfSpeech": "adjective",
+          "definition": "capable of producing abundant vegetation or crops"
+        },
+        {
+          "word": "stake",
+          "partOfSpeech": "noun",
+          "definition": "a strong wooden or metal post with a pointed end"
+        },
+        {
+          "word": "belly",
+          "partOfSpeech": "noun",
+          "definition": "the stomach or underside"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE CYCLOPS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Greek and Latin Roots",
+        "explanation": "Many English words come from Greek and Latin. 'Cyclops' = Greek 'kyklos' (circle) + 'ops' (eye) = circle-eye.",
+        "example": "Mythology: 'mythos' (story) + 'logos' (study) = study of stories",
+        "prompt": "Find five words in today's chapter with Greek or Latin roots. Break them down and explain their meanings."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE CYCLOPS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 5,
+      "day": 5,
+      "title": "THE CURSE OF POSEIDON",
+      "summary": "",
+      "text": "They should have left in silence.\nBut Odysseus was proud. As his ship pulled away, he shouted: \"Cyclops! It was Odysseus, king of Ithaca, who blinded you!\"\nPolyphemus raised his arms to the sky. \"Father Poseidon! Let Odysseus never reach home. And if he does, let him arrive late, alone, with all his companions dead, and let him find trouble in his house.\"\nThe sea trembled. Poseidon heard his son's prayer — and answered it.\nThis was Odysseus's great flaw: he needed the world to know how clever he was. His pride — the Greeks called it hubris — would cost him more than any monster ever could.",
+      "vocabulary": [
+        {
+          "word": "hubris",
+          "partOfSpeech": "noun",
+          "definition": "excessive pride or self-confidence that leads to downfall"
+        },
+        {
+          "word": "flaw",
+          "partOfSpeech": "noun",
+          "definition": "a mistake or weakness in character"
+        },
+        {
+          "word": "prayer",
+          "partOfSpeech": "noun",
+          "definition": "a request to a god or deity"
+        },
+        {
+          "word": "curse",
+          "partOfSpeech": "noun",
+          "definition": "a solemn utterance intended to bring harm"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE CURSE OF POSEIDON?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE CURSE OF POSEIDON. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 6,
+      "day": 6,
+      "title": "AEOLUS AND THE BAG OF WINDS",
+      "summary": "",
+      "text": "Aeolus, keeper of the winds, gave Odysseus a leather bag containing all the unfavorable winds. With the bad winds imprisoned, the gentle west wind carried them straight toward Ithaca.\nOn the tenth day, Odysseus could see home — the rocky cliffs, the smoke from chimneys. He wept with joy. Then he fell asleep.\nHis men, convinced the bag held gold, untied it. Every wind erupted at once. The storm hurled them backward across the ocean. Ithaca vanished.\nThey returned to Aeolus and begged for help. \"The gods must hate you,\" he said. \"I won't help a man the gods have cursed.\"",
+      "vocabulary": [
+        {
+          "word": "imprisoned",
+          "partOfSpeech": "verb",
+          "definition": "confined or locked up"
+        },
+        {
+          "word": "unfavorable",
+          "partOfSpeech": "adjective",
+          "definition": "not helpful or advantageous"
+        },
+        {
+          "word": "untied",
+          "partOfSpeech": "verb",
+          "definition": "loosened or opened by undoing a knot"
+        },
+        {
+          "word": "erupted",
+          "partOfSpeech": "verb",
+          "definition": "burst forth violently"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in AEOLUS AND THE BAG OF WINDS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Active and Passive Voice",
+        "explanation": "Active voice: subject performs action. Passive voice: subject receives action. Active: 'Odysseus blinded the Cyclops.' Passive: 'The Cyclops was blinded by Odysseus.'",
+        "example": "Active: 'The crew ate the lotus.' / Passive: 'The lotus was eaten by the crew.'",
+        "prompt": "Find three sentences from today's chapter. Identify voice. Rewrite one active as passive and vice versa."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of AEOLUS AND THE BAG OF WINDS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 7,
+      "day": 7,
+      "title": "THE LAESTRYGONIANS",
+      "summary": "",
+      "text": "Odysseus's fleet entered a beautiful harbor surrounded by cliffs. All eleven remaining ships sailed in — except Odysseus's, which he anchored outside. A precaution that saved his life.\nThe Laestrygonians were giant cannibals. They attacked from the cliffs, hurling boulders onto the trapped ships. Not a single man from those eleven ships survived.\nOdysseus entered the harbor with twelve ships and over five hundred men. He left with one ship and forty-five men.",
+      "vocabulary": [
+        {
+          "word": "harbor",
+          "partOfSpeech": "noun",
+          "definition": "a sheltered port where ships may anchor"
+        },
+        {
+          "word": "precaution",
+          "partOfSpeech": "noun",
+          "definition": "a measure taken in advance to prevent harm"
+        },
+        {
+          "word": "cannibal",
+          "partOfSpeech": "noun",
+          "definition": "one who eats the flesh of its own species"
+        },
+        {
+          "word": "boulder",
+          "partOfSpeech": "noun",
+          "definition": "a large rock"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE LAESTRYGONIANS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Connotation and Denotation",
+        "explanation": "Denotation = dictionary definition. Connotation = emotional association.",
+        "example": "'Cunning' denotes cleverness, but connotes trickery or deception.",
+        "prompt": "Choose five words from today's reading. Explain both their denotation and connotation."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE LAESTRYGONIANS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 8,
+      "day": 8,
+      "title": "CIRCE",
+      "summary": "",
+      "text": "On the island of Aeaea, the goddess Circe invited Odysseus's men inside her palace, fed them a feast, and turned them to pigs with a touch of her wand.\nOdysseus went to confront her alone. The god Hermes gave him a magical herb called moly that blocked her spell. When Circe's wand had no effect, she was stunned.\nOdysseus drew his sword and made her swear to restore his men. She did, and became an ally — hosting the Greeks for a year and preparing them for what lay ahead.",
+      "vocabulary": [
+        {
+          "word": "goddess",
+          "partOfSpeech": "noun",
+          "definition": "a female deity"
+        },
+        {
+          "word": "wand",
+          "partOfSpeech": "noun",
+          "definition": "a stick or rod used to perform magic"
+        },
+        {
+          "word": "confront",
+          "partOfSpeech": "verb",
+          "definition": "to face in hostility or defiance"
+        },
+        {
+          "word": "restore",
+          "partOfSpeech": "verb",
+          "definition": "to bring back to original condition"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in CIRCE?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Semicolons and Compound Sentences",
+        "explanation": "Semicolons join related independent clauses without conjunctions: 'Odysseus was clever; his pride was his weakness.'",
+        "example": "The men wanted food; they ignored the warnings.",
+        "prompt": "Write four compound sentences about today's chapter: two with semicolons, two with coordinating conjunctions."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of CIRCE. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 9,
+      "day": 9,
+      "title": "THE LAND OF THE DEAD",
+      "summary": "",
+      "text": "Circe told Odysseus he must visit the underworld and speak with the prophet Tiresias. At the edge of the world, Odysseus dug a trench, filled it with sacrificial blood, and waited. The dead came — pale, flickering shades.\nTiresias warned him: do not harm the sacred cattle of Helios on the island of Thrinacia. \"If you touch those cattle, your ship will be destroyed and your men will die.\"\nBut the spirit who shook Odysseus most was his mother, Anticlea. She had died of grief while he was gone. He tried to embrace her — his arms passed through her shadow like smoke.\nHe understood the full cost of his journey: not just the men he had lost, but the years of his life, spent far from everyone he loved.",
+      "vocabulary": [
+        {
+          "word": "underworld",
+          "partOfSpeech": "noun",
+          "definition": "the realm of the dead in Greek mythology"
+        },
+        {
+          "word": "prophet",
+          "partOfSpeech": "noun",
+          "definition": "one who foretells the future"
+        },
+        {
+          "word": "sacrificial",
+          "partOfSpeech": "adjective",
+          "definition": "offered as a religious offering"
+        },
+        {
+          "word": "shades",
+          "partOfSpeech": "noun",
+          "definition": "ghosts or spirits of the dead"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE LAND OF THE DEAD?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Figurative Language: Similes and Metaphors",
+        "explanation": "Similes use 'like' or 'as' to compare. Metaphors say one thing IS another.",
+        "example": "Simile: 'The sea was like glass.' / Metaphor: 'Poseidon's rage was a hammer.'",
+        "prompt": "Find three examples of figurative language in today's chapter. Write three of your own."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE LAND OF THE DEAD. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 10,
+      "day": 10,
+      "title": "THE SIRENS",
+      "summary": "",
+      "text": "The Sirens sang a song so beautiful that any man who heard it would steer toward the rocks and die. Odysseus ordered his men to seal their ears with beeswax and bind him to the mast.\nThe song was not just music — it was knowledge. The Sirens sang of everything and called him by name. Odysseus screamed, thrashed, and begged to be released. His deaf men rowed harder and tied him tighter.\nHe had heard the Sirens' song and survived. But he would hear it in his dreams for the rest of his life.",
+      "vocabulary": [
+        {
+          "word": "sirens",
+          "partOfSpeech": "noun",
+          "definition": "dangerous creatures whose singing lured sailors to shipwreck"
+        },
+        {
+          "word": "seal",
+          "partOfSpeech": "verb",
+          "definition": "to close tightly"
+        },
+        {
+          "word": "beeswax",
+          "partOfSpeech": "noun",
+          "definition": "wax produced by bees"
+        },
+        {
+          "word": "thrashed",
+          "partOfSpeech": "verb",
+          "definition": "moved violently"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE SIRENS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE SIRENS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 11,
+      "day": 11,
+      "title": "SCYLLA AND CHARYBDIS",
+      "summary": "",
+      "text": "On one side of a narrow strait was Charybdis — a whirlpool that could swallow a ship. On the other was Scylla — a six-headed monster who would snatch six men from any ship that passed.\n\"Choose,\" Circe had said. \"Lose six men, or lose everyone.\"\nOdysseus chose Scylla. He told no one. Six heads shot down from the cave. Six men were seized and pulled screaming into the darkness.\nOdysseus stood at the stern, looking back. He had made the right choice. But \"the right choice\" meant nothing when you could still hear your friends screaming.\nThis, he thought, is what leadership costs.",
+      "vocabulary": [
+        {
+          "word": "strait",
+          "partOfSpeech": "noun",
+          "definition": "a narrow passage of water connecting two seas"
+        },
+        {
+          "word": "whirlpool",
+          "partOfSpeech": "noun",
+          "definition": "a swirling body of water that pulls objects down"
+        },
+        {
+          "word": "tentacles",
+          "partOfSpeech": "noun",
+          "definition": "long flexible limbs used for grasping"
+        },
+        {
+          "word": "sacrifice",
+          "partOfSpeech": "verb",
+          "definition": "to give up something valuable for a greater purpose"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in SCYLLA AND CHARYBDIS?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Verb Moods: Indicative, Imperative, Subjunctive",
+        "explanation": "Indicative states facts. Imperative gives commands. Subjunctive expresses wishes/hypotheticals.",
+        "example": "Indicative: 'Odysseus is cunning.' / Imperative: 'String the bow!' / Subjunctive: 'If I were Odysseus, I would have returned sooner.'",
+        "prompt": "Write six sentences: two indicative, two imperative, two subjunctive about today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of SCYLLA AND CHARYBDIS. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 12,
+      "day": 12,
+      "title": "THE CATTLE OF THE SUN",
+      "summary": "",
+      "text": "On the island of Thrinacia, Helios kept his sacred cattle. Odysseus wanted to sail past, but his starving men forced a landing. He made them swear not to touch the cattle.\nA month-long storm trapped them. Their food ran out. While Odysseus prayed alone, Eurylochus convinced the men to slaughter the cattle. \"Better to die with full bellies.\"\nWhen Zeus hurled his thunderbolt, the ship split apart. Every man who had eaten the sacred cattle drowned. Odysseus alone survived, clinging to a piece of the mast for nine days, until the current carried him to Calypso's island — where he would be held prisoner for seven years.",
+      "vocabulary": [
+        {
+          "word": "sacred",
+          "partOfSpeech": "adjective",
+          "definition": "holy; dedicated to a god"
+        },
+        {
+          "word": "warned",
+          "partOfSpeech": "verb",
+          "definition": "informed of possible danger"
+        },
+        {
+          "word": "gaunt",
+          "partOfSpeech": "adjective",
+          "definition": "thin and weak from hunger"
+        },
+        {
+          "word": "doomed",
+          "partOfSpeech": "adjective",
+          "definition": "certain to suffer a terrible fate"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE CATTLE OF THE SUN?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Word Relationships: Synonyms and Antonyms",
+        "explanation": "Synonyms have similar meanings. Antonyms have opposite meanings.",
+        "example": "Synonym for 'clever': intelligent, cunning. Antonym: foolish, stupid.",
+        "prompt": "Find ten words from today's reading. List a synonym and antonym for each."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE CATTLE OF THE SUN. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 13,
+      "day": 13,
+      "title": "THE CATTLE OF THE SUN",
+      "summary": "",
+      "text": "Tiresias had warned him. Circe had warned him. Odysseus himself warned his men as the island of Thrinacia appeared on the horizon:\n\"We must not stop on this island. The cattle that graze there belong to Helios, the sun god. If we harm even one, we will die.\"\nBut the men were exhausted and hungry. Eurylochus spoke for the crew: \"You ask too much. We need rest. One night on the beach. We won't touch the cattle.\"\nOdysseus relented. One night became a month. Adverse winds trapped them on the island. Their food ran out. Hunger gnawed at them.\nOdysseus went inland to pray, and while he was gone, the men broke. Eurylochus made the argument: \"We are dying. The cattle are right there. If the gods want to kill us for eating, at least we'll die with full stomachs.\"\nThey slaughtered the finest cattle of the sun god.\nWhen Odysseus returned and saw the fire, smelled the meat, he knew they were dead.\nHelios demanded justice from Zeus. They sailed from the island with full stomachs and doomed souls. Within hours, Zeus sent a thunderbolt that shattered the ship. Every man was thrown into the sea. Every man drowned.\nExcept Odysseus.\nHe clung to the wreckage — the keel and a piece of the mast — and floated alone on the open sea. Every ship, every man, every friend he had led from Troy was gone. The prophecy of Tiresias had come true.\nOdysseus was alone.",
+      "vocabulary": [
+        {
+          "word": "thunderbolt",
+          "partOfSpeech": "noun",
+          "definition": "a lightning strike, especially one from Zeus"
+        },
+        {
+          "word": "prophecy",
+          "partOfSpeech": "noun",
+          "definition": "a prediction of future events"
+        },
+        {
+          "word": "wreckage",
+          "partOfSpeech": "noun",
+          "definition": "the remains of something destroyed"
+        },
+        {
+          "word": "keel",
+          "partOfSpeech": "noun",
+          "definition": "the bottom structure of a ship's hull"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE CATTLE OF THE SUN?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Parallel Structure",
+        "explanation": "Using the same grammatical form for items in a series creates balance and clarity.",
+        "example": "Poor: 'Odysseus was brave, intelligent, and liked adventure.' / Better: 'Odysseus was brave, intelligent, and adventurous.'",
+        "prompt": "Find three sentences in today's reading that use parallel structure. Write three of your own."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE CATTLE OF THE SUN. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 14,
+      "day": 14,
+      "title": "CALYPSO'S ISLAND",
+      "summary": "",
+      "text": "The sea carried him to Ogygia, home of the nymph Calypso — beautiful, immortal, and utterly alone.\nCalypso found Odysseus half-dead on her beach and nursed him back to health. She offered him something no mortal had ever been offered: immortality. She would make him a god. He would never grow old, never suffer, never die.\nSeven years. Odysseus stayed on Calypso's island for seven years.\nBut he never accepted her offer. Every day, he walked to the rocky shore and stared east — toward Ithaca, toward Penelope.\n\"Why?\" Calypso asked. \"I am more beautiful than your wife. I am offering you eternal life.\"\nOdysseus answered: \"You are beautiful. This island is paradise. But Penelope is my home. Ithaca is my home. I would rather live one mortal life with the people I love than live forever in a place where I don't belong.\"\nOn Mount Olympus, the goddess Athena pleaded with Zeus to end Odysseus's suffering. Zeus agreed and sent Hermes to Calypso with a command: release Odysseus.\nCalypso wept, but she obeyed. She helped Odysseus build a raft and gave him food, water, and directions.\nHe sailed east. Toward home.",
+      "vocabulary": [
+        {
+          "word": "nymph",
+          "partOfSpeech": "noun",
+          "definition": "a minor female nature deity in Greek mythology"
+        },
+        {
+          "word": "immortality",
+          "partOfSpeech": "noun",
+          "definition": "the ability to live forever"
+        },
+        {
+          "word": "mortal",
+          "partOfSpeech": "adjective",
+          "definition": "subject to death; not immortal"
+        },
+        {
+          "word": "paradise",
+          "partOfSpeech": "noun",
+          "definition": "a perfect, beautiful place"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in CALYPSO'S ISLAND?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Multiple Meaning Words",
+        "explanation": "Many words have different meanings depending on context. 'Bow' can mean a weapon or the front of a ship.",
+        "example": "'Strike' can mean to hit, to protest, or to discover something valuable.",
+        "prompt": "Find five words in today's chapter that have multiple meanings. Write sentences showing different uses."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of CALYPSO'S ISLAND. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 15,
+      "day": 15,
+      "title": "THE RAFT",
+      "summary": "",
+      "text": "For seventeen days, Odysseus sailed alone across the open sea, navigating by the stars. On the eighteenth day, he saw land — the mountains of Phaeacia.\nAnd then Poseidon saw him.\nThe god of the sea had been away and had not noticed Odysseus's departure. Now, returning across the ocean, Poseidon spotted the tiny raft.\n\"No,\" Poseidon said. \"Not yet.\"\nHe raised his hand. The sea obeyed.",
+      "vocabulary": [
+        {
+          "word": "raft",
+          "partOfSpeech": "noun",
+          "definition": "a flat floating structure made of logs or planks"
+        },
+        {
+          "word": "navigating",
+          "partOfSpeech": "verb",
+          "definition": "planning and following a route"
+        },
+        {
+          "word": "departed",
+          "partOfSpeech": "verb",
+          "definition": "left; went away"
+        },
+        {
+          "word": "divine",
+          "partOfSpeech": "adjective",
+          "definition": "relating to a god or goddess"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE RAFT?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE RAFT. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 16,
+      "day": 16,
+      "title": "POSEIDON'S STORM",
+      "summary": "",
+      "text": "The storm was not natural. It was divine rage made physical — waves as tall as mountains, wind that ripped the air itself.\nThe raft came apart. Odysseus was thrown into the water, dragged under, spun by currents designed to destroy him. After twenty years of surviving everything, he was going to drown within sight of land.\nA sea goddess named Ino took pity on him. She gave him her immortal veil. \"Wrap this around your body. It will keep you afloat. Swim for the shore.\"\nOdysseus stripped off his heavy clothes and swam. For two days and two nights, he fought currents and waves, his arms burning, his legs numb.\nOn the third morning, he reached the coast of Phaeacia. But the shore was rocky — sheer cliffs battered by surf. He swam along the coast until he found a river mouth with calm water. He dragged himself onto the bank, crawled into a thicket of olive trees, covered himself with leaves, and collapsed.\nHe had survived. Again. Barely.",
+      "vocabulary": [
+        {
+          "word": "rage",
+          "partOfSpeech": "noun",
+          "definition": "violent anger"
+        },
+        {
+          "word": "currents",
+          "partOfSpeech": "noun",
+          "definition": "steady flows of water in a particular direction"
+        },
+        {
+          "word": "veil",
+          "partOfSpeech": "noun",
+          "definition": "a covering; in this case, a magical cloth"
+        },
+        {
+          "word": "thicket",
+          "partOfSpeech": "noun",
+          "definition": "a dense group of bushes or trees"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in POSEIDON'S STORM?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Appositives",
+        "explanation": "An appositive renames or explains a noun, set off by commas. Example: 'Odysseus, king of Ithaca, was the cleverest Greek.'",
+        "example": "Penelope, wife of Odysseus, waited twenty years.",
+        "prompt": "Write five sentences using appositives to add detail about characters from today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of POSEIDON'S STORM. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 17,
+      "day": 17,
+      "title": "NAUSICAA",
+      "summary": "",
+      "text": "He was woken by laughter.\nYoung women were playing on the riverbank, washing clothes and tossing a ball. At their center was a girl — perhaps sixteen — with the confidence of someone who had never had reason to doubt herself. Princess Nausicaa, daughter of King Alcinous.\nOdysseus was a mess — naked, salt-crusted, covered in scratches, with leaves in his hair. But he was Odysseus, and even at his lowest, he knew how to speak.\nHe broke off an olive branch to cover himself and addressed Nausicaa with the most graceful words he could summon:\n\"My lady, I do not know if you are a goddess or a mortal. If you are a goddess, you must be Artemis. If you are mortal, then your parents are the most fortunate people alive.\"\nThe other girls ran. Nausicaa held her ground.\n\"You are a stranger. Shipwrecked?\"\n\"Twenty years shipwrecked,\" Odysseus said. \"I am trying to get home.\"\nShe gave him clothes, food, and directions to her father's palace.\n\"Go to my mother first,\" she advised. \"Queen Arete. If she takes your side, my father will help you. She is the real power in this house.\"\nOdysseus smiled — the first real smile in a very long time.",
+      "vocabulary": [
+        {
+          "word": "princess",
+          "partOfSpeech": "noun",
+          "definition": "the daughter of a king or queen"
+        },
+        {
+          "word": "graceful",
+          "partOfSpeech": "adjective",
+          "definition": "showing elegance and beauty"
+        },
+        {
+          "word": "shipwrecked",
+          "partOfSpeech": "adjective",
+          "definition": "stranded after one's ship is destroyed"
+        },
+        {
+          "word": "advised",
+          "partOfSpeech": "verb",
+          "definition": "offered suggestions or recommendations"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in NAUSICAA?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Idiomatic Expressions",
+        "explanation": "Idioms are phrases whose meaning isn't literal. 'Between a rock and a hard place' = facing two bad choices.",
+        "example": "'Out of the frying pan and into the fire' = escaping one danger only to face another.",
+        "prompt": "Find or invent three idioms related to journeys or challenges. Explain their literal and figurative meanings."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of NAUSICAA. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 18,
+      "day": 18,
+      "title": "THE PHAEACIAN COURT",
+      "summary": "",
+      "text": "The palace of King Alcinous was magnificent. Odysseus entered as a stranger, knelt before Queen Arete, and asked for help returning home.\nThe Phaeacians held a feast in his honor. A blind poet named Demodocus sang tales of the Trojan War — and when the poet sang of the wooden horse, Odysseus covered his face with his cloak and wept.\nOnly King Alcinous noticed. He stopped the music.\n\"Stranger, you weep at the tale of Troy. Who are you?\"\nOdysseus stood. He pulled back his cloak.\n\"I am Odysseus, son of Laertes, king of Ithaca. And this is my story.\"\nHe told them everything — from Troy to this moment. He spoke for hours, and the Phaeacian court listened in absolute silence.\nWhen he finished, King Alcinous rose and said: \"Tomorrow, we take you home.\"",
+      "vocabulary": [
+        {
+          "word": "magnificent",
+          "partOfSpeech": "adjective",
+          "definition": "extremely beautiful or impressive"
+        },
+        {
+          "word": "blind",
+          "partOfSpeech": "adjective",
+          "definition": "unable to see"
+        },
+        {
+          "word": "cloak",
+          "partOfSpeech": "noun",
+          "definition": "a long outer garment"
+        },
+        {
+          "word": "absolute",
+          "partOfSpeech": "adjective",
+          "definition": "complete; total"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE PHAEACIAN COURT?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Restrictive vs. Non-Restrictive Clauses",
+        "explanation": "Restrictive clauses are essential (no commas). Non-restrictive add extra info (use commas).",
+        "example": "Restrictive: 'The man who blinded the Cyclops was Odysseus.' / Non-restrictive: 'Odysseus, who was clever, devised a plan.'",
+        "prompt": "Write four sentences: two with restrictive clauses, two with non-restrictive clauses about today's reading."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE PHAEACIAN COURT. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 19,
+      "day": 19,
+      "title": "HOME AT LAST",
+      "summary": "",
+      "text": "The Phaeacian ship sailed through the night. By dawn, the rocky shores of Ithaca rose from the sea. They laid Odysseus on the beach while he slept and sailed away.\nOdysseus woke on his own shore. Twenty years. The beach looked the same, but he was different.\nThe goddess Athena appeared and warned him: \"Your palace is overrun. More than a hundred suitors have moved in. They eat your food, drink your wine, and each one wants to marry Penelope. They will kill you if they find out who you are.\"\n\"Then they won't find out,\" Odysseus said.\nAthena disguised him as an elderly beggar — stooped, wrinkled, unrecognizable.\n\"Go to Eumaeus, your old swineherd,\" she said. \"He is still loyal.\"\nOdysseus walked up the familiar path from the beach, disguised as a beggar in his own kingdom.\nHe was home. And the hardest part was still to come.",
+      "vocabulary": [
+        {
+          "word": "overrun",
+          "partOfSpeech": "verb",
+          "definition": "invaded and occupied in large numbers"
+        },
+        {
+          "word": "suitors",
+          "partOfSpeech": "noun",
+          "definition": "men seeking to marry a woman"
+        },
+        {
+          "word": "disguised",
+          "partOfSpeech": "verb",
+          "definition": "concealed one's identity"
+        },
+        {
+          "word": "beggar",
+          "partOfSpeech": "noun",
+          "definition": "a person who asks for charity"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in HOME AT LAST?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Prefixes and Suffixes",
+        "explanation": "Prefixes attach to word beginnings; suffixes to endings. They change meaning.",
+        "example": "Im + mortal + ity → immortality (the state of not being mortal)",
+        "prompt": "Find ten words with prefixes or suffixes in today's reading. Break them down and explain how the affix changes meaning."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of HOME AT LAST. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 20,
+      "day": 20,
+      "title": "THE SWINEHERD",
+      "summary": "",
+      "text": "Eumaeus didn't recognize the beggar, but he welcomed him anyway — because he was a good man and hospitality was a sacred duty.\nOver roast pork and barley bread, the old swineherd told Odysseus everything: the suitors, their greed, Penelope's resistance, Telemachus's danger.\n\"My master's son is a good young man,\" Eumaeus said. \"But he's outnumbered. These suitors have even plotted to kill him.\"\nThen Telemachus himself appeared at the door — tall, strong, with Odysseus's eyes and Penelope's dark hair. Athena had guided him here.\nWhen Eumaeus left to carry news to Penelope, Athena touched Odysseus. The disguise melted away. Telemachus found himself staring at his father.\n\"Father?\" he whispered.\nOdysseus opened his arms.\nThey held each other and wept. Twenty years of absence compressed into a single embrace in a swineherd's hut.\nThen they began to plan.",
+      "vocabulary": [
+        {
+          "word": "swineherd",
+          "partOfSpeech": "noun",
+          "definition": "a person who tends pigs"
+        },
+        {
+          "word": "hospitality",
+          "partOfSpeech": "noun",
+          "definition": "generous treatment of guests"
+        },
+        {
+          "word": "plotted",
+          "partOfSpeech": "verb",
+          "definition": "planned secretly"
+        },
+        {
+          "word": "embrace",
+          "partOfSpeech": "noun",
+          "definition": "a hug; an act of holding someone in one's arms"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE SWINEHERD?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE SWINEHERD. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 21,
+      "day": 21,
+      "title": "THE BEGGAR IN THE HALL",
+      "summary": "",
+      "text": "Odysseus entered his own palace in the beggar's disguise. He sat on the floor of the great hall while the suitors feasted around him.\nThey mocked him. Antinous, the cruelest suitor, threw a footstool at him. Odysseus said nothing. He did not flinch.\nHe watched everything. He noted which suitors were most dangerous. He counted their weapons. He studied the hall like a general surveying a battlefield.\nPenelope, watching from the upper balcony, felt something stir when she saw the beggar — not recognition, but a strange pull.\nShe summoned him to her chamber and asked if he had heard any news of Odysseus.\n\"Your husband is alive,\" the beggar said. \"He is very close to home.\"\nShe didn't recognize him. But she felt the pull again.\n\"Tomorrow,\" Penelope said, \"I will set a contest. The suitor who can string my husband's great bow and shoot an arrow through twelve axe heads will be my husband.\"\nThe beggar smiled. \"I believe the contest will end well.\"",
+      "vocabulary": [
+        {
+          "word": "mocked",
+          "partOfSpeech": "verb",
+          "definition": "made fun of; ridiculed"
+        },
+        {
+          "word": "footstool",
+          "partOfSpeech": "noun",
+          "definition": "a low stool for resting one's feet"
+        },
+        {
+          "word": "surveying",
+          "partOfSpeech": "verb",
+          "definition": "examining carefully"
+        },
+        {
+          "word": "chamber",
+          "partOfSpeech": "noun",
+          "definition": "a private room"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE BEGGAR IN THE HALL?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Gerunds and Infinitives",
+        "explanation": "Gerunds are -ing verbs used as nouns. Infinitives are 'to + verb.' Both can be subjects or objects.",
+        "example": "Gerund: 'Returning home was Odysseus's goal.' / Infinitive: 'To survive required cleverness.'",
+        "prompt": "Write six sentences about today's chapter: three using gerunds, three using infinitives."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE BEGGAR IN THE HALL. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 22,
+      "day": 22,
+      "title": "THE BOW",
+      "summary": "",
+      "text": "Penelope brought the bow — an enormous weapon of olive wood, horn, and sinew. No one had been able to string it since Odysseus left.\nThe suitors tried. One by one, they failed. The strongest couldn't bend it. Antinous tried three times, his face red with effort.\n\"Let the beggar try,\" Odysseus said quietly.\nThe suitors laughed. But Telemachus said: \"Let him try.\"\nOdysseus took the bow. He turned it in his hands, testing the flex, feeling the grain. Then, in one smooth motion, he strung it. The string sang — a clear, high note that rang through the silent hall.\nHe nocked an arrow, drew the bow to its full extension, and released. The arrow flew the length of the hall and passed through all twelve axe heads.\nSilence.\nThe beggar's disguise fell away.",
+      "vocabulary": [
+        {
+          "word": "bow",
+          "partOfSpeech": "noun",
+          "definition": "a weapon for shooting arrows"
+        },
+        {
+          "word": "string",
+          "partOfSpeech": "verb",
+          "definition": "to attach a bowstring to a bow"
+        },
+        {
+          "word": "nocked",
+          "partOfSpeech": "verb",
+          "definition": "placed an arrow on a bowstring"
+        },
+        {
+          "word": "threshold",
+          "partOfSpeech": "noun",
+          "definition": "an entrance or doorway"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE BOW?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Word Nuance and Precision",
+        "explanation": "Precise word choice creates vivid images. 'Walk' vs. 'stride' vs. 'stumble' vs. 'slink.'",
+        "example": "Homer writes 'beggar' instead of 'poor man' to emphasize Odysseus's disguise.",
+        "prompt": "Find five verbs in today's chapter. Replace each with three synonyms of different intensities."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE BOW. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 23,
+      "day": 23,
+      "title": "THE BATTLE",
+      "summary": "",
+      "text": "\"Now,\" Odysseus said, \"I try another target.\"\nHis second arrow struck Antinous in the throat.\nThe suitors leaped to their feet, reaching for swords that weren't there — Telemachus had removed their weapons the night before.\nOdysseus stood at the threshold, bow in hand. Telemachus stood beside him with a sword. Eumaeus and another loyal servant flanked them with spears.\nFour men against more than a hundred. But the four had weapons. The hundred did not.\nOdysseus fired arrow after arrow, each finding its mark. The battle lasted hours. The great hall ran with blood.\nWhen it was over, every suitor was dead.\nOdysseus stood in the center of his hall, breathing hard. His home was his again.",
+      "vocabulary": [
+        {
+          "word": "flanked",
+          "partOfSpeech": "verb",
+          "definition": "positioned on both sides of"
+        },
+        {
+          "word": "arrow",
+          "partOfSpeech": "noun",
+          "definition": "a projectile shot from a bow"
+        },
+        {
+          "word": "spear",
+          "partOfSpeech": "noun",
+          "definition": "a weapon with a pointed tip on a long shaft"
+        },
+        {
+          "word": "breathing",
+          "partOfSpeech": "verb",
+          "definition": "inhaling and exhaling air"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in THE BATTLE?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Participial Phrases",
+        "explanation": "Phrases beginning with participles (-ing or -ed verbs) that modify nouns.",
+        "example": "Disguised as a beggar, Odysseus entered his palace.",
+        "prompt": "Write five sentences using participial phrases to describe actions or scenes from today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of THE BATTLE. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    },
+    {
+      "number": 24,
+      "day": 24,
+      "title": "REUNION",
+      "summary": "",
+      "text": "Penelope did not come running.\nTwenty years is a long time. She had been deceived before. She would not be deceived again.\nShe came down the stairs and sat across from the man who claimed to be her husband. She studied him.\n\"Move his bed,\" she said to a servant. \"Bring the great bed into the hall so this man can sleep.\"\nOdysseus's reaction was immediate.\n\"Move the bed? No one can move that bed! I built it myself, around the trunk of a living olive tree. The tree is the bedpost. The bed cannot be moved without cutting down the tree. Who has damaged my bed?\"\nPenelope's face broke open. Tears streamed down her cheeks. She crossed the room and threw her arms around him.\n\"It is you. Only Odysseus knows about the olive tree.\"\nThe bed was their secret — known only to the two of them. No spy, no impostor, no god in disguise could have known it.\nThey held each other for a long time. Odysseus told her everything — the war, the journey, the monsters and the gods. Penelope told him her story — the suitors, the weaving trick, the years of holding them off with nothing but her mind and her will.\nThey were two people who had refused to give up — on each other, on the idea that love was worth a twenty-year fight, on the belief that home was more than a place.\nAthena held back the dawn, giving them the longest night in the world. And in the olive-tree bed, built by Odysseus's own hands, the hero came home at last.\nThe Odyssey was over.",
+      "vocabulary": [
+        {
+          "word": "deceived",
+          "partOfSpeech": "verb",
+          "definition": "tricked or misled"
+        },
+        {
+          "word": "servant",
+          "partOfSpeech": "noun",
+          "definition": "a person who serves others"
+        },
+        {
+          "word": "trunk",
+          "partOfSpeech": "noun",
+          "definition": "the main stem of a tree"
+        },
+        {
+          "word": "impostor",
+          "partOfSpeech": "noun",
+          "definition": "someone who pretends to be someone else"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the main challenge or obstacle in REUNION?",
+          "options": {
+            "A": "Option A (to be customized)",
+            "B": "Option B (to be customized)",
+            "C": "Option C (to be customized)",
+            "D": "Option D (to be customized)"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Odysseus respond to the events in this chapter?",
+          "options": {
+            "A": "With physical strength",
+            "B": "With cleverness and planning",
+            "C": "By seeking help from the gods",
+            "D": "By giving up hope"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does this chapter reveal about Odysseus's character or the theme of the epic? Use evidence from the text.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Etymology: Word Origins",
+        "explanation": "Understanding where words come from helps us understand their meanings.",
+        "example": "'Odyssey' comes from 'Odysseus' and now means any long, adventurous journey.",
+        "prompt": "Research the etymology of five words from the vocabulary lists. Explain how their origins relate to current meanings."
+      },
+      "informationalText": {
+        "title": "Ancient Greece and Epic Poetry",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of REUNION. What would you have done differently?",
+      "journalPrompt": "How does Odysseus's experience in this chapter connect to challenges you've faced?"
+    }
+  ],
+  "stats": {
+    "totalWords": 3456,
+    "avgWordsPerChapter": 144,
+    "totalVocabulary": 96,
+    "totalGrammarLessons": 12,
+    "totalLanguageLessons": 12
+  }
+}
