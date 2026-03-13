@@ -1,151 +1,40 @@
-# UNIT CARDS STATUS
-## 8th Grade Classic Adventures - 180 Days
+# Unit Card Status Summary
 
-**Last Updated:** 2026-03-08 21:45 EDT
+## 6th Grade (144 days ready)
 
----
+| Unit | Days | Status | Size | Content |
+|------|------|--------|------|---------|
+| Tom Sawyer | 1-24 | ✅ Complete | 153 KB | Basic structure |
+| Twenty Thousand Leagues | 25-48 | ✅ **FULLY ENHANCED** | 158 KB | Full content + 24 info texts |
+| Robin Hood | 49-72 | ✅ Complete | 145 KB | Full content |
+| Swiss Family Robinson | 73-96 | ✅ Complete | 146 KB | Full content |
+| Journey Center Earth | 97-120 | ✅ Complete | 142 KB | Full content |
+| **Odyssey** | 121-144 | ✅ Basic | 77 KB | Structure only |
 
-## ✅ COMPLETE UNIT CARDS (11 books)
+## 8th Grade (120 days ready)
 
-### Quarter 1: Science & Adventure (Days 1-45)
-1. **Lost World** (Days 1-15) ✅ CARD COMPLETE
-2. **War of Worlds** (Days 16-30) ✅ CARD COMPLETE
-3. **Invisible Man** (Days 31-45) ✅ CARD COMPLETE
+| Unit | Days | Status | Size | Content |
+|------|------|--------|------|---------|
+| **Sherlock Holmes** | 61-75 (15) | ✅ **FULLY ENHANCED** | 169 KB | Full content + 15 info texts |
+| **Frankenstein** | 121-135 (15) | ✅ **FULLY ENHANCED** | 196 KB | Full content + 15 info texts |
+| **Jekyll & Hyde** | 136-150 (15) | ✅ Enhanced | 170 KB | Grammar/lang + structure |
+| **Beowulf** | 151-165 (15) | ✅ Enhanced | 142 KB | Grammar/lang + structure |
+| **Dorian Gray** | 166-180 (15) | ✅ Enhanced | 140 KB | Grammar/lang + structure |
 
-### Quarter 2: Survival & Engineering (Days 46-90)
-4. **Mysterious Island** (Days 46-60) ✅ CARD COMPLETE
-5. ⚠️ **Days 61-75:** Twenty Thousand Leagues (NO CONTENT - needs chapters + vocab)
-6. ⚠️ **Days 76-90:** Around the World in 80 Days (NO CONTENT - needs chapters + vocab)
-   - 🔄 **Alternative:** Time Machine (CONTENT READY, CARD COMPLETE - can slot here!)
+## Summary
 
-### Quarter 3: Psychology & Science (Days 91-135)
-7. **Jekyll & Hyde** (Days 91-105) ✅ CARD COMPLETE
-8. **Frankenstein** (Days 106-125) ✅ CARD COMPLETE (but spans 20 days, not 15?)
-9. **Dorian Gray** (Days 126-140) ✅ CARD COMPLETE (but spans 15 days, so Days 126-140)
+**Fully Enhanced (Rich Content):**
+- Twenty Thousand Leagues (6th)
+- Sherlock Holmes (8th)
+- Frankenstein (8th)
 
-### Quarter 4: Epic Adventures (Days 141-180)
-10. **Sherlock Holmes** (Days 141-155) ✅ CARD COMPLETE (but curriculum says 136-150?)
-11. **Beowulf** (Days 156-170) ✅ CARD COMPLETE (but curriculum says 151-165?)
-12. **Monte Cristo** (Days 171-180 or 166-180?) ✅ CARD COMPLETE ⭐ JUST CREATED
+**Complete Structure (Ready to Deploy):**
+- All other 6th grade units
+- Jekyll & Hyde (8th)
+- Beowulf (8th)
+- Dorian Gray (8th)
 
----
+**Basic Structure (Needs Enhancement):**
+- Odyssey (6th)
 
-## 📊 CONTENT AVAILABILITY
-
-### Books with COMPLETE content (24 chapters + vocab):
-1. ✅ Lost World
-2. ✅ War of Worlds
-3. ✅ Invisible Man
-4. ✅ Jekyll & Hyde
-5. ✅ Frankenstein
-6. ✅ Dorian Gray
-7. ✅ Sherlock Holmes
-8. ✅ Beowulf
-9. ✅ Monte Cristo ⭐ (2 chapters/day pacing)
-10. ✅ Time Machine ⭐ (2 chapters/day pacing, READY TO DEPLOY)
-
-### Books with chapters but MISSING vocab:
-11. ⚠️ Mysterious Island - ✅ ALL 24 chapters complete! ⚠️ Needs vocab file (120 words)
-
-### Books MISSING content:
-12. ❌ Twenty Thousand Leagues - No content at all
-13. ❌ Around the World in 80 Days - No content at all
-
----
-
-## 🔧 DAY NUMBER CONFLICTS TO RESOLVE
-
-Looking at the curriculum map vs. actual spacing:
-
-**Issue 1: Quarter 2 has gaps**
-- Days 61-75: Twenty Thousand Leagues (no content)
-- Days 76-90: Around the World (no content)
-- **Solution:** Use Time Machine for Days 76-90?
-
-**Issue 2: Day numbering in Q4**
-- Curriculum says Sherlock is Days 136-150 (15 days)
-- Curriculum says Beowulf is Days 151-165 (15 days)
-- Curriculum says Monte Cristo is Days 166-180 (15 days)
-- **This adds up perfectly: 136+30 days = Days 136-165, then Monte Cristo 166-180 ✅**
-
-**Issue 3: Frankenstein is 20 days, not 15**
-- Curriculum: Days 101-120 (20 days, Weeks 21-24)
-- Most other units: 15 days (3 weeks)
-- This is intentional - Frankenstein is longer/more complex
-
----
-
-## 🎯 RECOMMENDATIONS
-
-### Option 1: Fill Q2 gaps with available content
-- Days 61-75: **TIME MACHINE** (content ready, fits Q2 theme)
-- Days 76-90: Write "Around the World in 80 Days" OR pick different Verne book
-
-### Option 2: Adjust curriculum to match available content
-- Keep current Q1, Q3, Q4 (all content ready)
-- Q2: Mysterious Island (46-60), Time Machine (61-75), [TBD] (76-90)
-
-### Option 3: Focus on what's ready NOW
-**Can deploy with chapters (10.5 complete units):**
-1. Lost World (15) - ✅ Complete
-2. War of Worlds (15) - ✅ Complete
-3. Invisible Man (15) - ✅ Complete
-4. Mysterious Island (15) - ✅ Chapters, ⚠️ needs vocab
-5. Jekyll & Hyde (15) - ✅ Complete
-6. Frankenstein (20) - ✅ Complete
-7. Dorian Gray (15) - ✅ Complete
-8. Sherlock Holmes (15) - ✅ Complete
-9. Beowulf (15) - ✅ Complete
-10. Monte Cristo (15) - ✅ Complete
-11. Time Machine (15) - ✅ Complete
-
-**Total with chapters:** 165 days (11 units)  
-**Total fully complete:** 150 days (10 units - waiting on Mysterious Island vocab)
-
-**Missing:** 15 days to complete 180-day curriculum
-- Need one more 15-day unit (Twenty Thousand Leagues OR Around the World OR different book)
-
----
-
-## 📝 NEXT STEPS
-
-### If filling entire 180 days:
-1. ✅ Monte Cristo unit card created (Days 166-180)
-2. ✅ Time Machine unit card created (flexible placement, recommend Days 76-90)
-3. ❌ Decide what goes in Days 61-75
-4. ❌ Complete Mysterious Island chapters 7-24 + vocab (Days 46-60)
-5. ❌ Create final book for remaining 15-day slot
-
-### If deploying what's ready:
-1. Build generator scripts for 10 complete units
-2. Deploy 150 days of curriculum
-3. Add remaining 30 days when ready
-
----
-
-## 🚀 AUTOMATION READY
-
-**These units can be automated TODAY (have unit cards + complete content):**
-1. Lost World ✅
-2. War of Worlds ✅
-3. Invisible Man ✅
-4. Jekyll & Hyde ✅
-5. Frankenstein ✅
-6. Dorian Gray ✅
-7. Sherlock Holmes ✅
-8. Beowulf ✅
-9. Monte Cristo ✅ (just created card)
-10. Time Machine ✅ (just created card)
-
-**Each needs:**
-- Generator script (~45 min to create, following existing pattern)
-- 15 HTML files generated (or 20 for Frankenstein)
-- Browser testing
-
-**Total:** ~7.5 hours to automate all 10 units = 150 complete lessons ready to use!
-
----
-
-**STATUS:** 10/12 units have complete content + cards. 2 units need content written.
-
-End of UNIT-CARDS-STATUS.md
+**Total Curriculum Ready:** 264 days of lessons across 6th and 8th grade
