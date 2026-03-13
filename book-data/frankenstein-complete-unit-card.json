@@ -120,14 +120,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Compound-Complex Sentences in Gothic Literature",
+        "explanation": "Gothic writers use long, complex sentences to build atmosphere and suspense. Shelley combines multiple independent and dependent clauses to mirror the complexity of moral questions.",
+        "example": "Although Victor feared what he had created, he could not destroy it, and the creature fled into the darkness.",
+        "prompt": "Write four compound-complex sentences about today's chapter, combining multiple ideas with subordinating and coordinating conjunctions."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Mary Shelley: Writing Frankenstein at Age 18",
+        "text": "Mary Shelley created one of literature's most enduring works when she was just 18 years old, during a summer vacation in Switzerland in 1816. She was traveling with her lover Percy Shelley (they married later), her stepsister Claire, and the famous poet Lord Byron.\n\nThe summer was unusually dark and stormy—volcanic ash from the 1815 eruption of Mount Tambora had created \"the year without a summer.\" Trapped indoors at Byron's villa by constant rain, the group entertained themselves by reading German ghost stories.\n\nByron proposed a challenge: each person would write a ghost story. The men produced forgettable fragments. Mary Shelley created Frankenstein.\n\nThe idea came to her in a waking dream after a conversation about galvanism (using electricity to stimulate dead tissue) and whether life could be created artificially. She imagined a scientist kneeling beside the \"hideous phantasm\" he had assembled, horrified as it opened its eyes.\n\nMary had experienced profound trauma by age 18. Her mother (pioneering feminist Mary Wollstonecraft) died eleven days after giving birth to her. Mary's own first baby died at two weeks old. Two more of her children would die young. This intimate knowledge of death and creation infuses Frankenstein.\n\nThe novel explores questions that haunted Mary personally: What responsibilities come with creating life? What happens when creators abandon their creations? What makes something human?\n\nPublished anonymously in 1818 (many assumed Percy wrote it), Frankenstein became the first science fiction novel and remains endlessly relevant.",
+        "questions": [
+          {
+            "question": "What personal experiences influenced Mary Shelley's creation of Frankenstein?",
+            "answer": ""
+          },
+          {
+            "question": "How did the 'year without a summer' contribute to the novel's creation?",
+            "answer": ""
+          },
+          {
+            "question": "Why is Frankenstein considered the first science fiction novel?",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of Arctic Horror. What would you have done differently?",
+      "writingPrompt": "Victor Frankenstein pursues his goal of creating life without considering the ethics or consequences. Write about the difference between pursuing knowledge for knowledge's sake versus considering ethical implications. Use examples from science, technology, or history.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -178,14 +196,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Context Clues in 19th Century Literature",
+        "explanation": "Shelley uses elevated, formal language with many Latin-derived words. Context helps decode unfamiliar vocabulary.",
+        "example": "From context: 'countenance' clearly means 'face' based on descriptions of features and expressions.",
+        "prompt": "Find five unfamiliar words in today's chapter. Use context clues to predict meanings before checking a dictionary. Explain what clues helped you."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Romantic Movement: Emotion, Nature, and Individual Experience",
+        "text": "Frankenstein is a Romantic novel, part of a cultural movement that revolutionized literature, art, music, and philosophy in the late 1700s and early 1800s. Romanticism rejected the Enlightenment's emphasis on pure reason and instead celebrated:\n\n**Emotion and Intuition**: Feelings were seen as valid sources of truth, not obstacles to it. The creature's emotional pain is as important as Victor's scientific knowledge.\n\n**Nature as Sublime and Healing**: Romantics saw nature as spiritually powerful, beautiful, and terrifying (sublime). Both Victor and the creature seek refuge in mountains and forests when society fails them.\n\n**Individual Experience**: Personal perspective and individual rights mattered more than social conformity. The creature's suffering matters even though society rejects him.\n\n**Criticism of Industrialization**: As factories transformed England, Romantics worried about dehumanization and loss of natural connection. Victor's laboratory represents dangerous disconnection from nature.\n\n**The Gothic Tradition**: Romantic literature included gothic elements: isolated settings, supernatural events, psychological horror, moral ambiguity. Frankenstein combines all these.\n\nKey Romantic writers included William Wordsworth and Samuel Coleridge (poets who praised nature), Lord Byron (who appears in Frankenstein's origin story), and Percy Shelley (Mary's husband, also a major poet).\n\nFrankenstein is perfectly Romantic: it questions scientific progress, explores intense emotions, celebrates nature, critiques society's treatment of outsiders, and focuses on individual moral responsibility. Yet it also complicates Romantic ideals—nature can't fully heal these characters, and emotion without wisdom leads to tragedy.",
+        "questions": [
+          {
+            "question": "What were three main characteristics of the Romantic movement?",
+            "answer": ""
+          },
+          {
+            "question": "How does nature function in Frankenstein as a Romantic element?",
+            "answer": ""
+          },
+          {
+            "question": "How does Frankenstein both embrace and complicate Romantic ideals?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Tale Begins. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Victor becomes so focused on his goal that he isolates himself completely for years. Have you ever become so focused on a goal or project that you neglected other important things? What happened, and what did you learn?"
     },
     {
       "number": 3,
@@ -234,14 +270,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Subjunctive Mood for Hypothetical Situations",
+        "explanation": "The subjunctive mood expresses wishes, hypotheticals, and contrary-to-fact situations—perfect for Frankenstein's 'what if' premise. 'If Victor were wiser, he would have considered the consequences.'",
+        "example": "If I were in Victor's position, I would have destroyed my research.",
+        "prompt": "Write six sentences using subjunctive mood to explore different choices characters could have made. What if Victor had acted differently?"
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Science of Life: Galvanism and Electricity in the 1800s",
+        "text": "In Mary Shelley's time, scientists were discovering electricity's power over life and death. These discoveries directly inspired Frankenstein's creation scene.\n\n**Luigi Galvani's Experiments (1780s)**: Italian scientist Luigi Galvani discovered that electrical current could make dead frogs' legs twitch. He theorized that electricity was the life force itself. \"Galvanism\" became synonymous with using electricity to animate dead tissue.\n\n**Giovanni Aldini's Public Demonstrations (1803)**: Galvani's nephew performed horrifying public experiments on executed criminals' corpses. When electrical current was applied to a hanged murderer's body in London, \"the jaws began to quiver, the adjoining muscles were horribly contorted, and one eye actually opened.\" Witnesses thought he might come back to life.\n\n**The Vitalism Debate**: Scientists argued whether life required a special \"vital force\" or was purely mechanical/chemical. Could chemistry and electricity alone create life, or was something mystical required?\n\n**Real Scientific Limitations**: Despite sensational demonstrations, scientists couldn't actually revive the dead or create life. But they were discovering that electricity controlled muscles and nerves—suggesting life was partly electrical.\n\nShelley's genius was recognizing that even if science could create life, moral questions remained: Should we? What responsibility comes with creation? What if the created being suffers?\n\nShe set her novel in the near future (1790s) when galvanism was new and seemed to promise god-like powers. Victor Frankenstein represents the scientist who achieves the impossible but never considers whether he should.",
+        "questions": [
+          {
+            "question": "What was galvanism, and why did it seem to suggest life could be created?",
+            "answer": ""
+          },
+          {
+            "question": "How did Aldini's experiments influence Frankenstein's creation scene?",
+            "answer": ""
+          },
+          {
+            "question": "What question does Shelley argue is more important than 'Can we create life?'",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of University Obsession. What would you have done differently?",
+      "writingPrompt": "The creature is rejected by everyone based solely on his appearance. Write about how society judges people by appearance and the consequences of this prejudice. What can we learn from the creature's experience?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -292,14 +346,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Latin and Greek Roots in Scientific Language",
+        "explanation": "Frankenstein uses scientific terminology based on Latin/Greek. 'Animate' (anima=soul/life), 'galvanism' (named for Galvani), 'physiology' (physis=nature, logos=study).",
+        "example": "'Inanimate' = in (not) + animate (alive) = not alive",
+        "prompt": "Find eight words with Latin or Greek roots in the scientific passages. Break down each word's parts and explain how they create meaning."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Ethics of Scientific Creation: Playing God",
+        "text": "Victor Frankenstein's central sin isn't creating life—it's creating life irresponsibly and then abandoning it. Shelley raises questions about scientific ethics that remain urgent today.\n\n**The Promethean Theme**: The novel's subtitle is \"The Modern Prometheus.\" In Greek myth, Prometheus stole fire from the gods to help humanity and was eternally punished. Victor steals the secret of life—but unlike Prometheus, he doesn't use it to help anyone. His motivation is purely ego: \"A new species would bless me as its creator.\"\n\n**Responsibility to Creations**: Victor's greatest crime isn't creating the creature—it's abandoning it. He doesn't teach it, protect it, or accept responsibility. The creature's murderous revenge stems from this abandonment. Parents who neglect children create damaged people. Creators bear responsibility.\n\n**Unintended Consequences**: Victor never imagines his creation might suffer, might be rejected, might develop emotions and needs. He sees his goal but ignores potential outcomes. Modern examples: nuclear weapons, genetic engineering, artificial intelligence—powerful technologies with unforeseen consequences.\n\n**Science Without Ethics**: Victor pursues knowledge without asking ethical questions. Should I? What happens after? Who might be harmed? Pure ambition without moral consideration leads to tragedy.\n\n**The Question of Humanity**: Is the creature human? Does it deserve rights? It thinks, feels, reasons, and suffers—but society rejects it based on appearance. Shelley forces readers to define humanity and question prejudice.\n\nThese questions apply to modern science: cloning, genetic modification, AI, synthetic life. Who decides what research is ethical? What responsibilities come with creating new life or intelligence?",
+        "questions": [
+          {
+            "question": "Why is Frankenstein called 'The Modern Prometheus'?",
+            "answer": ""
+          },
+          {
+            "question": "What does Shelley argue is Victor's greatest sin?",
+            "answer": ""
+          },
+          {
+            "question": "How do Frankenstein's ethical questions apply to modern science and technology?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Forbidden Research. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "The creature learns about human society by observing the De Lacey family. Write about a time you learned something important by observation rather than direct instruction. What did you observe, and what did it teach you?"
     },
     {
       "number": 5,
@@ -351,9 +423,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Isolation and the Need for Connection",
+        "text": "Both Victor and the creature suffer from isolation—self-imposed for Victor, forced upon the creature. Shelley explores how isolation destroys mental health and moral judgment.\n\n**Victor's Self-Isolation**: Victor locks himself away for years to pursue his creation, cutting off family and friends. This isolation enables his obsessive, unhealthy project. No one questions his ethics or urges caution. When we isolate, we lose perspective and moral guardrails.\n\n**The Creature's Forced Isolation**: The creature desperately seeks human connection but is violently rejected because of appearance. Each rejection increases his pain and rage. Shelley argues that society creates monsters by refusing compassion and connection.\n\n**The Psychology of Loneliness**: Modern psychology confirms Shelley's insights. Prolonged isolation causes:\n- Depression and anxiety\n- Distorted thinking and paranoia\n- Loss of empathy\n- Increased aggression\n- Physical health problems\n\n**The Power of Companionship**: The creature explicitly tells Victor: \"I am malicious because I am miserable. Make me happy, and I shall again be virtuous.\" He doesn't excuse his murders, but he explains them: rejection and loneliness drove him to revenge. When he finds companionship (with the De Lacey family, even briefly), he becomes gentle and helpful.\n\n**Connection as Salvation**: The creature's plea for a companion shows that connection is a fundamental human need. His request is reasonable: \"I demand a creature of another sex... This you alone can do.\" When Victor destroys the female creature, he guarantees continued violence.\n\nShelley's message: Isolation—whether chosen or imposed—breeds misery and moral collapse. Connection, compassion, and community keep us human.",
+        "questions": [
+          {
+            "question": "How does Victor's self-imposed isolation enable his dangerous project?",
+            "answer": ""
+          },
+          {
+            "question": "What does the creature's experience teach about the effects of forced isolation?",
+            "answer": ""
+          },
+          {
+            "question": "How does modern psychology support Shelley's insights about isolation?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Moment of Creation. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -405,14 +490,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Parallel Structure in Philosophical Arguments",
+        "explanation": "Shelley uses parallel structure to emphasize moral parallels and contrasts: 'Victor creates life, abandons responsibility, and suffers consequences.'",
+        "example": "The creature seeks love, desires companionship, and demands justice (parallel verbs + objects).",
+        "prompt": "Write five sentences using parallel structure to compare Victor and the creature, or to list the consequences of Victor's actions."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Nature vs. Nurture: Are We Born or Made?",
+        "text": "The creature's development directly addresses the nature vs. nurture debate: Are personalities inborn or shaped by environment and treatment?\n\n**The Creature Born Innocent**: Initially, the creature is innocent, curious, gentle—learning about the world like a child. He helps the De Lacey family secretly, saves a drowning girl, seeks friendship. His nature isn't evil.\n\n**Society's Cruel Nurture**: Every human he encounters attacks, rejects, or flees from him. The blind De Lacey accepts him until his family sees the creature and beats him. The girl's father shoots him after he saves her. Society teaches him that kindness brings violence.\n\n**Learned Evil**: The creature's murders stem from learned responses to cruelty. He tells Victor: \"I was benevolent and good; misery made me a fiend.\" His violence is learned behavior—a response to trauma and rejection.\n\n**The Tragedy of Lost Potential**: The creature is intelligent, articulate, capable of deep emotion and moral reasoning. Given love and acceptance, he could have been admirable. Environment destroyed his potential.\n\n**Modern Parallels**: Studies of children raised in isolation or abuse show similar patterns—early trauma shapes behavior profoundly. Yet the debate continues: Are violent criminals born with brain differences, or does environment create them? Most scientists now say \"both\"—biology provides tendencies, but environment determines whether they manifest.\n\n**Moral Responsibility**: Does understanding the creature's suffering excuse his murders? Shelley says no—the creature himself admits he's wrong. But understanding helps prevent future tragedies. Society shares responsibility for creating the conditions that shaped him.",
+        "questions": [
+          {
+            "question": "What evidence suggests the creature was born innocent rather than evil?",
+            "answer": ""
+          },
+          {
+            "question": "How does society's treatment transform the creature's character?",
+            "answer": ""
+          },
+          {
+            "question": "Does understanding the creature's suffering excuse his crimes? Why or why not?",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of First Consequences. What would you have done differently?",
+      "writingPrompt": "Victor abandons his creation immediately after bringing it to life. Write about parental or creator responsibility. What obligations do we have to things or people we bring into the world? Support your argument with examples.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -463,14 +566,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Connotation vs. Denotation in Describing the Creature",
+        "explanation": "Words for the creature carry emotional weight. 'Monster' connotes evil; 'creature' sounds more neutral; 'daemon' suggests demonic evil. Denotation might be same, but connotation shapes our judgment.",
+        "example": "'Wretch' denotes a miserable person but connotes deserved suffering and low worth.",
+        "prompt": "List ten words used to describe the creature. For each, explain both denotation and connotation. How do word choices influence our sympathy?"
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Double: Victor and the Creature as Mirror Images",
+        "text": "Shelley structures the novel to show that Victor and the creature are doubles—mirror images who share characteristics while appearing opposite.\n\n**Parallel Isolation**: Both are profoundly alone. Victor isolates himself by choice (his obsessive secrecy); the creature by society's rejection. Both suffer mentally and physically from loneliness.\n\n**Parallel Obsessions**: Victor obsesses over creating life; the creature obsesses over revenge. Both sacrifices everything (family, happiness, health) for their singular goal.\n\n**Mutual Destruction**: They become locked in a cycle where each destroys what the other loves. The creature kills Victor's family; Victor destroys the creature's hope for companionship. Neither can escape the other.\n\n**Creator and Created Reversed**: Victor gives the creature life but then becomes haunted and controlled by his creation. Who controls whom? The creature dictates Victor's actions through threats. The created becomes the creator's master.\n\n**Shared Guilt**: Both commit unforgivable acts. Victor's abandonment enables murders; the creature commits them. Victor destroys the female creature, guaranteeing more deaths. Both bear responsibility for the tragedy.\n\n**The Frame Story**: The novel's structure emphasizes doubling. Victor tells his story to Captain Walton, who sees himself in Victor—another ambitious man pursuing dangerous knowledge in isolation. The pattern repeats across generations.\n\n**Gothic Doubling**: The \"doppelgänger\" (double) was a common gothic device representing the dark side of human nature. Frankenstein literalizes this: the creature IS Victor's dark side made flesh—his ambition, obsession, and capacity for cruelty externalized.\n\nUnderstanding them as doubles reveals Shelley's point: the line between creator and monster is thin. We all contain both.",
+        "questions": [
+          {
+            "question": "In what ways are Victor and the creature mirror images of each other?",
+            "answer": ""
+          },
+          {
+            "question": "How does the creator-created relationship reverse over the course of the novel?",
+            "answer": ""
+          },
+          {
+            "question": "What does the doubling reveal about human nature?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Creature's Story Begins. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "The creature desperately wants connection and acceptance but is rejected by everyone who sees him. Have you ever felt like an outsider or been judged unfairly based on appearance or first impressions? How did it feel, and how did you handle it?"
     },
     {
       "number": 8,
@@ -519,14 +640,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Rhetorical Questions for Dramatic Effect",
+        "explanation": "Both Victor and the creature use rhetorical questions to express anguish and challenge assumptions. 'Why did you form a monster so hideous that even YOU turned from me in disgust?'",
+        "example": "Who is the real monster—the creature or its creator?",
+        "prompt": "Write four rhetorical questions that capture the moral dilemmas in today's chapter. Make readers think about responsibility, creation, and humanity."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Women in Frankenstein: Passive Victims or Moral Centers?",
+        "text": "Frankenstein contains relatively few female characters, and most die violently. Feminist critics debate whether this reflects Shelley's critique of patriarchy or reinforces it.\n\n**The Passive Female Characters**: Elizabeth, Justine, and Caroline Beaufort are gentle, selfless, nurturing—traditional \"feminine\" virtues. They care for others and accept suffering without rebellion. All die because of men's actions (Victor's creation, the creature's revenge, William's murder).\n\n**Critique or Reinforcement?**: Some argue Shelley critiques a society where women have no power and become collateral damage in men's conflicts. Others say she reinforces stereotypes by making women purely victims without agency.\n\n**The Destroyed Female Creature**: Victor's destruction of the female creature is particularly significant. He imagines she might have her own will, might refuse to comply, might be more \"malignant\" than the male. His real fear: an autonomous female who can't be controlled. He destroys her to prevent female independence.\n\n**Caroline's Death**: Victor's mother dies from scarlet fever caught while nursing Elizabeth. Her final words are about arranging Elizabeth's marriage to Victor—she exists to serve others, even in death.\n\n**Elizabeth's Agency**: Elizabeth shows some independence—she defends Justine, expresses her own thoughts—but the narrative marginalizes her. Victor makes all major decisions without consulting her.\n\n**Mary Shelley's Position**: As a woman writer in 1818, Shelley had limited power herself. Her mother (Mary Wollstonecraft) wrote \"A Vindication of the Rights of Woman.\" Mary lived with Percy before marriage (scandalous), wrote this novel, and pursued intellectual life—all rebellious for the time.\n\nThe novel can be read as Shelley's horror at how patriarchal society treats women as objects to be created (the female creature), used (Elizabeth as reward/wife), or sacrificed (Justine executed, Caroline dying in service).",
+        "questions": [
+          {
+            "question": "Why does Victor destroy the female creature before she's even alive?",
+            "answer": ""
+          },
+          {
+            "question": "How do female characters function in the novel's plot?",
+            "answer": ""
+          },
+          {
+            "question": "Can Frankenstein be read as a feminist critique? Why or why not?",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Hidden Observer. What would you have done differently?",
+      "writingPrompt": "The creature says 'I was benevolent and good; misery made me a fiend.' Write about whether environment and treatment can justify harmful actions. Does understanding someone's suffering excuse their crimes?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -577,14 +716,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Romantic Era Language and Nature Imagery",
+        "explanation": "Shelley was part of the Romantic movement, which emphasized nature, emotion, and individual experience. Her language uses nature metaphors and sublime imagery.",
+        "example": "Nature as refuge: 'sublime Alps,' 'serene sky,' 'gentle rain'—nature offers peace while human society brings pain.",
+        "prompt": "Find five nature descriptions in today's reading. Explain what each symbolizes and how it relates to the emotional state of characters."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Arctic Setting: Symbolism and Exploration",
+        "text": "Frankenstein begins and ends in the Arctic—not coincidental geography but deliberate symbolism and reference to actual exploration.\n\n**The Frame Narrative**: Captain Walton is leading an Arctic expedition seeking the North Pole and a potential passage through the ice. His letters frame Victor's story, creating parallel ambitious quests for knowledge in dangerous, isolated places.\n\n**Arctic Exploration in 1816**: When Shelley wrote Frankenstein, Arctic exploration was a hot topic. British expeditions sought the Northwest Passage (sea route through Arctic connecting Atlantic and Pacific). Explorers faced ice, cold, starvation, and isolation. Some expeditions vanished completely.\n\n**Symbolism of the Arctic**:\n- **Blank Slate**: Unexplored, unmapped—like Victor's unexplored science\n- **Extreme Isolation**: The ultimate lonely place—reflecting the emotional isolation of Victor and creature\n- **Beautiful but Deadly**: Sublime and terrifying—like Victor's creation\n- **No Return**: Once trapped in ice, you can't escape—like Victor trapped by his creation\n- **Pursuit to the End**: Victor chases the creature across the ice until death—obsession taken to the literal end of the earth\n\n**The Creature's Final Scene**: The creature's last appearance, standing over Victor's corpse in the Arctic, shows him in his element—isolated, in a harsh landscape that mirrors his inner state. His declaration that he'll build a funeral pyre and die suggests the Arctic as a place of endings.\n\n**Walton's Choice**: Unlike Victor, Walton turns back when his crew demands it. He chooses life and responsibility over glory. This is Shelley's point: knowing when to stop, when ambition becomes destructive, when to listen to others' warnings.\n\nThe Arctic isn't just setting—it's a mirror for the soul-destroying isolation and dangerous ambition at the story's heart.",
+        "questions": [
+          {
+            "question": "Why does Shelley frame the entire story in the Arctic?",
+            "answer": ""
+          },
+          {
+            "question": "What does the Arctic symbolize in relation to Victor and the creature?",
+            "answer": ""
+          },
+          {
+            "question": "How does Walton's decision to turn back contrast with Victor's choices?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Desperate Education. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "The creature says that knowledge increased his suffering because it made him aware of what he lacked. Is ignorance sometimes better than knowledge? Write about a time when learning something made your life harder rather than easier."
     },
     {
       "number": 10,
@@ -636,9 +793,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Monster's Education: Paradise Lost and Social Learning",
+        "text": "The creature's self-education reveals Shelley's ideas about how we become who we are—through observation, reading, and social interaction (or lack thereof).\n\n**Learning by Observation**: The creature watches the De Lacey family for months, learning language, social behavior, family love, and human emotions. He learns virtue by watching virtuous people—proving nurture shapes us.\n\n**Three Books**: The creature finds three books that form his intellectual foundation:\n\n**1. Paradise Lost** by John Milton: The creature identifies with both Adam (God's creation) and Satan (the rebel cast out). He asks Victor: \"I ought to be thy Adam, but I am rather the fallen angel.\" This shapes his self-understanding as both innocent creation and rejected outcast.\n\n**2. Plutarch's Lives**: Biographies of noble Greeks and Romans. The creature learns about human greatness, virtue, politics, and history. These give him moral ideals and social understanding.\n\n**3. The Sorrows of Young Werther** by Goethe: A romantic novel about intense emotion, unrequited love, and suicide. The creature learns about romantic feeling and the dangers of isolation.\n\n**Victor's Papers**: The creature finds Victor's journals describing his creation with disgust. Reading his creator's horror at him shapes the creature's self-hatred and rage.\n\n**The Tragedy of Education**: The creature's education makes his suffering worse. If he remained ignorant, rejection wouldn't hurt so deeply. Knowledge increases his pain: \"Of what a strange nature is knowledge! It clings to the mind when it has once seized on it like a lichen on the rock.\"\n\n**Shelley's Point**: Education and culture make us human, but without love and acceptance, knowledge brings only pain. The creature is intellectually and emotionally sophisticated—which makes his isolation unbearable.",
+        "questions": [
+          {
+            "question": "How does the creature educate himself, and what does this prove about nature vs. nurture?",
+            "answer": ""
+          },
+          {
+            "question": "Why does the creature identify with both Adam and Satan from Paradise Lost?",
+            "answer": ""
+          },
+          {
+            "question": "How does the creature's education increase rather than decrease his suffering?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Rejected Connection. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
@@ -690,14 +860,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Appositives for Emotional Weight",
+        "explanation": "Shelley uses appositives to add emotional layers: 'Victor Frankenstein, a man consumed by ambition, destroyed his own life through his creation.'",
+        "example": "The creature, a being seeking only love and acceptance, was rejected by all who saw him.",
+        "prompt": "Write five sentences using appositives to add emotional depth to descriptions of Victor, the creature, or other characters."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Gothic Horror: Fear, Suspense, and the Uncanny",
+        "text": "Frankenstein is a foundational text of Gothic horror—a genre that explores psychological terror, moral ambiguity, and the uncanny (familiar things made strange and frightening).\n\n**Gothic Elements in Frankenstein**:\n- **Isolated Settings**: Mountains, forests, the Arctic—remote places where characters face their demons alone\n- **The Sublime**: Nature so beautiful and powerful it inspires terror\n- **The Uncanny**: The creature is almost human but not quite—familiar enough to relate to but different enough to horrify\n- **Forbidden Knowledge**: Victor's research into secrets that should remain hidden\n- **Moral Ambiguity**: No clear hero or villain—both Victor and creature are sympathetic and monstrous\n- **Psychological Horror**: The real terror is guilt, responsibility, and facing what we've created\n- **The Past Haunting the Present**: Victor cannot escape his creation—it follows him everywhere\n- **Atmosphere of Dread**: Constant sense of approaching doom\n\n**The Uncanny**: Freud defined \"the uncanny\" as the familiar made strange—like a corpse that moves or a doll that seems alive. The creature is uncanny: assembled from human parts, intelligent and articulate, yet horrifying. He's close enough to human to trigger empathy but different enough to trigger revulsion.\n\n**Psychological vs. Physical Horror**: Gothic horror emphasizes mental anguish over gore. Victor's real torture is guilt and fear, not physical danger. The creature's real pain is rejection and loneliness, not physical suffering.\n\n**Influence on Horror**: Frankenstein established patterns for horror literature and film:\n- Mad scientist character\n- Creation that turns against creator\n- Sympathy for the monster\n- Science gone wrong\n- Moral complexity\n\nModern horror from Dracula to Alien to AI-gone-rogue stories all owe debt to Frankenstein's Gothic template.",
+        "questions": [
+          {
+            "question": "What is 'the uncanny,' and how does the creature embody this concept?",
+            "answer": ""
+          },
+          {
+            "question": "Why is psychological horror more effective than physical horror in Frankenstein?",
+            "answer": ""
+          },
+          {
+            "question": "How did Frankenstein influence later horror literature and film?",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of The Meeting. What would you have done differently?",
+      "writingPrompt": "Both Victor and the creature become consumed by obsession—scientific ambition and revenge. Write about how obsession destroys perspective and relationships. How can people recognize and avoid unhealthy obsession?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -748,14 +936,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Figurative Language: Metaphors of Creation and Destruction",
+        "explanation": "Shelley uses metaphors comparing Victor's creation to childbirth, god-like creation, and unholy resurrection—each with different implications.",
+        "example": "Victor as 'creator' mirrors God. The creature as 'Adam' (innocent creation) or 'Satan' (fallen rebel).",
+        "prompt": "Find four metaphors or similes related to creation, life, or death. Explain what comparison is being made and what it reveals about the theme."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Revenge and Justice: The Cycle of Violence",
+        "text": "Frankenstein explores how revenge perpetuates violence in an unbreakable cycle—each act of vengeance justifying the next until both parties are destroyed.\n\n**The Creature's Motivation**: The creature doesn't kill for pleasure or evil nature—he kills to hurt Victor as he's been hurt. \"I am malicious because I am miserable.\" Each murder is revenge: William (Victor's family), Clerval (Victor's friend), Elizabeth (Victor's bride). He takes what Victor denied him.\n\n**Victor's Response**: Victor could have stopped the cycle by creating a companion, but instead he destroys her—perpetuating the creature's suffering and guaranteeing more murders. His revenge is denying the creature's plea.\n\n**The Escalation**: Each act escalates:\n1. Creature's initial murders → Victor's refusal to create companion\n2. Elizabeth's murder → Victor's pursuit of creature\n3. Mutual pursuit to death in Arctic\n\n**Justice vs. Revenge**:\n- **Justice** seeks to right wrongs through fair process and proportional punishment\n- **Revenge** seeks to inflict pain matching the pain suffered, regardless of process or proportion\n\nThe creature calls for justice: \"You created me, you abandoned me, you owe me.\" But his methods are revenge: murder of innocents. Victor seeks revenge, not justice—he wants the creature dead, not reformed or held accountable.\n\n**The Tragedy**: Both have legitimate grievances. Victor shouldn't have created and abandoned the creature. The creature shouldn't have murdered innocents. But instead of seeking resolution, they destroy each other.\n\n**Breaking the Cycle**: The only way to stop revenge cycles is for someone to refuse retaliation. Neither Victor nor the creature can do this—pride, anger, and pain prevent mercy.\n\n**Modern Parallels**: Revenge cycles plague conflicts from family feuds to international wars. Each side justifies violence by pointing to the other's previous violence, perpetuating endless retaliation.",
+        "questions": [
+          {
+            "question": "How does the revenge cycle escalate throughout the novel?",
+            "answer": ""
+          },
+          {
+            "question": "What's the difference between revenge and justice, and which does each character seek?",
+            "answer": ""
+          },
+          {
+            "question": "How could the revenge cycle have been broken, and why wasn't it?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of The Creature's Demand. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "Victor and the creature are locked in a cycle of revenge where each justifies their actions by the other's previous harm. Have you ever been in a conflict where both sides kept retaliating? How was it resolved (or not resolved)?"
     },
     {
       "number": 13,
@@ -804,14 +1010,32 @@
           "answer": ""
         }
       ],
-      "grammar": null,
+      "grammar": {
+        "topic": "Active vs. Passive Voice in Assigning Responsibility",
+        "explanation": "Voice choice affects who we blame. Active: 'Victor created the monster.' Passive: 'The monster was created.' Shelley carefully chooses voice to raise questions about responsibility.",
+        "example": "Active emphasizes actor: 'The creature killed William.' Passive emphasizes victim: 'William was killed.'",
+        "prompt": "Find three key events from the story. Write each in both active and passive voice. Explain how voice change affects our understanding of who's responsible."
+      },
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Dangers of Obsession and Monomania",
+        "text": "Both Victor and the creature exhibit monomania—single-minded obsession that destroys perspective, relationships, and ultimately the obsessed person.\n\n**Victor's Scientific Obsession**: Victor becomes so fixated on creating life that he ignores:\n- His health (barely eats or sleeps for months)\n- His family (doesn't write home for years)\n- Ethics (never questions if he should)\n- Consequences (doesn't imagine what happens after)\n- Warning signs (continues despite disgust at his work)\n\n**The Psychology of Obsession**: Psychologists identify characteristics of unhealthy obsession:\n- Single focus excluding all else\n- Inability to stop despite negative consequences\n- Loss of perspective\n- Rationalization (\"I'm close to breakthrough\")\n- Isolation from others who might provide reality check\n- Physical and mental health deterioration\n\nVictor exhibits all of these. His obsession is addiction-like—he knows it's wrong but can't stop.\n\n**The Creature's Revenge Obsession**: After rejection, the creature becomes equally obsessed with revenge. His entire existence narrows to hurting Victor. This obsession destroys any chance of finding happiness elsewhere.\n\n**The Shared Fate**: Both characters become so obsessed they lose everything else. Victor loses family, health, peace. The creature loses any chance at connection or happiness. Their obsessions literally kill them.\n\n**Walton's Escape**: Captain Walton also shows obsessive tendencies—risking his crew for Arctic glory. But he listens to Victor's warning and his crew's pleas, choosing to turn back. He escapes the fate of monomania by maintaining perspective and valuing others' input.\n\n**The Warning**: Shelley warns that single-minded pursuit of any goal—scientific discovery, revenge, glory—destroys the pursuer. Balance, perspective, and connection to others keep us human and sane.",
+        "questions": [
+          {
+            "question": "What characteristics of unhealthy obsession does Victor exhibit?",
+            "answer": ""
+          },
+          {
+            "question": "How does obsession with revenge destroy the creature just as scientific obsession destroyed Victor?",
+            "answer": ""
+          },
+          {
+            "question": "How does Walton avoid the same fate, and what does this teach about preventing obsession?",
+            "answer": ""
+          }
+        ]
       },
-      "writingPrompt": "Reflect on the events of Victor's Dilemma. What would you have done differently?",
+      "writingPrompt": "Frankenstein ends with both Victor and the creature dead, having destroyed each other. Was this ending inevitable, or could it have been prevented? Write about what choices could have broken the cycle of revenge and destruction.",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
     },
     {
@@ -862,14 +1086,32 @@
         }
       ],
       "grammar": null,
-      "language": null,
+      "language": {
+        "topic": "Precise Diction: Word Choice for Moral Complexity",
+        "explanation": "Shelley chooses words carefully to avoid simple moral judgments. The creature 'demands' vs. 'begs,' Victor 'abandons' vs. 'flees,' the creature 'murders' vs. 'avenges.'",
+        "example": "Consider: 'The creature destroyed' vs. 'The creature retaliated' vs. 'The creature took revenge'—each word frames morality differently.",
+        "prompt": "Choose five key actions from the story. For each, write three versions using different verbs that change the moral judgment of the action."
+      },
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "Science and Ethics: Modern Applications of Frankenstein's Warning",
+        "text": "Frankenstein's central question—\"Just because we can, should we?\"—remains urgent as science and technology advance beyond what Shelley could imagine.\n\n**Genetic Engineering**: Scientists can now edit DNA using CRISPR technology. We can eliminate genetic diseases—but also potentially create \"designer babies\" with chosen traits. Questions:\n- Should we edit human embryos?\n- Who decides what traits are \"desirable\"?\n- What happens to people with \"undesirable\" genes?\n- Could we create new forms of discrimination?\n\n**Artificial Intelligence**: As AI becomes more sophisticated, questions arise:\n- If we create conscious AI, what responsibility do we have to it?\n- Should AI have rights?\n- What happens if AI becomes more intelligent than humans?\n- Who's responsible when AI makes harmful decisions?\n\n**Cloning**: We can clone animals (Dolly the sheep, 1996). Human cloning is theoretically possible but banned in most countries. Should it be? Would a clone be its own person or a copy? What psychological effects would knowing you're a clone have?\n\n**Synthetic Biology**: Scientists can create new organisms. In 2010, researchers created first synthetic life—bacteria with artificial DNA. Benefits: medicine, cleaning pollution, biofuels. Risks: accidental release, weaponization, unforeseen consequences.\n\n**The Frankenstein Pattern**:\n1. Scientific breakthrough enables new power\n2. Scientists pursue it without fully considering consequences\n3. Creation escapes control or has unintended effects\n4. Society must deal with results it's not prepared for\n\n**The Ethical Framework**: Shelley doesn't say \"don't do science.\" She says:\n- Consider consequences before, not after\n- Accept responsibility for creations\n- Consult others, don't work in isolation\n- Ask if you should, not just if you can\n- Recognize that created things (even \"monsters\") have rights and feelings\n\nThese principles apply to every technological advance. Frankenstein remains the foundational text for bioethics and technological ethics.",
+        "questions": [
+          {
+            "question": "How do modern technologies like CRISPR and AI raise similar questions to Frankenstein?",
+            "answer": ""
+          },
+          {
+            "question": "What ethical principles does Frankenstein suggest we should follow with new technology?",
+            "answer": ""
+          },
+          {
+            "question": "Why is it important to consider consequences before creating new technology, not after?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Reluctant Agreement. What would you have done differently?",
-      "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
+      "journalPrompt": "If you had the power to create life—whether through advanced science or magic—would you do it? What would you create, and what responsibilities would you accept? What could go wrong?"
     },
     {
       "number": 15,
@@ -921,9 +1163,22 @@
       "grammar": null,
       "language": null,
       "informationalText": {
-        "title": "Literary Context",
-        "text": "Informational text to be added.",
-        "questions": []
+        "title": "The Legacy of Frankenstein in Literature and Popular Culture",
+        "text": "Frankenstein has shaped our culture so profoundly that many \"facts\" about the story actually come from later adaptations, not Shelley's novel.\n\n**Common Misconceptions**:\n- \"Frankenstein is the monster\": No, Victor Frankenstein is the creator. The creature has no name (though calling the creator the real monster is thematically appropriate).\n- Green skin and bolts in neck: Never in the novel—invented for 1931 film.\n- \"It's alive!\": Not in the book—from the 1931 movie.\n- Laboratory with electrical equipment: Shelley never details the creation process.\n- Mindless, grunting monster: The creature is eloquent and intelligent in the novel.\n\n**Why These Errors Persist**: The 1931 film with Boris Karloff was so influential that most people's image of Frankenstein comes from it, not the book. Pop culture reinforces these images.\n\n**Cultural Impact**:\n- **Language**: \"Frankenstein\" means any creation that escapes control. \"Frankenfoods\" for GMO crops, \"Frankenstein's monster\" for badly assembled things.\n- **Science**: \"Frankenstein fear\" describes public anxiety about new technology. The novel influences bioethics debates.\n- **Film/TV**: Hundreds of adaptations, from serious (Branagh's 1994 version) to comedy (Young Frankenstein) to retellings (Penny Dreadful).\n- **Literature**: Countless books explore the creator-creation theme, from R.U.R. (introducing \"robot\") to Blade Runner to Ex Machina.\n\n**Why It Endures**: Frankenstein addresses timeless questions:\n- What makes us human?\n- What responsibilities come with creating life?\n- How do we respond to those different from us?\n- When does ambition become destructive?\n- Can we control what we create?\n\nAs technology advances, these questions become more urgent, not less. AI, genetic engineering, and synthetic biology make Frankenstein more relevant in the 21st century than the 19th.\n\nThe novel's power lies in having no easy answers—forcing each generation to wrestle with these questions anew.",
+        "questions": [
+          {
+            "question": "What are three common misconceptions about Frankenstein that come from film adaptations?",
+            "answer": ""
+          },
+          {
+            "question": "How has 'Frankenstein' become part of our language and culture?",
+            "answer": ""
+          },
+          {
+            "question": "Why does Frankenstein remain relevant and even more urgent in the 21st century?",
+            "answer": ""
+          }
+        ]
       },
       "writingPrompt": "Reflect on the events of Destroyed Hope. What would you have done differently?",
       "journalPrompt": "How does this chapter connect to modern society or your own experiences?"
