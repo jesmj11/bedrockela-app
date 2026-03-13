@@ -1,0 +1,1691 @@
+{
+  "unitInfo": {
+    "title": "A Connecticut Yankee in King Arthur's Court",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Mark Twain (1889)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Satire / Science Fiction / Historical Fiction",
+    "themes": [
+      "Progress vs. Tradition",
+      "Democracy vs. Monarchy",
+      "Technology and Power",
+      "Cultural Superiority and Arrogance",
+      "Time Travel and Perspective"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-13T16:06:37.092Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 145-168 of 6th grade"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (4 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + 3 Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "grammarDays": [
+      1,
+      3,
+      6,
+      8,
+      11,
+      13,
+      16,
+      18,
+      21,
+      23
+    ],
+    "languageDays": [
+      2,
+      4,
+      7,
+      9,
+      12,
+      14,
+      17,
+      19,
+      22,
+      24
+    ],
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "note": "Days 145-168 (24 lessons)"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "day": 1,
+      "title": "THE STRANGER'S TALE",
+      "summary": "",
+      "text": "I met the stranger at Warwick Castle in England.\nHe was a quiet, weathered American with gray hair and sharp eyes that seemed to be looking at something far away. The other tourists wandered through the ancient halls, admiring the armor and tapestries, but this man stood apart, studying a suit of chain mail with an expression I couldn't read — sadness, maybe, or recognition.\nWe fell into conversation. I mentioned that I was a writer, interested in old legends. His eyes flickered.\n\"Legends,\" he said. \"I could tell you a story that would make every legend you've ever heard seem tame.\"\nWe sat by the fire that evening, and over a glass of whiskey, he told me his tale. His name was Hank Morgan, and he was from Hartford, Connecticut. He had been a foreman at the Colt Arms Factory — a practical, hardheaded Yankee who knew how to build anything, fix anything, and manage anything. He believed in science, progress, democracy, and common sense.\nAnd he had spent several years living in the court of King Arthur.\nNot a dream. Not a fantasy. He had actually been there — in sixth-century England, among knights and castles and sorcerers — and he had tried to change the world.\n\"You don't believe me,\" he said.\n\"I'm listening,\" I said.\nHe reached into his coat and pulled out a small, yellowed manuscript — hundreds of pages, written in his own hand. \"Read this,\" he said. \"It's all true. Every word.\"\nI took the manuscript to my room and began to read. What follows is Hank Morgan's story, in his own words.",
+      "vocabulary": [
+        {
+          "word": "manuscript",
+          "partOfSpeech": "noun",
+          "definition": "a handwritten or typed document, especially an author's original text"
+        },
+        {
+          "word": "superintendent",
+          "partOfSpeech": "noun",
+          "definition": "a person who manages or oversees an organization or activity"
+        },
+        {
+          "word": "hardheaded",
+          "partOfSpeech": "adjective",
+          "definition": "practical and realistic; not sentimental"
+        },
+        {
+          "word": "skeptical",
+          "partOfSpeech": "adjective",
+          "definition": "having doubts; not easily convinced"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does the narrator meet Hank Morgan?",
+          "options": {
+            "A": "They are old friends who grew up together in Hartford",
+            "B": "They meet at Warwick Castle, where Hank studies a suit of chain mail with a strange expression",
+            "C": "Hank is a professor who gives a lecture about time travel",
+            "D": "The narrator finds Hank's manuscript in a used bookshop"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What makes Hank Morgan's background unusual for the story he's about to tell?",
+          "options": {
+            "A": "He is a poet and philosopher who dreams about the past",
+            "B": "He is a practical factory foreman who believes in science and common sense",
+            "C": "He is a historian who has always been obsessed with King Arthur",
+            "D": "He is a knight who was transported to modern times"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Twain use a \"frame story\" — a narrator who receives a manuscript? How does this structure affect how the reader experiences Hank's tale?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Complex Sentences with Time Relationships",
+        "explanation": "Twain uses complex sentences to show time relationships between 19th and 6th centuries. 'When I woke up, I was in a different time.'",
+        "example": "Although I understood modern science, the medieval people believed in magic.",
+        "prompt": "Write four complex sentences about time travel or culture clash using: when, although, because, while."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE STRANGER'S TALE.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 2,
+      "day": 2,
+      "title": "KNOCKED OUT",
+      "summary": "",
+      "text": "My name is Hank Morgan, and in 1879, I was the head superintendent at the Colt Arms Factory in Hartford, Connecticut. I knew everything there was to know about machinery, manufacturing, and modern technology. I could build a steam engine from scrap metal. I could wire a telegraph. I could make gunpowder, cement, and glass. I was a practical man in a practical age.\nOne day, I got into an argument with a worker named Hercules — a big, stupid fellow with fists like sledgehammers. The argument turned into a fight. Hercules hit me on the head with a crowbar.\nI went down. The world went black.\nWhen I woke up, I was lying in a field of grass under an oak tree. The sun was shining. Birds were singing. A man in a full suit of armor was sitting on a horse about twenty yards away, staring at me through the slit in his helmet.\nI stared back.\n\"Fair sir,\" the knight said, \"will you joust?\"\nI was wearing my factory clothes — work boots, denim trousers, a flannel shirt. I had no horse, no weapon, and no idea what was happening.\n\"Joust?\" I said. \"What year is this?\"\n\"It is the nineteenth of June, in the year of our Lord 528.\"\nI laughed. Then I stopped laughing, because the knight leveled his lance at my chest and charged.\nI ran. He chased me. I was faster on foot than he was on horseback — that armor slowed him down — but eventually he cornered me against a stone wall. His lance point hovered an inch from my throat.\n\"Yield,\" he said.\nI yielded. He tied my hands, put a rope around my neck, and led me like a dog down a dirt road toward a cluster of towers in the distance.\nThe towers belonged to Camelot.",
+      "vocabulary": [
+        {
+          "word": "disoriented",
+          "partOfSpeech": "adjective",
+          "definition": "confused about one's location or situation"
+        },
+        {
+          "word": "yield",
+          "partOfSpeech": "verb",
+          "definition": "to give way; to surrender"
+        },
+        {
+          "word": "medieval",
+          "partOfSpeech": "adjective",
+          "definition": "relating to the Middle Ages, roughly the 5th to 15th centuries"
+        },
+        {
+          "word": "absurd",
+          "partOfSpeech": "adjective",
+          "definition": "wildly unreasonable or ridiculous"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hank end up in sixth-century England?",
+          "options": {
+            "A": "He builds a time machine at the Colt Arms Factory",
+            "B": "He is hit on the head with a crowbar during a fight and wakes up in 528 AD",
+            "C": "He falls asleep reading a book about King Arthur and dreams himself there",
+            "D": "A wizard summons him from the future"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What is humorous about the knight's challenge to Hank?",
+          "options": {
+            "A": "The knight is actually afraid of Hank and runs away",
+            "B": "A man in factory clothes is challenged to a joust by a man in full armor",
+            "C": "The knight can't see Hank because his visor is stuck",
+            "D": "Hank immediately defeats the knight with his modern fighting skills"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank is practical and modern; the knight lives by medieval codes. How does this contrast create both humor and conflict from the very beginning?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Context Clues in Historical Fiction",
+        "explanation": "Twain uses context to explain unfamiliar medieval terms and customs.",
+        "example": "From context, 'joust' clearly means a mounted combat between knights with lances.",
+        "prompt": "Find three unfamiliar words (medieval terms or archaic language) in today's chapter. Use context to predict meanings."
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in KNOCKED OUT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 3,
+      "day": 3,
+      "title": "CAMELOT",
+      "summary": "",
+      "text": "Camelot was not what the stories made it sound like.\nThe castle was impressive enough — massive stone walls, towers, a great hall that could hold hundreds. But the town around it was a filthy, miserable collection of mud huts and open sewers. The people were dirty, ignorant, and afraid. They dressed in rags and lived worse than the pigs back in Hartford. They bowed to every knight who rode past, not out of respect but out of terror.\nI was dragged through the streets like a trophy and thrown into the great hall, where King Arthur himself sat on his throne, surrounded by his Knights of the Round Table.\nArthur was a decent-looking man — big, blond, with an honest face. He didn't seem cruel. But he was surrounded by the trappings of absolute power: the crown, the throne, the armed guards, and the courtiers who agreed with everything he said.\nMerlin was there too — a skinny old man with a long beard who immediately began telling a story about Arthur pulling a sword from a stone. It was, I gathered, a story he told frequently. The knights looked bored. I felt their pain.\nThe knight who had captured me — Sir Kay — announced that I was a dangerous foreign enchanter. Merlin studied me with suspicious eyes and agreed.\n\"He must burn,\" Merlin declared. \"At noon tomorrow.\"\nThe court murmured its agreement. Arthur nodded. And just like that, I was sentenced to death.\nThey stripped me to my underwear and threw me into a dungeon. The cell was dark, wet, and cold. Rats scurried in the corners. Through a tiny window, I could see the courtyard where they were building the fire that would burn me alive in twelve hours.\nI sat in the dark and tried to think. I was Hank Morgan of Hartford, Connecticut. I could build a steam engine. I could wire a telegraph. Surely I could think my way out of this.\nThen I remembered something. A date. A very specific date.\nOn June 21, 528 AD, there had been a total solar eclipse.\nTomorrow was June 21st.",
+      "vocabulary": [
+        {
+          "word": "ignorance",
+          "partOfSpeech": "noun",
+          "definition": "lack of knowledge or information"
+        },
+        {
+          "word": "condemned",
+          "partOfSpeech": "verb",
+          "definition": "sentenced to a particular punishment, especially death"
+        },
+        {
+          "word": "sorcerer",
+          "partOfSpeech": "noun",
+          "definition": "a person who practices magic; a wizard"
+        },
+        {
+          "word": "absolute",
+          "partOfSpeech": "adjective",
+          "definition": "total and complete; having unlimited power"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hank describe the reality of Camelot compared to the legends?",
+          "options": {
+            "A": "It is even more magnificent than the stories suggest",
+            "B": "The castle is impressive but the town is filthy, and the people live in ignorance and fear",
+            "C": "It looks exactly like the fairy tales — beautiful and magical",
+            "D": "Camelot doesn't actually exist; it's a name for a small village"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why is Hank sentenced to death?",
+          "options": {
+            "A": "He insults King Arthur at the royal feast",
+            "B": "He is accused of being a foreign sorcerer by Sir Kay, and Merlin agrees he must burn",
+            "C": "He refuses to bow to the knights of the Round Table",
+            "D": "He tries to escape from the dungeon"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank observes that Arthur is surrounded by \"courtiers who agreed with everything he said.\" What does this detail reveal about how power works in Camelot? How might this be relevant to any time period?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Active vs. Passive Voice in Historical Narrative",
+        "explanation": "Active voice emphasizes the actor; passive emphasizes the action. Twain switches to show Hank's control vs. helplessness.",
+        "example": "Active: 'I introduced technology.' / Passive: 'I was sentenced to death by the king.'",
+        "prompt": "Find three sentences from today's chapter. Identify voice and explain why Twain chose it."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in CAMELOT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 4,
+      "day": 4,
+      "title": "THE ECLIPSE",
+      "summary": "",
+      "text": "A boy came to my cell that night — a young page named Clarence, skinny and nervous, with big eyes and a quick mind. He had been sent to gawk at the prisoner, but I saw something useful in him: curiosity.\n\"What if I told you,\" I said, \"that I am the greatest magician in the world? Greater than Merlin. Greater than any sorcerer who ever lived.\"\nClarence's eyes went wide. \"Can you prove it?\"\n\"Tomorrow at noon, when they light the fire to burn me, I will blot out the sun. I will turn day into night. The whole kingdom will see my power.\"\nClarence ran to tell the court. Within an hour, the entire castle was buzzing with fear and excitement. Could this strange foreigner really extinguish the sun?\nThe next day, they led me to the stake. The fire was laid. The whole court was assembled — Arthur, Merlin, the knights, hundreds of common people. Merlin was smirking. Arthur looked uneasy.\n\"Last chance,\" the executioner said.\nI raised my arms to the sky and shouted in my most theatrical voice: \"I call upon the powers of darkness! Let the sun be destroyed! Let eternal night fall upon England!\"\nNothing happened. The crowd murmured. Merlin laughed.\nThen the edge of the moon began to creep across the face of the sun.\nThe light dimmed. The temperature dropped. Shadows lengthened in strange directions. The crowd gasped. A woman screamed. The knights reached for their swords — but you can't fight the sky.\nThe eclipse deepened. The world went dark. Stars appeared in the middle of the day. People fell to their knees, weeping, praying, begging for mercy.\nKing Arthur rushed forward. \"Name your terms! Whatever you want — freedom, gold, land — just bring back the sun!\"\n\"I want to be your chief minister,\" I said. \"Second only to you. And I want Merlin locked up.\"\n\"Done! Done! Anything!\"\nI waited. The timing had to be perfect. If I \"restored\" the sun too early, the effect would be weak. Too late, and they'd panic beyond reason.\nAt the perfect moment, I raised my arms again. \"Let the sun return!\"\nThe eclipse passed. Sunlight flooded back. The crowd erupted in cheers, tears, and terrified worship.\nIn five minutes, I had gone from a condemned prisoner to the most powerful person in England after the King.\nMerlin was furious. The court was awed. And I was thinking: this is just the beginning.",
+      "vocabulary": [
+        {
+          "word": "eclipse",
+          "partOfSpeech": "noun",
+          "definition": "an event where one celestial body blocks the light of another"
+        },
+        {
+          "word": "theatrical",
+          "partOfSpeech": "adjective",
+          "definition": "exaggerated and dramatic, designed for effect"
+        },
+        {
+          "word": "leverage",
+          "partOfSpeech": "noun",
+          "definition": "the power to influence a situation; an advantage"
+        },
+        {
+          "word": "manipulation",
+          "partOfSpeech": "noun",
+          "definition": "the act of controlling or influencing others, often unfairly"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hank save himself from being burned at the stake?",
+          "options": {
+            "A": "He fights his way out of the dungeon with a stolen sword",
+            "B": "He remembers that a total solar eclipse occurred on June 21, 528 AD, and pretends to cause it",
+            "C": "Clarence bribes the guards to release him",
+            "D": "King Arthur changes his mind and pardons Hank at the last moment"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does the eclipse scene reveal about the relationship between knowledge and power?",
+          "options": {
+            "A": "Knowledge is useless without physical strength",
+            "B": "Knowing something others don't — like the date of an eclipse — can be used as leverage",
+            "C": "The eclipse proves that Hank really is a magician",
+            "D": "Arthur already knew about the eclipse and was testing Hank"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Is Hank's use of the eclipse brave, clever, dishonest, or all three? Make a claim and support it with evidence from the chapter.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Anachronism: Language Out of Time",
+        "explanation": "Twain deliberately uses modern slang in medieval settings for humor. This is anachronism—something from the wrong time period.",
+        "example": "Hank says 'OK' and 'you bet' in 6th century England—language that wouldn't exist for 1,300 years.",
+        "prompt": "Find five examples of modern language Hank uses in medieval England. Explain why Twain includes these anachronisms."
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE ECLIPSE.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 5,
+      "day": 5,
+      "title": "THE BOSS",
+      "summary": "",
+      "text": "They called me \"The Boss.\"\nWithin a week, I was installed in the finest rooms in Camelot, with servants, guards, and more power than I knew what to do with. Arthur trusted me completely — partly because I had \"controlled\" the sun, and partly because I had a practical competence that no one else in the kingdom possessed.\nI was an engineer in a world that hadn't invented the wheel yet. I was a factory foreman in an age where the most advanced technology was a crossbow. I knew things that wouldn't be discovered for another thousand years: electricity, printing, metallurgy, plumbing, democratic government, basic medicine.\nThe question was: what should I do with all of this knowledge?\nThe answer, to me, was obvious. I would civilize England. I would drag it out of the Dark Ages and into the modern world. I would build factories, schools, newspapers, and railroads. I would abolish slavery, establish equal rights, and create a republic. I would do in a few years what history took thirteen centuries to accomplish.\nIt never occurred to me that this might be arrogant. Or dangerous. Or impossible.\nClarence became my right-hand man. He was smart, loyal, and a fast learner — the best assistant I could have hoped for. Together, we began what I privately called \"the project\": the secret transformation of England.\n\"The first thing we need,\" I told Clarence, \"is a school. You can't build a civilization without education.\"\n\"What's a school?\" Clarence asked.\nWe had a lot of work to do.",
+      "vocabulary": [
+        {
+          "word": "civilization",
+          "partOfSpeech": "noun",
+          "definition": "an advanced state of human society with culture, government, and technology"
+        },
+        {
+          "word": "arrogant",
+          "partOfSpeech": "adjective",
+          "definition": "having an exaggerated sense of one's own importance"
+        },
+        {
+          "word": "infrastructure",
+          "partOfSpeech": "noun",
+          "definition": "the basic physical systems of a society, such as roads, schools, and communication"
+        },
+        {
+          "word": "modernize",
+          "partOfSpeech": "verb",
+          "definition": "to update something to current standards or technology"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is Hank's plan for England?",
+          "options": {
+            "A": "To become king by overthrowing Arthur",
+            "B": "To drag England out of the Dark Ages using modern technology and democratic ideas",
+            "C": "To find a way back to his own time as quickly as possible",
+            "D": "To train the knights to be better fighters using modern weapons"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does the chapter title \"The Boss\" suggest about Hank's attitude?",
+          "options": {
+            "A": "He sees himself as a humble servant of the people",
+            "B": "He sees himself as the person in charge — someone who knows better than everyone else",
+            "C": "The knights gave him the title as an insult",
+            "D": "Arthur insists on calling him \"Boss\" as a sign of respect"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says it \"never occurred to me that this might be arrogant.\" What is arrogant about his plan? Can someone be arrogant and well-intentioned at the same time?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE BOSS.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 6,
+      "day": 6,
+      "title": "THE FIRST REFORMS",
+      "summary": "",
+      "text": "I started in secret.\nIn hidden valleys and remote corners of the kingdom, I built factories — small ones at first, producing nails, wire, glass, and soap. I recruited the smartest young people I could find and trained them as engineers, teachers, and craftsmen. I set up schools where they learned reading, writing, mathematics, and basic science.\nI strung telegraph lines through the forests, disguised as vines. I dug mines and began smelting iron. I built a small printing press and started producing books — the first printed books in England, a thousand years before Gutenberg.\nAll of this was done quietly, away from the eyes of the knights, the nobles, and especially the Church. The Church was the most powerful institution in the land, and it would not take kindly to someone teaching people to think for themselves.\nMeanwhile, I played the role expected of me: court magician, royal advisor, Arthur's right-hand man. I attended feasts, watched tournaments, and pretended to care about which knight had defeated which other knight in single combat.\nThe knights bored me. They were brave, certainly, but their entire lives revolved around fighting each other for honor that meant nothing. They couldn't read. They couldn't count. They believed everything Merlin told them and feared everything the Church said. They were the ruling class of England, and they were as ignorant as the peasants they ruled.\nBut the peasants — the common people — were the ones who broke my heart.\nThey lived in hovels. They were taxed into starvation by the lords and the Church. They had no rights, no education, no hope. If a nobleman wanted their land, he took it. If the Church wanted their money, they paid. They accepted their suffering as God's will because no one had ever told them it could be different.\nI was going to tell them.",
+      "vocabulary": [
+        {
+          "word": "clandestine",
+          "partOfSpeech": "adjective",
+          "definition": "kept secret or done secretly"
+        },
+        {
+          "word": "institution",
+          "partOfSpeech": "noun",
+          "definition": "an established organization, especially one dedicated to a public purpose"
+        },
+        {
+          "word": "oppression",
+          "partOfSpeech": "noun",
+          "definition": "prolonged cruel or unjust treatment by those in power"
+        },
+        {
+          "word": "reform",
+          "partOfSpeech": "noun/verb",
+          "definition": "a change designed to improve something; to make improvements"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Hank build his factories and schools in secret?",
+          "options": {
+            "A": "He wants to surprise Arthur with the results",
+            "B": "The Church and the nobles would destroy his reforms if they knew about them",
+            "C": "He doesn't have enough materials to build in the open",
+            "D": "Clarence advises him to keep everything hidden forever"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What breaks Hank's heart about the common people?",
+          "options": {
+            "A": "They refuse to accept his help",
+            "B": "They have no rights, no education, and accept suffering as God's will",
+            "C": "They are too lazy to work in his factories",
+            "D": "They worship Merlin instead of trusting Hank"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says the peasants \"accepted their suffering as God's will because no one had ever told them it could be different.\" How does this connect to the power of education? Is ignorance always the people's fault?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Semicolons in Compound Sentences",
+        "explanation": "Semicolons join related ideas without conjunctions, showing connections between medieval and modern thinking.",
+        "example": "The king believed in divine right; I believed in democracy.",
+        "prompt": "Write four compound sentences: two with semicolons, two with coordinating conjunctions, about contrasts in the story."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE FIRST REFORMS.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 7,
+      "day": 7,
+      "title": "MORGAN LE FAY",
+      "summary": "",
+      "text": "Arthur sent me on a tour of the kingdom with a young woman named Aloïse la Carteloise — I called her Sandy, because I couldn't pronounce her name, and she talked so much that I needed a short word to interrupt her with.\nSandy was kind, brave, and absolutely convinced that the world worked on magic. She believed in enchantments, curses, and dragons the way I believed in electricity and steam power. We disagreed about almost everything, which made the journey both exhausting and, I had to admit, interesting.\nOur first stop was the castle of Morgan le Fay — Arthur's half-sister, a queen with absolute power over her lands and a reputation for cruelty.\nThe castle was magnificent on the outside. Inside, it was a house of horrors.\nMorgan le Fay had dungeons full of prisoners — people locked up for years for offenses so minor they would be laughable in Hartford. A man imprisoned for twenty years because he accidentally bumped into a nobleman's horse. A woman chained to a wall because she had spoken without permission. A family who had been in the dungeon so long they had forgotten what the sun looked like.\nI freed them all. Morgan le Fay was furious, but she was afraid of me — afraid of \"The Boss,\" the man who had eclipsed the sun. She let me do it.\nBut as we rode away, I felt something I hadn't expected: not triumph, but anger. These people had been suffering for years, and no one — not Arthur, not the knights, not anyone — had cared enough to check.\nThe system wasn't just inefficient. It was evil. And the people at the top — the kings, the nobles, the Church — were either causing the evil or ignoring it.\nI was going to tear the whole thing down and build something better.\nSandy looked at me as we rode. \"You are troubled, Boss.\"\n\"I'm furious,\" I said.\n\"That is not the same thing,\" she said quietly. And she was right.",
+      "vocabulary": [
+        {
+          "word": "tyranny",
+          "partOfSpeech": "noun",
+          "definition": "cruel and oppressive rule by a person or group"
+        },
+        {
+          "word": "arbitrary",
+          "partOfSpeech": "adjective",
+          "definition": "based on random choice or personal whim rather than reason or system"
+        },
+        {
+          "word": "systemic",
+          "partOfSpeech": "adjective",
+          "definition": "relating to or affecting an entire system rather than individual parts"
+        },
+        {
+          "word": "indignation",
+          "partOfSpeech": "noun",
+          "definition": "anger provoked by what is perceived as unfair treatment"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Hank find in Morgan le Fay's dungeons?",
+          "options": {
+            "A": "Treasure stolen from the peasants",
+            "B": "People imprisoned for years for trivial offenses like bumping into a nobleman's horse",
+            "C": "Merlin, who has been locked up by Arthur's orders",
+            "D": "Weapons that Morgan le Fay planned to use against Arthur"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What is the difference between Hank being \"troubled\" and being \"furious,\" according to Sandy?",
+          "options": {
+            "A": "There is no difference — Sandy is just correcting his grammar",
+            "B": "Being troubled means you're thinking about a problem; being furious means you're reacting emotionally",
+            "C": "Sandy thinks Hank should be more angry, not less",
+            "D": "Sandy is trying to calm Hank down so he doesn't do anything reckless"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"The system wasn't just inefficient. It was evil.\" What is the difference between an inefficient system and an evil one? Give an example from the chapter.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Formal vs. Informal Language",
+        "explanation": "Medieval characters speak formally ('Fair sir, will you joust?') while Hank speaks informally ('What year is this?'). Language reflects social class and education.",
+        "example": "Knights: 'Prithee, good sir.' / Hank: 'Cut it out, will you?'",
+        "prompt": "Compare five examples of formal medieval speech vs. Hank's informal American English. What does language reveal about character?"
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in MORGAN LE FAY.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 8,
+      "day": 8,
+      "title": "THE SMALLPOX HUT",
+      "summary": "",
+      "text": "The worst thing I saw on the journey was a hut by the roadside.\nInside were a woman and her daughter, both dying of smallpox. Their skin was covered in sores. They were burning with fever. No one in the village would come near them — smallpox was a death sentence, and people believed it was God's punishment for sin.\nThere was no medicine. There was no doctor. There was nothing I could do.\nI sat with them. Sandy sat with me. We gave them water and what comfort we could. The mother died that night. The daughter died the next morning.\nI buried them myself, in the field behind the hut, and I stood over the graves and thought about all the things I knew. I could build a steam engine. I could wire a telegraph. I could blow up a castle with dynamite. But I couldn't save a woman and her child from a disease that, in my own time, had been nearly eliminated by a simple vaccine.\nAll my knowledge, all my technology, all my grand plans — and I couldn't prevent a mother from dying in a roadside hut.\nSandy touched my arm. \"You cannot save everyone, Boss.\"\n\"I know,\" I said. \"But I can try to build a world where fewer people die like this.\"\nThat night I wrote plans for a medical school, a sanitation system, and a public health program. None of it would come in time for the woman and her daughter. But it might come in time for someone else's mother. Someone else's child.",
+      "vocabulary": [
+        {
+          "word": "epidemic",
+          "partOfSpeech": "noun",
+          "definition": "a widespread occurrence of a disease in a community at a particular time"
+        },
+        {
+          "word": "preventable",
+          "partOfSpeech": "adjective",
+          "definition": "able to be stopped from happening"
+        },
+        {
+          "word": "compassion",
+          "partOfSpeech": "noun",
+          "definition": "sympathetic concern for the suffering of others"
+        },
+        {
+          "word": "sanitation",
+          "partOfSpeech": "noun",
+          "definition": "conditions relating to public health, especially clean water and waste disposal"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why can't Hank save the woman and her daughter from smallpox?",
+          "options": {
+            "A": "He doesn't know what disease they have",
+            "B": "Modern medicine like vaccines doesn't exist yet, and no amount of technology can help",
+            "C": "Sandy refuses to let him enter the hut",
+            "D": "The Church forbids him from practicing medicine"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Hank plan after this experience?",
+          "options": {
+            "A": "He decides to give up and find a way home",
+            "B": "He writes plans for a medical school, sanitation system, and public health program",
+            "C": "He asks Merlin to create a magical cure for disease",
+            "D": "He sends a message to the future asking for medicine"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"All my knowledge, all my technology — and I couldn't prevent a mother from dying.\" What does this scene reveal about the limits of what one person can accomplish? How does it change Hank?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Parallel Structure for Contrast",
+        "explanation": "Parallel structure emphasizes contrasts between 6th century and 19th century life.",
+        "example": "They had castles, swords, and superstition; I had factories, guns, and science.",
+        "prompt": "Write five sentences using parallel structure to contrast medieval and modern elements from the story."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE SMALLPOX HUT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 9,
+      "day": 9,
+      "title": "THE TOURNAMENT",
+      "summary": "",
+      "text": "Back at Camelot, I was challenged to a tournament.\nSir Sagramor had taken offense at something I'd said — I honestly couldn't remember what — and demanded satisfaction through combat. In the medieval world, this meant a joust: two men in armor, on horseback, charging at each other with lances.\nI didn't own armor. I didn't know how to ride a war horse. And I had absolutely no intention of letting a man in a tin suit poke me with a pole.\nSo I improvised.\nWhen the day came, I rode into the lists wearing ordinary clothes, sitting on a regular horse, carrying a lasso. The crowd was stunned. The knights were offended. Arthur looked nervous.\nSir Sagramor charged. His lance was leveled at my chest. His horse thundered across the field.\nI dodged. As he swept past, I threw the lasso, caught him around the shoulders, and yanked him clean off his horse. He crashed to the ground in a spectacular clatter of armor and lay there like an overturned turtle.\nThe crowd went insane. Half of them were outraged. The other half were laughing so hard they could barely stand.\nOne by one, other knights challenged me. One by one, I lassoed them out of their saddles. The great champions of Camelot — men who had spent their entire lives training for mounted combat — were beaten by a factory foreman with a rope.\nMerlin watched from the stands, his face dark with fury. He whispered to the knights. He whispered to the Church. He was planting seeds that would bear terrible fruit later.\nBut for now, I was invincible. The Boss had beaten the best knights in England, and he had done it with common sense and a length of rope.",
+      "vocabulary": [
+        {
+          "word": "improvise",
+          "partOfSpeech": "verb",
+          "definition": "to create or perform without preparation, using available materials"
+        },
+        {
+          "word": "chivalry",
+          "partOfSpeech": "noun",
+          "definition": "the medieval code of honor for knights; courteous behavior"
+        },
+        {
+          "word": "spectacle",
+          "partOfSpeech": "noun",
+          "definition": "a dramatic public display or performance"
+        },
+        {
+          "word": "resentment",
+          "partOfSpeech": "noun",
+          "definition": "bitter indignation at having been treated unfairly"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hank defeat the knights in the tournament?",
+          "options": {
+            "A": "He uses a hidden weapon inside his armor",
+            "B": "He rides in without armor and lassos them off their horses",
+            "C": "He challenges them to a contest of intelligence instead of combat",
+            "D": "Clarence distracts the knights while Hank sneaks behind them"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What is Merlin doing during the tournament?",
+          "options": {
+            "A": "He is cheering for Hank and offering his support",
+            "B": "He is whispering to the knights and the Church, planting seeds of resentment",
+            "C": "He is trying to cast a spell on Hank during the joust",
+            "D": "He has left Camelot and is no longer a threat"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank beats the knights with a rope, humiliating the most powerful warriors in England. Why might humiliating your enemies be more dangerous than defeating them honorably?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Figurative Language: Satire and Irony",
+        "explanation": "Twain uses irony and satire to criticize medieval society and sometimes modern society too.",
+        "example": "Irony: The 'noble' knights are often bullies. Satire: Twain mocks both medieval superstition and modern arrogance.",
+        "prompt": "Find three examples of irony or satire in today's chapter. Explain what Twain is criticizing."
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE TOURNAMENT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 10,
+      "day": 10,
+      "title": "THE HOLY FOUNTAIN",
+      "summary": "",
+      "text": "The monks at the Valley of Holiness had a problem. Their holy fountain — a sacred spring that pilgrims came from miles to see — had stopped flowing. Merlin had been trying to fix it for days with spells and incantations, and nothing worked.\nThey sent for me.\nI examined the fountain and found the problem immediately: the underground pipe that fed the spring had developed a leak. It was basic plumbing — a problem I could fix in half a day with some cement and a wrench.\nBut I couldn't just fix it. If I simply repaired a pipe, people would see a man doing plumbing. I needed them to see magic — a miracle greater than anything Merlin could produce.\nSo I put on a show.\nI spent two days building suspense. I had Clarence set up fireworks — rockets, sparklers, colored flames — hidden around the fountain. I dressed in dramatic robes. I chanted nonsense in a deep voice. I waved my arms and drew strange symbols in the air.\nThen, at the climactic moment — with hundreds of monks and pilgrims watching — I secretly opened the repaired pipe, and the water burst forth in a glorious spray. At the same instant, Clarence set off the fireworks.\nThe fountain erupted. Colored fire blazed in the sky. The crowd fell to their knees, weeping with joy.\nMy reputation soared. Merlin's reputation crumbled. But as I stood there, watching the monks worship a plumbing repair, I felt uncomfortable. I had beaten Merlin by being a better showman, not a better man. I had manipulated people's ignorance instead of curing it.\nThat was supposed to be Merlin's job, not mine.",
+      "vocabulary": [
+        {
+          "word": "superstition",
+          "partOfSpeech": "noun",
+          "definition": "a widely held but irrational belief in supernatural influences"
+        },
+        {
+          "word": "showmanship",
+          "partOfSpeech": "noun",
+          "definition": "the skill of performing or presenting things in an entertaining way"
+        },
+        {
+          "word": "irony",
+          "partOfSpeech": "noun",
+          "definition": "a situation where the outcome is opposite to what is expected"
+        },
+        {
+          "word": "hypocrisy",
+          "partOfSpeech": "noun",
+          "definition": "the practice of claiming beliefs that one's own behavior contradicts"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What actually causes the holy fountain to stop flowing?",
+          "options": {
+            "A": "Merlin cast a real spell on it",
+            "B": "A leak in the underground pipe — a basic plumbing problem",
+            "C": "The monks used too much water and the well ran dry",
+            "D": "God punished the monks for their sins"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Hank feel \"uncomfortable\" after his success at the fountain?",
+          "options": {
+            "A": "He realizes the monks didn't pay him enough for the repair",
+            "B": "He beat Merlin by being a better showman — manipulating ignorance instead of curing it",
+            "C": "He is afraid Merlin will discover how he really fixed the fountain",
+            "D": "The fireworks accidentally started a small fire"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank criticizes Merlin for deceiving people with fake magic, then does exactly the same thing at the fountain. What does this hypocrisy reveal about Hank's character? Is he becoming what he claims to oppose?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE HOLY FOUNTAIN.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 11,
+      "day": 11,
+      "title": "MERLIN'S TOWER",
+      "summary": "",
+      "text": "Merlin challenged me directly. He announced that his tower — a massive stone structure at the edge of Camelot — was protected by the most powerful enchantments in the world. No force could destroy it.\nI destroyed it with dynamite.\nThe explosion was spectacular — a thunderclap that shook the ground, followed by a column of dust and rubble that rose a hundred feet in the air. When the dust settled, Merlin's tower was a pile of broken stone.\nThe old wizard stood in the courtyard, his mouth hanging open, his reputation in ruins. The crowd stared at me with a mixture of awe and terror.\nI had won. Merlin was finished as a rival. But the look on his face wasn't just defeat — it was hatred. Deep, patient, burning hatred.\n\"You haven't seen the last of me,\" his eyes said. And I should have listened. Because Merlin was old, and he was a fraud, but he understood something I didn't: this world operated on different rules than mine. Science and technology could build things, but they couldn't change what people believed in their hearts.\nThe Church was still the most powerful force in England. The nobles still held all the land. The people still bowed to authority. My factories and schools were growing, but they were growing in the shadows, and shadows don't last forever.\nI was building a revolution. But I had forgotten the most important lesson of history: revolutions have enemies.",
+      "vocabulary": [
+        {
+          "word": "rivalry",
+          "partOfSpeech": "noun",
+          "definition": "competition for the same objective; an ongoing conflict between competitors"
+        },
+        {
+          "word": "demolish",
+          "partOfSpeech": "verb",
+          "definition": "to completely destroy a building or structure"
+        },
+        {
+          "word": "hubris",
+          "partOfSpeech": "noun",
+          "definition": "excessive pride or self-confidence, often leading to downfall"
+        },
+        {
+          "word": "underestimate",
+          "partOfSpeech": "verb",
+          "definition": "to think something is less important, powerful, or capable than it is"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Hank destroy Merlin's tower?",
+          "options": {
+            "A": "The tower is structurally unsafe and dangerous to the public",
+            "B": "To prove his power is greater than Merlin's and destroy his rival's reputation",
+            "C": "Arthur orders him to tear it down for a new building",
+            "D": "Merlin challenges Hank to try, believing the tower is indestructible"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What warning sign does Hank miss after destroying the tower?",
+          "options": {
+            "A": "The crowd celebrates too loudly, alerting enemies",
+            "B": "Merlin's expression shows deep, patient hatred — not just defeat",
+            "C": "Arthur seems jealous of Hank's power",
+            "D": "Clarence warns Hank that the Church is planning an attack"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"Science and technology could build things, but they couldn't change what people believed in their hearts.\" What does he mean? Why is this realization important?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Appositives for Explanation",
+        "explanation": "Appositives explain unfamiliar concepts without stopping the narrative flow.",
+        "example": "Merlin, the king's magician and chief advisor, opposed all my ideas.",
+        "prompt": "Write five sentences with appositives explaining characters, technology, or medieval concepts from today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in MERLIN'S TOWER.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 12,
+      "day": 12,
+      "title": "THE YANKEE AND THE KING",
+      "summary": "",
+      "text": "I decided Arthur needed to see his own kingdom — not from the back of a war horse, surrounded by knights, but from the ground, on foot, as a common man.\n\"You've never seen how your people actually live,\" I told him.\n\"I know how they live. They live as God intends.\"\n\"With all due respect, Your Majesty, God doesn't intend for families to starve while the Church takes a third of their crops.\"\nArthur was offended. But he was also honest — one of the most genuinely honest men I had ever met. He agreed to travel in disguise, as a peasant, to see the truth for himself.\nWe dressed in rough clothing, smeared dirt on our faces, and set out on foot into the English countryside. No guards, no servants, no royal banner.\nArthur was terrible at being a peasant. He walked like a king — shoulders back, chin up, eyes commanding. He spoke to farmers as if addressing his court. He couldn't understand why people didn't immediately defer to him.\n\"You have to slump,\" I said. \"Look at the ground. Mumble. Act like the world has beaten you down.\"\n\"But the world hasn't beaten me down.\"\n\"It has beaten them down. That's the point.\"\nSlowly, reluctantly, Arthur began to see. He saw villages where every family owed half their food to a lord who never visited. He saw children working in fields instead of playing. He saw a man whipped for hunting a rabbit on land his family had lived on for generations.\n\"Why does he not appeal to his lord for justice?\" Arthur asked.\n\"His lord is the one who ordered the whipping,\" I said.\nArthur went quiet. He stayed quiet for a long time. And I could see something working behind his eyes — the slow, painful realization that the world he ruled was not the world he thought it was.",
+      "vocabulary": [
+        {
+          "word": "privilege",
+          "partOfSpeech": "noun",
+          "definition": "a special right or advantage available only to certain people"
+        },
+        {
+          "word": "disparity",
+          "partOfSpeech": "noun",
+          "definition": "a great difference, especially an unfair one"
+        },
+        {
+          "word": "revelation",
+          "partOfSpeech": "noun",
+          "definition": "a surprising and previously unknown fact"
+        },
+        {
+          "word": "empathy",
+          "partOfSpeech": "noun",
+          "definition": "the ability to understand and share the feelings of another"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Hank take Arthur among the common people?",
+          "options": {
+            "A": "Arthur wants a vacation from the responsibilities of being king",
+            "B": "Hank wants Arthur to see how his people actually live, not how he imagines they live",
+            "C": "They are hiding from an assassination plot",
+            "D": "Merlin sends them on a quest disguised as a spiritual journey"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why is Arthur terrible at pretending to be a peasant?",
+          "options": {
+            "A": "He is too short and thin to look like a working man",
+            "B": "He walks like a king — shoulders back, chin up — and can't understand why people don't defer to him",
+            "C": "He keeps accidentally revealing he knows how to read",
+            "D": "His accent gives away his royal identity"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"One good man at the top of a bad system doesn't fix the system.\" Do you agree? Can a good leader fix a broken system alone, or does the system itself need to change?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Connotation: Words for Progress and Civilization",
+        "explanation": "Words like 'progress,' 'civilization,' and 'democracy' have positive connotations for Hank but might not be universally good.",
+        "example": "'Progress' connotes improvement—but Hank's 'progress' sometimes causes harm.",
+        "prompt": "Choose five words Hank uses to describe modern vs. medieval life. Analyze their connotations and whether they're always accurate."
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE YANKEE AND THE KING.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 13,
+      "day": 13,
+      "title": "DISGUISED AS PEASANTS",
+      "summary": "",
+      "text": "Arthur tried his best, but he was the worst peasant in England.\nWhen a nobleman rode past, Arthur instinctively stepped into the road and stood tall, expecting the rider to stop. Instead, the nobleman's servant lashed Arthur across the shoulders with a riding whip.\nArthur stared in disbelief. \"He struck me.\"\n\"He struck a peasant,\" I said. \"That's what happens to peasants.\"\n\"But I am the King!\"\n\"Right now you're a nobody in dirty clothes. This is what your kingdom feels like from the bottom.\"\nThe lesson sank in — painfully, literally. Arthur was kicked, shoved, cursed, and ignored. He slept on the ground. He ate scraps. He saw a family evicted from their home for failing to pay taxes they couldn't possibly afford.\nOne evening, we sheltered with a charcoal burner and his wife — the poorest people I had ever met. They owned nothing except the clothes on their backs and a single iron pot. They shared their food with us without hesitation — thin soup with no meat, served in wooden bowls.\nArthur ate the soup and stared at the fire. He was beginning to understand something that I had been trying to explain since the day I arrived: the system was the problem. Not individual bad lords, not lazy peasants — the system. A system where one class of people had everything and another class had nothing, and the law existed to keep it that way.\n\"When I return to Camelot,\" Arthur said quietly, \"things will change.\"\nI believed him. He was a good man — better than most kings in any century. But one good man at the top of a bad system doesn't fix the system. It just makes the system feel slightly less awful while continuing to operate exactly as before.\nI didn't say this to Arthur. He was having enough revelations for one week.",
+      "vocabulary": [
+        {
+          "word": "humiliation",
+          "partOfSpeech": "noun",
+          "definition": "the loss of pride or dignity; being made to feel ashamed"
+        },
+        {
+          "word": "systematic",
+          "partOfSpeech": "adjective",
+          "definition": "done according to a fixed plan or system"
+        },
+        {
+          "word": "revelation",
+          "partOfSpeech": "noun",
+          "definition": "a moment of understanding (revisited)"
+        },
+        {
+          "word": "idealist",
+          "partOfSpeech": "noun",
+          "definition": "a person who believes in and pursues high standards or principles"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens when a nobleman rides past Arthur on the road?",
+          "options": {
+            "A": "The nobleman recognizes Arthur and bows",
+            "B": "The nobleman's servant whips Arthur across the shoulders like any other peasant",
+            "C": "Arthur challenges the nobleman to a duel",
+            "D": "Hank intervenes and reveals Arthur's identity"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Arthur learn from the charcoal burner and his wife?",
+          "options": {
+            "A": "That peasants are lazy and deserve their poverty",
+            "B": "That the poorest people share what little they have without hesitation",
+            "C": "That the charcoal burner is secretly a spy for Merlin",
+            "D": "That peasants have hidden wealth they refuse to share with the crown"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Arthur says, \"When I return to Camelot, things will change.\" Is his promise realistic? What obstacles would he face in trying to reform his own kingdom?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Participial Phrases for Action",
+        "explanation": "Participial phrases create vivid descriptions of actions and reactions.",
+        "example": "Seeing the eclipse, the crowd fell to their knees in terror.",
+        "prompt": "Write five sentences using participial phrases to describe events or reactions in today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in DISGUISED AS PEASANTS.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 14,
+      "day": 14,
+      "title": "SOLD INTO SLAVERY",
+      "summary": "",
+      "text": "Our disguise worked too well.\nOn the road near a market town, we were ambushed by slave traders — men who captured peasants and sold them at market. It was perfectly legal in Arthur's England. Slavery was one of the institutions I had been quietly working to abolish, but I hadn't gotten there yet.\nThe traders tied our hands, chained us to a line of other captives, and marched us to the nearest slave market. Arthur was outraged. \"I am the King!\" he shouted. The traders laughed.\n\"Every slave says something like that,\" the head trader said. \"Last week I had a pig farmer who claimed to be the Pope.\"\nWe marched for three days in chains, sleeping on the ground, eating whatever the traders threw at us. Arthur's dignity was stripped away, layer by layer. He was no longer a king. He was property.\nI had a plan — I always had a plan — but I needed time. I had secretly sent Clarence a message before we were captured, using one of my hidden telegraph stations. Help was coming. I just had to keep us alive until it arrived.\nThe hardest part was watching Arthur. He had never been powerless before. He had never been hungry, cold, and afraid with no one to help him. The experience was breaking something inside him — not his spirit, but his illusions. Every day, another piece of the world as he thought it was fell away, replaced by the world as it actually was.",
+      "vocabulary": [
+        {
+          "word": "bondage",
+          "partOfSpeech": "noun",
+          "definition": "the state of being a slave; captivity"
+        },
+        {
+          "word": "dignity",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being worthy of honor or respect"
+        },
+        {
+          "word": "institution",
+          "partOfSpeech": "noun",
+          "definition": "an established system or practice (revisited)"
+        },
+        {
+          "word": "powerless",
+          "partOfSpeech": "adjective",
+          "definition": "without ability, influence, or power"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens to Arthur and Hank on the road?",
+          "options": {
+            "A": "They are recruited into a rebel army",
+            "B": "They are captured by slave traders and sold at market",
+            "C": "They are arrested by the Sheriff for trespassing",
+            "D": "Merlin's agents kidnap them and bring them to a tower"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does the experience of slavery affect Arthur?",
+          "options": {
+            "A": "He becomes bitter and wants revenge on the slave traders",
+            "B": "It strips away his illusions about his kingdom and makes him vow to abolish slavery",
+            "C": "He adapts quickly and doesn't seem bothered by it",
+            "D": "He refuses to believe what's happening and insists it's all a test"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Arthur experiences slavery in his own kingdom — something that was legal under his own laws. How does living through injustice change a person more than simply being told about it?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Precise Word Choice: Technology Vocabulary",
+        "explanation": "Twain uses precise technical language when Hank describes inventions, showing expertise.",
+        "example": "Hank doesn't say 'thing'—he says 'telegraph,' 'steam engine,' 'gunpowder,' 'cement.'",
+        "prompt": "List ten technical or scientific words Hank uses. How does precise vocabulary establish his character?"
+      },
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in SOLD INTO SLAVERY.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 15,
+      "day": 15,
+      "title": "THE SLAVE MARKET",
+      "summary": "",
+      "text": "The slave market was held in a muddy field outside a town whose name I never learned. Dozens of people were being bought and sold — men, women, and children, standing on wooden platforms while buyers examined their teeth and muscles like they were livestock.\nArthur and I were put on the block together. The auctioneer called us \"two able-bodied men, good for field work.\" Arthur, the King of England, was sold for seven dollars.\nI was sold separately for nine dollars, which I found insulting — but at least it was more than Arthur.\nThe man who bought Arthur was a farmer who needed field hands. He put Arthur to work immediately, hauling rocks and digging ditches. The King of England, who had never done manual labor in his life, worked in the mud until his hands bled.\nArthur did not complain. That surprised me. He worked, and he watched, and he listened. He talked to the other slaves — men and women who had been in bondage for years. He heard their stories. He saw their scars.\nOne woman had been separated from her children five years ago. She didn't know if they were alive. A boy of twelve had been sold three times since he was eight. An old man had been free once, lost his land to debt, and been enslaved by his own creditor.\n\"This is legal,\" Arthur said to me that night. \"In my kingdom, this is legal.\"\n\"Yes,\" I said.\n\"I will abolish it,\" he said. \"I swear on my crown.\"\nThat was the moment I truly respected Arthur. Not because he was a king, but because he could look at a system that served him and say: this is wrong.",
+      "vocabulary": [
+        {
+          "word": "commodity",
+          "partOfSpeech": "noun",
+          "definition": "a raw material or product that can be bought and sold"
+        },
+        {
+          "word": "dehumanize",
+          "partOfSpeech": "verb",
+          "definition": "to treat someone as less than human"
+        },
+        {
+          "word": "testimony",
+          "partOfSpeech": "noun",
+          "definition": "a formal statement, especially evidence or personal account"
+        },
+        {
+          "word": "injustice",
+          "partOfSpeech": "noun",
+          "definition": "lack of fairness or justice"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What shocks Arthur most at the slave market?",
+          "options": {
+            "A": "The high prices being charged for healthy workers",
+            "B": "That human beings are examined and sold like livestock — and it's legal in his kingdom",
+            "C": "That Hank is sold for more money than he is",
+            "D": "That the slave traders are actually knights in disguise"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Arthur listen to the enslaved people's stories?",
+          "options": {
+            "A": "He is bored and has nothing else to do",
+            "B": "He is developing real empathy and wants to understand their suffering",
+            "C": "Hank forces him to listen as part of a lesson",
+            "D": "He is gathering information for a legal case"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Arthur says, \"This is legal. In my kingdom, this is legal.\" Why is this the most powerful line in the chapter? What does it reveal about the relationship between law and justice?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE SLAVE MARKET.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 16,
+      "day": 16,
+      "title": "THE RESCUE",
+      "summary": "",
+      "text": "They came on bicycles.\nFive hundred of my trained men, equipped with the latest products of my secret factories, riding bicycles down the road at speeds that no horse in England could match. They wore uniforms I had designed — practical, efficient, nothing like the ridiculous armor the knights clanked around in.\nClarence was at the head of the column, grinning like a boy at Christmas.\nThe slave traders fled. The slave owners ran. Arthur's buyer dropped his whip and hid behind a haystack. In ten minutes, every slave in the market was freed, and every chain was broken.\nArthur stood in the muddy field, his hands still raw from digging, and watched my men with wonder. \"You built this,\" he said.\n\"We built it,\" I said. \"You and me and Clarence and every person who decided that the world could be better than it is.\"\nWe rode back to Camelot — Arthur on a horse, me on a bicycle, Clarence beside us, explaining everything that had happened while we were gone. The factories had expanded. The schools had more students. The telegraph network now connected every major town. A railroad was being planned.\nArthur listened. He asked intelligent questions. And for the first time since I'd arrived in the sixth century, I felt genuinely hopeful that my revolution might work.",
+      "vocabulary": [
+        {
+          "word": "liberation",
+          "partOfSpeech": "noun",
+          "definition": "the act of setting someone free from imprisonment or oppression"
+        },
+        {
+          "word": "innovation",
+          "partOfSpeech": "noun",
+          "definition": "a new method, idea, or product"
+        },
+        {
+          "word": "coalition",
+          "partOfSpeech": "noun",
+          "definition": "an alliance of people or groups working together for a common purpose"
+        },
+        {
+          "word": "momentum",
+          "partOfSpeech": "noun",
+          "definition": "the force gained by a moving body; the strength of a movement"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How do Hank's men arrive to rescue them?",
+          "options": {
+            "A": "On warhorses with traditional weapons",
+            "B": "On bicycles, wearing uniforms — products of Hank's secret factories",
+            "C": "By boat, sailing up the river to the slave market",
+            "D": "Disguised as slave traders who buy Arthur and Hank"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does the rescue demonstrate about Hank's preparation?",
+          "options": {
+            "A": "Hank always has a backup plan, including hidden communication systems",
+            "B": "Hank got lucky — the rescue was accidental",
+            "C": "Clarence acted independently without any instructions from Hank",
+            "D": "The rescue proves that Hank's technology is infallible"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The rescue scene shows Hank's revolution working as intended — technology freeing the oppressed. Why is this the high point of Hank's story? What signals suggest it can't last?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE RESCUE.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 17,
+      "day": 17,
+      "title": "THREE YEARS OF PROGRESS",
+      "summary": "",
+      "text": "The next three years were the best of my time in Camelot.\nWith Arthur's full support, I brought my secret projects into the open. Factories appeared across England, producing iron, steel, glass, and textiles. Schools opened in every major town. A military academy trained a new kind of soldier — educated, disciplined, loyal to the nation rather than to individual lords.\nI built roads — real roads, paved and drained, not the muddy tracks that passed for transportation. I established a postal service. I introduced basic sanitation: clean water, sewage systems, the radical concept of washing your hands.\nThe results were dramatic. Disease dropped. Trade increased. Literacy spread. For the first time in English history, a common farmer could read a book, write a letter, and understand that the earth was round.\nNot everyone was happy. The nobles saw their power eroding and resented it. The Church saw its authority challenged and feared it. Merlin, humiliated but not destroyed, whispered poison into every ear that would listen.\nBut for three years, the forces of progress outweighed the forces of resistance. England was changing — not just on the surface, but in the minds of its people. They were beginning to think. To question. To imagine a world where birth didn't determine destiny.\nI was proud of what we had built. Too proud, probably. I forgot that the old world doesn't die quietly. It fights back.",
+      "vocabulary": [
+        {
+          "word": "literacy",
+          "partOfSpeech": "noun",
+          "definition": "the ability to read and write"
+        },
+        {
+          "word": "erosion",
+          "partOfSpeech": "noun",
+          "definition": "the gradual wearing away of something; slow destruction"
+        },
+        {
+          "word": "complacency",
+          "partOfSpeech": "noun",
+          "definition": "a feeling of satisfied self-assurance, often without awareness of danger"
+        },
+        {
+          "word": "backlash",
+          "partOfSpeech": "noun",
+          "definition": "a strong and adverse reaction to a change"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Hank accomplish during three years of open reform?",
+          "options": {
+            "A": "He conquers neighboring kingdoms and expands Arthur's empire",
+            "B": "He builds factories, schools, roads, sanitation, and a postal service across England",
+            "C": "He replaces Arthur as king and rules directly",
+            "D": "He focuses only on military strength, building the strongest army in Europe"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Hank say, \"I forgot that the old world doesn't die quietly\"?",
+          "options": {
+            "A": "He realizes the nobles and the Church are preparing to fight back against his reforms",
+            "B": "He is talking about the physical decay of old buildings",
+            "C": "He means that medieval people are too loud and need to be quieter",
+            "D": "He is warning about environmental destruction"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The chapter describes three years of genuine progress. Why does the narrator hint that it won't last? What forces are building against Hank?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THREE YEARS OF PROGRESS.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 18,
+      "day": 18,
+      "title": "THE NEWSPAPER",
+      "summary": "",
+      "text": "I introduced journalism because I believed that an informed public was the foundation of democracy. A free press would hold the powerful accountable, educate the masses, and give voice to the voiceless.\nI was right about all of that. What I didn't anticipate was that a free press also publishes gossip, lies, and inflammatory nonsense that can tear a society apart.\nThe newspapers I founded — I started four of them — quickly developed their own personalities. One was serious and thoughtful. One was sensational and loved scandal. One was controlled by the Church and attacked everything I did. And one was run by a former knight who used it entirely to settle personal grudges.\nThe result was chaos. People who had never had access to information were suddenly drowning in it, with no way to tell truth from fiction. Rumors spread faster than facts. Political arguments erupted in every tavern. The carefully balanced coalition I had built — between the crown, the new middle class, and the common people — began to crack under the pressure of competing narratives.\n\"Maybe the newspapers were a mistake,\" Clarence said.\n\"The newspapers aren't the mistake,\" I said. \"The mistake is thinking people will use freedom wisely just because you give it to them. Freedom is a skill. It has to be learned.\"\nIt was the most important thing I said during my entire time in Camelot. And I was only beginning to understand what it meant.",
+      "vocabulary": [
+        {
+          "word": "journalism",
+          "partOfSpeech": "noun",
+          "definition": "the activity of gathering, assessing, and presenting news"
+        },
+        {
+          "word": "misinformation",
+          "partOfSpeech": "noun",
+          "definition": "false or inaccurate information, especially when spread to deceive"
+        },
+        {
+          "word": "polarization",
+          "partOfSpeech": "noun",
+          "definition": "the division of people into sharply opposing groups"
+        },
+        {
+          "word": "discernment",
+          "partOfSpeech": "noun",
+          "definition": "the ability to judge well; good judgment"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What unintended consequence does the free press create?",
+          "options": {
+            "A": "The newspapers make everyone agree with Hank's reforms",
+            "B": "Misinformation, gossip, and political division spread as fast as truth",
+            "C": "People stop reading because the newspapers are too boring",
+            "D": "The Church uses the newspapers to spread Hank's message"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Hank mean when he says, \"Freedom is a skill. It has to be learned\"?",
+          "options": {
+            "A": "People need training before they are allowed to read newspapers",
+            "B": "Having freedom without knowing how to use it responsibly leads to chaos",
+            "C": "Freedom is only for educated people",
+            "D": "Hank regrets giving people the right to free speech"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"Freedom is a skill.\" How does this idea apply to the modern world, where everyone has access to unlimited information through the internet?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE NEWSPAPER.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 19,
+      "day": 19,
+      "title": "HANK AND SANDY",
+      "summary": "",
+      "text": "Somewhere in the middle of all this revolution and reform, I married Sandy.\nI hadn't planned on it. I hadn't planned on falling in love with a woman from the sixth century who believed in dragons and couldn't pronounce \"Connecticut.\" But Sandy was brave, kind, and honest in a way that made my carefully constructed certainties feel small.\nShe didn't understand my technology. She didn't care about my factories. What she cared about was people — the specific, individual human beings who were affected by the changes I was making. When I talked about \"progress\" in the abstract, Sandy talked about the woman in the village who could now read, the child who didn't die of fever, the old man who was no longer a slave.\nShe made me better. She made me see that changing the world isn't about systems and machines — it's about people.\nWe had a daughter. We named her Hello-Central, because I missed telephones. Sandy thought it was a beautiful name. I didn't have the heart to explain.\nLate at night, lying in our bed in Camelot, I sometimes thought about Hartford. About the factory, the crowbar, the life I had left behind. Was I dreaming? Was any of this real? Would I wake up one morning and find myself back in 1879, with nothing but a headache and a strange story?\nSandy would reach for my hand in the dark, and the warmth of her fingers was the most real thing I had ever known.",
+      "vocabulary": [
+        {
+          "word": "vulnerability",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being open to emotional or physical harm"
+        },
+        {
+          "word": "grounded",
+          "partOfSpeech": "adjective",
+          "definition": "well-balanced and sensible; connected to reality"
+        },
+        {
+          "word": "abstract",
+          "partOfSpeech": "adjective",
+          "definition": "existing in thought but not having a physical reality; theoretical"
+        },
+        {
+          "word": "nostalgia",
+          "partOfSpeech": "noun",
+          "definition": "sentimental longing for the past"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Sandy differ from Hank in what she values?",
+          "options": {
+            "A": "Sandy cares about technology while Hank cares about people",
+            "B": "Sandy cares about individual people while Hank thinks about systems and progress in the abstract",
+            "C": "Sandy doesn't care about anything except her own comfort",
+            "D": "Sandy and Hank value exactly the same things"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Hank name his daughter \"Hello-Central\"?",
+          "options": {
+            "A": "It is a traditional medieval English name",
+            "B": "He misses telephones, and it's the phrase operators used — Sandy doesn't know the joke",
+            "C": "Sandy chose the name because she liked how it sounded",
+            "D": "It is a coded message to Clarence about a secret project"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Sandy \"made me see that changing the world isn't about systems and machines — it's about people.\" How does this realization challenge everything Hank has believed? Does he act on it?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in HANK AND SANDY.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 20,
+      "day": 20,
+      "title": "THE STOCK EXCHANGE",
+      "summary": "",
+      "text": "My revolution reached its peak with the creation of the stock exchange.\nI had transformed England's economy from a medieval feudal system into something approaching modern capitalism. Factories produced goods. Merchants traded them. A banking system provided credit. And the stock exchange — a marketplace where shares in companies could be bought and sold — was the capstone.\nThe knights, predictably, were confused. They didn't understand money. They understood land, honor, and sword fights. The idea that wealth could exist on a piece of paper was beyond them.\nBut the merchants understood. The craftsmen understood. The newly educated middle class — the people I had created — understood perfectly. They bought and sold shares. They invested. They built businesses.\nFor a brief, shining moment, I thought I had done it. I had dragged England out of the Dark Ages and into the modern world. I had proven that democracy and technology could triumph over ignorance and tyranny.\nThen the Church made its move.",
+      "vocabulary": [
+        {
+          "word": "capitalism",
+          "partOfSpeech": "noun",
+          "definition": "an economic system based on private ownership and free markets"
+        },
+        {
+          "word": "prosperity",
+          "partOfSpeech": "noun",
+          "definition": "the state of being successful, especially financially"
+        },
+        {
+          "word": "sustainable",
+          "partOfSpeech": "adjective",
+          "definition": "able to be maintained over time"
+        },
+        {
+          "word": "catalyst",
+          "partOfSpeech": "noun",
+          "definition": "something that triggers a significant change or event"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Hank believe the stock exchange represents the peak of his revolution?",
+          "options": {
+            "A": "It makes him personally wealthy beyond imagination",
+            "B": "It transforms England's economy from feudalism toward modern capitalism",
+            "C": "The knights finally understand and support his vision",
+            "D": "Arthur uses the stock exchange to fund new military campaigns"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What happens immediately after Hank's reforms reach their peak?",
+          "options": {
+            "A": "The Church declares an interdict, destroying everything Hank built",
+            "B": "Arthur dies and the kingdom falls into civil war",
+            "C": "Merlin returns with a powerful new spell",
+            "D": "Hank decides to return to Hartford voluntarily"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does economic progress trigger such a strong response from the Church? What does the Church stand to lose?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE STOCK EXCHANGE.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 21,
+      "day": 21,
+      "title": "THE INTERDICT",
+      "summary": "",
+      "text": "The word hit like a thunderbolt: interdict.\nThe Church — the most powerful institution in medieval England, more powerful than the King, more powerful than any army — declared an interdict against Hank Morgan and all his works. An interdict was a religious ban — a decree that cut a person, or an entire nation, off from the sacraments. No baptisms. No marriages. No last rites. No salvation.\nIn a world where people genuinely believed that their eternal soul depended on the Church's approval, an interdict was the ultimate weapon. It didn't attack bodies. It attacked souls.\nOvernight, everything changed. The factories emptied. The schools closed. The telegraph operators walked away from their stations. The merchants shuttered their shops. The soldiers — my soldiers, the men I had trained — deserted.\nNot because they wanted to. Because they were terrified. The Church told them that supporting Hank Morgan meant eternal damnation. Their wives begged them to stop. Their parents disowned them. Their children were refused baptism.\nI stood in my empty factory, listening to the silence, and understood what I had failed to see: I had changed the surface of England, but I hadn't changed its heart. Technology can build roads and bridges, but it can't build faith. Education can teach people to read, but it can't tell them what to believe. I had given them tools, but I hadn't given them the courage to use those tools against the oldest, deepest power in their world.\nThe Church was older than Arthur. Older than Camelot. Older than England itself. And it would not be displaced by a Yankee with a factory.",
+      "vocabulary": [
+        {
+          "word": "interdict",
+          "partOfSpeech": "noun",
+          "definition": "a decree by the Church banning religious services as punishment"
+        },
+        {
+          "word": "authority",
+          "partOfSpeech": "noun",
+          "definition": "the power to give orders or make decisions; recognized leadership"
+        },
+        {
+          "word": "dismantle",
+          "partOfSpeech": "verb",
+          "definition": "to take apart; to destroy piece by piece"
+        },
+        {
+          "word": "profound",
+          "partOfSpeech": "adjective",
+          "definition": "very great or intense; having deep meaning"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why is the interdict so devastatingly effective?",
+          "options": {
+            "A": "It destroys Hank's factories with physical force",
+            "B": "It attacks people's deepest beliefs — their fear for their eternal souls",
+            "C": "It cuts off Hank's supply of raw materials",
+            "D": "It turns Arthur against Hank"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Hank realize he failed to change?",
+          "options": {
+            "A": "The military strength of the nobles",
+            "B": "The hearts and beliefs of the people — he changed the surface but not the foundation",
+            "C": "The geography of England, which favored the Church",
+            "D": "His own personality, which was too aggressive"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank says, \"Technology can build roads and bridges, but it can't build faith.\" What does he mean? What is the deeper failure of his revolution?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE INTERDICT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 22,
+      "day": 22,
+      "title": "THE BATTLE OF THE SAND-BELT",
+      "summary": "",
+      "text": "With the Church against me and the nobles emboldened, the combined forces of old England marched on my remaining stronghold — a fortified position I had built in a narrow valley, surrounded by trenches and wire.\nI had fifty-two boys — the youngest of my trained soldiers, the ones too young or too loyal to desert. Fifty-two against thirty thousand knights in armor.\nIt should have been hopeless. But I had something the knights didn't: technology.\nI had electric fences. I had dynamite. I had Gatling guns — rapid-fire weapons that could cut down a charging army like a scythe through wheat. I had land mines buried in the sand belt that surrounded my position.\nThe knights came in waves. They charged on horseback, lances leveled, pennants flying, exactly the way they had charged for centuries. They were magnificent and doomed.\nThe first wave hit the land mines. The explosions tore through them. The second wave hit the electric fences. The third wave was cut down by the Gatling guns.\nIt was a slaughter. Not a battle — a slaughter. Thousands of knights, the flower of English chivalry, died in that narrow valley. Their armor, which had protected them in a thousand tournaments, meant nothing against modern weapons. They fell in heaps, in windrows, in mountains of steel and blood.\nI watched from behind the fortification, and for the first time, I did not feel clever. I felt sick.\nI had wanted to bring civilization to England. Instead, I had brought the worst thing civilization had ever invented: industrial warfare. I had given the medieval world a glimpse of the future — and the future was a killing field.\nThe knights kept coming. They were brave — I will never deny them that. They were the bravest men I had ever seen. They charged into certain death because their code demanded it, because they didn't know how to do anything else.\nBy morning, it was over. Thirty thousand men lay dead in the sand belt. My fifty-two boys had won the battle.\nBut we had lost everything else.",
+      "vocabulary": [
+        {
+          "word": "carnage",
+          "partOfSpeech": "noun",
+          "definition": "the killing of a large number of people; a massacre"
+        },
+        {
+          "word": "industrial",
+          "partOfSpeech": "adjective",
+          "definition": "relating to industry; produced by machines"
+        },
+        {
+          "word": "pyrrhic",
+          "partOfSpeech": "adjective",
+          "definition": "a victory won at such great cost that it is equivalent to defeat"
+        },
+        {
+          "word": "conscience",
+          "partOfSpeech": "noun",
+          "definition": "a person's moral sense of right and wrong"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the outcome of the Battle of the Sand-Belt?",
+          "options": {
+            "A": "The knights defeat Hank's forces in traditional combat",
+            "B": "Hank's fifty-two boys destroy thirty thousand knights using modern weapons — a massacre",
+            "C": "Both sides negotiate a truce before any fighting begins",
+            "D": "Hank surrenders to avoid bloodshed"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Hank feel \"sick\" despite winning?",
+          "options": {
+            "A": "He is physically injured in the battle",
+            "B": "He wanted to bring civilization but instead brought industrial slaughter",
+            "C": "His boys are celebrating too loudly",
+            "D": "Arthur was among the knights who died"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Hank wanted to bring civilization to England. Instead, the final chapter of his revolution is a massacre. What does this say about the relationship between technology and violence? Does progress always carry this risk?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE BATTLE OF THE SAND-BELT.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 23,
+      "day": 23,
+      "title": "THE CAVE",
+      "summary": "",
+      "text": "The dead surrounded us. Thirty thousand bodies, decomposing in the summer heat, created a barrier we couldn't cross. We were trapped in our own fortification, prisoners of our own victory.\nDisease came. One by one, my boys fell sick — poisoned by the very carnage our technology had created. I nursed them. Clarence nursed them. But they died anyway, one after another, until only Clarence and I were left.\nThen Merlin came.\nHe appeared at our gate disguised as an old woman, and I was too tired, too sick, and too broken to see through the disguise. He entered our camp, and he laughed — a thin, triumphant cackle.\n\"I told you,\" he said. \"I told you this world runs on different rules.\"\nHe cast a spell — or what he called a spell. Whether it was real magic or whether my exhausted body simply gave out, I will never know. But darkness fell over me like a curtain, and Merlin's voice was the last thing I heard:\n\"Sleep, Yankee. Sleep for thirteen centuries.\"\nClarence found Merlin dead by my side — the old wizard had stumbled into one of my electric fences and been killed by the very technology he despised. Clarence wrote the final pages of my manuscript, sealed it in the cave with my sleeping body, and walked out into a world that no longer wanted what I had tried to give it.\nI slept.\nFor thirteen hundred years, I slept.",
+      "vocabulary": [
+        {
+          "word": "ironic",
+          "partOfSpeech": "adjective",
+          "definition": "happening in the opposite way to what is expected"
+        },
+        {
+          "word": "hubris",
+          "partOfSpeech": "noun",
+          "definition": "excessive pride leading to downfall (revisited)"
+        },
+        {
+          "word": "enchantment",
+          "partOfSpeech": "noun",
+          "definition": "a state of being under a spell; also, a feeling of great delight"
+        },
+        {
+          "word": "legacy",
+          "partOfSpeech": "noun",
+          "definition": "something handed down; the lasting impact of a person's work"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is ironic about how both Hank and Merlin meet their ends?",
+          "options": {
+            "A": "Both die peacefully in their sleep",
+            "B": "Merlin defeats Hank with magic, but then dies from Hank's electric fence — each destroyed by what the other represents",
+            "C": "Both are killed by Arthur's knights",
+            "D": "Neither actually dies — they both escape"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What happens to Hank after Merlin's spell?",
+          "options": {
+            "A": "He is transported back to Hartford immediately",
+            "B": "He falls into an enchanted sleep lasting thirteen centuries",
+            "C": "He becomes the new king of England",
+            "D": "He is cured by Clarence and continues his work"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Merlin — the symbol of the old world — defeats Hank — the symbol of the new. What is Twain saying about the relationship between old beliefs and new ideas? Can new ideas ever completely replace old ones?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THE CAVE.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    },
+    {
+      "number": 24,
+      "day": 24,
+      "title": "THIRTEEN CENTURIES LATER",
+      "summary": "",
+      "text": "I woke in 1879, in a hospital bed, with a headache that felt like the end of the world.\nThey told me I had been hit on the head in a fight at the Colt Arms Factory. They told me I had been unconscious for several minutes. They told me I would be fine.\nI was not fine.\nEverything was gone. Sandy was gone. Hello-Central was gone. Clarence was gone. Arthur, who had been the best king a bad system ever produced, was gone. The factories, the schools, the newspapers, the brief and shining attempt to build a better world — all of it, gone, buried under thirteen centuries of history.\nHad it been real? Was it a dream? The manuscript — my manuscript, the one I had written in Camelot and Clarence had sealed in the cave — I found it among my possessions, yellowed and ancient. How had it survived? How had it reached me?\nI spent my remaining years as a broken man, caught between two worlds. I walked the streets of Hartford and saw Camelot. I heard the factory whistles and remembered the sound of knights charging. I reached for Sandy in the night and found only empty air.\nThe stranger at Warwick Castle finished his story and fell silent. His eyes were focused on something I couldn't see — some distant, impossible place, thirteen centuries and an ocean away.\n\"Was it real?\" I asked.\nHe didn't answer. He reached out his hand, as if grasping for something, and whispered: \"Sandy...\"\nThen Hank Morgan, the Connecticut Yankee who had tried to change the world, closed his eyes. His hand fell. And his story was over.\nWhether he succeeded or failed — whether his revolution was a dream or a tragedy — is a question I leave to you.\nBut I will say this: he tried. In a world of darkness and ignorance and cruelty, he tried to build something better. He used everything he had — his knowledge, his courage, his stubborn American optimism — and he tried.\nThat, I think, is enough. That has to be enough.\nTHE END",
+      "vocabulary": [
+        {
+          "word": "displacement",
+          "partOfSpeech": "noun",
+          "definition": "the state of being moved from one's proper place; feeling out of place"
+        },
+        {
+          "word": "ambiguity",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being open to more than one interpretation; uncertainty"
+        },
+        {
+          "word": "idealism",
+          "partOfSpeech": "noun",
+          "definition": "the practice of pursuing high principles and goals, sometimes unrealistically"
+        },
+        {
+          "word": "tragedy",
+          "partOfSpeech": "noun",
+          "definition": "a serious work of literature in which the main character is destroyed by a flaw or force beyond their control; also, a very sad event"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Hank spend his remaining years after waking up in 1879?",
+          "options": {
+            "A": "He writes bestselling books about his adventures and becomes famous",
+            "B": "He is a broken man, caught between two worlds, reaching for Sandy in his sleep",
+            "C": "He builds a new factory and starts his revolution again in modern America",
+            "D": "He returns to England and finds that his reforms survived"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What is the narrator's final judgment of Hank Morgan?",
+          "options": {
+            "A": "He was a fool who deserved what happened to him",
+            "B": "He tried to build something better in a world of darkness, and that effort matters",
+            "C": "He was a genius whose plan would have worked with more time",
+            "D": "He was a villain who caused more harm than good"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The book ends with ambiguity — was it real? Was it a dream? Why does Twain refuse to give a clear answer? What does the uncertainty add to the story's meaning?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": null,
+      "informationalText": {
+        "title": "Mark Twain and American Satire",
+        "text": "Informational text to be added.",
+        "questions": []
+      },
+      "writingPrompt": "Write about the themes and ideas in THIRTEEN CENTURIES LATER.",
+      "journalPrompt": "Reflect on how today's chapter connects to your own experiences."
+    }
+  ],
+  "stats": {
+    "totalWords": 6832,
+    "avgWordsPerChapter": 285,
+    "totalVocabulary": 96,
+    "totalGrammarLessons": 12,
+    "totalLanguageLessons": 12
+  }
+}
