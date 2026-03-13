@@ -1,0 +1,1492 @@
+{
+  "unitInfo": {
+    "title": "The Swiss Family Robinson",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Based on the novel by Johann David Wyss (1812)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Adventure / Survival Fiction",
+    "themes": [
+      "Survival",
+      "Family",
+      "Resourcefulness",
+      "Exploration",
+      "Adaptation",
+      "Perseverance"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-13T02:52:04.430Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 1-24 of any 6th-8th grade pocket"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (3 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "notes": "Each chapter maps to one lesson day"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "THE SHIPWRECK",
+      "summary": "For six days the storm had battered our ship without mercy. \nThe wind screamed through the rigging.",
+      "text": "For six days the storm had battered our ship without mercy.\nThe wind screamed through the rigging. Waves as tall as buildings crashed over the deck, sweeping away everything that wasn't lashed down. The masts cracked and fell. The sails tore to rags. Below deck, seawater poured through gaps in the hull while the crew worked the pumps until their arms gave out.\nMy name is William Robinson. I am a Swiss pastor — a minister — and I was traveling with my wife, Elizabeth, and our four sons to start a new life in a distant colony. Our oldest, Fritz, was fifteen — strong, brave, and sometimes too confident for his own good. Ernest was thirteen, the scholar of the family — thoughtful, cautious, and always asking questions. Jack was eleven, fearless and impulsive, the kind of boy who climbed things that shouldn't be climbed. And little Franz was eight, gentle and curious, who still believed his father could fix anything.\nOn the seventh day, the ship struck a reef.\nThe impact threw us to the floor. Timbers splintered. The hull split open with a grinding roar that I can still hear when I close my eyes. Water rushed in through the breach, and the ship settled onto the rocks at an angle, groaning like a wounded animal.\nThe crew panicked. In the chaos, the sailors launched the lifeboats and abandoned ship, leaving our family behind. We called after them, but the storm swallowed our voices. Within minutes, the boats disappeared into the darkness and the driving rain.\nWe were alone — a pastor, his wife, and four boys, on a broken ship in the middle of a raging sea.\nElizabeth gathered the boys in the main cabin. They were terrified, soaked, and shivering. Even Fritz, who tried to look brave, had fear in his eyes.\n\"We are in God's hands,\" I told them, trying to keep my voice steady. \"The ship is wedged on the rocks. She may hold until morning. If she holds, we have a chance.\"\nThe ship held. The storm, as if satisfied with the damage it had caused, began to die. By dawn, the wind had dropped to a whisper, and through the broken porthole, we could see something that made my heart leap.\nLand. A green, hilly coastline, perhaps a mile away, fringed with white sand and palm trees. Beyond the beach, dense forest climbed toward rocky peaks that disappeared into the clouds.\nWe had no lifeboat. The crew had taken them all. But we had the wreck of the ship, which was full of tools, food, weapons, and materials. And we had each other.\n\"Well, boys,\" I said. \"We have work to do.\"",
+      "vocabulary": [
+        {
+          "word": "rigging",
+          "partOfSpeech": "noun",
+          "definition": "the system of ropes, cables, and chains used to support and control a ship's masts and sails",
+          "contextSentence": "The wind screamed through the rigging.",
+          "discussionQuestion": "What happens to a ship when the rigging is destroyed?"
+        },
+        {
+          "word": "breach",
+          "partOfSpeech": "noun",
+          "definition": "a gap or break in something, especially a wall or barrier",
+          "contextSentence": "The hull split open with a grinding roar... Water rushed in through the breach.",
+          "discussionQuestion": "Why is a breach in a ship's hull so dangerous?"
+        },
+        {
+          "word": "abandon",
+          "partOfSpeech": "verb",
+          "definition": "to leave behind completely; to give up on",
+          "contextSentence": "The sailors launched the lifeboats and abandoned ship, leaving our family behind.",
+          "discussionQuestion": "Why is being abandoned by the crew both terrifying and unfair?"
+        },
+        {
+          "word": "pastor",
+          "partOfSpeech": "noun",
+          "definition": "a minister or priest in charge of a church or congregation",
+          "contextSentence": "I am a Swiss pastor—a minister.",
+          "discussionQuestion": "How might being a pastor shape how William Robinson leads his family?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes the Robinson family's situation worse than an ordinary shipwreck?",
+          "choices": [
+            "The island they can see has no fresh water or food",
+            "The crew abandons them, taking all the lifeboats and leaving the family with no way off the ship",
+            "The children are too young to help with survival tasks",
+            "The ship sinks completely before they can salvage any supplies"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Elizabeth respond to the crisis?",
+          "choices": [
+            "She panics and refuses to leave the cabin",
+            "She gathers the boys, stays calm, and builds a fire while William makes plans",
+            "She takes command of the ship and tries to sail it to shore",
+            "She argues with William about what to do"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "William tells his family, \"We are in God's hands.\" How does faith help the family survive their first night? What role does each parent play in keeping the family together?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "THE RAFT",
+      "summary": "The first task was getting to shore. \nI searched the ship and found four large barrels in the hold.",
+      "text": "The first task was getting to shore.\nI searched the ship and found four large barrels in the hold. With Fritz's help, I sawed them in half lengthwise, creating eight tub-shaped vessels. We lashed them together in pairs with planks, creating a crude but stable raft — something like a floating platform made of connected bathtubs.\n\"It looks ridiculous,\" Ernest observed.\n\"It floats,\" I said. \"That's all that matters.\"\nWe loaded the raft with everything we could carry: a barrel of gunpowder, two muskets, ammunition, a chest of carpenter's tools, fishing line and hooks, a pot of soup that Elizabeth had somehow managed to cook on the tilting stove, seeds, rope, canvas, a Bible, and as much food as would fit.\nThe animals were a problem. The ship had been carrying livestock for the colony — cows, goats, pigs, chickens, and a donkey. They were alive but terrified, penned below deck in rising water.\n\"We can't take them on the raft,\" Elizabeth said.\n\"We can't leave them to drown either,\" said Fritz.\nIn the end, we tied inflated life preservers around the larger animals — the cow, the donkey, and the pigs — and pushed them into the water, hoping they would swim for shore. The goats and chickens we loaded onto the raft, where they added considerably to the chaos.\nJack, being Jack, had also brought two enormous dogs — Turk and Juno — who bounded onto the raft and immediately knocked Ernest into a barrel.\nWe pushed off from the wreck and paddled for shore. The current fought us. The raft spun. The goats bleated. The chickens flapped. Franz clung to his mother and asked if we were going to die, and Elizabeth told him no, absolutely not, and her voice was so calm and certain that even I believed her.\nWe reached the beach in the late afternoon. The sand was warm. The air smelled of flowers and salt. The larger animals had made it to shore ahead of us and were grazing peacefully, as if shipwrecks were an everyday occurrence.\nFritz drove a stake into the sand and tied our raft to it. Ernest cataloged our supplies. Jack chased a crab. Franz fell asleep in his mother's lap.\nWe had made it. We were alive. We were stranded on an unknown island with no map, no rescue, and no idea what lay beyond the tree line.\nBut we were together.",
+      "vocabulary": [
+        {
+          "word": "salvage",
+          "partOfSpeech": "verb/noun",
+          "definition": "to rescue something from a wreck or disaster; items recovered from a wreck",
+          "contextSentence": "We loaded the raft with everything we could carry.",
+          "discussionQuestion": "Why is salvaging supplies from the wreck so critical to survival?"
+        },
+        {
+          "word": "improvise",
+          "partOfSpeech": "verb",
+          "definition": "to create or perform something without preparation, using whatever is available\nFrom the text: William creates a raft from barrels cut in half.\nHow does the father's ability to improvise save the family?\n3. PROVISIONS  (noun) — supplies of food and other necessities",
+          "contextSentence": "A barrel of gunpowder, two muskets, ammunition, a chest of carpenter's tools.",
+          "discussionQuestion": "Which provisions would be most important for survival?"
+        },
+        {
+          "word": "buoyancy",
+          "partOfSpeech": "noun",
+          "definition": "the ability to float in water or air",
+          "contextSentence": "They tied inflated life preservers around the larger animals.",
+          "discussionQuestion": "How does buoyancy keep both the raft and the animals afloat?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does William solve the problem of getting to shore without a lifeboat?",
+          "choices": [
+            "He builds a raft from barrels cut in half and lashed together with planks",
+            "He finds a hidden lifeboat the crew missed",
+            "He teaches the family to swim to shore",
+            "He waits for the tide to carry the wreck closer to land"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Elizabeth's decision to save seed potatoes during the shipwreck reveal about her?",
+          "choices": [
+            "She is impractical and focused on unimportant things",
+            "She thinks ahead and understands what will matter most for long-term survival",
+            "She doesn't understand the danger they're in",
+            "She is trying to save sentimental items from home"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The family must decide what to take from the wreck. If you could bring only five items, what would you choose and why? Compare your choices to what the Robinsons actually take.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "FIRST NIGHT",
+      "summary": "That first night on the beach was one of the longest of my life. \nWe made camp between two large rocks, using sailcloth from the wreck to create a rough tent.",
+      "text": "That first night on the beach was one of the longest of my life.\nWe made camp between two large rocks, using sailcloth from the wreck to create a rough tent. Elizabeth built a fire — she was better at it than I was, though she was kind enough not to say so. We heated the soup she had made on the ship and ate it from tin cups, sitting on the sand, listening to the waves and the strange sounds of the forest behind us.\nThe sounds were unsettling. Clicks, rustles, and cries we couldn't identify. Something large moved through the undergrowth beyond the firelight. Turk and Juno growled and pressed close to the boys.\n\"What's out there?\" Franz whispered.\n\"We'll find out tomorrow,\" I said. \"Tonight, we rest.\"\nI divided the night into watches. Fritz took the first, then me, then Ernest. Jack volunteered but fell asleep in four minutes, which was a new personal record for him.\nElizabeth didn't sleep at all. I found her sitting by the fire in the small hours, staring at the dark ocean, and I knew what she was thinking — the same thing I was thinking. Were we the only survivors? Would anyone come looking for us? Would we ever see our home again?\n\"The boys are safe,\" she said quietly. \"That's what matters right now.\"\nShe was right. She was usually right.\nMorning brought clarity and courage. The sun rose over the island in a blaze of gold, and in the daylight, our situation looked considerably less dire. The beach was broad and clean. A freshwater stream tumbled out of the forest and crossed the sand to the sea. Coconut palms lined the shore, their fruit hanging in heavy clusters. Beyond the palms, the forest was thick with trees I didn't recognize — enormous, ancient trees with trunks as wide as houses.\n\"This island can sustain us,\" I told the family at breakfast. \"It has water, food, shelter materials, and — based on the animal tracks I see — plenty of game. Our job now is to explore, to build, and to survive.\"\nFritz wanted to explore immediately. Ernest wanted to make a complete inventory of our supplies. Jack wanted to climb the nearest tree. Franz wanted breakfast.\nWe compromised. We would explore first, then inventory, then build. And everyone would get breakfast.",
+      "vocabulary": [
+        {
+          "word": "vulnerable",
+          "partOfSpeech": "adjective",
+          "definition": "exposed to danger; unprotected",
+          "contextSentence": "That first night on the beach was one of the longest of my life.",
+          "discussionQuestion": "What makes the family vulnerable on their first night?"
+        },
+        {
+          "word": "inventory",
+          "partOfSpeech": "noun/verb",
+          "definition": "a complete list of items; to make such a list",
+          "contextSentence": "Ernest wanted to make a complete inventory of our supplies.",
+          "discussionQuestion": "Why is taking an inventory important for survival planning?"
+        },
+        {
+          "word": "dire",
+          "partOfSpeech": "adjective",
+          "definition": "extremely serious or urgent; dreadful",
+          "contextSentence": "In the daylight, our situation looked considerably less dire.",
+          "discussionQuestion": "What changes between night and morning that makes things seem less dire?"
+        },
+        {
+          "word": "sustain",
+          "partOfSpeech": "verb",
+          "definition": "to keep alive; to maintain over time",
+          "contextSentence": "This island can sustain us.",
+          "discussionQuestion": "What evidence does William see that the island can sustain them?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does the family's situation seem less dire in the morning than it did at night?",
+          "choices": [
+            "A rescue ship appears on the horizon",
+            "Daylight reveals fresh water, coconut palms, and a beach that can support them",
+            "The ship drifts to shore and they can live on it",
+            "Other survivors from the crew arrive to help"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Elizabeth's comment — \"The boys are safe. That's what matters right now\" — reveal about her priorities?",
+          "choices": [
+            "She doesn't care about their long-term survival",
+            "She focuses on the most important thing first, which helps her manage fear",
+            "She thinks rescue will come quickly so nothing else matters",
+            "She is trying to avoid the hard conversations about survival"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Each family member reacts differently to the crisis: Fritz wants to explore, Ernest wants to inventory, Jack wants to climb, and Franz wants breakfast. What do these reactions reveal about each character's personality?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "EXPLORING THE ISLAND",
+      "summary": "Fritz and I set out on the first expedition, leaving Elizabeth, Ernest, and the younger boys to guard the camp and organize supplies. \nWe followed the stream inland, pushing through thick vegetation that closed over our heads like a green tunnel.",
+      "text": "Fritz and I set out on the first expedition, leaving Elizabeth, Ernest, and the younger boys to guard the camp and organize supplies.\nWe followed the stream inland, pushing through thick vegetation that closed over our heads like a green tunnel. The forest was alive with sound — birds calling, insects humming, leaves rustling in the warm breeze. I saw plants I recognized from my studies: sugarcane, cotton bushes, and what appeared to be a grove of rubber trees. Others were completely foreign to me.\nFritz, who had a natural instinct for the wild, moved ahead with his musket ready. He was the best shot in the family and the most comfortable in rough terrain. He reminded me of a young soldier — alert, focused, and slightly too eager for danger.\nAfter an hour of walking, the forest opened onto a sight that took my breath away.\nA vast meadow stretched before us, green and rolling, dotted with clusters of trees. A river wound through the center, wider and deeper than the stream we had followed. Beyond the meadow, the land rose sharply into hills covered with dense forest, and beyond the hills, the island's central peak — a rocky mountain wreathed in clouds.\n\"This isn't a small island,\" Fritz said, shading his eyes. \"This is a whole country.\"\nHe was right. The island was far larger than I had expected — miles across in every direction, with varied terrain: beaches, forests, meadows, hills, and what appeared to be marshy ground near the river's mouth. It could support a community, not just a family.\nOn our way back, we made two important discoveries. The first was a grove of enormous trees — a species I would later identify as a type of tropical fig — with trunks thirty feet in circumference and massive branches that spread out like platforms high above the ground. They were the largest trees I had ever seen.\nThe second discovery was less pleasant. Fritz spotted something in the underbrush — a track in the soft earth. It was a paw print, deep and wide, with the clear marks of claws.\nSomething large lived on this island. Something with claws.\nWe said nothing about it to Franz.",
+      "vocabulary": [
+        {
+          "word": "terrain",
+          "partOfSpeech": "noun",
+          "definition": "an area of land, especially with regard to its physical features",
+          "contextSentence": "The island was far larger than I had expected—with varied terrain.",
+          "discussionQuestion": "Why is understanding the terrain important for the family's survival?"
+        },
+        {
+          "word": "expedition",
+          "partOfSpeech": "noun",
+          "definition": "a journey undertaken for a specific purpose, especially exploration",
+          "contextSentence": "Fritz and I set out on the first expedition.",
+          "discussionQuestion": "What makes this expedition different from a casual walk?"
+        },
+        {
+          "word": "instinct",
+          "partOfSpeech": "noun",
+          "definition": "a natural ability or way of behaving that is not learned",
+          "contextSentence": "Fritz, who had a natural instinct for the wild, moved ahead with his musket ready.",
+          "discussionQuestion": "How does Fritz's instinct serve the family?"
+        },
+        {
+          "word": "ominous",
+          "partOfSpeech": "adjective",
+          "definition": "giving the impression that something bad is going to happen; threatening",
+          "contextSentence": "A paw print, deep and wide, with the clear marks of claws.",
+          "discussionQuestion": "Why is the discovery of the paw print ominous?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What two discoveries do Fritz and William make on their expedition?",
+          "choices": [
+            "A village of friendly people and a freshwater lake",
+            "Enormous fig trees with platform-like branches and an ominous animal paw print",
+            "A gold mine and a field of wild wheat",
+            "Another shipwreck and a map of the island"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why do Fritz and William not tell Franz about the paw print?",
+          "choices": [
+            "They don't want to frighten the youngest child unnecessarily",
+            "They think Franz would try to hunt the animal by himself",
+            "They've decided the print is from a harmless animal",
+            "Elizabeth told them not to share bad news with the children"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Fritz has \"a natural instinct for the wild\" while Ernest prefers to analyze things carefully. How do these two approaches — instinct vs. analysis — both contribute to the family's survival?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "THE TREEHOUSE",
+      "summary": "The paw print settled the question of where we would live.  The beach was too exposed — too flat, too open, with no protection from animals or weather.",
+      "text": "The paw print settled the question of where we would live. The beach was too exposed — too flat, too open, with no protection from animals or weather. We needed a home that was elevated, defensible, and sturdy.\nI thought of those enormous trees.\nThe whole family hiked to the fig tree grove the next morning, loaded with tools and supplies from the wreck. When Elizabeth saw the trees, she stopped and stared upward.\n\"You want to build a house in that tree,\" she said. It was not a question.\n\"Look at those branches,\" I said. \"They're as wide as floors. The trunk is impossible for any animal to climb. We'd be thirty feet off the ground, with a view in every direction.\"\n\"It's perfect!\" Jack shouted, and was halfway up the trunk before anyone could stop him.\nBuilding the treehouse took two weeks. It was the hardest work any of us had ever done, and it was also the most satisfying. Fritz and I hauled lumber from the wreck. Ernest designed a pulley system to lift heavy materials. Jack — who had no fear of heights whatsoever — worked on the highest branches, nailing planks and tying ropes with the agility of a monkey. Even little Franz carried supplies and held the ladder.\nElizabeth was the architect. She had a practical eye for design that none of the rest of us possessed. She planned the layout: a main platform for cooking and eating, a sleeping area divided by canvas walls, a storage room for food, and a covered balcony with a railing where we could sit in the evening and look out over the island.\nWe built a staircase that spiraled around the trunk — wide enough for two people, with a railing for safety. At the bottom, we constructed a gate that could be locked at night.\nWhen it was finished, we stood on the balcony as a family and looked out over the green canopy of the forest, the silver ribbon of the river, and the blue sea stretching to the horizon. The air was cool and clean. Birds sang in the branches above our heads.\n\"What shall we call it?\" Elizabeth asked.\n\"Falconest,\" said Fritz, because a family of falcons nested in the highest branch.\nWe had a home.",
+      "vocabulary": [
+        {
+          "word": "elevated",
+          "partOfSpeech": "adjective",
+          "definition": "raised up; higher than the surrounding area",
+          "contextSentence": "We needed a home that was elevated, defensible, and sturdy.",
+          "discussionQuestion": "Why does the family need an elevated home?"
+        },
+        {
+          "word": "architect",
+          "partOfSpeech": "noun",
+          "definition": "a person who designs buildings or other structures",
+          "contextSentence": "Elizabeth was the architect.",
+          "discussionQuestion": "What skills does Elizabeth bring as the family's architect?"
+        },
+        {
+          "word": "agility",
+          "partOfSpeech": "noun",
+          "definition": "the ability to move quickly and easily",
+          "contextSentence": "Jack worked on the highest branches with the agility of a monkey.",
+          "discussionQuestion": "How does Jack's agility make him valuable during construction?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does the family choose to build in the trees instead of staying on the beach?",
+          "choices": [
+            "The beach is too hot during the day",
+            "They need an elevated, defensible home that animals cannot reach",
+            "The trees provide better materials for building",
+            "Elizabeth is afraid of the ocean after the shipwreck"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What makes Elizabeth's role as architect important?",
+          "choices": [
+            "She has professional training in building design",
+            "She has practical design sense that the others lack, creating a functional layout",
+            "She is the only one who can read the building instructions from the wreck",
+            "She motivates the boys by offering prizes for the best work"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Every family member contributes something different to building Falconest. How does this teamwork reflect the book's theme that survival depends on cooperation, not just individual strength?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "TAMING THE WILD",
+      "summary": "With shelter established, we turned to the animals. \nThe livestock from the ship had survived the swim and were thriving on the island's abundant vegetation.",
+      "text": "With shelter established, we turned to the animals.\nThe livestock from the ship had survived the swim and were thriving on the island's abundant vegetation. The cow grazed in the meadow. The pigs rooted happily in the forest. The goats had scrambled up the hillside and seemed perfectly content.\nBut wild animals also roamed the island, and some of them could be useful. Fritz captured a young donkey — stubborn but strong — that became our pack animal. Ernest, whose patience was infinite, managed to tame a troop of wild goats by leaving food near the stream every day until they came to eat from his hand.\nJack, predictably, attempted to tame everything. He caught a young monkey that became his constant companion — a mischievous creature that stole food, pulled hair, and generally caused mayhem. He tried to ride a wild pig, which ended badly. He attempted to befriend an enormous lizard, which also ended badly.\nHis greatest triumph was the flamingo. He found an injured flamingo by the lagoon, nursed it back to health with scraps of fish, and trained it to come when he whistled. The bird was absurdly beautiful — all pink and white and long-legged — and it followed Jack around the camp like a feathered shadow.\n\"That bird is ridiculous,\" Ernest said.\n\"That bird is magnificent,\" Jack replied.\nElizabeth, meanwhile, organized the domestic animals with quiet efficiency. She established a milking routine for the cow and goats. She built a chicken coop from bamboo and salvaged wire. She started a small apiary — a bee house — after Fritz discovered a wild hive in a hollow tree.\nThe honey was extraordinary. Golden, thick, and fragrant with the scent of tropical flowers. It became our most valued luxury.\nWe were no longer just surviving. We were building something — a working farm, a functioning household, a small civilization carved from the wilderness by a family that refused to give up.",
+      "vocabulary": [
+        {
+          "word": "domesticate",
+          "partOfSpeech": "verb",
+          "definition": "to tame a wild animal so it can live with and be useful to humans",
+          "contextSentence": "Ernest managed to tame a troop of wild goats.",
+          "discussionQuestion": "Why does domesticating animals help the family survive long-term?"
+        },
+        {
+          "word": "abundance",
+          "partOfSpeech": "noun",
+          "definition": "a very large quantity of something; more than enough",
+          "contextSentence": "The livestock were thriving on the island's abundant vegetation.",
+          "discussionQuestion": "How does the island's abundance make animal domestication possible?"
+        },
+        {
+          "word": "apiary",
+          "partOfSpeech": "noun",
+          "definition": "a place where bees are kept; a collection of beehives",
+          "contextSentence": "She started a small apiary after Fritz discovered a wild hive.",
+          "discussionQuestion": "Why is an apiary an important addition to the family's resources?"
+        },
+        {
+          "word": "mayhem",
+          "partOfSpeech": "noun",
+          "definition": "violent disorder; chaos",
+          "contextSentence": "Jack caught a young monkey that generally caused mayhem.",
+          "discussionQuestion": "How does Jack's personality create mayhem even in a survival situation?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Ernest's approach to taming animals differ from Jack's?",
+          "choices": [
+            "Ernest is impatient while Jack takes his time",
+            "Ernest uses patience and consistency while Jack is impulsive and chaotic",
+            "Ernest only tames useful animals while Jack focuses on pets",
+            "Ernest uses force while Jack uses kindness"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Elizabeth's creation of the apiary demonstrate?",
+          "choices": [
+            "She misses the comforts of her old life in Switzerland",
+            "She thinks about long-term resources, not just day-to-day survival",
+            "She is afraid of the wild animals and wants to stay near the hives",
+            "She wants to trade honey with passing ships"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The narrator says the family is \"no longer just surviving\" but \"building something.\" What is the difference between surviving and building? What evidence shows the family has crossed that line?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "THE GARDEN",
+      "summary": "Food was our most critical concern.  The island provided wild fruit, fish, and game, but we needed crops — reliable, renewable food sources that would sustain us not for weeks but for years.",
+      "text": "Food was our most critical concern. The island provided wild fruit, fish, and game, but we needed crops — reliable, renewable food sources that would sustain us not for weeks but for years.\nAmong the supplies salvaged from the wreck were seeds: wheat, corn, barley, lettuce, turnips, and peas. Elizabeth also found seed potatoes, which she had wrapped carefully in canvas during the shipwreck and guarded like treasure through everything that followed.\n\"Potatoes will keep us alive when nothing else will,\" she said. She was not exaggerating. In Switzerland, potatoes were the foundation of every farm.\nWe cleared a plot of land near the river, where the soil was rich and dark. The boys dug until their hands blistered. I built a crude plow from ship timbers and hitched it to the donkey, who cooperated only after prolonged negotiations involving carrots.\nFritz planted the wheat and corn in neat rows. Ernest, who had been reading a book on tropical agriculture that he'd found in the ship's library, advised on spacing and irrigation. Jack dug an irrigation channel from the river to the garden with more energy than precision — it flooded twice before Ernest redesigned it.\nFranz's job was chasing away the birds. He was surprisingly good at it, armed with a homemade scarecrow and a loud voice.\nWe also planted sugarcane cuttings along the riverbank and transplanted cotton bushes closer to the camp. Elizabeth started an herb garden with wild plants she had identified: something that tasted like thyme, a mint-like plant that grew by the stream, and a spicy root that made an excellent tea.\nThe first green shoots appeared two weeks later. I stood in the garden at dawn, watching the tiny plants push through the earth, and I felt something I hadn't felt since the shipwreck: hope. Not the desperate, moment-to-moment hope of survival, but the deep, steady hope of a future.\nWe were planting for next year. That meant we believed there would be a next year.",
+      "vocabulary": [
+        {
+          "word": "renewable",
+          "partOfSpeech": "adjective",
+          "definition": "able to be replaced or restored naturally; not depleted when used",
+          "contextSentence": "We needed reliable, renewable food sources that would sustain us not for weeks but for years.",
+          "discussionQuestion": "Why are renewable food sources more important than stored food?"
+        },
+        {
+          "word": "irrigation",
+          "partOfSpeech": "noun",
+          "definition": "the artificial supply of water to land or crops",
+          "contextSentence": "Jack dug an irrigation channel from the river to the garden.",
+          "discussionQuestion": "How does irrigation transform the family's ability to grow food?"
+        },
+        {
+          "word": "cultivate",
+          "partOfSpeech": "verb",
+          "definition": "to prepare and use land for growing crops; also, to develop a skill or quality",
+          "contextSentence": "We cleared a plot of land near the river.",
+          "discussionQuestion": "What steps does the family take to cultivate the land?"
+        },
+        {
+          "word": "optimism",
+          "partOfSpeech": "noun",
+          "definition": "hopefulness and confidence about the future",
+          "contextSentence": "The first green shoots appeared. I felt hope—not desperate hope, but deep, steady hope.",
+          "discussionQuestion": "How do the green shoots represent a shift from survival to optimism?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does the father say seed potatoes are more important than pearls on the island?",
+          "choices": [
+            "Pearls are too heavy to carry",
+            "Potatoes provide renewable food while pearls cannot be eaten",
+            "The island has no oysters so pearls are impossible to find",
+            "Pearls would attract pirates to the island"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the appearance of the first green shoots represent?",
+          "choices": [
+            "The family's failure because the plants are growing too slowly",
+            "A shift from desperate survival hope to a deep, steady hope for the future",
+            "Evidence that the island's soil is poor",
+            "A sign that rescue is coming soon"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "William says planting a garden means \"we believed there would be a next year.\" How does planning for the future change a person's mindset during a crisis? Use evidence from the chapter.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "TENTLAND",
+      "summary": "As our territory expanded, one home wasn't enough.  We needed a second base — closer to the beach, where we could access the wreck for supplies and keep watch for passing ships.",
+      "text": "As our territory expanded, one home wasn't enough. We needed a second base — closer to the beach, where we could access the wreck for supplies and keep watch for passing ships.\nWe built Tentland on a sandy rise overlooking the bay. It was simpler than Falconest — a large canvas tent supported by bamboo poles, with a wooden floor, a cooking area, and a storage shed. But it served a vital purpose: from Tentland, we could see the ocean for miles in every direction.\nFritz constructed a flagpole and raised a makeshift flag — a white sheet with a red cross, visible from far out at sea. If a ship passed, we wanted to be seen.\nElizabeth divided our time between the two homes. Weekdays at Falconest, where the garden and animals needed tending. Weekends at Tentland, where we fished, swam, and watched the horizon.\nThe boys loved Tentland. It felt like a vacation — sleeping under canvas, cooking over an open fire, swimming in the warm bay. Jack and Franz built sand fortresses and defended them against imaginary pirates. Fritz practiced shooting at targets on the beach. Ernest collected shells and cataloged them in a leather-bound journal he'd salvaged from the ship, which was slowly becoming an encyclopedia of the island's natural history.\nBut Tentland also served a more serious purpose. From the beach, I could study the wreck. The ship was still wedged on the reef, slowly breaking apart as the waves worked on it. Each week, more of the hull was exposed or washed away. I made regular trips to salvage whatever I could before the ocean claimed it: more tools, nails, rope, canvas, books, medicine, and — most valuably — a set of window glass that Elizabeth immediately installed in Falconest.\n\"Glass windows in a treehouse,\" Fritz said, shaking his head. \"We're building a civilization on a desert island.\"\n\"That,\" Elizabeth said, \"is exactly the point.\"",
+      "vocabulary": [
+        {
+          "word": "outpost",
+          "partOfSpeech": "noun",
+          "definition": "a small settlement or military position at a distance from the main group",
+          "contextSentence": "Tentland served as a second base closer to the beach.",
+          "discussionQuestion": "Why does the family need an outpost separate from Falconest?"
+        },
+        {
+          "word": "surveillance",
+          "partOfSpeech": "noun",
+          "definition": "close observation, especially of a suspected person or area",
+          "contextSentence": "From Tentland, we could see the ocean for miles in every direction.",
+          "discussionQuestion": "How does Tentland serve as a surveillance point?"
+        },
+        {
+          "word": "encyclopedia",
+          "partOfSpeech": "noun",
+          "definition": "a book or set of books containing detailed information on many subjects",
+          "contextSentence": "Ernest's journal was slowly becoming an encyclopedia of the island's natural history.",
+          "discussionQuestion": "What makes Ernest's journal like an encyclopedia?"
+        },
+        {
+          "word": "civilization",
+          "partOfSpeech": "noun",
+          "definition": "an organized society with its own culture, laws, and way of life",
+          "contextSentence": "We're building a civilization on a desert island.",
+          "discussionQuestion": "At what point does survival become civilization?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What is the main purpose of building Tentland near the beach?",
+          "choices": [
+            "The boys want a vacation spot away from Falconest",
+            "It allows the family to watch for ships and access the wreck for supplies",
+            "Elizabeth wants to be closer to the ocean for fishing",
+            "The treehouse is too small for the growing family"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Fritz mean when he says, \"We're building a civilization on a desert island\"?",
+          "choices": [
+            "He is complaining that the work is too hard",
+            "He recognizes that the family has gone beyond survival to create something permanent",
+            "He thinks they should stop building and focus on rescue",
+            "He is making fun of his mother's insistence on glass windows"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Elizabeth responds to Fritz by saying, \"That is exactly the point.\" What does she mean? How does Elizabeth's vision for the family differ from just \"getting by\"?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "THE PINNACE",
+      "summary": "Fritz had been talking about building a proper boat for months.  The raft had served us well, but it was slow, clumsy, and dangerous in rough water.",
+      "text": "Fritz had been talking about building a proper boat for months. The raft had served us well, but it was slow, clumsy, and dangerous in rough water. We needed something better — something seaworthy enough to explore the island's coastline and, perhaps, to reach other islands if any existed nearby.\nThe wreck provided the answer. Wedged in the ship's hold, I found a small vessel — a pinnace, a light sailing boat that had been stored in pieces for assembly at the colony. The parts were waterlogged but intact: keel, planking, mast, rigging, and a small sail.\nFritz and I spent three weeks assembling it on the beach. We caulked the seams with tar salvaged from the wreck. Ernest helped with the mathematics of ballast and balance, calculating how much weight the boat could carry without capsizing. Jack appointed himself chief painter and gave the pinnace a coat of white paint with a red stripe at the waterline.\nElizabeth named her the Elizabeth — over her own objections — and we launched her on a bright morning with the whole family aboard.\nShe sailed beautifully. Light, fast, and responsive to the tiller, the Elizabeth carried us around the island's coastline in two days. What we found confirmed what Fritz had suspected: the island was enormous, perhaps twenty miles long and ten miles wide, with a varied coastline of beaches, cliffs, rocky coves, and mangrove swamps.\nOn the far side of the island, we discovered a deep natural harbor — a crescent-shaped bay surrounded by steep cliffs, with a narrow entrance that could be easily defended. Fritz immediately began planning a third outpost.\n\"We don't need three houses,\" Ernest said reasonably.\n\"We don't need them yet,\" Fritz replied. \"But we might.\"\nHe was thinking like a leader, not just a survivor. I noticed, and I was proud — but also a little worried. Fritz was growing up fast on this island, and the boy who wanted to explore everything was becoming a young man who wanted to control everything.",
+      "vocabulary": [
+        {
+          "word": "pinnace",
+          "partOfSpeech": "noun",
+          "definition": "a small, light sailing boat",
+          "contextSentence": "I found a small vessel—a pinnace—stored in pieces for assembly.",
+          "discussionQuestion": "Why is having a boat a game-changer for the family?"
+        },
+        {
+          "word": "caulked",
+          "partOfSpeech": "verb",
+          "definition": "sealed the joints or seams of a boat to make it watertight",
+          "contextSentence": "We caulked the seams with tar salvaged from the wreck.",
+          "discussionQuestion": "What would happen if the pinnace weren't caulked properly?"
+        },
+        {
+          "word": "ballast",
+          "partOfSpeech": "noun",
+          "definition": "heavy material placed in a ship to improve stability",
+          "contextSentence": "Ernest helped with the mathematics of ballast and balance.",
+          "discussionQuestion": "How does Ernest's knowledge of ballast show that book learning has practical value?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why is Ernest's knowledge of ballast and balance important for the boat?",
+          "choices": [
+            "Without proper ballast, the boat could capsize in rough water",
+            "Ballast makes the boat go faster",
+            "Ernest wants to prove he's smarter than Fritz",
+            "The family needs ballast to weigh down their fishing nets"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What concerns the father about Fritz's growing ambition?",
+          "choices": [
+            "Fritz is spending too much money on boat supplies",
+            "Fritz is becoming a leader who wants to control everything, not just explore",
+            "Fritz doesn't spend enough time on his chores",
+            "Fritz is planning to leave the island without telling anyone"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The father says he is \"proud but also a little worried\" about Fritz. What is he proud of? What worries him? How can a parent feel both things at once?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "THE CAVE",
+      "summary": "The discovery that changed everything happened by accident. \nErnest had been exploring the cliffs near Tentland, looking for mineral samples for his growing collection, when he noticed that the rock face was unusually smooth in one spot — too smooth to be natural.",
+      "text": "The discovery that changed everything happened by accident.\nErnest had been exploring the cliffs near Tentland, looking for mineral samples for his growing collection, when he noticed that the rock face was unusually smooth in one spot — too smooth to be natural. He tapped it with his hammer. It sounded hollow.\n\"Father! Fritz! Come look at this!\"\nWe brought picks and chisels and went to work. Behind a thin wall of limestone, we found a cavern — an enormous underground space, dry, cool, and cathedral-like. The ceiling rose thirty feet overhead, supported by natural columns of salt crystal that sparkled in our torchlight like pillars of ice. The floor was smooth and level. The air was fresh, circulated by cracks in the rock above.\nIt was a palace.\nElizabeth saw the potential immediately. \"This is our real home,\" she said, running her hand along the smooth rock wall. \"It's cool in summer, warm in winter, safe from storms, and large enough for ten families.\"\nShe was right. Over the following weeks, we transformed the cave into something remarkable. We built wooden walls to divide the space into rooms — a main hall, a kitchen, bedrooms for each of the boys, a storeroom, and a workshop. We installed the glass windows from the wreck in the outer wall. We built a fireplace with a chimney that vented through a natural crack in the ceiling.\nFritz and Jack carved furniture from island hardwoods — a long dining table, benches, shelves, and bed frames. Elizabeth sewed mattresses stuffed with cotton from our plantation. Ernest hung his shell collection on the walls and set up a small laboratory in a side chamber.\nWe called it Rockburg, and it became our primary home — the center of our island civilization.\nFrom Falconest in the trees to Tentland on the beach to Rockburg in the cliffs, we now had three homes spanning the island. We had a farm, a boat, livestock, and a growing store of preserved food.\nWe were no longer castaways. We were colonists.",
+      "vocabulary": [
+        {
+          "word": "cavern",
+          "partOfSpeech": "noun",
+          "definition": "a large natural underground chamber",
+          "contextSentence": "We found a cavern—an enormous underground space, dry, cool, and cathedral-like.",
+          "discussionQuestion": "Why is the cavern a better long-term home than the treehouse?"
+        },
+        {
+          "word": "crystalline",
+          "partOfSpeech": "adjective",
+          "definition": "having the structure or appearance of a crystal; clear and sparkling",
+          "contextSentence": "Natural columns of salt crystal that sparkled in our torchlight like pillars of ice.",
+          "discussionQuestion": "How does the word crystalline help the reader picture the cave?"
+        },
+        {
+          "word": "transformation",
+          "partOfSpeech": "noun",
+          "definition": "a thorough or dramatic change in form or appearance",
+          "contextSentence": "We transformed the cave into something remarkable.",
+          "discussionQuestion": "Describe the transformation from empty cave to home."
+        },
+        {
+          "word": "colonist",
+          "partOfSpeech": "noun",
+          "definition": "a person who settles in a new territory; a member of a colony",
+          "contextSentence": "We were no longer castaways. We were colonists.",
+          "discussionQuestion": "What is the difference between a castaway and a colonist?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How is Rockburg (the cave) better than Falconest (the treehouse) as a permanent home?",
+          "choices": [
+            "It has more trees nearby for building",
+            "It is cool in summer, warm in winter, safe from storms, and large enough for expansion",
+            "It is closer to the beach where ships might appear",
+            "It has running water inside the cave"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the shift from \"castaways\" to \"colonists\" mean?",
+          "choices": [
+            "The family has been officially recognized by a government",
+            "They have moved from reacting to their situation to actively building a permanent settlement",
+            "They have found other people living on the island",
+            "A ship has arrived and declared the island a colony"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The family now has three homes: Falconest, Tentland, and Rockburg. What does having multiple homes across the island tell us about how the family thinks about their future?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "RAINY SEASON",
+      "summary": "The first rainy season hit us like a wall. \nFor weeks, the sky turned dark and the rain fell in sheets — not the gentle drizzle of Switzerland, but a tropical deluge that turned the ground to mud, swelled the river to twice its normal width, and made any outdoor work impossible.",
+      "text": "The first rainy season hit us like a wall.\nFor weeks, the sky turned dark and the rain fell in sheets — not the gentle drizzle of Switzerland, but a tropical deluge that turned the ground to mud, swelled the river to twice its normal width, and made any outdoor work impossible. Wind howled through the cliffs. Lightning cracked overhead. The ocean churned white.\nWe retreated to Rockburg and waited.\nThe first few days were almost pleasant. The boys played games. Elizabeth taught Franz to read from the books we had salvaged. I organized our tools and planned improvements for the dry season. Ernest worked on his natural history journal, drawing detailed illustrations of the plants and animals he'd cataloged.\nBy the second week, the pleasantness wore off.\nFour boys in an enclosed space, no matter how large, is a recipe for conflict. Fritz and Ernest argued about everything — whose turn it was to cook, whose shelf was encroaching on whose space, whose scientific theory about the island's geology was correct. Jack couldn't sit still for more than ten minutes. Franz, usually cheerful, grew quiet and withdrawn.\nElizabeth kept the peace with a schoolteacher's combination of firmness and creativity. She established a daily schedule: morning lessons in mathematics, reading, and writing; afternoon projects; evening entertainment. Fritz practiced his shooting technique with a makeshift indoor target. Ernest conducted experiments with island minerals. Jack built elaborate traps for imaginary animals. Franz learned to play a small flute that Elizabeth had found in the wreck.\nBut the rain also brought time for reflection — and with reflection came the questions we had been too busy to face.\n\"Do you think anyone is looking for us?\" Ernest asked one evening, as rain hammered the cliff above our heads.\n\"The ship was bound for a colony,\" I said carefully. \"When it doesn't arrive, people will notice.\"\n\"But will they look in the right place? We were blown hundreds of miles off course.\"\nI didn't answer. He was right. The chances of rescue were small, and they grew smaller with each passing month.\nElizabeth caught my eye across the room. We had an unspoken agreement: honesty with the boys, but not hopelessness. We would tell them the truth, but we would also keep building, keep working, keep living as if the future mattered. Because it did — whether rescue came or not.",
+      "vocabulary": [
+        {
+          "word": "deluge",
+          "partOfSpeech": "noun",
+          "definition": "a severe flood; an overwhelming amount of rain",
+          "contextSentence": "A tropical deluge that turned the ground to mud.",
+          "discussionQuestion": "How is a tropical deluge different from normal rain?"
+        },
+        {
+          "word": "confinement",
+          "partOfSpeech": "noun",
+          "definition": "the state of being kept in a limited space; imprisonment",
+          "contextSentence": "Four boys in an enclosed space is a recipe for conflict.",
+          "discussionQuestion": "What problems does confinement create for the family?"
+        },
+        {
+          "word": "curriculum",
+          "partOfSpeech": "noun",
+          "definition": "the subjects and content taught in a school or program",
+          "contextSentence": "Elizabeth established a daily schedule: morning lessons in mathematics, reading, and writing.",
+          "discussionQuestion": "Why does Elizabeth create a curriculum during the rainy season?"
+        },
+        {
+          "word": "reflection",
+          "partOfSpeech": "noun",
+          "definition": "serious thought or consideration about something",
+          "contextSentence": "The rain also brought time for reflection.",
+          "discussionQuestion": "What uncomfortable questions does reflection bring up for the family?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Elizabeth keep peace during the long rainy season?",
+          "choices": [
+            "She lets the boys do whatever they want to avoid arguments",
+            "She creates a daily schedule with lessons, projects, and entertainment",
+            "She sends the boys outside despite the rain",
+            "She separates the boys into different rooms and doesn't let them interact"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why is Ernest's question — \"Do you think anyone is looking for us?\" — so difficult for the father to answer?",
+          "choices": [
+            "The father doesn't know the answer and doesn't want to destroy hope",
+            "The father knows rescue is coming but wants to keep it a surprise",
+            "Ernest is being rude and the father doesn't want to encourage him",
+            "The father has already told them no one is coming"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The family has an \"unspoken agreement: honesty with the boys, but not hopelessness.\" How do the parents balance truth and hope? Is this the right approach? Why or why not?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "THE BOA CONSTRICTOR",
+      "summary": "The dry season returned, and with it, danger. \nErnest had been walking alone near the marshy ground south of the river — collecting plant specimens, as usual — when he heard a sound that froze his blood.",
+      "text": "The dry season returned, and with it, danger.\nErnest had been walking alone near the marshy ground south of the river — collecting plant specimens, as usual — when he heard a sound that froze his blood. A deep, slow hiss, like air escaping from a massive bellows. Then movement in the tall grass, something enormous sliding through the reeds.\nHe looked down and saw it. A boa constrictor — at least twenty feet long, as thick as a man's thigh, its brown-and-gold body coiled in the grass barely ten yards from where he stood. Its head was raised, its tongue flicking, its cold eyes fixed directly on him.\nErnest did not run. Running from a constrictor is pointless — they are faster than they look, and movement triggers their hunting instinct. Instead, he stood completely still, his heart hammering, and slowly — very slowly — raised his musket to his shoulder.\nErnest was not the best shot in the family. That was Fritz. Ernest's hands shook when he was nervous, and he was nervous now in a way he had never been in his life. But he had studied these creatures. He knew where to aim.\nHe fired.\nThe shot struck the snake behind the head. The creature thrashed — a violent, whipping motion that flattened the grass for yards in every direction. Ernest fired again, and this time the thrashing slowed, then stopped.\nWhen we found him, Ernest was sitting on a rock, pale and trembling, staring at the dead snake. His musket lay across his knees. Jack's monkey was screaming in a tree overhead.\n\"Are you all right?\" I asked.\n\"I believe so,\" Ernest said, in the careful, measured voice he used when he was trying very hard not to fall apart. \"I would like to go home now.\"\nWe carried the snake back to Rockburg — all twenty-three feet of it. Elizabeth blanched when she saw it but recovered quickly and suggested we use the skin. Fritz and Jack stretched and dried it, creating a magnificent hide that Ernest, with quiet pride, hung on the wall of his room.\nThat evening, I noticed something different about Ernest. The other boys had always teased him for being the cautious one, the bookish one, the one who preferred thinking to doing. But he had faced a deadly creature alone, kept his head, and survived through knowledge and calm.\nFritz clapped him on the shoulder. \"Good shot, brother.\"\nErnest smiled — a small, private smile that said more than words.",
+      "vocabulary": [
+        {
+          "word": "constrictor",
+          "partOfSpeech": "noun",
+          "definition": "a snake that kills by coiling around its prey and squeezing",
+          "contextSentence": "A boa constrictor—at least twenty feet long.",
+          "discussionQuestion": "Why is a constrictor especially terrifying compared to other dangerous animals?"
+        },
+        {
+          "word": "composure",
+          "partOfSpeech": "noun",
+          "definition": "the state of being calm and in control of oneself",
+          "contextSentence": "Ernest did not run. He stood completely still.",
+          "discussionQuestion": "How does Ernest maintain his composure when facing the snake?"
+        },
+        {
+          "word": "specimen",
+          "partOfSpeech": "noun",
+          "definition": "an individual example of an animal, plant, or object used for study\nFrom the text: Ernest hung the snake's skin on his wall.\nHow does keeping the skin as a specimen show Ernest's personality?\n4. VINDICATION  (noun) — the act of being proven right or justified after being doubted",
+          "contextSentence": "Fritz clapped him on the shoulder. 'Good shot, brother.'",
+          "discussionQuestion": "How is this moment a vindication for Ernest, who was always seen as the bookish one?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does Ernest survive the encounter with the boa constrictor?",
+          "choices": [
+            "He runs faster than the snake can follow",
+            "He stands still, stays calm, uses his knowledge of snakes, and shoots accurately",
+            "Fritz arrives just in time to kill the snake",
+            "The snake is not actually dangerous and eventually slithers away"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does the snake encounter change how the family sees Ernest?",
+          "choices": [
+            "They realize he is reckless and needs to be watched",
+            "They see that his knowledge and calm are just as valuable as physical strength",
+            "They decide Ernest should never go into the forest alone again",
+            "They are embarrassed that Ernest killed such a beautiful creature"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Ernest has always been teased for being \"the bookish one.\" How does this chapter prove that different kinds of strength are equally valuable? What would have happened if Fritz had been there instead?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "THE OSTRICH HUNT",
+      "summary": "Jack was going to ride an ostrich.  Nothing anyone said could stop him.",
+      "text": "Jack was going to ride an ostrich. Nothing anyone said could stop him.\nWe had discovered a flock of wild ostriches on the open grassland beyond the river — magnificent birds, taller than a man, with powerful legs that could outrun a horse. Fritz wanted to study them. Ernest wanted to sketch them. Jack wanted to ride one.\n\"Absolutely not,\" Elizabeth said.\n\"It'll be fine,\" Jack said, which was what Jack always said right before things went spectacularly wrong.\nHe spent three days building a lasso from braided rope. On the fourth day, he crept into the grassland on his belly, got within range of a young male, and threw the loop around its neck.\nWhat happened next was chaos.\nThe ostrich exploded into motion, dragging Jack across the grassland at terrifying speed. He clung to the rope with both hands, bouncing over rocks and bushes, his feet leaving the ground entirely. The rest of the flock scattered in every direction.\n\"Help him!\" Elizabeth shouted.\nFritz and I ran after them, but no human can match an ostrich's speed. The bird ran for a quarter mile before it began to tire. Jack, battered and grass-stained but grinning, hauled himself hand-over-hand up the rope and actually managed to get onto the bird's back.\nThe ostrich bucked. Jack held on. The ostrich spun in circles. Jack held on. The ostrich tried to bite him over its shoulder. Jack ducked and held on.\nEventually, the bird gave up. It stood still, breathing hard, and Jack sat on its back like a king on a very annoyed throne.\n\"See?\" he called to us. \"Fine!\"\nHe was covered in bruises and had lost a boot. Elizabeth gave him a lecture that lasted longer than the ride. But from that day forward, Jack had a riding ostrich — a bird he named Hurricane — and he became the fastest traveler on the island.\nErnest shook his head. \"He's going to kill himself.\"\n\"Probably,\" Fritz agreed. \"But you have to admire the commitment.\"",
+      "vocabulary": [
+        {
+          "word": "impulsive",
+          "partOfSpeech": "adjective",
+          "definition": "acting without thinking about consequences",
+          "contextSentence": "Jack wanted to ride one. Nothing anyone said could stop him.",
+          "discussionQuestion": "How does Jack's impulsive nature both help and hurt him?"
+        },
+        {
+          "word": "persistence",
+          "partOfSpeech": "noun",
+          "definition": "the quality of continuing firmly despite difficulty or opposition\nFrom the text: Jack spends three days building a lasso and practices until he catches an ostrich.\nHow does Jack's persistence turn an impulsive idea into a success?\n3. DOMESTICATION  (noun) — the process of taming a wild animal for human use",
+          "contextSentence": "From that day forward, Jack had a riding ostrich.",
+          "discussionQuestion": "How is Jack's domestication of the ostrich different from Ernest's taming of the goats?"
+        },
+        {
+          "word": "commitment",
+          "partOfSpeech": "noun",
+          "definition": "the state of being dedicated to a cause or activity",
+          "contextSentence": "You have to admire the commitment.",
+          "discussionQuestion": "What does Fritz mean by admiring Jack's commitment?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What does Jack's ostrich-riding attempt reveal about his character?",
+          "choices": [
+            "He is a careful planner who thinks things through",
+            "He is impulsive and fearless, willing to do things no one else would try",
+            "He only does dangerous things to impress his brothers",
+            "He is angry at his parents and acting out"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Elizabeth react so strongly to Jack's stunt?",
+          "choices": [
+            "She is jealous that Jack succeeded",
+            "He could have been seriously hurt or killed, and his impulsiveness scares her",
+            "She wanted to ride the ostrich herself",
+            "Jack damaged the family's supplies during the chase"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Fritz says, \"You have to admire the commitment.\" Is Jack's behavior admirable, dangerous, or both? What's the line between brave persistence and foolish recklessness?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "THE WHALE",
+      "summary": "The ocean gave us one of its largest gifts on a calm morning in our second year. \nFritz spotted it from Tentland — a massive dark shape washed up on the rocks at the north end of the bay.",
+      "text": "The ocean gave us one of its largest gifts on a calm morning in our second year.\nFritz spotted it from Tentland — a massive dark shape washed up on the rocks at the north end of the bay. At first he thought it was a capsized boat. Then the smell hit him.\nIt was a whale. Dead, beached on the rocks by the tide, and already beginning to decompose in the tropical heat. The smell was beyond description — a thick, heavy stench that carried for miles on the breeze and made Franz physically sick.\n\"We need to harvest it,\" I told the family. \"A whale this size has blubber that can be rendered into oil — enough lamp oil to last us years. The bones are strong and flexible. Even the teeth have value.\"\n\"We need to hold our breath while we do it,\" Ernest added.\nIt was the most unpleasant job we had ever done. Fritz, Jack, and I spent four days cutting blubber from the carcass with axes and long knives, working in shifts because no one could endure the smell for more than an hour. Elizabeth set up a rendering station — huge pots over fires — where the blubber was melted into clear, golden oil.\nThe oil was stored in barrels salvaged from the wreck. We ended up with enough to fuel our lamps for years and to waterproof every piece of leather and canvas we owned.\nThe whale's bones, once cleaned and dried, were remarkably useful. I used the long, flexible baleen plates to make springs for tools. Ernest used the ribs to build a frame for a new storage shed. Jack took the jaw bone and turned it into a gateway arch for Tentland, which Elizabeth called gruesome and the boys called magnificent.\nNature wastes nothing. On this island, neither did we.",
+      "vocabulary": [
+        {
+          "word": "decompose",
+          "partOfSpeech": "verb",
+          "definition": "to rot; to break down into simpler parts through natural processes",
+          "contextSentence": "A whale already beginning to decompose in the tropical heat.",
+          "discussionQuestion": "Why does the whale's decomposition create both a problem and an opportunity?"
+        },
+        {
+          "word": "render",
+          "partOfSpeech": "verb",
+          "definition": "to melt down fat to produce oil or other useful substances",
+          "contextSentence": "Blubber that can be rendered into oil.",
+          "discussionQuestion": "How does rendering whale blubber demonstrate the family's resourcefulness?"
+        },
+        {
+          "word": "repurpose",
+          "partOfSpeech": "verb",
+          "definition": "to use something for a different purpose than originally intended",
+          "contextSentence": "Ernest used the ribs to build a frame for a new storage shed.",
+          "discussionQuestion": "What does the family repurpose from the whale?"
+        },
+        {
+          "word": "resourceful",
+          "partOfSpeech": "adjective",
+          "definition": "able to find quick and clever ways to deal with difficulties",
+          "contextSentence": "Nature wastes nothing. On this island, neither did we.",
+          "discussionQuestion": "How does the whale chapter best demonstrate the family's resourcefulness?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What is the family's main reason for harvesting the whale despite the terrible smell?",
+          "choices": [
+            "They want to prove they can handle any challenge",
+            "The whale provides oil for lamps, waterproofing, and bones for building that will last years",
+            "They are trying to clear the beach so ships can land",
+            "Ernest wants to study the whale's anatomy"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the phrase \"Nature wastes nothing. On this island, neither did we\" mean?",
+          "choices": [
+            "The family is becoming more like animals",
+            "They have learned to use every resource fully, just as nature recycles everything",
+            "They are running out of supplies and have no choice",
+            "They are copying techniques they read about in books"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The whale scene is the most unpleasant job the family has ever done. How does their willingness to do disgusting, difficult work connect to the book's larger themes about survival and character?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "THE PEARL LAGOON",
+      "summary": "On the far side of the island, past the cliffs and beyond a thick band of mangrove forest, we discovered a lagoon — a shallow, crystal-clear pool connected to the ocean by a narrow channel.  The water was warm and calm, and the sandy bottom was covered with oysters.",
+      "text": "On the far side of the island, past the cliffs and beyond a thick band of mangrove forest, we discovered a lagoon — a shallow, crystal-clear pool connected to the ocean by a narrow channel. The water was warm and calm, and the sandy bottom was covered with oysters.\nFritz dove first. He came up holding an oyster that, when pried open, revealed a pearl — small but perfectly round, with a soft, pinkish glow. He dove again and found another. And another.\nWithin an hour, we had two dozen pearls.\nThe boys were delirious with excitement. Jack was already planning what he would buy when rescue came. Fritz talked about the fortune they represented. Even Ernest's eyes gleamed.\nI let them celebrate. Then, that evening, I gathered them around the fire.\n\"Let me tell you about pearls,\" I said. \"They are beautiful. They are valuable. And they are completely useless to us.\"\nSilence.\n\"You cannot eat a pearl. You cannot build with it. You cannot keep warm with it or defend yourself with it. On this island, a sack of potatoes is worth more than a sack of pearls.\"\nFritz started to argue, but I held up my hand. \"I'm not saying we should throw them away. I'm saying we should understand what they are: pretty stones. They have value only in a world where other people exist to buy them. Here, on this island, the only things with real value are food, shelter, tools, and each other.\"\nIt was a lesson I wanted them to learn while they were young — the difference between wealth and value, between what the world prices and what actually matters.\nWe kept the pearls. But from that day forward, the boys understood that our real treasure was the garden, the animals, the cave, and the family that held it all together.",
+      "vocabulary": [
+        {
+          "word": "intrinsic",
+          "partOfSpeech": "adjective",
+          "definition": "belonging naturally; essential",
+          "contextSentence": "Pearls have value only in a world where other people exist to buy them.",
+          "discussionQuestion": "What is the intrinsic value of a pearl vs. a potato on the island?"
+        },
+        {
+          "word": "materialism",
+          "partOfSpeech": "noun",
+          "definition": "the tendency to value possessions and wealth over other things\nFrom the text: The father warns against getting excited about pearls when food is more important.\nHow does the father's lesson challenge materialism?\n3. PERSPECTIVE  (noun) — a particular way of viewing things; point of view",
+          "contextSentence": "The only things with real value are food, shelter, tools, and each other.",
+          "discussionQuestion": "How does island life change the family's perspective on wealth?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What lesson does the father teach when the boys get excited about the pearls?",
+          "choices": [
+            "Pearls are cursed and should be thrown back in the ocean",
+            "Things that can't be eaten, built with, or used for shelter have no real value on the island",
+            "The boys should save the pearls to give to their mother",
+            "Pearl diving is too dangerous and they should never return"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How do the boys react to their father's lesson?",
+          "choices": [
+            "They immediately agree and lose interest in the pearls",
+            "Fritz argues but eventually the boys understand the difference between wealth and value",
+            "They ignore their father and keep diving for more pearls",
+            "They are angry and refuse to speak to their father for days"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The father says, \"The only things with real value are food, shelter, tools, and each other.\" Do you agree with this statement? Can something without practical use still have value? Explain.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "THREE YEARS",
+      "summary": "Time moves differently on an island. \nWithout calendars, schedules, or the rhythm of a town's daily life, the days blend together.",
+      "text": "Time moves differently on an island.\nWithout calendars, schedules, or the rhythm of a town's daily life, the days blend together. Seasons change — wet to dry, dry to wet — but the years accumulate quietly, unmarked by the milestones that measure time in civilization.\nIt was Elizabeth who kept count. She marked each day on the wall of Rockburg with a small scratch — a habit she had started on our first morning ashore. By the time I thought to look, there were over a thousand marks.\nThree years. We had been on the island for three years.\nThe boys had changed in ways that amazed and sometimes frightened me. Fritz was eighteen now — a man, tall and sunburned, with the confidence of someone who had faced wild animals, storms, and starvation and survived them all. He could sail the Elizabeth alone, shoot a bird on the wing, and track an animal through dense forest. He was also restless. The island, vast as it was, had begun to feel small to him.\nErnest, at sixteen, had become the family's intellectual engine. His natural history journal had grown into multiple volumes — detailed observations of the island's plants, animals, weather patterns, and geology. He had taught himself basic chemistry by experimenting with island minerals. He was quiet, content, and deeply rooted in the life we had built.\nJack, at fourteen, was still Jack — fearless, impulsive, and perpetually in motion. He rode Hurricane the ostrich across the grassland at speeds that terrified his mother. He had grown strong and wiry, with reflexes that made him the best hunter in the family after Fritz.\nFranz, at eleven, had lost his baby softness and become a thoughtful boy with a talent for music and languages. He spoke to the animals as if they could understand him, and sometimes I thought they could.\nElizabeth had held us together through everything. She was the center — the steady, practical, unshakeable force that kept the family functioning when fear or frustration threatened to pull us apart. She had built a home from nothing, fed us from wilderness, educated four boys without a school, and done it all with a calm determination that I admired more than anything else in my life.\nAnd me? I was older. My hair had gone gray. My hands were rough and scarred from three years of building, farming, and improvising. But I was alive, and my family was alive, and we had created something remarkable on this forgotten island.\nWhether anyone would ever know about it was another question entirely.",
+      "vocabulary": [
+        {
+          "word": "milestone",
+          "partOfSpeech": "noun",
+          "definition": "a significant event or stage in development",
+          "contextSentence": "Three years. We had been on the island for three years.",
+          "discussionQuestion": "Why is the three-year mark an important milestone?"
+        },
+        {
+          "word": "maturity",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being fully grown or developed; emotional wisdom",
+          "contextSentence": "Fritz was eighteen now—a man.",
+          "discussionQuestion": "How has each boy shown maturity differently?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Which character has changed the most after three years on the island?",
+          "choices": [
+            "Elizabeth, who has become less organized",
+            "Fritz, who has grown from a confident boy into a capable but restless young man",
+            "Franz, who has become the family's best hunter",
+            "Ernest, who has stopped being interested in science"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does the father say \"Whether anyone would ever know about it was another question entirely\"?",
+          "choices": [
+            "He is worried that their accomplishments will be forgotten if they're never rescued",
+            "He doesn't want anyone to know about the island",
+            "He thinks the boys are too proud of what they've built",
+            "He is planning to keep the island a secret even if they are rescued"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Each Robinson boy develops differently on the island. Which boy's growth do you find most interesting, and why? Use specific details from the chapter.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "THE DANGEROUS SHORE",
+      "summary": "Fritz's restlessness led to the expedition that nearly killed him. \nHe had been exploring the island's eastern coast alone — something Elizabeth had forbidden and I had reluctantly allowed — when he sailed the Elizabeth into an unfamiliar channel between the island and a series of rocky islets offshore.",
+      "text": "Fritz's restlessness led to the expedition that nearly killed him.\nHe had been exploring the island's eastern coast alone — something Elizabeth had forbidden and I had reluctantly allowed — when he sailed the Elizabeth into an unfamiliar channel between the island and a series of rocky islets offshore. The water looked calm, but beneath the surface, powerful currents pulled in unpredictable directions.\nThe pinnace was caught. Before Fritz could react, the current swept the boat sideways, toward a line of jagged rocks that jutted from the water like teeth. He dropped the sail and grabbed the oars, fighting the current with all his strength. It wasn't enough.\nThe Elizabeth struck the rocks at an angle. The hull cracked. Water poured in. Fritz had seconds to grab what he could — his musket, a pouch of ammunition, a knife, and a waterskin — before the boat was pulled off the rocks and sank.\nHe swam to the nearest islet — a barren rock barely fifty yards across, with no fresh water and no shade. He was stranded, alone, with no boat and no way to signal us.\nIt took us two days to find him. Ernest spotted the remnants of the Elizabeth's mast floating in the bay and raised the alarm. Jack, riding Hurricane at full gallop, searched the coastline. I took the raft — the old, clumsy raft we had built from barrels on our very first day — and paddled to the eastern channel.\nFritz was sunburned, dehydrated, and furious with himself. He had made a mistake — sailed into water he didn't know, ignored the warning signs, and nearly paid with his life.\n\"I was stupid,\" he said, as I hauled him onto the raft.\n\"You were reckless,\" I corrected. \"There's a difference. Stupid means you didn't know better. Reckless means you did.\"\nHe was quiet for a long time. Losing the Elizabeth hurt him more than the sunburn or the thirst. He had built that boat with his own hands, and now it was gone.\nWe would build another. But the lesson stayed with him.",
+      "vocabulary": [
+        {
+          "word": "reckless",
+          "partOfSpeech": "adjective",
+          "definition": "acting without thinking about danger or consequences",
+          "contextSentence": "Reckless means you did know better.",
+          "discussionQuestion": "What is the difference between stupid and reckless?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What causes Fritz to lose the Elizabeth?",
+          "choices": [
+            "A storm destroys the boat while it's anchored at Tentland",
+            "He sails into unfamiliar waters with dangerous currents and the boat is wrecked on rocks",
+            "Jack borrows the boat without permission and crashes it",
+            "The wood rots and the boat sinks while Fritz is sailing"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is the difference between \"stupid\" and \"reckless,\" according to the father?",
+          "choices": [
+            "Stupid means you're not smart enough; reckless means you're too brave",
+            "Stupid means you didn't know better; reckless means you did know better but acted anyway",
+            "There is no real difference — both words mean the same thing",
+            "Stupid applies to children; reckless applies to adults"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Fritz says, \"I was stupid.\" His father corrects him: \"You were reckless.\" Why does the father think this distinction matters? What is he trying to teach Fritz?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "THE HONEY TRAP",
+      "summary": "The bears came in our fourth year. \nWe had always known they were on the island — we had seen tracks and claw marks on trees — but they had kept their distance.",
+      "text": "The bears came in our fourth year.\nWe had always known they were on the island — we had seen tracks and claw marks on trees — but they had kept their distance. Then Fritz discovered a grove of trees on the hillside where wild bees had built enormous hives, producing honey in quantities we could barely believe. We began harvesting it regularly.\nThe bears noticed.\nFritz and Jack were at the honey grove one morning when they heard branches snapping — heavy branches, breaking under considerable weight. Two bears emerged from the forest — large, brown, and very interested in the honey.\n\"Don't move,\" Fritz whispered. \"They haven't seen us.\"\nJack, for once in his life, did as he was told.\nThe bears went straight for the hives. They tore them apart with their claws, scooping out honeycomb and eating with happy grunts, ignoring the bees that swarmed around their thick fur. They were not aggressive — they were hungry. But a hungry bear disturbed by humans becomes an aggressive bear very quickly.\nFritz made a decision. Rather than risk a confrontation, he and Jack backed away slowly, left the grove, and came home to report.\nWe spent the next week building a defense for the honey grove — a fence of sharpened stakes around the hives, with a gate that could be locked. It was Fritz's idea, and Fritz led the construction. He organized the boys into work crews, assigned tasks based on each person's skills, and kept the project on schedule.\nI watched him work and realized something had shifted. Fritz wasn't just following my lead anymore. He was leading himself — making decisions, taking responsibility, thinking about the safety of others before his own desires. The reckless boy who had lost the Elizabeth was becoming a careful, capable young man.\nThe fence worked. The bears, finding the hives inaccessible, eventually moved on to other food sources. And we kept our honey.\nElizabeth made honey cakes to celebrate. They were the best thing any of us had ever tasted.",
+      "vocabulary": [
+        {
+          "word": "confrontation",
+          "partOfSpeech": "noun",
+          "definition": "a hostile or argumentative meeting between opposing parties",
+          "contextSentence": "Rather than risk a confrontation, he and Jack backed away slowly.",
+          "discussionQuestion": "Why does Fritz choose to avoid confrontation with the bears?"
+        },
+        {
+          "word": "initiative",
+          "partOfSpeech": "noun",
+          "definition": "the ability to act or make decisions independently without being told",
+          "contextSentence": "Fritz organized the boys into work crews.",
+          "discussionQuestion": "How does Fritz show initiative in solving the bear problem?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Fritz handle the bear situation differently than he would have in earlier chapters?",
+          "choices": [
+            "He charges at the bears with his musket",
+            "He avoids confrontation, plans strategically, organizes the family, and builds a permanent solution",
+            "He asks his father to handle it",
+            "He tries to domesticate the bears like Jack did with the ostrich"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the father notice about Fritz in this chapter?",
+          "choices": [
+            "Fritz has become lazy and doesn't want to work",
+            "Fritz has shifted from following his father's lead to leading himself",
+            "Fritz is becoming more like Ernest — bookish and cautious",
+            "Fritz is planning to leave the island on the next boat"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Compare Fritz in Chapter 17 (the dangerous shore) to Fritz in Chapter 18 (the honey trap). How has he grown as a person and a leader? What caused this growth?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "FRITZ'S SECRET",
+      "summary": "Fritz had been acting strangely for weeks.  He took the new boat — a second pinnace we had built to replace the Elizabeth — on long solo trips along the coastline, returning late and offering vague explanations.",
+      "text": "Fritz had been acting strangely for weeks. He took the new boat — a second pinnace we had built to replace the Elizabeth — on long solo trips along the coastline, returning late and offering vague explanations. He was hiding something.\nErnest noticed first. \"Fritz found something,\" he told me quietly. \"He won't say what.\"\nI confronted Fritz privately. He resisted, then relented.\n\"I found this,\" he said, and pulled a glass bottle from his coat. Inside was a piece of cloth, and on the cloth, written in English, were the words: \"Save me. I am alone on the smoking rock. A Christian soul. Jenny Montrose.\"\nA message in a bottle. Another castaway — a woman, alone, on an island she called \"the smoking rock.\" Fritz had found the bottle wedged in a tide pool on the eastern shore, and he had been searching for the smoking rock ever since.\n\"I think it's one of the islets to the east,\" Fritz said. \"There's a rocky island out there with what looks like a volcanic vent — it sends up a thin column of smoke. I can see it on clear days.\"\n\"How long has this message been floating?\" I asked.\n\"I don't know. Months. Maybe longer.\"\nMy first instinct was caution. We didn't know who this person was, how she had gotten there, or what condition she was in. A rescue attempt in the eastern waters — the same waters that had sunk the Elizabeth — was dangerous.\nMy second instinct overrode the first. There was a person out there. Alone. Asking for help.\n\"We go tomorrow,\" I said.",
+      "vocabulary": [
+        {
+          "word": "castaway",
+          "partOfSpeech": "noun",
+          "definition": "a person who has been shipwrecked and stranded",
+          "contextSentence": "Another castaway—a woman, alone.",
+          "discussionQuestion": "How does finding another castaway change the family's understanding of their situation?"
+        },
+        {
+          "word": "distress",
+          "partOfSpeech": "noun",
+          "definition": "extreme anxiety, sorrow, or pain; a state of danger or difficulty",
+          "contextSentence": "Save me. I am alone on the smoking rock.",
+          "discussionQuestion": "What details in the message convey Jenny's distress?"
+        },
+        {
+          "word": "compassion",
+          "partOfSpeech": "noun",
+          "definition": "sympathy and concern for the suffering of others, paired with a desire to help",
+          "contextSentence": "There was a person out there. Alone. Asking for help.",
+          "discussionQuestion": "How does William's compassion override his caution?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What does Fritz find in the bottle?",
+          "choices": [
+            "A map showing the way to a nearby inhabited island",
+            "A message from a woman named Jenny Montrose, asking to be rescued from a nearby island",
+            "A letter from the crew that abandoned them, apologizing",
+            "A warning about dangerous animals on the island"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does the father decide to rescue Jenny despite the risks?",
+          "choices": [
+            "He thinks Jenny might know how to build a better boat",
+            "His compassion overrides his caution — someone is alone and asking for help",
+            "Fritz threatens to go alone if the father won't come",
+            "Elizabeth insists that they rescue Jenny immediately"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The father's \"first instinct was caution\" but his \"second instinct overrode the first.\" What does this tell us about how he makes decisions? When should compassion override caution?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "JENNY MONTROSE",
+      "summary": "Fritz and I sailed east at dawn, carrying extra food, water, and blankets.  The sea was calm.",
+      "text": "Fritz and I sailed east at dawn, carrying extra food, water, and blankets. The sea was calm. The wind was favorable. The smoking rock — a small, volcanic island with a thin plume of gray steam rising from its peak — appeared on the horizon within two hours.\nWe circled the island carefully, looking for a place to land. The shores were rocky and inhospitable, battered by waves. But on the sheltered western side, we found a small cove with a sandy beach — and on that beach, a figure waving frantically.\nJenny Montrose was seventeen years old, English, and had been alone on the smoking rock for nearly a year. Her ship had been wrecked in a storm — much like ours — but she was the only survivor. She had lived on shellfish, rainwater, and sheer determination.\nShe was thin, sunburned, and her clothes were in tatters. But her eyes were sharp and her handshake was firm, and the first thing she said when Fritz helped her into the boat was, \"Thank God. I was beginning to think that bottle would float forever.\"\nThe family welcomed her with open arms. Elizabeth immediately took charge of her care — food, rest, clean clothing. Franz was shy around the newcomer. Ernest was polite and curious. Jack showed her Hurricane the ostrich and was disappointed when she didn't seem impressed enough.\nFritz was quiet. He watched Jenny with an expression I recognized — the slightly dazed look of a young man encountering something he hadn't expected and didn't know how to handle.\nJenny recovered quickly. She was practical, capable, and unafraid of hard work — qualities that were essential on our island and that earned Elizabeth's respect immediately. Within a week, she was helping with the garden, learning to milk the goats, and trading stories with the boys about life before the shipwrecks.\nShe brought something else, too — news from the outside world. She told us about the year's events, about ships and politics and the progress of civilization. For the first time in four years, we felt connected to the world we had left behind.\nIt was wonderful. And it was unsettling. Because it reminded us that the world still existed — and that, somewhere out there, it was moving on without us.",
+      "vocabulary": [
+        {
+          "word": "determination",
+          "partOfSpeech": "noun",
+          "definition": "firmness of purpose; the quality of continuing despite difficulty",
+          "contextSentence": "She had lived on shellfish, rainwater, and sheer determination.",
+          "discussionQuestion": "What does Jenny's survival tell us about her determination?"
+        },
+        {
+          "word": "integration",
+          "partOfSpeech": "noun",
+          "definition": "the process of combining or being accepted into a group\nFrom the text: Jenny quickly becomes part of the family's daily life and work.\nHow does Jenny's integration into the family happen?\n3. ISOLATION  (noun) — the state of being alone or separated from others\nFrom the text: Jenny had been alone for nearly a year on the smoking rock.\nWhat effect does long-term isolation have on a person?\n4. UNSETTLING  (adjective) — causing anxiety or unease; disturbing",
+          "contextSentence": "It reminded us that the world still existed—and it was moving on without us.",
+          "discussionQuestion": "Why is reconnecting with the outside world unsettling?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How is Jenny's castaway experience different from the Robinsons'?",
+          "choices": [
+            "Jenny had a larger ship with more supplies",
+            "Jenny was completely alone, with no family, supplies, or tools",
+            "Jenny was stranded on a larger, more comfortable island",
+            "Jenny chose to stay on the island rather than being shipwrecked"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does reconnecting with the outside world feel \"unsettling\" to the family?",
+          "choices": [
+            "Jenny brings bad news about their relatives in Switzerland",
+            "It reminds them that the world exists and has moved on without them",
+            "Jenny criticizes how the family has been living",
+            "The boys are jealous of Jenny's stories about civilization"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Jenny brings \"news from the outside world.\" How does this information change the family's view of their island life? Is ignorance of the outside world a kind of freedom?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "THE SIGNAL FIRE",
+      "summary": "Six months after Jenny's arrival, Jack spotted a sail on the horizon. \n\"Ship!",
+      "text": "Six months after Jenny's arrival, Jack spotted a sail on the horizon.\n\"Ship!\" he screamed from the lookout post at Tentland. \"Ship! Ship! SHIP!\"\nThe whole family rushed to the beach. There, far out to sea but unmistakable against the blue sky, was the white triangle of a sail. A real ship. The first we had seen in nearly five years.\n\"Light the signal fire!\" I ordered.\nFritz and Ernest raced to the bonfire we had kept prepared on the hilltop — a massive pile of dry wood, brush, and oil-soaked rags that could be seen for miles. Fritz struck the flint. The fire caught. Thick black smoke billowed into the sky.\nWe watched. The ship didn't change course. It continued south, growing smaller on the horizon.\n\"They haven't seen us,\" Fritz said, his voice flat.\n\"Wait,\" Elizabeth said. \"Wait.\"\nWe waited. The ship grew smaller. Smaller. My heart sank.\nThen the ship turned.\nSlowly, almost imperceptibly at first, the white sail shifted angle. The ship was coming about. It was heading toward us.\nThe cheer that erupted on the beach was the loudest sound our island had ever heard. The boys jumped and shouted. Elizabeth wept. Jenny fell to her knees in the sand. Even the dogs barked.\nBut as the ship grew larger, a strange feeling crept over me — one I hadn't expected. Alongside the joy, alongside the relief, there was something else. Something that felt uncomfortably like fear.\nThe world was coming to find us. And I wasn't sure all of us wanted to be found.",
+      "vocabulary": [
+        {
+          "word": "beacon",
+          "partOfSpeech": "noun",
+          "definition": "a fire or light set up as a signal; something that guides or gives hope",
+          "contextSentence": "The massive pile of dry wood that could be seen for miles.",
+          "discussionQuestion": "How does the signal fire serve as a beacon?"
+        },
+        {
+          "word": "anticipation",
+          "partOfSpeech": "noun",
+          "definition": "the feeling of excitement or anxiety about something that is about to happen",
+          "contextSentence": "We watched. The ship didn't change course.",
+          "discussionQuestion": "How does the anticipation build and then nearly shatter?"
+        },
+        {
+          "word": "ambivalence",
+          "partOfSpeech": "noun",
+          "definition": "having mixed feelings or contradictory ideas about something",
+          "contextSentence": "Alongside the joy, there was something that felt uncomfortably like fear.",
+          "discussionQuestion": "Why does William feel ambivalence instead of pure happiness?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What unexpected emotion does the father feel when the ship turns toward them?",
+          "choices": [
+            "Anger that it took so long for a ship to appear",
+            "Fear — because the world coming to find them means their island life might end",
+            "Confusion about whether the ship is friendly or hostile",
+            "Disappointment that the ship is too small to carry them all"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does the ship nearly pass them by?",
+          "choices": [
+            "The crew is hostile and doesn't want to help",
+            "The ship doesn't see their signal fire at first and continues south",
+            "The family's fire produces white smoke that blends with the clouds",
+            "The captain thinks the fire is a natural volcano"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The father feels \"joy\" and \"fear\" at the same time. Why might someone be afraid of getting exactly what they've wished for? How does this connect to the family's complicated feelings about rescue?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "THE ENGLISH SHIP",
+      "summary": "The ship was the Doyle, an English merchant vessel commanded by Captain William Doyle — a weathered, practical man who nearly fell out of his longboat when he saw what we had built. \n\"Good Lord,\" he said, standing on the beach at Tentland, looking up at the flagpole, the shelters, the cultivated garden, and the fenced animal pens.",
+      "text": "The ship was the Doyle, an English merchant vessel commanded by Captain William Doyle — a weathered, practical man who nearly fell out of his longboat when he saw what we had built.\n\"Good Lord,\" he said, standing on the beach at Tentland, looking up at the flagpole, the shelters, the cultivated garden, and the fenced animal pens. \"You've built a colony.\"\n\"A small one,\" I said. \"We had five years to work on it.\"\nCaptain Doyle was astonished by everything — Falconest in the trees, Rockburg in the cliffs, the farmland, the boat, the honey grove, the domesticated animals. He walked through our world shaking his head, asking questions, and occasionally laughing in disbelief.\n\"I've seen military outposts less organized than this,\" he said. \"You could sell tickets.\"\nHe told us his story. The Doyle was on a trading route between England and the East Indies. They had spotted our smoke signal and diverted to investigate. He could take us aboard and deliver us to the nearest port, where we could arrange passage back to Switzerland.\nHome. The word hung in the air.\nJenny's reaction was immediate and uncomplicated: she wanted to go. She had family in England — parents who believed she was dead. Every day away from them was a day of grief she could end.\nThe boys' reactions were more complex. Fritz wanted to go — he was nineteen, restless, and hungry for the wider world. Ernest wanted to stay — the island was his laboratory, his library, his life's work. Jack didn't know what he wanted, which was unusual for Jack. Franz, at thirteen, was old enough to understand the weight of the decision but young enough to be terrified by it.\nElizabeth looked at me across the dinner table that night, after Captain Doyle had returned to his ship.\n\"What do we do?\" she asked.\n\"I think,\" I said slowly, \"that we let each person choose.\"",
+      "vocabulary": [
+        {
+          "word": "astonished",
+          "partOfSpeech": "adjective",
+          "definition": "greatly surprised or amazed",
+          "contextSentence": "Captain Doyle nearly fell out of his longboat when he saw what we had built.",
+          "discussionQuestion": "What specifically astonishes Captain Doyle?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What is Captain Doyle's reaction to seeing what the family has built?",
+          "choices": [
+            "He is unimpressed and says he's seen better settlements",
+            "He is astonished, saying he's seen military outposts less organized",
+            "He is suspicious and thinks they must have had outside help",
+            "He offers to buy the island from the family"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why are the boys' reactions to rescue \"more complex\" than Jenny's?",
+          "choices": [
+            "The boys don't like Captain Doyle and don't trust his ship",
+            "Jenny simply wants to go home, but the boys have built a life here and are torn",
+            "The boys are too young to understand what rescue means",
+            "The boys are afraid of ocean travel after the shipwreck"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The family faces a dilemma — stay on the island or return to civilization. What would be gained and what would be lost with each choice?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "THE CHOICE",
+      "summary": "The conversation lasted three days. \nWe talked as a family — honestly, openly, with no judgment and no pressure.",
+      "text": "The conversation lasted three days.\nWe talked as a family — honestly, openly, with no judgment and no pressure. Captain Doyle had agreed to stay anchored in the bay for a week, giving us time to decide. It was the most generous thing a stranger had ever done for us.\nFritz spoke first. \"I want to see the world. I've dreamed about it every night for five years. I love this island, and I'll carry it with me forever. But I need to go.\"\nErnest spoke next. \"I want to stay. Everything I care about is here — my research, my work, the natural world I've spent years studying. This island is my life.\"\nJack struggled. He paced. He argued with himself out loud. In the end, he chose to go with Fritz. \"I've climbed every tree on this island,\" he said. \"I need new trees.\"\nFranz chose to stay. He was quiet about it, but his reasons were clear — he loved the island, he loved the animals, and he wasn't ready to leave the only home he really remembered.\nJenny would go, of course. She had never stopped being a visitor here, however welcome.\nElizabeth and I looked at each other. We had been married for twenty-five years. We had built a life together in Switzerland, lost it in a shipwreck, and built another one here — from nothing, with our bare hands, in a place that no map showed.\n\"I stay where my children are,\" Elizabeth said. \"If the family divides, I stay with the ones who need me most.\"\n\"Franz and Ernest are here,\" I said.\n\"Then I am here.\"\nI struggled more than anyone. The pastor in me wanted to return to civilization, to a church, to the world I had been trained to serve. The father in me wanted to hold my family together. The man who had built Falconest and Rockburg and tamed an island — that man never wanted to leave.\n\"I stay,\" I said. \"This is our home.\"",
+      "vocabulary": [
+        {
+          "word": "agonizing",
+          "partOfSpeech": "adjective",
+          "definition": "causing great physical or mental pain; extremely difficult",
+          "contextSentence": "The conversation lasted three days.",
+          "discussionQuestion": "Why is this choice agonizing rather than simple?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What drives Ernest's decision to stay on the island?",
+          "choices": [
+            "He is afraid of traveling by ship after the original shipwreck",
+            "The island is his laboratory and life's work — everything he cares about is there",
+            "He doesn't get along with Fritz and wants to be separated",
+            "Elizabeth orders him to stay and take care of the animals"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Elizabeth say, \"I stay where my children are\"?",
+          "choices": [
+            "She doesn't care about the island and only thinks about her children",
+            "Her deepest value is family — she will be wherever her youngest children need her",
+            "She is afraid of the ocean and doesn't want to sail",
+            "She wants to punish Fritz for choosing to leave"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Each family member's choice reflects their core character. Choose two family members and explain how their decision connects to who they've been throughout the entire story.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "NEW DORADO",
+      "summary": "Captain Doyle understood.  More than that — he was moved.",
+      "text": "Captain Doyle understood. More than that — he was moved.\nBefore the Doyle departed, he and I made an agreement. He would carry our story back to the civilized world. He would report the island's location to the British authorities and recommend it as a site for a permanent colony. He would deliver letters we had written to family in Switzerland. And he would spread the word that the island — which we named New Switzerland, though the boys wanted to call it New Dorado, the golden land — was open to settlement by any honest family willing to work.\nFritz packed his things: his musket, his journal, a bag of pearls for trade, and a carved wooden figure of a falcon that Ernest had made him as a farewell gift. Jack packed almost nothing — a knife, a change of clothes, and Hurricane's tail feather, which he tucked inside his hat.\nJenny said her goodbyes with grace and gratitude. She embraced Elizabeth for a long time. She shook Ernest's hand. She let Franz cry on her shoulder without embarrassment.\nFritz and I stood on the beach for the last time together.\n\"Take care of them,\" he said, meaning his mother and brothers.\n\"Take care of yourself,\" I said, meaning the world was harder than any island.\nWe embraced. He walked to the longboat without looking back. Jack waved from the railing of the Doyle until the ship was a white speck on the horizon.\nElizabeth, Ernest, Franz, and I stood on the beach and watched them go. The dogs sat at our feet. The goats grazed behind us. The flag snapped on its pole. The garden was green. The treehouse was solid. The cave was home.\nI put my arm around Elizabeth.\n\"Well,\" she said. \"That's that.\"\n\"That's that,\" I agreed.\nWe walked back up the path to Rockburg — our home in the cliffs, built with our own hands, on an island we had claimed from the wild. The sun was setting. The birds were singing their evening songs. Somewhere in the forest, a monkey chattered and an ostrich complained.\nErnest opened his journal to a fresh page and began to write.\nFranz picked up his flute and played.\nElizabeth started dinner.\nAnd I sat on the balcony of Rockburg, looking out over the island we had built from nothing — from a shipwreck and a prayer — and I thought: this is enough. This is more than enough.\nThis is everything.\nTHE END",
+      "vocabulary": [
+        {
+          "word": "legacy",
+          "partOfSpeech": "noun",
+          "definition": "something handed down from the past; the lasting impact of a person or event",
+          "contextSentence": "Captain Doyle would carry their story back to the civilized world.",
+          "discussionQuestion": "What is the Robinson family's legacy?"
+        },
+        {
+          "word": "colony",
+          "partOfSpeech": "noun",
+          "definition": "a settlement established by people who move to a new territory",
+          "contextSentence": "The island was open to settlement by any honest family willing to work.",
+          "discussionQuestion": "How does the island transform from a family's home into a colony?"
+        },
+        {
+          "word": "bittersweet",
+          "partOfSpeech": "adjective",
+          "definition": "involving a mixture of happiness and sadness\nFrom the text: Fritz and Jack leave while Ernest, Franz, Elizabeth, and William stay.\nWhy is the ending bittersweet rather than purely happy or purely sad?\n4. CONTENTMENT  (noun) — a state of happiness and satisfaction",
+          "contextSentence": "This is enough. This is more than enough. This is everything.",
+          "discussionQuestion": "What does William's contentment at the end tell us about what truly matters?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What agreement does the father make with Captain Doyle?",
+          "choices": [
+            "The captain will return in one year to check on the family",
+            "The captain will report the island's location and recommend it for settlement",
+            "The captain will keep the island's location secret forever",
+            "The captain will send supplies but never bring other settlers"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the father mean when he says, \"This is everything\"?",
+          "choices": [
+            "He has given up hope and is settling for less than he wanted",
+            "He has found true contentment — his family, his home, and his purpose are complete",
+            "He is listing all the material possessions they've accumulated",
+            "He is being sarcastic about their difficult situation"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The book ends with a family divided — Fritz and Jack leave, while the others stay. Is this a happy ending, a sad ending, or something more complicated? Use evidence from the chapter to support your answer.",
+          "sampleAnswer": ""
+        }
+      ]
+    }
+  ]
+}

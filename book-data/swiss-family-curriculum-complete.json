@@ -1,0 +1,513 @@
+{
+  "metadata": {
+    "unit": "The Swiss Family Robinson",
+    "gradeLevel": "6th Grade",
+    "totalDays": 24,
+    "created": "2026-03-12",
+    "note": "Complete curriculum data: informational texts, grammar, language, writing, and journal prompts for all 24 chapters"
+  },
+  "grammarLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "topic": "Simple, Compound, and Complex Sentences",
+      "instruction": "A simple sentence has one independent clause. A compound sentence joins two independent clauses with a conjunction (and, but, or, so). A complex sentence has one independent clause and one dependent clause.",
+      "examples": [
+        "Simple: The ship wrecked.",
+        "Compound: The storm raged, and the family prayed.",
+        "Complex: When the storm hit, they feared for their lives."
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 2,
+      "topic": "Subject and Predicate",
+      "instruction": "Every sentence has a subject (who or what the sentence is about) and a predicate (what the subject does or is).",
+      "examples": [
+        "The Robinson family → subject | survived the shipwreck → predicate"
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 3,
+      "topic": "Direct and Indirect Objects",
+      "instruction": "A direct object receives the action of the verb. An indirect object tells to whom or for whom the action is done.",
+      "examples": [
+        "Father built the family a shelter. (indirect: family, direct: shelter)"
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 4,
+      "topic": "Independent and Dependent Clauses",
+      "instruction": "An independent clause can stand alone. A dependent clause cannot.",
+      "examples": [
+        "Independent: They explored the island.",
+        "Dependent: after they built the shelter"
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 5,
+      "topic": "Comma Rules - Items in a Series",
+      "instruction": "Use commas to separate three or more items in a series.",
+      "examples": [
+        "They gathered coconuts, bananas, and fresh water."
+      ]
+    },
+    {
+      "day": 13,
+      "chapter": 6,
+      "topic": "Adjectives and Adverbs",
+      "instruction": "Adjectives describe nouns. Adverbs describe verbs, adjectives, or other adverbs.",
+      "examples": [
+        "The brave (adj) family worked diligently (adv)."
+      ]
+    },
+    {
+      "day": 16,
+      "chapter": 7,
+      "topic": "Verb Tenses",
+      "instruction": "Past tense shows completed action. Present shows action happening now. Future shows action that will happen.",
+      "examples": [
+        "Past: They built a treehouse.",
+        "Present: They explore daily.",
+        "Future: They will survive."
+      ]
+    },
+    {
+      "day": 18,
+      "chapter": 8,
+      "topic": "Quotation Marks and Dialogue",
+      "instruction": "Quotation marks show exact words. Commas and periods go inside.",
+      "examples": [
+        "\"We must work together,\" Father said."
+      ]
+    },
+    {
+      "day": 21,
+      "chapter": 9,
+      "topic": "Pronouns and Antecedents",
+      "instruction": "Pronouns take the place of nouns. Antecedents are the nouns they refer to.",
+      "examples": [
+        "Father led the family. He showed them how to survive."
+      ]
+    },
+    {
+      "day": 23,
+      "chapter": 10,
+      "topic": "Possessive Nouns",
+      "instruction": "Possessive nouns show ownership. Add 's to singular, ' to plural ending in s.",
+      "examples": [
+        "the family's shelter",
+        "the boys' tools"
+      ]
+    },
+    {
+      "day": 26,
+      "chapter": 11,
+      "topic": "Run-on Sentences and Fragments",
+      "instruction": "A run-on joins clauses without proper punctuation. A fragment is incomplete.",
+      "examples": [
+        "Run-on: The island was beautiful they explored it (fix: add comma + and)",
+        "Fragment: Because they needed food (fix: complete the thought)"
+      ]
+    },
+    {
+      "day": 28,
+      "chapter": 12,
+      "topic": "Semicolons and Colons",
+      "instruction": "Semicolons join related clauses. Colons introduce lists.",
+      "examples": [
+        "Semicolon: The storm passed; the family was safe.",
+        "Colon: They found many resources: coconuts, fruit, and fresh water."
+      ]
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "chapter": 1,
+      "topic": "Context Clues",
+      "instruction": "Context clues help you figure out unknown words. Look for definitions, examples, or synonyms nearby.",
+      "examples": [
+        "The ship was battered—beaten and damaged by the storm"
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 2,
+      "topic": "Prefixes",
+      "instruction": "Prefixes change word meaning: un- (not), re- (again), pre- (before), dis- (not), mis- (wrongly).",
+      "examples": [
+        "unsafe",
+        "rebuild",
+        "discover"
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 3,
+      "topic": "Suffixes",
+      "instruction": "Suffixes: -ful (full of), -less (without), -ly (manner), -ness (state), -able (capable).",
+      "examples": [
+        "resourceful",
+        "endless",
+        "carefully"
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 4,
+      "topic": "Synonyms and Antonyms",
+      "instruction": "Synonyms have similar meanings. Antonyms have opposite meanings.",
+      "examples": [
+        "Synonyms: explore/investigate",
+        "Antonyms: safe/dangerous"
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 5,
+      "topic": "Multiple Meaning Words",
+      "instruction": "Some words have multiple meanings depending on context.",
+      "examples": [
+        "bark: (1) tree covering, (2) dog sound"
+      ]
+    },
+    {
+      "day": 14,
+      "chapter": 6,
+      "topic": "Similes",
+      "instruction": "Similes compare using \"like\" or \"as.\"",
+      "examples": [
+        "The island was like paradise."
+      ]
+    },
+    {
+      "day": 17,
+      "chapter": 7,
+      "topic": "Metaphors",
+      "instruction": "Metaphors compare WITHOUT \"like\" or \"as.\"",
+      "examples": [
+        "The island was their new home."
+      ]
+    },
+    {
+      "day": 19,
+      "chapter": 8,
+      "topic": "Idioms",
+      "instruction": "Idioms mean something different from the literal words.",
+      "examples": [
+        "make do = use what you have"
+      ]
+    },
+    {
+      "day": 22,
+      "chapter": 9,
+      "topic": "Greek and Latin Roots",
+      "instruction": "Many words come from Greek/Latin roots.",
+      "examples": [
+        "nav (ship): navigate, navy"
+      ]
+    },
+    {
+      "day": 24,
+      "chapter": 10,
+      "topic": "Homophones",
+      "instruction": "Homophones sound the same but have different meanings and spellings.",
+      "examples": [
+        "see/sea",
+        "sail/sale"
+      ]
+    },
+    {
+      "day": 27,
+      "chapter": 11,
+      "topic": "Connotation and Denotation",
+      "instruction": "Denotation is dictionary definition. Connotation is emotional feeling.",
+      "examples": [
+        "Both \"determined\" and \"stubborn\" mean persistent, but stubborn has negative connotation"
+      ]
+    },
+    {
+      "day": 29,
+      "chapter": 12,
+      "topic": "Analogies",
+      "instruction": "Analogies show relationships: A is to B as C is to D.",
+      "examples": [
+        "Ship is to ocean as family is to island (both are where they live)"
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "title": "Shipwrecks in the Age of Sail",
+      "text": "In the 1800s, sailing ships faced constant danger. Wooden vessels were vulnerable to storms, rocks, and rough seas. Navigation was imprecise—sailors used stars, compasses, and dead reckoning to find their way, often with fatal errors. Ships carried entire families, supplies, and livestock on voyages that could last months. When a ship wrecked, survival depended on luck, skill, and resourcefulness. The Swiss Family Robinson reflects real survival stories from this era, when families traveling to new colonies faced similar dangers and had to rebuild their lives from scratch in unfamiliar lands."
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "title": "Desert Island Survival",
+      "text": "Being stranded on an island requires immediate priorities: fresh water, shelter, and food. Humans can survive only 3 days without water, 3 weeks without food. The Robinson family's first task—finding fresh water—was life or death. Islands vary enormously: some have streams and edible plants, others are barren. Survival requires knowledge of what's safe to eat (many tropical plants are poisonous), how to build shelter from weather, and how to signal for rescue. Real castaways throughout history succeeded or failed based on these skills. The Robinson family's education and European knowledge gave them advantages most castaways lacked."
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "title": "Tropical Island Ecosystems",
+      "text": "Tropical islands host incredible biodiversity. Coconut palms provide food, water, and building materials. Breadfruit, bananas, and mangoes grow wild on many islands. Animals vary by location—some islands have monkeys, parrots, and wild pigs; others have few mammals. Ocean reefs surrounding islands provide fish, shellfish, and other marine life. However, islands also have dangers: poisonous plants, venomous snakes, and unpredictable weather. The Robinson family's island, while fictional, represents a composite of real tropical islands in the Pacific and Indian Oceans, where European explorers discovered both abundance and challenges."
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "title": "Building Shelter from Natural Materials",
+      "text": "Before modern tools, humans built shelters using available materials. Tropical construction uses palm fronds for roofing (waterproof and insulating), bamboo for frames (strong but lightweight), and vines for rope. A good shelter protects from rain, sun, and wind while staying cool in tropical heat. Elevation is important—building above ground avoids flooding and some predators. The treehouse in Swiss Family Robinson represents ingenious use of natural advantages: height provides safety and breeze, thick branches support weight, and tree canopy offers shade. Indigenous peoples worldwide developed sophisticated building techniques using only natural materials."
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "title": "Food Preservation Without Refrigeration",
+      "text": "Before refrigeration, preserving food meant survival. Salting, smoking, and drying were primary methods. Salt draws out moisture, preventing bacterial growth—this is how sailors preserved meat for long voyages. Smoking adds flavor and preserves by coating food in antibacterial compounds. Sun-drying works in hot climates for fruits, fish, and meat. The Robinson family would have known these techniques from European tradition and applied them to tropical foods. Without preservation, food spoils within hours in tropical heat. Learning to store food meant the difference between steady meals and constant hunger."
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "title": "Navigation Without Modern Tools",
+      "text": "Sailors in the 1800s navigated using the sun, stars, and compass. A sextant measured angles between stars and horizon, helping calculate latitude (north-south position). Longitude (east-west) was harder—requiring accurate time-keeping. The chronometer, invented in the 1700s, finally made longitude calculation possible. Without modern maps or GPS, sailors relied on experience, knowledge of currents and winds, and careful observation. Getting lost was common and often fatal. The Robinson family, stranded far from shipping routes, faced the reality that rescue depended entirely on chance—if a ship passed nearby and saw their signals."
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "title": "Tropical Plants and Their Uses",
+      "text": "Tropical plants provided everything pre-industrial people needed. Coconut palms give food, drink, oil, rope (from husk fibers), and building material (from fronds and trunk). Bamboo grows fast and serves as construction material, water pipes, utensils, and even musical instruments. Banana plants provide fruit, and their leaves serve as plates, umbrellas, and roof material. Certain vines yield fresh water when cut. However, many tropical plants are poisonous—eating unknown plants is extremely dangerous. The Robinson family's European botanical knowledge helped them identify safe plants, but they likely made mistakes too. Indigenous knowledge, developed over centuries, far surpassed European understanding."
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "title": "Animal Domestication and Hunting",
+      "text": "The Robinson family brought animals from the wrecked ship, giving them a huge advantage. Domesticated animals provide meat, milk, eggs, transportation, and companionship. Chickens adapt easily and provide protein. Goats give milk and can browse on almost any vegetation. Dogs help hunt and guard. Hunting wild animals requires skill—traps, snares, bows, or spears. Tropical islands host different game depending on location: wild pigs, birds, iguanas, and more. Fishing provides reliable protein if you know how. Without modern weapons, hunting is difficult and dangerous. The family's guns gave them temporary advantage, but bullets would eventually run out."
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "title": "Fire-Making Without Matches",
+      "text": "Fire is essential for cooking, purifying water, signaling, and protection. Before matches, making fire required skill. The bow drill method uses friction: a wooden spindle spun rapidly against a board creates enough heat to ignite tinder (dry grass, bark, or wood shavings). Flint and steel strike sparks onto tinder. Both methods require practice—damp conditions make fire-starting extremely difficult. Once lit, fire must be maintained—letting it die meant starting over. The Robinson family likely salvaged matches or flint from the ship, but these wouldn't last forever. Learning primitive fire-making was crucial for long-term survival."
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "title": "Tool-Making and Craftsmanship",
+      "text": "Tools multiply human capability. A sharp knife can process food, build shelter, make other tools. An axe cuts trees for construction. A saw shapes lumber. The Robinson family salvaged metal tools from the ship—an incredible advantage. But tools break, dull, or rust. Sharpening requires stones and skill. Making new tools without a forge or workshop is difficult. Stone tools (the oldest human technology) can be chipped into axes, scrapers, and blades. Bone becomes needles, hooks, and points. Wood carves into bowls, handles, and weapons. Indigenous peoples developed sophisticated tool-making over thousands of years. The Robinsons had European metalworking knowledge but limited materials."
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "title": "Weather Patterns in the Tropics",
+      "text": "Tropical islands experience distinct wet and dry seasons. Trade winds blow predictably, sailors once used them to cross oceans. Monsoons bring torrential rain—flooding, landslides, and dangerous seas. Hurricanes (called typhoons or cyclones in different regions) develop over warm ocean water and can devastate islands with winds over 150 mph and storm surges flooding coastal areas. Recognizing weather signs is survival skill: cloud formations, wind shifts, animal behavior. The Robinson family, coming from temperate Europe, had to learn tropical weather patterns fast. A major storm could destroy everything they built, erasing months of work in hours."
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "title": "Water Sources and Purification",
+      "text": "Fresh water is life's first requirement. Islands get water from rain, streams, springs, and sometimes underground aquifers. Collecting rainwater is reliable—gutters channel rain into barrels. Streams require checking upstream for contamination. Stagnant water breeds disease. Saltwater is undrinkable—drinking it causes dehydration and death. Boiling kills most pathogens, making questionable water safer. Coconuts provide sterile liquid in emergencies. Some islands have no fresh water at all. The Robinson family was fortunate their island had streams. Without fresh water, they would have died within days, no matter how much food they found."
+    },
+    {
+      "day": 13,
+      "chapter": 13,
+      "title": "Navigation by Stars",
+      "text": "Sailors navigated by stars for millennia before modern technology. The North Star (Polaris) appears fixed above Earth's north pole, showing north direction. In the southern hemisphere, the Southern Cross constellation serves similarly. By measuring star angles above the horizon with a sextant, navigators calculated latitude. Longitude required accurate time-keeping—comparing local sun position to a known reference time. Star navigation works only on clear nights. Clouds, storms, or heavy seas make it impossible. The Robinson family, if they ever hoped to leave the island, would need to build a seaworthy boat and navigate by stars—an enormous undertaking requiring knowledge, materials, and courage."
+    },
+    {
+      "day": 14,
+      "chapter": 14,
+      "title": "Medicinal Plants and Folk Medicine",
+      "text": "Before modern medicine, people treated illness with plants, minerals, and folk remedies—some effective, many useless or dangerous. Willow bark contains aspirin's active ingredient (salicylic acid). Certain molds produce antibiotics. Many plants have genuine medicinal properties. However, identifying safe plants requires extensive knowledge. Tropical regions host powerful medicinal plants (quinine for malaria, for instance) but also deadly poisons. The Robinson family would have European folk medicine knowledge but no experience with tropical plants. Minor injuries or illnesses could become serious without proper treatment. Infection from small cuts could prove fatal. The family's health would depend heavily on luck and careful caution."
+    },
+    {
+      "day": 15,
+      "chapter": 15,
+      "title": "Textile Production Without Industry",
+      "text": "Clothing wears out. Making new cloth requires plant or animal fibers. Cotton, flax, and hemp can be grown and processed into thread, then woven into fabric. Wool comes from sheep (which the family might raise). But processing fiber into cloth is enormously labor-intensive: harvesting, cleaning, carding, spinning thread, weaving fabric, cutting, and sewing. A single shirt represents dozens of hours of work. The Robinson family likely salvaged cloth from the ship, but eventually it would wear out. Learning to make cloth from scratch, without spinning wheels, looms, or needles, would be one of their greatest challenges. Alternatively, they could use animal hides or plant materials like palm fibers."
+    },
+    {
+      "day": 16,
+      "chapter": 16,
+      "title": "Boat Building and Seamanship",
+      "text": "Building a seaworthy boat without a shipyard is extraordinarily difficult. Wood must be cut, shaped, and fitted precisely. Planks must be sealed against water—traditionally using tar, pitch, or oakum (rope fibers). Boats need balanced design to sail without capsizing. Sails require cloth and rope. Navigation requires instruments and knowledge. The Robinson family would need to build something substantial enough to survive ocean voyage—not just a raft or canoe. Many castaways throughout history built boats that sank or broke apart. Even if successful, sailing without navigation instruments, charts, or knowledge of shipping lanes meant they might sail for weeks without seeing another ship. Leaving the island was extremely risky."
+    },
+    {
+      "day": 17,
+      "chapter": 17,
+      "title": "Coral Reefs and Marine Ecosystems",
+      "text": "Coral reefs surround many tropical islands, creating spectacular ecosystems. Reefs form from tiny coral polyps building limestone structures over thousands of years. They provide habitat for fish, shellfish, octopus, sea turtles, and countless other species. Reefs protect shorelines from waves and storms. They're also dangerous—sharp coral can cut skin, leading to infection. Some reef creatures are venomous (stonefish, cone snails, jellyfish). The Robinson family would depend on reef fish for protein but needed to fish carefully. Coral reefs are incredibly productive ecosystems but also fragile—damage takes decades to repair. Understanding the reef meant survival."
+    },
+    {
+      "day": 18,
+      "chapter": 18,
+      "title": "Seasonal Changes and Planning",
+      "text": "Even tropical islands have seasons—wet and dry periods, temperature variations, and changes in food availability. Planning ahead is crucial. During abundance, you preserve food for scarcity. You plant crops before rainy season. You repair shelter before storm season. You gather materials when weather permits. The Robinsons came from European agricultural tradition with strong seasonal awareness, giving them advantage. But tropical seasons differ from European ones—learning new patterns was essential. Failing to prepare for seasonal changes could mean starvation or exposure. Long-term survival requires thinking months ahead, delaying gratification, and working consistently toward future needs—discipline the family needed to develop and maintain."
+    },
+    {
+      "day": 19,
+      "chapter": 19,
+      "title": "Indigenous Knowledge and Colonialism",
+      "text": "The Swiss Family Robinson, written in 1812, reflects European colonial attitudes. The family treats the island as empty land waiting to be civilized, ignoring the possibility of indigenous inhabitants. In reality, most habitable islands were already occupied when Europeans arrived. Indigenous peoples had sophisticated knowledge of local ecosystems, developed over centuries. They knew which plants were edible or medicinal, best fishing methods, weather patterns, and much more. European colonizers often dismissed this knowledge as primitive, despite being far less equipped for survival. The Robinson family's fictional success depends partly on European tools and education, but real castaways benefited immensely from learning indigenous techniques—if they were humble enough to recognize local knowledge's value."
+    },
+    {
+      "day": 20,
+      "chapter": 20,
+      "title": "Mental Health and Isolation",
+      "text": "Isolation affects mental health profoundly. Humans are social creatures—extended solitude causes depression, anxiety, and psychological problems. The Robinson family had each other, preventing the worst isolation effects, but they missed broader society: friends, community, news from home. Monotony and lack of purpose drain morale. Maintaining routines, celebrating occasions, and finding meaning in daily work help psychological wellbeing. The family's strong relationships and shared purpose (survival and eventual rescue) protected their mental health. A single castaway would face much worse psychological challenges. Many historical castaways went mad from isolation. The Robinsons' family structure was their greatest survival asset."
+    },
+    {
+      "day": 21,
+      "chapter": 21,
+      "title": "Education Without Schools",
+      "text": "The Robinson children grew up without schools, books (beyond what they salvaged), or teachers beyond their parents. Father and Mother educated children through direct experience: teaching botany by exploring plants, physics through building projects, navigation by the stars, and ethics through discussions. This experiential education differs vastly from classroom learning. The children learned practical skills—hunting, farming, construction—that most European children their age would never develop. They missed formal subjects like history, literature, and mathematics beyond basics. The question remains: Were they better or worse educated than their European peers? They lacked book-learning but gained practical wisdom. Different types of knowledge serve different purposes."
+    },
+    {
+      "day": 22,
+      "chapter": 22,
+      "title": "Hope and Resilience",
+      "text": "Survival stories throughout history show that hope matters as much as skill. Castaways who gave up died even when rescue was possible. The Robinsons maintained hope of rescue while building permanent settlement—balancing optimism with realism. Resilience means recovering from setbacks: storms destroying crops, injuries, failed projects. The family faced constant disappointment but kept working. Psychologists studying survival identify key traits: flexibility (adapting plans), humor (finding joy despite hardship), purpose (reasons to continue), and community (supporting each other). The Robinsons embodied these qualities. Their fictional survival reflects real psychology: people survive when they refuse to surrender to despair."
+    },
+    {
+      "day": 23,
+      "chapter": 23,
+      "title": "Technology and Self-Sufficiency",
+      "text": "Technology multiplies human capability but creates dependency. The Robinsons relied on salvaged tools: axes, saws, nails, guns, rope. As these broke or wore out, they faced diminishing capability unless they could manufacture replacements. Making an axe blade requires mining ore, building a forge, smelting metal, and forging—skills and infrastructure they lacked. True self-sufficiency means producing everything from scratch. Indigenous peoples achieved this over centuries of technological development. The Robinsons, despite intelligence and education, couldn't replicate industrial society alone. This reveals important truth: modern life depends on vast networks of specialized knowledge and resources. Individual self-sufficiency is largely myth—humans succeed through cooperation and accumulated knowledge."
+    },
+    {
+      "day": 24,
+      "chapter": 24,
+      "title": "The Meaning of Home",
+      "text": "The word \"home\" means more than physical location. The Robinson family left European home involuntarily, expecting to rebuild in a colony. Instead, they created home on an unnamed island. Over time, the island became familiar, beloved even. They knew every tree, stream, and landmark. They'd built everything with their own hands. Would they still want rescue? Could they return to European society after years of independence? Many real castaways who eventually returned home felt like strangers in their own culture, missing island life's simplicity and freedom. Home is wherever people create belonging, security, and meaning. The Robinsons discovered that home isn't a place on a map—it's where your family is, where your work matters, and where you belong."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "prompt": "The Robinson family faces a terrifying shipwreck that changes their lives forever. Write about a time when something unexpected happened that changed your plans or your life. How did you adapt?"
+    },
+    {
+      "day": 3,
+      "chapter": 2,
+      "prompt": "The family must prioritize survival needs: water, shelter, food. If you were stranded somewhere, what three skills or tools would be most valuable? Explain why each one matters."
+    },
+    {
+      "day": 6,
+      "chapter": 3,
+      "prompt": "The Robinsons work together, each person contributing their strengths. Write about a time when teamwork helped you accomplish something difficult. What did each person bring to the team?"
+    },
+    {
+      "day": 8,
+      "chapter": 4,
+      "prompt": "The family builds shelter using only natural materials and salvaged tools. Describe how you would build a shelter if you were stranded. What materials would you use? How would you design it?"
+    },
+    {
+      "day": 11,
+      "chapter": 5,
+      "prompt": "Without refrigeration or stores, the Robinsons must preserve food for the future. Write about planning ahead—a time when preparing early made a difference, or when not planning caused problems."
+    },
+    {
+      "day": 13,
+      "chapter": 6,
+      "prompt": "The family learns to make things from scratch that they once bought in stores. If you couldn't buy anything for a week, what would you miss most? What could you make or do without?"
+    },
+    {
+      "day": 16,
+      "chapter": 7,
+      "prompt": "The Robinsons must learn about tropical plants—which are safe, which are useful, which are dangerous. Write about learning something new and important. What made it challenging? How did you figure it out?"
+    },
+    {
+      "day": 18,
+      "chapter": 8,
+      "prompt": "The family debates whether to stay on the island or try to reach civilization. Write a persuasive argument for either staying or leaving. Use specific reasons and examples."
+    },
+    {
+      "day": 21,
+      "chapter": 9,
+      "prompt": "Without doctors or medicine, the family must treat illness using whatever they can find. Write about a time when you or someone you know solved a problem without having the usual tools or help."
+    },
+    {
+      "day": 23,
+      "chapter": 10,
+      "prompt": "The Robinson children receive very different education than they would have in Europe—practical skills instead of formal schooling. Compare two types of learning you've experienced. Which was more valuable? Why?"
+    },
+    {
+      "day": 26,
+      "chapter": 11,
+      "prompt": "After months or years on the island, the family must decide if they even want to be rescued. Write about a place or situation where you felt completely at home. What made it special?"
+    },
+    {
+      "day": 28,
+      "chapter": 12,
+      "prompt": "The story ends with the family creating a new life on the island. Write your own ending: Do they get rescued? Stay forever? Discover something unexpected? Tell the story you'd want to read."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "chapter": 1,
+      "prompt": "The Robinson family survives together. How important is family in a crisis? Could you survive better alone or with family/friends? What are the advantages and disadvantages of each?"
+    },
+    {
+      "day": 4,
+      "chapter": 2,
+      "prompt": "The family must decide what to save from the sinking ship. If you could only save three things from your home, what would they be? Why are those items most important?"
+    },
+    {
+      "day": 7,
+      "chapter": 3,
+      "prompt": "The Robinsons use their European knowledge to survive in a tropical environment. When have you used something you learned in one situation to solve a problem in a completely different situation?"
+    },
+    {
+      "day": 9,
+      "chapter": 4,
+      "prompt": "Without modern technology, the family does everything by hand. How much of your daily life depends on technology? What could you still do without electricity or internet? What would be impossible?"
+    },
+    {
+      "day": 12,
+      "chapter": 5,
+      "prompt": "The family works constantly just to meet basic needs. Do you think people were happier before modern convenience, or does modern life make people happier? Defend your opinion."
+    },
+    {
+      "day": 14,
+      "chapter": 6,
+      "prompt": "The Robinsons have no stores, so they must be resourceful and creative. When have you had to improvise or \"make do\" with what you had? What did you learn from that experience?"
+    },
+    {
+      "day": 17,
+      "chapter": 7,
+      "prompt": "The family hunts and kills animals for food. Is this different from buying meat at a store? Is it more or less ethical? Explain your thinking."
+    },
+    {
+      "day": 19,
+      "chapter": 8,
+      "prompt": "The Robinsons are isolated from the rest of the world—no news, no communication, no visitors. Would you want to live somewhere completely cut off? Why or why not?"
+    },
+    {
+      "day": 22,
+      "chapter": 9,
+      "prompt": "The family treats the island as empty land they can claim. But what if indigenous people already lived there? Does being there first give you more rights to the land? How should newcomers behave?"
+    },
+    {
+      "day": 24,
+      "chapter": 10,
+      "prompt": "After years on the island, would you want to return to modern society? What would you miss about the island? What would you miss about civilization? Which life seems better?"
+    },
+    {
+      "day": 27,
+      "chapter": 11,
+      "prompt": "The Robinsons create their own rules and society. If you could design a community from scratch, what rules would you make? What would be most important to protect or promote?"
+    },
+    {
+      "day": 29,
+      "chapter": 12,
+      "prompt": "The story shows a family achieving self-sufficiency through hard work and cooperation. Do you think this kind of life is still possible today? Would you want to try it? Why or why not?"
+    }
+  ]
+}
