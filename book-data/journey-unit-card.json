@@ -1,0 +1,1506 @@
+{
+  "unitInfo": {
+    "title": "Journey to the Center of the Earth",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Based on the novel by Jules Verne (1864)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Science Fiction / Adventure",
+    "themes": [
+      "Exploration",
+      "Science",
+      "Discovery",
+      "Courage",
+      "Perseverance",
+      "Wonder"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-13T02:59:33.502Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 1-24 of any 6th-8th grade pocket"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (3 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "notes": "Each chapter maps to one lesson day"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "THE PROFESSOR",
+      "summary": "My uncle, Professor Otto Lidenbrock, was the most brilliant and the most terrifying man I had ever known. \nHe was a professor of geology and mineralogy at the University of Hamburg, Germany, and he was famous — not just for his knowledge, which was vast, but for his temper, which was volcanic.",
+      "text": "My uncle, Professor Otto Lidenbrock, was the most brilliant and the most terrifying man I had ever known.\nHe was a professor of geology and mineralogy at the University of Hamburg, Germany, and he was famous — not just for his knowledge, which was vast, but for his temper, which was volcanic. He could identify any rock on Earth by sight. He could lecture for three hours without notes on the formation of granite. He could also throw a book across a room with startling accuracy when his experiments didn't go as planned.\nMy name is Axel. I was nineteen years old, an orphan, and I lived with my uncle in his tall, narrow house on Königstrasse in Hamburg. I was his assistant, his student, and, more often than I liked, the target of his impatience. I was studying geology under his direction, though I would have preferred a quieter line of work — something involving a desk, a cup of tea, and absolutely no danger.\nI was also in love. Gräuben was my uncle's goddaughter — a sweet, calm, intelligent girl with blue eyes who lived nearby and who seemed, miraculously, to like me back. My greatest ambition in life was to finish my studies, marry Gräuben, and settle into a comfortable, predictable existence.\nMy uncle had other plans.\nOn the morning of May 24th, 1863, Professor Lidenbrock burst through the front door of our house, raced up the stairs, and locked himself in his study. I heard books slamming, furniture scraping, and what sounded like a small explosion — probably a paperweight hitting the wall.\n\"Axel!\" he shouted. \"Come here immediately!\"\nI went. When my uncle shouted, you went. It was a law of nature, like gravity.\nHe was standing at his desk, holding an old book — very old, with a cracked leather cover and yellowed pages. His eyes were blazing with the light that meant he had found something important. I had seen that light before, and it always meant trouble.\n\"Look at this,\" he said, thrusting the book toward me. \"I found it at a bookseller's shop this morning. It's a twelfth-century Icelandic manuscript — incredibly rare. But that's not the important part.\"\nHe opened the book and shook it. A small piece of parchment fell out and fluttered to the desk.\nIt was covered in strange writing — letters I didn't recognize, arranged in what appeared to be a code.\n\"What is it?\" I asked.\nMy uncle's grin was wild. \"That,\" he said, \"is what we are going to find out.\"",
+      "vocabulary": [
+        {
+          "word": "mineralogy",
+          "partOfSpeech": "noun",
+          "definition": "the scientific study of minerals, including their composition, structure, and properties",
+          "contextSentence": "He was a professor of geology and mineralogy at the University of Hamburg.",
+          "discussionQuestion": "How is mineralogy related to the journey the characters will take?"
+        },
+        {
+          "word": "volcanic",
+          "partOfSpeech": "adjective",
+          "definition": "relating to or produced by a volcano; also, intensely passionate or explosive",
+          "contextSentence": "His temper was volcanic.",
+          "discussionQuestion": "Write two sentences using volcanic — one about actual volcanoes and one about a person's personality."
+        },
+        {
+          "word": "ambitious",
+          "partOfSpeech": "adjective",
+          "definition": "having a strong desire to achieve something; requiring great effort",
+          "contextSentence": "My greatest ambition in life was to finish my studies, marry Gräuben, and settle into a comfortable existence.",
+          "discussionQuestion": "How is Axel's ambition different from his uncle's?"
+        },
+        {
+          "word": "parchment",
+          "partOfSpeech": "noun",
+          "definition": "a stiff material made from animal skin, used for writing in ancient times",
+          "contextSentence": "A small piece of parchment fell out and fluttered to the desk.",
+          "discussionQuestion": "Why is a message written on parchment more mysterious than one written on paper?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Axel describe his uncle, Professor Lidenbrock?",
+          "choices": [
+            "A quiet, gentle scholar who rarely leaves his study",
+            "The most brilliant and most terrifying man Axel has ever known",
+            "A retired explorer who tells stories about his past adventures",
+            "A strict teacher who is kind and patient with his students"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Axel want most in life?",
+          "choices": [
+            "To discover new geological formations and become famous",
+            "To finish his studies, marry Gräuben, and live a comfortable, predictable life",
+            "To travel the world and explore dangerous places",
+            "To surpass his uncle as the greatest geologist in Germany"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel and Lidenbrock have very different personalities. How do their contrasting traits set up the conflict that will drive the story? Use details from the chapter.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "THE SECRET MESSAGE",
+      "summary": "The parchment was small — about five inches square — and the writing on it was in runic characters.  Runes were an ancient alphabet used by Norse and Germanic peoples centuries ago.",
+      "text": "The parchment was small — about five inches square — and the writing on it was in runic characters. Runes were an ancient alphabet used by Norse and Germanic peoples centuries ago. My uncle could read runes, but these didn't form words in any language he recognized. The letters were scrambled — deliberately coded.\n\"Someone hid a message in this book,\" Lidenbrock said, pacing back and forth. \"Someone who wanted the message to survive, but not to be easily read. This is a cipher — a secret code.\"\nHe sat down at his desk and went to work. For hours he tried every method he knew: reading backward, rearranging columns, substituting letters. Nothing worked. The message remained gibberish.\nMy uncle's frustration grew like a storm building on the horizon. He stopped eating. He stopped sleeping. He muttered, shouted, crumpled papers, and threw them in the fire. The housekeeper, Martha, crept around the edges of the house like a mouse avoiding a cat.\nI, meanwhile, sat in my room fanning myself with a piece of paper — it was a warm day — and staring idly at the parchment, which I had copied onto a separate sheet. The coded letters stared back at me, meaningless.\nThen, by pure accident, I held the paper up to catch the breeze from the window, and the writing — viewed from the back of the sheet, reversed — suddenly resolved into words.\nLatin words.\nMy heart stopped. I had broken the code. The message was simply written backward — each line reversed, so that the first letter was actually the last.\nI translated the Latin, and my blood went cold:\n\"Descend into the crater of Sneffels Yökull, which the shadow of Scartaris caresses before the kalends of July, audacious traveler, and you will reach the center of the earth. I did it. — Arne Saknussemm.\"\nArne Saknussemm. The name was famous in scientific circles — a sixteenth-century Icelandic alchemist and explorer who had been condemned by the Church for his radical theories. He claimed to have made discoveries that went beyond anything known to science.\nAnd now, three hundred years later, his secret message was in my uncle's house.\nDescend into a volcano. Reach the center of the earth.\nI knew, with absolute certainty, that I should not tell my uncle.",
+      "vocabulary": [
+        {
+          "word": "cipher",
+          "partOfSpeech": "noun",
+          "definition": "a secret code; a method of disguising a message",
+          "contextSentence": "This is a cipher—a secret code.",
+          "discussionQuestion": "Why would someone write a message in cipher instead of plain language?"
+        },
+        {
+          "word": "runic",
+          "partOfSpeech": "adjective",
+          "definition": "relating to runes, the ancient alphabet used by Norse and Germanic peoples",
+          "contextSentence": "The writing on it was in runic characters.",
+          "discussionQuestion": "What does the use of runic script tell us about the message's origin?"
+        },
+        {
+          "word": "decipher",
+          "partOfSpeech": "verb",
+          "definition": "to succeed in understanding something that is difficult to read or interpret",
+          "contextSentence": "For hours he tried every method he knew.",
+          "discussionQuestion": "What is the difference between reading and deciphering?"
+        },
+        {
+          "word": "obsessive",
+          "partOfSpeech": "adjective",
+          "definition": "preoccupied with something to a troubling degree",
+          "contextSentence": "He stopped eating. He stopped sleeping. He muttered, shouted, crumpled papers.",
+          "discussionQuestion": "How does Lidenbrock's obsessive behavior affect the household?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why can't Lidenbrock immediately read the parchment message?",
+          "choices": [
+            "The ink has faded and the words are illegible",
+            "The message is written in a code — the runic letters are deliberately scrambled",
+            "The parchment is torn and missing several sections",
+            "The message is written in a language that no longer exists"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Lidenbrock's obsession with the code affect the household?",
+          "choices": [
+            "Everyone works together happily to solve the puzzle",
+            "He stops eating and sleeping, shouts and crumples papers, and terrifies the housekeeper",
+            "He calmly works on the code during his free time without disrupting anyone",
+            "He hires a team of experts to decipher it"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock's obsessive personality is both his greatest strength and his greatest weakness. How does this chapter show both sides? Use specific examples.",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "BREAKING THE CODE",
+      "summary": "I kept the secret for approximately four hours. \nMy uncle, who had not eaten all day, announced that no one in the house would eat until the code was broken.",
+      "text": "I kept the secret for approximately four hours.\nMy uncle, who had not eaten all day, announced that no one in the house would eat until the code was broken. Martha looked at me with desperate eyes. My stomach growled. Gräuben was coming for dinner, and there would be no dinner.\n\"Uncle,\" I said miserably, \"I may have figured it out.\"\nI showed him. He read the decoded message once, twice, three times. His face went through a series of expressions — confusion, understanding, wonder, and finally, a blazing, terrifying joy.\n\"Saknussemm!\" he roared. \"The great Saknussemm! He went to the center of the earth, and he left us directions!\"\n\"Uncle, surely you don't believe—\"\n\"Believe? Science doesn't believe or disbelieve. Science investigates! And we are going to investigate. We leave for Iceland immediately.\"\n\"Iceland?!\"\n\"Sneffels Yökull is a volcano in Iceland. The message says to descend into its crater when the shadow of a specific peak — Scartaris — falls across the correct opening. Before the first of July. That gives us less than a month.\"\n\"But Uncle — the center of the earth is thousands of miles below the surface. The heat alone would be impossible. The pressure would crush us. This is insane.\"\nHe turned on me with the full force of his personality — all six feet of furious German professor.\n\"Science has never proven that the earth's interior is hot,\" he said. \"That is a theory. Saknussemm went and returned. He left this message as proof. Are you a scientist, Axel, or are you a coward?\"\nThat was unfair. But it was effective.\nI went to Gräuben, hoping she would talk sense into me — or at least give me permission to stay home. Instead, she took my hands, looked into my eyes, and said:\n\"Go, Axel. Go with your uncle, and come back to me.\"\nAnd so I went.",
+      "vocabulary": [
+        {
+          "word": "alchemist",
+          "partOfSpeech": "noun",
+          "definition": "a medieval scientist who tried to transform ordinary metals into gold and discover secrets of nature",
+          "contextSentence": "Arne Saknussemm — a sixteenth-century Icelandic alchemist and explorer.",
+          "discussionQuestion": "How were alchemists both scientists and dreamers?"
+        },
+        {
+          "word": "audacious",
+          "partOfSpeech": "adjective",
+          "definition": "showing a willingness to take bold risks; daring",
+          "contextSentence": "Audacious traveler, and you will reach the center of the earth.",
+          "discussionQuestion": "Why does Saknussemm call the reader \"audacious\"?"
+        },
+        {
+          "word": "condemned",
+          "partOfSpeech": "verb",
+          "definition": "declared unfit or wrong; sentenced to punishment",
+          "contextSentence": "Condemned by the Church for his radical theories.",
+          "discussionQuestion": "Why was Saknussemm condemned for his discoveries?"
+        },
+        {
+          "word": "theoretical",
+          "partOfSpeech": "adjective",
+          "definition": "based on ideas and possibilities rather than proven facts",
+          "contextSentence": "Science has never proven that the earth's interior is hot. That is a theory.",
+          "discussionQuestion": "What is the difference between something theoretical and something proven?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Axel accidentally decipher the message?",
+          "choices": [
+            "He spills water on the parchment and hidden ink appears",
+            "He holds his copy up to the breeze and sees the reversed writing from the back",
+            "He falls asleep and dreams of the solution",
+            "Gräuben figures it out and tells him"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Gräuben tell Axel when he asks for advice about going?",
+          "choices": [
+            "She begs him not to go because it's too dangerous",
+            "She says \"Go, Axel. Go with your uncle, and come back to me\"",
+            "She says she wants to come with them on the journey",
+            "She tells him to hide the decoded message from his uncle"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel knows the decoded message will lead to danger. He keeps the secret for four hours before telling his uncle. What finally makes him reveal it? What does this tell us about the balance of power in their relationship?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "ARNE SAKNUSSEMM",
+      "summary": "Before we left Hamburg, my uncle told me everything he knew about the man whose message had started this madness. \nArne Saknussemm had been born in Iceland in the early 1500s.",
+      "text": "Before we left Hamburg, my uncle told me everything he knew about the man whose message had started this madness.\nArne Saknussemm had been born in Iceland in the early 1500s. He was a brilliant scholar — a chemist, an alchemist, and an explorer who had traveled across Europe studying the natural world. He claimed to have discovered things that the scientific establishment refused to accept: unknown chemical elements, geological formations that contradicted accepted theory, and — most controversially — a passage into the interior of the earth.\nThe Church condemned him. His books were burned. He was forced to flee Iceland and died in obscurity somewhere in Scandinavia. Almost all records of his work were destroyed.\nAlmost all.\n\"This parchment,\" my uncle said, holding it up reverently, \"is the last surviving document of Arne Saknussemm. It is the key to the greatest scientific discovery in human history. And it has been sitting in a used bookshop for who knows how long.\"\nI had to admit, the story was compelling. If Saknussemm's message was genuine — if a human being had actually descended into the earth and returned — then everything we thought we knew about geology, about the planet's interior, about the limits of exploration, was wrong.\n\"What if the message is a hoax?\" I asked. \"What if Saknussemm was lying, or delusional?\"\n\"Then we will find out,\" my uncle said. \"And finding out is the entire point of science.\"\nHe had me there.\nWe packed quickly: scientific instruments, tools, food, rope, lamps, and — at my uncle's insistence — enough supplies for several months underground. We brought a Ruhmkorff lamp, a newly invented device that produced light through an electric coil and could burn for hours without heat or flame. We brought compasses, thermometers, barometers, and a chronometer. My uncle packed everything as if he were equipping a military expedition, which, in a sense, he was.\nOn June 2nd, we left Hamburg by train, heading north.",
+      "vocabulary": [
+        {
+          "word": "radical",
+          "partOfSpeech": "adjective",
+          "definition": "departing dramatically from what is traditional or accepted; extreme",
+          "contextSentence": "Condemned by the Church for his radical theories.",
+          "discussionQuestion": "Why are radical ideas often feared before they are accepted?"
+        },
+        {
+          "word": "obscurity",
+          "partOfSpeech": "noun",
+          "definition": "the state of being unknown or forgotten",
+          "contextSentence": "He died in obscurity somewhere in Scandinavia.",
+          "discussionQuestion": "What is tragic about dying in obscurity after making great discoveries?"
+        },
+        {
+          "word": "expedition",
+          "partOfSpeech": "noun",
+          "definition": "a journey undertaken for a specific purpose, especially scientific exploration",
+          "contextSentence": "My uncle packed everything as if he were equipping a military expedition.",
+          "discussionQuestion": "What makes this expedition different from ordinary travel?"
+        },
+        {
+          "word": "chronometer",
+          "partOfSpeech": "noun",
+          "definition": "a highly accurate clock used for scientific measurement or navigation",
+          "contextSentence": "We brought compasses, thermometers, barometers, and a chronometer.",
+          "discussionQuestion": "Why would explorers need a chronometer underground where there's no sun?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why was Arne Saknussemm condemned by the Church?",
+          "choices": [
+            "He stole money from the Church treasury",
+            "He proposed radical scientific theories that challenged accepted beliefs",
+            "He refused to attend church services",
+            "He claimed to be a prophet with divine powers"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is Axel's main argument against following Saknussemm's instructions?",
+          "choices": [
+            "The center of the earth would be impossibly hot and the pressure would crush them",
+            "Iceland is too far away and too expensive to reach",
+            "Saknussemm was not a real scientist and shouldn't be trusted",
+            "The volcano has been sealed shut since Saknussemm's time"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock says, \"Science doesn't believe or disbelieve. Science investigates.\" Do you agree with this philosophy? How does it justify a dangerous journey based on a 300-year-old message?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "THE JOURNEY BEGINS",
+      "summary": "We traveled by train to Copenhagen, by ship to Reykjavik, and overland by horse across the most alien landscape I had ever seen. \nIceland was extraordinary — and deeply unsettling.",
+      "text": "We traveled by train to Copenhagen, by ship to Reykjavik, and overland by horse across the most alien landscape I had ever seen.\nIceland was extraordinary — and deeply unsettling. The land was bare rock, twisted lava fields, and steaming geothermal vents. Hot springs bubbled from the ground. Geysers erupted without warning, sending columns of boiling water fifty feet into the air. The sky was enormous, pale, and endless.\nThe people were kind. In Reykjavik, we were welcomed by a Danish professor who provided supplies and recommended a guide for the journey to Sneffels.\nHis name was Hans Bjelke.\nHans was an Icelandic eiderdown hunter — a man who made his living climbing cliffs to collect feathers from eider duck nests. He was about thirty years old, lean and weathered, with a calm, expressionless face and hands like leather. He spoke almost no German and almost no French. His total daily conversation consisted of about six words, most of them \"yes\" or \"no.\"\nHe was the most competent human being I had ever met.\nHans agreed to guide us to Sneffels and into the crater for a fixed weekly wage. He showed no curiosity about why two German professors wanted to climb into a volcano. He packed his bag, shouldered his tools, and was ready to leave in ten minutes.\nThe three of us made an odd group: my uncle, burning with scientific obsession, talking constantly, gesturing wildly; Hans, silent and imperturbable, moving across the lava fields with the steady pace of a machine; and me, terrified, reluctant, and increasingly convinced that I was going to die underground.\nAfter four days of hard travel across Iceland's interior, we saw it.\nSneffels Yökull rose from the horizon like a white crown — a massive volcano, its summit covered in glacial ice, its flanks scarred with ancient lava flows. It was beautiful and menacing, and my uncle looked at it the way a lover looks at a beloved's face.\n\"There it is,\" he whispered. \"The gateway.\"",
+      "vocabulary": [
+        {
+          "word": "geothermal",
+          "partOfSpeech": "adjective",
+          "definition": "relating to heat produced within the earth",
+          "contextSentence": "Hot springs bubbled from the ground. Geysers erupted without warning.",
+          "discussionQuestion": "How does Iceland's geothermal activity connect to the journey ahead?"
+        },
+        {
+          "word": "imperturbable",
+          "partOfSpeech": "adjective",
+          "definition": "unable to be upset or excited; calm under all circumstances",
+          "contextSentence": "Hans, silent and imperturbable, moving across the lava fields with the steady pace of a machine.",
+          "discussionQuestion": "How does Hans's imperturbable nature complement Lidenbrock's intensity?"
+        },
+        {
+          "word": "competent",
+          "partOfSpeech": "adjective",
+          "definition": "having the necessary skill or knowledge to do something successfully",
+          "contextSentence": "He was the most competent human being I had ever met.",
+          "discussionQuestion": "What makes Hans competent beyond just being skilled?"
+        },
+        {
+          "word": "menacing",
+          "partOfSpeech": "adjective",
+          "definition": "suggesting the presence of danger; threatening",
+          "contextSentence": "It was beautiful and menacing.",
+          "discussionQuestion": "How can something be both beautiful and menacing at the same time?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes Hans Bjelke an ideal guide for this expedition?",
+          "choices": [
+            "He speaks many languages and can communicate with people everywhere",
+            "He is extremely competent, calm, and physically tough, showing no curiosity about the danger",
+            "He has previously traveled into volcanoes and knows the underground tunnels",
+            "He is the cheapest guide available in Iceland"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does the group of three travelers complement each other?",
+          "choices": [
+            "They all have the same skills and approach problems the same way",
+            "Lidenbrock brings obsession and knowledge, Hans brings calm competence, Axel brings caution and narration",
+            "Hans leads while the other two follow without contributing",
+            "Axel and Lidenbrock argue while Hans makes all the decisions"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The three travelers are very different people. Why does the story need all three personalities? What would happen if any one of them were missing?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "MOUNT SNEFFELS",
+      "summary": "We climbed Sneffels on June 23rd.  The ascent took two days — hard, dangerous work over loose rock, ice, and volcanic debris.",
+      "text": "We climbed Sneffels on June 23rd. The ascent took two days — hard, dangerous work over loose rock, ice, and volcanic debris. The wind at the summit was fierce enough to knock a man down. The cold was brutal.\nBut we made it. And at the top, we found exactly what Saknussemm's message had described: a crater, roughly two hundred feet across, with three separate chimneys — three dark openings in the rock — leading down into the mountain's interior.\nNow we needed the shadow.\nSaknussemm had written that the shadow of a peak called Scartaris would point to the correct chimney before the first of July. On June 25th, the sky was overcast. June 26th, clouds. My uncle paced the crater's rim, muttering and checking his watch. If the sky didn't clear by July 1st, we would have to wait an entire year.\nOn June 28th, the sun broke through.\nAt exactly noon, the shadow of Scartaris fell like a dark finger across the crater floor and pointed directly at the central chimney. My uncle let out a shout of triumph that echoed off the rocks.\n\"That one!\" he cried. \"That's our path!\"\nI looked down into the chimney. It was about a hundred feet across, and it went straight down into blackness. The walls were rough volcanic rock, steep but climbable, with ledges and handholds. The bottom was invisible.\nHans had already begun tying the rope.\n\"Ready?\" my uncle asked, his eyes shining.\nI was not ready. I would never be ready. But I thought of Gräuben, and I thought of the promise I had made, and I said: \"Ready.\"\nWe began our descent into the earth.",
+      "vocabulary": [
+        {
+          "word": "crater",
+          "partOfSpeech": "noun",
+          "definition": "a large bowl-shaped cavity at the top of a volcano",
+          "contextSentence": "At the top, we found a crater, roughly two hundred feet across.",
+          "discussionQuestion": "Why is the crater both an entrance and a danger?"
+        },
+        {
+          "word": "summit",
+          "partOfSpeech": "noun",
+          "definition": "the highest point of a mountain; also, a meeting of leaders",
+          "contextSentence": "The wind at the summit was fierce enough to knock a man down.",
+          "discussionQuestion": "How does reaching the summit feel like both an achievement and a beginning?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What must happen before the travelers can enter the correct chimney?",
+          "choices": [
+            "They must wait for a full moon to light the crater",
+            "The shadow of Scartaris must fall on the central chimney before July 1st",
+            "Hans must locate a hidden door carved in the rock",
+            "Lidenbrock must solve a second coded message"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What nearly ruins the plan?",
+          "choices": [
+            "The volcano begins to erupt, blocking the entrance",
+            "Several days of overcast sky threaten to prevent them from seeing the shadow",
+            "Axel refuses to continue and tries to go back alone",
+            "Hans discovers the chimneys have collapsed since Saknussemm's time"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "When the shadow finally points to the correct chimney, Lidenbrock shouts in triumph. Axel says, \"I was not ready. I would never be ready.\" What does this contrast reveal about how each character approaches the unknown?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "THE DESCENT",
+      "summary": "We lowered ourselves into the chimney using ropes, moving from ledge to ledge.  The daylight above us shrank to a circle, then a dot, then disappeared entirely.",
+      "text": "We lowered ourselves into the chimney using ropes, moving from ledge to ledge. The daylight above us shrank to a circle, then a dot, then disappeared entirely. We were in the throat of a dead volcano, descending by the light of our Ruhmkorff lamps.\nThe rock around us was fascinating — even I had to admit that. Layer after layer of geological history was written in the walls: granite, basalt, compressed ash, and formations my uncle identified with breathless excitement. He called out the names of rock types like a general calling roll.\n\"Silurian! Devonian! Look, Axel — this layer is at least four hundred million years old!\"\nHis enthusiasm was infectious, even to a terrified nephew.\nThe chimney gradually widened as we descended. After several hours, the vertical shaft gave way to a sloping tunnel — still going down, but at a manageable angle. We could walk, hunched but moving. The air was cool and dry, surprisingly fresh.\nMy uncle kept careful records. His barometer told us our depth below the surface. His thermometer tracked the temperature. His compass confirmed our direction. At every rest stop, he wrote in his journal with the precision of a man documenting the most important scientific expedition in history.\nBecause, he believed, that was exactly what it was.\nHans moved steadily behind us, carrying the heaviest pack without complaint, saying nothing. He ate when we ate, slept when we slept, and watched the rock walls with the practiced eye of a man who understood stone.\nBy the end of the first day underground, we had descended approximately two thousand feet.\n\"Only a few thousand miles to go,\" my uncle said cheerfully.\nI did not find this comforting.",
+      "vocabulary": [
+        {
+          "word": "geological",
+          "partOfSpeech": "adjective",
+          "definition": "relating to the science of the earth's physical structure and history",
+          "contextSentence": "Layer after layer of geological history was written in the walls.",
+          "discussionQuestion": "How is reading rock layers like reading a book?"
+        },
+        {
+          "word": "infectious",
+          "partOfSpeech": "adjective",
+          "definition": "likely to spread to others; (of enthusiasm) catching",
+          "contextSentence": "His enthusiasm was infectious, even to a terrified nephew.",
+          "discussionQuestion": "How can enthusiasm be infectious even when someone is afraid?"
+        },
+        {
+          "word": "barometer",
+          "partOfSpeech": "noun",
+          "definition": "an instrument that measures atmospheric pressure",
+          "contextSentence": "His barometer told us our depth below the surface.",
+          "discussionQuestion": "How does a barometer help measure depth underground?"
+        },
+        {
+          "word": "meticulous",
+          "partOfSpeech": "adjective",
+          "definition": "showing great attention to detail; very careful and precise",
+          "contextSentence": "He wrote in his journal with the precision of a man documenting the most important scientific expedition in history.",
+          "discussionQuestion": "Why is meticulous record-keeping essential for a scientific expedition?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What fascinates Lidenbrock about the walls of the volcanic chimney?",
+          "choices": [
+            "They are covered in ancient cave paintings",
+            "Layers of rock reveal hundreds of millions of years of geological history",
+            "Precious gems are embedded in the walls",
+            "The walls are warm, suggesting the volcano is still active"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What role does Hans play during the descent?",
+          "choices": [
+            "He is frightened and needs constant encouragement",
+            "He carries the heaviest pack without complaint and moves with steady efficiency",
+            "He talks constantly to keep everyone's spirits up",
+            "He leads the group and makes all navigation decisions"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock keeps detailed scientific records during the descent. Why is this important beyond just the current journey? What would these records mean to the scientific world?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "INTO DARKNESS",
+      "summary": "As we went deeper, the tunnels narrowed.  The ceiling dropped until we were crawling on our hands and knees through passages barely wide enough for our packs.",
+      "text": "As we went deeper, the tunnels narrowed. The ceiling dropped until we were crawling on our hands and knees through passages barely wide enough for our packs. The stone pressed close on all sides — above, below, left, right. I could touch both walls simultaneously.\nI am not a brave person. I have never claimed to be. And in those narrow tunnels, with thousands of feet of rock above my head and no way forward except on my belly through the dark, I experienced a fear more intense than anything I had ever known.\nIt was not the fear of a specific danger — a snake, a fall, a predator. It was the fear of the earth itself: its weight, its silence, its absolute indifference to whether I lived or died. The rock didn't care about me. It had been there for millions of years and would be there for millions more. I was nothing — a speck of life crawling through a crack in the planet's skin.\nI began to shake. My breath came in short, ragged gasps. Sweat poured down my face despite the cool air. I wanted to turn back — to crawl upward toward the sunlight, the open air, Gräuben's voice, the normal, beautiful, terrifying surface world.\n\"Uncle,\" I said, my voice thin. \"I can't do this.\"\nHe turned in the narrow tunnel and looked at me. For once, his expression was not impatient. It was understanding.\n\"Axel,\" he said quietly. \"One step at a time. Don't look ahead. Don't think about the weight above you. Just move one hand forward, then one knee. That's all.\"\nIt was the kindest thing he had ever said to me.\nI did as he said. One hand. One knee. One hand. One knee. The tunnel widened. The ceiling rose. We emerged into a larger passage, and I could breathe again.\nI did not mention my panic. Neither did my uncle. But Hans handed me his water flask, and I thought I saw, just for a moment, something that might have been a nod of respect.",
+      "vocabulary": [
+        {
+          "word": "claustrophobia",
+          "partOfSpeech": "noun",
+          "definition": "extreme fear of confined spaces",
+          "contextSentence": "In those narrow tunnels, with thousands of feet of rock above my head, I experienced a fear more intense than anything I had ever known.",
+          "discussionQuestion": "How does Axel's experience capture what claustrophobia feels like?"
+        },
+        {
+          "word": "indifference",
+          "partOfSpeech": "noun",
+          "definition": "lack of interest or concern; not caring",
+          "contextSentence": "The rock didn't care about me. It had been there for millions of years.",
+          "discussionQuestion": "Why does the earth's indifference to Axel make his fear worse?"
+        },
+        {
+          "word": "composure",
+          "partOfSpeech": "noun",
+          "definition": "the state of being calm and in control of oneself",
+          "contextSentence": "Just move one hand forward, then one knee.",
+          "discussionQuestion": "How does Lidenbrock help Axel regain his composure?"
+        },
+        {
+          "word": "empathy",
+          "partOfSpeech": "noun",
+          "definition": "the ability to understand and share the feelings of another",
+          "contextSentence": "For once, his expression was not impatient. It was understanding.",
+          "discussionQuestion": "How does Lidenbrock show empathy in a way he usually doesn't?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What causes Axel's extreme fear in the narrow tunnels?",
+          "choices": [
+            "He sees a dangerous animal in the darkness ahead",
+            "The weight of the earth above him and the rock pressing close on all sides overwhelm him",
+            "His lamp goes out and he's in complete darkness",
+            "He hears a loud explosion that suggests the volcano is becoming active"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How does Lidenbrock help Axel through his panic?",
+          "choices": [
+            "He orders Axel to stop being afraid and keep moving",
+            "He speaks kindly, telling Axel to focus on one movement at a time",
+            "He sends Hans back to carry Axel through the tunnel",
+            "He threatens to leave Axel behind if he doesn't keep up"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "This is the first time Lidenbrock shows true empathy. Why is this moment significant for their relationship? How is it different from how he usually treats Axel?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "NO WATER",
+      "summary": "On the third day underground, our water supply ran out. \nThis was not a minor problem.",
+      "text": "On the third day underground, our water supply ran out.\nThis was not a minor problem. In the tunnels, the air was dry, and physical exertion made us sweat constantly. Without water, we would be dead within days.\nMy uncle checked the remaining flask, tilted it, and watched the last drops fall into his palm. His face was grim.\n\"We must find an underground stream,\" he said. \"Water exists beneath the surface — it must. Every geological theory supports it.\"\n\"What if your theory is wrong?\" I asked. My throat was already dry, and fear made it worse.\n\"Then we turn back,\" he said. The words cost him visibly — turning back was against every fiber of his being. But he was not insane, whatever I sometimes thought. He would not kill us for his obsession.\nWe pushed deeper, searching for water. Hours passed. The tunnels branched and split, and we chose passages based on my uncle's geological instincts — always downward, always following formations that suggested the presence of water.\nNothing. The rock was dry. My tongue was swollen. My legs felt like lead. Ernest's face was gray with dehydration.\nBy the end of the second waterless day, I collapsed. I simply could not walk anymore. I lay on the rock floor, too exhausted to be afraid, too thirsty to speak.\n\"Uncle,\" I croaked. \"It's over.\"\n\"It is not over,\" he said fiercely. \"Hans — do you hear anything?\"\nHans pressed his ear to the tunnel wall. He listened for a long time. Then he looked up and said one word:\n\"Water.\"",
+      "vocabulary": [
+        {
+          "word": "dehydration",
+          "partOfSpeech": "noun",
+          "definition": "a dangerous loss of water from the body",
+          "contextSentence": "My tongue was swollen. My legs felt like lead.",
+          "discussionQuestion": "What are the symptoms of dehydration Axel describes?"
+        },
+        {
+          "word": "desperation",
+          "partOfSpeech": "noun",
+          "definition": "a state of hopelessness leading to reckless behavior",
+          "contextSentence": "If it opens the passage, we'll walk to the center of the earth.",
+          "discussionQuestion": "How does desperation affect different characters differently?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes the water crisis a potential death sentence?",
+          "choices": [
+            "Without water, they will die within days in the dry underground tunnels",
+            "They need water to power their lamps",
+            "The tunnel is flooding and they might drown",
+            "The water they had was poisoned by minerals in the rock"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Lidenbrock promise if they can't find water?",
+          "choices": [
+            "He will continue without Axel and Hans",
+            "He will use the last of their gunpowder to blast through to a water source",
+            "They will turn back — he will not kill them for his obsession",
+            "He will pray for a miracle and wait three more days"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock's promise to turn back if they don't find water shows a side of him we haven't seen before. What does this reveal about his priorities? Is science or family more important to him?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "THE UNDERGROUND STREAM",
+      "summary": "Hans had heard water flowing — not in the tunnel, but through the rock itself, behind the wall.  An underground stream was running just a few yards away, separated from us by solid stone.",
+      "text": "Hans had heard water flowing — not in the tunnel, but through the rock itself, behind the wall. An underground stream was running just a few yards away, separated from us by solid stone.\nHe picked up his heaviest tool — a long iron pickaxe — and began to strike the wall.\nThe blows rang through the tunnel like hammer strikes on an anvil. Chips of rock flew. Sparks flashed. Hans worked with the mechanical precision of a machine, striking the same spot again and again, widening a crack that had appeared in the stone.\nIt took an hour. My uncle and I lay on the ground, too weak to help, watching Hans swing the pick with undiminished strength. The man was made of iron.\nThen the wall gave way.\nA jet of water — scalding hot — burst through the opening and shot across the tunnel like a fire hose. Steam filled the air. Hans stepped back, waited for the flow to cool slightly, and then cupped his hands beneath it.\nThe water was hot, slightly mineral, and the most delicious thing I had ever tasted.\nWe drank until our stomachs ached. We filled every flask and container we had. My uncle splashed water on his face and laughed like a boy.\nHans, with simple genius, didn't seal the opening. He let the stream continue to flow, creating a small river that ran downhill through the tunnel — in the same direction we were traveling. We would have water for as long as we continued to descend.\n\"Hans,\" my uncle said, with real emotion, \"you have saved our lives.\"\nHans nodded once and began repacking his tools.\nWe named it the Hans-Bach — Hans's Stream — and it ran beside us like a companion through the dark, its quiet gurgling the only sound in the silence of the deep earth.",
+      "vocabulary": [
+        {
+          "word": "acoustic",
+          "partOfSpeech": "adjective",
+          "definition": "relating to sound or the sense of hearing",
+          "contextSentence": "The rock was acting as a conductor of sound.",
+          "discussionQuestion": "How do acoustic properties of rock help them find water?"
+        },
+        {
+          "word": "perseverance",
+          "partOfSpeech": "noun",
+          "definition": "continued effort despite difficulty; persistence\nFrom the text: Hans swings the pick for an hour without stopping.\nHow is Hans's perseverance different from Lidenbrock's determination?\n3. SCALDING  (adjective) — hot enough to burn; extremely hot",
+          "contextSentence": "A jet of water—scalding hot—burst through the opening.",
+          "discussionQuestion": "Why is scalding water still a life-saving discovery?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Hans find the underground water?",
+          "choices": [
+            "He follows a trail of moisture on the tunnel floor",
+            "He presses his ear to the wall, hears water behind the rock, and breaks through with a pickaxe",
+            "He uses a divining rod made from a mushroom stalk",
+            "He discovers a natural spring bubbling up from the tunnel floor"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Hans leave the opening unsealed instead of collecting water and moving on?",
+          "choices": [
+            "He is too tired to seal it properly",
+            "The flowing stream creates a continuous water supply that follows them downhill",
+            "Lidenbrock orders him to leave it open for scientific observation",
+            "The water pressure is too strong to seal"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The stream is named \"Hans-Bach\" — Hans's Stream. Why is naming the stream after Hans appropriate? What does this moment reveal about how the group values each member?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "LOST",
+      "summary": "It happened because I stopped to rest. \nWe had been following a tunnel that branched repeatedly, and my uncle had been marking our path with small chalk marks on the walls.",
+      "text": "It happened because I stopped to rest.\nWe had been following a tunnel that branched repeatedly, and my uncle had been marking our path with small chalk marks on the walls. But I had fallen behind — my legs were aching, and I stopped to adjust my boot. When I looked up, my uncle and Hans were gone.\nI hurried forward, turned a corner, and found myself at a junction of three tunnels. I couldn't remember which one they had taken. I chose the left one and walked quickly, calling out.\nNo answer. The tunnel twisted, narrowed, and split again. I chose again — right this time — and walked faster. My lamp swung wildly, casting jumping shadows.\nI was lost.\nThe full weight of that realization hit me like a physical blow. I was alone, underground, with no idea which direction led forward and which led into a dead end — or worse. My lamp had perhaps four hours of light remaining. After that: darkness. Total, absolute, eternal darkness.\nI shouted. My voice echoed off the stone walls and came back to me, distorted and mocking. I shouted again, and again, until my throat was raw.\nSilence.\nI sat down on the tunnel floor and tried to think. Panic was the enemy — I knew that from my uncle's teachings, if nothing else. If I moved randomly, I would get more lost. If I sat still, they might find me.\nBut what if they didn't? What if they were lost too? What if the tunnels went on forever?\nThe darkness pressed against me like a living thing. I turned off my lamp to save fuel, and the blackness that swallowed me was so complete that I couldn't tell if my eyes were open or closed. I held my hand in front of my face and saw nothing.\nThis was what it meant to be inside the earth. This was what it meant to be truly alone.\nI don't know how long I sat there. Hours. Maybe longer. I wept — I'm not ashamed to admit it. I was nineteen years old, I was lost in the bowels of the planet, and I was certain I was going to die.\nThen I heard something.",
+      "vocabulary": [
+        {
+          "word": "disoriented",
+          "partOfSpeech": "adjective",
+          "definition": "confused about one's location or direction",
+          "contextSentence": "I was alone, underground, with no idea which direction led forward.",
+          "discussionQuestion": "What makes being disoriented underground worse than being lost on the surface?"
+        },
+        {
+          "word": "panic",
+          "partOfSpeech": "noun/verb",
+          "definition": "sudden uncontrollable fear; to feel overwhelming anxiety",
+          "contextSentence": "Panic was the enemy.",
+          "discussionQuestion": "Why does Axel say panic is the enemy rather than the darkness itself?"
+        },
+        {
+          "word": "solitude",
+          "partOfSpeech": "noun",
+          "definition": "the state of being alone, especially when chosen; isolation",
+          "contextSentence": "This was what it meant to be truly alone.",
+          "discussionQuestion": "How is Axel's solitude different from choosing to be alone?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Axel become separated from the group?",
+          "choices": [
+            "He deliberately wanders off to explore a side tunnel alone",
+            "He stops to rest, falls behind, and takes a wrong turn at a junction",
+            "An earthquake separates them by collapsing the tunnel between them",
+            "Hans and Lidenbrock move ahead without realizing Axel isn't following"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Axel turn off his lamp even though he's lost?",
+          "choices": [
+            "He wants to sleep in the dark",
+            "He needs to save the remaining fuel in case he finds a way out",
+            "The light hurts his eyes after days underground",
+            "He thinks the light might attract dangerous animals"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel admits he cried while lost in the dark. He says, \"I'm not ashamed to admit it.\" Why does he include this detail? What does it tell us about what real courage looks like?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "THE WHISPERING GALLERY",
+      "summary": "At first I thought I was hallucinating.  A faint sound — too faint to identify — came from somewhere ahead of me in the tunnel.",
+      "text": "At first I thought I was hallucinating. A faint sound — too faint to identify — came from somewhere ahead of me in the tunnel. I held my breath and listened.\nIt came again. A voice. Distant, distorted by the rock, but unmistakably human.\n\"Uncle!\" I screamed. \"Uncle, can you hear me?\"\nSilence. Then, faintly, like a whisper carried on the wind: \"...Axel...\"\nThe rock was acting as a conductor of sound — a natural whispering gallery, like the curved walls of certain cathedrals where a whisper at one end can be heard clearly at the other. My uncle's voice was traveling through the stone, carried by some acoustic property of the tunnel's shape.\n\"Uncle! I'm lost! I don't know which way to go!\"\nA long pause. Then his voice, stronger now: \"...follow the stream...Hans-Bach...follow the water downhill...\"\nThe stream! The Hans-Bach! It was flowing somewhere nearby — I had lost it when I took the wrong tunnel, but if I could find it again, I could follow it down to where my uncle was.\nI turned my lamp on and searched. The tunnel floor was damp in places. I followed the dampness, crawling on my hands and knees, feeling the rock with my fingers. And there — a trickle, a thin line of water running along the base of the wall. The stream had split, and this tiny branch was still flowing downhill.\nI followed it. For hours I followed it — through tunnels that widened and narrowed, over rocks and past formations that glittered in my lamplight. The trickle grew to a rivulet, the rivulet to a stream.\nAnd then I heard his voice again — not through the rock this time, but through the air. Close. Real.\nI came around a corner and there they were — my uncle and Hans, sitting by the main channel of the Hans-Bach, their lamps burning, their faces turned toward me.\nMy uncle stood. For a moment, he looked as though he might cry. Then he grabbed my shoulders and pulled me into a crushing embrace.\n\"Don't you ever do that again,\" he said.\n\"I don't plan to,\" I said.\nHans handed me a piece of dried meat and said nothing, which was his way of saying everything.",
+      "vocabulary": [
+        {
+          "word": "acoustic",
+          "partOfSpeech": "adjective",
+          "definition": "relating to sound (revisited from Ch 10)",
+          "contextSentence": "A natural whispering gallery, like the curved walls of certain cathedrals.",
+          "discussionQuestion": "How does the acoustic property of the tunnel save Axel's life?"
+        },
+        {
+          "word": "navigation",
+          "partOfSpeech": "noun",
+          "definition": "the process of finding one's way; directing the course of travel\nFrom the text: Axel navigates back to his uncle by following the water.\nWhat tools does Axel use for navigation when his lamp is nearly dead?\n3. REUNITED  (verb/adjective) — brought back together after separation",
+          "contextSentence": "I came around a corner and there they were.",
+          "discussionQuestion": "Why is being reunited with his uncle and Hans so emotional for Axel?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Axel hear his uncle's voice through the rock?",
+          "choices": [
+            "Lidenbrock shouts through a megaphone made from mushroom stalks",
+            "The tunnel acts as a natural whispering gallery, conducting sound through the stone",
+            "Axel imagines his uncle's voice as a hallucination",
+            "Hans carves a hole through the rock so they can communicate"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What instructions does Lidenbrock give Axel through the rock?",
+          "choices": [
+            "Stay where you are and we'll come find you",
+            "Follow the Hans-Bach — follow the water downhill",
+            "Turn around and go back up to the surface",
+            "Light a fire so we can see the smoke"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel is saved by two things: the sound of his uncle's voice and the water from Hans's stream. How do these two lifelines connect to the chapter's themes about human connection and resourcefulness?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "THE UNDERGROUND OCEAN",
+      "summary": "Nothing in my uncle's wildest theories had prepared us for what we found next. \nThe tunnel opened — not into another tunnel, but into space.",
+      "text": "Nothing in my uncle's wildest theories had prepared us for what we found next.\nThe tunnel opened — not into another tunnel, but into space. Enormous, impossible space. We stepped through a natural archway and stood at the edge of a world.\nBefore us stretched an ocean.\nNot a lake. Not a large pool. An ocean — vast, gray-green, and stretching to a horizon so distant that it curved. Waves rolled against a shore of fine sand and rounded pebbles. Above us — impossibly far above — a vaulted ceiling of rock glowed with a diffuse, silvery light, as if the stone itself were luminous. The light had no visible source. It simply was, filling the cavern with a pale, perpetual twilight.\nThe cavern was miles high and miles across. It was an entire sky made of rock.\nMy uncle fell to his knees. Not from exhaustion — from wonder. He stared at the underground ocean with tears streaming down his face, and for the first time in my life, I saw him speechless.\n\"It's real,\" he finally whispered. \"Saknussemm was right. The earth is hollow.\"\nI stood beside him and felt the same awe — the same vertigo of the impossible. The air was warm and thick, rich with moisture and the smell of salt and something ancient. A breeze blew off the water, carrying sounds I couldn't identify — clicks, calls, and deep, resonant tones that might have been waves or might have been something else entirely.\nHans, as always, was unmoved. He surveyed the scene with professional interest, noted the direction of the breeze, and began setting up camp on the shore.\nWe had traveled deep enough. We had gone far enough. Every scientific theory about the earth's interior — the molten core, the crushing pressure, the impossible heat — was wrong. Here, at an estimated depth of ninety miles, was a temperate underground world with its own atmosphere, its own light, and its own sea.\nMy uncle began taking measurements immediately. Temperature: 62 degrees. Air pressure: breathable, though slightly denser than surface air. The luminous ceiling appeared to be caused by an electrical phenomenon — a continuous low-level discharge in the rock, like a permanent aurora.\nI sat on the shore and watched the waves. Somewhere, ninety miles above my head, the sun was shining on Hamburg, and Gräuben was going about her day, having no idea that her future husband was sitting on a beach inside the planet.",
+      "vocabulary": [
+        {
+          "word": "luminous",
+          "partOfSpeech": "adjective",
+          "definition": "giving off light; glowing",
+          "contextSentence": "The vaulted ceiling of rock glowed with a diffuse, silvery light, as if the stone itself were luminous.",
+          "discussionQuestion": "How is the luminous ceiling different from any light source Axel has seen?"
+        },
+        {
+          "word": "phenomenon",
+          "partOfSpeech": "noun",
+          "definition": "a fact or event that can be observed; something remarkable",
+          "contextSentence": "The luminous ceiling appeared to be caused by an electrical phenomenon.",
+          "discussionQuestion": "What electrical phenomenon could cause rock to glow?"
+        },
+        {
+          "word": "cavern",
+          "partOfSpeech": "noun",
+          "definition": "a large natural underground chamber",
+          "contextSentence": "The cavern was miles high and miles across.",
+          "discussionQuestion": "How is this cavern different from any other they've encountered?"
+        },
+        {
+          "word": "awestruck",
+          "partOfSpeech": "adjective",
+          "definition": "filled with wonder and amazement",
+          "contextSentence": "My uncle fell to his knees. Not from exhaustion—from wonder.",
+          "discussionQuestion": "What makes even the obsessive Professor Lidenbrock awestruck?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes the underground ocean scientifically impossible according to accepted theories?",
+          "choices": [
+            "Water cannot exist at such depths because of the pressure",
+            "Accepted theory says the earth's interior is molten rock, not open space with oceans",
+            "The temperature should be too hot for liquid water to exist",
+            "There is no known source of water deep underground"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does Lidenbrock cry when he sees the ocean?",
+          "choices": [
+            "He is exhausted and overwhelmed by the difficulty of the journey",
+            "His life's work is vindicated — the underground world exists, proving accepted theories wrong",
+            "He is afraid they will never find a way across",
+            "He realizes they are lost and will never return to the surface"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The underground ocean disproves everything the scientific world believed about the earth's interior. How does this discovery connect to the book's larger theme about the limits of human knowledge?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "THE SHORE",
+      "summary": "We spent two days exploring the shore of the underground sea. \nThe landscape was like nothing on the surface — familiar and alien at the same time.",
+      "text": "We spent two days exploring the shore of the underground sea.\nThe landscape was like nothing on the surface — familiar and alien at the same time. The beach was ordinary enough: sand, pebbles, shells. But behind the beach, the terrain became extraordinary.\nA forest stretched inland — not a forest of trees, but a forest of giant mushrooms. Enormous fungi, thirty feet tall, with thick white stalks and broad, flat caps, stood in dense clusters like a grove of pale umbrellas. The ground beneath them was covered in a thick carpet of moss and fern-like plants that had never seen sunlight.\nBeyond the mushroom forest, the ground rose into hills covered with strange vegetation. Plants that looked like ferns but were the size of oak trees. Grass that reached my waist. Flowers — actual flowers — in pale, ghostly colors: white, silver, and the faintest blue.\nAnd there were bones.\nScattered along the shore and half-buried in the sand were the fossilized remains of creatures that had been extinct on the surface for millions of years. Shells the size of wagon wheels. Jaw bones lined with teeth as long as my forearm. The ribcage of something so large that all three of us could have stood inside it.\nMy uncle was in paradise. He cataloged everything, sketched everything, collected samples of everything. His journal filled with page after page of observations, measurements, and wild theories.\n\"This place is a time capsule,\" he said, holding up a fossil tooth. \"These creatures died on the surface millions of years ago. But down here, preserved by the constant temperature and sealed atmosphere, their remains are perfectly intact.\"\n\"What if they're not all dead?\" I asked.\nMy uncle paused. He looked out at the dark water of the underground sea. Something moved beneath the surface — a shadow, large and slow, that passed beneath the waves and disappeared.\n\"An excellent question,\" he said quietly.",
+      "vocabulary": [
+        {
+          "word": "fossilized",
+          "partOfSpeech": "adjective",
+          "definition": "preserved as a fossil; turned to stone over millions of years",
+          "contextSentence": "Scattered along the shore were the fossilized remains of creatures extinct for millions of years.",
+          "discussionQuestion": "What conditions allow remains to become fossilized?"
+        },
+        {
+          "word": "prehistoric",
+          "partOfSpeech": "adjective",
+          "definition": "relating to the time before written records; extremely old",
+          "contextSentence": "Giant mushrooms, thirty feet tall.",
+          "discussionQuestion": "Why is the underground world described as prehistoric?"
+        },
+        {
+          "word": "specimen",
+          "partOfSpeech": "noun",
+          "definition": "an example of something used for study",
+          "contextSentence": "He cataloged everything, sketched everything, collected samples of everything.",
+          "discussionQuestion": "Why is Lidenbrock so determined to collect specimens?"
+        },
+        {
+          "word": "ominous",
+          "partOfSpeech": "adjective",
+          "definition": "giving the impression that something bad is about to happen",
+          "contextSentence": "Something moved beneath the surface—a shadow, large and slow.",
+          "discussionQuestion": "What makes the shadow in the water ominous?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What makes the bone shore extraordinary?",
+          "choices": [
+            "The bones are made of crystal rather than calcium",
+            "It contains fossilized remains spanning hundreds of millions of years of evolution",
+            "All the bones belong to a single enormous creature",
+            "The bones are arranged in patterns suggesting human activity"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What disturbs Axel about the shadow moving under the water?",
+          "choices": [
+            "It means the water is too deep to wade across",
+            "It suggests that prehistoric creatures may still be alive in the underground sea",
+            "It blocks their path and prevents them from building a raft",
+            "It reminds him of the shipwrecks he read about as a child"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel asks, \"What if they're not all dead?\" How does this question transform the journey from a geological expedition into something much more dangerous?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "THE RAFT",
+      "summary": "My uncle wanted to cross the ocean.  Of course he did.",
+      "text": "My uncle wanted to cross the ocean. Of course he did.\n\"Saknussemm crossed it,\" he said. \"The tunnel continues on the far shore. We must cross.\"\nHans built the raft. Using the tough, flexible stalks of the giant mushrooms and rope from our supplies, he constructed a platform roughly twelve feet square, with a mast made from a mushroom stalk and a sail made from our canvas tarpaulin. It was crude but effective — Hans tested it in the shallows, and it floated well.\nWe loaded our supplies and pushed off from the shore. The underground sea stretched before us, gray and featureless, under the glowing ceiling of rock. There was no wind at first — we used makeshift paddles, and the raft moved painfully slowly.\nThen a breeze picked up. Hans raised the sail, and we began to move.\nFor the first time since entering the earth, I felt something like peace. The gentle rocking of the raft, the sound of water against the logs, the vast open space above and around us — it was almost like being on a real ocean, under a real sky. If I squinted at the luminous ceiling and ignored the fact that it was rock instead of cloud, I could almost imagine we were back on the surface.\nMy uncle spent every moment fishing — not for food, but for science. He dropped a line with a hook into the water and pulled up creatures that made his hands shake with excitement. Fish — real fish — but species that had been extinct for hundreds of millions of years. Fish with armored heads and bony plates instead of scales. Fish with eyes that had adapted to the dim light, growing enormous and sensitive.\n\"These are living fossils,\" he breathed, holding up a specimen that looked like something from a nightmare. \"Species that went extinct on the surface during the Devonian period. Three hundred and fifty million years ago. And here they are — alive.\"\nThe water was deep. When Hans dropped a weighted line, it descended for hundreds of feet without touching bottom. Something was down there, in the darkness beneath us. I could feel it.",
+      "vocabulary": [
+        {
+          "word": "subterranean",
+          "partOfSpeech": "adjective",
+          "definition": "existing beneath the earth's surface",
+          "contextSentence": "Sailing across the subterranean ocean.",
+          "discussionQuestion": "How is sailing on a subterranean ocean both familiar and terrifying?"
+        },
+        {
+          "word": "extinct",
+          "partOfSpeech": "adjective",
+          "definition": "no longer existing; having died out completely",
+          "contextSentence": "Species that had been extinct for hundreds of millions of years.",
+          "discussionQuestion": "What does finding extinct species alive underground prove?"
+        },
+        {
+          "word": "adaptation",
+          "partOfSpeech": "noun",
+          "definition": "a change in a living thing that helps it survive in its environment",
+          "contextSentence": "Fish with eyes that had adapted to the dim light, growing enormous and sensitive.",
+          "discussionQuestion": "How does adaptation explain why the underground fish look different?"
+        },
+        {
+          "word": "apprehension",
+          "partOfSpeech": "noun",
+          "definition": "anxiety or fear that something bad will happen",
+          "contextSentence": "Something was down there, in the darkness beneath us. I could feel it.",
+          "discussionQuestion": "What details create Axel's growing apprehension?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What does Lidenbrock catch while fishing from the raft?",
+          "choices": [
+            "Ordinary fish that somehow survived underground",
+            "Living fossils — fish from species that went extinct on the surface hundreds of millions of years ago",
+            "Jellyfish that glow with bioluminescent light",
+            "Nothing — the underground sea has no fish"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What detail about the water makes Axel nervous?",
+          "choices": [
+            "The water is too cold to survive in if they fall overboard",
+            "When Hans drops a weighted line, it descends hundreds of feet without touching bottom",
+            "The water is a strange color that suggests toxic chemicals",
+            "Small fish are nibbling at the raft's logs"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock calls the fish \"living fossils.\" What does this discovery mean for the scientific understanding of extinction? How does it challenge the idea that extinct means \"gone forever\"?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "THE STORM",
+      "summary": "On the third day at sea, the storm hit. \nIt began with the wind — a sudden, violent blast from the south that nearly capsized the raft.",
+      "text": "On the third day at sea, the storm hit.\nIt began with the wind — a sudden, violent blast from the south that nearly capsized the raft. The sail tore loose from its lashing and whipped wildly. Hans grabbed it, wrestling it down with his bare hands while my uncle and I clung to the mast.\nThen the lightning began.\nNot lightning from clouds — there were no clouds. The electrical discharge that lit the cavern ceiling intensified, concentrating into brilliant, jagged bolts that cracked between the rock above and the water below. The noise was deafening — a continuous rolling thunder that echoed off the cavern walls and multiplied into a roar.\nThe waves grew enormous. The raft climbed up walls of water and plunged down the other side. Spray drenched us. Our supplies slid across the platform, and I grabbed the food barrel just before it went over the edge.\nHans lashed everything down with methodical calm, as if tying knots in a hurricane were a perfectly normal activity. My uncle, incredibly, was exhilarated. He stood at the front of the raft, soaked and buffeted, staring into the storm with an expression of pure delight.\n\"Magnificent!\" he shouted over the roar. \"A subterranean electrical storm! Think of the scientific implications!\"\n\"I'm thinking of the dying implications!\" I shouted back.\nThe storm lasted eighteen hours. Eighteen hours of wind, waves, lightning, and the constant fear that the next wave would be the one that broke the raft apart. I spent most of it with my arms wrapped around the mast, my face pressed against the mushroom stalk, praying.\nWhen it finally ended, the sea smoothed. The ceiling dimmed back to its normal pale glow. The silence was overwhelming.\nWe were alive. The raft had held. Our supplies were battered but intact.\nHans, who had not spoken a word during the entire storm, untied the sail and raised it. The breeze caught it, and we continued east.\n\"How much farther?\" I asked weakly.\nMy uncle studied the horizon. \"As far as it takes,\" he said.",
+      "vocabulary": [
+        {
+          "word": "intensified",
+          "partOfSpeech": "verb",
+          "definition": "became stronger or more extreme",
+          "contextSentence": "The electrical discharge that lit the cavern ceiling intensified.",
+          "discussionQuestion": "How does the intensified light create the underground storm?"
+        },
+        {
+          "word": "exhilarated",
+          "partOfSpeech": "adjective",
+          "definition": "very happy, animated, or energized",
+          "contextSentence": "My uncle, incredibly, was exhilarated.",
+          "discussionQuestion": "Why is Lidenbrock exhilarated during a deadly storm?"
+        },
+        {
+          "word": "endurance",
+          "partOfSpeech": "noun",
+          "definition": "the ability to withstand hardship or adversity over a long period",
+          "contextSentence": "The storm lasted eighteen hours.",
+          "discussionQuestion": "What does surviving eighteen hours on a raft in a storm require?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What causes the underground storm?",
+          "choices": [
+            "Wind from a tunnel opening creates waves on the sea",
+            "Electrical discharge from the cavern ceiling intensifies into lightning",
+            "An underwater earthquake shakes the ocean floor",
+            "The travelers accidentally trigger a volcanic reaction"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "How do Lidenbrock and Axel react differently to the storm?",
+          "choices": [
+            "Both are equally terrified and cling to the raft",
+            "Lidenbrock is exhilarated and shouts \"Magnificent!\" while Axel prays for survival",
+            "Axel is calm while Lidenbrock panics",
+            "Both try to steer the raft to shore"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Lidenbrock finds the storm \"magnificent\" while Axel finds it terrifying. What does this contrast reveal about each character's relationship with danger and discovery?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "SEA MONSTERS",
+      "summary": "The battle happened at noon — or what we estimated as noon, since there was no sun to mark the hours. \nI saw the disturbance first: a churning of the water several hundred yards from the raft.",
+      "text": "The battle happened at noon — or what we estimated as noon, since there was no sun to mark the hours.\nI saw the disturbance first: a churning of the water several hundred yards from the raft. The surface boiled and heaved, and then two creatures broke through — enormous, reptilian, and locked in combat.\nThe first was an ichthyosaur — a marine reptile with a long snout, massive jaws, and a body the size of a whale. Its teeth were visible even from our distance — rows of cone-shaped spikes designed for gripping and tearing.\nThe second was a plesiosaurus — longer, with a serpentine neck that rose twenty feet above the water and a small head with cold, intelligent eyes. Its flippers churned the sea as it lunged at the ichthyosaur, snapping its jaws.\nThey fought with savage, mindless fury. The water around them turned white with foam and dark with blood. The ichthyosaur lunged, its jaws clamping onto the plesiosaurus's neck. The plesiosaurus thrashed, its massive body rolling, dragging its opponent beneath the surface. They disappeared. The water churned. Then one of them surfaced — I couldn't tell which — and let out a sound that I will never forget: a deep, bellowing roar that echoed across the underground ocean and vibrated in my chest.\nThen they were gone. The surface calmed. The blood dissipated. In minutes, the sea was flat and gray again, as if nothing had happened.\nI looked at my uncle. He was scribbling furiously in his journal.\n\"Did you see that? An ichthyosaur and a plesiosaurus! Creatures that went extinct sixty-five million years ago! Alive! Fighting! Here!\"\nI had seen it. I had also seen the size of their jaws relative to our raft, and I had calculated, with grim precision, that either creature could have crushed us like a cracker.\nI did not share this observation with my uncle. I did not sleep that night.",
+      "vocabulary": [
+        {
+          "word": "reptilian",
+          "partOfSpeech": "adjective",
+          "definition": "relating to or resembling reptiles",
+          "contextSentence": "Two creatures broke through—enormous, reptilian, and locked in combat.",
+          "discussionQuestion": "What makes the creatures' reptilian nature especially alarming?"
+        },
+        {
+          "word": "prehistoric",
+          "partOfSpeech": "adjective",
+          "definition": "from the time before written history (revisited)",
+          "contextSentence": "An ichthyosaur and a plesiosaurus—creatures that went extinct sixty-five million years ago.",
+          "discussionQuestion": "What does seeing living prehistoric creatures prove about the underground world?"
+        },
+        {
+          "word": "savage",
+          "partOfSpeech": "adjective",
+          "definition": "fierce, violent, and uncontrolled",
+          "contextSentence": "They fought with savage, mindless fury.",
+          "discussionQuestion": "How does the word savage capture the nature of the battle?"
+        },
+        {
+          "word": "vulnerable",
+          "partOfSpeech": "adjective",
+          "definition": "exposed to the possibility of harm",
+          "contextSentence": "Either creature could have crushed us like a cracker.",
+          "discussionQuestion": "Why are the travelers especially vulnerable during the sea monster battle?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What two creatures do the travelers witness fighting?",
+          "choices": [
+            "Two giant squids battling over territory",
+            "An ichthyosaur and a plesiosaurus — both extinct for 65 million years",
+            "A whale and a giant shark",
+            "Two unknown species never seen before"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why doesn't Axel share his calculation about the creatures' jaw size with his uncle?",
+          "choices": [
+            "His uncle is too busy writing in his journal to listen",
+            "Pointing out that either creature could crush the raft would only increase panic",
+            "He doesn't want to interrupt his uncle's scientific observations",
+            "He isn't sure his calculation is correct"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The sea monster battle is one of the most dramatic scenes in the book. How does Verne use this scene to show both the wonder and the danger of the underground world?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "THE GRAVEYARD",
+      "summary": "The raft made landfall on a distant shore after five days at sea.  The beach was broad and flat, covered not with sand but with bones.",
+      "text": "The raft made landfall on a distant shore after five days at sea. The beach was broad and flat, covered not with sand but with bones.\nThousands of bones. Millions of bones. The fossilized remains of creatures spanning hundreds of millions of years of evolution, scattered across the shore like driftwood after a storm.\nMy uncle walked among them in a trance. He identified species by touch — dinosaurs, marine reptiles, giant amphibians, ancient mammals. Jawbones with teeth the size of my fist. Vertebrae as big as barrels. The complete skeleton of a mastodon — a prehistoric elephant — half-buried in the gravel, its tusks curving upward like ivory arches.\nThen Ernest found something that stopped us all.\nA human skull.\nNot a fossil — or at least, not as old as the others. A human skull, intact and unmistakable, lying among the prehistoric bones. Beside it were more human bones — a ribcage, an arm, fragments of a pelvis.\nMy uncle picked up the skull and held it in both hands, staring into its empty eye sockets.\n\"A man,\" he said. \"A human being lived and died in this underground world.\"\n\"Saknussemm?\" I asked.\n\"No. This is much older. Prehistoric. This person lived thousands of years ago, perhaps tens of thousands. A human being, living in the depths of the earth, long before recorded history.\"\nThe implications were staggering. If ancient humans had lived underground, then the subterranean world was not just a geological curiosity — it was a lost chapter of human history.\nI looked at the skull and thought: you lived here. You walked this shore. You saw these creatures. You were born and died in this twilight world, never knowing that a sky existed above the rock.\nMy uncle placed the skull carefully back among the bones and stood. His face was solemn — the expression of a scientist confronting a mystery that was bigger than any theory.\n\"Deeper,\" he said. \"We go deeper.\"",
+      "vocabulary": [
+        {
+          "word": "staggering",
+          "partOfSpeech": "adjective",
+          "definition": "astonishing; so great as to be hard to believe",
+          "contextSentence": "The implications were staggering.",
+          "discussionQuestion": "What implications does the human skull create?"
+        },
+        {
+          "word": "anthropological",
+          "partOfSpeech": "adjective",
+          "definition": "relating to the study of human societies and cultures\nFrom the text: Finding human remains underground is an anthropological discovery.\nWhy would this discovery change what scientists believe about human history?\n3. SOLEMN  (adjective) — formal and dignified; serious",
+          "contextSentence": "His face was solemn—the expression of a scientist confronting a mystery bigger than any theory.",
+          "discussionQuestion": "What makes Lidenbrock solemn when he's usually excited?"
+        },
+        {
+          "word": "implications",
+          "partOfSpeech": "noun",
+          "definition": "the possible effects or consequences of something",
+          "contextSentence": "If ancient humans had lived underground, then the subterranean world was a lost chapter of human history.",
+          "discussionQuestion": "What are the implications of finding human remains underground?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What discovery on the bone shore shocks the travelers the most?",
+          "choices": [
+            "A perfectly preserved dinosaur skeleton",
+            "A human skull among the prehistoric animal remains",
+            "A carved stone tool suggesting ancient tool-making",
+            "A message from Saknussemm carved in bone"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What are the implications of finding a human skull underground?",
+          "choices": [
+            "Ancient humans may have lived in the underground world thousands of years ago",
+            "Saknussemm must have died here during his journey",
+            "The skull was washed underground by an ancient flood",
+            "Someone else has made this journey recently"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The human skull changes the journey from a geological expedition to something bigger. What field of science does it now involve? What questions does it raise about human history?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "THE GIANT",
+      "summary": "I still don't know if what I saw was real. \nWe had left the bone shore and entered a dense forest of the giant prehistoric vegetation — ferns as tall as buildings, mosses thick enough to walk on, mushrooms towering overhead.",
+      "text": "I still don't know if what I saw was real.\nWe had left the bone shore and entered a dense forest of the giant prehistoric vegetation — ferns as tall as buildings, mosses thick enough to walk on, mushrooms towering overhead. The light was dim, filtered through the canopy of enormous leaves.\nI was walking ahead, pushing through the undergrowth, when I froze.\nIn a clearing, perhaps a hundred yards away, stood a figure. It was enormous — at least twelve feet tall, with long arms and a broad, sloping forehead. It was humanoid but not human. It carried something — a branch, a weapon? — in one massive hand. It was watching a group of animals that grazed at the edge of the clearing: mastodons, living mastodons, their brown fur matted, their tusks yellowed.\nThe giant was herding them.\nI didn't move. I didn't breathe. The creature — the being — stood motionless for what felt like an eternity, then turned and disappeared into the forest with a stride that covered ten feet.\nI ran back to my uncle and Hans.\n\"I saw something,\" I gasped. \"A giant. A — a person. Twelve feet tall. Herding mastodons.\"\nMy uncle stared at me. Hans stared at me.\n\"You're dehydrated,\" my uncle said carefully. \"The dim light plays tricks.\"\n\"I know what I saw.\"\nWe went back to the clearing. The mastodons were gone. There were tracks in the soft ground — large tracks, but they could have been anything. The forest was silent.\nMy uncle wrote it in his journal with a question mark. I have never stopped believing what I saw. Deep beneath the surface of the earth, in a world lit by electrical fire and populated by creatures that died on the surface millions of years ago, something human — or nearly human — still walks.",
+      "vocabulary": [
+        {
+          "word": "humanoid",
+          "partOfSpeech": "adjective/noun",
+          "definition": "resembling a human in appearance but not human",
+          "contextSentence": "It was humanoid but not human.",
+          "discussionQuestion": "What details make the figure humanoid rather than human?"
+        },
+        {
+          "word": "hallucination",
+          "partOfSpeech": "noun",
+          "definition": "an experience of seeing something that is not actually present",
+          "contextSentence": "You're dehydrated. The dim light plays tricks.",
+          "discussionQuestion": "Why does Lidenbrock suggest Axel had a hallucination?"
+        },
+        {
+          "word": "enigma",
+          "partOfSpeech": "noun",
+          "definition": "something mysterious and difficult to explain\nFrom the text: The giant remains an enigma — was it real or imagined?\nWhy does the giant remain an enigma even after they search for evidence?\n4. CONVICTION  (noun) — a firmly held belief or opinion",
+          "contextSentence": "I have never stopped believing what I saw.",
+          "discussionQuestion": "What gives Axel such strong conviction despite his uncle's skepticism?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Why does Lidenbrock dismiss Axel's sighting of the giant?",
+          "choices": [
+            "He thinks Axel is lying to get attention",
+            "He suggests dehydration and dim light caused a hallucination",
+            "He has already seen the giant himself and doesn't think it's important",
+            "He doesn't believe in anything that can't be measured with instruments"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What evidence does Axel find when they return to the clearing?",
+          "choices": [
+            "Clear footprints that prove the giant was real",
+            "Large tracks that could have been made by anything — the evidence is inconclusive",
+            "Nothing — the clearing is completely undisturbed",
+            "A tool made from bone that could only have been made by an intelligent being"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel says, \"I have never stopped believing what I saw.\" Why does it matter whether the giant is real or a hallucination? What does this unresolved mystery add to the story?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "BLOCKED",
+      "summary": "The tunnel on the far side of the underground ocean led us steadily downward for two more days.  My uncle was jubilant — the compass showed we were heading south and east, directly beneath the European continent.",
+      "text": "The tunnel on the far side of the underground ocean led us steadily downward for two more days. My uncle was jubilant — the compass showed we were heading south and east, directly beneath the European continent. The thermometer showed a slight but steady increase in temperature. We were going deeper than any human being — except, perhaps, Saknussemm — had ever gone.\nThen the tunnel ended.\nA massive cave-in had sealed the passage. Boulders the size of houses, packed together, blocking the way completely. There was no way around, no way over, no gap to squeeze through.\nMy uncle stared at the wall of rubble and said nothing for a very long time. His jaw was clenched so tightly I could see the muscles working beneath his skin. His hands were balled into fists.\n\"We turn back,\" I said gently.\n\"We do not turn back.\"\n\"Uncle, the tunnel is sealed. The rock—\"\n\"Saknussemm passed this way. He left his mark on the wall behind us — I saw it. His initials, carved in the stone. He passed this point. The cave-in happened after he came through.\"\n\"That was three hundred years ago. The rock has had three centuries to fall.\"\nMy uncle turned to me, and the look in his eyes was not madness. It was something worse — absolute determination.\n\"We have gunpowder,\" he said. \"We blast through.\"",
+      "vocabulary": [
+        {
+          "word": "determination",
+          "partOfSpeech": "noun",
+          "definition": "firmness of purpose; refusing to give up",
+          "contextSentence": "The look in his eyes was not madness. It was absolute determination.",
+          "discussionQuestion": "Where is the line between determination and recklessness?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does Lidenbrock know Saknussemm passed through this area?",
+          "choices": [
+            "The parchment describes this exact location in detail",
+            "He finds Saknussemm's initials carved in the stone wall",
+            "Hans recognizes an old trail marker left by Icelandic explorers",
+            "The rock formations match a drawing in Saknussemm's book"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What is Lidenbrock's plan for getting past the cave-in?",
+          "choices": [
+            "Dig through the rubble by hand over several days",
+            "Use gunpowder to blast through the rock",
+            "Find an alternate route around the blockage",
+            "Turn back and exit through a different volcano"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel says they should turn back. Lidenbrock says they should use explosives. Both positions have valid reasoning. Which argument is stronger, and why?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "THE EXPLOSION",
+      "summary": "Hans set the charge. \nHe was methodical about it, as he was about everything.",
+      "text": "Hans set the charge.\nHe was methodical about it, as he was about everything. He chipped a hole in the rock face, packed it with gunpowder, ran a long fuse back through the tunnel, and positioned us around a corner, shielded by a thick outcropping of granite.\nMy uncle held the match. His hand, I noticed, was perfectly steady.\n\"If this brings the whole ceiling down,\" I said, \"we'll be buried alive.\"\n\"If it opens the passage,\" my uncle said, \"we'll walk to the center of the earth.\"\nHe lit the fuse.\nWe ran. The fuse hissed behind us, a tiny sound in the vast silence of the underground world. We reached the outcropping, pressed ourselves against the rock, and covered our ears.\nThe explosion was louder than anything I had ever heard. The tunnel jumped. Rocks rained from the ceiling. Dust billowed in choking clouds. The ground shook, and a deep, groaning sound came from the rock itself — a sound that didn't stop.\nWhen the dust cleared, the cave-in was gone. But so was the floor.\nWhere the rubble had been, there was now an opening — a shaft, going straight down, with water rushing into it from the Hans-Bach. The explosion had not just cleared the blockage. It had cracked the rock beneath us, opening a chasm that dropped into darkness.\nAnd the water was pulling us toward it.\n\"Hold on!\" my uncle shouted, but the current was too strong. The Hans-Bach, which had been our faithful companion for weeks, now became our enemy. The water poured into the shaft, and we were carried with it — all three of us, our supplies, our raft materials, swept down into the opening like leaves in a gutter.\nWe fell.",
+      "vocabulary": [
+        {
+          "word": "calculated",
+          "partOfSpeech": "adjective",
+          "definition": "carefully planned; done with full awareness of consequences\nFrom the text: Hans sets the charge methodically, with precision.\nHow is Hans's approach calculated while the situation itself is chaotic?\n2. CATASTROPHIC  (adjective) — involving or causing sudden great damage or suffering\nFrom the text: The explosion has catastrophic unintended effects — it opens a chasm.\nWhat makes the explosion's results catastrophic rather than just surprising?\n3. TRIGGERED  (verb) — caused something to happen, especially a chain of events",
+          "contextSentence": "The explosion had not just cleared the blockage. It had cracked the rock beneath us.",
+          "discussionQuestion": "What chain of events does the explosion trigger?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What goes wrong when they blast through the cave-in?",
+          "choices": [
+            "The explosion has no effect on the rock",
+            "The explosion opens a chasm beneath them, and rushing water sweeps them into it",
+            "The tunnel collapses completely, trapping them",
+            "Toxic gas is released from behind the rock wall"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why can't the travelers stop themselves from being swept into the chasm?",
+          "choices": [
+            "Their ropes break and they can't hold onto the walls",
+            "The Hans-Bach floods into the opening, creating a current too strong to resist",
+            "An earthquake following the explosion shakes them loose",
+            "Hans accidentally pushes them in while trying to save the supplies"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "The explosion was meant to solve a problem, but it creates a much bigger one. How does this moment connect to the book's theme about human ambition having unintended consequences?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "RISING",
+      "summary": "I don't know how long the fall lasted.  Seconds.",
+      "text": "I don't know how long the fall lasted. Seconds. Minutes. Time lost all meaning.\nWe plunged downward through a shaft of rushing water, spinning, tumbling, gasping for air between surges. The walls of the shaft blurred past us in the lamplight — rock, black and wet, streaking upward as we fell down.\nThen the direction changed.\nThe water, which had been pulling us downward, was now pushing us upward. The shaft had curved, and we were riding a column of water that was rising — fast. Very fast.\nThe temperature climbed. The water grew warm, then hot. The rock around us changed color: from gray to red to a dull, angry orange. Heat radiated from the walls. My uncle's thermometer shattered.\n\"We're inside a volcanic shaft!\" my uncle screamed over the roar of the water. \"The explosion opened a connection to an active volcanic system! The water is being heated — it's turning to steam — it's pushing us upward!\"\nWe were riding a column of superheated water and steam up through the throat of a volcano. The pressure was building beneath us like a coiled spring, accelerating us upward at a terrifying speed.\nHans, magnificent Hans, had somehow managed to lash us to the remains of the raft. We clung to the logs as the column of water hurled us toward the surface. The heat was unbearable. The noise was a continuous roar, like standing inside a cannon.\nThe shaft narrowed. The speed increased. The rock walls were glowing now — actually glowing — with the heat of molten magma somewhere nearby. Steam scalded my hands. Chunks of rock tore past us.\nI thought: this is how it ends. Inside a volcano. After everything — the tunnels, the ocean, the monsters, the storm — we die inside a volcano.\nI closed my eyes and thought of Gräuben.",
+      "vocabulary": [
+        {
+          "word": "propelled",
+          "partOfSpeech": "verb",
+          "definition": "driven or pushed forward by a force",
+          "contextSentence": "We were riding a column of superheated water and steam.",
+          "discussionQuestion": "What force propels the travelers upward?"
+        },
+        {
+          "word": "accelerating",
+          "partOfSpeech": "verb",
+          "definition": "increasing in speed",
+          "contextSentence": "Accelerating us upward at a terrifying speed.",
+          "discussionQuestion": "Why is the accelerating speed both saving and endangering them?"
+        },
+        {
+          "word": "magma",
+          "partOfSpeech": "noun",
+          "definition": "hot fluid or semi-fluid material below the earth's surface; molten rock",
+          "contextSentence": "The heat of molten magma somewhere nearby.",
+          "discussionQuestion": "What happens if they get too close to the magma?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "What pushes the travelers upward through the volcanic shaft?",
+          "choices": [
+            "They climb the walls using ropes and pitons",
+            "A column of superheated water and steam propels them upward like a geyser",
+            "An underground earthquake lifts the rock beneath them",
+            "They ride on the back of a large aquatic creature"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "Why does the rising temperature confirm they are inside an active volcano?",
+          "choices": [
+            "Volcanoes are always warm at the surface",
+            "Molten magma near the shaft is heating the water and rock to dangerous levels",
+            "The temperature inside the earth always increases with depth",
+            "The explosion caused a fire in the tunnel behind them"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel thinks, \"This is how it ends.\" But then he thinks of Gräuben. How does love serve as a lifeline in moments of absolute hopelessness? What does this tell us about what keeps people going?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "ERUPTION",
+      "summary": "We were ejected from the volcano like corks from a champagne bottle. \nThe raft — or what was left of it — shot out of the crater in a column of steam, water, and volcanic debris.",
+      "text": "We were ejected from the volcano like corks from a champagne bottle.\nThe raft — or what was left of it — shot out of the crater in a column of steam, water, and volcanic debris. We flew through the air, tumbling, and landed on the steep slope of the mountain in a cascade of hot mud and rocks.\nI hit the ground hard, rolled, and lay still. The sky was above me. The real sky — blue, enormous, filled with actual sunlight. I stared at it and couldn't process what I was seeing. After weeks underground, the brightness was overwhelming. My eyes streamed with tears.\nMy uncle was beside me, covered in mud, bleeding from a cut on his forehead, and laughing. \"We're alive!\" he shouted. \"We made it! We're on the surface!\"\nHans was already standing, brushing himself off with his usual calm.\nI sat up and looked around. We were on the slope of a volcano — but not Sneffels. The landscape was completely different: warm, green, dotted with vineyards and olive groves. The air smelled of flowers and salt. Below us, a blue sea glittered in the afternoon sun.\n\"Where are we?\" I asked.\nMy uncle pulled out his compass — cracked but still working — and took a reading. He looked at the sun's position. He studied the vegetation, the rock type, the shape of the coastline.\n\"Stromboli,\" he said, wonder in his voice. \"We're on the island of Stromboli, in the Mediterranean Sea. Off the coast of Italy.\"\nWe had entered the earth in Iceland and exited in Italy. We had traveled beneath the entire continent of Europe — beneath the Atlantic Ocean, beneath France and Germany and the Alps — and emerged on the other side.\nA farmer found us on the mountainside an hour later. He thought we were madmen, which was not entirely unreasonable.",
+      "vocabulary": [
+        {
+          "word": "ejected",
+          "partOfSpeech": "verb",
+          "definition": "thrown out forcefully",
+          "contextSentence": "We were ejected from the volcano like corks from a champagne bottle.",
+          "discussionQuestion": "How does the word ejected capture the violence of their exit?"
+        },
+        {
+          "word": "disbelief",
+          "partOfSpeech": "noun",
+          "definition": "inability or refusal to accept that something is true",
+          "contextSentence": "I stared at the sky and couldn't process what I was seeing.",
+          "discussionQuestion": "Why does Axel experience disbelief even though he's safe?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "Where do the travelers emerge?",
+          "choices": [
+            "Back at the crater of Sneffels in Iceland",
+            "On the island of Stromboli, off the coast of Italy, in the Mediterranean Sea",
+            "On a beach in southern France",
+            "Inside a cave in the Swiss Alps"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does the location of their exit prove about their journey?",
+          "choices": [
+            "They traveled in a circle and ended up where they started",
+            "They traveled beneath the entire Atlantic Ocean and European continent",
+            "The underground tunnels only exist beneath Iceland",
+            "They were only a few miles from their starting point"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "They entered in Iceland and exited in Italy — thousands of miles apart. What does this tell us about the scale of the underground world they traveled through?",
+          "sampleAnswer": ""
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "HOME",
+      "summary": "The journey home was, by comparison, uneventful. \nWe traveled from Stromboli to the Italian mainland, from Italy to Germany, and from Germany to Hamburg.",
+      "text": "The journey home was, by comparison, uneventful.\nWe traveled from Stromboli to the Italian mainland, from Italy to Germany, and from Germany to Hamburg. At every stop, my uncle sent telegrams to scientific colleagues, each one more excited than the last. By the time we reached Hamburg, word of our journey had spread through the academic world like wildfire.\nWe arrived home to a hero's welcome. The university threw a banquet. Newspapers published our story. Scientists from across Europe wrote letters — some admiring, some skeptical, all fascinated. My uncle delivered a lecture at the university that lasted four hours, during which he presented his specimens, his journal, and his theory that the earth's interior was not a ball of molten rock but a vast, hollow world of oceans, forests, and living creatures.\nThe scientific establishment was divided. Some hailed Lidenbrock as the greatest explorer since Columbus. Others called him a fraud, a fantasist, a madman. The debate would continue for years.\nMy uncle didn't care about the debate. He cared about the truth, and he knew what he had seen. He placed his specimens in the university museum, published his journal, and returned to his lectures with the serene confidence of a man who has walked where no one believed it was possible to walk.\nHans went back to Iceland. He shook my uncle's hand, shook my hand, and left without ceremony. I never saw him again, though my uncle sent him his wages every month for the rest of Hans's life. We owed him everything.\nAnd I? I returned to Gräuben.\nShe was waiting at the door of my uncle's house when our carriage pulled up. She looked exactly as I remembered — calm, bright-eyed, smiling. I had traveled to the center of the earth and back, and she was still the most extraordinary thing I had ever seen.\n\"You came back,\" she said.\n\"I promised,\" I said.\nWe were married in the autumn. My uncle served as best man. He gave a speech at the reception that somehow turned into a lecture on volcanic geology, but nobody minded.\nI still think about it — the underground ocean, the luminous ceiling, the living fossils, the storm. The giant in the clearing. The skull on the shore. The moment when the tunnel opened and the impossible world spread out before us.\nMy uncle changed the world's understanding of the planet. Hans saved our lives a dozen times over. But I am the one who tells the story, and I tell it truthfully: we went down into the earth, and we came back, and nothing was ever the same.\nGräuben keeps a small piece of Icelandic basalt on the mantelpiece. Sometimes, in the evening, I pick it up and hold it, and I remember what it felt like to stand on the shore of a sea that no one else has seen, under a sky made of stone, at the center of everything.\nTHE END",
+      "vocabulary": [
+        {
+          "word": "skeptical",
+          "partOfSpeech": "adjective",
+          "definition": "having doubts; not easily convinced",
+          "contextSentence": "Some called him a fraud, a fantasist, a madman.",
+          "discussionQuestion": "Why are some scientists skeptical of Lidenbrock's claims?"
+        },
+        {
+          "word": "transformed",
+          "partOfSpeech": "verb/adjective",
+          "definition": "changed dramatically in form, nature, or character\nFrom the text: Axel is transformed by the journey.\nHow has Axel been transformed from the person he was in Chapter 1?\n3. LEGACY  (noun) — something handed down from the past; the lasting impact of a person's life",
+          "contextSentence": "He placed his specimens in the university museum.",
+          "discussionQuestion": "What is Lidenbrock's legacy to science?"
+        }
+      ],
+      "comprehension": [
+        {
+          "type": "multipleChoice",
+          "question": "How does the scientific community react to Lidenbrock's claims?",
+          "choices": [
+            "Everyone immediately accepts his findings as proven fact",
+            "Scientists are divided — some call him a genius, others call him a fraud",
+            "The university fires him for making unscientific claims",
+            "No one pays attention to his story"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "multipleChoice",
+          "question": "What does Axel's marriage to Gräuben represent?",
+          "choices": [
+            "The end of his scientific career",
+            "The fulfillment of his original ambition — the comfortable life he always wanted, enriched by extraordinary experience",
+            "His rejection of his uncle's values",
+            "A reward given to him by the university for his bravery"
+          ],
+          "correctAnswer": null,
+          "explanation": ""
+        },
+        {
+          "type": "shortAnswer",
+          "question": "Axel keeps a piece of Icelandic basalt on his mantelpiece. Why is this small rock more meaningful than any trophy or medal? What does it represent about the journey and what Axel gained from it?",
+          "sampleAnswer": ""
+        }
+      ]
+    }
+  ]
+}
