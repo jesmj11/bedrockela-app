@@ -1,0 +1,1750 @@
+{
+  "unitInfo": {
+    "title": "Twenty Thousand Leagues Under the Sea",
+    "subtitle": "A BedrockELA Adaptation",
+    "originalAuthor": "Jules Verne (1870)",
+    "adaptation": "Adapted for 6th Grade Readers",
+    "totalChapters": 24,
+    "gradeLevel": "6th Grade",
+    "compatibleGrades": [
+      "6th",
+      "7th",
+      "8th"
+    ],
+    "genre": "Science Fiction / Adventure",
+    "themes": [
+      "Exploration and Discovery",
+      "Science and Technology",
+      "Freedom vs. Captivity",
+      "Human Impact on Nature",
+      "The Unknown Depths"
+    ],
+    "totalLessons": 24,
+    "vocabularyWords": 96,
+    "totalQuestions": 72,
+    "estimatedWeeks": 5,
+    "created": "2026-03-13T14:04:41.937Z"
+  },
+  "lessonMapping": {
+    "daysPerLesson": 1,
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20,
+      24
+    ],
+    "totalDays": 24,
+    "weeks": 5,
+    "note": "This unit card can be inserted into Days 1-24 of any 6th-8th grade pocket"
+  },
+  "bedrockSpineCompatibility": {
+    "structure": "11-page Bedrock Spine",
+    "pages": [
+      "1. Title Page",
+      "2. Welcome & Objectives",
+      "3. Vocabulary (4 words for 6th grade)",
+      "4. Vocabulary Matching Game",
+      "5-7. Story (split into 3 parts)",
+      "8. Reading Comprehension (3 questions)",
+      "9. Grammar OR Language (alternates)",
+      "10. Informational Text + 3 Questions",
+      "11. Writing OR Journal (alternates)"
+    ],
+    "grammarDays": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "languageDays": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24
+    ],
+    "assessmentDays": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "note": "This 24-lesson unit follows Bedrock Spine structure"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "day": 1,
+      "title": "THE SEA MONSTER",
+      "summary": "",
+      "text": "In the year 1866, something strange was happening in the world's oceans.\nShips were reporting encounters with an enormous creature—something huge, fast, and glowing. A British steamer saw it in the Pacific. A French vessel spotted it near Australia. An American clipper ship reported that it nearly rammed them in the Atlantic, moving at impossible speed.\nThe thing was long, shaped like a spindle, and sometimes gave off a phosphorescent light—a greenish glow that lit up the water for hundreds of yards. It was far bigger than any whale ever recorded. Scientists argued about what it could be. Some said it was a giant narwhal—a type of whale with a long, spiraling tusk. Others insisted it was a sea serpent, a kraken, or something that had never been classified.\nThen the creature attacked.\nThe Scotia, one of the finest ocean liners in the world, was crossing the Atlantic when something struck its hull below the waterline. The blow punched a perfectly triangular hole through iron plates that were nearly an inch thick. The ship barely made it to port.\nAfter that, the world stopped arguing about whether the creature existed. Now the only question was: what was it, and how could it be stopped?\nMy name is Pierre Aronnax. I am a professor at the Museum of Natural History in Paris, and at the time of these events, I had just returned from a scientific expedition to the wilds of Nebraska. I had written a two-volume book on the mysteries of the ocean deep, and it had made me somewhat famous—at least among people who care about such things.\nWhen the Scotia was attacked, newspapers around the world asked for my opinion. I published an article arguing that the creature was most likely a giant narwhal of extraordinary size and power—a real animal, not a myth. The article was widely read. Within weeks, I received a letter from the Secretary of the United States Navy.\nThe Americans were launching a warship, the Abraham Lincoln, to hunt the creature down. They wanted me aboard as the expedition's scientific advisor.\nI could not resist.\n\"Conseil,\" I said to my servant, \"pack our bags. We leave for New York tomorrow.\"\nConseil was a calm, loyal, thirty-year-old Flemish man who had been with me for ten years. Nothing surprised him. Nothing upset him. If I had told him we were going to the moon, he would have begun packing immediately.\n\"Very well, sir,\" he said. \"Shall I pack your specimen jars?\"\n\"Pack everything.\"\nAnd so, within three days, we were aboard the Abraham Lincoln, steaming out of New York Harbor and into the unknown.",
+      "vocabulary": [
+        {
+          "word": "phosphorescent",
+          "partOfSpeech": "adjective",
+          "definition": "giving off a faint, glowing light without heat"
+        },
+        {
+          "word": "expedition",
+          "partOfSpeech": "noun",
+          "definition": "a journey undertaken for a specific purpose, especially exploration or research"
+        },
+        {
+          "word": "extraordinary",
+          "partOfSpeech": "adjective",
+          "definition": "very unusual or remarkable; beyond what is ordinary"
+        },
+        {
+          "word": "classified",
+          "partOfSpeech": "verb/adjective",
+          "definition": "organized into categories; also, officially secret"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Professor Aronnax believe the creature is a giant narwhal rather than a mythical sea monster?",
+          "options": {
+            "A": "He saw photographs of the creature taken by sailors",
+            "B": "He is a marine scientist who bases his conclusions on existing knowledge of ocean life",
+            "C": "The navy told him it was a narwhal before he published his article",
+            "D": "Conseil identified the creature from a specimen in the museum"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What event finally convinces the world that the sea creature is real and dangerous?",
+          "options": {
+            "A": "A French vessel is sunk in the Pacific Ocean",
+            "B": "The creature glows green and is photographed by multiple ships",
+            "C": "The Scotia is struck below the waterline, punching a triangular hole through its iron hull",
+            "D": "Professor Aronnax publishes a scientific paper identifying the creature"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Conseil's reaction to the news — packing without hesitation or questions — reveal about his character and his relationship with Aronnax? Use details from the chapter.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Complex Sentences",
+        "explanation": "A complex sentence contains one independent clause and at least one dependent clause. Example from 20K Leagues: 'When the Scotia was attacked, the world stopped arguing.'",
+        "example": "Although the creature was fast, the Abraham Lincoln pursued it.",
+        "prompt": "Write three complex sentences about today's chapter using subordinating conjunctions like: although, because, when, if, since, while."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 1. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 2,
+      "day": 2,
+      "title": "THE ABRAHAM LINCOLN",
+      "summary": "",
+      "text": "The Abraham Lincoln was a fast frigate—a warship built for speed. Her captain, Commander Farragut, was a bold and determined man who had sworn not to return until the monster was dead or he had proven it didn't exist.\nThe ship was armed with every weapon the Navy could provide: cannons, rifles, harpoons, and a massive bow-mounted gun that could fire an explosive shell over a mile. If the creature was an animal, it wouldn't stand a chance. At least, that was the theory.\nThe crew was eager. The Navy had offered a reward of two thousand dollars to whoever first spotted the creature, and every sailor on board spent his free time scanning the horizon with a telescope. The lookouts barely blinked.\nI spent my first days aboard studying my notes, reviewing the reports of sightings, and debating with a man who would become central to everything that followed: Ned Land.\nNed Land was a Canadian harpooner—the best in the world, by most accounts. He was about forty years old, tall and powerfully built, with a serious face and a temper that could flare without warning. He spoke little, but when he did, his words were blunt and direct.\n\"Professor,\" he said to me on the third day out, \"I don't believe in your monster.\"\n\"You don't?\"\n\"I've been whaling since I was a boy. I've harpooned every kind of creature that swims. If this thing were a whale or a narwhal, I'd have heard of it. It's nothing.\"\n\"The Scotia's hull would disagree with you, Ned.\"\nHe shrugged. \"Rocks. Currents. Bad luck. Not a sea monster.\"\nI admired his stubbornness. I would come to admire it even more.\nMeanwhile, Conseil followed me everywhere with the patience of a shadow. He organized my papers, labeled my samples, and asked no questions. If I fell overboard, I was fairly certain Conseil would jump in after me without a word of complaint.\nWe searched for three months.\nNorth Pacific, South Pacific, across the equator and back again. Nothing. The crew grew restless. Some began to agree with Ned—the creature was a myth. Commander Farragut's determination hardened into something that looked more like desperation.\nThen, on November 5th, at three o'clock in the afternoon, Ned Land's voice rang out from the masthead:\n\"There it is! Dead ahead! The thing itself!\"",
+      "vocabulary": [
+        {
+          "word": "frigate",
+          "partOfSpeech": "noun",
+          "definition": "a fast warship, usually smaller than a battleship"
+        },
+        {
+          "word": "harpooner",
+          "partOfSpeech": "noun",
+          "definition": "a person who throws harpoons to hunt large sea animals"
+        },
+        {
+          "word": "skeptical",
+          "partOfSpeech": "adjective",
+          "definition": "having doubts; not easily convinced"
+        },
+        {
+          "word": "horizon",
+          "partOfSpeech": "noun",
+          "definition": "the line where the earth and sky appear to meet; also, the limit of a person's knowledge or experience"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why is Ned Land skeptical about the existence of the sea monster?",
+          "options": {
+            "A": "He is afraid of deep water and doesn't want to hunt it",
+            "B": "He has spent his life hunting sea creatures and has never encountered anything like it",
+            "C": "He thinks the navy is lying to get more funding",
+            "D": "He believes the creature is actually a foreign submarine"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What motivates the crew of the Abraham Lincoln to search so eagerly?",
+          "options": {
+            "A": "Commander Farragut threatens to punish anyone who doesn't keep watch",
+            "B": "The navy has offered a two-thousand-dollar reward to whoever spots the creature first",
+            "C": "The sailors are terrified the creature will attack them if they don't find it",
+            "D": "Professor Aronnax promises to name the creature after whoever finds it"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Compare Aronnax, Ned Land, and Conseil. How does each character's personality prepare them for the adventure ahead? Use specific details.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Context Clues",
+        "explanation": "Use surrounding words and sentences to figure out unfamiliar words.",
+        "example": "From the text, you can tell 'frigate' is a type of ship because it's described as a warship built for speed.",
+        "prompt": "Find three unfamiliar words in today's reading. Use context clues to guess their meanings, then check a dictionary."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 2. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 3,
+      "day": 3,
+      "title": "THE HUNT",
+      "summary": "",
+      "text": "Every man on deck rushed to the bow. There, in the fading light, about two miles ahead, the ocean was glowing. Just below the surface, a long, luminous shape moved through the water, leaving a trail of pale green fire.\n\"Full speed ahead!\" Commander Farragut ordered.\nThe Abraham Lincoln surged forward, her engines roaring. But the creature moved faster—far faster than any whale had a right to move. It stayed just ahead of us, as if teasing us, its glow pulsing like a heartbeat beneath the waves.\nFor hours the chase continued. Every time we gained ground, the creature accelerated. It seemed to be playing with us. The crew fired at it—rifles, cannons, everything they had. The shots disappeared into the sea without effect.\nNear midnight, the creature stopped. It floated motionless on the surface, its glow dimming to a faint shimmer. Steam rose from the water around it, as if the thing were breathing.\n\"Now!\" Farragut shouted. \"Ned, take your position!\"\nNed Land stood at the bow, harpoon raised. The ship crept forward in the darkness.\n\"Steady,\" Ned murmured. \"Steady...\"\nHe hurled the harpoon with all his strength. It struck the creature with a ringing clang—the sound of metal on metal.\nMetal?\nIn the same instant, the creature's light blazed to blinding intensity. Two enormous jets of water shot into the air, crashed down on the deck of the Abraham Lincoln, and swept across the ship like a tidal wave.\nI was thrown over the railing.\nThe last thing I heard before the black water closed over my head was Conseil's voice shouting my name.",
+      "vocabulary": [
+        {
+          "word": "luminous",
+          "partOfSpeech": "adjective",
+          "definition": "giving off light; glowing; bright"
+        },
+        {
+          "word": "accelerated",
+          "partOfSpeech": "verb",
+          "definition": "increased in speed; moved faster"
+        },
+        {
+          "word": "intensity",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being very strong, powerful, or extreme"
+        },
+        {
+          "word": "collision",
+          "partOfSpeech": "noun",
+          "definition": "a violent crash between two objects"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happens when Ned Land's harpoon strikes the creature?",
+          "options": {
+            "A": "The harpoon sinks deep into the animal's flesh",
+            "B": "The creature dives beneath the ship and disappears",
+            "C": "It makes a ringing clang — the sound of metal hitting metal",
+            "D": "The creature catches the harpoon and throws it back"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Aronnax end up in the water?",
+          "options": {
+            "A": "He jumps in to get a closer look at the creature",
+            "B": "Two enormous jets of water crash onto the deck and sweep him overboard",
+            "C": "Ned Land accidentally pushes him while throwing the harpoon",
+            "D": "The ship sinks and everyone falls into the ocean"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Verne build suspense during the chase scene? Identify at least two techniques he uses and explain their effect on the reader.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Independent vs. Dependent Clauses",
+        "explanation": "An independent clause can stand alone; a dependent clause cannot. Verne uses both to create complex narratives.",
+        "example": "Independent: 'The ship sailed forward.' / Dependent: 'As darkness fell' (needs more)",
+        "prompt": "Find two sentences in today's reading. Identify the clauses. Write two of your own and label them."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 3. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 4,
+      "day": 4,
+      "title": "PRISONERS OF THE SEA",
+      "summary": "",
+      "text": "I sank into the dark ocean, choking, tumbling. My heavy clothes dragged me down. I kicked and clawed my way back to the surface, gasping for air. The Abraham Lincoln was already a quarter mile away, her lights growing smaller. She hadn't seen me go over.\n\"Sir! Professor!\"\nA hand grabbed my collar. It was Conseil. He had jumped in after me—without hesitation, without being asked.\n\"Conseil! Are you insane?\"\n\"I am in your service, sir. Where you go, I go.\"\nWe treaded water in the black ocean, watching the ship's lights shrink to pinpricks and vanish. We were alone.\nFor hours we floated, taking turns resting against each other. The cold crept into our bones. My legs went numb. Conseil never complained, but I could feel him shivering. We were going to die out here—drowned in the middle of the Pacific.\nThen my foot struck something solid.\nNot the ocean floor—we were miles from land. Something hard, something flat, something that rang under my boot like iron.\n\"What on earth—\"\n\"Up here!\" a voice called. It was Ned Land. He was sitting on top of the very creature we had been hunting, and he was grinning.\n\"It's not an animal,\" Ned said, pulling us up onto the metal surface. \"It's a machine. A submarine.\"\nHe was right. Beneath us was a long, smooth hull made of riveted iron plates. No scales, no skin—just metal, bolted together by human hands. The \"eye\" that had glowed was a powerful electric light. The jets of water were exhaust vents.\nWe lay on the hull, catching our breath, trying to understand what we had found. A man-made vessel, shaped like a giant cigar, that could outrun the fastest warship in the world. It was impossible—and it was right beneath us.\nA hatch opened with a clang. Eight men in dark uniforms emerged, grabbed us without a word, and dragged us inside.\nThe hatch sealed shut behind us. We were in absolute darkness.\nWe were prisoners.",
+      "vocabulary": [
+        {
+          "word": "submarine",
+          "partOfSpeech": "noun",
+          "definition": "a vessel designed to operate underwater"
+        },
+        {
+          "word": "riveted",
+          "partOfSpeech": "adjective/verb",
+          "definition": "fastened with metal bolts; also, completely fascinated"
+        },
+        {
+          "word": "hatch",
+          "partOfSpeech": "noun",
+          "definition": "a door or opening in the deck or hull of a ship"
+        },
+        {
+          "word": "captive",
+          "partOfSpeech": "noun/adjective",
+          "definition": "a person who is held prisoner; unable to escape"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the most important discovery Aronnax, Conseil, and Ned make in this chapter?",
+          "options": {
+            "A": "They find a small island nearby where they can take shelter",
+            "B": "The creature is actually a man-made submarine, not an animal",
+            "C": "The Abraham Lincoln was destroyed in the attack",
+            "D": "Captain Nemo is waiting for them on the surface"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Conseil's decision to jump into the ocean after Aronnax reveal about him?",
+          "options": {
+            "A": "He is reckless and doesn't think before acting",
+            "B": "He is completely loyal and will follow Aronnax anywhere without question",
+            "C": "He knows how to swim better than anyone on the ship",
+            "D": "He was pushed overboard by the same wave that took Aronnax"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Ned says, \"It's not an animal. It's a machine.\" How does this revelation change everything the characters — and the reader — believed up to this point?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Latin and Greek Roots",
+        "explanation": "Many English words come from Latin and Greek. 'Sub' = under, 'marine' = sea → submarine = under the sea.",
+        "example": "Expedition: 'ex' (out) + 'ped' (foot) = journey out on foot",
+        "prompt": "Find five words in today's chapter with Latin or Greek roots. Break them down and explain their meanings."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 4. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 5,
+      "day": 5,
+      "title": "CAPTAIN NEMO",
+      "summary": "",
+      "text": "They locked us in a small, pitch-black room. For hours we sat in silence, unable to see each other, unable to tell if it was day or night. Ned pounded on the walls and shouted. No one answered.\nEventually the door opened and two men led us down a corridor lit by soft electric light—an extraordinary thing in 1866, when most of the world still used gas lamps and candles. The walls were polished metal. The air was clean and cool.\nThey brought us to a large, elegant room furnished with velvet sofas, paintings, a marble table, and shelves lined with thousands of books. A pipe organ stood in one corner. The floor was covered with thick carpet.\nA man was waiting for us.\nHe was tall and broad-shouldered, with dark skin, a high forehead, and eyes that seemed to look straight through you. His hair was thick and black, swept back from his face. He had the bearing of someone who was used to giving orders and having them obeyed without question. His age was hard to guess—somewhere between thirty-five and fifty.\nHe studied us for a long moment in silence. Then he spoke—in perfect French.\n\"I am Captain Nemo,\" he said. \"You are aboard my vessel, the Nautilus.\"\n\"Nemo?\" I said. The word means \"no one\" in Latin.\nA faint smile crossed his face. \"I am no one. I have severed all ties with the world above. I have no country. I answer to no government. The sea is my only home.\"\nNed stepped forward aggressively. \"You attacked our ship and nearly killed us. We demand to be released.\"\nNemo's eyes hardened. \"You hunted me. Your ship fired on me. You tried to destroy me with cannons and harpoons. I owe you nothing.\" He paused. \"However, I do not wish to be cruel. You have two choices. You may remain aboard the Nautilus as my guests. You will be fed, housed, and allowed to witness things no human being has ever seen. In exchange, you will never leave. You will live and die aboard this vessel.\"\n\"And the second choice?\" I asked.\n\"There is no second choice. You know the Nautilus exists. I cannot allow that knowledge to reach the surface world.\"\nNed looked ready to fight, but I put a hand on his arm. We were unarmed, outnumbered, and trapped inside an iron machine at the bottom of the ocean. Fighting would accomplish nothing.\n\"We accept your hospitality, Captain,\" I said carefully. \"For now.\"\n\"For now,\" Nemo repeated, with that same faint smile. \"Come. Let me show you my ship.\"",
+      "vocabulary": [
+        {
+          "word": "severed",
+          "partOfSpeech": "verb",
+          "definition": "cut off completely; ended abruptly"
+        },
+        {
+          "word": "eccentric",
+          "partOfSpeech": "adjective",
+          "definition": "unconventional and slightly strange; not following normal patterns"
+        },
+        {
+          "word": "hospitality",
+          "partOfSpeech": "noun",
+          "definition": "the friendly and generous treatment of guests"
+        },
+        {
+          "word": "ultimatum",
+          "partOfSpeech": "noun",
+          "definition": "a final demand or statement of terms, with consequences if rejected"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What choice does Captain Nemo give his three prisoners?",
+          "options": {
+            "A": "They can join his crew or be thrown back into the sea",
+            "B": "They can stay as guests forever or be locked in the brig",
+            "C": "They may remain aboard as guests who can never leave, or there is no second choice",
+            "D": "They can stay for one year and then be released near a coastline"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does the name \"Nemo\" mean, and why is it significant?",
+          "options": {
+            "A": "It means \"captain\" in Latin, showing his authority",
+            "B": "It means \"no one\" in Latin, reflecting his rejection of identity and country",
+            "C": "It means \"ocean\" in Greek, showing his love of the sea",
+            "D": "It is his real family name from his homeland"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Aronnax says \"We accept your hospitality — for now.\" What does the phrase \"for now\" suggest about how each of the three prisoners views their situation differently?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Active and Passive Voice",
+        "explanation": "Active voice: subject performs action. Passive voice: subject receives action. Active: 'Nemo built the submarine.' Passive: 'The submarine was built by Nemo.'",
+        "example": "Active: 'The crew spotted the creature.' / Passive: 'The creature was spotted by the crew.'",
+        "prompt": "Find three sentences from today's chapter. Identify voice. Rewrite one active as passive and vice versa."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 5. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 6,
+      "day": 6,
+      "title": "THE NAUTILUS",
+      "summary": "",
+      "text": "Nothing in my life had prepared me for the Nautilus.\nCaptain Nemo led us through the vessel like a proud father showing off a beloved child. The ship was enormous—about 230 feet long and 26 feet wide—built entirely of iron and steel, powered by electricity generated from seawater itself. Nemo had invented the process.\n\"Electricity lights the ship, heats it, powers the engines, and runs the clocks,\" he explained. \"The sea provides everything I need. I am completely independent of the land.\"\nThe library held twelve thousand volumes—science, literature, history, poetry—in every language. I could have spent years in that room alone. Next to it was a drawing room filled with masterpiece paintings, sculptures, and rare musical instruments. In the center stood a magnificent pipe organ that Nemo played himself.\nThe dining room served food that came entirely from the sea: fish prepared a dozen different ways, sea vegetables, preserves made from seaweed, and desserts flavored with ocean plants I had never tasted. The \"flour\" for bread came from certain types of algae. The \"milk\" came from the fat of sea creatures. Nothing came from the land. Nothing.\nBut it was the salon—the viewing room—that stopped me in my tracks.\nThe walls on both sides were fitted with enormous glass panels, each one several inches thick and perfectly clear. Through them, the ocean spread out in all directions—an endless, blue-green world filled with more life than I had ever imagined. Schools of silver fish swept past like living curtains. Jellyfish drifted by, trailing long, delicate tentacles. A sea turtle glided through the light, ancient and unhurried.\nI pressed my face to the glass like a child at a candy store.\n\"This is the window to the infinite,\" Nemo said quietly, standing beside me. \"The sea is everything. It covers seven-tenths of the globe. Its breath is pure and healthy. It is an immense desert where a man is never alone, because he can feel life stirring on every side. The sea is the living infinite.\"\nI could have stayed at that window forever.\nNed Land was not as impressed. He stared at the ocean with the expression of a man looking at the walls of his prison.\n\"Very nice,\" he said. \"Now how do we get out?\"",
+      "vocabulary": [
+        {
+          "word": "salon",
+          "partOfSpeech": "noun",
+          "definition": "a large, elegant room for receiving guests or displaying art"
+        },
+        {
+          "word": "specimen",
+          "partOfSpeech": "noun",
+          "definition": "an individual example of an animal, plant, or object used for study"
+        },
+        {
+          "word": "infinite",
+          "partOfSpeech": "adjective",
+          "definition": "without limits; endless"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is unique about how the Nautilus gets its power and food?",
+          "options": {
+            "A": "It uses coal engines and catches fish with nets",
+            "B": "Everything comes entirely from the sea — electricity from seawater, food from marine life",
+            "C": "Captain Nemo trades with coastal villages for supplies",
+            "D": "The ship surfaces once a month to take on provisions from a secret island"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How do Aronnax and Ned Land react differently to the salon viewing windows?",
+          "options": {
+            "A": "Both are equally amazed and want to stay forever",
+            "B": "Aronnax is fascinated like a scientist seeing his dreams come true; Ned sees prison walls",
+            "C": "Ned is more impressed than Aronnax because he loves the ocean",
+            "D": "Aronnax is frightened by the deep water, while Ned is calm"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Nemo says, \"The sea is the living infinite.\" What does this statement reveal about his philosophy, and why does the sea represent freedom to him?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Connotation and Denotation",
+        "explanation": "Denotation = dictionary definition. Connotation = emotional association.",
+        "example": "'Monster' denotes a large creature, but connotes something scary and dangerous.",
+        "prompt": "Choose five words from today's reading. Explain both their denotation and connotation."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 6. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 7,
+      "day": 7,
+      "title": "THE UNDERWATER FOREST",
+      "summary": "",
+      "text": "A few days into our imprisonment, Captain Nemo invited me to join him on an excursion outside the ship.\n\"Outside?\" I said. \"You mean—in the water?\"\n\"On the ocean floor, Professor. I think you will find it interesting.\"\nHe led me to a room filled with equipment I had never seen before: heavy diving suits made of rubber and metal, copper helmets with thick glass visors, and tanks of compressed air carried on the back. The boots were weighted with lead to keep us anchored to the bottom.\n\"These suits allow a man to walk on the ocean floor for several hours,\" Nemo explained. \"The air supply is sufficient for a long excursion. We will carry electric lanterns and hunting rifles that fire glass bullets powered by compressed air.\"\nConseil begged to come along. Ned refused—he said he'd rather eat his boots than go for a walk at the bottom of the sea. So it was Nemo, two of his crewmen, Conseil, and me.\nThe airlock filled with water. The outer hatch opened. And I stepped onto the floor of the ocean.\nI will never forget that moment.\nThe light filtered down from above in shifting columns of blue and green, growing dimmer as we descended a gentle slope. The ground beneath our heavy boots was fine sand, smooth as a beach, marked with ripples from the current. Small fish scattered at our approach, flashing silver in our lantern beams.\nAnd then the forest appeared.\nNot a forest of seaweed—a forest of living coral and giant sea plants that towered above us like trees. Their trunks were thick and rough, their branches spread wide, and from every limb hung curtains of marine vegetation in colors I had never seen: violet, rose, emerald, gold. Fish moved through the branches like birds, and the whole scene swayed gently in the current, as if breathing.\nWe walked among these underwater trees for two hours. The silence was extraordinary—a deep, cushioned quiet broken only by the rasp of our breathing inside the helmets and the crunch of sand under our boots. Nemo moved through this world with perfect ease, pointing out species I recognized from books and others I had never seen.\nAt one point he raised his rifle, aimed, and fired at something in the undergrowth. A large sea otter tumbled forward, struck by the glass bullet. Nemo's crewman picked it up—its fur was magnificent, thick and glossy.\n\"Dinner,\" Nemo said through a gesture—we couldn't speak through the helmets, but his meaning was clear.\nWe returned to the Nautilus as the light faded. I climbed out of my diving suit in a daze. I had walked on the bottom of the ocean. I had seen things no living scientist had ever witnessed.\nAnd I began to understand the terrible beauty of Captain Nemo's bargain. How could I want to leave a place that showed me this?",
+      "vocabulary": [
+        {
+          "word": "compressed",
+          "partOfSpeech": "adjective/verb",
+          "definition": "squeezed into a smaller space; pressed together tightly"
+        },
+        {
+          "word": "vegetation",
+          "partOfSpeech": "noun",
+          "definition": "plant life; the plants growing in a particular area"
+        },
+        {
+          "word": "excursion",
+          "partOfSpeech": "noun",
+          "definition": "a short trip taken for pleasure or a specific purpose"
+        },
+        {
+          "word": "profound",
+          "partOfSpeech": "adjective",
+          "definition": "very great or intense; having deep meaning"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What makes the underwater forest different from a normal ocean environment?",
+          "options": {
+            "A": "It is made of dead coral bleached white by the sun",
+            "B": "It is a forest of living coral and giant sea plants towering like trees, in extraordinary colors",
+            "C": "It is completely dark and silent with no living creatures",
+            "D": "It is a shipwreck covered in seaweed that looks like a forest"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Aronnax begin to understand \"the terrible beauty of Captain Nemo's bargain\"?",
+          "options": {
+            "A": "He realizes the food on the Nautilus is better than anything on land",
+            "B": "The wonders he is seeing make him question whether he even wants to leave",
+            "C": "He discovers that Nemo plans to release them after one year",
+            "D": "Conseil tells him they should stay because life aboard is comfortable"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Aronnax describes the silence of the ocean floor as \"extraordinary.\" How is this underwater experience different from anything a scientist of 1866 could have imagined? Use details from the chapter.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Semicolons and Compound Sentences",
+        "explanation": "Semicolons join related independent clauses without conjunctions: 'The ocean was vast; Nemo knew every inch.'",
+        "example": "Aronnax studied science; Ned studied the sea.",
+        "prompt": "Write four compound sentences about today's chapter: two with semicolons, two with coordinating conjunctions."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 7. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 8,
+      "day": 8,
+      "title": "THE CORAL KINGDOM",
+      "summary": "",
+      "text": "The Nautilus continued south through the Indian Ocean. Each day brought new wonders. Through the salon windows, I watched the seafloor change from sand to rock to coral, an ever-shifting landscape more varied than any continent.\nOne morning, Nemo appeared at my door with a serious expression.\n\"Professor, I need to ask something of you and your companions. One of my crew has died from injuries. I wish to bury him. Will you accompany me?\"\n\"Of course.\"\nWe suited up in our diving gear again—all of us this time, even Ned, who came grudgingly—and followed Nemo and his men as they carried the body, wrapped in cloth, out through the airlock and across the ocean floor.\nNemo led us into a forest of coral unlike anything I had seen before. The formations rose from the ground in fantastic shapes—towers, arches, branching structures that looked like the pillars of an ancient cathedral. The colors were extraordinary: deep red, orange, white, and pale pink, all growing slowly, year after year, adding layer upon layer of mineral.\nIn a clearing among the coral, several mounds marked previous graves. This was Captain Nemo's cemetery.\nThe men dug a shallow trench in the coral sand. They laid their companion to rest. Nemo stood over the grave in silence for a long time. Then he raised his hand in a slow gesture of farewell.\nNo words were spoken. None were needed.\nAs we walked back to the ship, I thought about what I had just witnessed. Nemo had built his own world down here—not just a ship, but a civilization. He had food, power, art, music, and now even a place to lay his dead. He truly had cut himself off from the surface world entirely.\nWho was this man? What had driven him to abandon everything above and commit his life to the sea?\nI watched his tall figure walking ahead of me through the underwater twilight, and I realized I might never know.",
+      "vocabulary": [
+        {
+          "word": "formation",
+          "partOfSpeech": "noun",
+          "definition": "a structure or arrangement created by a natural process"
+        },
+        {
+          "word": "cemetery",
+          "partOfSpeech": "noun",
+          "definition": "a place where the dead are buried"
+        },
+        {
+          "word": "civilization",
+          "partOfSpeech": "noun",
+          "definition": "an organized society with its own culture, laws, and way of life"
+        },
+        {
+          "word": "enigma",
+          "partOfSpeech": "noun",
+          "definition": "a person or thing that is mysterious and difficult to understand"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Nemo bury his crewman in a coral cemetery on the ocean floor?",
+          "options": {
+            "A": "It is a tradition from Nemo's homeland to bury the dead in coral",
+            "B": "He has built an entire self-contained world under the sea, including a place for the dead",
+            "C": "The crew voted to bury their companion at sea rather than on land",
+            "D": "The coral is the only place deep enough to hide the body"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What question does the burial scene leave in Aronnax's mind?",
+          "options": {
+            "A": "Whether Nemo's crew are actually pirates",
+            "B": "Whether the Nautilus will run out of supplies",
+            "C": "Who Nemo was before he became \"no one\" and what drove him to the sea",
+            "D": "Whether Nemo plans to kill his prisoners eventually"
+          },
+          "answer": ""
+        },
+        {
+          "question": "In this chapter, Aronnax says Nemo has built \"not just a ship, but a civilization.\" What evidence from this chapter and earlier ones supports that claim?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Figurative Language: Similes and Metaphors",
+        "explanation": "Similes use 'like' or 'as' to compare. Metaphors say one thing IS another.",
+        "example": "Simile: 'The submarine moved like a fish.' / Metaphor: 'The submarine was a steel fish.'",
+        "prompt": "Find three examples of figurative language in today's chapter. Write three of your own."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 8. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 9,
+      "day": 9,
+      "title": "THE TORRES STRAIT",
+      "summary": "",
+      "text": "The Nautilus entered the Torres Strait—the dangerous, shallow passage between Australia and New Guinea. The water was full of reefs, and the passage was so narrow in places that the ship had to thread its way like a needle.\nCaptain Nemo took the helm himself, guiding the Nautilus through the maze of coral with extraordinary skill. But even Nemo could not control everything. A sudden shift in the current caught us, and the Nautilus ground to a halt, wedged firmly on a reef of coral.\n\"We are stuck,\" Nemo announced calmly.\n\"Can't you reverse the engines?\" I asked.\n\"The tide is going out. In six days, when the full moon brings a high tide, the water will rise enough to float us free. Until then, we wait.\"\nSix days! Ned Land could barely contain his frustration. But the delay had one advantage: Captain Nemo gave us permission to go ashore on a nearby island to find fresh food.\nThe island was a paradise. Coconut palms swayed in the breeze. Breadfruit trees drooped with heavy fruit. The forest floor was carpeted with ferns and bright flowers. Brilliantly colored birds shrieked in the canopy.\nNed was in heaven. He hunted wild pigs, brought down birds with stones and sticks, and gathered enough fruit to fill a small boat. Conseil collected specimens of insects and butterflies with quiet delight. Even I felt the joy of standing on solid ground again, with the sun on my face and the wind in my hair.\nFor three days we explored, feasted, and almost forgot we were prisoners.\nOn the fourth day, everything changed.",
+      "vocabulary": [
+        {
+          "word": "strait",
+          "partOfSpeech": "noun",
+          "definition": "a narrow passage of water connecting two larger bodies of water"
+        },
+        {
+          "word": "wedged",
+          "partOfSpeech": "verb/adjective",
+          "definition": "stuck tightly between two things; jammed"
+        },
+        {
+          "word": "paradise",
+          "partOfSpeech": "noun",
+          "definition": "an ideal or perfect place; heaven on earth"
+        },
+        {
+          "word": "provisions",
+          "partOfSpeech": "noun",
+          "definition": "supplies of food and other necessities"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does the Nautilus get stuck in the Torres Strait?",
+          "options": {
+            "A": "Captain Nemo deliberately grounds the ship to make repairs",
+            "B": "A sudden current shift catches them, wedging the ship on a coral reef",
+            "C": "Ned Land damages the engine trying to escape",
+            "D": "The water is too shallow for the submarine to navigate"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What makes the island feel like a \"paradise\" for the three prisoners?",
+          "options": {
+            "A": "They find other people living there who welcome them",
+            "B": "After months confined underwater, they experience sun, wind, solid ground, and fresh food",
+            "C": "Captain Nemo tells them they can stay on the island permanently",
+            "D": "The island has a radio tower they can use to call for help"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why is the island visit important for understanding what Ned Land is feeling? How does his experience on the island differ from Aronnax's?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Verb Moods: Indicative, Imperative, Subjunctive",
+        "explanation": "Indicative states facts. Imperative gives commands. Subjunctive expresses wishes/hypotheticals.",
+        "example": "Indicative: 'Nemo is mysterious.' / Imperative: 'Follow me!' / Subjunctive: 'If I were Nemo, I would explore forever.'",
+        "prompt": "Write six sentences: two indicative, two imperative, two subjunctive about today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 9. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 10,
+      "day": 10,
+      "title": "ATTACK OF THE SAVAGES",
+      "summary": "",
+      "text": "We were on the beach, roasting a wild pig over a fire, when Conseil noticed movement at the edge of the forest.\n\"Sir,\" he said quietly. \"I believe we have company.\"\nMen were emerging from the trees—dozens of them. They were tall, dark-skinned, and armed with bows, spears, and clubs. Their faces and bodies were painted in bold patterns. They did not look friendly.\n\"Back to the boat!\" Ned snapped. \"Now!\"\nWe scrambled for our small dinghy, loaded it with as much food as we could grab, and rowed hard for the Nautilus. The warriors followed us to the waterline, shaking their weapons and shouting. Some waded into the shallows after us. A spear splashed into the water inches from our hull.\nWe reached the submarine and tumbled through the hatch, slamming it shut behind us. I went immediately to find Captain Nemo. He was in the salon, playing his organ, completely unconcerned.\n\"Captain! There are warriors on the beach. Dozens of them. They're hostile.\"\nNemo didn't stop playing. \"Yes, I know. They've been watching us since we arrived.\"\n\"They followed us to the ship. What if they try to board?\"\n\"They are welcome to try.\"\nThat night, through the salon windows, we could see canoes approaching in the darkness—thirty, forty, perhaps fifty of them. By morning, the beach was swarming with warriors. They crossed the reef at low tide and surrounded the Nautilus, pounding on the hull with their fists and weapons.\nNed readied a harpoon. Conseil looked worried. I looked at Nemo.\nHe finished his coffee and said, \"Open the hatches.\"\n\"What?\"\n\"Open the hatches. It is time to go. The tide will float us free today. But first—watch.\"\nThe crewmen opened the hatches as ordered. A warrior leaped onto the platform and grabbed the metal railing—and was hurled backward as if struck by lightning. He splashed into the water, convulsing.\nThe railing was electrified.\nEvery warrior who touched the ship received the same jolt. Within seconds, they were in full retreat, paddling their canoes away in terror.\nNemo sipped his coffee and watched them go. \"The Nautilus has many defenses,\" he said mildly. \"Violence is unnecessary when technology is sufficient.\"\nThe tide rose. The ship lifted free of the reef. The engines hummed to life, and we slipped beneath the waves and left the Torres Strait behind.",
+      "vocabulary": [
+        {
+          "word": "hostile",
+          "partOfSpeech": "adjective",
+          "definition": "unfriendly and aggressive; showing opposition"
+        },
+        {
+          "word": "electrified",
+          "partOfSpeech": "verb/adjective",
+          "definition": "charged with electricity; also, thrilled or shocked"
+        },
+        {
+          "word": "technology",
+          "partOfSpeech": "noun",
+          "definition": "the application of scientific knowledge for practical purposes; machines and equipment"
+        },
+        {
+          "word": "retreat",
+          "partOfSpeech": "verb/noun",
+          "definition": "to withdraw from a dangerous situation; the act of pulling back"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Captain Nemo defend the Nautilus from the warriors without using weapons?",
+          "options": {
+            "A": "He floods the area around the ship with boiling water",
+            "B": "He electrifies the metal railings so anyone who touches the ship gets a jolt",
+            "C": "He submerges the ship so the warriors can't reach it",
+            "D": "He uses the ship's cannons to fire warning shots into the water"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Nemo's statement \"Violence is unnecessary when technology is sufficient\" reveal about his character?",
+          "options": {
+            "A": "He is a pacifist who would never harm anyone",
+            "B": "He values clever solutions over brute force and believes technology makes violence obsolete",
+            "C": "He is too weak to fight and relies on machines instead",
+            "D": "He was ordered by his crew not to use weapons"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Compare Nemo's use of technology in this chapter to the warriors' use of weapons. What larger theme about power and knowledge does this contrast develop?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Tone and Mood",
+        "explanation": "Tone = author's attitude. Mood = reader's feeling. Verne creates suspense through pacing and word choice.",
+        "example": "The tone is mysterious; the mood is tense.",
+        "prompt": "Describe the tone and mood of today's chapter. Quote three passages that create this atmosphere."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 10. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 11,
+      "day": 11,
+      "title": "THE PEARL DIVERS",
+      "summary": "",
+      "text": "The Nautilus entered the Indian Ocean and made for the island of Ceylon—modern-day Sri Lanka. Nemo announced that he wished to visit the pearl-diving banks off the coast, and he invited us to join him.\n\"Pearls?\" Ned said, suddenly interested. \"Real pearls?\"\n\"The finest in the world,\" said Nemo. \"The oyster beds off Manaar are legendary. Some pearls are worth a king's ransom.\"\nWe anchored near the coast and suited up for another underwater walk. This time, Nemo led us across a flat, sandy plain covered with thousands upon thousands of oysters. They lay in dense clusters, their rough shells half-buried in the sediment, each one potentially hiding a pearl.\nBut Nemo wasn't interested in ordinary pearls. He led us to a hidden cave, partially concealed by an overhang of rock. Inside, in a natural basin, sat the largest oyster I had ever seen—or imagined. It was the size of a dining table, its thick shell coated with algae and barnacles.\nNemo reached in and carefully pried the shell open. There, nestled in the creature's soft tissue, was a pearl the size of a coconut.\nI nearly choked on my air supply.\nIt was flawless—perfectly round, gleaming with a soft, milky light. I calculated its value on the spot: it was worth millions of francs. Enough to buy a palace. Enough to fund a dozen scientific expeditions.\nNemo looked at it the way a gardener looks at a prized rose—with pride and patience. He closed the shell gently and let it be.\n\"I do not harvest this pearl,\" he said later, aboard the ship. \"I allow it to grow. Year by year, layer by layer, it adds to its beauty. It is my treasure, and I will leave it in the sea where it belongs.\"\nThis was the mystery of Captain Nemo. He had access to wealth beyond imagination—pearls, gold from sunken ships, the riches of the entire ocean—and he wanted none of it for himself. Or rather, he used it, but not the way any normal person would.\nAs we would soon discover, Nemo had his own plans for that wealth. And they were not plans of a peaceful man.",
+      "vocabulary": [
+        {
+          "word": "legendary",
+          "partOfSpeech": "adjective",
+          "definition": "famous and admired; talked about in legends"
+        },
+        {
+          "word": "flawless",
+          "partOfSpeech": "adjective",
+          "definition": "without any imperfections; perfect"
+        },
+        {
+          "word": "harvest",
+          "partOfSpeech": "verb/noun",
+          "definition": "to gather a crop; the act of collecting"
+        },
+        {
+          "word": "oppressed",
+          "partOfSpeech": "adjective/verb",
+          "definition": "treated cruelly and unfairly by those in power"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Nemo refuse to harvest the giant pearl?",
+          "options": {
+            "A": "He believes the pearl belongs to the sea and prefers to let it keep growing",
+            "B": "The pearl is too heavy to remove without damaging it",
+            "C": "He is saving it to sell when he returns to the surface world",
+            "D": "The oyster is protected by law and Nemo respects legal authority"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Nemo's comment — \"That man is one of the oppressed. As long as I live, I am his countryman\" — reveal for the first time?",
+          "options": {
+            "A": "Nemo is related to the pearl diver by blood",
+            "B": "Nemo himself was once a pearl diver who escaped poverty",
+            "C": "Nemo identifies with oppressed people and has a personal connection to injustice",
+            "D": "Nemo is planning to start a pearl-diving business"
+          },
+          "answer": ""
+        },
+        {
+          "question": "How does Nemo's treatment of wealth — refusing to take the giant pearl, yet giving pearls to the poor diver — challenge the reader's assumptions about what a rich person should do?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Parallel Structure",
+        "explanation": "Using the same grammatical form for items in a series creates balance and clarity.",
+        "example": "Poor: 'Nemo was brave, intelligent, and liked mysteries.' / Better: 'Nemo was brave, intelligent, and mysterious.'",
+        "prompt": "Find three sentences in today's reading that use parallel structure. Write three of your own."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 11. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 12,
+      "day": 12,
+      "title": "THE SHARK",
+      "summary": "",
+      "text": "The next day, Nemo took us back to the pearl banks to observe the local divers at work. These were poor men from the coast who dove without any equipment—no suits, no helmets, no air tanks. They held their breath, dove to the bottom, scooped up oysters, and swam back to the surface. It was dangerous, exhausting work, and many divers died young.\nWe watched from a distance, hidden among the rocks. One diver in particular caught my attention—a young man, thin but strong, who dove deeper and stayed down longer than any of the others. He was brave, but he was also reckless.\nOn his fifth or sixth dive, I saw it before he did.\nA shadow passed over the sandy bottom—enormous, gray, and moving fast. A shark. Not just any shark—a great tiger shark, at least twenty feet long, with dead black eyes and a mouth that could swallow a man whole.\nThe diver looked up and saw it. His eyes went wide with terror. He tried to swim for the surface, but the shark was faster. It turned, came at him with its jaws open—\nAnd Ned Land was there.\nI don't know how he moved so fast. One moment he was beside me, the next he was hurtling through the water like a torpedo, his knife—a long, heavy whaling knife—held out in front of him. He collided with the shark just as it reached the diver, driving the blade into the creature's belly with both hands.\nThe water exploded into a cloud of blood and thrashing. The shark twisted, snapped, rolled—but Ned held on. He stabbed again and again, his face a mask of fury. Nemo was beside him in an instant, his own knife flashing.\nBetween them, they killed the shark. It took several long, terrible minutes. When it was over, the water was dark with blood and the great fish sank slowly to the bottom, dead.\nThe pearl diver floated nearby, unconscious but alive. Nemo swam to him, lifted him gently, and carried him to the surface. He reached into a waterproof pouch at his belt, pulled out a small bag of pearls, and pressed it into the unconscious man's hand.\nWhen we were back aboard the Nautilus, drying off and tending to Ned's cuts and bruises, I said to Nemo: \"That was extraordinarily generous.\"\nHe looked at me with those dark, unreadable eyes. \"That man is one of the oppressed. As long as I live, I am his countryman.\"\nIt was the first time Nemo had given any hint about his past—about who he had been before he became \"no one.\" He was not simply a scientist or an eccentric. He was a man with a cause. A man with a wound.\nNed Land said nothing about his own heroism. He just cleaned his knife, sharpened it on a stone, and went to bed.",
+      "vocabulary": [
+        {
+          "word": "reckless",
+          "partOfSpeech": "adjective",
+          "definition": "acting without thinking about the danger; careless about safety"
+        },
+        {
+          "word": "torpedo",
+          "partOfSpeech": "noun/verb",
+          "definition": "a self-propelled underwater weapon; to move fast like one"
+        },
+        {
+          "word": "convulsing",
+          "partOfSpeech": "verb",
+          "definition": "shaking violently and uncontrollably"
+        },
+        {
+          "word": "generosity",
+          "partOfSpeech": "noun",
+          "definition": "the quality of being kind and willing to give"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Ned Land do when the shark attacks the pearl diver?",
+          "options": {
+            "A": "He fires a harpoon from the surface of the water",
+            "B": "He swims directly at the shark with only a knife and stabs it repeatedly",
+            "C": "He signals the Nautilus to use its electric charge on the shark",
+            "D": "He pulls the diver to safety while Nemo fights the shark alone"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Ned say nothing about his heroism afterward?",
+          "options": {
+            "A": "He is angry at Nemo for putting them in danger",
+            "B": "He is the kind of person who acts on instinct and doesn't need praise",
+            "C": "He doesn't remember what happened because he was unconscious",
+            "D": "Captain Nemo orders him not to talk about it"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Both Nemo and Ned risk their lives to save the pearl diver. What does this shared act of bravery reveal about what these two very different men have in common?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Word Relationships: Synonyms and Antonyms",
+        "explanation": "Synonyms have similar meanings. Antonyms have opposite meanings.",
+        "example": "Synonym for 'luminous': glowing, bright. Antonym: dark, dim.",
+        "prompt": "Find ten words from today's reading. List a synonym and antonym for each."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 12. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 13,
+      "day": 13,
+      "title": "THE RED SEA",
+      "summary": "",
+      "text": "The Nautilus turned west and entered the Red Sea, that long, narrow body of water separating Africa from Arabia. Nemo was in unusually good spirits. He spent time in the salon with me, discussing marine biology, ocean currents, and the history of navigation. For a man who claimed to have abandoned humanity, he was remarkably well-informed about human affairs.\n\"Professor,\" he said one afternoon, \"how do you suppose the ancient Egyptians traveled between the Red Sea and the Mediterranean?\"\n\"The Suez Canal is nearly complete,\" I said. \"But the ancients had no such channel.\"\n\"No. But nature provided one.\" His eyes gleamed. \"There is an underground passage—a tunnel beneath the Isthmus of Suez—that connects the two seas. I discovered it myself. I call it the Arabian Tunnel.\"\nI stared at him. \"That's impossible.\"\n\"Many things I do are considered impossible. Come to the salon window in one hour.\"\nI did. And I watched, speechless, as the Nautilus entered a dark, narrow passage in the rock, submerged completely, and traveled through an underwater tunnel for twenty minutes. When we emerged, the water had changed color. The temperature had shifted. The fish were different species entirely.\nWe were in the Mediterranean Sea.\nWe had crossed from the Indian Ocean to the Mediterranean in less than half an hour, through a passage that no one on the surface world knew existed.\nNed Land, when told, simply shook his head. \"This ship gets stranger every day.\" But his eyes were calculating. The Mediterranean meant Europe. Europe meant home. I could see the escape plans forming behind his eyes.",
+      "vocabulary": [
+        {
+          "word": "channel",
+          "partOfSpeech": "noun",
+          "definition": "a passage of water connecting two bodies of water; also, a means of communication"
+        },
+        {
+          "word": "calculating",
+          "partOfSpeech": "adjective",
+          "definition": "carefully planning; figuring things out strategically"
+        },
+        {
+          "word": "subterranean",
+          "partOfSpeech": "adjective",
+          "definition": "existing or occurring beneath the earth's surface"
+        },
+        {
+          "word": "revelation",
+          "partOfSpeech": "noun",
+          "definition": "a surprising and previously unknown fact that is made known"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the \"Arabian Tunnel\" that Nemo shows Aronnax?",
+          "options": {
+            "A": "A secret passage through the mountains of Arabia",
+            "B": "An underground underwater tunnel connecting the Red Sea to the Mediterranean",
+            "C": "A hidden harbor where Nemo trades with local merchants",
+            "D": "A canal dug by Nemo's crew beneath the Suez desert"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Ned's reaction to entering the Mediterranean differ from Aronnax's?",
+          "options": {
+            "A": "Ned is terrified of the Mediterranean's rough waters",
+            "B": "Ned sees the Mediterranean as being closer to Europe and home — a chance to escape",
+            "C": "Ned doesn't care about geography and ignores the tunnel entirely",
+            "D": "Ned wants to explore the Mediterranean for fishing opportunities"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Nemo has discovered something (the Arabian Tunnel) that the rest of the world doesn't know exists. How does this pattern of hidden knowledge fit with Nemo's character throughout the book so far?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Appositives",
+        "explanation": "An appositive renames or explains a noun, set off by commas. Example: 'Captain Nemo, the commander of the Nautilus, was enigmatic.'",
+        "example": "Professor Aronnax, a marine biologist, studied the ocean.",
+        "prompt": "Write five sentences using appositives to add detail about characters or objects from today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 13. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 14,
+      "day": 14,
+      "title": "THE LOST CITY",
+      "summary": "",
+      "text": "Two nights later, Nemo woke me at midnight.\n\"Get dressed, Professor. I want to show you something.\"\nWe suited up in diving gear—just the two of us this time—and stepped out onto the ocean floor. It was pitch dark. Our electric lanterns cut narrow beams through the blackness. We were deep—very deep. The pressure squeezed my suit against my body, and every breath felt heavy.\nNemo led me up a steep, rocky slope. We climbed for what felt like an hour, picking our way over boulders and loose stone. The ground beneath us changed—it became too regular, too flat. I looked down and realized I was walking on carved stone blocks. Steps. I was climbing steps.\nAt the top of the ridge, Nemo turned off his lantern and pointed.\nBelow us, lit by the red glow of an underwater volcano, lay the ruins of a city.\nEnormous columns lay toppled across wide streets. The outlines of temples and palaces were visible through the murk, their walls still standing after thousands of years beneath the sea. Statues, half-buried in sediment, stared up at us with blank stone eyes. An aqueduct stretched into the distance, its arches still intact.\nI knew what I was looking at. Every scientist in the world would have given anything to stand where I stood.\nAtlantis.\nThe lost continent. The civilization that Plato wrote about twenty-four hundred years ago—a great island empire that sank beneath the waves in a single day and night of catastrophe. Most scholars considered it a myth. But here it was, spread out before me like a map of the ancient world, preserved by the cold, dark water of the deep Atlantic.\nI sank to my knees on the carved stone steps. Tears blurred my vision inside my helmet.\nNemo stood beside me, arms crossed, staring out at the drowned city. In the red light of the volcano, his face looked like a statue itself—ancient, proud, and impossibly sad.\nWe stayed for an hour. Neither of us wanted to leave. But the air supply demanded it, and we made the long walk back to the Nautilus in silence.\nI did not sleep that night. I lay in my bunk, staring at the ceiling, trying to process what I had seen. The greatest archaeological discovery in human history—and I could never tell anyone about it.",
+      "vocabulary": [
+        {
+          "word": "ruins",
+          "partOfSpeech": "noun",
+          "definition": "the remains of a building or city that has been destroyed or decayed"
+        },
+        {
+          "word": "archaeology",
+          "partOfSpeech": "noun",
+          "definition": "the study of human history through the examination of physical remains"
+        },
+        {
+          "word": "preserved",
+          "partOfSpeech": "adjective/verb",
+          "definition": "kept in its original state; protected from damage or decay"
+        },
+        {
+          "word": "catastrophe",
+          "partOfSpeech": "noun",
+          "definition": "a sudden disaster causing great damage or suffering"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Aronnax realize he is looking at the ruins of Atlantis?",
+          "options": {
+            "A": "Captain Nemo tells him the name before they dive",
+            "B": "He finds a sign carved in stone that says \"Atlantis\" in Greek",
+            "C": "He recognizes carved steps, columns, temples, and statues — a drowned city lit by volcanic glow",
+            "D": "Conseil identifies the ruins from his encyclopedia of ancient civilizations"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Aronnax cry when he sees Atlantis?",
+          "options": {
+            "A": "He is exhausted from the climb and overwhelmed by fatigue",
+            "B": "He is witnessing the greatest archaeological discovery in history that he can never share",
+            "C": "He is frightened by the underwater volcano and fears for his life",
+            "D": "He misses his home in Paris and the ruins remind him of European architecture"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Aronnax says this is \"the greatest archaeological discovery in human history — and I could never tell anyone about it.\" How does this moment capture the central tragedy of being Nemo's prisoner?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Multiple Meaning Words",
+        "explanation": "Many words have different meanings depending on context. 'Vessel' can mean ship or container.",
+        "example": "'Light' can mean brightness, weight, or to ignite something.",
+        "prompt": "Find five words in today's chapter that have multiple meanings. Write sentences showing different uses."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 14. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 15,
+      "day": 15,
+      "title": "THE VOLCANIC FLOOR",
+      "summary": "",
+      "text": "The Nautilus continued south through the Atlantic, diving deeper than I would have believed possible. Nemo seemed drawn to the extremes of the ocean—the deepest trenches, the most remote waters, the places where no ship had ever ventured.\nWe passed over fields of underwater volcanoes—mountains of fire rising from the ocean floor, their peaks glowing orange and red, streams of lava flowing down their sides like slow rivers. The water around them shimmered with heat. Fish scattered. The hull of the Nautilus creaked and groaned under the temperature changes, but Nemo never hesitated.\n\"The ocean floor is alive,\" he told me, watching through the salon window as molten rock oozed across the seabed. \"New land is being born down here every day. Islands are rising. Mountains are growing. The Earth is not finished building itself.\"\nWe entered the Sargasso Sea—a strange, calm region of the Atlantic where thick mats of floating seaweed covered the surface. The water was warm and eerily still. The Nautilus pushed through the weed like a plow through heavy soil.\n\"Ships have been trapped here for centuries,\" Nemo said. \"The seaweed tangles their rudders. The calm steals their wind. Sailors call it the graveyard of ships.\"\nThrough the windows, I could see the evidence—the rotting hulls of ancient vessels, encrusted with barnacles and draped in weed, their masts broken and their cargo scattered across the sandy bottom. Some were centuries old. One looked like a Spanish galleon from the age of exploration, its cannons still visible through the murk.\nNemo looked at the wrecks without emotion. \"The sea takes what it wants,\" he said. \"And it keeps what it takes.\"",
+      "vocabulary": [
+        {
+          "word": "molten",
+          "partOfSpeech": "adjective",
+          "definition": "melted by heat; in liquid form due to extreme temperature"
+        },
+        {
+          "word": "eerie",
+          "partOfSpeech": "adjective",
+          "definition": "strange and frightening; creating an uneasy feeling"
+        },
+        {
+          "word": "graveyard",
+          "partOfSpeech": "noun",
+          "definition": "a place where dead people are buried; also, a place where old or abandoned things collect"
+        },
+        {
+          "word": "encrusted",
+          "partOfSpeech": "adjective",
+          "definition": "covered with a hard layer of something"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Nemo mean when he says \"The Earth is not finished building itself\"?",
+          "options": {
+            "A": "He believes humans will eventually colonize the ocean floor",
+            "B": "New land is being created by underwater volcanoes, meaning the planet is still changing",
+            "C": "He thinks the continents will eventually sink beneath the sea",
+            "D": "He is planning to build a city on the ocean floor using volcanic rock"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why is the Sargasso Sea called \"the graveyard of ships\"?",
+          "options": {
+            "A": "Pirates sank ships there and the ghosts haunt the waters",
+            "B": "Thick seaweed and calm water trapped ships for centuries, leaving rotting hulls on the bottom",
+            "C": "The navy used it as a dumping ground for old warships",
+            "D": "A massive earthquake once sank an entire fleet in the region"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Nemo says, \"The sea takes what it wants, and it keeps what it takes.\" How does this statement apply not just to sunken ships, but also to Nemo himself and his prisoners?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Restrictive vs. Non-Restrictive Clauses",
+        "explanation": "Restrictive clauses are essential (no commas). Non-restrictive add extra info (use commas).",
+        "example": "Restrictive: 'The submarine that Nemo built was extraordinary.' / Non-restrictive: 'The Nautilus, which Nemo built, was extraordinary.'",
+        "prompt": "Write four sentences: two with restrictive clauses, two with non-restrictive clauses about today's reading."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 15. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 16,
+      "day": 16,
+      "title": "THE DEEP DIVE",
+      "summary": "",
+      "text": "Captain Nemo had been dropping hints for days. He wanted to attempt something that had never been done—a dive to the deepest point of the ocean.\n\"The bottom,\" he said. \"The absolute bottom. No one has ever been there. No one has ever seen it.\"\nThe Nautilus descended. The light faded—first blue, then indigo, then black. The water temperature dropped until the hull was cold to the touch. The pressure increased steadily, and I could hear the iron plates groaning under the strain.\nConseil stood beside me at the salon window, his face pressed to the glass, cataloging every creature we passed. Fish with enormous eyes. Jellyfish that glowed in the dark—bioluminescent, creating their own cold light in the eternal blackness. Creatures that looked like nothing in any textbook—transparent, boneless, drifting like ghosts.\nAt sixteen thousand feet, the last fish disappeared. We were beyond the zone of life—or so I thought.\nAt twenty thousand feet, the salon window showed nothing but blackness. The Nautilus was a bubble of light and warmth in an infinite void. The pressure gauge read numbers I didn't want to think about. If the glass cracked, if a single rivet failed, we would be crushed instantly.\nAt twenty-five thousand feet, the searchlights hit the bottom.\nIt was a flat, gray plain of fine sediment—the accumulated dust of millions of years of dead organisms drifting down from above. Nothing moved. Nothing grew. It was the most desolate landscape I had ever seen—and somehow, the most awe-inspiring.\n\"The floor of the world,\" Nemo whispered.\nHe planted a black flag on the seabed through a mechanical arm built into the hull. On it was a gold letter N.\n\"I claim this place,\" he said, \"in my own name, and no other.\"\nThen we rose. I breathed again only when the pressure gauge showed a safe number. Ned had spent the entire dive lying in his bunk with a pillow over his head, and I couldn't blame him.",
+      "vocabulary": [
+        {
+          "word": "bioluminescent",
+          "partOfSpeech": "adjective",
+          "definition": "producing light through a biological process in living organisms"
+        },
+        {
+          "word": "void",
+          "partOfSpeech": "noun",
+          "definition": "a completely empty space; nothingness"
+        },
+        {
+          "word": "sediment",
+          "partOfSpeech": "noun",
+          "definition": "matter that settles to the bottom of a liquid; accumulated material on the ocean floor"
+        },
+        {
+          "word": "desolate",
+          "partOfSpeech": "adjective",
+          "definition": "empty, bleak, and lifeless; giving an impression of abandonment"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does the Nautilus find at the deepest point of the ocean?",
+          "options": {
+            "A": "A thriving ecosystem of unusual deep-sea creatures",
+            "B": "The wreckage of an ancient ship filled with treasure",
+            "C": "A flat, gray plain of fine sediment — the most desolate landscape Aronnax has ever seen",
+            "D": "An underwater cave system leading to an even deeper trench"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Nemo do when the Nautilus reaches the ocean floor?",
+          "options": {
+            "A": "He collects samples of the sediment for scientific study",
+            "B": "He plants a black flag with the letter N, claiming the place in his own name",
+            "C": "He takes photographs through the viewing window",
+            "D": "He opens the hatches so the crew can walk on the bottom"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Nemo claims the deepest point of the ocean \"in my own name, and no other.\" What does this act reveal about his relationship with the world above and his sense of identity?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Idiomatic Expressions",
+        "explanation": "Idioms are phrases whose meaning isn't literal. 'Break the ice' doesn't mean breaking actual ice.",
+        "example": "'At sea' can mean on the ocean or confused.",
+        "prompt": "Find or invent three nautical idioms. Explain their literal and figurative meanings."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 16. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 17,
+      "day": 17,
+      "title": "THE SOUTH POLE",
+      "summary": "",
+      "text": "Nemo turned the Nautilus south—far south, into the frozen waters of Antarctica. The water grew bitterly cold. Ice appeared—first as scattered chunks, then as a solid wall stretching from horizon to horizon.\n\"No ship has ever reached the South Pole by sea,\" Nemo said. \"We will go under the ice.\"\nThe Nautilus dove beneath the ice shelf. Above us, the frozen ceiling stretched in every direction—a solid roof of white and blue, sometimes ten feet thick, sometimes a hundred. There was no way up. No way to surface for air.\nThe Nautilus carried enough compressed air for several days. But Nemo was gambling. He believed there would be open water at the Pole itself—a gap in the ice where we could surface and breathe.\nFor two days we traveled south under the ice. The crew grew quiet. The air recyclers worked overtime, but there was a staleness creeping into every breath. Ned paced the corridors like a caged animal.\nOn the third day, the sonar showed the ice thinning. Nemo pushed upward. The Nautilus struck the ice from below—once, twice, three times—and burst through into open air.\nWe climbed onto the hull and stood in the freezing wind. Before us stretched a barren landscape of snow and rock. Nemo took measurements with his instruments and announced what I already suspected:\n\"We are standing at the South Pole. The first human beings ever to set foot here.\"\nHe raised another black flag with the gold N. The wind snapped it straight. Penguins watched from a distance, unimpressed.\nThe moment of triumph was brief. Within hours, the temperature dropped further. The open water began to freeze around us. If we didn't leave immediately, the Nautilus would be trapped—and we would die.",
+      "vocabulary": [
+        {
+          "word": "navigated",
+          "partOfSpeech": "verb",
+          "definition": "directed the course of a ship or vehicle; found one's way through something difficult"
+        },
+        {
+          "word": "barren",
+          "partOfSpeech": "adjective",
+          "definition": "too poor to produce vegetation; empty and lifeless"
+        },
+        {
+          "word": "compressed",
+          "partOfSpeech": "adjective",
+          "definition": "pressed together; reduced in volume (revisited from Ch 7)"
+        },
+        {
+          "word": "triumph",
+          "partOfSpeech": "noun",
+          "definition": "a great victory or achievement"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Nemo take the Nautilus under the Antarctic ice?",
+          "options": {
+            "A": "He is trying to escape a pursuing warship",
+            "B": "He wants to be the first person to reach the South Pole by sea",
+            "C": "The ice provides protection from storms on the surface",
+            "D": "He needs ice to replenish the ship's freshwater supply"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What creates the danger after they surface at the South Pole?",
+          "options": {
+            "A": "A massive storm blows them off course",
+            "B": "The crew rebels against Nemo and tries to take the ship",
+            "C": "The open water begins to freeze around them, threatening to trap the Nautilus",
+            "D": "The volcanic activity beneath the ice causes earthquakes"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The South Pole scene follows a pattern seen throughout the book: triumph followed by danger. How does this pattern reflect the larger experience of life aboard the Nautilus?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Gerunds and Infinitives",
+        "explanation": "Gerunds are -ing verbs used as nouns. Infinitives are 'to + verb.' Both can be subjects or objects.",
+        "example": "Gerund: 'Swimming was Ned's specialty.' / Infinitive: 'To explore was Aronnax's dream.'",
+        "prompt": "Write six sentences about today's chapter: three using gerunds, three using infinitives."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 17. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 18,
+      "day": 18,
+      "title": "SUFFOCATION",
+      "summary": "",
+      "text": "We dove under the ice and headed north. But the ice had shifted. The passage we'd come through was blocked. Massive icebergs had drifted together overhead, sealing us in.\nNemo tried every direction. North, east, west—solid ice everywhere. The Nautilus was entombed.\n\"We have five days of air,\" Nemo said, his voice steady. \"We must cut our way out.\"\nThe crew suited up and went outside into the freezing water with picks and axes. They hacked at the ice from below, working in shifts—two hours on, two hours off—around the clock. The water was so cold that men came back inside with their fingers blue and their lips white. But they kept going.\nInside the ship, the air grew thinner by the hour. Breathing became a conscious effort—each inhale felt incomplete, like trying to fill a glass with a trickle. My head pounded. My vision blurred at the edges. Conseil sat beside me, pale and gasping, but still trying to smile.\nNed worked alongside Nemo's crew outside the ship, swinging a pick with furious energy. Whatever his feelings about Nemo, whatever his desperate desire to escape, he was not a man who sat idle while others fought to survive.\nBy the fourth day, we were barely conscious. The air was so thin that a candle would not have stayed lit. Men lay on the floor, too weak to stand. I felt a terrible drowsiness creeping over me—a warm, peaceful desire to close my eyes and sleep forever.\nOn the fifth day, just hours before our air would have run out entirely, the last wall of ice gave way. The Nautilus surged upward through the gap and broke the surface. The hatches flew open. Arctic air—cold, sharp, magnificent—poured into the ship.\nI have never tasted anything as sweet as that first breath.\nMen wept. Men laughed. Men lay on the deck and simply breathed, over and over, marveling at the simple miracle of oxygen.\nCaptain Nemo stood at the bow, wind whipping his hair, staring north. His face showed nothing. But his hands, gripping the railing, were shaking.",
+      "vocabulary": [
+        {
+          "word": "entombed",
+          "partOfSpeech": "verb",
+          "definition": "buried or trapped as if in a tomb"
+        },
+        {
+          "word": "consciousness",
+          "partOfSpeech": "noun",
+          "definition": "the state of being awake and aware; also, awareness of one's thoughts and surroundings"
+        },
+        {
+          "word": "drowsiness",
+          "partOfSpeech": "noun",
+          "definition": "the state of being sleepy; a strong desire to fall asleep"
+        },
+        {
+          "word": "miraculous",
+          "partOfSpeech": "adjective",
+          "definition": "like a miracle; extraordinarily wonderful or unlikely"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What is the crew's plan to escape from under the ice?",
+          "options": {
+            "A": "They use the Nautilus's ram to break through the ice from below",
+            "B": "Crew members go outside in diving suits to hack at the ice with picks and axes",
+            "C": "They reverse the engines at full power to melt the ice with heat",
+            "D": "Nemo navigates to a thinner section of ice using sonar"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Aronnax describe the desire to sleep as \"terrible\"?",
+          "options": {
+            "A": "Because sleeping uses up more oxygen than staying awake",
+            "B": "Because the warm, peaceful drowsiness of oxygen deprivation will lead to death",
+            "C": "Because Nemo has ordered everyone to stay awake and work",
+            "D": "Because nightmares are making the crew panic"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Ned works alongside Nemo's crew to hack at the ice, despite hating his captivity. What does this reveal about Ned's character? How can someone fight to survive in a place they desperately want to leave?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Prefixes and Suffixes",
+        "explanation": "Prefixes attach to word beginnings; suffixes to endings. They change meaning.",
+        "example": "Extra + ordinary → extraordinary (beyond ordinary)",
+        "prompt": "Find ten words with prefixes or suffixes in today's reading. Break them down and explain how the affix changes meaning."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 18. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 19,
+      "day": 19,
+      "title": "THE GIANT SQUID",
+      "summary": "",
+      "text": "The Nautilus entered warmer waters and continued north through the Atlantic. For a few days, life aboard settled into something almost like normalcy. I worked on my notes. Conseil organized specimens. Ned fished through the kitchen porthole and complained about captivity with renewed energy, which I took as a sign of good health.\nThen came the squid.\nConseil spotted them first—dark shapes in the water, keeping pace with the ship. Through the salon window, we watched them approach: enormous creatures, each one forty to fifty feet long, with eight writhing arms and two longer tentacles, each lined with hundreds of suckers the size of dinner plates. Their eyes were huge and black and horribly intelligent.\nThere were seven of them.\n\"Giant squid,\" I breathed. \"The kraken of legend.\"\nThe Nautilus tried to outrun them, but one of the creatures wrapped its tentacles around the propeller and jammed it. The ship shuddered and stopped. More squid latched onto the hull, their arms snaking across the metal plating, their beaks scraping against the rivets.\n\"We cannot use the electric charge,\" Nemo said grimly. \"Their arms are too close to the hatches. We fight them hand to hand.\"\nHe opened the hatches. The crew surged out with axes, harpoons, and knives. The squid attacked immediately—tentacles as thick as tree trunks whipped through the air, grabbing at men, coiling around limbs, dragging sailors toward gaping beaks.\nNed was in the thick of it, his harpoon flashing. He drove it into the body of one squid, twisted, and yanked it free in a spray of black ink. Nemo fought beside him, hacking at a tentacle that had wrapped around a crewman's waist.\nThen a scream—a crewman was lifted into the air by a massive arm, his legs kicking helplessly. The squid pulled him toward its beak. Nemo and three men threw themselves at the tentacle, chopping desperately—but the creature dragged the man under the water. He was gone.\nThe fight lasted fifteen minutes. It felt like hours. When it was over, the deck was slick with ink and blood. Six of the seven squid were dead or driven off. One crewman was lost.\nNemo stood at the railing, staring at the water where his man had disappeared. Tears ran down his face—the first and only time I ever saw Captain Nemo cry.",
+      "vocabulary": [
+        {
+          "word": "tentacle",
+          "partOfSpeech": "noun",
+          "definition": "a long, flexible arm of an animal such as an octopus or squid, used for grasping"
+        },
+        {
+          "word": "propeller",
+          "partOfSpeech": "noun",
+          "definition": "a rotating device with blades that pushes a ship or aircraft forward"
+        },
+        {
+          "word": "futile",
+          "partOfSpeech": "adjective",
+          "definition": "pointless; producing no useful result"
+        },
+        {
+          "word": "vulnerable",
+          "partOfSpeech": "adjective",
+          "definition": "exposed to the possibility of being attacked or harmed"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why can't Nemo use the Nautilus's electric defense against the squid?",
+          "options": {
+            "A": "The squid are too deep underwater for the electricity to reach",
+            "B": "The electricity would kill the crew members fighting on the deck",
+            "C": "The squid's tentacles are too close to the hatches, making it dangerous",
+            "D": "The Nautilus's electrical system was damaged in the ice"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What happens to the crewman who is grabbed by the squid?",
+          "options": {
+            "A": "Ned Land cuts him free with his harpoon",
+            "B": "He is pulled underwater and lost despite the crew's desperate attempts to save him",
+            "C": "Captain Nemo electrifies the hull and the squid releases him",
+            "D": "He survives but is seriously injured and needs weeks to recover"
+          },
+          "answer": ""
+        },
+        {
+          "question": "This is the only time Aronnax sees Nemo cry. What does this moment reveal about the captain? How does it change or complicate the reader's understanding of him?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Subjunctive Mood in Conditional Sentences",
+        "explanation": "Use subjunctive for hypothetical situations: 'If I were aboard the Nautilus, I would study everything.'",
+        "example": "If Ned were captain, he would return to land immediately.",
+        "prompt": "Write four conditional sentences using subjunctive mood about choices characters could have made."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 19. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 20,
+      "day": 20,
+      "title": "THE STORM",
+      "summary": "",
+      "text": "The mood aboard the Nautilus changed after the squid attack. A darkness settled over Captain Nemo that deepened with each passing day. He stopped joining me for meals. He stopped playing the organ. He spent hours alone in the salon, staring through the windows at nothing, or pacing the corridors late at night. When I tried to speak with him, he gave short, distracted answers and walked away.\nMeanwhile, Ned was growing desperate. We had been aboard the Nautilus for months. He could feel freedom slipping away with every mile.\n\"We have to escape, Professor,\" he said one night, his voice low and urgent. \"This man is losing his mind. I can feel it. Something is building inside him, and when it breaks, we don't want to be here.\"\n\"Where would we go, Ned? We're in the middle of the ocean.\"\n\"We're not always in the middle of the ocean. We pass near coastlines. The dinghy on the hull—it's seaworthy. If we time it right, on a night when Nemo is distracted...\"\nI hesitated. Part of me—the scientist—never wanted to leave. The things I had seen aboard the Nautilus were beyond anything I had dreamed possible. But Ned was right about something: Nemo was changing. The noble, mysterious captain I had first met was being consumed by something—rage, grief, or madness.\nA massive storm struck the Atlantic. The Nautilus surfaced to ride it out—or rather, Nemo surfaced deliberately. He climbed to the platform at the top of the ship and stood in the full fury of the hurricane, lashed by rain and wind, waves crashing over him. Lightning split the sky. Thunder shook the hull. And Nemo stood there with his arms spread wide, his face turned up to the storm, as if daring it to take him.\n\"He's completely mad,\" Ned said, watching from inside.\nI wasn't sure Ned was wrong.",
+      "vocabulary": [
+        {
+          "word": "recklessness",
+          "partOfSpeech": "noun",
+          "definition": "behavior that shows a lack of care about danger or consequences"
+        },
+        {
+          "word": "consuming",
+          "partOfSpeech": "adjective",
+          "definition": "absorbing all of a person's attention or energy"
+        },
+        {
+          "word": "distracted",
+          "partOfSpeech": "adjective",
+          "definition": "unable to concentrate; having one's attention drawn away"
+        },
+        {
+          "word": "descent",
+          "partOfSpeech": "noun",
+          "definition": "the act of moving downward; also, a decline in condition or behavior"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why does Ned believe they need to escape soon?",
+          "options": {
+            "A": "The Nautilus is running out of fuel and will be stranded",
+            "B": "He senses that Nemo is mentally deteriorating and something dangerous is building",
+            "C": "Conseil has fallen ill and needs medical attention on land",
+            "D": "Nemo has announced plans to dive to a depth the ship cannot survive"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does Nemo's behavior during the hurricane suggest about his mental state?",
+          "options": {
+            "A": "He is testing the ship's ability to withstand extreme weather",
+            "B": "He seems to be daring nature to destroy him, standing in the storm with arms wide",
+            "C": "He is trying to impress Aronnax with his courage",
+            "D": "He is calmly studying the storm for scientific purposes"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Ned says, \"He's completely mad.\" Aronnax says he isn't sure Ned is wrong. Based on Nemo's behavior in recent chapters, do you think Nemo is going mad, or is something else happening? Use evidence.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Word Nuance and Precision",
+        "explanation": "Precise word choice creates vivid images. 'Walk' vs. 'stride' vs. 'lumber' vs. 'tiptoe.'",
+        "example": "Verne writes 'phosphorescent' instead of just 'glowing' to be more specific.",
+        "prompt": "Find five verbs in today's chapter. Replace each with three synonyms of different intensities."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 20. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 21,
+      "day": 21,
+      "title": "NEMO'S REVENGE",
+      "summary": "",
+      "text": "The event Ned had feared came without warning.\nThrough the salon window, I spotted a ship on the surface—a large warship flying a flag I didn't recognize. Nemo appeared beside me. His entire body had gone rigid. His face was a mask of cold fury.\n\"That ship,\" he said, in a voice I had never heard before. \"That flag.\"\n\"Captain, what—\"\n\"Leave the salon, Professor. Now. Go to your cabin. Do not come out until I say.\"\n\"What are you going to do?\"\nHe turned to me, and for the first time, I saw something in his eyes that frightened me more than the deep ocean, more than the squid, more than the ice: hatred. Pure, absolute, burning hatred.\n\"I am going to do what I was built to do,\" he said.\nWe were locked in our cabins. Through the walls, I heard the engines roar to full power. I felt the ship accelerate, diving and then rising, building speed. Then—a colossal impact. The Nautilus shook from bow to stern. A grinding, tearing sound of metal on metal.\nNemo had rammed the warship.\nThrough the small porthole in my cabin, I saw it—the warship, broken nearly in half, sinking fast. Men were in the water, clinging to wreckage, crying for help. The ship's bow pointed straight up at the sky for a long, terrible moment, and then it slid under the waves. Bubbles. Debris. Silence.\nNemo had killed them all.\nWhen he finally let us out, I found him in the salon, standing before a portrait on the wall—a woman and two small children. He was weeping.\n\"That flag,\" he said, without looking at me. \"That nation destroyed everything I loved. My family. My people. My country. They took it all.\"\nI said nothing. There was nothing to say.\n\"I told you, Professor. I have severed all ties with the world above. But the world above has not severed its ties with me. It follows me. It hunts me. And when it finds me, I answer.\"\nI looked at the portrait of the woman and children. I looked at this brilliant, tortured man. And I understood—not forgave, but understood—what had driven Captain Nemo to the bottom of the sea.",
+      "vocabulary": [
+        {
+          "word": "fury",
+          "partOfSpeech": "noun",
+          "definition": "wild, intense anger; rage"
+        },
+        {
+          "word": "rammed",
+          "partOfSpeech": "verb",
+          "definition": "crashed into with great force deliberately"
+        },
+        {
+          "word": "debris",
+          "partOfSpeech": "noun",
+          "definition": "scattered pieces of rubbish or remains of something destroyed"
+        },
+        {
+          "word": "justified",
+          "partOfSpeech": "adjective",
+          "definition": "having a good reason; shown to be right or reasonable"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What does Nemo do when he sees the warship flying a specific flag?",
+          "options": {
+            "A": "He tries to flee by diving the Nautilus to its maximum depth",
+            "B": "He rams the warship at full speed, sinking it and killing everyone aboard",
+            "C": "He surfaces and tries to negotiate with the ship's captain",
+            "D": "He uses the electric charge to disable the ship without sinking it"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What does the portrait of the woman and children in the salon explain?",
+          "options": {
+            "A": "Why Nemo built the Nautilus — to protect his family at sea",
+            "B": "Why Nemo hates a specific nation — they destroyed his family and his people",
+            "C": "Why Nemo collects art — the portrait is from a famous painter",
+            "D": "Why Nemo refuses to return to land — his family is waiting in hiding"
+          },
+          "answer": ""
+        },
+        {
+          "question": "After this chapter, can Nemo still be considered a hero? Or has he crossed a line into villainy? Make a claim and support it with evidence from this chapter and earlier ones.",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Participial Phrases",
+        "explanation": "Phrases beginning with participles (-ing or -ed verbs) that modify nouns.",
+        "example": "Glowing beneath the waves, the creature mesmerized the crew.",
+        "prompt": "Write five sentences using participial phrases to describe actions or scenes from today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 21. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 22,
+      "day": 22,
+      "title": "NEMO'S SECRET",
+      "summary": "",
+      "text": "In the days that followed, the full picture emerged—in fragments, in half-sentences, in things Nemo said when he thought I wasn't paying close attention.\nHe had been a prince. A ruler of a colonized land—oppressed, invaded, and brutalized by a European power. His family had been killed. His people had been enslaved. He had fought back, lost everything, and fled to the sea with a group of loyal followers.\nHe had built the Nautilus in secret, on a deserted island, using his fortune and his genius. The ship was his weapon, his home, and his statement to the world: you cannot reach me here. You cannot control me. You cannot make me kneel.\nThe wealth he gathered from the ocean—pearls, gold from sunken ships, treasures beyond counting—he sent to the surface through secret channels, funding revolutions and resistance movements in oppressed nations around the world. The pearl diver he had saved was no accident. The bag of pearls was no random act of generosity. Nemo was financing a war against the empires of the world—a silent, invisible war waged from twenty thousand leagues beneath the sea.\nHe was a freedom fighter. He was also a murderer. He was a genius and a madman. He was the noblest person I had ever met, and the most dangerous.\nI could no longer stay.\n\"Ned,\" I said. \"Make your plan. The first opportunity we get—we run.\"\nNed's face broke into a fierce grin. \"I've been waiting months to hear you say that.\"",
+      "vocabulary": [
+        {
+          "word": "colonized",
+          "partOfSpeech": "verb",
+          "definition": "taken control of a country or region by a more powerful nation"
+        },
+        {
+          "word": "exile",
+          "partOfSpeech": "noun/verb",
+          "definition": "a person forced to live away from their home country; the state of being banished"
+        },
+        {
+          "word": "resistance",
+          "partOfSpeech": "noun",
+          "definition": "the act of fighting against something; a movement opposing authority"
+        },
+        {
+          "word": "contradiction",
+          "partOfSpeech": "noun",
+          "definition": "a combination of qualities that are opposite or inconsistent"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How does Nemo use the wealth he gathers from the ocean?",
+          "options": {
+            "A": "He buys weapons to arm the Nautilus against enemy ships",
+            "B": "He funds revolutions and resistance movements in oppressed nations around the world",
+            "C": "He stores it in underwater vaults for when he returns to the surface",
+            "D": "He uses it to pay his crew and maintain the Nautilus"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why does Aronnax finally decide it is time to escape?",
+          "options": {
+            "A": "He is bored with life aboard the Nautilus and misses his research",
+            "B": "He realizes Nemo is both noble and dangerous, and the danger is increasing",
+            "C": "Conseil begs him to leave because he is homesick",
+            "D": "Nemo threatens to lock them in the brig permanently"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Aronnax describes Nemo as \"a freedom fighter... also a murderer... a genius and a madman... the noblest person I had ever met, and the most dangerous.\" How can one person be all of these things? What makes Nemo such a complex character?",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Domain-Specific Vocabulary",
+        "explanation": "Specialized terms used in specific fields. Verne uses nautical and scientific vocabulary.",
+        "example": "Frigate, harpoon, narwhal, phosphorescent are domain-specific to maritime/science contexts.",
+        "prompt": "List ten domain-specific words from today's chapter. Categorize them by field (nautical, scientific, etc.)."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 22. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 23,
+      "day": 23,
+      "title": "THE MAELSTROM",
+      "summary": "",
+      "text": "The opportunity came sooner than expected.\nThe Nautilus was traveling north, along the coast of Norway. Through my research, I recognized the waters—we were approaching the Lofoten Islands, home of the most terrifying natural phenomenon in the North Atlantic: the Maelstrom.\nThe Maelstrom was a massive whirlpool—a swirling vortex of water that could suck down entire ships. Sailors had feared it for centuries. Even Nemo, I thought, would steer clear.\nHe didn't. He drove straight toward it.\n\"He's going to kill us all,\" Ned said, his face white.\nThe sea began to spin. The current grabbed the Nautilus and pulled. Through the window, I could see the water spiraling downward in an enormous funnel, the walls of the vortex spinning faster and faster, debris whirling past—wood, rope, pieces of wrecked ships.\nThe Nautilus was caught. The engines screamed. The hull vibrated so violently that books flew off shelves and dishes shattered in the galley. Nemo was at the helm, his face blank, his hands steady on the controls. I couldn't tell if he was fighting the whirlpool or surrendering to it.\n\"Now!\" Ned shouted. \"It's now or never!\"\nWe fought our way to the dinghy on the outer hull. The wind was deafening. The sea roared. Spray blinded us. Ned cut the ropes with his knife. We tumbled into the small boat as the Nautilus spun in the grip of the Maelstrom.\nThe last thing I saw was the black hull of the Nautilus, spiraling downward into the throat of the whirlpool, its lights still glowing, sinking into the dark.\nThen the world went black.",
+      "vocabulary": [
+        {
+          "word": "vortex",
+          "partOfSpeech": "noun",
+          "definition": "a spinning mass of water or air that pulls things toward its center; a whirlpool"
+        },
+        {
+          "word": "spiraling",
+          "partOfSpeech": "verb/adjective",
+          "definition": "moving in a continuous curve that gets closer to or farther from a central point"
+        },
+        {
+          "word": "surrendering",
+          "partOfSpeech": "verb",
+          "definition": "giving up; ceasing to resist"
+        },
+        {
+          "word": "fate",
+          "partOfSpeech": "noun",
+          "definition": "the development of events beyond a person's control; destiny"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What makes the Maelstrom so dangerous?",
+          "options": {
+            "A": "It is the coldest water in the world and freezes ships on contact",
+            "B": "It is a massive whirlpool that can suck down entire ships",
+            "C": "It is filled with dangerous sea creatures that attack anything nearby",
+            "D": "It is a volcanic eruption zone where lava flows under the water"
+          },
+          "answer": ""
+        },
+        {
+          "question": "Why can't Aronnax tell if Nemo is fighting the Maelstrom or surrendering to it?",
+          "options": {
+            "A": "The viewing windows are shattered and Aronnax can't see the helm",
+            "B": "Nemo's face is blank and peaceful, like a man who has already made his decision",
+            "C": "Nemo has locked himself in his cabin and won't respond to anyone",
+            "D": "The storm is so loud that Aronnax can't hear Nemo's commands"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The Maelstrom can be read as a symbol for Nemo's entire life — a powerful force spiraling toward destruction. Explain how this metaphor works. What in Nemo's story has been spiraling?",
+          "answer": ""
+        }
+      ],
+      "grammar": {
+        "topic": "Absolute Phrases",
+        "explanation": "A phrase that modifies the whole sentence, not just one word. Format: noun + participle.",
+        "example": "The storm having passed, the Nautilus surfaced.",
+        "prompt": "Write four sentences using absolute phrases to add context to events in today's chapter."
+      },
+      "language": null,
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 23. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    },
+    {
+      "number": 24,
+      "day": 24,
+      "title": "THE SURFACE",
+      "summary": "",
+      "text": "I woke in a fisherman's cottage on the coast of Norway.\nNed was there, bruised and battered but alive. Conseil was there too—calm as always, already organizing our few salvaged possessions into neat piles.\nThe fishermen told us they had found our small boat washed up on the rocks, with three half-drowned men inside. They had no idea where we had come from. We told them we had been shipwrecked. It was close enough to the truth.\nFor a long time, I sat by the window and stared at the sea. The gray water stretched to the horizon, cold and ordinary. Somewhere beneath that surface—if the Nautilus had survived the Maelstrom—Captain Nemo was still down there. Still exploring. Still running. Still fighting his invisible war.\nDid the Nautilus survive? I don't know. The ship was built to withstand pressures that would crush any other vessel. If anyone could have navigated the Maelstrom, it was Nemo.\nBut I also remember the look on his face at the helm—that blank, peaceful expression. It was the look of a man who had made his decision. A man who was ready to stop running.\nI wrote this account in the months that followed, working from the detailed notes I had managed to keep throughout our voyage. I have told the truth, as precisely as I can. Every depth, every creature, every wonder—it is all real. I was there. I saw it with my own eyes.\nWe traveled twenty thousand leagues beneath the sea. We walked the ocean floor. We visited the South Pole, explored the ruins of Atlantis, fought giant squid, and survived a voyage to the deepest point on Earth. We lived inside the greatest machine ever built, with the most extraordinary man I have ever known.\nConseil returned to his quiet life in Paris, organizing my specimens and asking no questions, as always.\nNed Land went back to Canada. He never spoke of the Nautilus again.\nAnd I? I sit at my desk, writing these words, and I wonder. I wonder if Captain Nemo found peace at the bottom of the sea—or if he is still down there, somewhere in the endless dark, with his organ playing and his lights burning and his black flag planted on the floor of the world.\nThe sea keeps its secrets.\nBut I will keep mine, too—until the world is ready to hear them.\nTHE END",
+      "vocabulary": [
+        {
+          "word": "salvaged",
+          "partOfSpeech": "verb/adjective",
+          "definition": "rescued or saved from loss or destruction"
+        },
+        {
+          "word": "memoir",
+          "partOfSpeech": "noun",
+          "definition": "a written account of personal experiences; an autobiography"
+        },
+        {
+          "word": "reflection",
+          "partOfSpeech": "noun",
+          "definition": "serious thought or consideration; also, an image seen in a mirror or water"
+        },
+        {
+          "word": "legacy",
+          "partOfSpeech": "noun",
+          "definition": "something handed down from the past; the lasting impact of a person or event"
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "How do Aronnax, Ned, and Conseil survive the Maelstrom?",
+          "options": {
+            "A": "Nemo rescues them in a smaller submarine launched from the Nautilus",
+            "B": "They escape in the dinghy and are found washed up on the Norwegian coast",
+            "C": "They swim to shore after the Nautilus surfaces one final time",
+            "D": "Norwegian fishermen spot them in the whirlpool and pull them out"
+          },
+          "answer": ""
+        },
+        {
+          "question": "What is Aronnax's final uncertainty about Captain Nemo?",
+          "options": {
+            "A": "Whether Nemo was actually a prince or was lying about his past",
+            "B": "Whether Nemo will hunt them down to prevent them from telling his secret",
+            "C": "Whether the Nautilus survived the Maelstrom or whether Nemo chose to go down with it",
+            "D": "Whether the creatures they saw on the voyage were real or hallucinations"
+          },
+          "answer": ""
+        },
+        {
+          "question": "The book ends with mystery — Aronnax doesn't know if Nemo survived. If you could write one more chapter, what would happen? Would Nemo survive? Would he find peace? Use evidence from the book to support your answer.",
+          "answer": ""
+        }
+      ],
+      "grammar": null,
+      "language": {
+        "topic": "Etymology: Word Origins",
+        "explanation": "Understanding where words come from helps us understand their meanings.",
+        "example": "'Nautilus' comes from Greek 'nautilos' meaning sailor.",
+        "prompt": "Research the etymology of five words from the vocabulary lists. Explain how their origins relate to current meanings."
+      },
+      "informationalText": {
+        "title": "Jules Verne and the Birth of Science Fiction",
+        "text": "Historical context for this chapter.",
+        "questions": []
+      },
+      "writingPrompt": "Reflect on the events of Chapter 24. What would you do in this situation?",
+      "journalPrompt": "How would you react if you were aboard the Nautilus?"
+    }
+  ],
+  "stats": {
+    "totalWords": 8422,
+    "avgWordsPerChapter": 351,
+    "totalVocabulary": 96,
+    "totalGrammarLessons": 12,
+    "totalLanguageLessons": 12
+  }
+}
