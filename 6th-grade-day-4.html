@@ -394,25 +394,46 @@
                                 <p style="margin-bottom: 15px;">Samuel Langhorne Clemens, better known by his pen name Mark Twain, is one of America&#039;s most beloved authors. Born in 1835 in Missouri, Twain grew up in Hannibal, a Mississippi River town that became the inspiration for the fictional St. Petersburg in Tom Sawyer.</p><p style="margin-bottom: 15px;">As a young man, Twain worked as a steamboat pilot on the Mississippi River—his lifelong dream. His pen name &quot;Mark Twain&quot; comes from a riverboat term meaning the water is two fathoms (12 feet) deep, safe for navigation.</p><p style="margin-bottom: 15px;">When the Civil War disrupted river traffic, Twain traveled west and began writing. His humorous stories and lectures made him famous. The Adventures of Tom Sawyer, published in 1876, was his first novel and became an instant classic.</p><p style="margin-bottom: 15px;">Twain&#039;s writing style was revolutionary for its time. He wrote in the authentic voice of American characters, using regional dialects and humor. He captured the spirit of American childhood and frontier life in ways that no author had done before. His later novel, Adventures of Huckleberry Finn, is often called &quot;the Great American Novel.&quot;</p><p style="margin-bottom: 15px;">Twain continued writing until his death in 1910, leaving behind a legacy of stories that still entertain and inspire readers today.</p>
                             </div>
                             
-                            <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 30px;">
+                            <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 1: What is the main idea of this text?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q1"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q1', 'info-count-1', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-1" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                             
                             <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 2: What is one interesting fact you learned?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q2"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q2', 'info-count-2', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-2" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                             
                             <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 3: How does this information connect to Tom Sawyer's story?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q3"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q3', 'info-count-3', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-3" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                         </div>
                     `

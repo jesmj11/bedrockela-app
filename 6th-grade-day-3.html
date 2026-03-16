@@ -411,25 +411,46 @@
                                 <p style="margin-bottom: 15px;">Education in 1840s America was very different from today. In small towns like St. Petersburg, children attended one-room schoolhouses where all grades learned together. A single teacher managed students ranging from first grade through eighth grade.</p><p style="margin-bottom: 15px;">School was not mandatory, and many children, especially from farming families, attended only when their labor wasn&#039;t needed at home. The school year was often shorter, with long breaks during planting and harvest seasons.</p><p style="margin-bottom: 15px;">Discipline was strict. Teachers commonly used corporal punishment, and students who misbehaved might be spanked with a switch or made to sit in the corner wearing a dunce cap. The curriculum focused on the &quot;three Rs&quot;—reading, writing, and arithmetic. Students practiced penmanship by copying passages and learned math through rote memorization.</p><p style="margin-bottom: 15px;">Despite these harsh conditions, school was also a social hub where children made friends and sometimes got into mischief—just as Tom Sawyer demonstrates throughout the novel. The schoolhouse was often the center of community events, hosting spelling bees, recitals, and other gatherings.</p>
                             </div>
                             
-                            <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 30px;">
+                            <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 1: What is the main idea of this text?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q1"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q1', 'info-count-1', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-1" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-1-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                             
                             <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 2: What is one interesting fact you learned?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q2"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q2', 'info-count-2', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-2" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-2-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                             
                             <div style="padding: 20px; background: white; border-radius: 12px; border: 2px solid #8B4513; margin-top: 20px;">
                                 <p style="font-weight: 600; margin-bottom: 12px;">Question 3: How does this information connect to Tom Sawyer's story?</p>
                                 <textarea 
-                                  style="width: 100%; min-height: 80px; padding: 10px; border: 2px solid #305853; border-radius: 8px;"
+                                  id="info-q3"
+                                  style="width: 100%; min-height: 150px; padding: 15px; border: 2px solid #305853; border-radius: 8px; font-size: 16px; line-height: 1.6;"
+                                  oninput="updateWordCount('info-q3', 'info-count-3', 30)"
+                                  placeholder="Write your answer here (minimum 30 words)..."
                                 ></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                  <span id="info-count-3" style="font-size: 13px; color: #666;">0 / 30 words</span>
+                                  <span id="info-count-3-status" style="font-size: 13px; font-weight: 600;"></span>
+                                </div>
                             </div>
                         </div>
                     `
