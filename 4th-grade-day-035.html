@@ -17,5 +17,5 @@ const lesson35Config={lessonId:'4th-grade-day-35',gradeLevel:'4th-grade',title:'
 {render:()=>'<div class="lesson-page-card content-page"><h2>Writing Prompt</h2></div>'},
 {render:()=>'<div class="lesson-page-card content-page"><h2>Great Work!</h2></div>'}
 ]};
-if(typeof initLessonViewer==='function')initLessonViewer(lesson35Config);
+function safeInitLesson(){if(typeof initLessonViewer==='function'){initLessonViewer(lesson35Config);}else{setTimeout(safeInitLesson,100);}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',safeInitLesson);}else{safeInitLesson();}
 </script></body></html>

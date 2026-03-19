@@ -60,8 +60,20 @@ const 8th_grade_day_105Config = [
     }
 ];
 
-if (typeof initLessonViewer === 'function') {
-    initLessonViewer(8th_grade_day_105Config);
+
+function safeInitLesson() {
+    if (typeof initLessonViewer === 'function') {
+        initLessonViewer(8th_grade_day_105Config);
+    } else {
+        console.error('initLessonViewer function not found!');
+        setTimeout(safeInitLesson, 100);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', safeInitLesson);
+} else {
+    safeInitLesson();
 }
     </script>
 </body>
