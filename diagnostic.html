@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnostic - BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+        }
+        .test { 
+            margin: 20px 0; 
+            padding: 15px; 
+            background: #2a2a2a; 
+            border-left: 4px solid #00ff00;
+        }
+        .pass { border-left-color: #00ff00; }
+        .fail { border-left-color: #ff0000; color: #ff0000; }
+        h1 { color: #00aaff; }
+        h2 { color: #ffaa00; margin-top: 30px; }
+        pre { background: #000; padding: 10px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 BedrockELA Diagnostic</h1>
+    <p>Running system checks...</p>
+    
+    <div id="results"></div>
+    
+    <h2>Console Log:</h2>
+    <pre id="console"></pre>
+
+    <script src="js/lesson-viewer.js"></script>
+    <script>
+        const results = document.getElementById('results');
+        const consoleLog = document.getElementById('console');
+        const logs = [];
+        
+        function log(msg) {
+            logs.push(msg);
+            consoleLog.textContent = logs.join('\n');
+            console.log(msg);
+        }
+        
+        function test(name, condition) {
+            const div = document.createElement('div');
+            div.className = condition ? 'test pass' : 'test fail';
+            div.innerHTML = `<strong>${condition ? '✅' : '❌'} ${name}</strong>`;
+            results.appendChild(div);
+            log(`${condition ? 'PASS' : 'FAIL'}: ${name}`);
+            return condition;
+        }
+        
+        // Run tests
+        log('=== BedrockELA Diagnostic Started ===');
+        
+        test('Browser supports JavaScript', true);
+        test('localStorage available', typeof localStorage !== 'undefined');
+        test('sessionStorage available', typeof sessionStorage !== 'undefined');
+        test('Cache API available', 'caches' in window);
+        test('DOM loaded', document.readyState === 'complete' || document.readyState === 'interactive');
+        
+        // Check CSS
+        const body = document.body;
+        const bodyBg = window.getComputedStyle(body).background;
+        test('CSS loaded (body has background)', bodyBg && bodyBg !== 'rgba(0, 0, 0, 0)');
+        
+        log(`Body background: ${bodyBg}`);
+        
+        // Check lesson-viewer.js
+        test('initLessonViewer function exists', typeof initLessonViewer === 'function');
+        
+        // Check Firebase
+        test('Firebase app-compat loaded', typeof firebase !== 'undefined');
+        test('Firebase firestore-compat loaded', typeof firebase !== 'undefined' && typeof firebase.firestore === 'function');
+        
+        // Student data
+        const student = JSON.parse(localStorage.getItem('bedrockela_student') || 'null');
+        test('Student logged in', student !== null && student.id);
+        if (student) {
+            log(`Student: ${student.name} (${student.gradeLevel}) - Lesson ${student.currentLesson}`);
+        }
+        
+        // Try to load a lesson config
+        log('\n=== Testing Lesson Initialization ===');
+        const testConfig = {
+            lessonId: 'diagnostic-test',
+            gradeLevel: '4th-grade',
+            title: 'Diagnostic Test',
+            pages: [
+                {
+                    render: () => '<div style="padding: 40px; text-align: center;"><h1>🎉 Test Page Rendered!</h1><p>If you see this, the lesson viewer is working!</p></div>'
+                }
+            ]
+        };
+        
+        try {
+            log('Attempting to initialize test lesson...');
+            const container = document.createElement('div');
+            container.id = 'test-container';
+            container.style.position = 'fixed';
+            container.style.top = '50%';
+            container.style.left = '50%';
+            container.style.transform = 'translate(-50%, -50%)';
+            container.style.width = '80%';
+            container.style.maxWidth = '600px';
+            container.style.background = 'white';
+            container.style.padding = '20px';
+            container.style.borderRadius = '10px';
+            container.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+            container.style.zIndex = '9999';
+            document.body.appendChild(container);
+            
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer('test-container', testConfig);
+                log('✅ Lesson viewer initialized successfully!');
+                test('Lesson viewer renders content', true);
+            } else {
+                log('❌ initLessonViewer function not found!');
+                test('Lesson viewer renders content', false);
+            }
+        } catch (error) {
+            log(`❌ Error initializing lesson: ${error.message}`);
+            log(error.stack);
+            test('Lesson viewer renders content', false);
+        }
+        
+        // Cache info
+        log('\n=== Cache Status ===');
+        if ('caches' in window) {
+            caches.keys().then(names => {
+                log(`Active caches: ${names.length}`);
+                names.forEach(name => log(`  - ${name}`));
+            });
+        }
+        
+        // Version check
+        log('\n=== Version Info ===');
+        log(`URL: ${window.location.href}`);
+        log(`User Agent: ${navigator.userAgent}`);
+        log(`Online: ${navigator.onLine}`);
+        log(`Timestamp: ${new Date().toISOString()}`);
+        
+        log('\n=== Diagnostic Complete ===');
+    </script>
+</body>
+</html>
