@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 61 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899208">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767899208"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767899208"></script>
+    <script src="js/lesson-completion.js?v=1773767899208"></script>
+    <script src="js/lesson-autosave.js?v=1773767899208"></script>
+
+    <script>
+        const lesson61Config = {
+            lessonId: '4th-grade-day-061',
+            gradeLevel: '4th-grade',
+            title: 'Day 61 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 61</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 13</p>
+                        <p class="chapter-info">The Rescue</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 61!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Rescue</li>
+                                <li>Practice Sentence Types</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a writing activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. courage</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-61-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-61-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. wisdom</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-61-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-61-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="courage" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">courage</div>
+                                <div class="match-word" data-word="wisdom" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">wisdom</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="courage" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A close relationship with someone</div>
+                                <div class="match-def" data-word="wisdom" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something difficult to do</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Rescue - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The Cowardly Lion was much pleased to hear that the Wicked Witch had been melted by a bucket of water, and Dorothy at once unlocked the gate of his prison and set him free. They went in together to the castle, where Dorothy’s first act was to call all the Winkies together and tell them that they were no longer slaves. There was great rejoicing among the yellow Winkies, for they had been made to work hard during many years for the Wicked Witch, who had always treated them with great cruelty. They kept this day as a holiday, then and ever after, and spent the time in feasting and dancing. “If our friends, the Scarecrow and the Tin Woodman, were only with us,” said the Lion, “I should be quite happy.” “Don’t you suppose we could rescue them?” asked the girl anxiously. “We can try,” answered the Lion. So they called the yellow Winkies and asked them if they would help to rescue their friends, and the Winkies said that they would be delighted to do all in their power for Dorothy, who had set them free from bondage. So she chose a number of the Winkies who looked as if they knew the most, and they all started away. They traveled that day and part of the next until they came to the rocky plain where the Tin Woodman lay, all battered and bent. His axe was near him, but the blade was rusted and the handle broken off short. The Winkies lifted him tenderly in their arms, and carried him back to the Yellow Castle again, Dorothy shedding a few tears by the way at the sad plight of her old friend, and the Lion looking sober and sorry. When they reached the castle Dorothy said to the Winkies: “Are any of your people tinsmiths?” “Oh, yes. Some of us are very good tinsmiths,” they told her. “Then bring them to me,” she said. And when the tinsmiths came, bringing with them all their tools in baskets, she inquired, “Can you straighten out those dents in the Tin Woodman, and bend him back into shape again, and solder him together where he is broken?” The tinsmiths looked the Woodman over carefully and then answered that they thought they could mend him so he would be as good as ever. So they set to work in one of the big yellow rooms of the castle and worked for three days and four nights, hammering and twisting and bending and soldering and polishing and pounding at the legs and body and head of the Tin Woodman, until at last he was straightened out into his old form, and his joints worked as well as ever. To be sure, there were several patches on him, but the tinsmiths did a good job, and as the Woodman was not a vain man he did not mind the patches at all. When, at last, he walked into Dorothy’s room and thanked her for rescuing him, he was so pleased that he wept tears of joy, and Dorothy had to wipe every tear carefully from his face with her apron, so his joints would not be rusted. At the same time her own tears fell thick and fast at the joy of meeting her old friend again, and these tears did not need to be wiped away. As for the Lion, he wiped his eyes so often with the tip of his tail that it became quite wet, and he was obliged to go out into the courtyard and hold it in the sun till it dried. “If we only had the Scarecrow with us again,” said the Tin Woodman, when Dorothy had finished telling him everything that had happened, “I should be quite happy.” “We must try to find him,” said the girl. So she called the Winkies to help her, and they walked all that day and part of the next until they came to the tall tree in the branches of which the Winged Monkeys had tossed the Scarecrow’s clothes. It was a very tall tree, and the trunk was so smooth that no one could climb it; but the Woodman said at once, “I’ll chop it down, and then we can get the Scarecrow’s clothes.” Now while the tinsmiths had been at work mending the Woodman himself, another of the Winkies, who was a goldsmith, had made an axe-handle of solid gold and fitted it to the Woodman’s axe, instead of the old broken handle. Others polished the blade until all the rust was removed and it glistened like burnished silver. As soon as he had spoken, the Tin Woodman began to chop, and in a short time the tree fell over with a crash, whereupon the Scarecrow’s clothes fell out of the branches and rolled off on the ground. Dorothy picked them up and had the Winkies carry them back to the castle, where they were stuffed with nice, clean straw; and behold! here was the Scarecrow, as good as ever, thanking them over and over again for saving him. Now that they were reunited, Dorothy and her friends spent a few happy days at the Yellow Castle, where they found everything they needed to make them comfortable. But one day the girl thought of Aunt Em, and said, “We must go back to Oz, and claim his promise.” “Yes,” said the Woodman, “at last I shall get my heart.” “And I shall get my brains,” added the Scarecrow joyfully. “And I shall get my courage,” said the Lion thoughtfully. “And I shall get back to Kansas,” cried Dorothy, clapping her hands. “Oh, let us start for the Emerald City tomorrow!” This they decided to do. The next day they called the Winkies together and bade them good-bye. The Winkies were sorry to have them go, and they had grown so fond of the Tin Woodman that they begged him to stay and rule over them and the Yellow Land of the West. Finding they were determined to go, the Winkies gave Toto and the Lion each a golden collar; and to Dorothy they presented a beautiful bracelet studded with diamonds; and to the Scarecrow they gave a gold-headed walking stick, to keep him from stumbling; and to the Tin Woodman they offered a silver oil-can, inlaid with gold and set with precious jewels. Every one of the travelers made the Winkies a pretty speech in return, and all shook hands with them until their arms ached. Dorothy went to the Witch’s cupboard to fill her basket with food for the journey, and there she saw the Golden Cap. She tried it on her own head and found that it fitted her exactly. She did not know anything about the charm of the Golden Cap, but she saw that it was pretty, so she made up her mind to wear it and carry her sunbonnet in the basket. Then, being prepared for the journey, they all started for the Emerald City; and the Winkies gave them three cheers and many good wishes to carry with them.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Rescue - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Rescue - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> What was the main event in this chapter?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> The characters met someone new</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> They overcame a challenge</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> They learned something important</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> All of the above</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> How did the main character change or grow in this chapter?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> Think about what they learned or how they felt.</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-61" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-61-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Sentence Types</h2>
+                        <div class="skill-explanation">
+                            <p>Sentences can be statements, questions, commands, or exclamations.</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>Statement: The dog ran.</li><li>Question: Where is it?</li><li>Command: Sit down.</li><li>Exclamation: Watch out!</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Write one of each sentence type.</p><textarea id="skill-61-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-61-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Identify the sentence type: "Close the door!"</p><textarea id="skill-61-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-61-2-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: Did You Know?</h2>
+                        <div class="informational-article">
+                            <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-61-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-61-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-61-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-61-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-61" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-61-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson61Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 1 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767895572">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767895572"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767895572"></script>
+    <script src="js/lesson-completion.js?v=1773767895572"></script>
+    <script src="js/lesson-autosave.js?v=1773767895572"></script>
+
+    <script>
+        const lesson1Config = {
+            lessonId: '4th-grade-day-001',
+            gradeLevel: '4th-grade',
+            title: 'Day 1 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 1</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 1</p>
+                        <p class="chapter-info">The Cyclone</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 1!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Cyclone</li>
+                                <li>Practice Sentence Types: Statements and Questions</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a writing activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. prairie</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-1-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-1-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. cyclone</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-1-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-1-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="prairie" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">prairie</div>
+                                <div class="match-word" data-word="cyclone" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">cyclone</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="prairie" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A large, flat area of grassland with few or no trees.</div>
+                                <div class="match-def" data-word="cyclone" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A powerful, spinning windstorm that can cause great destruction.</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cyclone - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">Dorothy lived in the middle of the great Kansas prairies with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small — just one room — with a rusty stove, a cupboard, a table, and three or four chairs. There were no curtains, no pictures on the walls, and nothing pretty at all.</p><p style="margin-bottom: 15px;">Uncle Henry never laughed. He worked from morning till night and rarely spoke. Aunt Em had once been young and cheerful, but years of sun and wind on the dry prairie had taken the color from her eyes and cheeks. She never smiled anymore, either.</p><p style="margin-bottom: 15px;">It was Toto who made Dorothy laugh. Toto was a small, scrappy black dog with long silky hair and bright little eyes that twinkled on either side of his funny nose. Dorothy loved Toto dearly. He was the one thing in Kansas that was not gray.</p><p style="margin-bottom: 15px;">Everything around them was gray. The sun had baked the plowed land into a gray mass. Even the paint on the house had faded until it was as dull and gray as everything else. When Aunt Em first came to Kansas, the sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also.</p><p style="margin-bottom: 15px;">Dorothy often looked out at the flat, gray world and felt something like loneliness, though she did not know the word for it. Toto was not gray. He saved her from growing as gray as everything else around her.</p><p style="margin-bottom: 15px;">One afternoon, Uncle Henry sat on the doorstep and looked up at the sky, which was even grayer than usual. Dorothy stood in the doorway holding Toto and watching too. From the far north, they heard a low wail of the wind. They could see the long grass bowing in waves before the coming storm.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cyclone - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">"There's a cyclone coming, Em," Uncle Henry called to his wife. "I'll go look after the stock." Then he ran toward the sheds where the cows and horses were kept.</p><p style="margin-bottom: 15px;">Aunt Em dropped what she was doing and hurried to the door. One look at the sky told her the danger was real. "Quick, Dorothy!" she screamed. "Run for the cellar!"</p><p style="margin-bottom: 15px;">Toto jumped out of Dorothy's arms and hid under the bed. Dorothy started to chase after him. Aunt Em threw open the trapdoor in the floor and climbed down into the small, dark hole beneath the house. Dorothy caught Toto at last and started to follow her aunt.</p><p style="margin-bottom: 15px;">But she was too late.</p><p style="margin-bottom: 15px;">Before she was halfway across the room, a terrible shriek came from the wind. The house shook so hard that Dorothy lost her footing and fell to the floor. Then a strange thing happened.</p><p style="margin-bottom: 15px;">The house tilted, then tilted more, and then — with a great groaning sound — it was lifted right up into the air by the cyclone, as easily as you might pick up a feather. Up and up and up it went, spinning slowly, carried by the mighty wind.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cyclone - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The house was caught in the very center of the cyclone. The wind on every side pressed against it equally, and it was carried along like a balloon, rising higher and higher. It was very dark, and the wind howled terribly around her, but Dorothy found, after the first few moments, that she was not being tossed about. The house swayed gently, like a baby being rocked in a cradle.</p><p style="margin-bottom: 15px;">Toto did not like it. He ran around the room, barking, but Dorothy sat quite still on the floor and waited to see what would happen.</p><p style="margin-bottom: 15px;">Once, Toto got too near the open trapdoor and fell in with a little yelp. Dorothy thought she had lost him. But his ear stuck up through the hole, and she grabbed it and pulled him back into the room. Then she closed the trapdoor so no more accidents could happen.</p><p style="margin-bottom: 15px;">Hours passed. Slowly, Dorothy got over her fright. She felt quite lonely with the wind screaming so loudly around her, but there was nothing to do except sit and wait. Eventually, she crawled across the swaying floor to her bed, and Toto followed her. Dorothy lay down and, despite the swaying and the howling wind, fell fast asleep.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> What is Dorothy's life like in Kansas before the cyclone?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> Exciting and full of adventure</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> Gray, flat, and quiet — Uncle Henry and Aunt Em rarely smile or laugh</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> She lives in a big city with many friends</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> She goes to school and plays sports</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> The author describes Kansas as gray over and over. Why do you think he does this? What might he be setting up for later in the story?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> Think about contrast. If Kansas is gray, what might the NEXT place look like?</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-1" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-1-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Sentence Types: Statements and Questions</h2>
+                        <div class="skill-explanation">
+                            <p>There are four types of sentences, and today we'll focus on two: statements and questions.
+
+**Statements** tell us something and end with a period (.)
+Example: Dorothy lived in Kansas.
+
+**Questions** ask something and end with a question mark (?)
+Example: Where does Dorothy live?</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>The Scarecrow stood in the field. (statement)</li><li>Where is the Emerald City? (question)</li><li>Toto is Dorothy's dog. (statement)</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Turn this statement into a question: The cyclone lifted the house.</p><textarea id="skill-1-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-1-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Write a statement about Dorothy.</p><textarea id="skill-1-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-1-2-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>3.</strong> Write a question about the Wizard.</p><textarea id="skill-1-3" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-1-3-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: L. Frank Baum: The Man Behind Oz</h2>
+                        <div class="informational-article">
+                            <p>L. Frank Baum was born in 1856 in New York. As a young man, he tried many jobs — actor, newspaper reporter, store owner — but none made him truly happy. What he loved most was telling stories to children.</p><p>In 1899, Baum published his first successful children's book. But it was "The Wonderful Wizard of Oz," published in 1900, that made him famous. The story came to him while entertaining neighborhood children. He told them about a girl from Kansas who traveled to a magical land, and the children begged him to write it down.</p><p>Baum wanted to create a new kind of fairy tale — one that was purely American, without scary monsters or dark warnings. His stories were filled with wonder, friendship, and hope. He believed children deserved stories that made them smile, not nightmares that frightened them.</p><p>"The Wonderful Wizard of Oz" became an instant bestseller. Children loved Dorothy's adventures, and adults appreciated the book's deeper messages about courage, friendship, and finding your way home. Baum wrote 13 more Oz books before he died in 1919.</p><p>Today, over 120 years later, Dorothy and her friends are still beloved around the world. L. Frank Baum's dream of creating timeless American fairy tales came true.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <textarea id="info-1-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-1-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <textarea id="info-1-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-1-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-1" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-1-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson1Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Minimal Render Test</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <style>
+        body { padding: 20px; background: #f5f5f5; }
+        .debug { background: white; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        pre { background: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="debug">
+        <h1>Minimal Render Function Test</h1>
+        <p>This tests if the <code>render: () =&gt; `...`</code> format works at all.</p>
+    </div>
+    
+    <div id="lesson-container"></div>
+    
+    <div class="debug">
+        <h2>Debug Output:</h2>
+        <pre id="debug"></pre>
+    </div>
+
+    <script src="js/lesson-viewer.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js"></script>
+    <script src="js/lesson-autosave.js"></script>
+    
+    <script>
+        const debug = document.getElementById('debug');
+        function log(msg) {
+            debug.textContent += msg + '\n';
+            console.log(msg);
+        }
+        
+        log('1. Creating minimal lesson config...');
+        
+        const minimalConfig = {
+            lessonId: 'minimal-test',
+            gradeLevel: '4th-grade',
+            title: 'Minimal Test',
+            pages: [
+                {
+                    render: () => `
+                        <div class="lesson-page-card title-page">
+                            <h1>Test Page 1</h1>
+                            <p>If you can see this, render() functions work!</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Test Page 2</h2>
+                            <p>This is the second page.</p>
+                            <textarea placeholder="Test input..."></textarea>
+                        </div>
+                    `
+                }
+            ]
+        };
+        
+        log('2. Config created with ' + minimalConfig.pages.length + ' pages');
+        log('3. Checking if initLessonViewer exists: ' + (typeof initLessonViewer));
+        
+        if (typeof initLessonViewer === 'function') {
+            log('4. Calling initLessonViewer...');
+            try {
+                initLessonViewer(minimalConfig);
+                log('5. SUCCESS! initLessonViewer executed without errors');
+                log('6. If you see content above, the render format works!');
+            } catch (error) {
+                log('5. ERROR calling initLessonViewer: ' + error.message);
+                log('Stack: ' + error.stack);
+            }
+        } else {
+            log('4. ERROR: initLessonViewer is not a function!');
+            log('Type: ' + typeof initLessonViewer);
+        }
+    </script>
+</body>
+</html>

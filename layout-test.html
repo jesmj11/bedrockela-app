@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Layout Test - BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js"></script>
+    <script src="js/lesson-autosave.js"></script>
+    
+    <script>
+        const layoutTestConfig = {
+            lessonId: 'layout-test',
+            gradeLevel: 'test',
+            title: 'Layout Test - Nav Bars & Card',
+            pages: [
+                {
+                    render: () => `
+                        <div class="lesson-page-card title-page">
+                            <h1>Layout Test</h1>
+                            <h2>Page 1 - Title Page</h2>
+                            <p style="margin-top: 40px;">✅ Top nav bar should be at the very top</p>
+                            <p>✅ Bottom nav bar should be at the very bottom</p>
+                            <p>✅ This white card should fill the space between them</p>
+                            <p style="margin-top: 40px; padding: 20px; background: #f0f0f0; border-radius: 10px;">
+                                <strong>Check:</strong><br>
+                                • No excessive white space around the card<br>
+                                • Card height fills from top nav to bottom nav<br>
+                                • Nav bars are visible and clickable<br>
+                                • Content is centered and readable
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Page 2 - Content Page</h2>
+                            <p>This is a regular content page with more text to test scrolling.</p>
+                            
+                            <h3>Test Section 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            
+                            <h3>Test Section 2</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            
+                            <h3>Test Section 3</h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: #e8f5e9; border-radius: 10px;">
+                                <strong>✅ Layout Goals Achieved:</strong><br>
+                                • Top nav stays at top<br>
+                                • Bottom nav stays at bottom<br>
+                                • White card fills the middle<br>
+                                • Content scrolls within the card if needed<br>
+                                • No layout breakage
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>Page 3 - Textarea Test</h2>
+                            <p>Testing that textboxes work correctly with the new layout:</p>
+                            
+                            <label><strong>Test Input:</strong></label>
+                            <textarea rows="5" placeholder="Type something here..." style="width: 100%; box-sizing: border-box; margin: 10px 0;"></textarea>
+                            
+                            <label><strong>Another Test:</strong></label>
+                            <textarea rows="5" placeholder="More text..." style="width: 100%; box-sizing: border-box; margin: 10px 0;"></textarea>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: #fff3e0; border-radius: 10px;">
+                                <strong>🎯 Final Check:</strong><br>
+                                If you can click Previous/Next arrows, see all content, and the layout looks clean - the fix worked! ✅
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        };
+
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(layoutTestConfig);
+        } else {
+            console.error('initLessonViewer function not found!');
+        }
+    </script>
+</body>
+</html>

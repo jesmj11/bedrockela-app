@@ -322,20 +322,23 @@
             
             // Route to appropriate lesson page based on normalized grade
             // All grades now use the format: {grade}-grade-day-{N}.html
+            // Pad lesson number with leading zeros (e.g., 4 -> 004)
+            const paddedLesson = String(currentLesson).padStart(3, '0');
+            
             if (gradeLevel === '1st-grade') {
-                window.location.href = `1st-grade-day-${currentLesson}.html`;
+                window.location.href = `1st-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '2nd-grade') {
-                window.location.href = `2nd-grade-day-${currentLesson}.html`;
+                window.location.href = `2nd-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '3rd-grade') {
-                window.location.href = `3rd-grade-day-${currentLesson}.html`;
+                window.location.href = `3rd-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '4th-grade') {
-                window.location.href = `4th-grade-day-${currentLesson}.html`;
+                window.location.href = `4th-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '5th-grade') {
-                window.location.href = `5th-grade-day-${currentLesson}.html`;
+                window.location.href = `5th-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '6th-grade') {
-                window.location.href = `6th-grade-day-${currentLesson}.html`;
+                window.location.href = `6th-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '7th-grade') {
-                window.location.href = `7th-grade-day-${currentLesson}.html`;
+                window.location.href = `7th-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '8th-grade') {
                 // Pad lesson number to 3 digits (001, 002, etc.)
                 const paddedLesson = String(currentLesson).padStart(3, '0');

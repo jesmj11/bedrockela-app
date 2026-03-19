@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>CSS Debug - BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css">
+    <style>
+        .debug-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.95);
+            color: #0f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 11px;
+            z-index: 10000;
+            max-width: 350px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .debug-section {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+        }
+        .debug-title {
+            color: #ff0;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+    
+    <div class="debug-panel">
+        <div style="color:#ff0;font-size:14px;margin-bottom:15px;">🔍 CSS DEBUG PANEL</div>
+        <div id="debug-output"></div>
+    </div>
+
+    <script src="js/lesson-viewer.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js"></script>
+    <script src="js/lesson-autosave.js"></script>
+    
+    <script>
+        const debugOutput = document.getElementById('debug-output');
+        
+        function addDebugSection(title, content) {
+            const section = document.createElement('div');
+            section.className = 'debug-section';
+            section.innerHTML = `<div class="debug-title">${title}</div>${content}`;
+            debugOutput.appendChild(section);
+        }
+        
+        function getComputedStyles(element, props) {
+            if (!element) return 'Element not found';
+            const computed = window.getComputedStyle(element);
+            return props.map(prop => `${prop}: ${computed[prop]}`).join('<br>');
+        }
+        
+        setTimeout(() => {
+            // Check HTML
+            const html = document.documentElement;
+            addDebugSection('HTML Element', getComputedStyles(html, ['height', 'margin', 'padding']));
+            
+            // Check body
+            const body = document.body;
+            addDebugSection('BODY Element', getComputedStyles(body, ['height', 'margin', 'padding', 'overflow']));
+            
+            // Check container
+            const container = document.getElementById('lesson-container');
+            if (container) {
+                addDebugSection('#lesson-container', getComputedStyles(container, ['height', 'display', 'flexDirection', 'overflow']));
+                addDebugSection('#lesson-container metrics', 
+                    `offsetHeight: ${container.offsetHeight}px<br>` +
+                    `clientHeight: ${container.clientHeight}px<br>` +
+                    `scrollHeight: ${container.scrollHeight}px<br>` +
+                    `Window height: ${window.innerHeight}px`
+                );
+            } else {
+                addDebugSection('#lesson-container', 'NOT FOUND!');
+            }
+            
+            // Check nav bars
+            const topNav = document.querySelector('.lesson-nav-top');
+            if (topNav) {
+                const rect = topNav.getBoundingClientRect();
+                addDebugSection('.lesson-nav-top position', 
+                    `top: ${rect.top}px<br>` +
+                    `bottom: ${rect.bottom}px<br>` +
+                    `height: ${rect.height}px<br>` +
+                    `flexShrink: ${getComputedStyle(topNav).flexShrink}`
+                );
+            }
+            
+            const bottomNav = document.querySelector('.lesson-nav-bottom');
+            if (bottomNav) {
+                const rect = bottomNav.getBoundingClientRect();
+                addDebugSection('.lesson-nav-bottom position', 
+                    `top: ${rect.top}px<br>` +
+                    `bottom: ${rect.bottom}px<br>` +
+                    `height: ${rect.height}px<br>` +
+                    `Window height: ${window.innerHeight}px<br>` +
+                    `Distance from bottom: ${window.innerHeight - rect.bottom}px<br>` +
+                    `flexShrink: ${getComputedStyle(bottomNav).flexShrink}`
+                );
+            }
+            
+            // Check content area
+            const content = document.querySelector('.lesson-page-content');
+            if (content) {
+                addDebugSection('.lesson-page-content', 
+                    getComputedStyles(content, ['flex', 'display', 'overflow']) + '<br>' +
+                    `height: ${content.offsetHeight}px`
+                );
+            }
+            
+            // Check if CSS is loaded
+            const styles = Array.from(document.styleSheets).map(sheet => {
+                try {
+                    return sheet.href || 'inline';
+                } catch(e) {
+                    return 'blocked';
+                }
+            });
+            addDebugSection('Loaded Stylesheets', styles.join('<br>'));
+            
+        }, 1000);
+        
+        // Create test lesson
+        const cssDebugConfig = {
+            lessonId: 'css-debug',
+            gradeLevel: 'test',
+            title: 'CSS Debug Test',
+            pages: [
+                {
+                    render: () => `
+                        <div class="lesson-page-card title-page">
+                            <h1>CSS Debug</h1>
+                            <p style="margin-top: 40px;">Check the debug panel in the top-right corner.</p>
+                            <p>This shows the actual computed CSS values and positions.</p>
+                            <div style="margin-top: 40px; padding: 20px; background: #f0f0f0; border-radius: 10px; color: #000;">
+                                <strong>What to check:</strong><br><br>
+                                • Container height should be ${window.innerHeight}px (100vh)<br>
+                                • Container display should be "flex"<br>
+                                • Container flexDirection should be "column"<br>
+                                • Bottom nav "bottom" should be close to ${window.innerHeight}px<br>
+                                • Bottom nav "distance from bottom" should be near 0px
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        };
+
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(cssDebugConfig);
+        }
+    </script>
+</body>
+</html>

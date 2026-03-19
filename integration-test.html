@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Integration Test - BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=<?php echo time(); ?>">
+    <style>
+        .test-overlay {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.9);
+            color: #0f0;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 10000;
+            max-width: 300px;
+        }
+        .test-pass { color: #0f0; }
+        .test-fail { color: #f00; }
+        .test-warn { color: #ff0; }
+    </style>
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+    
+    <div class="test-overlay">
+        <div><strong>🧪 Integration Test</strong></div>
+        <div id="test-results"></div>
+    </div>
+
+    <script src="js/lesson-viewer.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js"></script>
+    <script src="js/lesson-autosave.js"></script>
+    
+    <script>
+        const testResults = document.getElementById('test-results');
+        const tests = [];
+        
+        function addTest(name, passed, details = '') {
+            tests.push({ name, passed, details });
+            updateDisplay();
+        }
+        
+        function updateDisplay() {
+            testResults.innerHTML = tests.map(t => {
+                const icon = t.passed ? '✅' : '❌';
+                const className = t.passed ? 'test-pass' : 'test-fail';
+                return `<div class="${className}">${icon} ${t.name}</div>${t.details ? '<div style="margin-left:20px;font-size:10px;">' + t.details + '</div>' : ''}`;
+            }).join('');
+        }
+        
+        // Run tests after page loads
+        setTimeout(() => {
+            // Test 1: Layout structure
+            const container = document.getElementById('lesson-container');
+            addTest('Container exists', !!container);
+            
+            const topNav = document.querySelector('.lesson-nav-top');
+            addTest('Top nav exists', !!topNav);
+            
+            const bottomNav = document.querySelector('.lesson-nav-bottom');
+            addTest('Bottom nav exists', !!bottomNav);
+            
+            const pageContent = document.querySelector('.lesson-page-content');
+            addTest('Page content exists', !!pageContent);
+            
+            const card = document.querySelector('.lesson-page-card');
+            addTest('Lesson card exists', !!card);
+            
+            // Test 2: Layout positions
+            if (container) {
+                const containerStyle = window.getComputedStyle(container);
+                addTest('Container is flexbox', containerStyle.display === 'flex');
+                addTest('Container flex-direction', containerStyle.flexDirection === 'column');
+            }
+            
+            if (topNav) {
+                const rect = topNav.getBoundingClientRect();
+                addTest('Top nav at top', rect.top < 20, `Top: ${rect.top}px`);
+            }
+            
+            if (bottomNav) {
+                const rect = bottomNav.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                addTest('Bottom nav at bottom', rect.bottom > windowHeight - 20, `Bottom: ${rect.bottom}px, Window: ${windowHeight}px`);
+            }
+            
+            if (card) {
+                const cardStyle = window.getComputedStyle(card);
+                addTest('Card has scroll', cardStyle.overflowY === 'auto' || cardStyle.overflowY === 'scroll');
+            }
+            
+            // Test 3: Navigation functionality
+            const prevBtn = document.querySelector('.nav-arrow:first-of-type');
+            const nextBtn = document.querySelector('.nav-arrow:last-of-type');
+            addTest('Previous button exists', !!prevBtn);
+            addTest('Next button exists', !!nextBtn);
+            
+            // Test 4: Content rendering
+            const heading = card?.querySelector('h1, h2');
+            addTest('Card has heading', !!heading);
+            
+            // Test 5: Responsive width
+            if (card) {
+                const rect = card.getBoundingClientRect();
+                const windowWidth = window.innerWidth;
+                const cardWidth = rect.width;
+                const fillsWidth = cardWidth > (windowWidth * 0.8); // Should fill at least 80% on most screens
+                addTest('Card fills width', fillsWidth, `Card: ${cardWidth}px, Window: ${windowWidth}px`);
+            }
+            
+            // Summary
+            const passed = tests.filter(t => t.passed).length;
+            const total = tests.length;
+            const allPassed = passed === total;
+            
+            setTimeout(() => {
+                testResults.innerHTML += `<hr style="border-color:#555;margin:10px 0;">`;
+                testResults.innerHTML += `<div style="font-weight:bold;${allPassed ? 'color:#0f0' : 'color:#f00'}">${passed}/${total} tests passed</div>`;
+                
+                if (allPassed) {
+                    testResults.innerHTML += `<div style="color:#0f0;margin-top:10px;">🎉 ALL SYSTEMS GO!</div>`;
+                } else {
+                    testResults.innerHTML += `<div style="color:#f00;margin-top:10px;">⚠️ Issues detected</div>`;
+                }
+            }, 100);
+            
+        }, 500);
+        
+        // Create test lesson
+        const integrationTestConfig = {
+            lessonId: 'integration-test',
+            gradeLevel: '4th-grade',
+            title: 'Integration Test - All Systems',
+            pages: [
+                {
+                    render: () => `
+                        <div class="lesson-page-card title-page">
+                            <h1>🧪 Integration Test</h1>
+                            <h2>Testing All Fixes Together</h2>
+                            <p style="margin-top: 40px;">This page tests:</p>
+                            <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+                                <li>✅ Correct render format (no blue screen)</li>
+                                <li>✅ Top nav at top of page</li>
+                                <li>✅ Bottom nav at bottom of page</li>
+                                <li>✅ White card fills middle area</li>
+                                <li>✅ Content scrolls within card</li>
+                                <li>✅ Navigation works (← →)</li>
+                                <li>✅ Layout stays intact</li>
+                            </ul>
+                            <p style="margin-top: 30px; padding: 15px; background: #e8f5e9; border-radius: 10px;">
+                                <strong>Check the green test results in the top-right corner!</strong>
+                            </p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>📚 Page 2 - Content Test</h2>
+                            <p>This tests regular content pages with scrolling.</p>
+                            
+                            <h3>Section 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            
+                            <h3>Section 2</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            
+                            <h3>Section 3</h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            
+                            <h3>Section 4</h3>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            
+                            <h3>Textarea Test</h3>
+                            <label>Test full-width textarea:</label>
+                            <textarea rows="5" placeholder="Type here..." style="width: 100%; box-sizing: border-box; margin: 10px 0;"></textarea>
+                            
+                            <div style="margin-top: 30px; padding: 20px; background: #fff3e0; border-radius: 10px;">
+                                <strong>✅ If you can see this and scroll smoothly, content rendering works!</strong>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>🎯 Page 3 - Final Check</h2>
+                            
+                            <div style="padding: 20px; background: #e3f2fd; border-radius: 10px; margin: 20px 0;">
+                                <h3>Layout Check:</h3>
+                                <p>✅ Can you see the top nav bar?</p>
+                                <p>✅ Can you see the bottom nav bar?</p>
+                                <p>✅ Is this white card filling the middle?</p>
+                                <p>✅ Do the Previous/Next buttons work?</p>
+                            </div>
+                            
+                            <div style="padding: 20px; background: #f3e5f5; border-radius: 10px; margin: 20px 0;">
+                                <h3>Format Check:</h3>
+                                <p>✅ No blue screen (content visible)?</p>
+                                <p>✅ All pages load correctly?</p>
+                                <p>✅ Textareas are full width?</p>
+                                <p>✅ Navigation arrows work?</p>
+                            </div>
+                            
+                            <div style="padding: 20px; background: #c8e6c9; border-radius: 10px; margin: 20px 0;">
+                                <h3>🎉 If ALL checks pass:</h3>
+                                <p><strong style="font-size: 18px;">Everything works together perfectly!</strong></p>
+                                <p>✅ Layout fixed</p>
+                                <p>✅ Format correct</p>
+                                <p>✅ No blue screens</p>
+                                <p>✅ Cache prevention active</p>
+                                <p>✅ Ready for students!</p>
+                            </div>
+                        </div>
+                    `
+                }
+            ]
+        };
+
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(integrationTestConfig);
+        } else {
+            console.error('initLessonViewer function not found!');
+            addTest('initLessonViewer exists', false);
+        }
+    </script>
+</body>
+</html>

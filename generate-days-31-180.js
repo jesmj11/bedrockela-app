@@ -1,0 +1,384 @@
+const fs = require('fs');
+
+console.log('📚 Generating 4th Grade Days 31-180 - Bedrock Spine\n');
+
+// Load Wizard of Oz data (we'll cycle through it for all units for now)
+const chapters = JSON.parse(fs.readFileSync('./book-data/wizard-of-oz-chapters.json', 'utf8'));
+
+// Convert chapters object to array
+const chaptersArray = Object.values(chapters);
+
+console.log(`📖 Loaded ${chaptersArray.length} chapters from Wizard of Oz\n`);
+
+// Simple vocab/comp generation (we'll improve this later)
+function getVocab(chapterNum) {
+  const words = ['word1', 'word2', 'adventure', 'journey', 'courage', 'wisdom', 'friendship', 'challenge'];
+  const defs = [
+    'A trip or experience',
+    'Something new to try',
+    'Being brave when scared',
+    'Knowledge and good judgment',
+    'A close relationship with someone',
+    'Something difficult to do'
+  ];
+  const idx1 = (chapterNum - 1) % words.length;
+  const idx2 = (chapterNum) % words.length;
+  return [
+    { word: words[idx1], partOfSpeech: 'noun', definition: defs[idx1 % defs.length] },
+    { word: words[idx2], partOfSpeech: 'noun', definition: defs[idx2 % defs.length] }
+  ];
+}
+
+function getComp(chapterNum) {
+  return {
+    mc: {
+      question: 'What was the main event in this chapter?',
+      choices: [
+        { letter: 'A', text: 'The characters met someone new' },
+        { letter: 'B', text: 'They overcame a challenge' },
+        { letter: 'C', text: 'They learned something important' },
+        { letter: 'D', text: 'All of the above' }
+      ]
+    },
+    short: {
+      question: 'How did the main character change or grow in this chapter?',
+      hint: 'Think about what they learned or how they felt.'
+    }
+  };
+}
+
+function getGrammarLesson(day) {
+  const grammar = [
+    { topic: 'Sentence Types', explanation: 'Sentences can be statements, questions, commands, or exclamations.', examples: ['Statement: The dog ran.', 'Question: Where is it?', 'Command: Sit down.', 'Exclamation: Watch out!'], practice: [{ prompt: 'Write one of each sentence type.' }, { prompt: 'Identify the sentence type: "Close the door!"' }] },
+    { topic: 'Subjects and Predicates', explanation: 'Every sentence has a subject (who/what) and predicate (what they do).', examples: ['The cat (subject) sleeps (predicate).'], practice: [{ prompt: 'Find the subject and predicate in: "Dorothy walked home."' }] },
+    { topic: 'Verb Tenses', explanation: 'Verbs show when something happens: past, present, or future.', examples: ['Past: walked', 'Present: walk', 'Future: will walk'], practice: [{ prompt: 'Change "run" to past tense.' }] },
+    { topic: 'Adjectives', explanation: 'Adjectives describe nouns.', examples: ['"The brave hero"'], practice: [{ prompt: 'Add adjectives to: "The ___ dog chased the ___ ball."' }] },
+    { topic: 'Adverbs', explanation: 'Adverbs describe verbs and often end in -ly.', examples: ['"She ran quickly."'], practice: [{ prompt: 'Add an adverb: "He spoke ___."' }] },
+    { topic: 'Commas', explanation: 'Commas separate items in a list or clauses.', examples: ['"I like apples, oranges, and grapes."'], practice: [{ prompt: 'Add commas: "She bought milk eggs and bread."' }] }
+  ];
+  return grammar[(day - 1) % grammar.length];
+}
+
+function getLanguageLesson(day) {
+  const language = [
+    { topic: 'Context Clues', explanation: 'Use surrounding words to figure out unknown words.', examples: ['"The dog was famished and ate everything." (famished = very hungry)'], practice: [{ prompt: 'What does "enormous" mean in: "The enormous elephant was bigger than a car"?' }] },
+    { topic: 'Synonyms', explanation: 'Words with similar meanings.', examples: ['happy/joyful', 'big/large'], practice: [{ prompt: 'Name a synonym for "brave".' }] },
+    { topic: 'Antonyms', explanation: 'Words with opposite meanings.', examples: ['hot/cold', 'up/down'], practice: [{ prompt: 'Name an antonym for "light".' }] },
+    { topic: 'Prefixes', explanation: 'Word parts added to the beginning (un-, re-, pre-).', examples: ['unhappy', 'replay', 'preview'], practice: [{ prompt: 'Add a prefix to "do" to mean "do again".' }] },
+    { topic: 'Suffixes', explanation: 'Word parts added to the end (-ful, -less, -ly).', examples: ['helpful', 'careless', 'quickly'], practice: [{ prompt: 'Add a suffix to "care" to mean "without care".' }] },
+    { topic: 'Homophones', explanation: 'Words that sound the same but have different meanings.', examples: ['to/two/too', 'there/their/they\'re'], practice: [{ prompt: 'Use "their" and "there" correctly in sentences.' }] }
+  ];
+  return language[(day - 1) % language.length];
+}
+
+function getInfoText(day) {
+  return {
+    title: 'Did You Know?',
+    content: 'Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.\n\nReading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.'
+  };
+}
+
+// Generate regular lesson
+function generateRegularDay(day) {
+  const chapterIndex = (day - 1) % chaptersArray.length;
+  const chapter = chaptersArray[chapterIndex];
+  const chapterNum = chapter.number || (chapterIndex + 1);
+  const week = Math.ceil(day / 5);
+  
+  const vocab = getVocab(chapterNum);
+  const comp = getComp(chapterNum);
+  const isOdd = day % 2 === 1;
+  const skill = isOdd ? getGrammarLesson(day) : getLanguageLesson(day);
+  const info = getInfoText(day);
+  
+  // Split chapter into 3 parts
+  let text = chapter.text || '';
+  let paragraphs = text.split('\n\n').filter(p => p.trim().length > 0);
+  if (paragraphs.length === 1) {
+    paragraphs = text.split('\n').filter(p => p.trim().length > 0);
+  }
+  if (paragraphs.length < 3) {
+    paragraphs = [text, '', ''];
+  }
+  const third = Math.ceil(paragraphs.length / 3);
+  const part1 = paragraphs.slice(0, third).join('\n\n');
+  const part2 = paragraphs.slice(third, third * 2).join('\n\n');
+  const part3 = paragraphs.slice(third * 2).join('\n\n');
+  
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day ${day} - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=${Date.now()}">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=${Date.now()}"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=${Date.now()}"></script>
+    <script src="js/lesson-completion.js?v=${Date.now()}"></script>
+    <script src="js/lesson-autosave.js?v=${Date.now()}"></script>
+
+    <script>
+        const lesson${day}Config = {
+            lessonId: '4th-grade-day-${String(day).padStart(3, '0')}',
+            gradeLevel: '4th-grade',
+            title: 'Day ${day} - The Wizard of Oz',
+            pages: [
+    {
+        render: () => \`
+                    <div class="lesson-page-card title-page">
+                        <h1>Day ${day}</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week ${week}</p>
+                        <p class="chapter-info">${chapter.title || 'Chapter ' + chapterNum}</p>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day ${day}!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read ${chapter.title || 'Chapter ' + chapterNum}</li>
+                                <li>Practice ${skill ? skill.topic : 'skills'}</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a ${isOdd ? 'writing' : 'journal'} activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. ${vocab[0].word}</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-${day}-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-${day}-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. ${vocab[1].word}</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-${day}-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-${day}-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="${vocab[0].word}" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">${vocab[0].word}</div>
+                                <div class="match-word" data-word="${vocab[1].word}" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">${vocab[1].word}</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="${vocab[0].word}" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">${vocab[0].definition}</div>
+                                <div class="match-def" data-word="${vocab[1].word}" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">${vocab[1].definition}</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                \`,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 ${chapter.title || 'Chapter ' + chapterNum} - Part 1</h2>
+                        <div class="story-content">
+                            ${part1.split('\n\n').map(p => '<p style="margin-bottom: 15px;">' + p + '</p>').join('')}
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 ${chapter.title || 'Chapter ' + chapterNum} - Part 2</h2>
+                        <div class="story-content">
+                            ${part2.split('\n\n').map(p => '<p style="margin-bottom: 15px;">' + p + '</p>').join('')}
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 ${chapter.title || 'Chapter ' + chapterNum} - Part 3</h2>
+                        <div class="story-content">
+                            ${part3.split('\n\n').map(p => '<p style="margin-bottom: 15px;">' + p + '</p>').join('')}
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> ${comp.mc.question}</p>
+                            ${comp.mc.choices.map(c => 
+                                '<label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;">' +
+                                    '<input type="radio" name="mc-q1" value="' + c.letter + '" style="margin-right: 10px;">' +
+                                    '<strong>' + c.letter + ')</strong> ' + c.text +
+                                '</label>'
+                            ).join('')}
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> ${comp.short.question}</p>
+                            ${comp.short.hint ? '<p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> ' + comp.short.hint + '</p>' : ''}
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-${day}" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-${day}-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ ${skill.topic}</h2>
+                        <div class="skill-explanation">
+                            <p>${skill.explanation}</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            ${skill.examples.map(ex => '<li>' + ex + '</li>').join('')}
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        ${skill.practice.map((p, i) =>
+                            '<div class="exercise-card">' +
+                                '<p><strong>' + (i + 1) + '.</strong> ' + p.prompt + '</p>' +
+                                '<textarea id="skill-' + day + '-' + (i + 1) + '" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>' +
+                                '<p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-' + day + '-' + (i + 1) + '-count">0</span> / 40-50</p>' +
+                            '</div>'
+                        ).join('')}
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: ${info.title || 'Learning More'}</h2>
+                        <div class="informational-article">
+                            ${(info.content || 'Content will be added.').split('\n\n').map(p => '<p>' + p + '</p>').join('')}
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-${day}-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-${day}-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-${day}-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-${day}-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                \`
+    },
+    {
+        render: () => \`
+                    <div class="lesson-page-card content-page">
+                        ${isOdd ? 
+                            '<h2>✍️ Writing Practice</h2>' +
+                            '<p>Write a paragraph about today\'s chapter. Use both vocabulary words.</p>' +
+                            '<label>Write 100-150 words:</label>' +
+                            '<div class="writing-prompt">' +
+                                '<textarea id="writing-' + day + '" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea>' +
+                                '<p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-' + day + '-count">0</span> / 100-150</p>' +
+                            '</div>' 
+                            : 
+                            '<h2>📝 Journal Response</h2>' +
+                            '<p>Reflect on today\'s reading. How would you feel if you were the main character? What would you do?</p>' +
+                            '<label>Write 100-150 words:</label>' +
+                            '<div class="journal-prompt">' +
+                                '<textarea id="journal-' + day + '" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea>' +
+                                '<p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-' + day + '-count">0</span> / 100-150</p>' +
+                            '</div>'
+                        }
+                    </div>
+                \`
+    }
+]
+        };
+
+        if (typeof initLessonViewer === 'function') {
+            initLessonViewer(lesson${day}Config);
+        } else {
+            console.error('initLessonViewer function not found!');
+        }
+    </script>
+</body>
+</html>`;
+}
+
+// Generate all days 31-180
+console.log('🔨 Starting generation...\n');
+
+let successCount = 0;
+let failCount = 0;
+
+for (let day = 31; day <= 180; day++) {
+  // Skip assessment days (35, 40, 45, 50, etc.)
+  if (day % 5 === 0) {
+    console.log(`⏭️  Day ${day} - Assessment day (keeping existing)`);
+    continue;
+  }
+  
+  try {
+    const html = generateRegularDay(day);
+    const filename = `4th-grade-day-${String(day).padStart(3, '0')}.html`;
+    fs.writeFileSync(filename, html);
+    console.log(`✅ Day ${day}`);
+    successCount++;
+  } catch (err) {
+    console.log(`❌ Day ${day} - ${err.message}`);
+    failCount++;
+  }
+}
+
+console.log(`\n🎉 4th Grade Days 31-180 Complete!`);
+console.log(`   ✅ Success: ${successCount}/120 lessons`);
+console.log(`   ❌ Failed: ${failCount}`);
+console.log(`\n📚 Bedrock Spine Structure:`);
+console.log(`   - 11 pages per lesson`);
+console.log(`   - Story split into 3 parts`);
+console.log(`   - Vocabulary matching game`);
+console.log(`   - Grammar/Language alternating`);
+console.log(`   - Writing/Journal alternating`);
+console.log(`   - Word count indicators on all textboxes`);

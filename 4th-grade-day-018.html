@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 18 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767895574">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767895574"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767895574"></script>
+    <script src="js/lesson-completion.js?v=1773767895574"></script>
+    <script src="js/lesson-autosave.js?v=1773767895574"></script>
+
+    <script>
+        const lesson18Config = {
+            lessonId: '4th-grade-day-018',
+            gradeLevel: '4th-grade',
+            title: 'Day 18 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 18</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 4</p>
+                        <p class="chapter-info">The Balloon</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 18!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Balloon</li>
+                                <li>Practice Compound Words</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a journal activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. inflate</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-18-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-18-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. vanished</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-18-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-18-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="inflate" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">inflate</div>
+                                <div class="match-word" data-word="vanished" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">vanished</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="inflate" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">To fill something with air or gas so it expands and rises.</div>
+                                <div class="match-def" data-word="vanished" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Disappeared suddenly and completely, as if into thin air.</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Balloon - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The man from Omaha set to work building a hot-air balloon. He had done it many times in the circus, and his hands remembered the craft even after all these years.</p><p style="margin-bottom: 15px;">He cut strips of green silk — there was plenty of green silk in the Emerald City — and sewed them together into a great bag, wider at the top and narrow at the bottom. He coated the inside with thin glue to keep the hot air from leaking out. Then he attached the bag to a large wicker basket, big enough for two people and one small dog.</p><p style="margin-bottom: 15px;">While he worked, word spread through the city that the great Wizard of Oz was leaving. The people were upset, but the man calmed them.</p><p style="margin-bottom: 15px;">"I am going away on a journey," he announced from the palace balcony. "While I am gone, the Scarecrow will rule over you. He has brains now, and he will govern you wisely."</p><p style="margin-bottom: 15px;">The people cheered. They loved the Scarecrow, who had helped kill the Wicked Witch.</p><p style="margin-bottom: 15px;">The Scarecrow was nervous. "I don't know anything about ruling a city," he whispered to Dorothy.</p><p style="margin-bottom: 15px;">"You'll figure it out," Dorothy said. "You always do."</p><p style="margin-bottom: 15px;">On the morning of the launch, the balloon was inflated in the great square before the palace. A fire underneath heated the air inside, and the green silk bag swelled and rose, tugging at the ropes that held it down. The whole city turned out to watch.</p><p style="margin-bottom: 15px;">Dorothy hugged her friends one by one.</p><p style="margin-bottom: 15px;">"Goodbye, Scarecrow," she said. "You were always the smartest person I knew — even before the brains."</p><p style="margin-bottom: 15px;">"Goodbye, Dorothy," the Scarecrow said. "I will miss you terribly. But I will try to think of cheerful things, since I now have brains to think with."</p><p style="margin-bottom: 15px;">"Goodbye, Tin Woodman," Dorothy said. "You have the biggest heart of anyone, and you always did."</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Balloon - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The Tin Woodman was crying so hard he could not speak. Dorothy oiled his jaw so it would not rust, and he managed to whisper, "You are the best friend I ever had."</p><p style="margin-bottom: 15px;">"Goodbye, Lion," Dorothy said. "You are the bravest creature in all of Oz."</p><p style="margin-bottom: 15px;">"Only because you believed in me," the Lion said. His great golden eyes were wet. "I was nothing before you came along."</p><p style="margin-bottom: 15px;">"That is not true," Dorothy said firmly. "You were always brave. You just didn't know it."</p><p style="margin-bottom: 15px;">The balloon strained against its ropes. The man from Omaha climbed into the basket and called to Dorothy. "Hurry! The balloon is ready! We must go now, before it lifts off without us!"</p><p style="margin-bottom: 15px;">Dorothy turned to get Toto — but the little dog had spotted a cat in the crowd and had run off barking. Dorothy chased after him.</p><p style="margin-bottom: 15px;">"Come back, Toto! Come back!"</p><p style="margin-bottom: 15px;">There was a snap. One of the ropes broke. Then another. The basket lurched upward.</p><p style="margin-bottom: 15px;">"Dorothy!" the man cried. "Hurry!"</p><p style="margin-bottom: 15px;">But Dorothy was still chasing Toto through the crowd. She caught him, scooped him up, and turned back — just in time to see the last rope break.</p><p style="margin-bottom: 15px;">The balloon rose into the air.</p><p style="margin-bottom: 15px;">"Come back!" Dorothy shouted. "Wait for me!"</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Balloon - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">"I can't!" the man called down. His voice was already faint. The balloon was rising fast, caught by the wind. "I don't know how to bring it down! Goodbye, Dorothy! Goodbye!"</p><p style="margin-bottom: 15px;">The balloon sailed up and up, growing smaller against the blue sky, until it was nothing but a green speck, and then nothing at all.</p><p style="margin-bottom: 15px;">Dorothy stood in the square, holding Toto, and watched it disappear.</p><p style="margin-bottom: 15px;">The man from Omaha was gone. And Dorothy was still in Oz.</p><p style="margin-bottom: 15px;">She did not cry. Not right away. She stood very still, feeling the weight of it — the closed door, the vanished hope, the enormous distance between her and Kansas.</p><p style="margin-bottom: 15px;">Then the Scarecrow put his stuffed hand on her shoulder. The Tin Woodman stood on her other side. The Lion pressed his great warm body against her back.</p><p style="margin-bottom: 15px;">"We will find another way," the Scarecrow said.</p><p style="margin-bottom: 15px;">"We will not give up," the Tin Woodman said.</p><p style="margin-bottom: 15px;">"We are with you," the Lion said.</p><p style="margin-bottom: 15px;">Dorothy looked at her three friends — the ones who were supposed to need her help, who had turned out to be the ones helping her — and she allowed herself one small, tired smile.</p><p style="margin-bottom: 15px;">"All right," she said. "Another way."</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> Why does the balloon leave without Dorothy?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> The Wizard leaves her behind on purpose</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> Toto chases a cat, Dorothy runs after him, and the ropes break before she can get back</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> The balloon is too small for two people</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> Dorothy decides she does not want to leave</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> Dorothy's hope of getting home disappears with the balloon. But her friends immediately gather around her and promise to find another way. What does this moment tell you about the value of friendship when things go wrong?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> Dorothy has lost her ride home, but she has not lost the people who love her. Sometimes that is the more important thing.</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-18" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-18-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Compound Words</h2>
+                        <div class="skill-explanation">
+                            <p>Two words combined to make one new word.</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>sun + light = sunlight</li><li>rain + bow = rainbow</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Make a compound word with "yellow"</p><textarea id="skill-18-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-18-1-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: Friendship Across Differences</h2>
+                        <div class="informational-article">
+                            <p>One of the most beautiful aspects of The Wizard of Oz is how four completely different individuals become loyal friends. Dorothy (human), the Scarecrow (straw), the Tin Woodman (metal), and the Lion (animal) have almost nothing in common — except their journey and their care for each other.</p><p>Each character believes they're missing something essential:
+- The Scarecrow thinks he's stupid because he has straw instead of a brain
+- The Tin Woodman thinks he can't feel because he has no heart
+- The Lion thinks he's a coward because he feels fear
+- Dorothy thinks she's powerless because she's far from home</p><p>Yet when we watch them interact, we see the truth:
+- The Scarecrow devises clever plans and solves problems
+- The Tin Woodman shows deep compassion and kindness
+- The Lion acts bravely despite his fears
+- Dorothy leads, decides, and shows remarkable courage</p><p>Their friendship works because they complement each other. When one character is weak in an area, another is strong. The Scarecrow's intelligence helps the group avoid danger. The Tin Woodman's compassion keeps them moral. The Lion's strength protects them. Dorothy's determination keeps them moving forward.</p><p>This is what good friendship looks like: not sameness, but complementary strengths. Not pretending to be perfect, but accepting each other's perceived flaws. Not competing, but cooperating toward a common goal.</p><p>Modern research on friendship confirms what Baum understood intuitively:
+- Friends who are too similar can become competitive
+- Diverse friendships expose us to different perspectives
+- Accepting differences builds stronger bonds than demanding similarity
+- Working together toward shared goals creates deep connections</p><p>The group's differences also prevent groupthink. Because they see the world differently, they catch things others might miss. The Scarecrow notices logical problems. The Tin Woodman notices ethical concerns. The Lion notices physical dangers. Dorothy notices emotional needs.</p><p>Their friendship teaches us:
+1. Look beyond surface differences to find common ground
+2. Value what others bring to the group, even if it's different from what you offer
+3. Don't define people by their limitations; see their strengths
+4. True friends help you see abilities you didn't know you had
+5. Working together makes everyone stronger than they'd be alone</p><p>In a world that often divides people by race, religion, nationality, or background, The Wizard of Oz offers a powerful counter-message: Friendship transcends all boundaries. A girl, a scarecrow, a tin man, and a lion prove that the only requirements for friendship are kindness, loyalty, and a shared journey toward something better.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <textarea id="info-18-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-18-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <textarea id="info-18-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-18-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-18" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-18-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson18Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

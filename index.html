@@ -161,7 +161,8 @@
     
     <!-- PWA Service Worker -->
     <script>
-        if ('serviceWorker' in navigator) {
+        // Temporarily disabled - causing caching issues
+        if (false && 'serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then(() => console.log('BedrockELA ready for offline use!'))
                 .catch(err => console.log('SW registration failed:', err));

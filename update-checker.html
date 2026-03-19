@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Force Update - BedrockELA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .card {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 10px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔄 Force Update Lessons</h1>
+        
+        <div class="warning">
+            ⚠️ <strong>Are you seeing old content or blue screens?</strong><br>
+            This tool will force your browser to download fresh lesson files.
+        </div>
+        
+        <div class="steps">
+            <h3>What This Does:</h3>
+            <ol>
+                <li>Unregisters all service workers</li>
+                <li>Deletes ALL cached lesson files</li>
+                <li>Clears browser storage</li>
+                <li>Forces fresh downloads from server</li>
+                <li>Reloads the page</li>
+            </ol>
+        </div>
+        
+        <button id="updateBtn" onclick="forceUpdate()">🚀 Force Update Now</button>
+        <button onclick="window.location.href='/'">🏠 Go Home</button>
+        
+        <div id="status"></div>
+        
+        <div class="steps" style="margin-top: 30px;">
+            <h3>Manual Method (if button doesn't work):</h3>
+            <ol>
+                <li><strong>Chrome/Edge:</strong> Press <code>Ctrl+Shift+R</code> (Windows) or <code>Cmd+Shift+R</code> (Mac)</li>
+                <li><strong>Firefox:</strong> Press <code>Ctrl+F5</code> (Windows) or <code>Cmd+Shift+R</code> (Mac)</li>
+                <li><strong>Safari:</strong> Hold <code>Shift</code> and click the reload button</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        async function forceUpdate() {
+            const btn = document.getElementById('updateBtn');
+            const status = document.getElementById('status');
+            
+            btn.disabled = true;
+            status.className = 'status info';
+            status.innerHTML = '⏳ Starting update process...';
+            
+            try {
+                // Step 1: Unregister service workers
+                status.innerHTML = '1/5 Unregistering service workers...';
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (let registration of registrations) {
+                        await registration.unregister();
+                    }
+                }
+                
+                await sleep(500);
+                
+                // Step 2: Delete all caches
+                status.innerHTML = '2/5 Deleting cached files...';
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(
+                        cacheNames.map(cacheName => caches.delete(cacheName))
+                    );
+                }
+                
+                await sleep(500);
+                
+                // Step 3: Clear storage
+                status.innerHTML = '3/5 Clearing browser storage...';
+                localStorage.clear();
+                sessionStorage.clear();
+                
+                await sleep(500);
+                
+                // Step 4: Clear IndexedDB
+                status.innerHTML = '4/5 Clearing databases...';
+                if ('indexedDB' in window) {
+                    const dbs = await window.indexedDB.databases();
+                    dbs.forEach(db => {
+                        window.indexedDB.deleteDatabase(db.name);
+                    });
+                }
+                
+                await sleep(500);
+                
+                // Step 5: Reload
+                status.className = 'status success';
+                status.innerHTML = '✅ 5/5 Update complete! Reloading in 2 seconds...<br><small>Your browser will now download fresh lesson files.</small>';
+                
+                setTimeout(() => {
+                    // Force full page reload with cache bypass
+                    window.location.href = window.location.href + '?t=' + Date.now();
+                }, 2000);
+                
+            } catch (error) {
+                btn.disabled = false;
+                status.className = 'status error';
+                status.innerHTML = `❌ Error: ${error.message}<br><br>
+                    <strong>Try the manual method above instead.</strong>`;
+            }
+        }
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        // Auto-run on page load if ?auto=true
+        if (window.location.search.includes('auto=true')) {
+            forceUpdate();
+        }
+    </script>
+</body>
+</html>

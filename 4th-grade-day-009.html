@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 9 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767895573">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767895573"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767895573"></script>
+    <script src="js/lesson-completion.js?v=1773767895573"></script>
+    <script src="js/lesson-autosave.js?v=1773767895573"></script>
+
+    <script>
+        const lesson9Config = {
+            lessonId: '4th-grade-day-009',
+            gradeLevel: '4th-grade',
+            title: 'Day 9 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 9</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 2</p>
+                        <p class="chapter-info">The Queen of the Field Mice</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 9!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Queen of the Field Mice</li>
+                                <li>Practice Pronouns: Replacing Nouns</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a writing activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. debt</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-9-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-9-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. scheme</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-9-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-9-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="debt" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">debt</div>
+                                <div class="match-word" data-word="scheme" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">scheme</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="debt" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something you owe someone because they helped you. An obligation to repay a kindness.</div>
+                                <div class="match-def" data-word="scheme" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A clever plan for getting something done, especially one that involves many steps.</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Queen of the Field Mice - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">Dorothy and Toto lay sleeping on the grass beyond the poppy field. The Scarecrow and the Tin Woodman stood over them, relieved that they had carried their friends to safety, but sick with worry about the Lion. He lay deep in the field of poisonous flowers, too heavy for them to move, sinking into a sleep from which he might never wake.</p><p style="margin-bottom: 15px;">"We must do something," the Tin Woodman said. "He is our friend."</p><p style="margin-bottom: 15px;">"I know," the Scarecrow said. "Let me think."</p><p style="margin-bottom: 15px;">He thought very hard. The Scarecrow always said he had no brains, but in moments like this, his head seemed to work better than anyone's.</p><p style="margin-bottom: 15px;">Just then, a wildcat burst from the tall grass, chasing a tiny field mouse. Without thinking, the Tin Woodman raised his axe and brought it down. The wildcat fell, and the mouse was saved.</p><p style="margin-bottom: 15px;">The little mouse looked up at the Tin Woodman with bright, grateful eyes. "You have saved my life," she said in a small, squeaking voice. "I am the Queen of the Field Mice. My subjects and I are forever in your debt."</p><p style="margin-bottom: 15px;">"It was nothing," the Tin Woodman said, bowing low. He truly meant it — he simply could not bear to see any creature hurt.</p><p style="margin-bottom: 15px;">Hundreds of mice appeared from the grass, surrounding their queen. They were tiny — no bigger than Dorothy's thumb — but there were so many of them that the ground seemed to ripple with brown fur.</p><p style="margin-bottom: 15px;">The Scarecrow's eyes brightened. "Your Majesty," he said, "I have an idea. Our friend the Lion is trapped in the poppy field, asleep. He is far too heavy for us to carry. But if the Tin Woodman were to build a cart, could your mice pull it?"</p><p style="margin-bottom: 15px;">The Queen tilted her tiny head. "The Lion is very large," she said. "But we are very many. Yes — I believe we could do it."</p><p style="margin-bottom: 15px;">The Tin Woodman set to work immediately. He was a woodcutter by trade, and even though his body was tin, his skill with an axe was extraordinary. He felled small trees, trimmed branches, and built a rough but sturdy cart in less than an hour.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Queen of the Field Mice - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">Meanwhile, the Scarecrow organized the mice. He tied strings of braided grass to the cart and attached them to the mice in long rows — thousands of mice, each one pulling with all its tiny strength.</p><p style="margin-bottom: 15px;">Getting the Lion onto the cart was the hardest part. He was enormous — as heavy as a boulder and completely limp. The Scarecrow pushed from behind while the Tin Woodman lifted from the side, and inch by inch, groaning and straining, they rolled the great beast onto the wooden platform.</p><p style="margin-bottom: 15px;">"Now," said the Queen, "pull!"</p><p style="margin-bottom: 15px;">The mice surged forward. The cart creaked, rocked, and then began to move — slowly at first, then faster, rolling through the poppy field toward clean air. The Scarecrow walked alongside, pushing when the wheels stuck. The Tin Woodman walked on the other side, steadying the Lion when he threatened to slide off.</p><p style="margin-bottom: 15px;">The poppies swayed around them, their deadly perfume thick in the air. The Scarecrow and Tin Woodman felt nothing — straw and tin do not breathe — but they moved as fast as they could for the sake of the mice, who were flesh and blood and very small.</p><p style="margin-bottom: 15px;">At last, the cart rolled out of the poppy field and onto clean grass. The mice collapsed in exhaustion, their tiny sides heaving. The Lion lay on the cart, still deeply asleep, but breathing.</p><p style="margin-bottom: 15px;">"He will wake when the fresh air clears the poison from his lungs," the Queen said. "Give him time."</p><p style="margin-bottom: 15px;">"Thank you," the Scarecrow said. "You saved our friend's life."</p><p style="margin-bottom: 15px;">"And your friend saved mine," the Queen replied, nodding at the Tin Woodman. "We are even. But if you ever need us again, come to this field and call. We will come."</p><p style="margin-bottom: 15px;">The mice disappeared into the grass like a brown river flowing back into the earth. The Scarecrow and the Tin Woodman sat down to wait.</p><p style="margin-bottom: 15px;">Dorothy woke first. She blinked in the sunlight, saw the Lion on the cart beside her, and sat up in alarm. "What happened?"</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Queen of the Field Mice - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The Scarecrow told her everything — the wildcat, the Queen, the cart, the rescue.</p><p style="margin-bottom: 15px;">"You did all that while I was asleep?" Dorothy asked.</p><p style="margin-bottom: 15px;">"You needed saving," the Tin Woodman said simply. "So we saved you."</p><p style="margin-bottom: 15px;">Dorothy felt tears prick her eyes. "You carried me out of the poppy field," she said. "And then you saved the Lion. You did all of this without being asked."</p><p style="margin-bottom: 15px;">"That is what friends do," the Scarecrow said.</p><p style="margin-bottom: 15px;">The Lion stirred. He opened one great eye, then the other. He yawned enormously, stretched, and looked around in confusion.</p><p style="margin-bottom: 15px;">"How did I get here?" he asked.</p><p style="margin-bottom: 15px;">"A thousand mice pulled you on a cart," Dorothy said.</p><p style="margin-bottom: 15px;">The Lion blinked. "I must still be dreaming."</p><p style="margin-bottom: 15px;">"You are not," the Tin Woodman said, smiling. "Welcome back."</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> How is the Lion rescued from the poppy field?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> He wakes up on his own</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> The Wizard comes to save him</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> Thousands of field mice pull him out on a cart the Tin Woodman built</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> Dorothy splashes water on him</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> The Tin Woodman saved the mouse queen without thinking — he simply could not stand to see a creature harmed. What does this automatic kindness tell us about whether he truly has no heart?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> When someone does something kind without being asked and without thinking about it, what does that reveal about their character?</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-9" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-9-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Pronouns: Replacing Nouns</h2>
+                        <div class="skill-explanation">
+                            <p>Pronouns replace nouns so we don't repeat the same words.
+
+Common pronouns: he, she, it, they, we, I, you, them, us
+
+Example:
+- Dorothy found the Scarecrow. *She* helped *him* down from the pole.
+(She = Dorothy, him = Scarecrow)</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>The Lion was scared. *He* wanted courage.</li><li>Dorothy and Toto traveled together. *They* walked many miles.</li><li>The Wizard gave gifts to the friends. *He* helped *them*.</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Replace with pronouns: Dorothy told the Scarecrow that Dorothy would help the Scarecrow.</p><textarea id="skill-9-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-9-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Write a sentence using at least two pronouns.</p><textarea id="skill-9-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-9-2-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: Emerald City: A Study in Green</h2>
+                        <div class="informational-article">
+                            <p>The Emerald City is one of literature's most memorable places — a gleaming green metropolis that seems too beautiful to be real. And guess what? It isn't entirely real.</p><p>In the story, everyone entering the Emerald City must wear green-tinted spectacles. The Guardian says it's to protect their eyes from the brightness of all those emeralds. But later we discover the truth: the spectacles make everything look green. The city might not be as emerald as it appears.</p><p>This reveals one of the story's deepest themes: appearance versus reality. Things aren't always what they seem. The "great and powerful" Wizard is just an ordinary man. The Scarecrow has a brain. The Tin Woodman has a heart. The Lion has courage. And the Emerald City might not be truly emerald.</p><p>Why did Baum make the city green? Green symbolizes many things: growth, renewal, hope, money, and even envy. In American culture, green is associated with prosperity — "greenbacks" means money. The Emerald City represents wealth and power, everything the characters think they need.</p><p>The idea of tinted spectacles is clever. In the 1890s, colored glasses were becoming fashionable. People wore rose-tinted glasses to make the world look prettier, or dark glasses to reduce glare. Baum took this concept and turned it into a metaphor: we see what we're told to see. If someone puts green glasses on us and says the city is green, we believe it.</p><p>This is a warning about manipulation and propaganda. Those in power can control how we see the world simply by controlling what we're allowed to see. The Wizard uses green spectacles to maintain his illusion of a magnificent city.</p><p>But here's the wonderful part: even after Dorothy knows the truth, she still thinks the Emerald City is beautiful. Sometimes the perception of beauty matters more than objective reality. If everyone believes something is wonderful, does it matter if it's "really" wonderful?</p><p>The Emerald City teaches us to question what we see and ask who benefits from our beliefs.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <textarea id="info-9-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-9-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <textarea id="info-9-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-9-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-9" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-9-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson9Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

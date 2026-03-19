@@ -1,6 +1,21 @@
 // BedrockELA Service Worker - Offline Learning Support
-const CACHE_NAME = 'bedrockela-v1.3-image-fix';
+const CACHE_NAME = 'bedrockela-v2.1-no-lesson-cache';
 const OFFLINE_URL = '/offline.html';
+
+// Force immediate activation
+self.addEventListener('install', (event) => {
+  console.log('BedrockELA Service Worker installing (v2.1)...');
+  self.skipWaiting(); // Force immediate activation
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('Caching essential resources...');
+        return cache.addAll(ESSENTIAL_CACHE).catch((error) => {
+          console.error('Failed to cache essential resources:', error);
+        });
+      })
+  );
+});
 
 // Essential files to cache for offline functionality
 const ESSENTIAL_CACHE = [
@@ -58,7 +73,7 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('BedrockELA Service Worker activating...');
+  console.log('BedrockELA Service Worker activating (v2.1)...');
   
   event.waitUntil(
     caches.keys()
@@ -73,8 +88,19 @@ self.addEventListener('activate', (event) => {
         );
       })
       .then(() => {
-        console.log('BedrockELA Service Worker ready!');
+        console.log('BedrockELA Service Worker ready! Force-claiming all clients...');
+        // Force immediate control of all pages
         return self.clients.claim();
+      })
+      .then(() => {
+        // Force reload all open pages
+        return self.clients.matchAll({ type: 'window' });
+      })
+      .then((clients) => {
+        clients.forEach(client => {
+          console.log('Reloading client:', client.url);
+          client.postMessage({ type: 'RELOAD' });
+        });
       })
   );
 });
@@ -91,8 +117,12 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // If online, cache the response and return it
-          if (response.status === 200) {
+          // NEVER cache lesson HTML files - always fetch fresh
+          const url = event.request.url;
+          const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-week-');
+          
+          if (!isLessonFile && response.status === 200) {
+            // Only cache non-lesson pages (homepage, portals, etc.)
             const responseClone = response.clone();
             caches.open(CACHE_NAME)
               .then((cache) => cache.put(event.request, responseClone))
@@ -101,7 +131,7 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // If offline, try to serve from cache
+          // If offline, try to serve from cache (but lessons won't be cached)
           return caches.match(event.request)
             .then((cachedResponse) => {
               if (cachedResponse) {
@@ -130,13 +160,16 @@ self.addEventListener('fetch', (event) => {
             // Only cache successful responses
             if (response.status === 200) {
               const responseClone = response.clone();
+              const url = event.request.url;
+              const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-week-');
               
-              // Cache curriculum content for offline access
-              if (CURRICULUM_CACHE.some(url => event.request.url.includes(url)) ||
+              // Cache curriculum content for offline access (EXCEPT lesson HTML files)
+              if (!isLessonFile && (
+                  CURRICULUM_CACHE.some(url => event.request.url.includes(url)) ||
                   event.request.url.includes('.html') ||
                   event.request.url.includes('.css') ||
                   event.request.url.includes('.js') ||
-                  event.request.url.includes('/images/')) {
+                  event.request.url.includes('/images/'))) {
                 
                 caches.open(CACHE_NAME)
                   .then((cache) => cache.put(event.request, responseClone))

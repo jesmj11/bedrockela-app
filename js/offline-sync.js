@@ -115,7 +115,8 @@ class OfflineSync {
     const normalizedGrade = gradeLevel.toLowerCase().replace(/\s+/g, '-');
     
     // All lessons now use the "day-X" format
-    return `/${normalizedGrade}-day-${lessonNum}.html`;
+    const paddedNum = String(lessonNum).padStart(3, "0");
+    return `/${normalizedGrade}-day-${paddedNum}.html`;
   }
 
   // Save cache metadata

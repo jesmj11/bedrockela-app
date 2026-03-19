@@ -3,20 +3,27 @@
 
 /* ===== RESET & BASE ===== */
 body.lesson-viewer {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
-.lesson-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+html {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.lesson-container,
+#lesson-container {
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
 }
 
 /* ===== TOP NAVIGATION ===== */
@@ -106,7 +113,7 @@ body.lesson-viewer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px 20px 15px 20px; /* Reduced top padding for more reading space */
+  padding: 20px;
   overflow: hidden;
   min-height: 0; /* Critical for flex shrinking */
 }
@@ -115,10 +122,9 @@ body.lesson-viewer {
 .lesson-page-card {
   background: #FFFFFF;
   border-radius: 25px;
-  padding: 15px 30px 30px 30px; /* Reduced top padding for more reading space */
-  width: 100%;
-  max-width: 900px;
-  max-height: 100%;
+  padding: 30px;
+  width: calc(100% - 40px); /* Responsive width with padding */
+  max-height: 100%; /* Don't exceed available space */
   box-shadow: 0 10px 40px rgba(0,0,0,0.15), 0 4px 15px rgba(0,0,0,0.1);
   border: 2px solid rgba(48,88,83,0.25);
   animation: pageSlideIn 0.3s ease;
@@ -131,24 +137,24 @@ body.lesson-viewer {
 /* Tablet */
 @media (min-width: 768px) {
   .lesson-page-card {
-    max-width: 750px;
-    padding: 20px 45px 35px 45px; /* Reduced top padding */
+    width: calc(100% - 60px);
+    padding: 40px 50px;
   }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .lesson-page-card {
-    max-width: 1000px;
-    padding: 20px 60px 40px 60px; /* Reduced top padding */
+    width: calc(100% - 80px);
+    padding: 50px 60px;
   }
 }
 
 /* Large Desktop */
 @media (min-width: 1400px) {
   .lesson-page-card {
-    max-width: 1200px;
-    padding: 25px 80px 50px 80px; /* Reduced top padding */
+    width: calc(100% - 100px);
+    padding: 60px 80px;
   }
 }
 
@@ -604,7 +610,8 @@ body.lesson-viewer {
         overflow: visible !important;
     }
     
-    .lesson-container {
+    .lesson-container,
+    #lesson-container {
         height: 100vh !important;
         overflow: visible !important;
         display: flex !important;

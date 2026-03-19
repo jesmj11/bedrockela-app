@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypass Service Worker</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f0f0f0; }
+        .btn { 
+            display: inline-block;
+            padding: 20px 40px; 
+            background: #4CAF50; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px;
+            font-size: 18px;
+            margin: 10px;
+        }
+        .btn:hover { background: #45a049; }
+        .instructions { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .code { background: #f4f4f4; padding: 10px; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Service Worker Bypass</h1>
+    
+    <div class="instructions">
+        <h2>Step 1: Unregister Service Worker</h2>
+        <p>Click this button to completely remove the service worker:</p>
+        <button class="btn" onclick="unregisterSW()">Unregister Service Worker</button>
+        <div id="sw-status"></div>
+    </div>
+
+    <div class="instructions">
+        <h2>Step 2: Open Lesson in New Tab</h2>
+        <p>After unregistering, click here to open Day 4 in a new tab:</p>
+        <a href="/4th-grade-day-004.html?bypass=true&t=1773702000" target="_blank" class="btn">Open Day 4</a>
+    </div>
+
+    <div class="instructions">
+        <h2>OR: Manual Steps</h2>
+        <ol>
+            <li>Open DevTools (F12)</li>
+            <li>Go to <strong>Application</strong> tab</li>
+            <li>Click <strong>Service Workers</strong> in left sidebar</li>
+            <li>Click <strong>Unregister</strong> next to the service worker</li>
+            <li>Click <strong>Clear site data</strong> button</li>
+            <li>Close DevTools and refresh</li>
+        </ol>
+    </div>
+
+    <script>
+        async function unregisterSW() {
+            const status = document.getElementById('sw-status');
+            status.innerHTML = '<p>🔄 Unregistering service workers...</p>';
+            
+            try {
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    
+                    if (registrations.length === 0) {
+                        status.innerHTML = '<p style="color: orange;">⚠️ No service workers found</p>';
+                        return;
+                    }
+                    
+                    for (let registration of registrations) {
+                        await registration.unregister();
+                    }
+                    
+                    status.innerHTML = `<p style="color: green;">✅ Unregistered ${registrations.length} service worker(s)</p><p>Now click "Open Day 4" above</p>`;
+                } else {
+                    status.innerHTML = '<p style="color: red;">❌ Service workers not supported</p>';
+                }
+            } catch (error) {
+                status.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        }
+
+        // Show current service worker status on load
+        window.addEventListener('load', async () => {
+            const status = document.getElementById('sw-status');
+            if ('serviceWorker' in navigator) {
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                if (registrations.length > 0) {
+                    status.innerHTML = `<p style="color: orange;">⚠️ ${registrations.length} service worker(s) currently active</p>`;
+                } else {
+                    status.innerHTML = '<p style="color: green;">✅ No service workers active</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

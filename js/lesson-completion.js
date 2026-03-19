@@ -203,8 +203,9 @@ class LessonCompletion {
 
   // Get correct URL for next lesson based on grade
   getNextLessonUrl(lessonNum) {
-    // All grades use the same URL format: Xth-grade-day-N.html
-    return `${this.gradeLevel}-day-${lessonNum}.html`;
+    // All grades use the same URL format: Xth-grade-day-NNN.html (with leading zeros)
+    const paddedNum = String(lessonNum).padStart(3, '0');
+    return `${this.gradeLevel}-day-${paddedNum}.html`;
   }
 
   // Update student progress in Firebase
