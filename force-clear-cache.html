@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache - BedrockELA</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #305853, #1B2A30);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        p { font-size: 1.2rem; line-height: 1.6; margin: 15px 0; }
+        button {
+            background: #B06821;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background: #8B5319;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 1rem;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear Cache</h1>
+        <p>If you're seeing issues (blue screen, old content), clear the cache!</p>
+        
+        <button onclick="clearCache()">Clear Cache Now</button>
+        <button onclick="window.location.href='student-dashboard.html'">Go to Dashboard</button>
+        
+        <div class="status" id="status">Ready to clear cache...</div>
+    </div>
+
+    <script>
+        async function clearCache() {
+            const status = document.getElementById('status');
+            status.textContent = '🔄 Clearing cache...';
+            
+            try {
+                // Clear all caches
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    status.textContent = `Found ${cacheNames.length} caches. Deleting...`;
+                    
+                    for (const cacheName of cacheNames) {
+                        await caches.delete(cacheName);
+                        console.log(`Deleted cache: ${cacheName}`);
+                    }
+                }
+                
+                // Clear localStorage (except student login)
+                const student = localStorage.getItem('bedrockela_student');
+                localStorage.clear();
+                if (student) {
+                    localStorage.setItem('bedrockela_student', student);
+                }
+                
+                // Clear sessionStorage
+                sessionStorage.clear();
+                
+                status.innerHTML = '✅ Cache cleared!<br><br>Now reload the page:<br><strong>Press Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)</strong>';
+                
+                // Auto-reload after 2 seconds
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 2000);
+                
+            } catch (error) {
+                status.textContent = `❌ Error: ${error.message}`;
+                console.error(error);
+            }
+        }
+        
+        // Show browser info
+        window.addEventListener('DOMContentLoaded', () => {
+            const status = document.getElementById('status');
+            const ua = navigator.userAgent;
+            let browser = 'Unknown';
+            if (ua.includes('Chrome')) browser = 'Chrome';
+            else if (ua.includes('Firefox')) browser = 'Firefox';
+            else if (ua.includes('Safari')) browser = 'Safari';
+            else if (ua.includes('Edge')) browser = 'Edge';
+            
+            status.textContent = `Browser: ${browser} | Ready to clear!`;
+        });
+    </script>
+</body>
+</html>
