@@ -707,3 +707,177 @@ html {
 .billy-speak-btn:active {
     transform: scale(0.95);
 }
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    /* Reset body for printing */
+    body.lesson-viewer {
+        background: white !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    html {
+        height: auto !important;
+    }
+    
+    /* Hide all navigation and interactive elements */
+    .lesson-nav-top,
+    .lesson-nav-bottom,
+    .nav-btn-home,
+    .lesson-progress-bar,
+    .lesson-info,
+    button,
+    .no-print {
+        display: none !important;
+    }
+    
+    /* Make container printable */
+    .lesson-container,
+    #lesson-container {
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+    
+    /* Show all pages in sequence */
+    .lesson-content {
+        height: auto !important;
+        overflow: visible !important;
+        display: block !important;
+    }
+    
+    /* Each card gets its own page */
+    .lesson-page-card {
+        page-break-after: always;
+        page-break-inside: avoid;
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        margin-bottom: 20px;
+        padding: 40px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Don't break after the last card */
+    .lesson-page-card:last-child {
+        page-break-after: auto;
+    }
+    
+    /* Title page */
+    .title-page {
+        text-align: center;
+        padding-top: 100px !important;
+    }
+    
+    .title-page h1 {
+        font-size: 36pt;
+        color: #000 !important;
+        margin-bottom: 20px;
+    }
+    
+    .title-page h2 {
+        font-size: 24pt;
+        color: #333 !important;
+    }
+    
+    /* Regular content pages */
+    .content-page h2 {
+        color: #000 !important;
+        font-size: 18pt;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .content-page h3 {
+        color: #333 !important;
+        font-size: 14pt;
+    }
+    
+    /* Story content */
+    .story-content p {
+        font-size: 11pt;
+        line-height: 1.6;
+        margin-bottom: 12pt;
+        color: #000 !important;
+    }
+    
+    /* Text areas and inputs */
+    textarea,
+    input[type="text"] {
+        border: 1px solid #000 !important;
+        background: white !important;
+        padding: 10px;
+        font-size: 10pt;
+        min-height: 60px;
+        page-break-inside: avoid;
+    }
+    
+    /* Question cards */
+    .question-card {
+        border: 1px solid #000 !important;
+        padding: 15px;
+        margin: 15px 0;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Multiple choice options */
+    label {
+        display: block !important;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ddd !important;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+    
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+    
+    /* Vocabulary cards */
+    .vocab-word-card {
+        border: 1px solid #000 !important;
+        padding: 15px;
+        margin: 15px 0;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Remove gradients and backgrounds */
+    * {
+        background-image: none !important;
+    }
+    
+    /* Ensure good contrast */
+    p, li, span, div {
+        color: #000 !important;
+    }
+    
+    /* Links */
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+    
+    /* Page margins */
+    @page {
+        margin: 0.75in;
+    }
+    
+    /* Print footer with lesson info */
+    .lesson-page-card::after {
+        content: "";
+        display: block;
+        text-align: center;
+        font-size: 9pt;
+        color: #666;
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+    }
+}
