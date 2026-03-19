@@ -756,8 +756,22 @@ his arms.</p>
         };
         
         // Initialize lesson viewer
-        if (typeof initLessonViewer === 'function') {
-            initLessonViewer(lesson38Config);
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson38Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
         }
     </script>
 

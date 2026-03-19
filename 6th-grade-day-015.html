@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 10 Assessment - 6th Grade BedrockELA</title>
+    <title>Day 15 Assessment - 6th Grade BedrockELA</title>
     <link rel="stylesheet" href="css/lesson-viewer.css?v=1772665488">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -23,17 +23,17 @@
     <script src="js/text-to-speech.js?v=1772665488"></script>
     
     <script>
-        const lesson10Config = {
-            lessonId: '6th-grade-day-10',
+        const lesson15Config = {
+            lessonId: '6th-grade-day-15',
             gradeLevel: '6th-grade',
-            title: 'Day 10 Assessment - 6th Grade',
+            title: 'Day 15 Assessment - 6th Grade',
             pages: [
                 // Page 1: Title
                 {
                     render: () => `
                         <div class="lesson-page-card title-page">
                             
-                            <h1>Lesson 10</h1>
+                            <h1>Lesson 15</h1>
                             <div class="subtitle">Assessment Day</div>
                             <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
                                 The Adventures of Tom Sawyer
@@ -49,10 +49,10 @@
                             <h2>Assessment Instructions</h2>
                             <p>Today is an assessment day! You'll be tested on:</p>
                             <ul style="margin: 20px 0; line-height: 2;">
-                                <li><strong>Vocabulary:</strong> 20 words from Days 6-10</li>
+                                <li><strong>Vocabulary:</strong> 20 words from Days 11-15</li>
                                 <li><strong>Reading Comprehension:</strong> Questions about the chapters</li>
                                 <li><strong>Grammar:</strong> Adjectives and Adjective Order</li>
-                                <li><strong>Writing:</strong> Opinion Writing</li>
+                                <li><strong>Writing:</strong> Narrative Writing</li>
                             </ul>
                             <p><strong>Time needed:</strong> About 45-60 minutes</p>
                             <p style="padding: 15px; background: #fffbf0; border-radius: 8px; border-left: 4px solid #f59e0b; margin-top: 20px;">
@@ -387,18 +387,18 @@
                     render: () => `
                         <div class="lesson-page-card content-page">
                             <h2>Writing Assessment</h2>
-                            <h3 style="color: #8B4513;">Opinion Writing</h3>
+                            <h3 style="color: #8B4513;">Narrative Writing</h3>
                             
                             <div style="padding: 20px; background: linear-gradient(135deg, rgba(48,88,83,0.1), rgba(176,104,33,0.1)); border-radius: 12px; margin-bottom: 25px;">
                                 <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Prompt:</p>
                                 <p style="font-size: 16px; line-height: 1.6; margin: 0;">
-                                    Should Dorothy have tried harder to get into the cellar, or was it okay that she stopped to get Toto? Defend your opinion.
+                                    Imagine you are Aunt Em in the cellar. Write about what you're thinking as the storm passes overhead.
                                 </p>
                             </div>
                             
                             <div style="padding: 15px; background: #fffbf0; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 20px;">
                                 <p style="margin: 0; font-size: 14px;">
-                                    <strong>Requirements:</strong> Write a paragraph stating your opinion with at least 2-3 reasons supporting your view. Include a topic sentence and conclusion.
+                                    <strong>Requirements:</strong> Write a short story or scene with a clear beginning, middle, and end. Include descriptive details and dialogue if appropriate.
                                 </p>
                             </div>
                             
@@ -422,7 +422,7 @@
                                     Great work on your assessment! You've completed 5 full days of <em>The Adventures of Tom Sawyer</em>.
                                 </p>
                                 <p style="font-size: 16px; color: #B06821; font-weight: 600;">
-                                    See you on Day 11!
+                                    See you on Day 16!
                                 </p>
                             </div>
                         </div>
@@ -432,8 +432,22 @@
         };
         
         // Initialize lesson viewer
-        if (typeof initLessonViewer === 'function') {
-            initLessonViewer(lesson10Config);
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson15Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
         }
     </script>
 
