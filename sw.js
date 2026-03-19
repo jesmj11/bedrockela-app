@@ -1,5 +1,5 @@
 // BedrockELA Service Worker - Offline Learning Support
-const CACHE_NAME = 'bedrockela-v2.1-no-lesson-cache';
+const CACHE_NAME = 'bedrockela-v2.2-fresh-2026-03-18';
 const OFFLINE_URL = '/offline.html';
 
 // Force immediate activation
