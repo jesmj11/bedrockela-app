@@ -282,13 +282,14 @@ function createLessonBrowser(grade) {
                 <div class="week-header">Week ${week.number}</div>
                 <div class="lesson-grid">
                     ${week.lessons.map(lesson => `
-                    <a href="${lesson.filename}" class="lesson-card${lesson.day % 5 === 0 ? ' assessment' : ''}" target="_blank">
+                    <a href="../${lesson.filename}" class="lesson-card${lesson.day % 5 === 0 ? ' assessment' : ''}" target="_blank">
                         <div class="lesson-number">
                             ${lesson.day}
                         </div>
                         <div class="lesson-title">
                             ${lesson.day % 5 === 0 ? '📝 Assessment' : '📚 Lesson'}
                         </div>
+                        <div style="font-size: 0.85rem; margin-top: 8px; opacity: 0.9;">Click to open • Cmd+P to print</div>
                     </a>
                     `).join('')}
                 </div>
@@ -305,10 +306,14 @@ function createLessonBrowser(grade) {
         
         // Mark completed lessons
         completedLessons.forEach(day => {
-            const card = document.querySelector(\`[href$="day-\${day}.html"]\`);
+            const card = document.querySelector(\`[href*="day-\${day}.html"]\`);
             if (card) {
                 card.style.opacity = '0.7';
-                card.innerHTML += '<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem;">✅</div>';
+                const checkmark = document.createElement('div');
+                checkmark.style.cssText = 'position: absolute; top: 5px; right: 5px; font-size: 1.5rem;';
+                checkmark.textContent = '✅';
+                card.style.position = 'relative';
+                card.appendChild(checkmark);
             }
         });
     </script>
