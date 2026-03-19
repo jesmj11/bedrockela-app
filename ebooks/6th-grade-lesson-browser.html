@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Grade ELA Ebook & Lesson Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+            background: linear-gradient(135deg, #4A90E2 0%, #7B68EE 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6B4FA3 0%, #4A3B7A 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            border: 4px solid #FFD700;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #FF6B35;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 3px solid white;
+        }
+        
+        .back-button:hover {
+            background: #FF8C5A;
+            transform: scale(1.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0 0 20px 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 4px solid #FFD700;
+            border-top: none;
+        }
+        
+        .tabs {
+            background: #F0E68C;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 3px solid #DAA520;
+        }
+        
+        .tab-button {
+            background: white;
+            color: #4A3B7A;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 2px solid #DAA520;
+        }
+        
+        .tab-button.active {
+            background: #FF6B35;
+            color: white;
+        }
+        
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .lessons-section {
+            background: linear-gradient(to bottom, #E6F3FF 0%, #FFF 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px solid #B8D4F1;
+        }
+        
+        .lessons-section h2 {
+            color: #4A3B7A;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .week-section {
+            margin-bottom: 30px;
+        }
+        
+        .week-header {
+            background: #7B68EE;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .lesson-card {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C5A 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 3px solid #FF4500;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .lesson-number {
+            background: white;
+            color: #FF6B35;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid #FF4500;
+        }
+        
+        .lesson-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .lesson-card.assessment {
+            background: linear-gradient(135deg, #32CD32 0%, #90EE90 100%);
+            border-color: #228B22;
+        }
+        
+        .lesson-card.assessment .lesson-number {
+            background: white;
+            color: #32CD32;
+            border-color: #228B22;
+        }
+        
+        .print-button {
+            background: #FFD700;
+            color: #4A3B7A;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 3px solid #DAA520;
+        }
+        
+        .print-button:hover {
+            background: #FFC700;
+            transform: scale(1.05);
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .back-button, .tabs, .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="parent-ebooks.html" class="back-button">← Back</a>
+    
+    <div class="header">
+        <h1>📚 6th Grade ELA Ebook & Answer Key</h1>
+        <p style="font-size: 1.2rem; margin-top: 10px;">168 Complete Lessons</p>
+    </div>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active">Lessons</button>
+        </div>
+        
+        <button class="print-button" onclick="window.print()">🖨️ Print This Page</button>
+        
+        <div class="lessons-section">
+            <h2>📖 Lessons</h2>
+            
+            
+            <div class="week-section">
+                <div class="week-header">Week 1</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-001.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            1
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-002.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            2
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-003.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            3
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-004.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            4
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-005.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            5
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 2</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-006.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            6
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-007.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            7
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-008.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            8
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-009.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            9
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-010.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            10
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 3</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-011.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            11
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-012.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            12
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-013.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            13
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-014.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            14
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-015.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            15
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 4</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-016.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            16
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-017.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            17
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-018.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            18
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-019.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            19
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-020.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            20
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 5</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-021.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            21
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-022.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            22
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-023.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            23
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-024.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            24
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-025.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            25
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 6</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-026.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            26
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-027.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            27
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-028.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            28
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-029.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            29
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-030.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            30
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 7</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-031.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            31
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-032.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            32
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-033.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            33
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-034.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            34
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-035.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            35
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 8</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-036.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            36
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-037.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            37
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-038.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            38
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-039.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            39
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-040.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            40
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 9</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-041.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            41
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-042.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            42
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-043.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            43
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-044.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            44
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-045.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            45
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 10</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-046.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            46
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-047.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            47
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-048.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            48
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-049.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            49
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-050.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            50
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 11</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-051.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            51
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-052.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            52
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-053.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            53
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-054.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            54
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-055.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            55
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 12</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-056.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            56
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-057.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            57
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-058.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            58
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-059.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            59
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-060.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            60
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 13</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-061.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            61
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-062.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            62
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-063.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            63
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-064.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            64
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-065.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            65
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 14</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-066.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            66
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-067.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            67
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-068.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            68
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-069.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            69
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-070.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            70
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 15</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-071.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            71
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-072.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            72
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-073.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            73
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-074.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            74
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-075.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            75
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 16</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-076.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            76
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-077.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            77
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-078.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            78
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-079.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            79
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-080.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            80
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 17</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-081.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            81
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-082.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            82
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-083.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            83
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-084.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            84
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-085.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            85
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 18</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-086.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            86
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-087.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            87
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-088.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            88
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-089.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            89
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-090.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            90
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 19</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-091.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            91
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-092.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            92
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-093.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            93
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-094.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            94
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-095.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            95
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 20</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-096.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            96
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-097.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            97
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-098.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            98
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-099.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            99
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-100.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            100
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 21</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-101.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            101
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-102.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            102
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-103.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            103
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-104.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            104
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-105.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            105
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 22</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-106.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            106
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-107.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            107
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-108.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            108
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-109.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            109
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-110.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            110
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 23</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-111.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            111
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-112.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            112
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-113.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            113
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-114.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            114
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-115.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            115
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 24</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-116.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            116
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-117.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            117
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-118.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            118
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-119.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            119
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-120.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            120
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 25</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-121.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            121
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-122.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            122
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-123.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            123
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-124.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            124
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-125.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            125
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 26</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-126.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            126
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-127.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            127
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-128.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            128
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-129.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            129
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-130.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            130
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 27</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-131.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            131
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-132.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            132
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-133.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            133
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-134.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            134
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-135.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            135
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 28</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-136.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            136
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-137.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            137
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-138.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            138
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-139.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            139
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-140.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            140
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 29</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-141.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            141
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-142.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            142
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-143.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            143
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-144.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            144
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-145.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            145
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 30</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-146.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            146
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-147.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            147
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-148.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            148
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-149.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            149
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-150.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            150
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 31</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-151.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            151
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-152.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            152
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-153.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            153
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-154.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            154
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-155.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            155
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 32</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-156.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            156
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-157.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            157
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-158.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            158
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-159.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            159
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-160.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            160
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 33</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-161.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            161
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-162.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            162
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-163.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            163
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-164.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            164
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-165.html" class="lesson-card assessment" target="_blank">
+                        <div class="lesson-number">
+                            165
+                        </div>
+                        <div class="lesson-title">
+                            📝 Assessment
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="week-section">
+                <div class="week-header">Week 34</div>
+                <div class="lesson-grid">
+                    
+                    <a href="6th-grade-day-166.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            166
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-167.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            167
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                    <a href="6th-grade-day-168.html" class="lesson-card" target="_blank">
+                        <div class="lesson-number">
+                            168
+                        </div>
+                        <div class="lesson-title">
+                            📚 Lesson
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <button class="print-button" onclick="window.print()">🖨️ Print This Page</button>
+    </div>
+    
+    <script>
+        // Track which lessons have been completed
+        const completedLessons = JSON.parse(localStorage.getItem('bedrockela_6th_completed') || '[]');
+        
+        // Mark completed lessons
+        completedLessons.forEach(day => {
+            const card = document.querySelector(`[href$="day-${day}.html"]`);
+            if (card) {
+                card.style.opacity = '0.7';
+                card.innerHTML += '<div style="position: absolute; top: 5px; right: 5px; font-size: 1.5rem;">✅</div>';
+            }
+        });
+    </script>
+</body>
+</html>

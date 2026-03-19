@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Ebooks - BedrockELA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #305853 0%, #1B2A30 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #1B2A30;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #305853;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .ebook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .ebook-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .ebook-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .ebook-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .ebook-card h3 {
+            color: #305853;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .ebook-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .ebook-stats {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .btn-download {
+            width: 100%;
+            padding: 12px 20px;
+            background: #305853;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        
+        .btn-download:hover {
+            background: #1B2A30;
+        }
+        
+        .btn-view {
+            background: #B06821;
+        }
+        
+        .btn-view:hover {
+            background: #9E2C21;
+        }
+        
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .info-box h3 {
+            color: #305853;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        .info-box li {
+            margin: 8px 0;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status.ready {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.coming {
+            background: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="parent-dashboard-firebase.html" class="back-link">← Back to Dashboard</a>
+            <h1>📚 Curriculum Lesson Browser</h1>
+            <p>Quick access to all lessons for viewing & printing - works offline!</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>💡 Why Use Lesson Browsers?</h3>
+            <ul>
+                <li><strong>Quick Access:</strong> See all 180 lessons on one page</li>
+                <li><strong>Click & Print:</strong> Click any lesson to open and print it</li>
+                <li><strong>Offline Ready:</strong> Save browser page and use without internet</li>
+                <li><strong>Backup Plan:</strong> Always have access even if website is down</li>
+                <li><strong>Easy Navigation:</strong> Jump to any week or day instantly</li>
+            </ul>
+        </div>
+        
+        <div class="ebook-grid">
+            <!-- 1st Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📗</div>
+                <h3>1st Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Full phonics & reading curriculum with Billy Instructor</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 ~15 MB</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/1st-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/1st-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 2nd Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📘</div>
+                <h3>2nd Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>180 days of reading, grammar & writing instruction</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 ~18 MB</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/2nd-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/2nd-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 3rd Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📙</div>
+                <h3>3rd Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Classic literature with comprehension & writing</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 Quick access</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/3rd-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/3rd-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 4th Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📕</div>
+                <h3>4th Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Wizard of Oz, Alice in Wonderland & more classics</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 Quick access</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/4th-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/4th-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 5th Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📔</div>
+                <h3>5th Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Robin Hood, Arabian Nights & advanced literature</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 Quick access</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/5th-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/5th-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 6th Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📗</div>
+                <h3>6th Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Tom Sawyer, 20,000 Leagues & adventure classics</p>
+                <div class="ebook-stats">
+                    <span>📄 168 lessons</span>
+                    <span>📦 Quick access</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/6th-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/6th-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+            
+            <!-- 7th Grade -->
+            <div class="ebook-card" style="opacity: 0.6;">
+                <div class="ebook-icon">📘</div>
+                <h3>7th Grade Complete</h3>
+                <span class="status coming">⏳ Coming Soon</span>
+                <p>Advanced literature & critical thinking</p>
+                <div class="ebook-stats">
+                    <span>📄 0 of 180 lessons</span>
+                </div>
+                <button class="btn-download" disabled style="opacity: 0.5; cursor: not-allowed;">
+                    Not Available Yet
+                </button>
+            </div>
+            
+            <!-- 8th Grade -->
+            <div class="ebook-card">
+                <div class="ebook-icon">📙</div>
+                <h3>8th Grade Complete</h3>
+                <span class="status ready">✅ Ready</span>
+                <p>Frankenstein, Sherlock Holmes & classic sci-fi</p>
+                <div class="ebook-stats">
+                    <span>📄 180 lessons</span>
+                    <span>📦 ~28 MB</span>
+                </div>
+                <button class="btn-download btn-view" onclick="window.open('ebooks/8th-grade-lesson-browser.html', '_blank')">
+                    👁️ View All Lessons
+                </button>
+                <button class="btn-download" onclick="window.open('ebooks/8th-grade-lesson-browser.html', '_blank')">
+                    🖨️ Print Lesson List
+                </button>
+            </div>
+        </div>
+        
+        <div class="info-box" style="margin-top: 30px;">
+            <h3>📖 How to Use Lesson Browsers</h3>
+            <ul>
+                <li><strong>View All Lessons:</strong> Click button to see organized list of all 180 lessons</li>
+                <li><strong>Click Any Lesson:</strong> Click lesson card to open that specific day</li>
+                <li><strong>Print Individual Lessons:</strong> Each lesson opens in new tab - just hit Cmd+P to print</li>
+                <li><strong>Save for Offline:</strong> Save browser page (Cmd+S) and you can use without internet</li>
+                <li><strong>Track Progress:</strong> Completed lessons show checkmarks automatically</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function printEbook(filename) {
+            const url = `ebooks/${filename}`;
+            const printWindow = window.open(url, '_blank');
+            
+            // Wait for page to load, then trigger print
+            printWindow.onload = function() {
+                setTimeout(() => {
+                    printWindow.print();
+                }, 500);
+            };
+        }
+    </script>
+</body>
+</html>

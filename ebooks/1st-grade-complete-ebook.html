@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1st Grade ELA Complete Curriculum</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000;
+            max-width: 100%;
+        }
+        
+        .cover-page {
+            page-break-after: always;
+            text-align: center;
+            padding-top: 3in;
+        }
+        
+        .cover-page h1 {
+            font-size: 36pt;
+            margin-bottom: 20px;
+            color: #305853;
+        }
+        
+        .cover-page p {
+            font-size: 16pt;
+            color: #666;
+        }
+        
+        .toc {
+            page-break-after: always;
+        }
+        
+        .toc h2 {
+            font-size: 24pt;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #305853;
+            padding-bottom: 10px;
+        }
+        
+        .toc-entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+        
+        .lesson {
+            page-break-before: always;
+            margin-bottom: 40px;
+        }
+        
+        .lesson-header {
+            background: #305853;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .lesson-header h2 {
+            margin: 0;
+            font-size: 20pt;
+        }
+        
+        .lesson-page {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 3px solid #B06821;
+        }
+        
+        .lesson-page h2 {
+            color: #305853;
+            font-size: 16pt;
+            margin-top: 0;
+        }
+        
+        .lesson-page h3 {
+            color: #666;
+            font-size: 14pt;
+        }
+        
+        textarea, input {
+            border: 1px solid #ccc;
+            width: 100%;
+            min-height: 80px;
+            margin: 10px 0;
+            padding: 10px;
+            font-family: inherit;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+            
+            .lesson {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media screen {
+            body {
+                background: #f5f5f5;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 8.5in;
+                margin: 0 auto;
+                background: white;
+                padding: 40px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .print-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 30px;
+                background: #305853;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+            
+            .print-button:hover {
+                background: #1B2A30;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">🖨️ Print Ebook</button>
+    
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <h1>1st Grade ELA Complete Curriculum</h1>
+            <p>180 Days of Complete ELA Instruction</p>
+            <p style="margin-top: 40px;">BedrockELA Homeschool Curriculum</p>
+            <p style="font-size: 12pt; color: #999; margin-top: 80px;">© 2026 • For educational use only</p>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>📖 Table of Contents</h2>
+            
+            <div class="toc-entry">
+                <span>Day 100: Lesson 100: Mid-Year Celebration! - BedrockELA</span>
+                <span>Page 3</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 101: Lesson 101: Prefixes UN- and RE- - BedrockELA</span>
+                <span>Page 4</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 102: Lesson 102: Suffix -ED - BedrockELA</span>
+                <span>Page 5</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 103: Lesson 103: Suffix -ING - BedrockELA</span>
+                <span>Page 6</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 104: Lesson 104: Suffix -S and -ES - BedrockELA</span>
+                <span>Page 7</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 105: Lesson 105: Suffix -LY - BedrockELA</span>
+                <span>Page 8</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 106: Lesson 106: Suffix -ER and -EST - BedrockELA</span>
+                <span>Page 9</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 107: Lesson 107: Suffix -FUL and -LESS - BedrockELA</span>
+                <span>Page 10</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 108: Lesson 108: Prefix DIS- and MIS- - BedrockELA</span>
+                <span>Page 11</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 109: Lesson 109: Unit 3 Review - BedrockELA</span>
+                <span>Page 12</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 110: Lesson 110: Unit 3 Assessment - BedrockELA</span>
+                <span>Page 13</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 111: Lesson 111: Synonyms - BedrockELA</span>
+                <span>Page 14</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 112: Lesson 112: Antonyms - BedrockELA</span>
+                <span>Page 15</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 113: Lesson 113: Homophones - BedrockELA</span>
+                <span>Page 16</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 114: Lesson 114: Multiple Meanings - BedrockELA</span>
+                <span>Page 17</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 115: Lesson 115: Idioms - BedrockELA</span>
+                <span>Page 18</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 116: Lesson 116: Similes - BedrockELA</span>
+                <span>Page 19</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 117: Lesson 117: Metaphors - BedrockELA</span>
+                <span>Page 20</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 118: Lesson 118: Onomatopoeia - BedrockELA</span>
+                <span>Page 21</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 119: Lesson 119: Alliteration - BedrockELA</span>
+                <span>Page 22</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 120: Lesson 120: Poetry Basics - BedrockELA</span>
+                <span>Page 23</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 121: Lesson 121: Rhyming Words - BedrockELA</span>
+                <span>Page 24</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 122: Lesson 122: Poetry Patterns - BedrockELA</span>
+                <span>Page 25</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 123: Lesson 123: Reading Informational Text - BedrockELA</span>
+                <span>Page 26</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 124: Lesson 124: Main Idea in Nonfiction - BedrockELA</span>
+                <span>Page 27</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 125: Lesson 125: Details in Nonfiction - BedrockELA</span>
+                <span>Page 28</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 126: Lesson 126: Text Features - BedrockELA</span>
+                <span>Page 29</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 127: Lesson 127: Compare Texts - BedrockELA</span>
+                <span>Page 30</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 128: Lesson 128: Following Directions - BedrockELA</span>
+                <span>Page 31</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 129: Lesson 129: Time Order Words - BedrockELA</span>
+                <span>Page 32</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 130: Lesson 130: Cause & Effect in Text - BedrockELA</span>
+                <span>Page 33</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 131: Lesson 131: Making Inferences - BedrockELA</span>
+                <span>Page 34</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 132: Lesson 132: Predicting Outcomes - BedrockELA</span>
+                <span>Page 35</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 133: Lesson 133: Point of View - BedrockELA</span>
+                <span>Page 36</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 134: Lesson 134: Author's Message - BedrockELA</span>
+                <span>Page 37</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 135: Lesson 135: Unit 4 Review - BedrockELA</span>
+                <span>Page 38</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 136: Lesson 136: Greek & Latin Roots - BedrockELA</span>
+                <span>Page 39</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 137: Lesson 137: Building Vocabulary - BedrockELA</span>
+                <span>Page 40</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 138: Lesson 138: Using a Dictionary - BedrockELA</span>
+                <span>Page 41</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 139: Lesson 139: Using a Glossary - BedrockELA</span>
+                <span>Page 42</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 140: Lesson 140: Parts of a Book - BedrockELA</span>
+                <span>Page 43</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 141: Lesson 141: Reading Dialogue - BedrockELA</span>
+                <span>Page 44</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 142: Lesson 142: Reading Long Passages - BedrockELA</span>
+                <span>Page 45</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 143: Lesson 143: Summarizing - BedrockELA</span>
+                <span>Page 46</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 144: Lesson 144: Unit 4 Review - BedrockELA</span>
+                <span>Page 47</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 145: Lesson 145: Unit 4 Assessment - BedrockELA</span>
+                <span>Page 48</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 146: Lesson 146: Independent Reading - BedrockELA</span>
+                <span>Page 49</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 147: Lesson 147: Reading Stamina - BedrockELA</span>
+                <span>Page 50</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 148: Lesson 148: Book Discussions - BedrockELA</span>
+                <span>Page 51</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 149: Lesson 149: Writing Book Reviews - BedrockELA</span>
+                <span>Page 52</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 150: Lesson 150: Reading Fluency Test - BedrockELA</span>
+                <span>Page 53</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 151: Lesson 151: Multi-Syllable Words - BedrockELA</span>
+                <span>Page 54</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 152: Lesson 152: Complex Sentences - BedrockELA</span>
+                <span>Page 55</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 153: Lesson 153: Compound Sentences - BedrockELA</span>
+                <span>Page 56</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 154: Lesson 154: Reading Poetry Aloud - BedrockELA</span>
+                <span>Page 57</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 155: Lesson 155: Reading Plays - BedrockELA</span>
+                <span>Page 58</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 156: Lesson 156: Reading Recipes - BedrockELA</span>
+                <span>Page 59</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 157: Lesson 157: Reading Signs & Labels - BedrockELA</span>
+                <span>Page 60</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 158: Lesson 158: Reading Newspapers - BedrockELA</span>
+                <span>Page 61</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 159: Lesson 159: Reading Magazines - BedrockELA</span>
+                <span>Page 62</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 160: Lesson 160: Reading Online - BedrockELA</span>
+                <span>Page 63</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 161: Lesson 161: Research Skills - BedrockELA</span>
+                <span>Page 64</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 162: Lesson 162: Note Taking - BedrockELA</span>
+                <span>Page 65</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 163: Lesson 163: Organizing Information - BedrockELA</span>
+                <span>Page 66</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 164: Lesson 164: Presenting Information - BedrockELA</span>
+                <span>Page 67</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 165: Lesson 165: Final Review Begins - BedrockELA</span>
+                <span>Page 68</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 166: Lesson 166: Short Vowels Review - BedrockELA</span>
+                <span>Page 69</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 167: Lesson 167: Long Vowels Review - BedrockELA</span>
+                <span>Page 70</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 168: Lesson 168: Fluency Review - BedrockELA</span>
+                <span>Page 71</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 169: Lesson 169: Advanced Skills Review - BedrockELA</span>
+                <span>Page 72</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 170: Lesson 170: Favorite Story Day - BedrockELA</span>
+                <span>Page 73</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 171: Lesson 171: Reading Games - BedrockELA</span>
+                <span>Page 74</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 172: Lesson 172: Reading Bingo - BedrockELA</span>
+                <span>Page 75</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 173: Lesson 173: Reading Scavenger Hunt - BedrockELA</span>
+                <span>Page 76</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 174: Lesson 174: Partner Reading - BedrockELA</span>
+                <span>Page 77</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 175: Lesson 175: Final Assessment Prep - BedrockELA</span>
+                <span>Page 78</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 176: Lesson 176: Final Reading Assessment - BedrockELA</span>
+                <span>Page 79</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 177: Lesson 177: Final Fluency Assessment - BedrockELA</span>
+                <span>Page 80</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 178: Lesson 178: Celebration Preparation - BedrockELA</span>
+                <span>Page 81</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 179: Lesson 179: Year in Review - BedrockELA</span>
+                <span>Page 82</span>
+            </div>
+            
+            <div class="toc-entry">
+                <span>Day 180: Lesson 180: GRADUATION DAY! - BedrockELA</span>
+                <span>Page 83</span>
+            </div>
+            
+        </div>
+        
+        <!-- Lessons -->
+        
+        <div class="lesson" id="day-100">
+            <div class="lesson-header">
+                <h2>Day 100: Lesson 100: Mid-Year Celebration! - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-101">
+            <div class="lesson-header">
+                <h2>Day 101: Lesson 101: Prefixes UN- and RE- - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-102">
+            <div class="lesson-header">
+                <h2>Day 102: Lesson 102: Suffix -ED - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-103">
+            <div class="lesson-header">
+                <h2>Day 103: Lesson 103: Suffix -ING - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-104">
+            <div class="lesson-header">
+                <h2>Day 104: Lesson 104: Suffix -S and -ES - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-105">
+            <div class="lesson-header">
+                <h2>Day 105: Lesson 105: Suffix -LY - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-106">
+            <div class="lesson-header">
+                <h2>Day 106: Lesson 106: Suffix -ER and -EST - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-107">
+            <div class="lesson-header">
+                <h2>Day 107: Lesson 107: Suffix -FUL and -LESS - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-108">
+            <div class="lesson-header">
+                <h2>Day 108: Lesson 108: Prefix DIS- and MIS- - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-109">
+            <div class="lesson-header">
+                <h2>Day 109: Lesson 109: Unit 3 Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-110">
+            <div class="lesson-header">
+                <h2>Day 110: Lesson 110: Unit 3 Assessment - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-111">
+            <div class="lesson-header">
+                <h2>Day 111: Lesson 111: Synonyms - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-112">
+            <div class="lesson-header">
+                <h2>Day 112: Lesson 112: Antonyms - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-113">
+            <div class="lesson-header">
+                <h2>Day 113: Lesson 113: Homophones - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-114">
+            <div class="lesson-header">
+                <h2>Day 114: Lesson 114: Multiple Meanings - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-115">
+            <div class="lesson-header">
+                <h2>Day 115: Lesson 115: Idioms - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-116">
+            <div class="lesson-header">
+                <h2>Day 116: Lesson 116: Similes - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-117">
+            <div class="lesson-header">
+                <h2>Day 117: Lesson 117: Metaphors - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-118">
+            <div class="lesson-header">
+                <h2>Day 118: Lesson 118: Onomatopoeia - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-119">
+            <div class="lesson-header">
+                <h2>Day 119: Lesson 119: Alliteration - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-120">
+            <div class="lesson-header">
+                <h2>Day 120: Lesson 120: Poetry Basics - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-121">
+            <div class="lesson-header">
+                <h2>Day 121: Lesson 121: Rhyming Words - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-122">
+            <div class="lesson-header">
+                <h2>Day 122: Lesson 122: Poetry Patterns - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-123">
+            <div class="lesson-header">
+                <h2>Day 123: Lesson 123: Reading Informational Text - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-124">
+            <div class="lesson-header">
+                <h2>Day 124: Lesson 124: Main Idea in Nonfiction - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-125">
+            <div class="lesson-header">
+                <h2>Day 125: Lesson 125: Details in Nonfiction - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-126">
+            <div class="lesson-header">
+                <h2>Day 126: Lesson 126: Text Features - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-127">
+            <div class="lesson-header">
+                <h2>Day 127: Lesson 127: Compare Texts - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-128">
+            <div class="lesson-header">
+                <h2>Day 128: Lesson 128: Following Directions - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-129">
+            <div class="lesson-header">
+                <h2>Day 129: Lesson 129: Time Order Words - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-130">
+            <div class="lesson-header">
+                <h2>Day 130: Lesson 130: Cause & Effect in Text - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-131">
+            <div class="lesson-header">
+                <h2>Day 131: Lesson 131: Making Inferences - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-132">
+            <div class="lesson-header">
+                <h2>Day 132: Lesson 132: Predicting Outcomes - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-133">
+            <div class="lesson-header">
+                <h2>Day 133: Lesson 133: Point of View - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-134">
+            <div class="lesson-header">
+                <h2>Day 134: Lesson 134: Author's Message - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-135">
+            <div class="lesson-header">
+                <h2>Day 135: Lesson 135: Unit 4 Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-136">
+            <div class="lesson-header">
+                <h2>Day 136: Lesson 136: Greek & Latin Roots - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-137">
+            <div class="lesson-header">
+                <h2>Day 137: Lesson 137: Building Vocabulary - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-138">
+            <div class="lesson-header">
+                <h2>Day 138: Lesson 138: Using a Dictionary - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-139">
+            <div class="lesson-header">
+                <h2>Day 139: Lesson 139: Using a Glossary - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-140">
+            <div class="lesson-header">
+                <h2>Day 140: Lesson 140: Parts of a Book - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-141">
+            <div class="lesson-header">
+                <h2>Day 141: Lesson 141: Reading Dialogue - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-142">
+            <div class="lesson-header">
+                <h2>Day 142: Lesson 142: Reading Long Passages - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-143">
+            <div class="lesson-header">
+                <h2>Day 143: Lesson 143: Summarizing - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-144">
+            <div class="lesson-header">
+                <h2>Day 144: Lesson 144: Unit 4 Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-145">
+            <div class="lesson-header">
+                <h2>Day 145: Lesson 145: Unit 4 Assessment - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-146">
+            <div class="lesson-header">
+                <h2>Day 146: Lesson 146: Independent Reading - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-147">
+            <div class="lesson-header">
+                <h2>Day 147: Lesson 147: Reading Stamina - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-148">
+            <div class="lesson-header">
+                <h2>Day 148: Lesson 148: Book Discussions - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-149">
+            <div class="lesson-header">
+                <h2>Day 149: Lesson 149: Writing Book Reviews - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-150">
+            <div class="lesson-header">
+                <h2>Day 150: Lesson 150: Reading Fluency Test - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-151">
+            <div class="lesson-header">
+                <h2>Day 151: Lesson 151: Multi-Syllable Words - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-152">
+            <div class="lesson-header">
+                <h2>Day 152: Lesson 152: Complex Sentences - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-153">
+            <div class="lesson-header">
+                <h2>Day 153: Lesson 153: Compound Sentences - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-154">
+            <div class="lesson-header">
+                <h2>Day 154: Lesson 154: Reading Poetry Aloud - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-155">
+            <div class="lesson-header">
+                <h2>Day 155: Lesson 155: Reading Plays - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-156">
+            <div class="lesson-header">
+                <h2>Day 156: Lesson 156: Reading Recipes - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-157">
+            <div class="lesson-header">
+                <h2>Day 157: Lesson 157: Reading Signs & Labels - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-158">
+            <div class="lesson-header">
+                <h2>Day 158: Lesson 158: Reading Newspapers - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-159">
+            <div class="lesson-header">
+                <h2>Day 159: Lesson 159: Reading Magazines - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-160">
+            <div class="lesson-header">
+                <h2>Day 160: Lesson 160: Reading Online - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-161">
+            <div class="lesson-header">
+                <h2>Day 161: Lesson 161: Research Skills - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-162">
+            <div class="lesson-header">
+                <h2>Day 162: Lesson 162: Note Taking - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-163">
+            <div class="lesson-header">
+                <h2>Day 163: Lesson 163: Organizing Information - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-164">
+            <div class="lesson-header">
+                <h2>Day 164: Lesson 164: Presenting Information - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-165">
+            <div class="lesson-header">
+                <h2>Day 165: Lesson 165: Final Review Begins - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-166">
+            <div class="lesson-header">
+                <h2>Day 166: Lesson 166: Short Vowels Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-167">
+            <div class="lesson-header">
+                <h2>Day 167: Lesson 167: Long Vowels Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-168">
+            <div class="lesson-header">
+                <h2>Day 168: Lesson 168: Fluency Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-169">
+            <div class="lesson-header">
+                <h2>Day 169: Lesson 169: Advanced Skills Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-170">
+            <div class="lesson-header">
+                <h2>Day 170: Lesson 170: Favorite Story Day - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-171">
+            <div class="lesson-header">
+                <h2>Day 171: Lesson 171: Reading Games - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-172">
+            <div class="lesson-header">
+                <h2>Day 172: Lesson 172: Reading Bingo - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-173">
+            <div class="lesson-header">
+                <h2>Day 173: Lesson 173: Reading Scavenger Hunt - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-174">
+            <div class="lesson-header">
+                <h2>Day 174: Lesson 174: Partner Reading - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-175">
+            <div class="lesson-header">
+                <h2>Day 175: Lesson 175: Final Assessment Prep - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-176">
+            <div class="lesson-header">
+                <h2>Day 176: Lesson 176: Final Reading Assessment - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-177">
+            <div class="lesson-header">
+                <h2>Day 177: Lesson 177: Final Fluency Assessment - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-178">
+            <div class="lesson-header">
+                <h2>Day 178: Lesson 178: Celebration Preparation - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-179">
+            <div class="lesson-header">
+                <h2>Day 179: Lesson 179: Year in Review - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+        <div class="lesson" id="day-180">
+            <div class="lesson-header">
+                <h2>Day 180: Lesson 180: GRADUATION DAY! - BedrockELA</h2>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+    <script>
+        // Clean up textarea placeholders for print
+        document.querySelectorAll('textarea').forEach(ta => {
+            ta.placeholder = '';
+        });
+    </script>
+</body>
+</html>
