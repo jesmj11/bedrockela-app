@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 24 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 24: THE LEGEND</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏹</div>
+        <h1>Lesson 24</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE LEGEND</div>
+        <div style="font-size: 1rem; color: #999;">Week 5 • The Merry Adventures of Robin Hood • 5th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 24!</h2>
+      <p>Today we're reading <strong>THE LEGEND</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 24</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Homophones (Language)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>🏹 Remember:</strong> Robin Hood is a legendary outlaw who fought for justice. As you read, think about what makes someone a hero or a villain.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. endure</h3>
+        <p><strong>Part of Speech:</strong> verb</p>
+        <p><strong>Definition:</strong> to continue to exist; to survive through difficult conditions</p>
+        <p><strong>In context:</strong> <em>"The story of Robin Hood lived on."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. principle</h3>
+        <p><strong>Part of Speech:</strong> noun</p>
+        <p><strong>Definition:</strong> a fundamental truth or belief that guides behavior</p>
+        <p><strong>In context:</strong> <em>"The strong should protect the weak."</em></p>
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. endure</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. principle</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE LEGEND (Part 1)</h2>
+      <div class="story">
+        <p>They buried Robin Hood where his arrow fell — at the edge of Sherwood Forest, beneath an ancient oak tree, with the green canopy overhead and the open meadow stretching away to the south. Little John dug the grave himself. Marian laid Robin&#039;s bow beside him.
+The Merry Men gathered for the last time. Little John. Friar Tuck. Will Scarlet. Allan-a-Dale. And dozens of others — the men and women who had lived and fought and laughed together in the greenwood for more than twenty years.
+Allan-a-Dale played his lute. No one spoke. The music said everything.
+Marian stood at the grave for a long time after the others had gone. She touched the fresh earth with her hand and whispered something that no one else heard. Then she walked into the forest and disappeared among the trees.
+In the weeks that followed, the band scattered. There was no one who could replace Robin Hood — not because no one was brave enough or skilled enough, but because Robin had been the one thing that held them all together. He was the idea that had made the greenwood more than just a hiding place for outlaws.
+Little John went north. Some say he lived to be very old. Friar Tuck returned to the church — a small, poor church in a farming village, where he served the people Robin had always fought for. Will Scarlet traveled to the continent, still wearing his scarlet. Allan-a-Dale wandered England, singing songs about Robin Hood at every fair and market and manor house that would have him.
+And the songs survived.
+Long after the oaks of Sherwood Forest had grown old and fallen and been replaced by new trees, the story of Robin Hood lived on. Farmers told it to their children. Minstrels sang it in great halls and village squares. Scholars wrote it down. And every person who heard the tale understood the same simple truth that Robin had lived by:
+The strong should protect the weak. The rich owe a debt to the poor. Courage means standing up for what is right, even when the powerful say it is wrong. And no law written by a tyrant is more just than the law written in a good person&#039;s heart.
+Robin Hood is buried at the edge of Sherwood Forest, beneath the greenwood tree, with his great bow beside him and an arrow&#039;s flight between him and the world.
+But the legend never rests. The legend walks the roads of England still, looking for injustice, ready to fight, and always — always — wearing Lincoln green.
+THE END</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE LEGEND (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE LEGEND (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What happens to the Merry Men after Robin's death?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+          A) They choose Little John as their new leader and continue Robin&#039;s mission
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+          B) They scatter — each going their own way, because Robin was what held them together
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+          C) They are captured by the Sheriff and imprisoned in Nottingham
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+          D) They join King Richard&#039;s army and fight in foreign wars
+        </label>
+        
+      
+      
+      <h3>2. Why does the narrator say Robin Hood's legend is "immortal"?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+          A) Because Robin found a magical potion that made him live forever
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+          B) Because his principles — protecting the weak and standing against injustice — are timeless
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+          C) Because Allan-a-Dale wrote the story down in an official history book
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+          D) Because the King ordered that Robin&#039;s story be taught in every school
+        </label>
+        
+      
+      
+      <h3>3. The book ends by saying Robin Hood's principles are needed in every age. Do you agree? Where in the modern world do you see the need for someone to "rob from the rich and give to the poor"? Explain using evidence from the book and your own experience.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language: Homophones</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>Homophones are words that sound the same but have different meanings and spellings. Example: their/there/they&#039;re, to/too/two, bow (weapon)/bow (bend). Context determines which spelling is correct.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Their arrows flew through the air. Robin waited there in the forest. They&#039;re brave outlaws. / I want to help. You do, too. The two men fought."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Find or create five pairs of homophones related to today&#039;s chapter. Write two sentences for each pair showing the different meanings and correct spellings.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>How Legends Survive</h3>
+      <p>The Robin Hood legend has survived for over 700 years through ballads, plays, and stories. Why? Because it addresses timeless themes: rich vs. poor, justice vs. law, freedom vs. security, individual vs. authority. Every generation reinterprets the legend for its own time.</p><p>Historians debate whether Robin Hood was real. Some evidence suggests several real outlaws might have inspired the legend. But historical accuracy misses the point: Robin Hood is real as an idea. He represents the hope that someone will stand up to injustice, that the powerful can be challenged, and that one person with courage can make a difference.</p>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>Do you agree with Robin Hood's actions? Why or why not?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

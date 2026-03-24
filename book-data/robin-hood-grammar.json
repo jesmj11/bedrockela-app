@@ -1,0 +1,74 @@
+{
+  "1": {
+    "topic": "Simple, Compound, and Complex Sentences",
+    "explanation": "A simple sentence has one independent clause. A compound sentence has two independent clauses joined by a conjunction (and, but, or, so). A complex sentence has one independent clause and at least one dependent clause.",
+    "example": "Simple: 'Robin Hood lived in Sherwood Forest.' Compound: 'Robin Hood lived in Sherwood Forest, and his men were loyal.' Complex: 'Because Robin Hood was an outlaw, he lived in Sherwood Forest.'",
+    "prompt": "Write three sentences about today's chapter: one simple, one compound, and one complex. Label each type."
+  },
+  "3": {
+    "topic": "Subject and Predicate",
+    "explanation": "The subject tells who or what the sentence is about. The predicate tells what the subject does or is. Every complete sentence needs both. In 'Robin shot the arrow,' 'Robin' is the subject and 'shot the arrow' is the predicate.",
+    "example": "Subject: 'The Sheriff of Nottingham' / Predicate: 'chased Robin through the forest.'",
+    "prompt": "Find three sentences in today's reading. Underline the subject once and the predicate twice. Then write three sentences of your own about the chapter and identify the subject and predicate in each."
+  },
+  "6": {
+    "topic": "Direct and Indirect Objects",
+    "explanation": "A direct object receives the action of the verb: 'Robin shot an arrow.' (arrow = direct object). An indirect object tells to whom or for whom: 'Robin gave Little John a warning.' (Little John = indirect object, warning = direct object).",
+    "example": "Direct object: 'The Merry Men cooked dinner.' / Indirect object: 'Robin gave the poor man gold.'",
+    "prompt": "Write four sentences about today's chapter. Two sentences should have direct objects only, and two should have both indirect and direct objects. Label each object."
+  },
+  "8": {
+    "topic": "Independent and Dependent Clauses",
+    "explanation": "An independent clause can stand alone as a complete sentence. A dependent clause cannot stand alone and begins with a subordinating conjunction (because, although, when, if, since, while).",
+    "example": "Independent: 'Robin Hood fought bravely.' / Dependent: 'When he faced the Sheriff' (needs more to be complete)",
+    "prompt": "Find two complex sentences in today's reading. Identify which part is independent and which is dependent. Then write two complex sentences of your own and label the clauses."
+  },
+  "11": {
+    "topic": "Comma Rules: Lists, Compound Sentences, and Introductory Elements",
+    "explanation": "Use commas to separate items in a list: 'Robin, Little John, and Friar Tuck.' Use commas before coordinating conjunctions in compound sentences: 'Robin ran, and the Sheriff followed.' Use commas after introductory words or phrases: 'In the forest, Robin waited.'",
+    "example": "List: 'They needed bows, arrows, and courage.' Compound: 'Robin aimed carefully, but the arrow missed.' Introductory: 'After the feast, they rested.'",
+    "prompt": "Write three sentences about today's chapter demonstrating each comma rule (one for lists, one for compound sentences, one for introductory elements). Explain why you placed each comma."
+  },
+  "13": {
+    "topic": "Adjectives and Adverbs",
+    "explanation": "Adjectives describe nouns and answer which one, what kind, or how many: 'the brave outlaw.' Adverbs describe verbs, adjectives, or other adverbs and answer how, when, where, or to what extent: 'fought bravely.'",
+    "example": "Adjective: 'The clever archer aimed carefully.' / Adverb: 'He moved silently through the forest.'",
+    "prompt": "Find five adjectives and five adverbs in today's reading. List them and explain what each one describes. Then write three sentences about the chapter using at least two adjectives and two adverbs in each sentence."
+  },
+  "16": {
+    "topic": "Verb Tenses: Past, Present, and Future",
+    "explanation": "Past tense shows action that already happened: 'Robin fought the Sheriff.' Present tense shows action happening now: 'Robin fights the Sheriff.' Future tense shows action that will happen: 'Robin will fight the Sheriff.'",
+    "example": "Past: 'Robin Hood met Little John on the bridge.' Present: 'Robin Hood meets with his men.' Future: 'Robin Hood will challenge the Sheriff.'",
+    "prompt": "Retell a scene from today's chapter in three different tenses: first in past tense, then in present tense, then in future tense (as if predicting what will happen)."
+  },
+  "18": {
+    "topic": "Quotation Marks and Dialogue",
+    "explanation": "Use quotation marks to show someone's exact words. Put commas and periods inside the closing quotation mark. Start a new paragraph when a different person speaks. Example: Robin said, \"Meet me at the old oak tree.\"",
+    "example": "\"Little John, we must help the poor,\" Robin declared. \"I agree,\" Little John replied.",
+    "prompt": "Write a conversation between two characters from today's chapter. Use proper quotation marks, commas, and paragraph breaks. Include at least four lines of dialogue."
+  },
+  "21": {
+    "topic": "Pronouns and Antecedents",
+    "explanation": "A pronoun takes the place of a noun. An antecedent is the noun the pronoun refers to. The pronoun must agree with its antecedent in number and gender. Example: 'Robin Hood was brave. He never feared danger.' (He = Robin Hood)",
+    "example": "Robin Hood gathered his men. They prepared for battle. (They = his men)",
+    "prompt": "Find five pronouns in today's reading and identify their antecedents. Then write four sentences about the chapter using pronouns correctly. Draw an arrow from each pronoun to its antecedent."
+  },
+  "23": {
+    "topic": "Possessive Nouns",
+    "explanation": "Possessive nouns show ownership. For singular nouns, add 's: 'Robin's bow.' For plural nouns ending in s, add only an apostrophe: 'the outlaws' camp.' For plural nouns not ending in s, add 's: 'the men's courage.'",
+    "example": "Singular: 'The Sheriff's guards searched everywhere.' Plural ending in s: 'The guards' weapons were sharp.' Plural not ending in s: 'The men's loyalty was strong.'",
+    "prompt": "Write six sentences about today's chapter using possessive nouns: two with singular possessives, two with plural possessives ending in s, and two with plural possessives not ending in s."
+  },
+  "26": {
+    "topic": "Run-on Sentences and Sentence Fragments",
+    "explanation": "A run-on sentence incorrectly joins two sentences without proper punctuation: 'Robin ran he escaped.' A fragment is incomplete: 'Because he was brave.' Fix run-ons by adding punctuation or conjunctions. Fix fragments by completing the thought.",
+    "example": "Run-on (wrong): 'Robin fought bravely he won the battle.' Fixed: 'Robin fought bravely, and he won the battle.' Fragment (wrong): 'When the Sheriff arrived.' Fixed: 'When the Sheriff arrived, the outlaws hid.'",
+    "prompt": "Find any run-on sentences or fragments in your previous writing assignments and fix them. Then write four correct compound or complex sentences about today's chapter."
+  },
+  "28": {
+    "topic": "Coordinating and Subordinating Conjunctions",
+    "explanation": "Coordinating conjunctions (FANBOYS: for, and, nor, but, or, yet, so) join equal elements. Subordinating conjunctions (because, although, when, if, since, while, after, before, until) introduce dependent clauses.",
+    "example": "Coordinating: 'Robin wanted justice, but the Sheriff wanted revenge.' Subordinating: 'Although Robin was outnumbered, he fought bravely.'",
+    "prompt": "Write four sentences about today's chapter: two using coordinating conjunctions and two using subordinating conjunctions. Identify which type you used in each sentence."
+  }
+}

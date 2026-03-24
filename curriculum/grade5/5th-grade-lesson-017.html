@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 17 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 17: THE KING&#039;S PARDON</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏹</div>
+        <h1>Lesson 17</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE KING&#039;S PARDON</div>
+        <div style="font-size: 1rem; color: #999;">Week 4 • The Merry Adventures of Robin Hood • 5th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 17!</h2>
+      <p>Today we're reading <strong>THE KING&#039;S PARDON</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 17</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>🏹 Remember:</strong> Robin Hood is a legendary outlaw who fought for justice. As you read, think about what makes someone a hero or a villain.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. pardon</h3>
+        <p><strong>Part of Speech:</strong> noun/verb</p>
+        <p><strong>Definition:</strong> the act of forgiving a crime and releasing someone from punishment</p>
+        <p><strong>In context:</strong> <em>"Robin of Locksley, I pardon you and every member of your band."</em></p>
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. pardon</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE KING&#039;S PARDON (Part 1)</h2>
+      <div class="story">
+        <p>King Richard threw back his hood and revealed himself. The Merry Men dropped to their knees. Even Little John bowed — and Little John bowed to no one.
+&quot;Rise,&quot; the King said. &quot;I didn&#039;t come here to be worshiped. I came to see the truth.&quot;
+The truth, as Richard explained, was complicated. While he had been away, his brother Prince John and corrupt officials like the Sheriff had bled the country dry. The common people were suffering. And the one man who had stood against the injustice — Robin Hood — was a wanted criminal.
+&quot;I&#039;ve heard two stories about you, Robin Hood,&quot; the King said, settling by the fire. &quot;The Sheriff says you&#039;re a murderer, a thief, and an enemy of the crown. The common people say you&#039;re the only honest man in Nottinghamshire. Which is it?&quot;
+&quot;A bit of both, Your Majesty,&quot; Robin said honestly. &quot;I&#039;ve stolen. I&#039;ve fought. I killed a man the day I became an outlaw, and I&#039;ve never stopped regretting it. But everything I&#039;ve taken has gone to people who needed it more than those I took it from.&quot;
+The King listened. He questioned Little John, Friar Tuck, Allan-a-Dale, and Marian. He heard about the poor knight, the forced wedding, the starving villages fed with the Bishop&#039;s gold. He heard about the Sheriff&#039;s cruelty, the unjust taxes, the families driven from their homes.
+When he had heard enough, Richard stood.
+&quot;Robin of Locksley, I pardon you and every member of your band. Your crimes are forgiven. The Sheriff of Nottingham will answer for his own.&quot;
+A cheer went up that shook the ancient oaks of Sherwood Forest.
+&quot;But,&quot; the King continued, and the cheering stopped. &quot;I need men I can trust at court. Robin, I want you to come to London. Serve me as you&#039;ve served these people. Bring your skills, your courage, and your loyalty to the crown.&quot;
+Robin looked at his men. He looked at Marian. He looked at the green canopy of Sherwood Forest — the only home he had known for years.
+&quot;Yes, Your Majesty,&quot; he said.
+He didn&#039;t know it then, but it was the beginning of the end.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE KING&#039;S PARDON (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE KING&#039;S PARDON (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What condition comes with the King's pardon?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+          A) Robin must leave England and never return
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+          B) Robin must pay a fine equal to everything he has stolen
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+          C) Robin must come to London and serve the King at court
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+          D) Robin must capture the Sheriff and deliver him to the King
+        </label>
+        
+      
+      
+      <h3>2. Why is the pardon described as "bittersweet"?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+          A) Robin is happy to be free but sad that some of his men were not pardoned
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+          B) Robin is pardoned but must leave the forest — the only home he&#039;s known for years
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+          C) The King forgives Robin but punishes Little John
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+          D) Robin is pardoned but Marian must stay behind
+        </label>
+        
+      
+      
+      <h3>3. Robin accepts the pardon even though it means leaving Sherwood. Do you think he makes the right choice? What would you have done? Use evidence from the chapter.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar Practice</h2>
+      <p>Review your grammar and language skills from previous lessons.</p>
+      <textarea rows="10" placeholder="Practice writing here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Medieval Pardons</h3>
+      <p>Kings had the power to pardon criminals—even those guilty of serious crimes. Pardons were sometimes granted as rewards for service, sometimes sold for money, and sometimes given to win popularity. A royal pardon could restore citizenship, property, and legal rights.</p><p>But pardons came with expectations. A pardoned outlaw owed the king loyalty and service. Refusing could be seen as treason. Robin&#039;s pardon puts him in an impossible position: accept and lose his freedom, or refuse and insult the king. The story shows that even well-intentioned authority can trap those it claims to help.</p>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Write a paragraph analyzing an important decision made in today's chapter. Was it the right choice? What were the consequences? What does this reveal about the character?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

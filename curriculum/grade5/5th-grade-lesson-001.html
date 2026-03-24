@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 1: ROBIN BECOMES AN OUTLAW</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏹</div>
+        <h1>Lesson 1</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">ROBIN BECOMES AN OUTLAW</div>
+        <div style="font-size: 1rem; color: #999;">Week 1 • The Merry Adventures of Robin Hood • 5th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 1!</h2>
+      <p>Today we're reading <strong>ROBIN BECOMES AN OUTLAW</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 1</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Simple, Compound, and Complex Sentences (Grammar)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>🏹 Remember:</strong> Robin Hood is a legendary outlaw who fought for justice. As you read, think about what makes someone a hero or a villain.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. outlaw</h3>
+        <p><strong>Part of Speech:</strong> noun</p>
+        <p><strong>Definition:</strong> a person who has broken the law and is living outside society&#039;s protection</p>
+        <p><strong>In context:</strong> <em>"By nightfall, Robin of Locksley was a wanted man. A price was on his head. He could never go home again."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. forester</h3>
+        <p><strong>Part of Speech:</strong> noun</p>
+        <p><strong>Definition:</strong> an official responsible for patrolling and protecting a forest, especially royal hunting grounds</p>
+        <p><strong>In context:</strong> <em>"He met a group of the King&#039;s foresters—rough men who patrolled the royal forest and enforced the harsh laws."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. offense</h3>
+        <p><strong>Part of Speech:</strong> noun</p>
+        <p><strong>Definition:</strong> a violation of the law; a crime</p>
+        <p><strong>In context:</strong> <em>"You&#039;ve killed one of the King&#039;s deer. That&#039;s a hanging offense."</em></p>
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. outlaw</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. forester</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. offense</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 ROBIN BECOMES AN OUTLAW (Part 1)</h2>
+      <div class="story">
+        <p>In the green heart of England, in the days when King Henry ruled the land, there lived a young man named Robin of Locksley. He was eighteen years old, strong and quick, with sharp eyes and a laugh that could be heard across a meadow. He was the finest archer in all of Nottinghamshire — and everyone knew it, including Robin himself.
+That was the problem.
+One spring morning, Robin set out through Sherwood Forest on his way to Nottingham, where the Sheriff was holding an archery contest. The prize was a fine barrel of ale and a purse of silver, and Robin intended to win both. He walked with a longbow over his shoulder, whistling, feeling like the world belonged to him.
+At a crossroads he met a group of the King&#039;s foresters — rough men who patrolled the royal forest and enforced the harsh laws that protected the King&#039;s deer. In those days, killing one of the King&#039;s deer was a crime punishable by hanging, even if your family was starving. The foresters were hated by common people, and they knew it, and they didn&#039;t care.
+&quot;Where are you going, boy?&quot; the chief forester called out. He was a big man with a red face and mean eyes.
+&quot;To Nottingham, to win the shooting match,&quot; Robin said cheerfully.
+The foresters laughed. &quot;You? You&#039;re just a beardless boy. I&#039;ll wager you couldn&#039;t hit a deer at a hundred paces.&quot;
+Robin&#039;s temper flared — a weakness that would follow him all his life. &quot;I&#039;ll bet you twenty marks I can hit any target you name.&quot;
+The forester pointed to a herd of the King&#039;s deer grazing in a clearing a hundred yards away. &quot;Hit the finest buck in that herd, and I&#039;ll pay you twenty marks.&quot;
+Robin nocked an arrow, drew his great bow, and let fly. The arrow sang through the air and struck the buck cleanly. The animal fell without a sound.
+The foresters&#039; laughter died.
+&quot;You fool,&quot; the chief forester snarled. &quot;You&#039;ve killed one of the King&#039;s deer. That&#039;s a hanging offense.&quot;
+Robin realized what he had done. In his pride and temper, he had committed a crime that could cost him his life. The foresters reached for their weapons.
+Robin ran.
+An arrow whistled past his ear. He plunged into the thick woods, crashing through brambles and leaping over fallen logs. Behind him, the foresters shouted and cursed. Another arrow hissed by, close enough to clip a leaf beside his face. Robin turned, drew his own bow, and fired back. His arrow found its mark — one of the foresters fell.
+Robin stared in horror at what he had done. Then he disappeared into the deepest part of Sherwood Forest, where the oaks grew so thick that sunlight barely reached the ground.
+By nightfall, Robin of Locksley was a wanted man. A price was on his head. He could never go home again.
+He was eighteen years old, and his old life was over.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 ROBIN BECOMES AN OUTLAW (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 ROBIN BECOMES AN OUTLAW (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What directly causes Robin to become an outlaw?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+          A) He refuses to pay his taxes to the Sheriff of Nottingham
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+          B) He kills one of the King&#039;s deer on a bet and then injures a forester while escaping
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+          C) He is accused of stealing from a nobleman&#039;s estate
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+          D) He publicly insults the King&#039;s foresters at a village fair
+        </label>
+        
+      
+      
+      <h3>2. What character flaw leads Robin into trouble in this chapter?</h3>
+      
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+          A) His greed for money and prizes
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+          B) His pride and quick temper, which make him accept the forester&#039;s bet
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+          C) His laziness, which makes him take shortcuts through the royal forest
+        </label>
+        
+        <label style="display: block; margin: 8px 0; padding: 10px; background: #f9f9f9; border-radius: 6px; cursor: pointer;">
+          <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+          D) His loyalty to friends who are already outlaws
+        </label>
+        
+      
+      
+      <h3>3. Robin is only eighteen when his life changes forever. How does his age make this scene more powerful? What does this chapter suggest about how quickly a life can change?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar: Simple, Compound, and Complex Sentences</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>A simple sentence has one independent clause. A compound sentence has two independent clauses joined by a conjunction (and, but, or, so). A complex sentence has one independent clause and at least one dependent clause.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Simple: &#039;Robin Hood lived in Sherwood Forest.&#039; Compound: &#039;Robin Hood lived in Sherwood Forest, and his men were loyal.&#039; Complex: &#039;Because Robin Hood was an outlaw, he lived in Sherwood Forest.&#039;"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Write three sentences about today&#039;s chapter: one simple, one compound, and one complex. Label each type.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Medieval English Law</h3>
+      <p>In medieval England, forests belonged to the king. Hunting the king&#039;s deer was considered poaching—a crime punishable by death or mutilation. Common people could starve while surrounded by game they weren&#039;t allowed to touch. These harsh forest laws created widespread resentment and drove many otherwise law-abiding people to become outlaws. Robin Hood&#039;s story reflects this historical reality: one moment of impulse could turn a free person into a hunted criminal with no way back.</p><p>The foresters who enforced these laws were feared and hated. They had the power to arrest, fine, or even execute poachers on the spot. Their corruption was legendary—many took bribes or falsely accused innocent people to collect rewards. This system of injustice is why Robin Hood became a folk hero: he represented resistance against laws that protected the wealthy while oppressing the poor.</p>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Write a paragraph analyzing an important decision made in today's chapter. Was it the right choice? What were the consequences? What does this reveal about the character?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>
