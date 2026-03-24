@@ -329,35 +329,7 @@ In the morning, she went to the palace.</p>
     </div>
   </div>
 
-  <script>
-    let currentPage = 1;
-    const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    
-    window.saveJournal = function(day) {
-      alert('Journal entry saved! ✅');
-      // In production, save to Firebase
-    };
-    
-    showPage(1);
-  </script>
+  
+  <script src="../js/universal-lesson-init.js"></script>
 </body>
 </html>
