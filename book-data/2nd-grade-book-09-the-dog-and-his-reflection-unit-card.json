@@ -1,0 +1,394 @@
+{
+  "title": "The Dog and His Reflection",
+  "bookNumber": 9,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "relatable lesson about greed",
+  "quarter": 2,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "resourceful",
+          "definition": "able to find clever ways to solve problems",
+          "sentence": "From A Lucky Discovery"
+        },
+        {
+          "word": "morsels",
+          "definition": "small pieces of food",
+          "sentence": "From A Lucky Discovery"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "secluded",
+          "definition": "private and away from other people",
+          "sentence": "From Seeking a Safe Place"
+        },
+        {
+          "word": "solitude",
+          "definition": "the state of being alone",
+          "sentence": "From Seeking a Safe Place"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "tranquil",
+          "definition": "peaceful and calm",
+          "sentence": "From The Bridge Crossing"
+        },
+        {
+          "word": "reflection",
+          "definition": "an image seen in a mirror or water",
+          "sentence": "From The Bridge Crossing"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "entitled",
+          "definition": "believing you deserve something",
+          "sentence": "From Greed Takes Hold"
+        },
+        {
+          "word": "obsessed",
+          "definition": "thinking about something constantly",
+          "sentence": "From Greed Takes Hold"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "intimidate",
+          "definition": "to frighten someone to make them do what you want",
+          "sentence": "From A Costly Mistake"
+        },
+        {
+          "word": "disbelief",
+          "definition": "inability to believe that something is true",
+          "sentence": "From A Costly Mistake"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "illusion",
+          "definition": "something that appears real but is not",
+          "sentence": "From A Hard Lesson Learned"
+        },
+        {
+          "word": "contentment",
+          "definition": "satisfaction and happiness with what you have",
+          "sentence": "From A Hard Lesson Learned"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the dog survive without a master?",
+          "options": [
+            "By sleeping all day",
+            "By using his wits and searching for food scraps",
+            "By stealing from other dogs"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What made this particular discovery so special?",
+          "options": [
+            "It was a small, ordinary bone",
+            "It was a large, juicy bone with tender meat - his best find in months",
+            "It was made of gold"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why was the dog worried about staying in the market square?",
+          "options": [
+            "It was too noisy",
+            "Other animals might try to steal his bone",
+            "The market was closed"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Where did the dog decide to go with his bone?",
+          "options": [
+            "Back to his home",
+            "A quiet grove of trees beside a gentle stream",
+            "To another market"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was special about the stream under the bridge?",
+          "options": [
+            "It was very deep and dangerous",
+            "It was crystal clear and reflected like a perfect mirror",
+            "It was full of fish"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the dog think he saw in the water?",
+          "options": [
+            "A fish swimming",
+            "Another dog with a bone just as large as his own",
+            "A treasure chest"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened to the dog's attitude when he saw the reflection?",
+          "options": [
+            "He became grateful for what he had",
+            "He became greedy and wanted the second bone too",
+            "He became scared and ran away"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did greed do to the dog's thinking?",
+          "options": [
+            "It made him wiser",
+            "It clouded his judgment and made him forget his peaceful plan",
+            "It had no effect"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened when the dog opened his mouth to bark?",
+          "options": [
+            "The other dog ran away",
+            "His own bone fell from his mouth into the stream",
+            "He got the second bone"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the dog realize after he lost his bone?",
+          "options": [
+            "That there were many other dogs around",
+            "That there had never been another dog - only his own reflection",
+            "That he could swim down to get it"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What lesson did the dog learn from his experience?",
+          "options": [
+            "That he should always bark at other dogs",
+            "That greed can cause you to lose what you already have",
+            "That reflections are dangerous"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the dog change after this experience?",
+          "options": [
+            "He became meaner to other animals",
+            "He learned to be grateful and content with what he had",
+            "He never looked at water again"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "A Lucky Discovery",
+      "title": "Dolphins",
+      "content": "1. b) through a blowhole on top of their heads\n2. b) a pod\n"
+    },
+    {
+      "day": 2,
+      "topic": "Seeking a Safe Place",
+      "title": "Tornadoes",
+      "content": "1. a) when warm moist air meets cold dry air and winds create rotation\n2. b) an area in the central plains where many tornadoes occur\n"
+    },
+    {
+      "day": 3,
+      "topic": "The Bridge Crossing",
+      "title": "Pharmacists",
+      "content": "1. a) dosage, instructions, and potential interactions\n2. a) health advice, vaccinations, and medication guidance\n"
+    },
+    {
+      "day": 4,
+      "topic": "Greed Takes Hold",
+      "title": "Octopuses",
+      "content": "1. a) they have no bones in their bodies\n2. a) they change color and texture to match their surroundings\n"
+    },
+    {
+      "day": 5,
+      "topic": "A Costly Mistake",
+      "title": "Glaciers",
+      "content": "1. a) snow accumulates for many years and gets compressed into ice\n2. a) they carve valleys, create lakes, and move boulders\n"
+    },
+    {
+      "day": 6,
+      "topic": "A Hard Lesson Learned",
+      "title": "Engineers",
+      "content": "1. a) they use math, science, and creativity to solve problems\n2. a) safety, cost, and environmental impact\n"
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Dog and His Reflection."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Dog and His Reflection."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Dog and His Reflection."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

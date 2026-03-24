@@ -1,0 +1,689 @@
+{
+  "title": "The Velveteen Rabbit",
+  "author": "Margery Williams",
+  "gradeLevel": 3,
+  "totalDays": 15,
+  "totalChapters": 12,
+  "assessmentDays": [
+    5,
+    10,
+    15
+  ],
+  "structure": "12 chapters across 12 lessons, 3 assessment days",
+  "themes": [
+    "love",
+    "transformation",
+    "becoming real",
+    "friendship",
+    "nursery"
+  ],
+  "setting": "English nursery, countryside",
+  "protagonist": "Velveteen Rabbit",
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "velveteen",
+          "definition": "a soft fabric that feels like velvet"
+        },
+        {
+          "word": "whiskers",
+          "definition": "long hairs that grow near an animal's mouth"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "mechanical",
+          "definition": "having moving parts that work like a machine"
+        },
+        {
+          "word": "ordinary",
+          "definition": "normal; nothing special"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "wisdom",
+          "definition": "knowledge and good judgment"
+        },
+        {
+          "word": "seams",
+          "definition": "the lines where pieces of fabric are sewn together"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "honest",
+          "definition": "telling the truth; not lying"
+        },
+        {
+          "word": "joints",
+          "definition": "places where two parts connect and can move"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "bedtime",
+          "definition": "the time when someone goes to sleep"
+        },
+        {
+          "word": "jealously",
+          "definition": "feeling angry because someone has something you want"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "adventures",
+          "definition": "exciting experiences or activities"
+        },
+        {
+          "word": "explored",
+          "definition": "looked around and discovered new places"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "words": [
+        {
+          "word": "blooming",
+          "definition": "when flowers open up and show their colors"
+        },
+        {
+          "word": "burrows",
+          "definition": "holes in the ground where animals live"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "words": [
+        {
+          "word": "investigate",
+          "definition": "to look at something closely to learn about it"
+        },
+        {
+          "word": "amazed",
+          "definition": "very surprised and impressed"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "words": [
+        {
+          "word": "confusion",
+          "definition": "feeling puzzled or mixed up"
+        },
+        {
+          "word": "sniffed",
+          "definition": "smelled something by breathing in through the nose"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "words": [
+        {
+          "word": "fever",
+          "definition": "when someone's body gets very hot because they are sick"
+        },
+        {
+          "word": "comfort",
+          "definition": "help someone feel better when they are sad or scared"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "words": [
+        {
+          "word": "sprouted",
+          "definition": "began to grow from the ground"
+        },
+        {
+          "word": "fairy",
+          "definition": "a magical being with special powers"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "words": [
+        {
+          "word": "tingling",
+          "definition": "a feeling like tiny prickles on your skin"
+        },
+        {
+          "word": "muscles",
+          "definition": "parts inside the body that help you move"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What holiday was it in the story?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What presents did the Boy receive besides the velveteen rabbit?"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Where did Nana put the velveteen rabbit?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Why were the mechanical toys proud of themselves?"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Who was kind to the velveteen rabbit in the nursery?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How was the Skin Horse different from the other toys?"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the Skin Horse say Real isn't about?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How does someone become Real, according to the Skin Horse?"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Why did Nana give the Boy the velveteen rabbit one evening?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did the Boy say about the rabbit when he held him?"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What season came to the house and garden?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Where did the rabbit go during the Boy's adventures?"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the Boy make in the dirt for his rabbit?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What important word did the Boy use to describe his rabbit?"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Where was the velveteen rabbit left one evening?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What creatures came out of the raspberry bushes?"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the real rabbits discover about the velveteen rabbit?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did the real rabbits know he wasn't really real?"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What happened to the Boy after the sad evening with the rabbits?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did the velveteen rabbit help during the Boy's illness?"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What happened when the rabbit's tear fell to the ground?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Who was the beautiful fairy that appeared?"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What happened to the rabbit after the fairy's kiss?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How was the rabbit different after the magic?"
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Margery Williams biography",
+      "title": "",
+      "content": "Learning about Margery Williams biography helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Margery Williams biography, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Margery Williams biography important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Toys and imagination",
+      "title": "",
+      "content": "Learning about Toys and imagination helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Toys and imagination, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Toys and imagination important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "What makes something real?",
+      "title": "",
+      "content": "Learning about What makes something real? helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study What makes something real?, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is What makes something real? important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Skin Horse wisdom",
+      "title": "",
+      "content": "Learning about Skin Horse wisdom helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Skin Horse wisdom, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Skin Horse wisdom important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Scarlet fever history",
+      "title": "",
+      "content": "Learning about Scarlet fever history helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Scarlet fever history, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Scarlet fever history important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Velveteen fabric",
+      "title": "",
+      "content": "Learning about Velveteen fabric helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Velveteen fabric, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Velveteen fabric important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "topic": "Nursery life in 1900s",
+      "title": "",
+      "content": "Learning about Nursery life in 1900s helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Nursery life in 1900s, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Nursery life in 1900s important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "topic": "Toy rabbits through history",
+      "title": "",
+      "content": "Learning about Toy rabbits through history helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Toy rabbits through history, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Toy rabbits through history important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "topic": "Transformation and change",
+      "title": "",
+      "content": "Learning about Transformation and change helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Transformation and change, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Transformation and change important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "topic": "The power of love",
+      "title": "",
+      "content": "Learning about The power of love helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study The power of love, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is The power of love important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "topic": "Childhood and growing up",
+      "title": "",
+      "content": "Learning about Childhood and growing up helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Childhood and growing up, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Childhood and growing up important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "topic": "Classic children's literature",
+      "title": "",
+      "content": "Learning about Classic children's literature helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Classic children's literature, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Classic children's literature important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns** are words that name people, places, things, or ideas.\n\n**Examples:**\n• People: teacher, doctor, friend\n• Places: school, park, library\n• Things: book, pencil, computer\n• Ideas: happiness, courage, freedom\n\n**Practice:** Find 3 nouns in today's story!"
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs** are action words that tell what someone or something does.\n\n**Examples:**\n• run, jump, dance, sing\n• think, feel, hope, dream\n• was, were, is, are (linking verbs)\n\n**Practice:** Circle the verbs in these sentences from the story."
+    },
+    {
+      "day": 6,
+      "topic": "Adjectives",
+      "content": "**Adjectives** describe nouns. They tell us more details about people, places, or things.\n\n**Examples:**\n• beautiful princess\n• dark forest\n• brave knight\n\n**Practice:** Add adjectives to make these sentences more interesting!"
+    },
+    {
+      "day": 8,
+      "topic": "Pronouns",
+      "content": "**Pronouns**\n\nThis lesson teaches about Pronouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 11,
+      "topic": "Compound Sentences",
+      "content": "**Compound Sentences**\n\nThis lesson teaches about Compound Sentences. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 13,
+      "topic": "Capitalization",
+      "content": "**Capitalization**\n\nThis lesson teaches about Capitalization. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order** (alphabetical order) helps us organize words and find them in dictionaries.\n\n**Steps:**\n1. Look at the first letter\n2. If first letters match, look at second letter\n3. Keep going until you find the difference\n\n**Practice:** Put these words from the story in ABC order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "**Rhyming words** sound the same at the end.\n\n**Examples:**\n• cat, hat, mat, sat\n• sing, ring, wing, king\n\n**Practice:** Find pairs of rhyming words in today's story!"
+    },
+    {
+      "day": 7,
+      "topic": "Synonyms",
+      "content": "**Synonyms**\n\nThis lesson teaches about Synonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 9,
+      "topic": "Antonyms",
+      "content": "**Antonyms**\n\nThis lesson teaches about Antonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 12,
+      "topic": "Plural Nouns",
+      "content": "**Plural Nouns**\n\nThis lesson teaches about Plural Nouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 14,
+      "topic": "Context Clues",
+      "content": "**Context Clues**\n\nThis lesson teaches about Context Clues. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time you felt like Velveteen Rabbit."
+    },
+    {
+      "day": 3,
+      "prompt": "If you could visit the English nursery, countryside, what would you do?"
+    },
+    {
+      "day": 6,
+      "prompt": "What is the most important lesson in this story?"
+    },
+    {
+      "day": 8,
+      "prompt": "Describe your favorite character and why you like them."
+    },
+    {
+      "day": 11,
+      "prompt": "How would you solve the problem in this story?"
+    },
+    {
+      "day": 13,
+      "prompt": "Write a different ending for this story."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next in the story?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character are you most like? Why?"
+    },
+    {
+      "day": 7,
+      "prompt": "What is your favorite part of the story so far?"
+    },
+    {
+      "day": 9,
+      "prompt": "If you were in this story, what would you do?"
+    },
+    {
+      "day": 12,
+      "prompt": "What surprised you in this chapter?"
+    },
+    {
+      "day": 14,
+      "prompt": "How did this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 5,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "words": []
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "words": []
+    }
+  ]
+}

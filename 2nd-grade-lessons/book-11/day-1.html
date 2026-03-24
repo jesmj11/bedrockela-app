@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - The Cat and the Mice - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 1</h1>
+            <h2>The Cat and the Mice</h2>
+            <p class="book-info">Book 11 • Week 1 • Day 1 of 8</p>
+            <p class="chapter-info">Chapter 1: A House Full of Mice</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. thriving</h3>
+                <p class="definition"><strong>Definition:</strong> growing and doing well</p>
+                <p class="example"><strong>Example:</strong> From A House Full of Mice</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. sophisticated</h3>
+                <p class="definition"><strong>Definition:</strong> complex and well-organized</p>
+                <p class="example"><strong>Example:</strong> From A House Full of Mice</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 A House Full of Mice</h2>
+        <div class="story-content">
+            <p>In a large old house with many dark corners, hidden passageways, and forgotten storage rooms, there lived a thriving community of mice who had made themselves quite comfortable in their cozy home. These clever little creatures had established an entire civilization within the walls, complete with families, neighborhoods, and well-worn paths that connected all the best sources of food and shelter throughout the building.</p><p>The mice had organized themselves into a sophisticated society where everyone had important roles to play. Some mice served as scouts, venturing out to find new sources of food and reporting back on any dangers they discovered. Others worked as gatherers, collecting crumbs and storing them in secret pantries for times when food might be scarce. The elder mice shared their wisdom about avoiding traps and predators.</p><p>Life was generally quite pleasant for the mouse community. They had learned to time their activities carefully, venturing out to search for food only when the house was quiet and still. During the day, they would rest safely in their hidden nests, and at night, they would emerge to explore the kitchen, dining room, and pantry for any tasty morsels that might have been dropped or left behind.</p><p>The mice had grown confident and perhaps a bit careless in their comfortable routine. They had been living in the house for so many generations that they felt perfectly safe and secure in their established territories. Little did they know that their peaceful existence was about to be dramatically disrupted by the arrival of a new resident who would change everything about their quiet, orderly lives.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. How had the mice organized themselves in the house?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        They lived alone and avoided each other
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        They created a sophisticated society with scouts, gatherers, and elders
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        They only came out during the day
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. How did the mice feel about their situation?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        Worried and frightened
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        Confident and perhaps a bit careless
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        Angry and upset
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>✏️ Grammar Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Nouns</h3>
+            <p class="objective"><strong>Goal:</strong> Students will understand and apply Nouns.</p>
+            <div class="lesson-content">
+                <p><strong>Nouns</strong></p><p>This lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.</p><ul><li><strong>Key Points:</strong></li><li>Understand the concept</li><li>Find examples in the story</li><li>Practice using it correctly</li></ul><p><strong>Practice:</strong>
+Apply what you learned by completing the exercises.</p><p><strong>Remember:</strong> Nouns is an important language skill!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>A House Full of Mice</h3>
+            <h4>A House Full of Mice</h4>
+            
+            <div class="info-text">
+                <p>Learning about A House Full of Mice is interesting and important for second graders. There are many fascinating facts about A House Full of Mice that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.</p><p>When we explore A House Full of Mice, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about A House Full of Mice. The more we learn, the better we understand how things work and why they matter.</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>✍️ Writing Activity</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> Write about a time like in The Cat and the Mice.</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 1!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read A House Full of Mice</p>
+                <p>✅ Practiced grammar skills</p>
+                <p>✅ Completed your writing</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-2.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 2 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

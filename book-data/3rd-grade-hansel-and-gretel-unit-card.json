@@ -1,0 +1,689 @@
+{
+  "title": "Hansel and Gretel",
+  "author": "Brothers Grimm",
+  "gradeLevel": 3,
+  "totalDays": 15,
+  "totalChapters": 12,
+  "assessmentDays": [
+    5,
+    10,
+    15
+  ],
+  "structure": "12 chapters across 12 lessons, 3 assessment days",
+  "themes": [
+    "bravery",
+    "resourcefulness",
+    "family",
+    "survival",
+    "clever thinking"
+  ],
+  "setting": "German forest, gingerbread house",
+  "protagonist": "Hansel and Gretel",
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "woodcutter",
+          "definition": "a person who cuts down trees for wood"
+        },
+        {
+          "word": "scarce",
+          "definition": "hard to find; not enough of something"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "solution",
+          "definition": "an answer to a problem"
+        },
+        {
+          "word": "abandon",
+          "definition": "to leave someone or something behind"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "pebbles",
+          "definition": "small, smooth stones"
+        },
+        {
+          "word": "secretly",
+          "definition": "done in hiding; without others knowing"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "realized",
+          "definition": "understood or figured out"
+        },
+        {
+          "word": "glowed",
+          "definition": "gave off a soft light"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "overjoyed",
+          "definition": "extremely happy"
+        },
+        {
+          "word": "pretended",
+          "definition": "acted like something was true when it wasn't"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "discovery",
+          "definition": "finding out something new"
+        },
+        {
+          "word": "creatures",
+          "definition": "animals or other living things"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "words": [
+        {
+          "word": "wandered",
+          "definition": "walked around without a specific destination"
+        },
+        {
+          "word": "clearing",
+          "definition": "an open space in a forest where there are no trees"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "words": [
+        {
+          "word": "suspicious",
+          "definition": "feeling that something might be wrong"
+        },
+        {
+          "word": "crooked",
+          "definition": "bent or twisted; not straight"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "words": [
+        {
+          "word": "cage",
+          "definition": "a box or room with bars that keeps someone trapped"
+        },
+        {
+          "word": "cackled",
+          "definition": "laughed in a mean, scary way"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "words": [
+        {
+          "word": "declared",
+          "definition": "announced something firmly"
+        },
+        {
+          "word": "innocently",
+          "definition": "in a way that seems harmless and not tricky"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "words": [
+        {
+          "word": "treasures",
+          "definition": "valuable things like gold and jewels"
+        },
+        {
+          "word": "victims",
+          "definition": "people who have been hurt by someone else"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "words": [
+        {
+          "word": "familiar",
+          "definition": "known; recognized from before"
+        },
+        {
+          "word": "comfortable",
+          "definition": "having everything you need; not worried about money"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Where did Hansel and Gretel's family live?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What was their father's job?"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What terrible plan did the stepmother suggest?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did the father react to this plan?"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did Hansel do late at night to prepare for the next day?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did Hansel mark their path through the forest?"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the parents tell the children to do at the fire?"
+        },
+        {
+          "type": "short-answer",
+          "question": "When did the children realize their parents weren't coming back?"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How did the father react when the children returned?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Why did the stepmother want to try the plan again?"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How was this trip different from the first time?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What terrible discovery did the children make when the moon rose?"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How long did Hansel and Gretel wander in the forest?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did they follow that led them to the house?"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How did the old woman treat the children at first?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Why weren't the children suspicious of her kindness?"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the witch do to Hansel the next morning?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did the witch make Gretel do?"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Why did the witch decide to cook Hansel even though he wasn't fat yet?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did Gretel pretend not to know how to do?"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did the children find in the witch's bedroom?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Why did they decide to take some of the treasures?"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How did the children know they were getting close to home?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did their father react when he saw them?"
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Brothers Grimm biography",
+      "title": "",
+      "content": "Learning about Brothers Grimm biography helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Brothers Grimm biography, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Brothers Grimm biography important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "German forests",
+      "title": "",
+      "content": "Learning about German forests helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study German forests, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is German forests important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Bread crumbs and pebbles",
+      "title": "",
+      "content": "Learning about Bread crumbs and pebbles helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Bread crumbs and pebbles, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Bread crumbs and pebbles important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Gingerbread houses",
+      "title": "",
+      "content": "Learning about Gingerbread houses helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Gingerbread houses, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Gingerbread houses important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Witches in fairy tales",
+      "title": "",
+      "content": "Learning about Witches in fairy tales helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Witches in fairy tales, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Witches in fairy tales important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Survival skills",
+      "title": "",
+      "content": "Learning about Survival skills helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Survival skills, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Survival skills important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "topic": "Sibling teamwork",
+      "title": "",
+      "content": "Learning about Sibling teamwork helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Sibling teamwork, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Sibling teamwork important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "topic": "German folklore",
+      "title": "",
+      "content": "Learning about German folklore helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study German folklore, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is German folklore important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "topic": "Forests in stories",
+      "title": "",
+      "content": "Learning about Forests in stories helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Forests in stories, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Forests in stories important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "topic": "Clever heroes",
+      "title": "",
+      "content": "Learning about Clever heroes helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Clever heroes, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Clever heroes important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "topic": "Overcoming fear",
+      "title": "",
+      "content": "Learning about Overcoming fear helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Overcoming fear, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Overcoming fear important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "topic": "Happy endings",
+      "title": "",
+      "content": "Learning about Happy endings helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Happy endings, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Happy endings important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns** are words that name people, places, things, or ideas.\n\n**Examples:**\n• People: teacher, doctor, friend\n• Places: school, park, library\n• Things: book, pencil, computer\n• Ideas: happiness, courage, freedom\n\n**Practice:** Find 3 nouns in today's story!"
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs** are action words that tell what someone or something does.\n\n**Examples:**\n• run, jump, dance, sing\n• think, feel, hope, dream\n• was, were, is, are (linking verbs)\n\n**Practice:** Circle the verbs in these sentences from the story."
+    },
+    {
+      "day": 6,
+      "topic": "Adjectives",
+      "content": "**Adjectives** describe nouns. They tell us more details about people, places, or things.\n\n**Examples:**\n• beautiful princess\n• dark forest\n• brave knight\n\n**Practice:** Add adjectives to make these sentences more interesting!"
+    },
+    {
+      "day": 8,
+      "topic": "Pronouns",
+      "content": "**Pronouns**\n\nThis lesson teaches about Pronouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 11,
+      "topic": "Compound Sentences",
+      "content": "**Compound Sentences**\n\nThis lesson teaches about Compound Sentences. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 13,
+      "topic": "Capitalization",
+      "content": "**Capitalization**\n\nThis lesson teaches about Capitalization. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order** (alphabetical order) helps us organize words and find them in dictionaries.\n\n**Steps:**\n1. Look at the first letter\n2. If first letters match, look at second letter\n3. Keep going until you find the difference\n\n**Practice:** Put these words from the story in ABC order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "**Rhyming words** sound the same at the end.\n\n**Examples:**\n• cat, hat, mat, sat\n• sing, ring, wing, king\n\n**Practice:** Find pairs of rhyming words in today's story!"
+    },
+    {
+      "day": 7,
+      "topic": "Synonyms",
+      "content": "**Synonyms**\n\nThis lesson teaches about Synonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 9,
+      "topic": "Antonyms",
+      "content": "**Antonyms**\n\nThis lesson teaches about Antonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 12,
+      "topic": "Plural Nouns",
+      "content": "**Plural Nouns**\n\nThis lesson teaches about Plural Nouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 14,
+      "topic": "Context Clues",
+      "content": "**Context Clues**\n\nThis lesson teaches about Context Clues. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time you felt like Hansel and Gretel."
+    },
+    {
+      "day": 3,
+      "prompt": "If you could visit the German forest, gingerbread house, what would you do?"
+    },
+    {
+      "day": 6,
+      "prompt": "What is the most important lesson in this story?"
+    },
+    {
+      "day": 8,
+      "prompt": "Describe your favorite character and why you like them."
+    },
+    {
+      "day": 11,
+      "prompt": "How would you solve the problem in this story?"
+    },
+    {
+      "day": 13,
+      "prompt": "Write a different ending for this story."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next in the story?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character are you most like? Why?"
+    },
+    {
+      "day": 7,
+      "prompt": "What is your favorite part of the story so far?"
+    },
+    {
+      "day": 9,
+      "prompt": "If you were in this story, what would you do?"
+    },
+    {
+      "day": 12,
+      "prompt": "What surprised you in this chapter?"
+    },
+    {
+      "day": 14,
+      "prompt": "How did this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 5,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "words": []
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "words": []
+    }
+  ]
+}

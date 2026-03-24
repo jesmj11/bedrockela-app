@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 29: Home Again</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 29 - Week 6</h1>
+            <h2>The Wonderful Wizard of Oz</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>Home Again</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: Home Again</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice grammar</li>
+                <li>Complete writing prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 6</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. embrace</h4>
+                <p><strong>Definition:</strong> To hug someone warmly; also to accept or welcome something willingly.</p>
+                <p class="vocab-sentence"><em>"From Oz"</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. contentment</h4>
+                <p><strong>Definition:</strong> A feeling of peaceful happiness and satisfaction with what you have.</p>
+                <p class="vocab-sentence"><em>"From Oz"</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">embrace</div>
+                <div class="match-def">To hug someone warmly; also to accept or welcome something willingly.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">contentment</div>
+                <div class="match-def">A feeling of peaceful happiness and satisfaction with what you have.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Home Again - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>Home Again</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Home Again - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>Aunt Em had just come out of the house to water the cabbages when she looked up and saw Dorothy running toward her. “My darling child!” she cried, folding the little girl in her arms and covering her face with kisses. “Where in the world did you come from?” “From the Land of Oz,” said Dorothy gravely. “And here is Toto, too. And oh, Aunt Em! I’m so glad to be at home again!” *** END OF THE PROJECT GUTENBERG EBOOK 55 ***</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Home Again - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. What happens?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) A</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) B</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) C</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) D</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. Reflect</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Kansas</h3>
+            <div class="info-text"><p>Info text here</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. Q1</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. Q2</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. Q3</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 29!</p>
+            <h3>You finished: Home Again</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

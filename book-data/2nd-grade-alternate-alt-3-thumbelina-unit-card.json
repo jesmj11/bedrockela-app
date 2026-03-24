@@ -1,0 +1,382 @@
+{
+  "title": "Thumbelina",
+  "bookNumber": "ALT-3",
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "perseverance and kindness",
+  "quarter": 4,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "cherish",
+          "definition": "to love and take care of something very precious",
+          "sentence": "From A Tiny Beginning"
+        },
+        {
+          "word": "miniature",
+          "definition": "very small; a tiny version of something",
+          "sentence": "From A Tiny Beginning"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "stranded",
+          "definition": "left alone in a place with no way to escape",
+          "sentence": "From Kidnapped by a Toad"
+        },
+        {
+          "word": "gnawed",
+          "definition": "chewed or bit through something",
+          "sentence": "From Kidnapped by a Toad"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "disapprovingly",
+          "definition": "in a way that shows you don't like or approve of something",
+          "sentence": "From Adventures with the Beetle"
+        },
+        {
+          "word": "criticized",
+          "definition": "said negative things about someone or something",
+          "sentence": "From Adventures with the Beetle"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "desperate",
+          "definition": "in a very bad situation with little hope",
+          "sentence": "From A Long, Difficult Winter"
+        },
+        {
+          "word": "arrangement",
+          "definition": "an agreement or plan between people",
+          "sentence": "From A Long, Difficult Winter"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "sympathy",
+          "definition": "feeling sorry for someone who is suffering",
+          "sentence": "From The Swallow's Secret"
+        },
+        {
+          "word": "vividly",
+          "definition": "in a very clear and detailed way",
+          "sentence": "From The Swallow's Secret"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "immense",
+          "definition": "extremely large or great",
+          "sentence": "From Finding Her True Home"
+        },
+        {
+          "word": "transparent",
+          "definition": "clear; you can see through it",
+          "sentence": "From Finding Her True Home"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the fairy give the woman?",
+          "options": [
+            "A magic wand",
+            "A special barleycorn seed",
+            "A beautiful flower"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why was the little girl named Thumbelina?",
+          "options": [
+            "She had green thumbs",
+            "She was no bigger than a thumb",
+            "She liked to suck her thumb"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why did the toad steal Thumbelina?",
+          "options": [
+            "To keep her as a pet",
+            "To be a bride for her son",
+            "To make her work"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did Thumbelina escape from the lily pad?",
+          "options": [
+            "She jumped into the water",
+            "Fish gnawed through the lily pad stem",
+            "The wind blew her away"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the cockchafer beetle first treat Thumbelina?",
+          "options": [
+            "He ignored her",
+            "He treated her very kindly",
+            "He was mean to her"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why did the beetle change his mind about Thumbelina?",
+          "options": [
+            "She was rude to him",
+            "His friends and family criticized her appearance",
+            "She wanted to leave"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Thumbelina survive during summer and autumn?",
+          "options": [
+            "She lived in a house",
+            "She made a bed from grass and ate nectar from flowers",
+            "Other animals took care of her"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Thumbelina have to do to stay with the field mouse?",
+          "options": [
+            "Pay rent with money",
+            "Clean the home and tell stories",
+            "Cook all the meals"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Thumbelina discover in the underground tunnels?",
+          "options": [
+            "A treasure chest",
+            "A nearly frozen swallow",
+            "Another mouse"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the swallow offer to do when he recovered?",
+          "options": [
+            "Stay with her forever",
+            "Carry her to warm, beautiful lands",
+            "Bring her food every day"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Where did the swallow take Thumbelina?",
+          "options": [
+            "Back to her original home",
+            "To a land with a spectacular flower garden",
+            "To a city"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Who did Thumbelina discover living in the garden?",
+          "options": [
+            "More beetles",
+            "Flower fairies exactly her size",
+            "Giant people"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "About A Tiny Beginning",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 2,
+      "topic": "About Kidnapped by a Toad",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "About Adventures with the Beetle",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "About A Long, Difficult Winter",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "About The Swallow's Secret",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "About Finding Her True Home",
+      "title": "",
+      "content": ""
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": ""
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": ""
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in Thumbelina."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in Thumbelina."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in Thumbelina."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

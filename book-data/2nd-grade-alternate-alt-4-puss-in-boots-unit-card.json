@@ -1,0 +1,382 @@
+{
+  "title": "Puss in Boots",
+  "bookNumber": "ALT-4",
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "cleverness and loyalty",
+  "quarter": 4,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "acumen",
+          "definition": "the ability to make good judgments and quick decisions",
+          "sentence": "From An Unexpected Inheritance"
+        },
+        {
+          "word": "lamented",
+          "definition": "expressed sorrow or regret about something",
+          "sentence": "From An Unexpected Inheritance"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "articulate",
+          "definition": "expressing ideas clearly and effectively",
+          "sentence": "From The Cat's Remarkable Proposal"
+        },
+        {
+          "word": "orchestrated",
+          "definition": "carefully planned and organized",
+          "sentence": "From The Cat's Remarkable Proposal"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "ingenious",
+          "definition": "very clever and original",
+          "sentence": "From The Cat's Clever Hunt"
+        },
+        {
+          "word": "endeavors",
+          "definition": "serious attempts or efforts",
+          "sentence": "From The Cat's Clever Hunt"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "etiquette",
+          "definition": "the rules of polite and proper behavior",
+          "sentence": "From An Audience with the King"
+        },
+        {
+          "word": "benefactor",
+          "definition": "a person who gives help or money to others",
+          "sentence": "From An Audience with the King"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "audacious",
+          "definition": "showing willingness to take bold risks",
+          "sentence": "From The Grand Deception"
+        },
+        {
+          "word": "ornate",
+          "definition": "elaborately decorated",
+          "sentence": "From The Grand Deception"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "aristocrat",
+          "definition": "a member of the highest social class",
+          "sentence": "From The Transformation Complete"
+        },
+        {
+          "word": "machinations",
+          "definition": "clever schemes or plots",
+          "sentence": "From The Transformation Complete"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the eldest son inherit from his father?",
+          "options": [
+            "The family cat",
+            "The valuable mill with all its equipment",
+            "The donkey"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did Jack feel about his inheritance?",
+          "options": [
+            "Excited and grateful",
+            "Deeply disappointed and bitter",
+            "Completely indifferent"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What amazing ability did the cat suddenly reveal?",
+          "options": [
+            "The ability to fly",
+            "The ability to speak in clear, articulate sentences",
+            "The ability to disappear"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the cat request from Jack to carry out his plan?",
+          "options": [
+            "A horse and carriage",
+            "A pair of leather boots and a cloth sack",
+            "A suit of fine clothes"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the cat catch a rabbit?",
+          "options": [
+            "He chased it through the forest",
+            "He created an ingenious trap with lettuce and herbs",
+            "He asked other animals to help"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Where did the cat take the rabbit instead of bringing it to Jack?",
+          "options": [
+            "To the market",
+            "To the royal palace",
+            "To another cat"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What title did the cat claim his master held?",
+          "options": [
+            "The Duke of Wellington",
+            "The Marquis of Carabas",
+            "The Earl of Essex"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the king respond to the cat's visits and gifts?",
+          "options": [
+            "He became suspicious and angry",
+            "He was pleased and grew curious about meeting the Marquis",
+            "He ignored the gifts completely"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the cat learn about the king's plans?",
+          "options": [
+            "The king was going on vacation",
+            "The king planned to take a carriage ride with his daughter",
+            "The king was moving to a new palace"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What emergency did the cat pretend was happening?",
+          "options": [
+            "The Marquis was lost in the forest",
+            "The Marquis was drowning and had his clothes stolen",
+            "The Marquis had fallen from his horse"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the king respond to the emergency?",
+          "options": [
+            "He ignored it and drove away",
+            "He provided fine royal clothing and invited Jack to join them",
+            "He was angry and suspicious"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the result of the cat's elaborate scheme?",
+          "options": [
+            "Jack was arrested and punished",
+            "Jack became a respected aristocrat and gained the king's blessing to court the princess",
+            "Nothing changed for Jack"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "About An Unexpected Inheritance",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 2,
+      "topic": "About The Cat's Remarkable Proposal",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "About The Cat's Clever Hunt",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "About An Audience with the King",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "About The Grand Deception",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "About The Transformation Complete",
+      "title": "",
+      "content": ""
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": ""
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": ""
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in Puss in Boots."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in Puss in Boots."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in Puss in Boots."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

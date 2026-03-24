@@ -1,0 +1,463 @@
+{
+  "title": "The Little Engine That Could",
+  "bookNumber": 2,
+  "gradeLevel": 2,
+  "totalDays": 7,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7
+  ],
+  "structure": "6 chapters across 6 lessons, 1 assessment day(s)",
+  "theme": "repetitive, encouraging message",
+  "quarter": 1,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "carrying",
+          "definition": "taking something from one place to another",
+          "sentence": "From Chapter 1: The Toys Need Help"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "important",
+          "definition": "having great value or meaning",
+          "sentence": "From Chapter 2: Big Engines Say No"
+        },
+        {
+          "word": "freight",
+          "definition": "goods or cargo carried by train",
+          "sentence": "From Chapter 2: Big Engines Say No"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "volunteers",
+          "definition": "offers to help without being asked",
+          "sentence": "From Chapter 3: Little Engine Volunteers"
+        },
+        {
+          "word": "steep",
+          "definition": "having a sharp slope; very hard to climb",
+          "sentence": "From Chapter 3: Little Engine Volunteers"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "determined",
+          "definition": "having made up your mind to do something",
+          "sentence": "From Chapter 4: Going Up the Mountain"
+        },
+        {
+          "word": "struggled",
+          "definition": "tried very hard to do something difficult",
+          "sentence": "From Chapter 4: Going Up the Mountain"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "strength",
+          "definition": "the power to do hard things",
+          "sentence": "From Chapter 5: I Think I Can!"
+        },
+        {
+          "word": "echoed",
+          "definition": "bounced back as a repeated sound",
+          "sentence": "From Chapter 5: I Think I Can!"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "success",
+          "definition": "doing what you set out to do",
+          "sentence": "From Chapter 6: Success and Celebration"
+        },
+        {
+          "word": "proud",
+          "definition": "feeling good about what you have done",
+          "sentence": "From Chapter 6: Success and Celebration"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was the train carrying?",
+          "options": [
+            "Books and pencils",
+            "Toys and food",
+            "Clothes and shoes"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What happened to the engine?",
+          "options": [
+            "It ran out of gas",
+            "It broke down",
+            "It got lost"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why wouldn't the passenger engine help?",
+          "options": [
+            "He was too small",
+            "He thought he was too important",
+            "He was broken"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What excuse did the freight engine give?",
+          "options": [
+            "He was too busy",
+            "He was too tired",
+            "He was too fast"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What color was the little engine?",
+          "options": [
+            "Red",
+            "Blue",
+            "Green"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Had the Little Blue Engine ever pulled a train over a mountain before?",
+          "options": [
+            "Yes, many times",
+            "No, never",
+            "Yes, once before"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What made the train hard to pull?",
+          "options": [
+            "It was very long",
+            "It was heavy with toys and food",
+            "It had no wheels"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the toys help the Little Blue Engine?",
+          "options": [
+            "They pushed the train",
+            "They cheered for her",
+            "They got out and walked"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the Little Blue Engine keep saying to herself?",
+          "options": [
+            "\"I am strong!\"",
+            "\"I think I can!\"",
+            "\"I am fast!\""
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Who started saying the words with the Little Blue Engine?",
+          "options": [
+            "The other engines",
+            "The toys",
+            "The children"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the Little Blue Engine say as she went down the mountain?",
+          "options": [
+            "\"I knew I could!\"",
+            "\"I thought I could!\"",
+            "\"That was easy!\""
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What lesson did the Little Blue Engine learn?",
+          "options": [
+            "Big engines are always better",
+            "Being small doesn't matter if you try your best",
+            "Mountains are easy to climb"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Trains and engines",
+      "title": "Butterflies",
+      "content": "Butterflies start their lives as tiny eggs laid on leaves. When the eggs hatch, little caterpillars come out and start eating the leaves. The caterpillars eat and eat until they grow bigger and bigger. After a few weeks, each caterpillar makes a hard shell called a chrysalis around itself.\nInside the chrysalis, something amazing happens! The caterpillar changes into a beautiful butterfly with colorful wings. This change is called metamorphosis. When the butterfly is ready, it breaks out of the chrysalis and flies away. Adult butterflies drink sweet nectar from flowers and help plants by carrying pollen from flower to flower.\n",
+      "questions": [
+        {
+          "question": "What do caterpillars do after they hatch from eggs?",
+          "options": [
+            "they start eating leaves",
+            "they fly away",
+            "they hide under rocks"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What is the change from caterpillar to butterfly called?",
+          "options": [
+            "growing",
+            "metamorphosis",
+            "sleeping"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Helping others",
+      "title": "Dentists",
+      "content": "Dentists are doctors who take care of people's teeth and gums. They help keep our mouths healthy by cleaning our teeth and checking for problems. Dentists use special tools to look inside our mouths and take X-ray pictures of our teeth. They can see cavities, which are little holes in teeth caused by bacteria.\nWhen dentists find cavities, they can fix them by filling the holes with special materials. Dentists also teach people how to brush and floss their teeth properly to prevent cavities. Most people should visit the dentist twice a year for a checkup and cleaning. Going to the dentist regularly helps keep our teeth strong and healthy for our whole lives.\n",
+      "questions": [
+        {
+          "question": "What are cavities?",
+          "options": [
+            "little holes in teeth caused by bacteria",
+            "white spots on teeth",
+            "new teeth growing in"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How often should people visit the dentist?",
+          "options": [
+            "once a year",
+            "twice a year",
+            "every month"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Trying hard",
+      "title": "Rain",
+      "content": "Rain is water that falls from clouds in the sky. It starts when the sun heats up water in oceans, rivers, and lakes, turning it into invisible water vapor that rises into the air. High up in the sky, the water vapor cools down and forms tiny water droplets that stick to dust particles in the air.\nThese tiny droplets join together to make bigger droplets inside clouds. When the droplets get heavy enough, they fall down as rain. Rain is very important because it gives plants the water they need to grow. It also fills up rivers, lakes, and underground water sources that people and animals need for drinking.\n",
+      "questions": [
+        {
+          "question": "How does rain start?",
+          "options": [
+            "the sun heats up water and turns it into water vapor",
+            "clouds get angry and cry",
+            "the wind pushes water from the ocean"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is rain important?",
+          "options": [
+            "it gives plants water and fills up rivers and lakes",
+            "it washes cars",
+            "it makes rainbows"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Mountains",
+      "title": "Police Officers",
+      "content": "Police officers are people who work to keep communities safe. They patrol neighborhoods in police cars, on foot, or on bicycles to watch for problems and help people who need assistance. Police officers learn about laws and how to help solve conflicts between people. They also direct traffic and make sure drivers follow traffic rules.\nWhen someone breaks the law or when there is an emergency, people call the police for help. Police officers respond quickly to help solve problems and keep everyone safe. They also visit schools and community centers to teach children about safety and being good citizens. Many police officers work with special partners like police dogs who help them do their jobs.\n",
+      "questions": [
+        {
+          "question": "What is the main job of police officers?",
+          "options": [
+            "to keep communities safe",
+            "to fix broken cars",
+            "to deliver mail"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Where do police officers patrol?",
+          "options": [
+            "neighborhoods in cars, on foot, or on bicycles",
+            "only inside police stations",
+            "only on highways\n** Note: This document shows the first 10 of 36 informational texts **\nRemaining 26 texts would continue with topics like:\nFrogs • Mail Carriers • Clouds • Doctors • Owls • Teachers\nSeasons • Community Helpers • Animals • Weather • Plants\n\f\nAnswer Key - First 10 Texts"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Never giving up",
+      "title": "Honeybees",
+      "content": "1. b) a colony\n2. a) by collecting nectar from flowers and turning it into honey\n"
+    },
+    {
+      "day": 6,
+      "topic": "Positive thinking",
+      "title": "Apple Trees",
+      "content": "1. b) in the spring\n2. a) good soil, sunshine, and water\n"
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Little Engine That Could."
+    },
+    {
+      "day": 3,
+      "prompt": "What would you do if you were in this story?"
+    },
+    {
+      "day": 5,
+      "prompt": "What is the lesson in this story?"
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character do you like best? Why?"
+    },
+    {
+      "day": 6,
+      "prompt": "How does this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    }
+  ]
+}

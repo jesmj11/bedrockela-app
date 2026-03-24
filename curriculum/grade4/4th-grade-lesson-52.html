@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 52: The Prisoner</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 52 - Week 11</h1>
+            <h2>The Three Musketeers</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>The Prisoner</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: The Prisoner</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice language</li>
+                <li>Complete journal prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 11</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. manipulate</h4>
+                <p><strong>Definition:</strong> To control or influence someone cleverly and often unfairly, making them do what you want without realizing it.</p>
+                <p class="vocab-sentence"><em>"Milady manipulated her young guard with invented tears and false stories of innocence."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. calculated</h4>
+                <p><strong>Definition:</strong> Done deliberately and carefully planned, especially in a cold or strategic way.</p>
+                <p class="vocab-sentence"><em>"Every word, every tear, every trembling hand was calculated. Milady was performing the role of her life."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">manipulate</div>
+                <div class="match-def">To control or influence someone cleverly and often unfairly, making them do what you want without realizing it.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">calculated</div>
+                <div class="match-def">Done deliberately and carefully planned, especially in a cold or strategic way.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Prisoner - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>The Prisoner</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Prisoner - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>The warnings arrived too late.
+Milady reached Buckingham. She delivered the Cardinal's threats. But when Buckingham refused to back down — when he told her that he would never abandon his principles for fear of a cardinal or a spy — Milady's mission changed.
+What happened next reached D'Artagnan as a series of fragmented reports, carried across the Channel by slow ships and slower messengers.
+Milady had been captured by English authorities who had been warned about her by one of Aramis's messages. She was imprisoned in a country house under guard. For a time, it seemed the danger had passed.
+But Milady was not the kind of person who stayed captured.
+She studied her guards the way a chess player studies a board. She found the one who was young, impressionable, and lonely. She used her voice — soft, sad, filled with invented sorrow — to win his sympathy. She told him she was an innocent woman, wrongly imprisoned, separated from her family by cruel men.
+It was all lies. Every word, every tear, every trembling hand was <span class="vocab-highlight">calculated</span>. Milady was performing the role of her life, and her audience of one believed every moment of it.
+The young guard helped her escape.
+By the time his commander discovered what had happened, Milady was gone — vanished into the English countryside like smoke.
+When this news reached the camp at La Rochelle, D'Artagnan felt the ground shift beneath him. Milady was free. She was angry. She was heading back to France. And she had unfinished business with everyone who had tried to stop her.
+"She will come for Constance," D'Artagnan said. He knew it in his bones. Milady would strike at the person D'Artagnan cared about most — not out of strategy, but out of revenge. That was how Milady operated. She did not simply defeat her enemies. She destroyed the things they loved.
+"We must find Constance before Milady does," D'Artagnan said. "We must get her somewhere safe."
+"The siege —" Porthos began.
+"The siege can wait," D'Artagnan said, and the fierceness in his voice surprised even him. "Constance cannot."
+Athos nodded. "He is right. This is no longer about politics or queens or cardinals. This is about protecting an innocent person from a monster."
+They went to Monsieur de Tréville and requested leave from the siege. Tréville, who understood loyalty better than most, granted it.
+"Go," the captain said. "Do what you must. But be careful. The Cardinal has eyes everywhere."
+The four friends gathered their weapons, saddled their horses, and rode north — away from the siege, away from the war, toward a danger that was more personal and more terrible than anything they had faced on the battlefield.</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Prisoner - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. How does Milady escape from her English captors?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) She fights her way out</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) She manipulates a young, lonely guard into believing she is an innocent prisoner and he helps her escape</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) The Cardinal sends soldiers to free her</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) She picks the lock</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. Milady uses kindness as a weapon — she pretends to be gentle and innocent to trick the guard. How does this connect to the larger theme that things are not always what they seem? Where else in the story have appearances been deceiving?</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+    <div class="lesson-page" id="page8" style="display: none;">
+        <div class="page-header">
+            <h2>✏️ Language Practice</h2>
+        </div>
+        <div class="skill-section">
+            <h3>Greek and Latin Roots: port, dict, scrib</h3>
+            <p></p>
+            <div class="practice">
+                <label>Practice:</label>
+                <textarea rows="3" placeholder="Complete the language exercise..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Athos, Porthos, and Aramis: Fact and Fiction</h3>
+            <div class="info-text"><p>The Three Musketeers were based on real people too, though Dumas changed their names and personalities. The real musketeers were Armand de Sillègue d'Athos d'Autevielle, Isaac de Porthau, and Henri d'Aramitz. These three men really were friends and served as musketeers together. However, Dumas invented most of their adventures and personalities. The real Athos was not a mysterious nobleman in hiding. The real Porthos was not obsessed with wealth and strength. And the real Aramis did not dream of becoming a priest. Dumas took their names and created memorable characters for his story.</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. Were the Three Musketeers based on real people?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. Did Dumas use their real names?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. Which parts of the musketeers did Dumas invent?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+    <div class="lesson-page" id="page10" style="display: none;">
+        <div class="page-header">
+            <h2>✍️ Journal Prompt</h2>
+        </div>
+        <div class="writing-section">
+            <div class="prompt">
+                <p>The Three Musketeers were based on real people. If someone wrote a story based on you and your friends, what would happen in it? (1-2 paragraphs)</p>
+            </div>
+            <textarea rows="10" placeholder="Write your response here (1-2 paragraphs)..."></textarea>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 52!</p>
+            <h3>You finished: The Prisoner</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

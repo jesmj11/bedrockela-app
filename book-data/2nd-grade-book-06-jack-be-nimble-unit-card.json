@@ -1,0 +1,488 @@
+{
+  "title": "Jack Be Nimble",
+  "bookNumber": 6,
+  "gradeLevel": 2,
+  "totalDays": 7,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7
+  ],
+  "structure": "6 chapters across 6 lessons, 1 assessment day(s)",
+  "theme": "short, action-based",
+  "quarter": 1,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "nimble",
+          "definition": "able to move quickly and easily",
+          "sentence": "From Chapter 1: Jack Loves to Jump"
+        },
+        {
+          "word": "challenge",
+          "definition": "something difficult that tests your skills",
+          "sentence": "From Chapter 1: Jack Loves to Jump"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "brass",
+          "definition": "a shiny yellow metal",
+          "sentence": "From Chapter 2: The Big Candlestick"
+        },
+        {
+          "word": "determined",
+          "definition": "having made up your mind to do something",
+          "sentence": "From Chapter 2: The Big Candlestick"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "train",
+          "definition": "to practice to get better at something",
+          "sentence": "From Chapter 3: Getting Ready"
+        },
+        {
+          "word": "speed",
+          "definition": "how fast something moves",
+          "sentence": "From Chapter 3: Getting Ready"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "flickered",
+          "definition": "moved back and forth quickly like a flame in the wind",
+          "sentence": "From Chapter 4: The Big Moment"
+        },
+        {
+          "word": "excitement",
+          "definition": "the feeling of being very happy and eager",
+          "sentence": "From Chapter 4: The Big Moment"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "leaped",
+          "definition": "jumped high and far",
+          "sentence": "From Chapter 5: Jack Jumps the Candlestick"
+        },
+        {
+          "word": "amazement",
+          "definition": "great surprise and wonder",
+          "sentence": "From Chapter 5: Jack Jumps the Candlestick"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "famous",
+          "definition": "known by many people",
+          "sentence": "From Chapter 6: Jack's Big Lesson"
+        },
+        {
+          "word": "patience",
+          "definition": "the ability to wait calmly and keep trying",
+          "sentence": "From Chapter 6: Jack's Big Lesson"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Jack love to do?",
+          "options": [
+            "Climb trees",
+            "Jump over things",
+            "Swim in the river"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did people use for light in Jack's village?",
+          "options": [
+            "Electric lights",
+            "Candles",
+            "Flashlights"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was the candlestick made of?",
+          "options": [
+            "Wood",
+            "Shiny brass",
+            "Stone"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Jack's friends think about his plan?",
+          "options": [
+            "They thought it was a great idea",
+            "They thought it was too high for him",
+            "They wanted to try it too"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Jack prepare for the big jump?",
+          "options": [
+            "He read books about jumping",
+            "He practiced jumping and running every day",
+            "He asked someone else to do it"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What happened to Jack's legs from all the practice?",
+          "options": [
+            "They got tired and sore",
+            "They were getting stronger",
+            "They stayed the same"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Who came to watch Jack's jump?",
+          "options": [
+            "Only his friends",
+            "The whole village, including grown-ups",
+            "No one came"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Jack's friends call out to encourage him?",
+          "options": [
+            "\"Good luck, Jack!\"",
+            "\"Jack be nimble, Jack be quick!\"",
+            "\"You can do it, Jack!\""
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened when Jack jumped?",
+          "options": [
+            "He hit the candlestick",
+            "He cleared the flame completely",
+            "He couldn't jump high enough"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the villagers react to Jack's successful jump?",
+          "options": [
+            "They were quiet and unimpressed",
+            "They clapped and cheered",
+            "They went home immediately"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Jack learn was the real joy?",
+          "options": [
+            "Being famous",
+            "Setting goals and working hard to reach them",
+            "Having people watch him"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Jack start doing after his successful jump?",
+          "options": [
+            "Stopped jumping forever",
+            "Teaching other children how to jump",
+            "Moved to another village"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Nursery rhymes",
+      "title": "Healthy Foods",
+      "content": "Healthy foods give our bodies the nutrients they need to grow strong and stay well. Fruits and vegetables provide vitamins and minerals that help our immune system fight off sickness. Whole grains like brown rice and oatmeal give us energy that lasts a long time. Proteins from foods like fish, chicken, beans, and nuts help build and repair our muscles.\nEating a variety of healthy foods is important because different foods provide different nutrients that our bodies need. Dairy products like milk and cheese give us calcium for strong bones and teeth. Drinking plenty of water helps our bodies work properly and keeps us hydrated. When we eat healthy foods regularly and limit sugary snacks and drinks, we feel more energetic and are better able to learn and play.\n",
+      "questions": [
+        {
+          "question": "What do proteins help with in our bodies?",
+          "options": [
+            "they help build and repair our muscles",
+            "they only make us tall",
+            "they change our hair color"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why should we eat a variety of healthy foods?",
+          "options": [
+            "because they taste good",
+            "because different foods provide different nutrients our bodies need",
+            "because they are colorful"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Jumping",
+      "title": "Sleep",
+      "content": "Sleep is a natural state of rest that our bodies and brains need every day to stay healthy and function properly. During sleep, our bodies repair themselves, grow new cells, and strengthen our immune system to fight off illnesses. Our brains use sleep time to organize memories from the day and prepare for learning new things tomorrow.\nChildren need more sleep than adults because their bodies and brains are still growing and developing. Most school-age children need about 9-11 hours of sleep each night to feel rested and alert during the day. Good sleep helps us concentrate better in school, have more energy for playing, and feel happier overall. Creating a bedtime routine and keeping a regular sleep schedule helps ensure we get the rest we need.\n",
+      "questions": [
+        {
+          "question": "What happens to our bodies during sleep?",
+          "options": [
+            "nothing happens",
+            "our bodies repair themselves and strengthen our immune system",
+            "we only dream"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How much sleep do school-age children need?",
+          "options": [
+            "about 9-11 hours each night",
+            "only 4 hours",
+            "as much as adults"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Candlesticks",
+      "title": "Exercise",
+      "content": "Exercise is physical activity that makes our bodies stronger, healthier, and more flexible. When we exercise, our hearts pump faster, our muscles work harder, and our breathing increases. Regular exercise helps build strong bones and muscles, improves our balance and coordination, and gives us more energy for daily activities.\nThere are many fun ways to exercise, like playing sports, riding bikes, swimming, dancing, or even playing active games at recess. Exercise also helps our brains work better by increasing blood flow and oxygen to help us think more clearly and concentrate in school. Additionally, physical activity can help us feel happier and less stressed by releasing natural chemicals in our brains that improve our mood.\n",
+      "questions": [
+        {
+          "question": "What happens to our bodies when we exercise?",
+          "options": [
+            "our hearts pump faster and muscles work harder",
+            "nothing changes",
+            "we get tired and stay tired"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How does exercise help our brains?",
+          "options": [
+            "it makes us sleepy",
+            "it increases blood flow and oxygen to help us think clearly",
+            "it doesn't affect our brains"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Being quick",
+      "title": "Music",
+      "content": "Music is organized sounds that create rhythms, melodies, and harmonies that people enjoy listening to and creating. Music can be made with instruments like pianos, guitars, drums, and violins, or with the human voice through singing. Different cultures around the world have their own unique styles of music, and people have been making and enjoying music for thousands of years.\nLearning music and playing instruments has many benefits for children. It helps develop listening skills, improves memory and concentration, and teaches patience and discipline through practice. Music also helps people express their emotions and creativity. Many schools have music programs where students can learn to play instruments, sing in choirs, or compose their own songs. Playing music with others teaches teamwork and cooperation.\n",
+      "questions": [
+        {
+          "question": "What can music be made with?",
+          "options": [
+            "only with pianos",
+            "with instruments and the human voice",
+            "only with computers"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What benefits does learning music provide?",
+          "options": [
+            "it improves listening skills, memory, and concentration",
+            "it only makes noise",
+            "it just wastes time"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Old games",
+      "title": "Recycling",
+      "content": "Recycling is the process of collecting used materials and turning them into new products instead of throwing them away as trash. Common materials that can be recycled include paper, plastic bottles, aluminum cans, and glass jars. When we recycle these materials, they are cleaned, broken down, and made into new items, which helps reduce the amount of waste in landfills and conserves natural resources.\nRecycling is important for protecting our environment because it reduces pollution and saves energy. Making new products from recycled materials uses less energy than making them from brand new materials. For example, making paper from recycled paper uses much less water and energy than making paper from trees. Everyone can help by separating recyclable materials from regular trash and putting them in special recycling bins.\n",
+      "questions": [
+        {
+          "question": "What materials can be recycled?",
+          "options": [
+            "only paper",
+            "paper, plastic bottles, aluminum cans, and glass jars",
+            "only cans"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is recycling important for the environment?",
+          "options": [
+            "it reduces pollution and saves energy",
+            "it makes things look neat",
+            "it creates more trash\n\f\nAnswer Key - Texts 11-36"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Rhymes and rhythm",
+      "title": "Firefighters",
+      "content": "1. a) heavy protective gear to keep safe from heat and smoke\n2. b) car accidents, rescues, and natural disasters\n"
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in Jack Be Nimble."
+    },
+    {
+      "day": 3,
+      "prompt": "What would you do if you were in this story?"
+    },
+    {
+      "day": 5,
+      "prompt": "What is the lesson in this story?"
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character do you like best? Why?"
+    },
+    {
+      "day": 6,
+      "prompt": "How does this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    }
+  ]
+}

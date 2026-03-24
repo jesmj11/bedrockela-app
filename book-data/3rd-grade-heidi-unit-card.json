@@ -1,0 +1,689 @@
+{
+  "title": "Heidi",
+  "author": "Johanna Spyri (adapted)",
+  "gradeLevel": 3,
+  "totalDays": 15,
+  "totalChapters": 12,
+  "assessmentDays": [
+    5,
+    10,
+    15
+  ],
+  "structure": "12 chapters across 12 lessons, 3 assessment days",
+  "themes": [
+    "nature",
+    "family",
+    "healing",
+    "mountains",
+    "simplicity"
+  ],
+  "setting": "Swiss Alps, Frankfurt",
+  "protagonist": "Heidi",
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "steep",
+          "definition": "going up or down at a sharp angle"
+        },
+        {
+          "word": "belongings",
+          "definition": "things that you own"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "fierce",
+          "definition": "strong and intense; frightening"
+        },
+        {
+          "word": "gruffly",
+          "definition": "speaking in a rough, unfriendly way"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "loft",
+          "definition": "an upper room or space under a roof"
+        },
+        {
+          "word": "cozy",
+          "definition": "warm, comfortable, and snug"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "goatherd",
+          "definition": "a person who takes care of goats"
+        },
+        {
+          "word": "pasture",
+          "definition": "a field where animals eat grass"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "grazed",
+          "definition": "ate grass in a field"
+        },
+        {
+          "word": "peaks",
+          "definition": "the tops of mountains"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "blind",
+          "definition": "unable to see"
+        },
+        {
+          "word": "blurry",
+          "definition": "not clear; hard to see"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "words": [
+        {
+          "word": "opportunity",
+          "definition": "a chance to do something good"
+        },
+        {
+          "word": "companion",
+          "definition": "a friend who spends time with you"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "words": [
+        {
+          "word": "marble",
+          "definition": "a smooth, shiny stone used in buildings"
+        },
+        {
+          "word": "chandeliers",
+          "definition": "fancy lights that hang from the ceiling"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "words": [
+        {
+          "word": "tutor",
+          "definition": "a teacher who gives private lessons"
+        },
+        {
+          "word": "manners",
+          "definition": "polite ways of behaving"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "words": [
+        {
+          "word": "homesick",
+          "definition": "sad because you miss your home"
+        },
+        {
+          "word": "concern",
+          "definition": "worry about someone or something"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "words": [
+        {
+          "word": "journey",
+          "definition": "a trip from one place to another"
+        },
+        {
+          "word": "spirits",
+          "definition": "mood; how happy or sad someone feels"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "words": [
+        {
+          "word": "improve",
+          "definition": "to make better"
+        },
+        {
+          "word": "amazed",
+          "definition": "very surprised in a good way"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How old was Heidi at the beginning of the story?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Who was taking Heidi up the mountain?"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What was Grandfather doing when they arrived?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did Grandfather react when he saw Heidi?"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Where did Grandfather tell Heidi she could sleep?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What could Heidi see from her window in the loft?"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What woke Heidi up the next morning?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Who was Peter and what was his job?"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did Heidi do every day with Peter?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did Peter teach Heidi about the mountains?"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Who did Peter take Heidi to meet in the village?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What was wrong with Peter's grandmother?"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How much time had passed when Aunt Dete returned?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What opportunity did Aunt Dete say she had found for Heidi?"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How was Frankfurt different from the mountains?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What was the Sesemann house like inside?"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What new skills did Heidi learn in the city?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Why did everything feel strange to Heidi?"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What happened to Heidi's health as months passed?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did Heidi dream about every night?"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How did Heidi feel as the train climbed into the mountains?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Who met Heidi at the village station?"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Who came to visit Heidi a few months later?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did Clara react to seeing the mountains?"
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Johanna Spyri biography",
+      "title": "",
+      "content": "Learning about Johanna Spyri biography helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Johanna Spyri biography, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Johanna Spyri biography important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Swiss Alps geography",
+      "title": "",
+      "content": "Learning about Swiss Alps geography helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Swiss Alps geography, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Swiss Alps geography important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Mountain life",
+      "title": "",
+      "content": "Learning about Mountain life helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Mountain life, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Mountain life important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Goats and goat herding",
+      "title": "",
+      "content": "Learning about Goats and goat herding helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Goats and goat herding, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Goats and goat herding important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Frankfurt vs. mountains",
+      "title": "",
+      "content": "Learning about Frankfurt vs. mountains helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Frankfurt vs. mountains, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Frankfurt vs. mountains important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Grandfather's cabin",
+      "title": "",
+      "content": "Learning about Grandfather's cabin helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Grandfather's cabin, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Grandfather's cabin important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "topic": "Alpine meadows",
+      "title": "",
+      "content": "Learning about Alpine meadows helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Alpine meadows, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Alpine meadows important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "topic": "Peter the goatherd",
+      "title": "",
+      "content": "Learning about Peter the goatherd helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Peter the goatherd, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Peter the goatherd important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "topic": "Clara's healing",
+      "title": "",
+      "content": "Learning about Clara's healing helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Clara's healing, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Clara's healing important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "topic": "City vs. country life",
+      "title": "",
+      "content": "Learning about City vs. country life helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study City vs. country life, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is City vs. country life important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "topic": "Power of nature",
+      "title": "",
+      "content": "Learning about Power of nature helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Power of nature, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Power of nature important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "topic": "Switzerland culture",
+      "title": "",
+      "content": "Learning about Switzerland culture helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Switzerland culture, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Switzerland culture important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns** are words that name people, places, things, or ideas.\n\n**Examples:**\n• People: teacher, doctor, friend\n• Places: school, park, library\n• Things: book, pencil, computer\n• Ideas: happiness, courage, freedom\n\n**Practice:** Find 3 nouns in today's story!"
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs** are action words that tell what someone or something does.\n\n**Examples:**\n• run, jump, dance, sing\n• think, feel, hope, dream\n• was, were, is, are (linking verbs)\n\n**Practice:** Circle the verbs in these sentences from the story."
+    },
+    {
+      "day": 6,
+      "topic": "Adjectives",
+      "content": "**Adjectives** describe nouns. They tell us more details about people, places, or things.\n\n**Examples:**\n• beautiful princess\n• dark forest\n• brave knight\n\n**Practice:** Add adjectives to make these sentences more interesting!"
+    },
+    {
+      "day": 8,
+      "topic": "Pronouns",
+      "content": "**Pronouns**\n\nThis lesson teaches about Pronouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 11,
+      "topic": "Compound Sentences",
+      "content": "**Compound Sentences**\n\nThis lesson teaches about Compound Sentences. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 13,
+      "topic": "Capitalization",
+      "content": "**Capitalization**\n\nThis lesson teaches about Capitalization. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order** (alphabetical order) helps us organize words and find them in dictionaries.\n\n**Steps:**\n1. Look at the first letter\n2. If first letters match, look at second letter\n3. Keep going until you find the difference\n\n**Practice:** Put these words from the story in ABC order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "**Rhyming words** sound the same at the end.\n\n**Examples:**\n• cat, hat, mat, sat\n• sing, ring, wing, king\n\n**Practice:** Find pairs of rhyming words in today's story!"
+    },
+    {
+      "day": 7,
+      "topic": "Synonyms",
+      "content": "**Synonyms**\n\nThis lesson teaches about Synonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 9,
+      "topic": "Antonyms",
+      "content": "**Antonyms**\n\nThis lesson teaches about Antonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 12,
+      "topic": "Plural Nouns",
+      "content": "**Plural Nouns**\n\nThis lesson teaches about Plural Nouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 14,
+      "topic": "Context Clues",
+      "content": "**Context Clues**\n\nThis lesson teaches about Context Clues. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time you felt like Heidi."
+    },
+    {
+      "day": 3,
+      "prompt": "If you could visit the Swiss Alps, Frankfurt, what would you do?"
+    },
+    {
+      "day": 6,
+      "prompt": "What is the most important lesson in this story?"
+    },
+    {
+      "day": 8,
+      "prompt": "Describe your favorite character and why you like them."
+    },
+    {
+      "day": 11,
+      "prompt": "How would you solve the problem in this story?"
+    },
+    {
+      "day": 13,
+      "prompt": "Write a different ending for this story."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next in the story?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character are you most like? Why?"
+    },
+    {
+      "day": 7,
+      "prompt": "What is your favorite part of the story so far?"
+    },
+    {
+      "day": 9,
+      "prompt": "If you were in this story, what would you do?"
+    },
+    {
+      "day": 12,
+      "prompt": "What surprised you in this chapter?"
+    },
+    {
+      "day": 14,
+      "prompt": "How did this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 5,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "words": []
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "words": []
+    }
+  ]
+}

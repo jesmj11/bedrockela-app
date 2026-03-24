@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Stone Soup - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 3</h1>
+            <h2>Stone Soup</h2>
+            <p class="book-info">Book 4 • Week 1 • Day 3 of 7</p>
+            <p class="chapter-info">Chapter 3: The Magic Stone</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. announced</h3>
+                <p class="definition"><strong>Definition:</strong> said something in a loud, clear voice</p>
+                <p class="example"><strong>Example:</strong> From Chapter 3: The Magic Stone</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. curious</h3>
+                <p class="definition"><strong>Definition:</strong> wanting to know more about something</p>
+                <p class="example"><strong>Example:</strong> From Chapter 3: The Magic Stone</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 The Magic Stone</h2>
+        <div class="story-content">
+            <p>The clever traveler walked to the center of the village. He found a nice smooth stone on the ground and picked it up. Then he called out in a loud voice.</p><p>"Good people of this village!" he announced. "Since you have no food to share, I will make stone soup for everyone! I have a magic stone that makes delicious soup!"</p><p>The villagers peeked out of their windows and doors. A magic stone? Stone soup? They had never heard of such a thing. This sounded very interesting indeed!</p><p>The traveler asked for a large pot and some water. One curious villager brought a big pot. Another brought water from the well. Everyone watched as he filled the pot and put it over a fire.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. What did the traveler say his stone could do?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        Turn into gold
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        Make delicious soup
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        Grant three wishes
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. How did the villagers feel about the stone soup?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        They were scared
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        They thought it was very interesting
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        They didn't care
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>✏️ Grammar Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Verbs</h3>
+            <p class="objective"><strong>Goal:</strong> Students will understand and apply Verbs.</p>
+            <div class="lesson-content">
+                <p><strong>Verbs</strong></p><p>This lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.</p><ul><li><strong>Key Points:</strong></li><li>Understand the concept</li><li>Find examples in the story</li><li>Practice using it correctly</li></ul><p><strong>Practice:</strong>
+Apply what you learned by completing the exercises.</p><p><strong>Remember:</strong> Verbs is an important language skill!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Making soup</h3>
+            <h4>Firefighters</h4>
+            
+            <div class="info-text">
+                <p>Firefighters are brave people who risk their lives to put out fires and help people during emergencies. When there is a fire, firefighters rush to the scene in fire trucks equipped with hoses, ladders, and other special tools. They wear heavy protective gear to keep themselves safe from heat, smoke, and dangerous chemicals. Firefighters work as a team to rescue people and save buildings from being destroyed by fire.
+Besides fighting fires, firefighters respond to many other types of emergencies. They help people who are trapped in car accidents, rescue cats stuck in trees, and assist during natural disasters like floods or earthquakes. Many firefighters also teach fire safety to children and adults, showing them how to prevent fires and what to do if a fire starts. Becoming a firefighter requires special training and physical fitness because the job can be very demanding.
+</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>✍️ Writing Activity</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What would you do if you were in this story?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 3!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read The Magic Stone</p>
+                <p>✅ Practiced grammar skills</p>
+                <p>✅ Completed your writing</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-4.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 4 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+{
+  "title": "The Gingerbread House",
+  "bookNumber": 3,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "familiar fairy tale elements",
+  "quarter": 1,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "poor",
+          "definition": "having very little money or food",
+          "sentence": "From Chapter 1: Lost in the Woods"
+        },
+        {
+          "word": "trail",
+          "definition": "a path or track left behind",
+          "sentence": "From Chapter 1: Lost in the Woods"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "shelter",
+          "definition": "a place that protects you from weather",
+          "sentence": "From Chapter 2: A Sweet Discovery"
+        },
+        {
+          "word": "clearing",
+          "definition": "an open space in the woods with no trees",
+          "sentence": "From Chapter 2: A Sweet Discovery"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "growling",
+          "definition": "making a low rumbling sound (like a hungry stomach)",
+          "sentence": "From Chapter 3: The Hungry Children"
+        },
+        {
+          "word": "delicious",
+          "definition": "tasting very good",
+          "sentence": "From Chapter 3: The Hungry Children"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "creak",
+          "definition": "a squeaking sound that old doors make",
+          "sentence": "From Chapter 4: The Witch Appears"
+        },
+        {
+          "word": "feast",
+          "definition": "a large, special meal with lots of food",
+          "sentence": "From Chapter 4: The Witch Appears"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "nature",
+          "definition": "what someone is really like inside",
+          "sentence": "From Chapter 5: Trapped!"
+        },
+        {
+          "word": "escape",
+          "definition": "to get away from a dangerous place",
+          "sentence": "From Chapter 5: Trapped!"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "eyesight",
+          "definition": "the ability to see",
+          "sentence": "From Chapter 6: Gretel's Clever Plan"
+        },
+        {
+          "word": "safety",
+          "definition": "being safe from danger",
+          "sentence": "From Chapter 6: Gretel's Clever Plan"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What were the children's names?",
+          "options": [
+            "Jack and Jill",
+            "Hansel and Gretel",
+            "Tom and Sue"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What happened to Hansel's trail of breadcrumbs?",
+          "options": [
+            "They got wet in the rain",
+            "The birds ate them",
+            "The wind blew them away"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the children smell in the woods?",
+          "options": [
+            "Flowers",
+            "Something sweet like cookies",
+            "Smoke"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the house made of?",
+          "options": [
+            "Wood and stone",
+            "Gingerbread and candy",
+            "Bricks and mud"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why were the children's stomachs growling?",
+          "options": [
+            "They were angry",
+            "They were hungry",
+            "They were scared"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Hansel eat first?",
+          "options": [
+            "Frosting from the roof",
+            "Gingerbread from the wall",
+            "Candy from the windows"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the old woman look like?",
+          "options": [
+            "Young and pretty",
+            "Old with a crooked nose",
+            "Tall and thin"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the old woman really want to do?",
+          "options": [
+            "Help the children find their way home",
+            "She had a terrible plan for them",
+            "Teach them how to bake"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the witch do to Hansel?",
+          "options": [
+            "She gave him more food",
+            "She locked him in a cage",
+            "She sent him home"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the witch want Gretel to do?",
+          "options": [
+            "Play games",
+            "Cook and clean",
+            "Sleep all day"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Hansel trick the witch?",
+          "options": [
+            "He hid from her",
+            "He held out a chicken bone instead of his finger",
+            "He pretended to be sick"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did Gretel defeat the witch?",
+          "options": [
+            "She pushed her into the oven",
+            "She locked her in the cage",
+            "She ran away and hid"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Fairy tales",
+      "title": "Fire Trucks",
+      "content": "1. a) hoses, ladders, and axes\n2. b) to warn other drivers to get out of the way\n"
+    },
+    {
+      "day": 2,
+      "topic": "Gingerbread",
+      "title": "Penguins",
+      "content": "1. b) in cold places near the ocean\n2. a) fish, squid, and krill\n"
+    },
+    {
+      "day": 3,
+      "topic": "Houses made of candy",
+      "title": "The Sun",
+      "content": "1. b) a star\n2. a) it gives Earth light and heat that plants and animals need\n"
+    },
+    {
+      "day": 4,
+      "topic": "Being brave",
+      "title": "Librarians",
+      "content": "1. a) to help people find books and information\n2. a) read stories and plan programs\n"
+    },
+    {
+      "day": 5,
+      "topic": "Staying safe",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "Stranger danger",
+      "title": "Dentists",
+      "content": "1. a) little holes in teeth caused by bacteria\n2. b) twice a year\n"
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Gingerbread House."
+    },
+    {
+      "day": 3,
+      "prompt": "What would you do if you were in this story?"
+    },
+    {
+      "day": 5,
+      "prompt": "What is the lesson in this story?"
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character do you like best? Why?"
+    },
+    {
+      "day": 6,
+      "prompt": "How does this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - The Dog and His Reflection - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 5</h1>
+            <h2>The Dog and His Reflection</h2>
+            <p class="book-info">Book 9 • Week 2 • Day 5 of 8</p>
+            <p class="chapter-info">Chapter 5: A Costly Mistake</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. intimidate</h3>
+                <p class="definition"><strong>Definition:</strong> to frighten someone to make them do what you want</p>
+                <p class="example"><strong>Example:</strong> From A Costly Mistake</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. disbelief</h3>
+                <p class="definition"><strong>Definition:</strong> inability to believe that something is true</p>
+                <p class="example"><strong>Example:</strong> From A Costly Mistake</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 A Costly Mistake</h2>
+        <div class="story-content">
+            <p>Unable to resist the temptation of getting the second bone, the dog decided to take action. He would bark at the other dog in the water and demand that he drop his bone, just as he had seen stronger dogs do in the market when they wanted to intimidate weaker animals into giving up their food. Surely this strategy would work just as well here.</p><p>The dog opened his mouth wide to let out his most fierce and threatening bark, hoping to frighten the reflection into dropping its bone. But the moment he opened his jaws to bark, disaster struck! His own precious bone fell from his mouth, tumbling down through the air and landing in the stream below with a splash that shattered the perfect reflection into rippling circles.</p><p>The dog watched in horror as his beautiful bone sank beneath the surface of the water, disappearing forever into the depths of the stream. In that terrible moment, he realized the awful truth - there had never been another dog at all! What he had seen was merely his own reflection, and in his greedy attempt to get a second bone that didn't really exist, he had lost the wonderful prize he already possessed.</p><p>The dog stared down at the water in disbelief, watching the ripples slowly fade until the surface became calm and mirror-like once again. Now the reflection showed only a foolish dog with no bone at all, standing alone on the bridge with nothing to show for his morning's good fortune. His greed had cost him everything, leaving him hungrier and more disappointed than he had been before he found the bone.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. What happened when the dog opened his mouth to bark?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        The other dog ran away
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        His own bone fell from his mouth into the stream
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        He got the second bone
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. What did the dog realize after he lost his bone?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        That there were many other dogs around
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        That there had never been another dog - only his own reflection
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        That he could swim down to get it
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>✏️ Grammar Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Adjectives</h3>
+            <p class="objective"><strong>Goal:</strong> Students will understand and apply Adjectives.</p>
+            <div class="lesson-content">
+                <p><strong>Adjectives</strong></p><p>This lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.</p><ul><li><strong>Key Points:</strong></li><li>Understand the concept</li><li>Find examples in the story</li><li>Practice using it correctly</li></ul><p><strong>Practice:</strong>
+Apply what you learned by completing the exercises.</p><p><strong>Remember:</strong> Adjectives is an important language skill!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>A Costly Mistake</h3>
+            <h4>Glaciers</h4>
+            
+            <div class="info-text">
+                <p>1. a) snow accumulates for many years and gets compressed into ice
+2. a) they carve valleys, create lakes, and move boulders
+</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>✍️ Writing Activity</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> Write about a time like in The Dog and His Reflection.</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 5!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read A Costly Mistake</p>
+                <p>✅ Practiced grammar skills</p>
+                <p>✅ Completed your writing</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-6.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 6 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

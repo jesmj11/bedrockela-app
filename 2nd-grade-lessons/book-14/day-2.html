@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - The Oak and the Reed - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 2</h1>
+            <h2>The Oak and the Reed</h2>
+            <p class="book-info">Book 14 • Week 1 • Day 2 of 7</p>
+            <p class="chapter-info">Chapter 2: The Humble Reed</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 The Humble Reed</h2>
+        <div class="story-content">
+            <p>Growing along the marshy banks of the same river, in the shadow of the mighty oak tree, lived a small community of slender reeds. These delicate plants were quite different from their imposing neighbor - they were thin and graceful, with flexible stems that swayed gently in even the lightest breeze, and feathery tops that danced constantly in the moving air above the water's surface.</p><p>Among these humble reeds, there was one particularly thoughtful individual who had spent many seasons observing the natural world around him and developing his own philosophy about survival and adaptation. Unlike the proud oak, this reed was modest and unassuming, never boasting about his abilities or claiming to be superior to other plants in the valley ecosystem.</p><p>The reed had learned through experience that his apparent weakness was actually a form of strength. When strong winds blew across the valley, he would bend and sway gracefully, allowing the force to pass through and around him without resistance. When floods came, he would yield to the rushing water, letting it flow past him rather than fighting against its overwhelming power.</p><p>"I may not be as large or impressive as some of my neighbors," the reed would reflect quietly to himself, "but I have discovered that there is wisdom in flexibility and strength in knowing when to yield. By adapting to the forces around me rather than opposing them, I have survived many challenges that might have destroyed something more rigid and unyielding."</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. </strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="3">
+                        
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. </strong></p>
+                <div class="answer-choices">
+                    
+                    <textarea class="answer-box" placeholder="Write your answer here..." rows="3"></textarea>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>📝 Language Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>ABC Order</h3>
+            <p class="objective"><strong>Goal:</strong> Students will learn about ABC Order.</p>
+            <div class="lesson-content">
+                <p><strong>ABC Order</strong></p><p>This language lesson teaches ABC Order. Look for examples in today's story.</p><ul><li><strong>Key Ideas:</strong></li><li>Learn the concept</li><li>Find examples</li><li>Practice the skill</li></ul><p><strong>Practice Activities:</strong>
+Complete the exercises to master this skill.</p><p><strong>Remember:</strong> Practice makes perfect!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Reeds</h3>
+            <h4>Robotics Engineers</h4>
+            
+            <div class="info-text">
+                <p>Robotics engineers are specialists who design, build, and program robots to perform specific tasks that are dangerous, repetitive, or impossible for humans to do safely or efficiently. These engineers combine knowledge from multiple fields including mechanical engineering, electrical engineering, and computer science to create machines that can sense their environment, make decisions, and carry out complex actions. Their work is revolutionizing industries from manufacturing and healthcare to space exploration and disaster response.
+The process of creating a robot involves many steps and requires careful planning and testing. First, robotics engineers identify a problem that a robot could solve and design the machine's physical structure, choosing appropriate materials, motors, and sensors. They then program the robot's computer brain to process information from its sensors and control its movements and actions. Throughout development, engineers test their robots extensively, making adjustments to both the hardware and software until the robot can reliably perform its intended tasks.
+Today's robots are helping humans in countless ways that would have seemed like science fiction just a few decades ago. Medical robots assist surgeons in performing precise operations, while manufacturing robots build cars and electronics with incredible accuracy. Exploration robots venture to places too dangerous for humans, such as the deep ocean floor or the surface of Mars. As artificial intelligence continues to advance, robotics engineers are developing increasingly sophisticated machines that may someday work alongside humans as partners rather than just tools.
+</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>📓 Journal Entry</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What do you think will happen next?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 2!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read The Humble Reed</p>
+                <p>✅ Practiced language skills</p>
+                <p>✅ Completed your journal</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-3.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 3 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

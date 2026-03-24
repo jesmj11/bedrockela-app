@@ -1,0 +1,514 @@
+{
+  "title": "The Three Little Kittens",
+  "bookNumber": 1,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "nursery rhyme familiarity, simple plot",
+  "quarter": 1,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "terrible",
+          "definition": "very bad or awful",
+          "sentence": "From Chapter 1: The Lost Mittens"
+        },
+        {
+          "word": "naughty",
+          "definition": "not behaving well; mischievous",
+          "sentence": "From Chapter 1: The Lost Mittens"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "growl",
+          "definition": "to make a low, rumbling sound (like a hungry stomach)",
+          "sentence": "From Chapter 2: Searching High and Low"
+        },
+        {
+          "word": "searching",
+          "definition": "looking carefully for something",
+          "sentence": "From Chapter 2: Searching High and Low"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "remembered",
+          "definition": "brought back to mind; recalled",
+          "sentence": "From Chapter 3: Back Outside"
+        },
+        {
+          "word": "hurried",
+          "definition": "moved quickly",
+          "sentence": "From Chapter 3: Back Outside"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "excited",
+          "definition": "very happy and eager",
+          "sentence": "From Chapter 4: Good News for Mother"
+        },
+        {
+          "word": "proudly",
+          "definition": "with pride; showing you feel good about something",
+          "sentence": "From Chapter 4: Good News for Mother"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "dripped",
+          "definition": "fell in drops",
+          "sentence": "From Chapter 5: A Messy Mistake"
+        },
+        {
+          "word": "soiled",
+          "definition": "made dirty",
+          "sentence": "From Chapter 5: A Messy Mistake"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "basin",
+          "definition": "a bowl-shaped container for holding water",
+          "sentence": "From Chapter 6: Clean Mittens, Happy Hearts"
+        },
+        {
+          "word": "scrubbed",
+          "definition": "rubbed hard to clean",
+          "sentence": "From Chapter 6: Clean Mittens, Happy Hearts"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What are the names of the three kittens?",
+          "options": [
+            "Fluffy, Puffy, and Muffy",
+            "Mittsy, Bitsy, and Ditsy",
+            "Kitty, Misty, and Whiskers"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why was Mother Cat upset with the kittens?",
+          "options": [
+            "They were too loud",
+            "They lost their mittens",
+            "They didn't eat their breakfast"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why were the kittens' tummies growling?",
+          "options": [
+            "They were tired",
+            "They were hungry",
+            "They were angry"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Where did the kittens look first for their mittens?",
+          "options": [
+            "In the toy box",
+            "Under their beds",
+            "Behind the chair"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Where did the kittens find their mittens?",
+          "options": [
+            "By the big tree",
+            "At the garden gate",
+            "Under the snowman"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Who found the first mitten?",
+          "options": [
+            "Mittsy",
+            "Bitsy",
+            "Ditsy"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Mother Cat feel when the kittens found their mittens?",
+          "options": [
+            "Angry",
+            "Happy",
+            "Sad"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Mother Cat promise to give the kittens?",
+          "options": [
+            "Soup",
+            "Pie",
+            "Milk"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the kittens' mittens get dirty?",
+          "options": [
+            "From playing in mud",
+            "From eating pie messily",
+            "From the snow"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the pie made of?",
+          "options": [
+            "Cherry",
+            "Apple",
+            "Blueberry"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the kittens use to wash their mittens?",
+          "options": [
+            "Cold water",
+            "Warm, soapy water",
+            "Hot water"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What lesson did the kittens learn?",
+          "options": [
+            "Never go outside",
+            "Take care of their things",
+            "Never eat pie"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Nursery rhymes",
+      "title": "Honeybees",
+      "content": "Honeybees are amazing insects that live together in groups called colonies. A colony can have thousands of bees working together! The bees build their homes out of wax in places like hollow trees or special boxes called hives. Each bee has a job to do, like gathering food, taking care of baby bees, or protecting the hive.\nHoneybees make honey by collecting nectar from flowers. They use their long tongues to suck up the sweet liquid from inside the flowers. Back at the hive, they turn the nectar into honey and store it in waxy cells. People have been keeping bees for thousands of years because honey tastes good and never spoils!\n",
+      "questions": [
+        {
+          "question": "What is a group of bees called?",
+          "options": [
+            "a hive",
+            "a colony",
+            "a swarm"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How do bees make honey?",
+          "options": [
+            "by collecting nectar from flowers and turning it into honey",
+            "by eating sugar and making it into honey",
+            "by finding honey in the forest"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Kittens and cats",
+      "title": "Apple Trees",
+      "content": "Apple trees are fruit trees that grow in many parts of the world. These trees can live for a very long time, sometimes over 100 years! Apple trees need good soil, sunshine, and water to grow healthy and strong. In the spring, apple trees bloom with beautiful white or pink flowers that smell sweet.\nAfter the flowers fall off, tiny apples start to grow. It takes all summer for the apples to get big and ripe. Different kinds of apple trees make different types of apples. Some apples are red, some are green, and some are yellow. People pick apples in the fall when they are ready to eat.\n",
+      "questions": [
+        {
+          "question": "When do apple trees bloom with flowers?",
+          "options": [
+            "in the fall",
+            "in the spring",
+            "in the winter"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What do apple trees need to grow?",
+          "options": [
+            "good soil, sunshine, and water",
+            "only water",
+            "only sunshine"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Losing things",
+      "title": "Fire Trucks",
+      "content": "Fire trucks are special vehicles that help firefighters save people and put out fires. These big red trucks carry lots of important equipment like hoses, ladders, and axes. Fire trucks also have a tank that holds hundreds of gallons of water. When there is a fire, the truck can pump water through long hoses to spray on the flames.\nFire trucks have loud sirens and flashing lights to warn other drivers to get out of the way. The firefighters need to get to fires quickly to help people and stop the fire from spreading. Some fire trucks have very tall ladders that can reach high windows in tall buildings. This helps firefighters rescue people who are trapped upstairs.\n",
+      "questions": [
+        {
+          "question": "What equipment do fire trucks carry?",
+          "options": [
+            "hoses, ladders, and axes",
+            "only water",
+            "food and blankets"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why do fire trucks have sirens and flashing lights?",
+          "options": [
+            "to look pretty",
+            "to warn other drivers to get out of the way",
+            "to make noise for fun"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Finding things",
+      "title": "Penguins",
+      "content": "Penguins are black and white birds that cannot fly, but they are amazing swimmers! Most penguins live in cold places near the ocean, especially around Antarctica. They have thick feathers and fat under their skin to keep them warm in the icy water. Penguins waddle when they walk on land, but they can slide on their bellies across the ice.\nPenguins eat fish, squid, and tiny sea animals called krill. They can dive deep underwater and hold their breath for a long time while they hunt for food. Baby penguins are called chicks, and their parents take turns keeping the eggs warm and bringing food. Penguin families stay together and help take care of each other.\n",
+      "questions": [
+        {
+          "question": "Where do most penguins live?",
+          "options": [
+            "in hot deserts",
+            "in cold places near the ocean",
+            "in the forest"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What do penguins eat?",
+          "options": [
+            "fish, squid, and krill",
+            "grass and leaves",
+            "nuts and berries"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Mother's love",
+      "title": "The Sun",
+      "content": "The Sun is a star that gives Earth light and heat. Even though the Sun looks small in the sky, it is actually huge – much, much bigger than Earth! The Sun is so hot that nothing can live on it. The temperature on the Sun is thousands of degrees, hot enough to melt any metal instantly.\nWithout the Sun, there would be no life on Earth. Plants need sunlight to grow, and animals need plants for food. The Sun also makes the water cycle work by heating up water and turning it into clouds. During the day, the Sun lights up our part of Earth, and at night, our part of Earth faces away from the Sun so it gets dark.\n",
+      "questions": [
+        {
+          "question": "What is the Sun?",
+          "options": [
+            "a planet",
+            "a star",
+            "a moon"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why do we need the Sun?",
+          "options": [
+            "it gives Earth light and heat that plants and animals need",
+            "it makes pretty colors in the sky",
+            "it helps us tell time"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Being careful",
+      "title": "Librarians",
+      "content": "Librarians are people who work in libraries to help others find books and information. They know where to find all kinds of books – stories, science books, history books, and more. Librarians also help people use computers to research topics they want to learn about. Many librarians have special training to learn how to organize books and help people.\nBesides helping people find books, librarians do many other jobs. They read stories to children, plan fun programs and activities, and teach people how to use the library. Some libraries have librarians who specialize in helping children or teenagers. Librarians work hard to make sure everyone feels welcome in the library and can find what they need.\n",
+      "questions": [
+        {
+          "question": "What is the main job of librarians?",
+          "options": [
+            "to help people find books and information",
+            "to write books",
+            "to clean the library"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What other activities do librarians do?",
+          "options": [
+            "read stories and plan programs",
+            "cook food for visitors",
+            "fix broken computers"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Three Little Kittens."
+    },
+    {
+      "day": 3,
+      "prompt": "What would you do if you were in this story?"
+    },
+    {
+      "day": 5,
+      "prompt": "What is the lesson in this story?"
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character do you like best? Why?"
+    },
+    {
+      "day": 6,
+      "prompt": "How does this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 168: Sentence First</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 168 - Week 34</h1>
+            <h2>Alice's Adventures in Wonderland</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>Sentence First</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: Sentence First</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice language</li>
+                <li>Complete journal prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 34</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. injustice</h4>
+                <p><strong>Definition:</strong> Unfairness. A situation where people are treated wrongly or without regard for their rights.</p>
+                <p class="vocab-sentence"><em>"The Queen's demand of 'Sentence first — verdict afterwards' was the clearest example of injustice in all of Wonderland."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. meaningless</h4>
+                <p><strong>Definition:</strong> Having no meaning, purpose, or value. Empty of real content.</p>
+                <p class="vocab-sentence"><em>"The poem presented as evidence was completely meaningless — it proved nothing about anyone — yet the King called it 'the most important piece of evidence.'"</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">injustice</div>
+                <div class="match-def">Unfairness. A situation where people are treated wrongly or without regard for their rights.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">meaningless</div>
+                <div class="match-def">Having no meaning, purpose, or value. Empty of real content.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Sentence First - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>Sentence First</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Sentence First - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>The trial continued, though "continued" was a generous word for what was happening. The King called for evidence that did not exist. The Queen demanded executions for crimes that had not been committed. The jury wrote down things that had not been said, crossed them out, and wrote down different things instead.
+A letter was produced — supposedly written by the Knave of Hearts — that proved nothing at all. It was not in the Knave's handwriting. It was not signed. It was not even addressed to anyone. It was, as far as Alice could tell, a nonsense poem.
+"That PROVES his guilt, of course," said the Queen.
+"It proves nothing of the sort!" said Alice. She was much taller now — nearly her normal height — and she was getting less afraid by the minute.
+"It does!" said the Queen.
+"It doesn't!" said Alice.
+"Read the poem," the King ordered.
+The White Rabbit put on his spectacles and read the poem aloud. It was about someone giving something to someone else, but nobody knew who the someones were or what the something was, and the poem contradicted itself in every other line.
+"That's the most important piece of evidence we've heard yet," said the King, rubbing his hands.
+"If any one of them can explain it," said Alice — she had grown so much in the last few minutes that she had quite lost her fear — "I'll give him sixpence. I don't believe there's an atom of meaning in it."
+The jury wrote down "she doesn't believe there's an atom of meaning in it," but none of them seemed to have any idea what it meant, either.
+"If there's no meaning in it," said the King, "that saves a world of trouble, you know, as we needn't try to find any."
+Alice stared at him. The King of Hearts — the highest authority in Wonderland — had just declared that a <span class="vocab-highlight">meaningless</span> poem was the most important evidence in a trial, and then admitted that its meaninglessness was actually convenient.
+This, Alice realized, was how Wonderland worked. Not by logic, not by justice, not by any principle that Alice could recognize — but by the whims of whoever happened to be in charge. The Queen shouted. The King agreed. The jury wrote it down. And the Knave stood in chains, about to be sentenced for a crime that may or may not have happened, based on evidence that proved nothing.
+"Sentence first — verdict afterwards," the Queen had said.
+And Alice understood, with sudden clarity, that this was not just nonsense. It was the opposite of everything that was right. A sentence should follow a verdict. A verdict should follow evidence. Evidence should follow truth. And truth should be the foundation of everything.
+In Wonderland, the foundation was missing. And Alice was done pretending it wasn't.</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Sentence First - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. What does the Queen demand that is the opposite of real justice?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) More witnesses</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) 'Sentence first — verdict afterwards' — punishment before determining guilt</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) A new judge</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) A longer trial</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. Alice realizes that the trial is not about finding the truth — it's about following whoever has the most power. Where else in real life do you see this pattern? When have 'rules' been used to enforce power rather than fairness?</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Alice in Pop Culture: An Enduring Legacy</h3>
+            <div class="info-text"><p>Alice's Adventures in Wonderland has never been out of print since 1865—over 150 years of continuous publication. It's been translated into over 170 languages and adapted countless times for stage, film, television, and other media. Disney's 1951 animated film introduced Alice to millions of children. Tim Burton's 2010 film reimagined her as a teenager facing adult challenges. The story has inspired music, fashion, art, and even scientific theories (the 'Alice in Wonderland syndrome' is a real neurological condition affecting perception of size). Why does Alice endure? First, it works on multiple levels—children enjoy the fantasy and humor, while adults appreciate the satire and philosophical questions. Second, its themes are timeless: growing up, questioning authority, finding your identity, and navigating a confusing world. Third, Carroll's imaginative characters and scenes are so vivid they've become part of our shared cultural vocabulary. When someone says they've 'fallen down the rabbit hole,' everyone knows they mean they've entered a strange new world.</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. How long has Alice been in continuous print?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. Name two film adaptations of Alice.</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. Why does the story continue to be popular?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 168!</p>
+            <h3>You finished: Sentence First</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

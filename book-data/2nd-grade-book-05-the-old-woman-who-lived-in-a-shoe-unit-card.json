@@ -1,0 +1,514 @@
+{
+  "title": "The Old Woman Who Lived in a Shoe",
+  "bookNumber": 5,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "nursery rhyme expansion",
+  "quarter": 1,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "barely",
+          "definition": "only just; almost not at all",
+          "sentence": "From Chapter 1: A Very Big Family"
+        },
+        {
+          "word": "worried",
+          "definition": "feeling troubled or anxious about something",
+          "sentence": "From Chapter 1: A Very Big Family"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "enormous",
+          "definition": "extremely large",
+          "sentence": "From Chapter 2: The Giant Shoe"
+        },
+        {
+          "word": "plenty",
+          "definition": "more than enough",
+          "sentence": "From Chapter 2: The Giant Shoe"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "belongings",
+          "definition": "things that you own",
+          "sentence": "From Chapter 3: Moving Day"
+        },
+        {
+          "word": "peaceful",
+          "definition": "calm and quiet",
+          "sentence": "From Chapter 3: Moving Day"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "organize",
+          "definition": "to put things in order and arrange them neatly",
+          "sentence": "From Chapter 4: Making It Home"
+        },
+        {
+          "word": "cozy",
+          "definition": "warm, comfortable, and inviting",
+          "sentence": "From Chapter 4: Making It Home"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "curious",
+          "definition": "wanting to know or learn about something",
+          "sentence": "From Chapter 5: Visitors and Friends"
+        },
+        {
+          "word": "touched",
+          "definition": "feeling grateful and moved by kindness",
+          "sentence": "From Chapter 5: Visitors and Friends"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "laughter",
+          "definition": "the sound people make when they are happy and laughing",
+          "sentence": "From Chapter 6: Happy Ever After"
+        },
+        {
+          "word": "famous",
+          "definition": "well-known by many people",
+          "sentence": "From Chapter 6: Happy Ever After"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How many children did the old woman have?",
+          "options": [
+            "Ten",
+            "Twelve",
+            "Fifteen"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the problem with their house?",
+          "options": [
+            "It was too old",
+            "It was much too small",
+            "It was too expensive"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was the giant shoe made of?",
+          "options": [
+            "Plastic and rubber",
+            "Brown leather",
+            "Wood and metal"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the old woman find when she looked inside the shoe?",
+          "options": [
+            "Other people living there",
+            "It was empty with lots of room",
+            "It was full of old furniture"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the children feel about their new home?",
+          "options": [
+            "Sad and disappointed",
+            "Excited and happy",
+            "Scared and worried"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What could each child have in the new house?",
+          "options": [
+            "Their own special corner",
+            "A separate bedroom",
+            "A private bathroom"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Who helped make the shoe into a home?",
+          "options": [
+            "Only the old woman",
+            "The whole family worked together",
+            "Only the older children"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the old woman plant outside?",
+          "options": [
+            "A big tree",
+            "A small garden",
+            "Some flowers"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "Why did people come to see the shoe house?",
+          "options": [
+            "They wanted to buy it",
+            "They were curious about the unusual house",
+            "They wanted to complain about it"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the neighbors help the family?",
+          "options": [
+            "They ignored them",
+            "They brought gifts like food",
+            "They asked them to leave"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the old woman feel in her new home?",
+          "options": [
+            "Still tired and worried",
+            "Happy and no longer worried",
+            "Sad and lonely"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the family learn about homes?",
+          "options": [
+            "Bigger is always better",
+            "A home is about love and care, not how it looks",
+            "Only fancy houses are good homes"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Nursery rhymes",
+      "title": "Plants",
+      "content": "Plants are living things that make their own food using sunlight, water, and air. This process is called photosynthesis, and it happens in the green parts of plants, especially the leaves. Plants are very important because they produce the oxygen that we breathe and provide food for animals and humans. Without plants, there would be no life on Earth!\nThere are many different types of plants, from tiny grass to giant redwood trees. Some plants, like roses and daisies, grow beautiful flowers to attract insects that help them make seeds. Other plants, like pine trees, make cones instead of flowers. Plants can grow almost anywhere – in deserts, underwater, on mountains, and even in the cracks of sidewalks. They are amazing at adapting to different environments.\n",
+      "questions": [
+        {
+          "question": "How do plants make their own food?",
+          "options": [
+            "through photosynthesis using sunlight, water, and air",
+            "by eating soil",
+            "by drinking only water"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why do some plants grow flowers?",
+          "options": [
+            "just to look pretty",
+            "to attract insects that help them make seeds",
+            "to scare away animals"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Big families",
+      "title": "Rocks",
+      "content": "Rocks are solid materials made up of minerals that form naturally in the Earth. There are three main types of rocks: igneous rocks form when melted rock cools down, sedimentary rocks form from layers of sand and other materials pressed together over time, and metamorphic rocks form when existing rocks are changed by heat and pressure deep underground.\nRocks are useful to people in many ways. We use granite and marble for countertops and buildings, limestone to make cement, and coal for energy. Some rocks contain valuable metals like gold and silver. Geologists are scientists who study rocks to learn about Earth's history and find useful materials. By examining different rock layers, they can tell what the Earth was like millions of years ago.\n",
+      "questions": [
+        {
+          "question": "What are the three main types of rocks?",
+          "options": [
+            "big, medium, and small",
+            "igneous, sedimentary, and metamorphic",
+            "hard, soft, and smooth"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What do geologists do?",
+          "options": [
+            "they only collect pretty rocks",
+            "they study rocks to learn about Earth's history",
+            "they build houses with rocks"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Shoes as houses",
+      "title": "Ocean",
+      "content": "The ocean covers more than 70% of Earth's surface and contains about 97% of all the water on our planet. Ocean water is salty because it has dissolved minerals that have washed into it from rocks and soil over millions of years. The ocean is divided into five main parts: the Pacific, Atlantic, Indian, Arctic, and Southern oceans, but they are all connected as one giant body of water.\nThe ocean is home to millions of different plants and animals, from tiny plankton to massive blue whales. It provides food for billions of people around the world and helps control Earth's weather and temperature. Ocean currents act like rivers in the sea, carrying warm and cold water around the planet. The ocean also gives us oxygen to breathe – tiny ocean plants called phytoplankton produce much of the oxygen in our atmosphere.\n",
+      "questions": [
+        {
+          "question": "Why is ocean water salty?",
+          "options": [
+            "because it has dissolved minerals from rocks and soil",
+            "because fish live in it",
+            "because people put salt in it"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What do ocean currents do?",
+          "options": [
+            "they carry warm and cold water around the planet",
+            "they only make waves",
+            "they clean the water"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Taking care of children",
+      "title": "Astronauts",
+      "content": "Astronauts are specially trained people who travel to space to conduct experiments, explore other worlds, and learn more about the universe. They must go through years of difficult training to prepare for the challenges of living and working in space. Astronauts learn how to use complex equipment, work in zero gravity, and handle emergencies that might happen far from Earth.\nIn space, astronauts live on the International Space Station, where they conduct scientific experiments that help us learn about medicine, materials, and how things behave without gravity. They also maintain the space station and sometimes go on spacewalks to repair equipment or install new parts. The work that astronauts do in space helps improve life on Earth and prepares us for future missions to the Moon and Mars.\n",
+      "questions": [
+        {
+          "question": "What do astronauts do in space?",
+          "options": [
+            "they conduct experiments and maintain the space station",
+            "they only take pictures",
+            "they just float around"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How long do astronauts train?",
+          "options": [
+            "one week",
+            "years of difficult training",
+            "they don't need training"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Imagination",
+      "title": "Bicycles",
+      "content": "Bicycles are vehicles with two wheels that people power by pedaling with their feet. The pedals turn a chain that makes the back wheel spin, moving the bicycle forward. Bicycles have handlebars for steering and brakes to slow down or stop. They are an efficient way to travel because they don't need gasoline or electricity – just human power!\nRiding bicycles is good exercise that helps keep people healthy and strong. Bicycles are also good for the environment because they don't produce pollution like cars do. Many cities have bike lanes and paths to make cycling safer and more enjoyable. Some people use bicycles to get to work or school, while others ride them for fun or sport. There are many different types of bicycles designed for different activities, like mountain biking or racing.\n",
+      "questions": [
+        {
+          "question": "How do bicycles move forward?",
+          "options": [
+            "pedals turn a chain that makes the back wheel spin",
+            "they use gasoline",
+            "they are pushed by wind"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why are bicycles good for the environment?",
+          "options": [
+            "they are painted green",
+            "they don't produce pollution like cars do",
+            "they clean the air"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Making do with what you have",
+      "title": "Trains",
+      "content": "Trains are long vehicles that travel on railroad tracks and can carry many people or large amounts of cargo from one place to another. They are made up of a locomotive that provides the power and several cars that carry passengers or freight. Trains are pulled along steel rails by powerful engines that can run on electricity, diesel fuel, or even steam in older trains.\nTrains are an important way to transport people and goods because they can carry much more than trucks or cars. Passenger trains help people travel between cities quickly and comfortably, while freight trains move products like coal, grain, and manufactured goods across long distances. High-speed trains in some countries can travel over 200 miles per hour! Trains are also better for the environment than many other forms of transportation because they can move many people or lots of cargo while using less fuel per person or ton.\n",
+      "questions": [
+        {
+          "question": "What pulls trains along the tracks?",
+          "options": [
+            "people pushing",
+            "powerful engines in locomotives",
+            "the wind"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why are trains good for the environment?",
+          "options": [
+            "they can move many people while using less fuel per person",
+            "they are painted green",
+            "they only travel at night"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Old Woman Who Lived in a Shoe."
+    },
+    {
+      "day": 3,
+      "prompt": "What would you do if you were in this story?"
+    },
+    {
+      "day": 5,
+      "prompt": "What is the lesson in this story?"
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character do you like best? Why?"
+    },
+    {
+      "day": 6,
+      "prompt": "How does this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

@@ -11,9 +11,9 @@ const path = require('path');
 
 // ===== CONFIGURATION =====
 const CONFIG = {
-    startDay: 91,
-    endDay: 120,
-    startWeek: 19,
+    startDay: 121,
+    endDay: 150,
+    startWeek: 25,
     gradeLevel: '4th',
     chaptersFile: './sinbad-chapters.json',
     vocabFile: './sinbad-vocabulary.json',
@@ -25,47 +25,47 @@ const CONFIG = {
 
 // ===== LESSON PLAN =====
 const lessonPlan = [
-    // Week 19
-    { day: 91, chapter: "The Porter and the Sailor" },
-    { day: 92, chapter: "The First Voyage: The Island That Moved" },
-    { day: 93, chapter: "The Second Voyage: The Valley of Diamonds" },
-    { day: 94, chapter: "The Third Voyage: The Giant's Island" },
-    { day: 95, type: "assessment" },
+    // Week 25
+    { day: 121, chapter: "The Porter and the Sailor" },
+    { day: 122, chapter: "The First Voyage: The Island That Moved" },
+    { day: 123, chapter: "The Second Voyage: The Valley of Diamonds" },
+    { day: 124, chapter: "The Third Voyage: The Giant's Island" },
+    { day: 125, type: "assessment" },
     
-    // Week 20
-    { day: 96, chapter: "The Fourth Voyage: The Underground Kingdom" },
-    { day: 97, chapter: "The Fifth Voyage: The Old Man of the Sea" },
-    { day: 98, chapter: "The Sixth Voyage: The River Under the Mountain" },
-    { day: 99, chapter: "A Night Off: Hindbad Asks Questions" },
-    { day: 100, type: "assessment" },
+    // Week 26
+    { day: 126, chapter: "The Fourth Voyage: The Underground Kingdom" },
+    { day: 127, chapter: "The Fifth Voyage: The Old Man of the Sea" },
+    { day: 128, chapter: "The Sixth Voyage: The River Under the Mountain" },
+    { day: 129, chapter: "A Night Off: Hindbad Asks Questions" },
+    { day: 130, type: "assessment" },
     
-    // Week 21
-    { day: 101, chapter: "The Seventh Voyage: The King's Letter" },
-    { day: 102, chapter: "Back to the Beginning" },
-    { day: 103, chapter: "The Ship That Did Not Wait" },
-    { day: 104, chapter: "What the Giant Taught Me" },
-    { day: 105, type: "assessment" },
+    // Week 27
+    { day: 131, chapter: "The Seventh Voyage: The King's Letter" },
+    { day: 132, chapter: "Back to the Beginning" },
+    { day: 133, chapter: "The Ship That Did Not Wait" },
+    { day: 134, chapter: "What the Giant Taught Me" },
+    { day: 135, type: "assessment" },
     
-    // Week 22
-    { day: 106, chapter: "The City Under the Mountain Sky" },
-    { day: 107, chapter: "The Letter the Caliph Sent" },
-    { day: 108, chapter: "The Elephant and the Secret Valley" },
-    { day: 109, chapter: "The Long Way Home" },
-    { day: 110, type: "assessment" },
+    // Week 28
+    { day: 136, chapter: "The City Under the Mountain Sky" },
+    { day: 137, chapter: "The Letter the Caliph Sent" },
+    { day: 138, chapter: "The Elephant and the Secret Valley" },
+    { day: 139, chapter: "The Long Way Home" },
+    { day: 140, type: "assessment" },
     
-    // Week 23
-    { day: 111, chapter: "What Wealth Actually Costs" },
-    { day: 112, chapter: "The King of Serendib Remembers" },
-    { day: 113, chapter: "The Shape of the Sea" },
-    { day: 114, chapter: "What Was Lost" },
-    { day: 115, type: "assessment" },
+    // Week 29
+    { day: 141, chapter: "What Wealth Actually Costs" },
+    { day: 142, chapter: "The King of Serendib Remembers" },
+    { day: 143, chapter: "The Shape of the Sea" },
+    { day: 144, chapter: "What Was Lost" },
+    { day: 145, type: "assessment" },
     
-    // Week 24
-    { day: 116, chapter: "The Merchants He Met" },
-    { day: 117, chapter: "The Last Thing I Learned" },
-    { day: 118, chapter: "Morning at the Sailor's House" },
-    { day: 119, chapter: "The Purse of Gold" },
-    { day: 120, type: "assessment" }
+    // Week 30
+    { day: 146, chapter: "The Merchants He Met" },
+    { day: 147, chapter: "The Last Thing I Learned" },
+    { day: 148, chapter: "Morning at the Sailor's House" },
+    { day: 149, chapter: "The Purse of Gold" },
+    { day: 150, type: "assessment" }
 ];
 
 // ===== HELPER FUNCTIONS =====

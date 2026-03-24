@@ -1,0 +1,514 @@
+{
+  "title": "The Farmer and the Stork",
+  "bookNumber": 12,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "justice and fairness",
+  "quarter": 2,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "agriculturalists",
+          "definition": "people who work in farming and growing crops",
+          "sentence": "From A Hardworking Farmer"
+        },
+        {
+          "word": "meticulous",
+          "definition": "very careful and precise",
+          "sentence": "From A Hardworking Farmer"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "systematically",
+          "definition": "in an organized and methodical way",
+          "sentence": "From Unwelcome Visitors"
+        },
+        {
+          "word": "diminishing",
+          "definition": "becoming smaller or less",
+          "sentence": "From Unwelcome Visitors"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "drastic",
+          "definition": "extreme measures taken to solve a serious problem",
+          "sentence": "From Setting the Trap"
+        },
+        {
+          "word": "retreated",
+          "definition": "moved back to a safe place",
+          "sentence": "From Setting the Trap"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "coincidental",
+          "definition": "happening by chance; accidental",
+          "sentence": "From An Innocent Bystander"
+        },
+        {
+          "word": "wrongdoers",
+          "definition": "people or animals who do bad or harmful things",
+          "sentence": "From An Innocent Bystander"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "distinctions",
+          "definition": "differences between things",
+          "sentence": "From Justice Without Mercy"
+        },
+        {
+          "word": "associate",
+          "definition": "to spend time with or be connected to someone",
+          "sentence": "From Justice Without Mercy"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "blameless",
+          "definition": "free from fault or responsibility for wrongdoing",
+          "sentence": "From The Price of Bad Company"
+        },
+        {
+          "word": "associations",
+          "definition": "connections or relationships with other people",
+          "sentence": "From The Price of Bad Company"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What made this farmer successful?",
+          "options": [
+            "He was lucky with the weather",
+            "His hard work, knowledge, and meticulous care",
+            "He had the biggest farm"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the farmer most proud of?",
+          "options": [
+            "His house and barn",
+            "His grain fields with fine wheat and corn",
+            "His collection of farming tools"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What problem did the farmer discover?",
+          "options": [
+            "His crops were not growing well",
+            "A flock of cranes was eating his grain",
+            "There was too much rain"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the cranes behave in the farmer's fields?",
+          "options": [
+            "They were careful not to damage anything",
+            "They showed no respect and wasted grain carelessly",
+            "They only ate a tiny amount"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What solution did the farmer decide to try?",
+          "options": [
+            "Building a fence around his crops",
+            "Setting a large net trap to capture the cranes",
+            "Moving his crops to a different field"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the farmer prepare his trap?",
+          "options": [
+            "He worked quickly without much care",
+            "He worked carefully by lamplight and scattered extra grain as bait",
+            "He asked his neighbors to help him"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was the stork looking for in the field?",
+          "options": [
+            "The farmer's valuable grain",
+            "Insects, frogs, and small creatures - her natural food",
+            "A place to build a nest"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How was the stork different from the cranes?",
+          "options": [
+            "She was larger and stronger",
+            "She was kind, honest, and respectful of human property",
+            "She was more colorful"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the stork try to defend herself?",
+          "options": [
+            "She tried to escape from the trap",
+            "She explained that she only ate insects and never stole grain",
+            "She blamed the cranes for everything"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why didn't the farmer believe the stork?",
+          "options": [
+            "He knew she was lying",
+            "His anger made him unforgiving and he judged her by the company she kept",
+            "He was too busy to listen"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What lesson does the stork's situation teach us?",
+          "options": [
+            "That storks should never fly with cranes",
+            "To be careful about the company we keep because others may judge us by it",
+            "That farmers are always unfair"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What does this story remind us about the world?",
+          "options": [
+            "That everything always works out perfectly",
+            "That the world is not always fair and good people sometimes suffer",
+            "That all birds are the same"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "A Hardworking Farmer",
+      "title": "A Hardworking Farmer",
+      "content": "Learning about A Hardworking Farmer is interesting and important for second graders. There are many fascinating facts about A Hardworking Farmer that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore A Hardworking Farmer, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about A Hardworking Farmer. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about A Hardworking Farmer?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about A Hardworking Farmer?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Unwelcome Visitors",
+      "title": "Unwelcome Visitors",
+      "content": "Learning about Unwelcome Visitors is interesting and important for second graders. There are many fascinating facts about Unwelcome Visitors that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore Unwelcome Visitors, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about Unwelcome Visitors. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about Unwelcome Visitors?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about Unwelcome Visitors?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "Setting the Trap",
+      "title": "Setting the Trap",
+      "content": "Learning about Setting the Trap is interesting and important for second graders. There are many fascinating facts about Setting the Trap that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore Setting the Trap, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about Setting the Trap. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about Setting the Trap?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about Setting the Trap?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "An Innocent Bystander",
+      "title": "An Innocent Bystander",
+      "content": "Learning about An Innocent Bystander is interesting and important for second graders. There are many fascinating facts about An Innocent Bystander that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore An Innocent Bystander, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about An Innocent Bystander. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about An Innocent Bystander?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about An Innocent Bystander?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Justice Without Mercy",
+      "title": "Justice Without Mercy",
+      "content": "Learning about Justice Without Mercy is interesting and important for second graders. There are many fascinating facts about Justice Without Mercy that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore Justice Without Mercy, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about Justice Without Mercy. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about Justice Without Mercy?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about Justice Without Mercy?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "The Price of Bad Company",
+      "title": "The Price of Bad Company",
+      "content": "Learning about The Price of Bad Company is interesting and important for second graders. There are many fascinating facts about The Price of Bad Company that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.\n\nWhen we explore The Price of Bad Company, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about The Price of Bad Company. The more we learn, the better we understand how things work and why they matter.",
+      "questions": [
+        {
+          "question": "What can you learn about The Price of Bad Company?",
+          "options": [
+            "nothing useful",
+            "fascinating facts that help us understand the world",
+            "only boring things"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why is it good to learn about The Price of Bad Company?",
+          "options": [
+            "it helps us understand the world better",
+            "it's not important",
+            "only adults need to know"
+          ],
+          "correct": 0
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Farmer and the Stork."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Farmer and the Stork."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Farmer and the Stork."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

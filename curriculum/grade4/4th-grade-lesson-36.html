@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 36: The Three Musketeers</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 36 - Week 8</h1>
+            <h2>The Three Musketeers</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>The Three Musketeers</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: The Three Musketeers</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice language</li>
+                <li>Complete journal prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 8</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. extravagant</h4>
+                <p><strong>Definition:</strong> Spending more than necessary. Over-the-top, showy, and excessive.</p>
+                <p class="vocab-sentence"><em>"Porthos wore the biggest hats, the shiniest boots, and the most extravagant sword belts in all of Paris."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. legendary</h4>
+                <p><strong>Definition:</strong> Famous and admired, often because of remarkable achievements that become the stuff of stories.</p>
+                <p class="vocab-sentence"><em>"Together, the three musketeers were legendary — the best swordsmen in the king's service and the biggest headache the Cardinal's Guards had ever known."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">extravagant</div>
+                <div class="match-def">Spending more than necessary. Over-the-top, showy, and excessive.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">legendary</div>
+                <div class="match-def">Famous and admired, often because of remarkable achievements that become the stuff of stories.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Three Musketeers - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>The Three Musketeers</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Three Musketeers - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>Over the next few weeks, D'Artagnan learned everything he could about his three new friends.
+Athos was the oldest of the three, and the most mysterious. He was tall, handsome, and carried himself like a nobleman — which, D'Artagnan suspected, he secretly was. Athos rarely spoke about his past. When the others told stories around the fire, Athos listened with a faint, sad smile, as though he were remembering something painful. He drank more wine than was good for him, and sometimes D'Artagnan found him sitting alone in the dark, staring at nothing.
+But when Athos drew his sword, every trace of sadness disappeared. He became something magnificent — precise, controlled, and utterly fearless. He was the finest swordsman D'Artagnan had ever seen, and D'Artagnan's father had been very good indeed.
+"Athos does not fight because he enjoys it," Aramis told D'Artagnan once. "He fights because it is the one thing that makes him forget."
+D'Artagnan wanted to ask what Athos was trying to forget, but something in Aramis's eyes told him not to.
+Porthos was the opposite of Athos in nearly every way. Where Athos was quiet, Porthos was loud. Where Athos was spare and elegant, Porthos was enormous and <span class="vocab-highlight">extravagant</span>. He wore the biggest hats, the shiniest boots, and the most ridiculous sword belts in all of Paris. He told stories that grew bigger every time he told them, and he laughed at his own jokes louder than anyone else.
+But beneath the bluster, Porthos had a heart the size of his appetite — which was considerable. He would give his last coin to a friend in need, share his last meal with a stranger, and fight anyone who threatened someone smaller than himself. He was vain, yes. He was loud, certainly. But he was also loyal to his bones.
+Aramis was the most puzzling of the three. He was slim, soft-spoken, and always impeccably dressed. He read poetry. He wrote letters in beautiful handwriting. He spoke of becoming a priest someday and leaving the world of swords behind.
+And yet, when the fighting started, Aramis was as deadly as any of them. He fought with a quiet, lethal grace that belied his gentle manner. He was also the cleverest of the three — the one who noticed details the others missed, who read between the lines, who saw the trap before anyone walked into it.
+"Aramis is the most dangerous man I know," Athos said once, in a rare moment of openness. "Because no one ever suspects him."
+Together, the three musketeers were <span class="vocab-highlight">legendary</span>. They were the best swordsmen in the king's service, the most loyal friends in all of France, and the biggest headache the Cardinal's Guards had ever known. They moved through Paris like a force of nature — fighting, feasting, and living by a code that was simple and unbreakable.
+All for one, and one for all.
+It meant that if one of them was in trouble, all of them came. If one was insulted, all were insulted. If one needed money, the others emptied their pockets. If one was challenged to a duel, three swords appeared at his side.
+D'Artagnan was not yet a musketeer — he was only a cadet in the guards, the lowest rung of the military ladder. He had no blue cloak, no silver cross, no official rank. But the three musketeers treated him as an equal. They invited him to their meals, included him in their adventures, and taught him everything they knew about swordsmanship, honor, and how to survive in a city where everyone was plotting against everyone else.
+"You are one of us," Porthos told him simply. "The cloak will come later. The friendship is now."
+D'Artagnan trained every day. He practiced with Athos, who taught him precision and control. He sparred with Porthos, who taught him power and endurance. He studied with Aramis, who taught him strategy and observation.
+He was getting better. Faster. Stronger. More confident.
+But Paris was a dangerous city, and the greatest danger of all was not in the streets. It was in the palace, where a man in red robes pulled the strings of power like a puppet master.
+His name was Cardinal Richelieu, and he was about to change D'Artagnan's life forever.</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The Three Musketeers - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. Which description best matches each musketeer?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) Athos: loud and vain; Porthos: quiet and sad; Aramis: brave and strong</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) Athos: noble and mysterious; Porthos: large and generous; Aramis: gentle and clever</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) Athos: young and reckless; Porthos: old and wise; Aramis: angry and violent</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) They are all exactly the same</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. The motto 'All for one, and one for all' means that if one friend is in trouble, all of them come. Why is this code so powerful? What would happen to the group if even one of them broke it?</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Cardinal Richelieu: Power Behind the Throne</h3>
+            <div class="info-text"><p>Cardinal Richelieu was one of the most powerful men in France. He was a Catholic cardinal (a high church official) but also served as King Louis XIII's chief minister. Richelieu was brilliant and ambitious. He wanted to make France the strongest country in Europe. To do this, he increased the king's power and weakened the nobles who opposed him. He also created a network of spies to learn about his enemies. In The Three Musketeers, Richelieu is portrayed as the villain, but in real history, many people saw him as a great leader who made France powerful.</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. What two important jobs did Richelieu hold?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. What was Richelieu's main goal for France?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. How did Richelieu keep track of his enemies?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 36!</p>
+            <h3>You finished: The Three Musketeers</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

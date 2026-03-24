@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 32: Trouble in Meung</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 32 - Week 7</h1>
+            <h2>The Three Musketeers</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>Trouble in Meung</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: Trouble in Meung</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice language</li>
+                <li>Complete journal prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 7</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. humiliated</h4>
+                <p><strong>Definition:</strong> Made to feel deeply ashamed or embarrassed, especially in front of others.</p>
+                <p class="vocab-sentence"><em>"D'Artagnan was humiliated — beaten by the stranger's companions while the man with the scar did not even bother to draw his sword."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. dignity</h4>
+                <p><strong>Definition:</strong> A sense of pride and self-respect. The quality of being worthy of honor.</p>
+                <p class="vocab-sentence"><em>"D'Artagnan had lost his letter, his dignity, and very nearly his sword — but he refused to give up."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">humiliated</div>
+                <div class="match-def">Made to feel deeply ashamed or embarrassed, especially in front of others.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">dignity</div>
+                <div class="match-def">A sense of pride and self-respect. The quality of being worthy of honor.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Trouble in Meung - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>Trouble in Meung</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Trouble in Meung - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>D'Artagnan stopped at an inn in Meung to water his horse and eat something before the final stretch to Paris. He tied the yellow horse to a post and walked inside, trying to look confident and worldly, which is difficult to do when you are eighteen and your clothes are patched.
+He was sitting by the window eating bread and cheese when he heard laughter from the courtyard.
+He looked out. Three men stood around his horse, pointing and snickering. The tallest of them — a dark-haired man with a scar on his cheek and an air of cold authority — was describing the horse to his companions with obvious amusement.
+"I have never seen such a creature," the man said. "It is the color of a dandelion and appears to move by accident rather than intention."
+The other men roared with laughter.
+D'Artagnan's blood went hot. His father's voice echoed in his head: Never tolerate an insult.
+He threw open the inn door and marched into the courtyard, his hand on his sword. "Sir," he said, his voice shaking with anger, "you are mocking my horse."
+The man with the scar turned slowly and looked D'Artagnan up and down. His eyes were sharp and cold, like a hawk studying a mouse. He did not seem impressed.
+"I am mocking your horse," the man agreed pleasantly. "It deserves to be mocked."
+"That horse was a gift from my father," D'Artagnan said. "And any insult to it is an insult to me."
+"Then you are easily insulted," the man said. He turned back to his companions as though D'Artagnan did not exist.
+D'Artagnan drew his sword.
+What happened next was fast and painful. The man with the scar did not even bother to draw his own weapon. His two companions seized D'Artagnan from behind, knocked the sword from his hand, and beat him with the flats of their blades until he fell to the ground. The innkeeper's servants came running out and dragged D'Artagnan inside, where they dumped him on the kitchen floor.
+When D'Artagnan came to his senses, his head was throbbing, his ribs ached, and his pride hurt worst of all. He had been beaten — <span class="vocab-highlight">humiliated</span> — in front of everyone, and the man with the scar had not even considered him worth fighting.
+He staggered to the window just in time to see the man mounting a fine black horse. A woman leaned from a carriage window and spoke to him. She was beautiful — pale, with golden hair and eyes that glittered like cold jewels. The man bowed to her, and they exchanged words that D'Artagnan could not hear.
+Then they were gone.
+D'Artagnan burned. He did not know the man's name. He did not know the woman's name. But he memorized everything: the scar, the cold eyes, the black horse, the woman in the carriage. He would find them again. And when he did, things would be different.
+He reached for his father's letter of introduction to Monsieur de Tréville — the letter that was supposed to open doors for him in Paris — and his stomach dropped.
+It was gone. Stolen during the beating.
+D'Artagnan sank onto a bench and put his head in his hands. He had been in the world for exactly one day, and he had already lost his letter, his <span class="vocab-highlight">dignity</span>, and very nearly his sword. He had nothing left but fifteen coins, a yellow horse, and his father's advice.
+Never run from a fight. Never tolerate an insult. Never betray a friend.
+"Fine," D'Artagnan said aloud to the empty kitchen. "Paris it is."
+He stood up, straightened his battered hat, and walked back out into the daylight. The yellow horse was still tied to the post, looking no worse than before — which was not saying much.
+"Come on," D'Artagnan told the horse. "We have work to do."
+The horse shuffled sideways and sneezed.
+They rode for Paris.</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Trouble in Meung - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. What does D'Artagnan lose during the fight at the inn?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) His sword and his horse</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) His father's letter of introduction to Monsieur de Tréville</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) His fifteen gold coins</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) His hat and his boots</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. D'Artagnan memorizes everything about the man who humiliated him — the scar, the cold eyes, the black horse. Why do you think D'Artagnan does this? What does it tell you about his character?</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+    <div class="lesson-page" id="page8" style="display: none;">
+        <div class="page-header">
+            <h2>✏️ Language Practice</h2>
+        </div>
+        <div class="skill-section">
+            <h3>Context Clues: Definition and Restatement</h3>
+            <p></p>
+            <div class="practice">
+                <label>Practice:</label>
+                <textarea rows="3" placeholder="Complete the language exercise..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Alexandre Dumas: The Master Storyteller</h3>
+            <div class="info-text"><p>Alexandre Dumas was born in France in 1802. His father was a general in Napoleon's army, and his grandmother was a slave from Haiti. Dumas grew up loving stories and theater. He moved to Paris and worked as a playwright before becoming a famous novelist. He wrote many adventure stories, but The Three Musketeers became his most popular book. Dumas was known for writing exciting plots full of sword fights, romance, and friendship. He often worked with assistants who helped him research historical facts. By the time he died in 1870, he had written over 100 books and plays!</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. What year was Alexandre Dumas born?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. What was his father's job?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. How many books and plays did Dumas write in his lifetime?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+    <div class="lesson-page" id="page10" style="display: none;">
+        <div class="page-header">
+            <h2>✍️ Journal Prompt</h2>
+        </div>
+        <div class="writing-section">
+            <div class="prompt">
+                <p>If you could have dinner with Alexandre Dumas and ask him three questions about The Three Musketeers, what would you ask? Why? (1-2 paragraphs)</p>
+            </div>
+            <textarea rows="10" placeholder="Write your response here (1-2 paragraphs)..."></textarea>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 32!</p>
+            <h3>You finished: Trouble in Meung</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+{
+  "title": "The Tale of Peter Rabbit",
+  "bookNumber": "ALT-2",
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "consequences and obedience",
+  "quarter": 4,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "constitutionally",
+          "definition": "by basic nature or character; fundamentally",
+          "sentence": "From A Mother's Warning"
+        },
+        {
+          "word": "befell",
+          "definition": "happened to; occurred to someone",
+          "sentence": "From A Mother's Warning"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "irresistibly",
+          "definition": "in a way that cannot be resisted; very tempting",
+          "sentence": "From The Fatal Temptation"
+        },
+        {
+          "word": "transgressive",
+          "definition": "violating rules or accepted behavior",
+          "sentence": "From The Fatal Temptation"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "trepidation",
+          "definition": "a feeling of fear or anxiety about something that may happen",
+          "sentence": "From Entering Forbidden Territory"
+        },
+        {
+          "word": "illicit",
+          "definition": "forbidden by law, rules, or custom",
+          "sentence": "From Entering Forbidden Territory"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "physiological",
+          "definition": "relating to the body's physical and biological functions",
+          "sentence": "From The Consequences of Gluttony"
+        },
+        {
+          "word": "imminent",
+          "definition": "about to happen very soon",
+          "sentence": "From The Consequences of Gluttony"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "adrenaline",
+          "definition": "a hormone that gives extra energy and strength during emergencies",
+          "sentence": "From A Desperate Chase"
+        },
+        {
+          "word": "relentless",
+          "definition": "never stopping; continuing without mercy",
+          "sentence": "From A Desperate Chase"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "intervention",
+          "definition": "the action of becoming involved to help or change a situation",
+          "sentence": "From Lessons Learned Through Suffering"
+        },
+        {
+          "word": "chastened",
+          "definition": "made to feel ashamed or subdued by experience",
+          "sentence": "From Lessons Learned Through Suffering"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How were Peter's sisters different from him?",
+          "options": [
+            "They were older and larger",
+            "They were well-behaved and obedient",
+            "They were afraid of everything"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why did Mrs. Rabbit forbid her children from going to Mr. McGregor's garden?",
+          "options": [
+            "The vegetables weren't ripe yet",
+            "Their father had died there after becoming trapped",
+            "It was too far from their home"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Peter's sisters do after their mother left?",
+          "options": [
+            "They went to sleep",
+            "They gathered blackberries in the safe meadow",
+            "They followed Peter to the garden"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What made Mr. McGregor's garden so tempting to Peter?",
+          "options": [
+            "It was close to their home",
+            "He imagined delicious vegetables growing there",
+            "His friends were playing there"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Peter enter Mr. McGregor's garden?",
+          "options": [
+            "He climbed over the wall",
+            "He squeezed through a gap beneath the gate",
+            "Mr. McGregor opened the gate for him"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What vegetables did Peter eat first in the garden?",
+          "options": [
+            "Carrots and peas",
+            "Lettuce, French beans, and radishes",
+            "Tomatoes and corn"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened to Peter after he ate too much?",
+          "options": [
+            "He became stronger and faster",
+            "He experienced stomach pain and nausea",
+            "He fell asleep"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What sound made Peter realize he was in danger?",
+          "options": [
+            "Birds chirping loudly",
+            "Heavy footsteps and gardening tools approaching",
+            "His mother calling his name"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Peter react when Mr. McGregor discovered him?",
+          "options": [
+            "He tried to hide behind a plant",
+            "He bounded away in panic-driven flight",
+            "He apologized and asked for forgiveness"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Peter lose during his desperate escape?",
+          "options": [
+            "His hat and mittens",
+            "His blue jacket and shoes",
+            "His basket and walking stick"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Mrs. Rabbit find when she returned home?",
+          "options": [
+            "All four children playing happily together",
+            "Three daughters enjoying supper while Peter lay sick in bed",
+            "Peter teaching his sisters about the garden"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What important lesson did Peter finally understand?",
+          "options": [
+            "That gardens are boring places",
+            "That parental rules exist to protect those we love from dangers",
+            "That he should never trust his mother"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "About A Mother's Warning",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 2,
+      "topic": "About The Fatal Temptation",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "About Entering Forbidden Territory",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "About The Consequences of Gluttony",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "About A Desperate Chase",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "About Lessons Learned Through Suffering",
+      "title": "",
+      "content": ""
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": ""
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": ""
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Tale of Peter Rabbit."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Tale of Peter Rabbit."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Tale of Peter Rabbit."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "title": "The Tale of Mr. Jeremy Fisher",
+  "bookNumber": "ALT-1",
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "adventure and humility",
+  "quarter": 4,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "angling",
+          "definition": "the sport or hobby of fishing with a hook and line",
+          "sentence": "From An Optimistic Morning"
+        },
+        {
+          "word": "meticulous",
+          "definition": "showing great attention to detail; very careful and precise",
+          "sentence": "From An Optimistic Morning"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "congregated",
+          "definition": "gathered together in a group",
+          "sentence": "From Setting Forth with Great Expectations"
+        },
+        {
+          "word": "prowess",
+          "definition": "great skill or ability in a particular activity",
+          "sentence": "From Setting Forth with Great Expectations"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "vicinity",
+          "definition": "the area near or around a particular place",
+          "sentence": "From The First Disappointments"
+        },
+        {
+          "word": "predicament",
+          "definition": "a difficult or unpleasant situation",
+          "sentence": "From The First Disappointments"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "substantial",
+          "definition": "large in size, amount, or importance",
+          "sentence": "From An Unexpected Encounter"
+        },
+        {
+          "word": "deteriorated",
+          "definition": "became worse; declined in condition",
+          "sentence": "From An Unexpected Encounter"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "expedient",
+          "definition": "a means of attaining an end, especially one that is quick or practical",
+          "sentence": "From A Narrow Escape"
+        },
+        {
+          "word": "perilous",
+          "definition": "full of danger or risk",
+          "sentence": "From A Narrow Escape"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "elusive",
+          "definition": "difficult to find, catch, or achieve",
+          "sentence": "From Finding Joy in Simple Pleasures"
+        },
+        {
+          "word": "resilience",
+          "definition": "the ability to recover quickly from difficulties",
+          "sentence": "From Finding Joy in Simple Pleasures"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was Mr. Jeremy Fisher's favorite hobby?",
+          "options": [
+            "Swimming and diving",
+            "Fishing (angling)",
+            "Gardening and farming"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did Mr. Jeremy Fisher feel about this particular morning?",
+          "options": [
+            "Worried about bad weather",
+            "Especially confident and optimistic about his prospects",
+            "Tired and reluctant to go fishing"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Mr. Jeremy Fisher envision as he paddled to his fishing spot?",
+          "options": [
+            "Getting lost in the fog",
+            "A magnificent feast prepared from his anticipated catch",
+            "Finding treasure at the bottom of the pond"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did Mr. Jeremy Fisher choose his fishing location?",
+          "options": [
+            "He picked a spot randomly",
+            "Based on years of careful observation and study of fish behavior",
+            "Another fisherman told him where to go"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened to Mr. Jeremy Fisher's initial fishing attempts?",
+          "options": [
+            "They were immediately successful",
+            "They proved frustratingly unsuccessful",
+            "He caught too many small fish"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the lack of success make Mr. Jeremy Fisher feel?",
+          "options": [
+            "Happy and relaxed",
+            "Frustrated and filled with self-doubt",
+            "Completely indifferent"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Mr. Jeremy Fisher catch instead of the fish he expected?",
+          "options": [
+            "A small minnow",
+            "An enormous and unfriendly trout",
+            "A piece of old rope"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the situation change for Mr. Jeremy Fisher?",
+          "options": [
+            "He became very successful at fishing",
+            "Instead of catching dinner, he might become someone else's meal",
+            "He decided to give up fishing forever"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did Mr. Jeremy Fisher manage to escape from the trout?",
+          "options": [
+            "He used magic powers",
+            "Through quick thinking, agility, and swimming experience",
+            "Another fish helped him"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did Mr. Jeremy Fisher lose during his struggle with the trout?",
+          "options": [
+            "Nothing at all",
+            "His fishing rod, tackle, and confidence",
+            "His boat and hat"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did Mr. Jeremy Fisher gain from his disappointing fishing trip?",
+          "options": [
+            "A large collection of fish",
+            "Renewed appreciation for his safety and simple pleasures",
+            "Fame as a great fisherman"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What important lesson did Mr. Jeremy Fisher learn?",
+          "options": [
+            "That fishing is too dangerous",
+            "That sometimes the greatest victories come from appreciating what we already have",
+            "That he should never leave his home"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "About An Optimistic Morning",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 2,
+      "topic": "About Setting Forth with Great Expectations",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "About The First Disappointments",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "About An Unexpected Encounter",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "About A Narrow Escape",
+      "title": "",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "About Finding Joy in Simple Pleasures",
+      "title": "",
+      "content": ""
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": ""
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": ""
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": ""
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": ""
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": ""
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": ""
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Tale of Mr. Jeremy Fisher."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Tale of Mr. Jeremy Fisher."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Tale of Mr. Jeremy Fisher."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

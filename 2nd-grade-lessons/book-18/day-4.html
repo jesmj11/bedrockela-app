@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 - The Brave Little Tailor - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 4</h1>
+            <h2>The Brave Little Tailor</h2>
+            <p class="book-info">Book 18 • Week 1 • Day 4 of 7</p>
+            <p class="chapter-info">Chapter 4: Outwitting the Giants</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 Outwitting the Giants</h2>
+        <div class="story-content">
+            <p>The little tailor ventured bravely into the dark, mysterious forest where the giants were known to live. After walking for several hours through the thick undergrowth, he finally discovered the two massive creatures sleeping peacefully beneath an enormous oak tree. They were even larger and more frightening than he had imagined possible!</p><p>The clever tailor quickly devised a brilliant plan to defeat the giants without engaging them in direct combat. He quietly gathered a pile of heavy stones and climbed silently up into the branches of the great oak tree, positioning himself directly above the sleeping monsters. His heart pounded with excitement and terror as he prepared to execute his scheme.</p><p>From his hidden perch high in the tree, the tailor carefully aimed and dropped stones onto each giant alternately. When the first giant felt the impact, he woke up angrily and immediately accused his companion of hitting him during sleep. "Why did you strike me?" he roared furiously at the other giant.</p><p>"I never touched you!" protested the second giant indignantly, just as another stone struck him on the head. Soon both giants were convinced that the other was attacking them deliberately. They began fighting each other with tremendous fury, throwing massive punches and wrestling violently until they had knocked each other completely unconscious! The tailor's ingenious plan had worked perfectly.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. </strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="3">
+                        
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. </strong></p>
+                <div class="answer-choices">
+                    
+                    <textarea class="answer-box" placeholder="Write your answer here..." rows="3"></textarea>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>📝 Language Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Rhyming Words</h3>
+            <p class="objective"><strong>Goal:</strong> Students will identify and create rhyming words.</p>
+            <div class="lesson-content">
+                <p>Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!</p><ul><li><strong>Rhyming Words:</strong></li><li>cat, hat, mat, sat (all end with -at)</li><li>play, day, say, way (all end with -ay)</li><li>book, look, cook, took (all end with -ook)</li></ul><p><strong>From today's story:</strong>
+Listen for words that rhyme as you read!</p><p><strong>Practice - Find the rhyme:</strong>
+1. Which word rhymes with "dog"? (log, big, cat)
+2. Which word rhymes with "jump"? (run, bump, sit)
+3. Which word rhymes with "bed"? (chair, red, sleep)</p><p><strong>Remember:</strong> Listen to the END of words to find rhymes!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Giants</h3>
+            <h4>Giants</h4>
+            
+            <div class="info-text">
+                <p>Learning about Giants is interesting and important for second graders. There are many fascinating facts about Giants that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.</p><p>When we explore Giants, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about Giants. The more we learn, the better we understand how things work and why they matter.</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>📓 Journal Entry</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> Which character do you like best? Why?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 4!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read Outwitting the Giants</p>
+                <p>✅ Practiced language skills</p>
+                <p>✅ Completed your journal</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-5.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 5 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

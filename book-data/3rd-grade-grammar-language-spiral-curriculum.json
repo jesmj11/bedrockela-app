@@ -1,0 +1,429 @@
+{
+  "metadata": {
+    "grade": 3,
+    "totalBooks": 12,
+    "totalLessons": 144,
+    "lessonsPerBook": 12,
+    "assessmentDays": [5, 10, 15],
+    "ccssAlignment": "Common Core State Standards for Grade 3 Language Arts",
+    "spiralApproach": "Concepts introduced in early books, revisited with increasing complexity"
+  },
+  "quarters": {
+    "Q1": {
+      "books": [1, 2, 3],
+      "focus": "Foundations - Basic grammar, sentence structure, parts of speech",
+      "themes": "Building blocks of language"
+    },
+    "Q2": {
+      "books": [4, 5, 6],
+      "focus": "Building - Expanding sentences, descriptive language, punctuation",
+      "themes": "Making writing more interesting"
+    },
+    "Q3": {
+      "books": [7, 8, 9],
+      "focus": "Deepening - Complex sentences, literary devices, advanced vocabulary",
+      "themes": "Understanding how language works"
+    },
+    "Q4": {
+      "books": [10, 11, 12],
+      "focus": "Mastery - Application, editing, writing techniques",
+      "themes": "Putting it all together"
+    }
+  },
+  "grammarTopics": [
+    {
+      "topic": "Nouns (Common & Proper)",
+      "ccss": "L.3.1.a, L.3.2.a",
+      "books": [1, 4, 7, 10],
+      "progression": "Common/proper → Singular/plural → Abstract nouns → Possessive nouns"
+    },
+    {
+      "topic": "Verbs (Action & Linking)",
+      "ccss": "L.3.1.a, L.3.1.d",
+      "books": [1, 4, 7, 10],
+      "progression": "Action verbs → Linking verbs → Helping verbs → Irregular verbs"
+    },
+    {
+      "topic": "Adjectives",
+      "ccss": "L.3.1.g",
+      "books": [1, 5, 8, 11],
+      "progression": "Basic adjectives → Comparative/superlative → Articles → Adjective order"
+    },
+    {
+      "topic": "Pronouns",
+      "ccss": "L.3.1.a",
+      "books": [2, 5, 8, 11],
+      "progression": "Subject pronouns → Object pronouns → Possessive pronouns → Pronoun-antecedent agreement"
+    },
+    {
+      "topic": "Sentence Types",
+      "ccss": "L.3.1.i",
+      "books": [2, 6, 9, 12],
+      "progression": "Statements/questions → Commands/exclamations → Compound sentences → Complex sentences"
+    },
+    {
+      "topic": "Subject & Predicate",
+      "ccss": "L.3.1.a",
+      "books": [2, 6, 9, 12],
+      "progression": "Simple subject/predicate → Complete subject/predicate → Compound subjects/predicates → Diagramming"
+    },
+    {
+      "topic": "Capitalization",
+      "ccss": "L.3.2.a",
+      "books": [3, 6, 9, 12],
+      "progression": "Sentence beginnings → Proper nouns → Titles → Holidays/places"
+    },
+    {
+      "topic": "Punctuation (End Marks)",
+      "ccss": "L.3.2.b",
+      "books": [3, 6, 9, 12],
+      "progression": "Periods → Question marks → Exclamation points → Choosing correct end marks"
+    },
+    {
+      "topic": "Commas",
+      "ccss": "L.3.2.c",
+      "books": [3, 7, 10],
+      "progression": "Commas in addresses → Commas in dates → Commas in series → Commas in dialogue"
+    },
+    {
+      "topic": "Quotation Marks",
+      "ccss": "L.3.2.c",
+      "books": [4, 8, 11],
+      "progression": "Dialogue basics → Punctuation with quotes → Speaker tags → Writing conversations"
+    },
+    {
+      "topic": "Possessives",
+      "ccss": "L.3.2.d",
+      "books": [5, 8, 11],
+      "progression": "Singular possessive → Plural possessive → Its vs. it's → Possessive pronouns"
+    },
+    {
+      "topic": "Adverbs",
+      "ccss": "L.3.1.a",
+      "books": [7, 10],
+      "progression": "Basic adverbs (how, when, where) → Comparative/superlative → Good vs. well"
+    }
+  ],
+  "languageTopics": [
+    {
+      "topic": "ABC Order",
+      "ccss": "L.3.2.g",
+      "books": [1, 4, 7, 10],
+      "progression": "First letter → Second letter → Third letter → Guide words"
+    },
+    {
+      "topic": "Rhyming Words",
+      "ccss": "RF.3.3.c",
+      "books": [1, 4],
+      "progression": "Identifying rhymes → Creating rhymes → Word families → Poetry"
+    },
+    {
+      "topic": "Synonyms",
+      "ccss": "L.3.5.c",
+      "books": [1, 5, 8, 11],
+      "progression": "Basic synonyms → Using thesaurus → Shades of meaning → Word choice"
+    },
+    {
+      "topic": "Antonyms",
+      "ccss": "L.3.5.b",
+      "books": [2, 5, 8, 11],
+      "progression": "Opposite words → Prefixes (un-, dis-) → Context clues → Word relationships"
+    },
+    {
+      "topic": "Homophones",
+      "ccss": "L.3.2.e, L.3.2.f",
+      "books": [2, 6, 9, 12],
+      "progression": "Common pairs (to/too/two) → Their/there/they're → Your/you're → Multiple meanings"
+    },
+    {
+      "topic": "Context Clues",
+      "ccss": "L.3.4.a",
+      "books": [3, 6, 9, 12],
+      "progression": "Picture clues → Definition clues → Example clues → Inference clues"
+    },
+    {
+      "topic": "Prefixes",
+      "ccss": "L.3.4.b",
+      "books": [3, 7, 10],
+      "progression": "un-, re- → pre-, mis- → dis-, non- → over-, under-"
+    },
+    {
+      "topic": "Suffixes",
+      "ccss": "L.3.4.b",
+      "books": [3, 7, 10],
+      "progression": "-s, -es → -ed, -ing → -er, -est → -ful, -less, -ly"
+    },
+    {
+      "topic": "Compound Words",
+      "ccss": "L.3.4.d",
+      "books": [4, 8],
+      "progression": "Identifying compounds → Creating compounds → Meaning from parts → Hyphenated compounds"
+    },
+    {
+      "topic": "Multiple Meaning Words",
+      "ccss": "L.3.4.a",
+      "books": [5, 9],
+      "progression": "Two meanings → Context determines meaning → Dictionary skills → Homographs"
+    },
+    {
+      "topic": "Figurative Language",
+      "ccss": "L.3.5.a",
+      "books": [6, 9, 12],
+      "progression": "Similes → Metaphors → Idioms → Personification"
+    },
+    {
+      "topic": "Root Words",
+      "ccss": "L.3.4.c",
+      "books": [7, 10],
+      "progression": "Base words → Word families → Greek/Latin roots → Building vocabulary"
+    },
+    {
+      "topic": "Parts of Speech Review",
+      "ccss": "L.3.1.a",
+      "books": [11, 12],
+      "progression": "Noun/verb/adjective → All 8 parts → Identifying in context → Using correctly"
+    }
+  ],
+  "bookAssignments": [
+    {
+      "book": 1,
+      "title": "Cinderella",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Nouns (Common & Proper)", "level": "Introduction"},
+        {"day": 3, "topic": "Nouns (Singular & Plural)", "level": "Introduction"},
+        {"day": 6, "topic": "Verbs (Action Verbs)", "level": "Introduction"},
+        {"day": 8, "topic": "Verbs (Past Tense)", "level": "Introduction"},
+        {"day": 11, "topic": "Adjectives (Describing Words)", "level": "Introduction"},
+        {"day": 13, "topic": "Adjectives (Comparatives)", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "ABC Order (First Letter)", "level": "Introduction"},
+        {"day": 4, "topic": "ABC Order (Second Letter)", "level": "Introduction"},
+        {"day": 7, "topic": "Synonyms (Same Meaning)", "level": "Introduction"},
+        {"day": 9, "topic": "Synonyms (Word Choice)", "level": "Introduction"},
+        {"day": 12, "topic": "Rhyming Words", "level": "Introduction"},
+        {"day": 14, "topic": "Rhyming Patterns", "level": "Introduction"}
+      ]
+    },
+    {
+      "book": 2,
+      "title": "Hansel and Gretel",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Pronouns (I, you, he, she)", "level": "Introduction"},
+        {"day": 3, "topic": "Pronouns (We, they, it)", "level": "Introduction"},
+        {"day": 6, "topic": "Sentence Types (Statements)", "level": "Introduction"},
+        {"day": 8, "topic": "Sentence Types (Questions)", "level": "Introduction"},
+        {"day": 11, "topic": "Subject & Predicate (Simple Subject)", "level": "Introduction"},
+        {"day": 13, "topic": "Subject & Predicate (Simple Predicate)", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Antonyms (Opposites)", "level": "Introduction"},
+        {"day": 4, "topic": "Antonyms (Using Context)", "level": "Introduction"},
+        {"day": 7, "topic": "Homophones (to/too/two)", "level": "Introduction"},
+        {"day": 9, "topic": "Homophones (there/their/they're)", "level": "Introduction"},
+        {"day": 12, "topic": "Multiple Meaning Words", "level": "Introduction"},
+        {"day": 14, "topic": "Multiple Meaning Words (Context)", "level": "Introduction"}
+      ]
+    },
+    {
+      "book": 3,
+      "title": "Heidi",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Capitalization (Sentence Beginnings)", "level": "Introduction"},
+        {"day": 3, "topic": "Capitalization (Names)", "level": "Introduction"},
+        {"day": 6, "topic": "Punctuation (Periods)", "level": "Introduction"},
+        {"day": 8, "topic": "Punctuation (Question Marks)", "level": "Introduction"},
+        {"day": 11, "topic": "Commas (In Addresses)", "level": "Introduction"},
+        {"day": 13, "topic": "Commas (In Dates)", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Context Clues (Picture Clues)", "level": "Introduction"},
+        {"day": 4, "topic": "Context Clues (Definition Clues)", "level": "Introduction"},
+        {"day": 7, "topic": "Prefixes (un-, re-)", "level": "Introduction"},
+        {"day": 9, "topic": "Prefixes (pre-, mis-)", "level": "Introduction"},
+        {"day": 12, "topic": "Suffixes (-s, -es)", "level": "Introduction"},
+        {"day": 14, "topic": "Suffixes (-ed, -ing)", "level": "Introduction"}
+      ]
+    },
+    {
+      "book": 4,
+      "title": "Jack and the Beanstalk",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Nouns (Concrete vs. Abstract)", "level": "Building"},
+        {"day": 3, "topic": "Verbs (Present Tense)", "level": "Building"},
+        {"day": 6, "topic": "Quotation Marks (Dialogue)", "level": "Introduction"},
+        {"day": 8, "topic": "Quotation Marks (Speaker Tags)", "level": "Introduction"},
+        {"day": 11, "topic": "Adjectives (Articles a/an/the)", "level": "Building"},
+        {"day": 13, "topic": "Compound Words", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "ABC Order (Third Letter)", "level": "Building"},
+        {"day": 4, "topic": "ABC Order (Guide Words)", "level": "Building"},
+        {"day": 7, "topic": "Rhyming Words (Word Families)", "level": "Building"},
+        {"day": 9, "topic": "Compound Words (Identifying)", "level": "Introduction"},
+        {"day": 12, "topic": "Compound Words (Creating)", "level": "Introduction"},
+        {"day": 14, "topic": "Context Clues (Example Clues)", "level": "Building"}
+      ]
+    },
+    {
+      "book": 5,
+      "title": "Rapunzel",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Pronouns (Object Pronouns)", "level": "Building"},
+        {"day": 3, "topic": "Possessives (Singular)", "level": "Introduction"},
+        {"day": 6, "topic": "Possessives ('s)", "level": "Introduction"},
+        {"day": 8, "topic": "Adjectives (Number & Color)", "level": "Building"},
+        {"day": 11, "topic": "Verbs (Helping Verbs)", "level": "Building"},
+        {"day": 13, "topic": "Adjectives (Superlatives)", "level": "Building"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Synonyms (Shades of Meaning)", "level": "Building"},
+        {"day": 4, "topic": "Antonyms (Using Prefixes)", "level": "Building"},
+        {"day": 7, "topic": "Multiple Meaning Words (Dictionary)", "level": "Building"},
+        {"day": 9, "topic": "Homophones (your/you're)", "level": "Building"},
+        {"day": 12, "topic": "Context Clues (Inference)", "level": "Building"},
+        {"day": 14, "topic": "Synonyms (Using Thesaurus)", "level": "Building"}
+      ]
+    },
+    {
+      "book": 6,
+      "title": "The Elves and the Shoemaker",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Sentence Types (Commands)", "level": "Building"},
+        {"day": 3, "topic": "Sentence Types (Exclamations)", "level": "Building"},
+        {"day": 6, "topic": "Capitalization (Titles)", "level": "Building"},
+        {"day": 8, "topic": "Punctuation (Exclamation Points)", "level": "Building"},
+        {"day": 11, "topic": "Subject & Predicate (Complete)", "level": "Building"},
+        {"day": 13, "topic": "Commas (In a Series)", "level": "Building"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Context Clues (Review)", "level": "Building"},
+        {"day": 4, "topic": "Homophones (it's/its)", "level": "Building"},
+        {"day": 7, "topic": "Figurative Language (Similes)", "level": "Introduction"},
+        {"day": 9, "topic": "Figurative Language (Like & As)", "level": "Introduction"},
+        {"day": 12, "topic": "Compound Words (Hyphenated)", "level": "Building"},
+        {"day": 14, "topic": "Antonyms (Word Relationships)", "level": "Building"}
+      ]
+    },
+    {
+      "book": 7,
+      "title": "The Frog Prince",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Nouns (Possessive Nouns)", "level": "Deepening"},
+        {"day": 3, "topic": "Verbs (Irregular Verbs)", "level": "Deepening"},
+        {"day": 6, "topic": "Adverbs (How)", "level": "Introduction"},
+        {"day": 8, "topic": "Adverbs (When & Where)", "level": "Introduction"},
+        {"day": 11, "topic": "Commas (In Dialogue)", "level": "Deepening"},
+        {"day": 13, "topic": "Adjectives (Order)", "level": "Deepening"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "ABC Order (Mastery)", "level": "Deepening"},
+        {"day": 4, "topic": "Prefixes (dis-, non-)", "level": "Deepening"},
+        {"day": 7, "topic": "Suffixes (-er, -est)", "level": "Deepening"},
+        {"day": 9, "topic": "Root Words (Base Words)", "level": "Introduction"},
+        {"day": 12, "topic": "Root Words (Word Families)", "level": "Introduction"},
+        {"day": 14, "topic": "Synonyms (Precise Word Choice)", "level": "Deepening"}
+      ]
+    },
+    {
+      "book": 8,
+      "title": "The Snow Queen",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Pronouns (Possessive)", "level": "Deepening"},
+        {"day": 3, "topic": "Adjectives (Sensory)", "level": "Deepening"},
+        {"day": 6, "topic": "Quotation Marks (Punctuation)", "level": "Deepening"},
+        {"day": 8, "topic": "Possessives (Plural)", "level": "Deepening"},
+        {"day": 11, "topic": "Compound Sentences", "level": "Introduction"},
+        {"day": 13, "topic": "Compound Sentences (and, but, or)", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Antonyms (Advanced)", "level": "Deepening"},
+        {"day": 4, "topic": "Synonyms (Nuance)", "level": "Deepening"},
+        {"day": 7, "topic": "Compound Words (Meaning)", "level": "Deepening"},
+        {"day": 9, "topic": "Homophones (Review)", "level": "Deepening"},
+        {"day": 12, "topic": "Multiple Meaning Words (Homographs)", "level": "Deepening"},
+        {"day": 14, "topic": "Possessives (its vs. it's)", "level": "Deepening"}
+      ]
+    },
+    {
+      "book": 9,
+      "title": "The Twelve Dancing Princesses",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Subject & Predicate (Compound)", "level": "Deepening"},
+        {"day": 3, "topic": "Sentence Types (Review)", "level": "Deepening"},
+        {"day": 6, "topic": "Capitalization (Places)", "level": "Deepening"},
+        {"day": 8, "topic": "Punctuation (All End Marks)", "level": "Deepening"},
+        {"day": 11, "topic": "Complex Sentences (Introduction)", "level": "Introduction"},
+        {"day": 13, "topic": "Commas (Review)", "level": "Deepening"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Context Clues (All Types)", "level": "Deepening"},
+        {"day": 4, "topic": "Homophones (Advanced)", "level": "Deepening"},
+        {"day": 7, "topic": "Figurative Language (Metaphors)", "level": "Deepening"},
+        {"day": 9, "topic": "Figurative Language (Idioms)", "level": "Deepening"},
+        {"day": 12, "topic": "Multiple Meaning Words (Advanced)", "level": "Deepening"},
+        {"day": 14, "topic": "Prefixes (over-, under-)", "level": "Deepening"}
+      ]
+    },
+    {
+      "book": 10,
+      "title": "The Ugly Duckling",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Nouns (Collective)", "level": "Mastery"},
+        {"day": 3, "topic": "Verbs (Linking Verbs)", "level": "Mastery"},
+        {"day": 6, "topic": "Adverbs (Comparative/Superlative)", "level": "Mastery"},
+        {"day": 8, "topic": "Adverbs (Good vs. Well)", "level": "Mastery"},
+        {"day": 11, "topic": "Adjectives (Review)", "level": "Mastery"},
+        {"day": 13, "topic": "Commas (All Uses)", "level": "Mastery"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "ABC Order (Application)", "level": "Mastery"},
+        {"day": 4, "topic": "Suffixes (-ful, -less, -ly)", "level": "Mastery"},
+        {"day": 7, "topic": "Root Words (Greek/Latin)", "level": "Mastery"},
+        {"day": 9, "topic": "Root Words (Building Vocabulary)", "level": "Mastery"},
+        {"day": 12, "topic": "Prefixes (All Types)", "level": "Mastery"},
+        {"day": 14, "topic": "Context Clues (Mastery)", "level": "Mastery"}
+      ]
+    },
+    {
+      "book": 11,
+      "title": "The Velveteen Rabbit",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Pronouns (Review All)", "level": "Mastery"},
+        {"day": 3, "topic": "Possessives (All Types)", "level": "Mastery"},
+        {"day": 6, "topic": "Quotation Marks (Writing Dialogue)", "level": "Mastery"},
+        {"day": 8, "topic": "Adjectives (Precise Description)", "level": "Mastery"},
+        {"day": 11, "topic": "Sentence Variety", "level": "Mastery"},
+        {"day": 13, "topic": "Parts of Speech (All 8)", "level": "Introduction"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Synonyms (Mastery)", "level": "Mastery"},
+        {"day": 4, "topic": "Antonyms (Mastery)", "level": "Mastery"},
+        {"day": 7, "topic": "Homophones (Mastery)", "level": "Mastery"},
+        {"day": 9, "topic": "Possessives (its/it's Review)", "level": "Mastery"},
+        {"day": 12, "topic": "Figurative Language (All Types)", "level": "Mastery"},
+        {"day": 14, "topic": "Parts of Speech (Identifying)", "level": "Mastery"}
+      ]
+    },
+    {
+      "book": 12,
+      "title": "Thumbelina",
+      "grammarOddDays": [
+        {"day": 1, "topic": "Sentence Types (Mastery)", "level": "Mastery"},
+        {"day": 3, "topic": "Subject & Predicate (Mastery)", "level": "Mastery"},
+        {"day": 6, "topic": "Capitalization (All Rules)", "level": "Mastery"},
+        {"day": 8, "topic": "Punctuation (All Types)", "level": "Mastery"},
+        {"day": 11, "topic": "Writing Complete Sentences", "level": "Mastery"},
+        {"day": 13, "topic": "Editing & Proofreading", "level": "Mastery"}
+      ],
+      "languageEvenDays": [
+        {"day": 2, "topic": "Context Clues (Application)", "level": "Mastery"},
+        {"day": 4, "topic": "Homophones (Application)", "level": "Mastery"},
+        {"day": 7, "topic": "Figurative Language (Personification)", "level": "Mastery"},
+        {"day": 9, "topic": "Word Choice (Precise Language)", "level": "Mastery"},
+        {"day": 12, "topic": "Parts of Speech (Using Correctly)", "level": "Mastery"},
+        {"day": 14, "topic": "Vocabulary Review (All Strategies)", "level": "Mastery"}
+      ]
+    }
+  ]
+}

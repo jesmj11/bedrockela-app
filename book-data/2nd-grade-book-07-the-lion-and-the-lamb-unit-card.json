@@ -1,0 +1,514 @@
+{
+  "title": "The Lion and the Lamb",
+  "bookNumber": 7,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "simple characters, clear lesson",
+  "quarter": 2,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "dominance",
+          "definition": "power and control over others",
+          "sentence": "From The King of Beasts"
+        },
+        {
+          "word": "formidable",
+          "definition": "inspiring fear through being powerful",
+          "sentence": "From The King of Beasts"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "contentment",
+          "definition": "a state of peaceful happiness",
+          "sentence": "From The Gentle Lamb"
+        },
+        {
+          "word": "harmony",
+          "definition": "peaceful agreement and cooperation",
+          "sentence": "From The Gentle Lamb"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "enchanted",
+          "definition": "filled with delight as if under a magic spell",
+          "sentence": "From An Unexpected Meeting"
+        },
+        {
+          "word": "menacing",
+          "definition": "threatening or suggesting danger",
+          "sentence": "From An Unexpected Meeting"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "courtesy",
+          "definition": "polite and respectful behavior",
+          "sentence": "From The Lamb's Response"
+        },
+        {
+          "word": "defiant",
+          "definition": "boldly refusing to obey or respect",
+          "sentence": "From The Lamb's Response"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "isolated",
+          "definition": "separated from others; alone",
+          "sentence": "From A Change of Heart"
+        },
+        {
+          "word": "intimidation",
+          "definition": "frightening someone to make them do what you want",
+          "sentence": "From A Change of Heart"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "cooperation",
+          "definition": "working together toward a common goal",
+          "sentence": "From A New Kind of Kingdom"
+        },
+        {
+          "word": "disputes",
+          "definition": "disagreements or arguments",
+          "sentence": "From A New Kind of Kingdom"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the lion show his authority?",
+          "options": [
+            "By hiding from other animals",
+            "By roaring loudly each morning and patrolling his territory",
+            "By running away from danger"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did other animals react to the lion?",
+          "options": [
+            "They challenged him to fights",
+            "They scattered and hid, showing fear and respect",
+            "They ignored him completely"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the lamb help other animals?",
+          "options": [
+            "By fighting their enemies",
+            "Through patience, understanding, and wise advice",
+            "By giving them food"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the lamb believe about true strength?",
+          "options": [
+            "That it comes from frightening others",
+            "That it comes from the power to comfort, heal, and bring peace",
+            "That only large animals can be strong"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the lamb end up in the lion's territory?",
+          "options": [
+            "She was hunting for food",
+            "She followed a butterfly and got lost",
+            "She was looking for the lion"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the lion expect from the lamb?",
+          "options": [
+            "That she would challenge him to a fight",
+            "That she would cower and beg for mercy",
+            "That she would ignore him completely"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the lamb respond to the lion's threats?",
+          "options": [
+            "With terror and begging",
+            "With calm courtesy and gentle questions",
+            "By running away quickly"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What truth did the lamb's question reveal about the lion?",
+          "options": [
+            "That he was the strongest animal",
+            "That despite his power, he was very lonely",
+            "That he needed to roar louder"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the lion realize about his reign of fear?",
+          "options": [
+            "That it made him the happiest animal",
+            "That it had isolated him and left him without friendship",
+            "That he needed to be even more frightening"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did the lamb teach the lion about strength?",
+          "options": [
+            "That only big animals can be strong",
+            "That there are different kinds of strength, including the strength to protect",
+            "That strength is not important"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "How did the lion change his approach to ruling?",
+          "options": [
+            "He became even more frightening",
+            "He began greeting animals friendly and offering help instead of intimidation",
+            "He stopped being the king"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What did their friendship prove to the animal kingdom?",
+          "options": [
+            "That big animals are always better",
+            "That the strongest and gentlest can work together for a better world",
+            "That animals should live separately"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "The King of Beasts",
+      "title": "Volcanoes",
+      "content": "A volcano is a mountain with an opening that connects to deep inside the Earth. Far below the ground, rock gets so hot that it melts into a thick liquid called magma. This magma is lighter than solid rock, so it rises up through cracks in the Earth's crust. When pressure builds up, the magma can shoot out of the volcano's opening in an explosive eruption.\nOnce magma reaches the surface, it's called lava, and it flows down the mountainsides like a river of melted rock. Lava is extremely hot - over 2,000 degrees Fahrenheit! Eventually, the lava cools down and hardens into new rock. Some volcanoes erupt often, while others stay quiet for hundreds of years. Scientists study volcanoes carefully to predict eruptions and keep people safe.\n",
+      "questions": [
+        {
+          "question": "What happens to rock deep inside the Earth?",
+          "options": [
+            "it gets so hot that it melts into magma",
+            "it turns into ice",
+            "it disappears completely"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What is the difference between magma and lava?",
+          "options": [
+            "they are exactly the same thing",
+            "magma is underground, lava is on the surface",
+            "magma is cold, lava is hot"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "The Gentle Lamb",
+      "title": "Veterinarians",
+      "content": "Veterinarians, or \"vets,\" are doctors who specialize in taking care of animals. They examine pets like dogs, cats, birds, and rabbits when they are sick or hurt. Vets also work with farm animals like cows, horses, and pigs to keep them healthy. Some veterinarians even care for wild animals in zoos or help injured wildlife in nature.\nTo become a veterinarian, a person must go to school for many years to learn about animal anatomy, diseases, and treatments. Vets use many of the same tools as doctors for people, like stethoscopes to listen to heartbeats and X-ray machines to see inside animals' bodies. They also perform surgeries, give vaccinations, and prescribe medicines to help animals feel better and stay healthy.\n",
+      "questions": [
+        {
+          "question": "What types of animals do veterinarians care for?",
+          "options": [
+            "pets, farm animals, and wild animals",
+            "only dogs and cats",
+            "only wild animals"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What must someone do to become a veterinarian?",
+          "options": [
+            "just love animals",
+            "go to school for many years to learn about animal care",
+            "work at a pet store"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "An Unexpected Meeting",
+      "title": "Dolphins",
+      "content": "Dolphins are highly intelligent marine mammals that live in oceans around the world. Unlike fish, dolphins are warm-blooded and breathe air through a blowhole on top of their heads. They must come to the surface regularly to breathe, but they can hold their breath for up to 15 minutes while diving deep underwater to hunt for fish, squid, and shrimp.\nThese amazing animals are known for their playful behavior and complex social lives. Dolphins live in groups called pods and communicate with each other using clicks, whistles, and body language. They are excellent problem solvers and have been observed using tools, teaching their young important skills, and even helping humans who are in trouble at sea. Scientists continue to study dolphins to learn more about their remarkable intelligence.\n",
+      "questions": [
+        {
+          "question": "How do dolphins breathe?",
+          "options": [
+            "through gills like fish",
+            "through a blowhole on top of their heads",
+            "through their skin"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What is a group of dolphins called?",
+          "options": [
+            "a school",
+            "a pod",
+            "a herd"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "The Lamb's Response",
+      "title": "Tornadoes",
+      "content": "A tornado is a powerful, spinning column of air that extends from a thunderstorm cloud down to the ground. Tornadoes form when warm, moist air near the ground meets cold, dry air high in the atmosphere, creating instability. When winds at different heights blow in different directions, they can cause the air to rotate horizontally. Rising air then tilts this rotation vertically, creating the spinning funnel cloud.\nTornadoes can be extremely dangerous, with winds that spin faster than 300 miles per hour in the strongest storms. They can destroy buildings, uproot trees, and toss cars through the air like toys. The United States experiences more tornadoes than anywhere else in the world, especially in an area called \"Tornado Alley\" in the central plains. Weather scientists use special radar technology to detect tornadoes and warn people to take shelter.\n",
+      "questions": [
+        {
+          "question": "How do tornadoes form?",
+          "options": [
+            "when warm moist air meets cold dry air and winds create rotation",
+            "when it rains too much",
+            "when the sun gets too hot"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What is \"Tornado Alley\"?",
+          "options": [
+            "a street where tornadoes live",
+            "an area in the central plains where many tornadoes occur",
+            "a type of radar system"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "A Change of Heart",
+      "title": "Pharmacists",
+      "content": "Pharmacists are healthcare professionals who specialize in medications and how they affect the human body. When doctors write prescriptions for patients, pharmacists carefully prepare the exact medicines needed, making sure the dosage and instructions are correct. They also check for potential problems, like whether different medicines might interact dangerously with each other or cause allergic reactions.\nBeyond filling prescriptions, pharmacists provide valuable health advice to their communities. They can recommend over-the-counter medicines for common problems like headaches or colds, give vaccinations, and answer questions about how to take medications safely. Pharmacists must complete years of specialized education and pass licensing exams to ensure they have the knowledge needed to help keep people healthy and safe.\n",
+      "questions": [
+        {
+          "question": "What do pharmacists check when preparing medications?",
+          "options": [
+            "dosage, instructions, and potential interactions",
+            "only the color of the pills",
+            "just the patient's name"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What other services do pharmacists provide?",
+          "options": [
+            "health advice, vaccinations, and medication guidance",
+            "only selling vitamins",
+            "performing surgeries"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "A New Kind of Kingdom",
+      "title": "Octopuses",
+      "content": "Octopuses are fascinating sea creatures with eight arms covered in powerful suction cups. These intelligent invertebrates have no bones in their bodies, which allows them to squeeze through incredibly small spaces - any opening larger than their beak! Octopuses have three hearts that pump blue blood through their bodies, and their large brains make them some of the smartest animals in the ocean.\nOne of the most amazing abilities of octopuses is their skill at camouflage. They can instantly change both the color and texture of their skin to match their surroundings, making them nearly invisible to predators and prey. Octopuses are also excellent problem solvers who can open jars, navigate mazes, and use tools like rocks and shells. Unfortunately, most octopuses only live for about one to two years.\n",
+      "questions": [
+        {
+          "question": "What allows octopuses to squeeze through small spaces?",
+          "options": [
+            "they have no bones in their bodies",
+            "they are very small animals",
+            "they can fly"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How do octopuses use camouflage?",
+          "options": [
+            "they change color and texture to match their surroundings",
+            "they hide in caves only",
+            "they swim very fast"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Lion and the Lamb."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Lion and the Lamb."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Lion and the Lamb."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

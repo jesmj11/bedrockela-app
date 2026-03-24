@@ -1,0 +1,474 @@
+{
+  "title": "The Crow and the Pitcher",
+  "bookNumber": 8,
+  "gradeLevel": 2,
+  "totalDays": 8,
+  "totalChapters": 6,
+  "assessmentDays": [
+    7,
+    8
+  ],
+  "structure": "6 chapters across 6 lessons, 2 assessment day(s)",
+  "theme": "problem-solving story",
+  "quarter": 2,
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "mercilessly",
+          "definition": "without pity or compassion; harshly",
+          "sentence": "From A Thirsty Traveler"
+        },
+        {
+          "word": "quench",
+          "definition": "to satisfy thirst by drinking",
+          "sentence": "From A Thirsty Traveler"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "immovable",
+          "definition": "impossible to move or change",
+          "sentence": "From The Impossible Challenge"
+        },
+        {
+          "word": "exploit",
+          "definition": "to make use of a situation or weakness",
+          "sentence": "From The Impossible Challenge"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "tantalizingly",
+          "definition": "in a way that is tempting but out of reach",
+          "sentence": "From A Moment of Inspiration"
+        },
+        {
+          "word": "debris",
+          "definition": "scattered pieces of waste or remains",
+          "sentence": "From A Moment of Inspiration"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "persistence",
+          "definition": "continuing to try despite difficulties",
+          "sentence": "From Hard Work and Patience"
+        },
+        {
+          "word": "skepticism",
+          "definition": "doubt about whether something will work",
+          "sentence": "From Hard Work and Patience"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "accumulated",
+          "definition": "collected or gathered over time",
+          "sentence": "From Success at Last"
+        },
+        {
+          "word": "ingenious",
+          "definition": "very clever and creative",
+          "sentence": "From Success at Last"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "boastful",
+          "definition": "showing off or bragging about achievements",
+          "sentence": "From The Lesson Learned"
+        },
+        {
+          "word": "obstacles",
+          "definition": "things that block progress or make something difficult",
+          "sentence": "From The Lesson Learned"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What was the crow searching for on the hot summer day?",
+          "options": [
+            "Food to eat",
+            "Water to quench his thirst",
+            "A place to build a nest"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What problem did the crow discover with the pitcher?",
+          "options": [
+            "It was completely empty",
+            "The water was too low for his beak to reach",
+            "It was too heavy to move"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the crow try to do to reach the water?",
+          "options": [
+            "He tried to break the pitcher",
+            "He tried to stretch his neck and tip the pitcher over",
+            "He tried to call for help"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the crow known for throughout the forest?",
+          "options": [
+            "His beautiful singing voice",
+            "His intelligence and problem-solving abilities",
+            "His ability to fly very fast"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the crow notice around the base of the oak tree?",
+          "options": [
+            "Other birds and animals",
+            "Small stones and pebbles scattered everywhere",
+            "Food and water"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What was the crow's brilliant idea?",
+          "options": [
+            "To find a different pitcher",
+            "To drop stones in the pitcher to make the water rise",
+            "To break the pitcher with rocks"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened each time the crow dropped a stone in the pitcher?",
+          "options": [
+            "Nothing changed",
+            "The water level rose just a tiny bit",
+            "The pitcher cracked"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "How did the crow respond to the other animals' doubts?",
+          "options": [
+            "He gave up and went home",
+            "He paid no attention and continued working",
+            "He argued with them"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What happened as more stones accumulated in the pitcher?",
+          "options": [
+            "The pitcher became too heavy",
+            "The water level began to rise more noticeably",
+            "The stones broke the pitcher"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Why did the water taste so delicious to the crow?",
+          "options": [
+            "Because it was magical water",
+            "Because he had earned it through cleverness and hard work",
+            "Because it came from a special well"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "multiple-choice",
+          "question": "What did the crow teach the other animals about problem-solving?",
+          "options": [
+            "That problems are always impossible to solve",
+            "That creative thinking can find ways around obstacles",
+            "That only crows are smart enough to solve problems"
+          ],
+          "correct": 1
+        },
+        {
+          "type": "multiple-choice",
+          "question": "What lesson did the crow's story teach throughout the forest?",
+          "options": [
+            "That water is always easy to find",
+            "That determination, patience, and creative thinking can solve impossible problems",
+            "That stones are more valuable than water"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "A Thirsty Traveler",
+      "title": "Glaciers",
+      "content": "A glacier is a massive sheet of ice that forms when snow accumulates for many years without completely melting. As more snow piles up, the weight compresses the lower layers into dense ice. Over thousands of years, these ice sheets can become hundreds of feet thick and begin to move slowly downhill due to gravity, like very slow rivers of ice.\nGlaciers are incredibly powerful forces that shape the landscape around them. As they move, they carve deep valleys, create lakes, and transport huge boulders for miles. Today, most of the world's glaciers are found in places like Antarctica, Greenland, and high mountain ranges. Scientists study glaciers carefully because they contain important information about Earth's climate history and are sensitive indicators of climate change.\n",
+      "questions": [
+        {
+          "question": "How do glaciers form?",
+          "options": [
+            "snow accumulates for many years and gets compressed into ice",
+            "rivers freeze completely",
+            "rain turns into ice"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "How do glaciers change the landscape?",
+          "options": [
+            "they carve valleys, create lakes, and move boulders",
+            "they make the ground flat",
+            "they only melt and disappear"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "The Impossible Challenge",
+      "title": "Engineers",
+      "content": "Engineers are problem-solvers who design and build things that make our lives better and safer. There are many different types of engineers: civil engineers design roads and bridges, electrical engineers work with power systems and electronics, mechanical engineers create machines and engines, and aerospace engineers develop airplanes and spacecraft. All engineers use math, science, and creativity to solve complex challenges.\nTo become an engineer, a person must study mathematics and science extensively in college. Engineers must think carefully about safety, cost, and how their designs will affect people and the environment. They often work in teams, testing their ideas multiple times before building the final product. From the smartphones we use to the buildings we live in, engineers have helped create almost everything in our modern world.\n",
+      "questions": [
+        {
+          "question": "What do all types of engineers have in common?",
+          "options": [
+            "they use math, science, and creativity to solve problems",
+            "they only work with computers",
+            "they only build bridges"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "What must engineers consider when designing?",
+          "options": [
+            "safety, cost, and environmental impact",
+            "only how much money they can make",
+            "just what looks pretty"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "A Moment of Inspiration",
+      "title": "Coral Reefs",
+      "content": "Coral reefs are underwater ecosystems built by tiny marine animals called coral polyps. These small creatures create hard, colorful skeletons from calcium carbonate, and over thousands of years, millions of these skeletons build up to form large reef structures. Coral reefs are found in warm, shallow ocean waters and are often called \"rainforests of the sea\" because they support incredible biodiversity.\nThousands of different species call coral reefs home, including colorful fish, sea turtles, sharks, and countless invertebrates. The reefs provide food, shelter, and breeding grounds for these animals. Coral reefs also protect coastlines from storms and waves, and provide food and income for millions of people worldwide. Unfortunately, pollution, warming ocean temperatures, and other human activities are threatening coral reefs around the globe.\n",
+      "questions": [
+        {
+          "question": "What builds coral reefs?",
+          "options": [
+            "tiny marine animals called coral polyps",
+            "large fish",
+            "underwater plants"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Why are coral reefs important?",
+          "options": [
+            "they support biodiversity and protect coastlines",
+            "they are pretty to look at",
+            "they make the water warmer"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Hard Work and Patience",
+      "title": "Architects",
+      "content": "Architects are professionals who design buildings and other structures where people live, work, and play. They create detailed plans that show how buildings should look and function, considering factors like safety, beauty, cost, and how the building will be used. Architects must understand engineering principles, local building codes, and environmental concerns when creating their designs.\nBefore any construction begins, architects work closely with their clients to understand their needs and preferences. They create drawings, blueprints, and sometimes even computer models to show what the finished building will look like. Architects also coordinate with engineers, contractors, and other specialists throughout the building process to ensure that their vision becomes reality safely and efficiently.\n",
+      "questions": [
+        {
+          "question": "What factors must architects consider when designing?",
+          "options": [
+            "safety, beauty, cost, and how the building will be used",
+            "only what looks nice",
+            "just the color of the building"
+          ],
+          "correct": 1
+        },
+        {
+          "question": "Who do architects work with during the building process?",
+          "options": [
+            "engineers, contractors, and other specialists",
+            "only their clients",
+            "nobody else\n** Note: This document shows the first 10 of 36 informational texts **\nRemaining 26 texts would continue with topics like:\nEarthquakes • Astronauts • Whales • Meteorologists • Fossils\nEcosystems • Technology • Space • Advanced Science Topics\n\f\nAnswer Key - First 10 Texts"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Success at Last",
+      "title": "Volcanoes",
+      "content": "1. a) it gets so hot that it melts into magma\n2. b) magma is underground, lava is on the surface\n"
+    },
+    {
+      "day": 6,
+      "topic": "The Lesson Learned",
+      "title": "Veterinarians",
+      "content": "1. a) pets, farm animals, and wild animals\n2. b) go to school for many years to learn about animal care\n"
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns**\n\nThis lesson focuses on Nouns. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Nouns is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Nouns."
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs**\n\nThis lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Verbs is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Verbs."
+    },
+    {
+      "day": 5,
+      "topic": "Adjectives",
+      "content": "**Adjectives**\n\nThis lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.\n\n**Key Points:**\n• Understand the concept\n• Find examples in the story\n• Practice using it correctly\n\n**Practice:**\nApply what you learned by completing the exercises.\n\n**Remember:** Adjectives is an important language skill!",
+      "standard": "CCSS.ELA-LITERACY.L.2.1",
+      "objective": "Students will understand and apply Adjectives."
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order**\n\nThis language lesson teaches ABC Order. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about ABC Order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "Rhyming words sound the SAME at the end. They make poems and stories fun to read aloud!\n\n**Rhyming Words:**\n• cat, hat, mat, sat (all end with -at)\n• play, day, say, way (all end with -ay)\n• book, look, cook, took (all end with -ook)\n\n**From today's story:**\nListen for words that rhyme as you read!\n\n**Practice - Find the rhyme:**\n1. Which word rhymes with \"dog\"? (log, big, cat)\n2. Which word rhymes with \"jump\"? (run, bump, sit)\n3. Which word rhymes with \"bed\"? (chair, red, sleep)\n\n**Remember:** Listen to the END of words to find rhymes!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will identify and create rhyming words."
+    },
+    {
+      "day": 6,
+      "topic": "Opposites",
+      "content": "**Opposites**\n\nThis language lesson teaches Opposites. Look for examples in today's story.\n\n**Key Ideas:**\n• Learn the concept\n• Find examples\n• Practice the skill\n\n**Practice Activities:**\nComplete the exercises to master this skill.\n\n**Remember:** Practice makes perfect!",
+      "standard": "CCSS.ELA-LITERACY.L.2.4",
+      "objective": "Students will learn about Opposites."
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time like in The Crow and the Pitcher."
+    },
+    {
+      "day": 3,
+      "prompt": "Write about a time like in The Crow and the Pitcher."
+    },
+    {
+      "day": 5,
+      "prompt": "Write about a time like in The Crow and the Pitcher."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 4,
+      "prompt": "What do you think will happen next?"
+    },
+    {
+      "day": 6,
+      "prompt": "What do you think will happen next?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 7,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 8,
+      "words": []
+    }
+  ]
+}

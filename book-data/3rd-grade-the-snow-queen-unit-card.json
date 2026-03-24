@@ -1,0 +1,689 @@
+{
+  "title": "The Snow Queen",
+  "author": "Hans Christian Andersen",
+  "gradeLevel": 3,
+  "totalDays": 15,
+  "totalChapters": 12,
+  "assessmentDays": [
+    5,
+    10,
+    15
+  ],
+  "structure": "12 chapters across 12 lessons, 3 assessment days",
+  "themes": [
+    "friendship",
+    "love",
+    "perseverance",
+    "good vs. evil",
+    "journey"
+  ],
+  "setting": "Denmark, ice palace, far north",
+  "protagonist": "Gerda and Kai",
+  "vocabularyLessons": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "words": [
+        {
+          "word": "wicked",
+          "definition": "very bad or evil"
+        },
+        {
+          "word": "fragments",
+          "definition": "small broken pieces"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "words": [
+        {
+          "word": "clever",
+          "definition": "smart and quick to learn"
+        },
+        {
+          "word": "gentle",
+          "definition": "kind and soft in manner"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "words": [
+        {
+          "word": "formed",
+          "definition": "made or shaped"
+        },
+        {
+          "word": "struck",
+          "definition": "hit suddenly"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "words": [
+        {
+          "word": "cruel",
+          "definition": "mean and unkind"
+        },
+        {
+          "word": "disgust",
+          "definition": "strong dislike"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "words": [
+        {
+          "word": "elegant",
+          "definition": "graceful and stylish"
+        },
+        {
+          "word": "magnificent",
+          "definition": "very impressive and beautiful"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "words": [
+        {
+          "word": "hoarse",
+          "definition": "rough and harsh sounding"
+        },
+        {
+          "word": "refused",
+          "definition": "would not do something"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "words": [
+        {
+          "word": "current",
+          "definition": "the flow of water in a river"
+        },
+        {
+          "word": "downstream",
+          "definition": "in the direction the river flows"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "words": [
+        {
+          "word": "wise",
+          "definition": "having great knowledge and good judgment"
+        },
+        {
+          "word": "secrets",
+          "definition": "things that are hidden or not known by everyone"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "words": [
+        {
+          "word": "carriage",
+          "definition": "a vehicle pulled by horses"
+        },
+        {
+          "word": "attacked",
+          "definition": "suddenly tried to hurt or harm"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "words": [
+        {
+          "word": "faithful",
+          "definition": "loyal and trustworthy"
+        },
+        {
+          "word": "blizzards",
+          "definition": "severe snowstorms"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "words": [
+        {
+          "word": "glittering",
+          "definition": "shining with many small lights"
+        },
+        {
+          "word": "throne",
+          "definition": "a special chair for a king or queen"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "words": [
+        {
+          "word": "melted",
+          "definition": "changed from solid to liquid because of heat"
+        },
+        {
+          "word": "recognizing",
+          "definition": "knowing who someone is"
+        }
+      ]
+    }
+  ],
+  "comprehensionQuestions": [
+    {
+      "day": 1,
+      "chapter": 1,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Who created the magic mirror?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What terrible power did the mirror have?"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "chapter": 2,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What were the names of the two best friends?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Where did Kay and Gerda like to play together?"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "chapter": 3,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What were Kay and Gerda doing when the accident happened?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did Kay think the snowflakes looked like at first?"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "chapter": 4,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "How was Kay different after the mirror pieces got inside him?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did Kay say about the roses that he used to love?"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "chapter": 5,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What appeared in the town square while Kay was playing?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did the Snow Queen look like?"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "chapter": 6,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did everyone do when Kay didn't come home?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How long did Gerda search for Kay?"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "chapter": 7,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What did Gerda offer to give the river?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did the river respond to Gerda's request?"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "chapter": 8,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Who did Gerda meet that offered to help her?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What news did the crow share about a nearby kingdom?"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "chapter": 9,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What gifts did the kind princess give to Gerda?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What happened to Gerda as she traveled through the dark forest?"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "chapter": 10,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "Where did the reindeer carry Gerda?"
+        },
+        {
+          "type": "short-answer",
+          "question": "What did the land of the Snow Queen look like?"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "chapter": 11,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What was the Snow Queen's palace made of?"
+        },
+        {
+          "type": "short-answer",
+          "question": "Where did Gerda find Kay in the palace?"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "chapter": 12,
+      "questions": [
+        {
+          "type": "short-answer",
+          "question": "What happened when Gerda's tears fell on Kay's chest?"
+        },
+        {
+          "type": "short-answer",
+          "question": "How did Kay begin to remember his past?"
+        }
+      ]
+    }
+  ],
+  "informationalTexts": [
+    {
+      "day": 1,
+      "topic": "Hans Christian Andersen biography",
+      "title": "",
+      "content": "Learning about Hans Christian Andersen biography helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Hans Christian Andersen biography, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Hans Christian Andersen biography important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "topic": "Snow and ice",
+      "title": "",
+      "content": "Learning about Snow and ice helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Snow and ice, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Snow and ice important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "topic": "The Snow Queen's palace",
+      "title": "",
+      "content": "Learning about The Snow Queen's palace helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study The Snow Queen's palace, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is The Snow Queen's palace important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "topic": "Friendship and loyalty",
+      "title": "",
+      "content": "Learning about Friendship and loyalty helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Friendship and loyalty, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Friendship and loyalty important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "topic": "Long journeys",
+      "title": "",
+      "content": "Learning about Long journeys helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Long journeys, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Long journeys important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "topic": "Denmark to the North",
+      "title": "",
+      "content": "Learning about Denmark to the North helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Denmark to the North, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Denmark to the North important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "topic": "Magic mirrors",
+      "title": "",
+      "content": "Learning about Magic mirrors helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Magic mirrors, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Magic mirrors important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "topic": "Reindeer helpers",
+      "title": "",
+      "content": "Learning about Reindeer helpers helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Reindeer helpers, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Reindeer helpers important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "topic": "Robber girl",
+      "title": "",
+      "content": "Learning about Robber girl helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Robber girl, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Robber girl important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "topic": "Power of love",
+      "title": "",
+      "content": "Learning about Power of love helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Power of love, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Power of love important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "topic": "Melting frozen hearts",
+      "title": "",
+      "content": "Learning about Melting frozen hearts helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Melting frozen hearts, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Melting frozen hearts important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "topic": "Never giving up",
+      "title": "",
+      "content": "Learning about Never giving up helps us understand the world better. This topic connects to the story we're reading and teaches important concepts. By exploring different subjects, we become better students and more knowledgeable people.\n\nWhen you study Never giving up, think about how it relates to your own life. Ask questions, make connections, and share what you learn with others. Every topic we study helps us grow and discover new interests.",
+      "questions": [
+        {
+          "question": "Why is Never giving up important?",
+          "answer": "it helps us understand the world"
+        },
+        {
+          "question": "What should you do when studying?",
+          "answer": "ask questions and make connections"
+        }
+      ]
+    }
+  ],
+  "grammarLessons": [
+    {
+      "day": 1,
+      "topic": "Nouns",
+      "content": "**Nouns** are words that name people, places, things, or ideas.\n\n**Examples:**\n• People: teacher, doctor, friend\n• Places: school, park, library\n• Things: book, pencil, computer\n• Ideas: happiness, courage, freedom\n\n**Practice:** Find 3 nouns in today's story!"
+    },
+    {
+      "day": 3,
+      "topic": "Verbs",
+      "content": "**Verbs** are action words that tell what someone or something does.\n\n**Examples:**\n• run, jump, dance, sing\n• think, feel, hope, dream\n• was, were, is, are (linking verbs)\n\n**Practice:** Circle the verbs in these sentences from the story."
+    },
+    {
+      "day": 6,
+      "topic": "Adjectives",
+      "content": "**Adjectives** describe nouns. They tell us more details about people, places, or things.\n\n**Examples:**\n• beautiful princess\n• dark forest\n• brave knight\n\n**Practice:** Add adjectives to make these sentences more interesting!"
+    },
+    {
+      "day": 8,
+      "topic": "Pronouns",
+      "content": "**Pronouns**\n\nThis lesson teaches about Pronouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 11,
+      "topic": "Compound Sentences",
+      "content": "**Compound Sentences**\n\nThis lesson teaches about Compound Sentences. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 13,
+      "topic": "Capitalization",
+      "content": "**Capitalization**\n\nThis lesson teaches about Capitalization. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "languageLessons": [
+    {
+      "day": 2,
+      "topic": "ABC Order",
+      "content": "**ABC Order** (alphabetical order) helps us organize words and find them in dictionaries.\n\n**Steps:**\n1. Look at the first letter\n2. If first letters match, look at second letter\n3. Keep going until you find the difference\n\n**Practice:** Put these words from the story in ABC order."
+    },
+    {
+      "day": 4,
+      "topic": "Rhyming Words",
+      "content": "**Rhyming words** sound the same at the end.\n\n**Examples:**\n• cat, hat, mat, sat\n• sing, ring, wing, king\n\n**Practice:** Find pairs of rhyming words in today's story!"
+    },
+    {
+      "day": 7,
+      "topic": "Synonyms",
+      "content": "**Synonyms**\n\nThis lesson teaches about Synonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 9,
+      "topic": "Antonyms",
+      "content": "**Antonyms**\n\nThis lesson teaches about Antonyms. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 12,
+      "topic": "Plural Nouns",
+      "content": "**Plural Nouns**\n\nThis lesson teaches about Plural Nouns. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    },
+    {
+      "day": 14,
+      "topic": "Context Clues",
+      "content": "**Context Clues**\n\nThis lesson teaches about Context Clues. Look for examples in today's story.\n\n**Practice:** Apply what you learned!"
+    }
+  ],
+  "writingPrompts": [
+    {
+      "day": 1,
+      "prompt": "Write about a time you felt like Gerda and Kai."
+    },
+    {
+      "day": 3,
+      "prompt": "If you could visit the Denmark, ice palace, far north, what would you do?"
+    },
+    {
+      "day": 6,
+      "prompt": "What is the most important lesson in this story?"
+    },
+    {
+      "day": 8,
+      "prompt": "Describe your favorite character and why you like them."
+    },
+    {
+      "day": 11,
+      "prompt": "How would you solve the problem in this story?"
+    },
+    {
+      "day": 13,
+      "prompt": "Write a different ending for this story."
+    }
+  ],
+  "journalPrompts": [
+    {
+      "day": 2,
+      "prompt": "What do you think will happen next in the story?"
+    },
+    {
+      "day": 4,
+      "prompt": "Which character are you most like? Why?"
+    },
+    {
+      "day": 7,
+      "prompt": "What is your favorite part of the story so far?"
+    },
+    {
+      "day": 9,
+      "prompt": "If you were in this story, what would you do?"
+    },
+    {
+      "day": 12,
+      "prompt": "What surprised you in this chapter?"
+    },
+    {
+      "day": 14,
+      "prompt": "How did this story make you feel?"
+    }
+  ],
+  "assessmentWords": [
+    {
+      "week": 1,
+      "day": 5,
+      "words": []
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "words": []
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "words": []
+    }
+  ]
+}

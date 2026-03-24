@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Grade - Day 74: The World Below</title>
+    <link rel="stylesheet" href="../../../css/lesson-styles.css">
+    <link rel="stylesheet" href="../../../css/lesson-complete-styles.css">
+</head>
+<body>
+    <!-- Page 1: Title & Objectives -->
+    <div class="lesson-page" id="page1">
+        <div class="page-header">
+            <h1>Day 74 - Week 15</h1>
+            <h2>The Hunchback of Notre-Dame</h2>
+        </div>
+        <div class="lesson-title">
+            <h1>The World Below</h1>
+        </div>
+        <div class="learning-objectives">
+            <h3>📚 What You'll Learn Today</h3>
+            <ul>
+                <li>Read: The World Below</li>
+                <li>Learn 2 new vocabulary words</li>
+                <li>Answer comprehension questions</li>
+                <li>Practice language</li>
+                <li>Complete journal prompt</li>
+            </ul>
+        </div>
+        <button class="btn-next" onclick="nextPage()">Begin Lesson →</button>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    
+    <div class="lesson-page" id="page2" style="display: none;">
+        <div class="page-header">
+            <h2>📖 Vocabulary</h2>
+            <p>Week 15</p>
+        </div>
+        <div class="vocab-section">
+            <h3>Today's Words</h3>
+            
+            <div class="vocab-word">
+                <h4>1. community</h4>
+                <p><strong>Definition:</strong> A group of people who live together, share resources, and take care of each other.</p>
+                <p class="vocab-sentence"><em>"The outcasts of Paris had built a real community in the Court of Miracles — with shared food, their own laws, and people who cared for each other."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+            
+            <div class="vocab-word">
+                <h4>2. naive</h4>
+                <p><strong>Definition:</strong> Innocent and trusting, sometimes to the point of not seeing danger. Lacking experience with the harsh parts of the world.</p>
+                <p class="vocab-sentence"><em>"Esmeralda was not naive — she knew her freedom was fragile and that men like Frollo wanted it destroyed."</em></p>
+                <label>Use it in your own sentence:</label>
+                <textarea rows="2" placeholder="Write your sentence here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 3: Vocabulary Game -->
+    
+    <div class="lesson-page" id="page3" style="display: none;">
+        <div class="page-header">
+            <h2>🎮 Vocabulary Game</h2>
+            <p>Match the words!</p>
+        </div>
+        <div class="vocab-game">
+            <p>Draw lines to match each word with its definition:</p>
+            
+            <div class="match-pair">
+                <div class="match-word">community</div>
+                <div class="match-def">A group of people who live together, share resources, and take care of each other.</div>
+            </div>
+            
+            <div class="match-pair">
+                <div class="match-word">naive</div>
+                <div class="match-def">Innocent and trusting, sometimes to the point of not seeing danger. Lacking experience with the harsh parts of the world.</div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Pages 4-6: Story (3 parts) -->
+    
+    <div class="lesson-page" id="page4" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The World Below - Part 1</h2>
+        </div>
+        <div class="story-text">
+            <p>The World Below</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page5" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The World Below - Part 2</h2>
+        </div>
+        <div class="story-text">
+            <p>In the hidden alleys and crumbling cellars beneath the streets of Paris, the Court of Miracles was waking up.
+Esmeralda returned from the pillory to find the Court in its usual state of organized chaos. Children chased rats through the tunnels. Old women stirred pots of thin soup over smoky fires. Clopin held court on his tin throne, settling disputes with equal parts wisdom and sarcasm. And Pierre Gringoire sat in a corner, scribbling poetry that no one had asked for.
+"You gave water to the hunchback," Clopin said when Esmeralda appeared. It was not a question. News traveled fast in the Court of Miracles.
+"He was thirsty," Esmeralda said.
+"He tried to kidnap you last night."
+"And today he was suffering. Those are two different things."
+Clopin studied her with his sharp eyes. He was a practical man — survival, not compassion, was his business. But he had long since learned that arguing with Esmeralda about kindness was like arguing with the river about which way to flow.
+"You are going to get yourself in trouble," he said.
+"I'm already in trouble," Esmeralda said, smiling. "I live in the Court of Miracles."
+The Court of Miracles was home to everyone Paris had rejected. The crippled, the scarred, the foreign, the poor — anyone who did not fit the city's idea of a proper citizen ended up here. Some were criminals, it was true. But most were simply people who had nowhere else to go.
+They had built something remarkable in the shadows: a <span class="vocab-highlight">community</span>. They shared food. They cared for each other's children. They had their own laws and their own justice, rougher than the king's courts but often fairer. In the world above, a beggar could be hanged for stealing bread. In the Court of Miracles, the bread was shared.
+Esmeralda had lived here since she was a small child. She did not know her parents — her earliest memories were of the Court, of Clopin's gruff kindness, of learning to dance from an old woman who said that dancing was the only prayer that God never ignored.
+She danced because it made people happy. She danced because it was the one thing she could give the world that the world could not take away from her. She danced because, for a few minutes at a time, the people who watched her forgot about the rigid cruelty of Paris and remembered what joy felt like.
+But Esmeralda was not <span class="vocab-highlight">naive</span>. She knew that her freedom was fragile. The church and the law considered the Court of Miracles a den of sin. Men like Frollo wanted it destroyed. Every day that Esmeralda danced in the square was a day she risked being arrested, accused, or worse.
+"Be careful," Clopin told her again.
+"I am always careful," Esmeralda said.
+"No, you are not," Clopin said. "You are kind. That is more dangerous."
+He was right. Kindness, in a city ruled by men like Frollo, was the most dangerous quality a person could have.
+And Frollo had noticed.</p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    
+    <div class="lesson-page" id="page6" style="display: none;">
+        <div class="page-header">
+            <h2>📖 The World Below - Part 3</h2>
+        </div>
+        <div class="story-text">
+            <p></p>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 7: Comprehension -->
+    
+    <div class="lesson-page" id="page7" style="display: none;">
+        <div class="page-header">
+            <h2>📝 Comprehension Questions</h2>
+        </div>
+        <div class="questions-section">
+            
+            <div class="question">
+                <h3>1. What does Clopin warn Esmeralda about?</h3>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="0">
+                    <span>A) That her dancing is not good enough</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="1">
+                    <span>B) That being kind is more dangerous than being careful</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="2">
+                    <span>C) That Quasimodo will betray her</span>
+                </label>
+                
+                <label class="option">
+                    <input type="radio" name="q1" value="3">
+                    <span>D) That the festival is cancelled</span>
+                </label>
+            </div>
+            
+            
+            <div class="question">
+                <h3>2. Clopin says: 'You are kind. That is more dangerous.' Why would kindness be dangerous in a city ruled by someone like Frollo? What does kindness threaten that cruelty does not?</h3>
+                <textarea rows="4" placeholder="Write your answer here..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 8: Grammar or Language -->
+    
+    <div class="lesson-page" id="page8" style="display: none;">
+        <div class="page-header">
+            <h2>✏️ Language Practice</h2>
+        </div>
+        <div class="skill-section">
+            <h3>Figurative Language: Simile</h3>
+            <p>Use like/as comparisons (as agile as a cat, like a gargoyle)</p>
+            <div class="practice">
+                <label>Practice:</label>
+                <textarea rows="3" placeholder="Complete the language exercise..."></textarea>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 9: Informational Text -->
+    
+    <div class="lesson-page" id="page9" style="display: none;">
+        <div class="page-header">
+            <h2>📚 Informational Text</h2>
+        </div>
+        <div class="info-text-section">
+            <h3>Medieval Dance and Music</h3>
+            <div class="info-text"><p>Music and dance were everywhere in medieval life. Traveling musicians called minstrels went from town to town playing lutes, drums, and flutes. Dances were performed at festivals, weddings, and markets. The tambourine was especially popular with Roma dancers. Dancing was a way for common people to celebrate and forget their hard lives for a while. However, the church often disapproved of dancing, seeing it as sinful and distracting people from prayer. Women who danced professionally, like Esmeralda in the story, were often viewed with suspicion. People thought dancers were wild and immoral. This prejudice made dancers vulnerable to accusations and arrest.</p></div>
+            <div class="info-questions">
+                <h4>Check Your Understanding:</h4>
+                
+                <div class="question">
+                    <p><strong>1. What were traveling musicians called in medieval times?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. Why did common people love music and dance?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. Why were professional dancers often viewed with suspicion?</strong></p>
+                    <textarea rows="2" placeholder="Your answer..."></textarea>
+                </div>
+            </div>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 10: Writing or Journal -->
+    
+    <div class="lesson-page" id="page10" style="display: none;">
+        <div class="page-header">
+            <h2>✍️ Journal Prompt</h2>
+        </div>
+        <div class="writing-section">
+            <div class="prompt">
+                <p>Dancing and music helped people escape their hard lives. What activity helps you feel free or forget your worries for a while?</p>
+            </div>
+            <textarea rows="10" placeholder="Write your response here (1-2 paragraphs)..."></textarea>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+        <button class="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+
+    <!-- Page 11: Completion -->
+    
+    <div class="lesson-page" id="page11" style="display: none;">
+        <div class="completion-page">
+            <h1>🎉 Lesson Complete!</h1>
+            <p>Great work on Day 74!</p>
+            <h3>You finished: The World Below</h3>
+            <div class="completion-stats">
+                <div class="stat">📖 Story read</div>
+                <div class="stat">📝 Questions answered</div>
+                <div class="stat">✏️ Skills practiced</div>
+                <div class="stat">✍️ Writing completed</div>
+            </div>
+            <button class="btn-submit">Submit Lesson</button>
+        </div>
+        <button class="btn-prev" onclick="prevPage()">← Back</button>
+    </div>
+
+    <script src="../../../js/lesson-viewer.js"></script>
+    <script>initLessonViewer();</script>
+</body>
+</html>

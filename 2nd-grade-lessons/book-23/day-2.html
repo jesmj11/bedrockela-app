@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - The Tale of Jemima Puddle-Duck - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 2</h1>
+            <h2>The Tale of Jemima Puddle-Duck</h2>
+            <p class="book-info">Book 23 • Week 1 • Day 2 of 8</p>
+            <p class="chapter-info">Chapter 2: A Secretive Plan</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. </h3>
+                <p class="definition"><strong>Definition:</strong> </p>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 A Secretive Plan</h2>
+        <div class="story-content">
+            <p>Driven by her overwhelming desire for motherhood and growing frustration with the constraints imposed by farm life, Jemima decided to take matters into her own wings by developing a secretive plan that would allow her to circumvent the farmer's wife's egg-collecting routine and achieve her maternal goals through independent action. She would venture beyond the familiar safety of the farmyard into the mysterious depths of the surrounding countryside, where she could find a private nesting location far from human interference and supervision.</p><p>Early one misty morning, while the farmer and his wife were still sleeping and the other barnyard animals had not yet begun their daily activities, Jemima quietly slipped away from her familiar surroundings and began waddling determinedly across the dewy meadows toward the dark woods that bordered the agricultural property. Her heart beat with excitement and nervous anticipation as she embarked upon this bold adventure, believing that her superior intelligence and natural instincts would guide her safely through any challenges she might encounter.</p><p>Despite her confidence and determination, Jemima had never before ventured so far from the protective boundaries of the farm, and she soon discovered that navigating through unfamiliar terrain while searching for suitable nesting sites presented unexpected difficulties and potential dangers that she had not anticipated during her careful planning. The dense forest seemed much larger and more confusing than it had appeared from the comfortable distance of the farmyard, and strange sounds and shadows made her increasingly aware of her vulnerability.</p><p>As Jemima wandered deeper into the woodland, desperately searching for the perfect location to establish her secret nest, she began to realize that her romantic notions about independent motherhood had failed to account for the practical realities of survival in the wild. The forest floor was covered with thorny undergrowth that caught her delicate feathers, strange rustling sounds suggested the presence of unknown creatures, and the growing distance from familiar territory made her feel increasingly isolated and uncertain about her ambitious plan.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. </strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="3">
+                        
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. </strong></p>
+                <div class="answer-choices">
+                    
+                    <textarea class="answer-box" placeholder="Write your answer here..." rows="3"></textarea>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>📝 Language Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>ABC Order</h3>
+            <p class="objective"><strong>Goal:</strong> Students will learn about ABC Order.</p>
+            <div class="lesson-content">
+                <p><strong>ABC Order</strong></p><p>This language lesson teaches ABC Order. Look for examples in today's story.</p><ul><li><strong>Key Ideas:</strong></li><li>Learn the concept</li><li>Find examples</li><li>Practice the skill</li></ul><p><strong>Practice Activities:</strong>
+Complete the exercises to master this skill.</p><p><strong>Remember:</strong> Practice makes perfect!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Foxes</h3>
+            <h4>Foxes</h4>
+            
+            <div class="info-text">
+                <p>Learning about Foxes is interesting and important for second graders. There are many fascinating facts about Foxes that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.</p><p>When we explore Foxes, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about Foxes. The more we learn, the better we understand how things work and why they matter.</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>📓 Journal Entry</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What do you think will happen next?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 2!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read A Secretive Plan</p>
+                <p>✅ Practiced language skills</p>
+                <p>✅ Completed your journal</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-3.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 3 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

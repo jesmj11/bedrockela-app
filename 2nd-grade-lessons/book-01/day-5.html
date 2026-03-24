@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - The Three Little Kittens - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 5</h1>
+            <h2>The Three Little Kittens</h2>
+            <p class="book-info">Book 1 • Week 2 • Day 5 of 8</p>
+            <p class="chapter-info">Chapter 5: A Messy Mistake</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. dripped</h3>
+                <p class="definition"><strong>Definition:</strong> fell in drops</p>
+                <p class="example"><strong>Example:</strong> From Chapter 5: A Messy Mistake</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. soiled</h3>
+                <p class="definition"><strong>Definition:</strong> made dirty</p>
+                <p class="example"><strong>Example:</strong> From Chapter 5: A Messy Mistake</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 A Messy Mistake</h2>
+        <div class="story-content">
+            <p>The three little kittens hung their wet mittens on hooks by the warm fire. Steam rose from the wool as they began to dry. Then the kittens sat down to eat their pie.</p><p>It was the best apple pie they had ever tasted! The pie was so good that the kittens ate very quickly. They were so hungry from searching for their mittens all day.</p><p>As they ate, pie filling dripped on their paws. Apple pieces fell on their fur. Soon the kittens were quite messy. When they put on their mittens, something terrible happened again.</p><p>Mother Cat looked at them and frowned. "What! You soiled your mittens? You naughty kittens!" The mittens were covered with pie filling and crumbs. "Oh no!" cried the kittens.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. How did the kittens' mittens get dirty?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        From playing in mud
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        From eating pie messily
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        From the snow
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. What was the pie made of?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        Cherry
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        Apple
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        Blueberry
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>✏️ Grammar Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Adjectives</h3>
+            <p class="objective"><strong>Goal:</strong> Students will understand and apply Adjectives.</p>
+            <div class="lesson-content">
+                <p><strong>Adjectives</strong></p><p>This lesson focuses on Adjectives. As you read today's story, pay attention to examples of this concept.</p><ul><li><strong>Key Points:</strong></li><li>Understand the concept</li><li>Find examples in the story</li><li>Practice using it correctly</li></ul><p><strong>Practice:</strong>
+Apply what you learned by completing the exercises.</p><p><strong>Remember:</strong> Adjectives is an important language skill!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Mother's love</h3>
+            <h4>The Sun</h4>
+            
+            <div class="info-text">
+                <p>The Sun is a star that gives Earth light and heat. Even though the Sun looks small in the sky, it is actually huge – much, much bigger than Earth! The Sun is so hot that nothing can live on it. The temperature on the Sun is thousands of degrees, hot enough to melt any metal instantly.
+Without the Sun, there would be no life on Earth. Plants need sunlight to grow, and animals need plants for food. The Sun also makes the water cycle work by heating up water and turning it into clouds. During the day, the Sun lights up our part of Earth, and at night, our part of Earth faces away from the Sun so it gets dark.
+</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>✍️ Writing Activity</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What is the lesson in this story?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 5!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read A Messy Mistake</p>
+                <p>✅ Practiced grammar skills</p>
+                <p>✅ Completed your writing</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-6.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 6 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

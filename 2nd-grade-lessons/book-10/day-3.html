@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - The Wind and the Sun - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 3</h1>
+            <h2>The Wind and the Sun</h2>
+            <p class="book-info">Book 10 • Week 1 • Day 3 of 8</p>
+            <p class="chapter-info">Chapter 3: The Wind's Attempt</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. cosmic</h3>
+                <p class="definition"><strong>Definition:</strong> relating to the universe or outer space; very large</p>
+                <p class="example"><strong>Example:</strong> From The Wind's Attempt</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. assault</h3>
+                <p class="definition"><strong>Definition:</strong> a violent attack</p>
+                <p class="example"><strong>Example:</strong> From The Wind's Attempt</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 The Wind's Attempt</h2>
+        <div class="story-content">
+            <p>The Sun graciously allowed the Wind to try first, stepping back and dimming his light slightly so that his competitor would have the best possible chance to succeed. The Wind gathered all his strength and prepared to unleash the full fury of his power upon the unsuspecting traveler walking peacefully along the road below, completely unaware that he was about to become the focus of a cosmic competition.</p><p>With a tremendous roar that echoed across the countryside, the Wind began to blow with all his might. He sent fierce gusts racing down from the sky, howling and shrieking as they struck the traveler with tremendous force. The man's hair whipped wildly around his face, dust swirled up from the road in blinding clouds, and nearby trees bent almost to the ground under the assault of the powerful gale.</p><p>But instead of removing his cloak as the Wind had confidently expected, the traveler did exactly the opposite! The fierce, cold gusts made him feel chilled to the bone, so he pulled his cloak even more tightly around his body, wrapping it securely and holding it closed with both hands to prevent the bitter wind from reaching his skin and making him even colder.</p><p>The harder the Wind blew, the more tightly the man clutched his protective cloak around himself. No matter how the Wind raged and howled, no matter how he sent leaves and debris flying through the air, the traveler only hunched his shoulders and gripped his garment more firmly, determined to stay warm against the increasingly violent and uncomfortable weather that seemed to be attacking him from all directions.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. How did the traveler respond to the Wind's powerful gusts?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        He immediately removed his cloak
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        He pulled his cloak more tightly around himself
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        He ran away in fear
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. What happened as the Wind blew harder and harder?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        The man became warmer
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        The man clutched his cloak even more tightly
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        The man started dancing
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>✏️ Grammar Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>Verbs</h3>
+            <p class="objective"><strong>Goal:</strong> Students will understand and apply Verbs.</p>
+            <div class="lesson-content">
+                <p><strong>Verbs</strong></p><p>This lesson focuses on Verbs. As you read today's story, pay attention to examples of this concept.</p><ul><li><strong>Key Points:</strong></li><li>Understand the concept</li><li>Find examples in the story</li><li>Practice using it correctly</li></ul><p><strong>Practice:</strong>
+Apply what you learned by completing the exercises.</p><p><strong>Remember:</strong> Verbs is an important language skill!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>The Wind's Attempt</h3>
+            
+            <p><em>Informational text about ${infoText.topic} will be added here.</em></p>
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>✍️ Writing Activity</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> Write about a time like in The Wind and the Sun.</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 3!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read The Wind's Attempt</p>
+                <p>✅ Practiced grammar skills</p>
+                <p>✅ Completed your writing</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-4.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 4 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

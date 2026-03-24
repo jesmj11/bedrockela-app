@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - The Dog and His Reflection - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 2</h1>
+            <h2>The Dog and His Reflection</h2>
+            <p class="book-info">Book 9 • Week 1 • Day 2 of 8</p>
+            <p class="chapter-info">Chapter 2: Seeking a Safe Place</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. secluded</h3>
+                <p class="definition"><strong>Definition:</strong> private and away from other people</p>
+                <p class="example"><strong>Example:</strong> From Seeking a Safe Place</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. solitude</h3>
+                <p class="definition"><strong>Definition:</strong> the state of being alone</p>
+                <p class="example"><strong>Example:</strong> From Seeking a Safe Place</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 Seeking a Safe Place</h2>
+        <div class="story-content">
+            <p>Now that the dog had secured such a valuable prize, he faced a new challenge: where could he safely enjoy his feast without worrying about other animals trying to steal his treasure? The busy market square was full of competing dogs, hungry cats, and bold ravens who would not hesitate to snatch away such a delicious meal if they had the chance.</p><p>The dog looked around carefully, holding his precious bone firmly in his mouth while considering his options. He needed somewhere quiet and secluded, away from the crowds and the constant threat of thieves who might try to take what he had worked so hard to find. His experience as a street dog had taught him to always be cautious when he possessed something valuable.</p><p>After thinking for a moment, the dog remembered a peaceful spot he had discovered during his wanderings - a quiet grove of trees beside a gentle stream, far from the noise and bustle of the village. It would be the perfect place to enjoy his meal in solitude, without any interruptions or threats from competitors who might want to share his good fortune.</p><p>With his destination decided, the dog began his journey toward the stream, walking carefully to avoid attracting attention from other hungry animals who might follow him to his secret dining spot. The bone felt heavier with each step, but the dog's excitement about his upcoming feast made the weight seem insignificant compared to the pleasure he anticipated from this magnificent meal.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. Why was the dog worried about staying in the market square?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        It was too noisy
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        Other animals might try to steal his bone
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        The market was closed
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. Where did the dog decide to go with his bone?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        Back to his home
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        A quiet grove of trees beside a gentle stream
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        To another market
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>📝 Language Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>ABC Order</h3>
+            <p class="objective"><strong>Goal:</strong> Students will learn about ABC Order.</p>
+            <div class="lesson-content">
+                <p><strong>ABC Order</strong></p><p>This language lesson teaches ABC Order. Look for examples in today's story.</p><ul><li><strong>Key Ideas:</strong></li><li>Learn the concept</li><li>Find examples</li><li>Practice the skill</li></ul><p><strong>Practice Activities:</strong>
+Complete the exercises to master this skill.</p><p><strong>Remember:</strong> Practice makes perfect!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>Seeking a Safe Place</h3>
+            <h4>Tornadoes</h4>
+            
+            <div class="info-text">
+                <p>1. a) when warm moist air meets cold dry air and winds create rotation
+2. b) an area in the central plains where many tornadoes occur
+</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>📓 Journal Entry</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What do you think will happen next?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 2!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read Seeking a Safe Place</p>
+                <p>✅ Practiced language skills</p>
+                <p>✅ Completed your journal</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-3.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 3 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>

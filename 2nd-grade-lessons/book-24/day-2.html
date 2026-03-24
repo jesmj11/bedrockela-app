@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Simple Simon - BedrockELA 2nd Grade</title>
+    <link rel="stylesheet" href="../css/lesson-viewer.css">
+    <style>
+        .lesson-page {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        .lesson-page.active {
+            display: block;
+        }
+        .story-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .vocab-word {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .choice {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice:hover {
+            background: #f0f0f0;
+        }
+        .lesson-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .lesson-nav button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .lesson-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div id="lessonViewer">
+    <!-- Page 1: Title Page -->
+    <div class="lesson-page active" data-page="1">
+        <div class="title-page">
+            <h1>Day 2</h1>
+            <h2>Simple Simon</h2>
+            <p class="book-info">Book 24 • Week 1 • Day 2 of 8</p>
+            <p class="chapter-info">Chapter 2: The Encounter with the Pieman</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Vocabulary -->
+    <div class="lesson-page" data-page="2">
+        <h2>📖 Vocabulary Words</h2>
+        <div class="vocabulary-section">
+            
+            <div class="vocab-word">
+                <h3>1. wafting</h3>
+                <p class="definition"><strong>Definition:</strong> moving gently through the air</p>
+                <p class="example"><strong>Example:</strong> From The Encounter with the Pieman</p>
+            </div>
+            
+            <div class="vocab-word">
+                <h3>2. skepticism</h3>
+                <p class="definition"><strong>Definition:</strong> doubt about the truth of something</p>
+                <p class="example"><strong>Example:</strong> From The Encounter with the Pieman</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 3: Story -->
+    <div class="lesson-page" data-page="3">
+        <h2>📚 The Encounter with the Pieman</h2>
+        <div class="story-content">
+            <p>One bright morning as Simon wandered through the village market with his characteristic cheerful curiosity and genuine interest in all the fascinating activities taking place around him, he encountered a traveling pieman who had set up his colorful cart in the town square and was calling out enthusiastic advertisements for his delicious wares to attract customers with promises of the most wonderful pastries and savory treats that any reasonable person could possibly imagine wanting to purchase and enjoy.</p><p>The appetizing aromas wafting from the pieman's cart filled Simon with genuine desire to sample these tempting delicacies, but unfortunately he discovered that his pockets contained no money whatsoever to make such a purchase possible, creating a disappointing obstacle to his spontaneous culinary desires. However, rather than simply accepting this limitation and walking away like most people might do when faced with insufficient funds, Simon decided to approach the situation with his characteristic optimism and direct honesty.</p><p>"Good pieman," Simon said with his typical straightforward manner and genuine friendliness, "I would very much like to buy one of your pies, but I must confess that I have no money to pay for such a purchase. However, I am perfectly willing to work for you or provide some service that might earn me the right to enjoy one of your delicious creations, if you would be so kind as to consider such an arrangement."</p><p>The pieman, who had dealt with countless customers throughout his years of traveling from village to village and had developed considerable experience in recognizing various types of potential buyers, looked at Simon with a mixture of amusement and skepticism that suggested he was not entirely convinced that this earnest young man possessed either the resources or the practical skills necessary to provide adequate compensation for valuable merchandise, but he was curious enough about Simon's unusual approach to consider what might develop from this unexpected interaction.</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Comprehension -->
+    <div class="lesson-page" data-page="4">
+        <h2>🤔 Reading Comprehension</h2>
+        <div class="comprehension-section">
+            
+            <div class="question">
+                <p class="question-text"><strong>1. What problem did Simon face when he wanted to buy a pie?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="0">
+                        He couldn't decide which pie to choose
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="1">
+                        He had no money to pay for it
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q0" value="2">
+                        The pieman's cart was closed
+                    </label>
+                    
+                </div>
+            </div>
+            
+            <div class="question">
+                <p class="question-text"><strong>2. How did Simon approach this problem?</strong></p>
+                <div class="answer-choices">
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="0">
+                        He walked away sadly
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="1">
+                        He offered to work or provide service in exchange for a pie
+                    </label>
+                    
+                    <label class="choice">
+                        <input type="radio" name="q1" value="2">
+                        He tried to steal a pie
+                    </label>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Page 5: Grammar or Language -->
+    <div class="lesson-page" data-page="5">
+        <h2>📝 Language Lesson</h2>
+        
+        <div class="grammar-language-section">
+            <h3>ABC Order</h3>
+            <p class="objective"><strong>Goal:</strong> Students will learn about ABC Order.</p>
+            <div class="lesson-content">
+                <p><strong>ABC Order</strong></p><p>This language lesson teaches ABC Order. Look for examples in today's story.</p><ul><li><strong>Key Ideas:</strong></li><li>Learn the concept</li><li>Find examples</li><li>Practice the skill</li></ul><p><strong>Practice Activities:</strong>
+Complete the exercises to master this skill.</p><p><strong>Remember:</strong> Practice makes perfect!</p>
+            </div>
+            <div class="practice-area">
+                <h4>Practice:</h4>
+                <textarea class="answer-box" placeholder="Complete the practice exercises..." rows="5" style="width: 100%; padding: 10px; font-size: 14px;"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Page 6: Informational Text -->
+    <div class="lesson-page" data-page="6">
+        <h2>📰 Learn Something New!</h2>
+        <div class="informational-section">
+            
+            <h3>The Encounter with the Pieman</h3>
+            <h4>The Encounter with the Pieman</h4>
+            
+            <div class="info-text">
+                <p>Learning about The Encounter with the Pieman is interesting and important for second graders. There are many fascinating facts about The Encounter with the Pieman that help us understand the world better. By studying different topics, students build knowledge and develop curiosity.</p><p>When we explore The Encounter with the Pieman, we make connections to other subjects and our daily lives. Teachers and books can help us learn more about The Encounter with the Pieman. The more we learn, the better we understand how things work and why they matter.</p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!-- Page 7: Writing or Journal -->
+    <div class="lesson-page" data-page="7">
+        <h2>📓 Journal Entry</h2>
+        <div class="writing-section">
+            
+            <p class="prompt"><strong>Prompt:</strong> What do you think will happen next?</p>
+            <textarea class="writing-box" placeholder="Write your response here..." rows="15" style="width: 100%; padding: 15px; font-size: 16px; line-height: 1.6;"></textarea>
+            <div class="word-count" style="margin-top: 10px; text-align: right; color: #666;">Words: <span id="wordCount">0</span></div>
+            
+        </div>
+    </div>
+
+    <!-- Page 8: Completion -->
+    <div class="lesson-page" data-page="8">
+        <div class="completion-page" style="text-align: center; padding: 60px 20px;">
+            <h1>🎉 Great Job!</h1>
+            <p style="font-size: 20px;">You completed Day 2!</p>
+            <div class="progress-summary" style="margin: 40px 0; line-height: 2;">
+                <p>✅ Learned 2 new vocabulary words</p>
+                <p>✅ Read The Encounter with the Pieman</p>
+                <p>✅ Practiced language skills</p>
+                <p>✅ Completed your journal</p>
+            </div>
+            
+            <button class="next-lesson-btn" onclick="window.location.href='day-3.html'" style="padding: 15px 40px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Continue to Day 3 →
+            </button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div class="lesson-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <span id="pageIndicator">Page 1 of 8</span>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 8;
+
+function showPage(pageNum) {
+    document.querySelectorAll('.lesson-page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.querySelector(`.lesson-page[data-page="${pageNum}"]`).classList.add('active');
+    
+    document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = pageNum === 1;
+    document.getElementById('nextBtn').disabled = pageNum === totalPages;
+    
+    window.scrollTo(0, 0);
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextPage();
+    if (e.key === 'ArrowLeft') prevPage();
+});
+
+// Word count for writing area
+const writingBox = document.querySelector('.writing-box');
+if (writingBox) {
+    writingBox.addEventListener('input', function() {
+        const words = this.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('wordCount').textContent = words.length;
+    });
+}
+
+// Initialize
+showPage(1);
+</script>
+
+</body>
+</html>
