@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Title page */
+    .title-page {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .title-page .icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    
+    .title-page h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .title-page .subtitle {
+      font-size: 1.5rem;
+      color: #B06821;
+      margin-bottom: 10px;
+    }
+    
+    .title-page .meta {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    /* Vocab word */
+    .vocab-word {
+      background: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 { 
+      margin-top: 0; 
+      color: #305853;
+    }
+    
+    .vocab-word p {
+      color: #555;
+      font-style: italic;
+    }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    
+    textarea { 
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+    
+    /* Completion page */
+    .completion {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .completion .icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+    
+    .completion button {
+      padding: 15px 40px;
+      background: #B06821;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 1: Chapter Title</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div class="title-page">
+        <div class="icon">📖</div>
+        <h1>Lesson 1</h1>
+        <div class="subtitle">Chapter Title</div>
+        <div class="meta">Book Name • 7th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 1!</h2>
+      <p>Today we're reading <strong>Chapter Title</strong> from <em>Book Name</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master [grammar/language skill]</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Notice how they're used!</p>
+      
+      <div class="vocab-word">
+        <h3>1. Word One</h3>
+        <p>Definition of the word goes here.</p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. Word Two</h3>
+        <p>Definition of the word goes here.</p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. Word Three</h3>
+        <p>Definition of the word goes here.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY GAME -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition:</p>
+      
+      <h3>1. Word One</h3>
+      <input type="text" placeholder="Write the definition...">
+      
+      <h3>2. Word Two</h3>
+      <input type="text" placeholder="Write the definition...">
+      
+      <h3>3. Word Three</h3>
+      <input type="text" placeholder="Write the definition...">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Chapter Title (Part 1)</h2>
+      <div class="story">
+        <p>First paragraph of the story...</p>
+        <p>Second paragraph...</p>
+        <p>Third paragraph...</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Chapter Title (Part 2)</h2>
+      <div class="story">
+        <p>Continuing the story...</p>
+        <p>More paragraphs...</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Chapter Title (Part 3)</h2>
+      <div class="story">
+        <p>Final part of the story...</p>
+        <p>Conclusion...</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Comprehension Questions</h2>
+      
+      <h3>1. First question about the chapter?</h3>
+      <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      <h3>2. Second question about the chapter?</h3>
+      <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: [Topic Name]</h2>
+      
+      <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <p><strong>Explanation:</strong> Grammar concept explanation goes here...</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong> Example sentence showing the concept.</p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice prompt goes here...</p>
+      <textarea rows="8" placeholder="Write your response..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Background & Context</h2>
+      <p>Informational text providing historical, cultural, or thematic background...</p>
+      <p>Additional paragraphs of context...</p>
+      
+      <h3>Question:</h3>
+      <textarea rows="4" placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing</h2>
+      <p><strong>Prompt:</strong> Reflect on [specific aspect of today's chapter]...</p>
+      <textarea rows="12" placeholder="Write your response..."></textarea>
+    </div>
+    
+  </div>
+
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prev" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="next" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    // BEDROCK SPINE: 11 pages, simple navigation
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      // Hide all
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      
+      // Show target
+      document.querySelector(`[data-page="${pageNum}"]`).classList.add('active');
+      
+      // Update nav
+      document.getElementById('prev').disabled = (pageNum === 1);
+      document.getElementById('next').disabled = (pageNum === totalPages);
+      
+      // Update progress bar
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      
+      // Update top progress text
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+      
+      currentPage = pageNum;
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>
