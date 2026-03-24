@@ -3,89 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7th Grade Day 3 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 3 - BedrockELA</title>
   <style>
-    body { 
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: #FFFFFF; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
-    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    .nav-controls { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      margin-top: 30px; 
-      padding: 20px; 
-      background: #f9f9f9; 
-      border-radius: 10px; 
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
-      bottom: 20px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-btn { 
-      padding: 12px 24px; 
-      background: #305853; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: all 0.2s;
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
-    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-    .progress-bar { 
-      flex: 1; 
-      margin: 0 20px; 
-      height: 10px; 
-      background: #e0e0e0; 
-      border-radius: 10px; 
-      overflow: hidden; 
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
     }
-    .progress-fill { 
-      height: 100%; 
-      background: linear-gradient(90deg, #305853, #B06821); 
-      transition: width 0.3s ease;
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
       border-radius: 10px;
     }
-    .page-indicator { 
-      font-size: 0.9em; 
-      color: #666; 
-      font-weight: 600; 
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Preserve old styles that might exist in content */
+    .page-content { padding: 0; }
+    .lesson-page { display: block; }
   </style>
 </head>
 <body>
-  <div class="lesson-container">
-    <div id="lessonContent">
-      
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 3</h1>
-        <h2 class="lesson-subtitle">Ali Baba and the Forty Thieves — Part One</h2>
-        <p class="lesson-meta">Tales from the Arabian Nights</p>
-        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
-      </div>
-    </div>
   
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 3: Chapter 3</div>
+    <div class="page-progress" id="topProgress">Page 1 of 1</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 2 -->
+    <div class="page active" data-page="2">
 
-    <div class="lesson-page" data-page="2">
+
       <div class="page-content">
         <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 3!</h2>
         <div class="welcome-content">
@@ -100,10 +203,12 @@
           </ul>
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 3 -->
+    <div class="page" data-page="3">
 
-    <div class="lesson-page" data-page="3">
       <div class="page-content">
         <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
         <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
@@ -128,10 +233,12 @@ contentment  —  A state of happiness and satisfaction with what one has.</p>
           
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 4 -->
+    <div class="page" data-page="4">
 
-    <div class="lesson-page" data-page="4">
       <div class="page-content">
         <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
         <p style="margin-bottom: 20px;">Match each word to its definition:</p>
@@ -159,20 +266,24 @@ contentment  —  A state of happiness and satisfaction with what one has.</div>
           
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 5 -->
+    <div class="page" data-page="5">
 
-      <div class="lesson-page" data-page="5">
         <div class="page-content">
           <h2 style="color: #305853; margin-bottom: 20px;">📜 Ali Baba and the Forty Thieves — Part One </h2>
           <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
             <p style="margin-bottom: 15px; text-indent: 2em;">Ali Baba and the Forty Thieves — Part One</p>
           </div>
         </div>
-      </div>
+      
+    </div>
     
+    <!-- PAGE 6 -->
+    <div class="page" data-page="6">
 
-      <div class="lesson-page" data-page="6">
         <div class="page-content">
           <h2 style="color: #305853; margin-bottom: 20px;">📜 Ali Baba and the Forty Thieves — Part One (Part 2)</h2>
           <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
@@ -204,20 +315,24 @@ The king, she noted, had not moved in the last hour.
 'Tomorrow night,' she said, 'I will tell you what Cassim's wife did with what she found.'</p>
           </div>
         </div>
-      </div>
+      
+    </div>
     
+    <!-- PAGE 7 -->
+    <div class="page" data-page="7">
 
-      <div class="lesson-page" data-page="7">
         <div class="page-content">
           <h2 style="color: #305853; margin-bottom: 20px;">📜 Ali Baba and the Forty Thieves — Part One (Part 3)</h2>
           <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
             <p style="margin-bottom: 15px; text-indent: 2em;"></p>
           </div>
         </div>
-      </div>
+      
+    </div>
     
+    <!-- PAGE 8 -->
+    <div class="page" data-page="8">
 
-    <div class="lesson-page" data-page="8">
       <div class="page-content">
         <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
         <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
@@ -283,10 +398,12 @@ The king, she noted, had not moved in the last hour.
           
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 9 -->
+    <div class="page" data-page="9">
 
-    <div class="lesson-page" data-page="9">
       <div class="page-content">
         <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Skill: Restrictive vs. Non-Restrictive Clauses and Commas</h2>
         
@@ -302,10 +419,12 @@ The king, she noted, had not moved in the last hour.
           <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 10 -->
+    <div class="page" data-page="10">
 
-    <div class="lesson-page" data-page="10">
       <div class="page-content">
         <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
         <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
@@ -313,31 +432,84 @@ The king, she noted, had not moved in the last hour.
           <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
         </div>
       </div>
+    
     </div>
-  
+    
+    <!-- PAGE 11 -->
+    <div class="page" data-page="11">
 
-    <div class="lesson-page" data-page="11">
       <div class="page-content">
         <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal Entry</h2>
         <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. If you were in their position, would you have made the same choice? Why or why not? Consider the character's motivations, the consequences they faced, and what this reveals about human nature.</p>
         <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your journal entry here..."></textarea>
         <button onclick="window.saveJournal(3)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
       </div>
+    
     </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   
     </div>
     
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressBar"></div>
-      </div>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
 
-  
-  <script src="../js/universal-lesson-init.js"></script>
+  <script>
+    let currentPage = 1;
+    const totalPages = 1;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
 </body>
 </html>
