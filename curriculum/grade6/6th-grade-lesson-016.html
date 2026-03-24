@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 16 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 16: TREASURE HUNTING</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 16</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TREASURE HUNTING</div>
+        <div style="font-size: 1rem; color: #999;">Week 4 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 16!</h2>
+      <p>Today we're reading <strong>TREASURE HUNTING</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 16</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. obsession</h3>
+        <p><strong>Definition:</strong> an idea or desire that dominates a person&#039;s thoughts</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. hieroglyphics</h3>
+        <p><strong>Definition:</strong> mysterious writing or symbols that are difficult to understand</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. superstition</h3>
+        <p><strong>Definition:</strong> a belief based on fear or magic rather than reason or evidence</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. obsession</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. hieroglyphics</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. superstition</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 TREASURE HUNTING (Part 1)</h2>
+      <div class="story">
+        <p>Tom was the golden boy of St. Petersburg once more. His name appeared in the local paper. People said he might be president someday.
+But at night, the dreams came. Injun Joe was in every one of them—always lurking, always watching, always with murder in his eyes. Huck was just as frightened. Tom had told the lawyer everything, which meant Huck&#039;s share in the secret might eventually come out.
+A detective came from St. Louis, poked around town, shook his head wisely, and went home without finding anything useful. Injun Joe had vanished.
+Slowly, day by day, Tom&#039;s fear faded. He would never feel completely safe until Injun Joe was caught or confirmed dead. But boys&#039; minds don&#039;t stay in one place for long, and before he knew it, Tom was consumed by a new obsession: buried treasure.
+He found Huck and presented the idea.
+&quot;Where do we dig?&quot; Huck asked.
+&quot;That&#039;s the thing—treasure is always buried in specific places. Under dead trees, in haunted houses, on islands.&quot;
+&quot;Who buries it?&quot;
+&quot;Robbers, obviously.&quot;
+&quot;If I had treasure, I&#039;d spend it.&quot;
+&quot;So would I. But robbers always hide it and then forget where they put it. Or they die. Then somebody finds an old yellow map with mysterious markings, and after about a week of working out the clues, they find the treasure.&quot;
+Huck was sold. They grabbed a pick and a shovel and hiked three miles to a dead tree on a hillside. They dug for hours. Nothing. They tried a different spot. Nothing. They tried yet another.
+&quot;Do they always bury it this deep?&quot; Huck asked, wiping sweat from his face.
+&quot;Not always. I think we&#039;ve got the wrong place.&quot;
+They tried two more spots before Tom slapped his forehead. &quot;Wait—you have to find where the shadow of the dead branch falls at midnight, and that&#039;s where you dig!&quot;
+&quot;Then we&#039;ve wasted the whole day! We have to come back at night.&quot;
+They hid their tools and came back that night by moonlight. It was eerie work—the wind moaning through the trees, the darkness pressing in. They dug where the shadow fell. Still nothing.
+&quot;I know what we should do,&quot; Tom said at last. &quot;We should try the haunted house.&quot;
+Huck&#039;s face went pale. &quot;Tom, I don&#039;t like haunted houses. They&#039;re worse than graveyards. Dead people might talk to you, but ghosts sneak up behind you and breathe on your neck.&quot;
+&quot;Ghosts only come out at night. We&#039;d go in the daytime.&quot;
+Huck thought it over. &quot;All right. But I don&#039;t like it.&quot;</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 TREASURE HUNTING (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 TREASURE HUNTING (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. According to Tom, where is treasure usually buried?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. Why do the boys decide they need to come back to the dead tree at midnight?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom and Huck are full of superstitions about treasure hunting — incantations, witches, midnight shadows. How do these superstitions affect the way they approach the treasure hunt? Do the superstitions help them or hold them back?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language Practice</h2>
+      <p>Review your grammar and language skills from previous lessons.</p>
+      <textarea rows="10" placeholder="Practice writing here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

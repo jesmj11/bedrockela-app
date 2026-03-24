@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 6 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 6: THE BLOOD OATH</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 6</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE BLOOD OATH</div>
+        <div style="font-size: 1rem; color: #999;">Week 2 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 6!</h2>
+      <p>Today we're reading <strong>THE BLOOD OATH</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 6</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. oath</h3>
+        <p><strong>Definition:</strong> a solemn promise or pledge, often involving a penalty for breaking it</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. incantation</h3>
+        <p><strong>Definition:</strong> words spoken as a magic spell or ritual</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. conscience</h3>
+        <p><strong>Definition:</strong> the inner sense of right and wrong that guides a person&#039;s behavior</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. oath</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. incantation</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. conscience</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE BLOOD OATH (Part 1)</h2>
+      <div class="story">
+        <p>Tom and Huck ran until their lungs burned. They didn&#039;t stop until they reached the old tannery at the edge of town, where they burst through the door and collapsed in the shadows, gasping for breath.
+When they could finally speak, Tom whispered: &quot;Huckleberry, what do you think will happen?&quot;
+&quot;If Dr. Robinson is dead, somebody&#039;s going to hang.&quot;
+&quot;Do you really think so?&quot;
+&quot;I know it, Tom.&quot;
+Tom was quiet for a long time. Then he said: &quot;Who&#039;s going to tell? Us?&quot;
+&quot;Are you crazy? What if Injun Joe didn&#039;t hang? He&#039;d kill us for sure.&quot;
+&quot;That&#039;s what I was thinking.&quot;
+&quot;Listen, Tom—Muff Potter doesn&#039;t know what really happened. He was knocked out cold. He can&#039;t tell.&quot;
+&quot;You&#039;re right. He was too drunk to see anything.&quot;
+&quot;Tom, we have to swear—swear to keep our mouths shut.&quot;
+&quot;I&#039;m with you. We&#039;ll swear.&quot;
+Huck shook his head. &quot;A regular swear isn&#039;t enough for something like this. There has to be writing. And blood.&quot;
+Tom&#039;s whole soul thrilled at this. It was dark and dangerous and perfect. He found a flat piece of pine in the moonlight, dug a bit of red chalk from his pocket, and slowly, painfully, scratching each letter by the light of the moon, he wrote:
+HUCK FINN AND TOM SAWYER
+SWEAR THEY WILL KEEP MUM
+ABOUT THIS AND THEY WISH
+THEY MAY DROP DOWN DEAD
+IF THEY EVER TELL AND ROT.
+Huck was impressed. Tom unwound thread from a needle, and each boy pricked his thumb and squeezed out a drop of blood. They signed their initials—Tom in shaky letters, Huck with a wobbly H and F. They buried the wooden oath near the wall, performed some made-up rituals over it, and felt that their tongues were now truly locked. The key was thrown away forever.
+A dark figure appeared at the other end of the ruined building—but the boys didn&#039;t see it.
+&quot;Tom,&quot; Huck whispered, &quot;does this mean we can never tell? Ever?&quot;
+&quot;Never. No matter what. We&#039;d drop dead if we did.&quot;
+They whispered a while longer, then parted ways and crept home through the dark.
+Tom climbed back in through his window. He undressed as quietly as he could and fell asleep, not knowing that Sid had been lying awake the entire time, watching him.
+The next morning, Tom woke to find it was late. He hurried downstairs. The family sat at the table in strange, heavy silence. Nobody scolded him. Nobody even looked at him. There were only averted eyes and a gloomy air that chilled him to the bone.
+After breakfast, Aunt Polly took him aside. Tom almost felt hopeful—maybe she was going to punish him, and punishment he could handle. But she didn&#039;t punish him. She cried over him. She asked him how he could go on breaking her heart. She told him to go ahead and ruin himself and bring her gray hairs to the grave, because she just couldn&#039;t help him anymore.
+This was a thousand times worse than a whipping. Tom&#039;s heart was shattered. He cried and begged for forgiveness, promised to do better—and then was sent away, feeling that he&#039;d only half been forgiven.
+He stumbled to school, miserable and distracted. He and Joe Harper both got whipped for skipping school the day before, but Tom hardly noticed. He had bigger things on his mind.
+He slumped into his seat and put his head in his hands. After a while, his elbow touched something. He picked it up—a little brass knob. His andiron knob. The one Becky had knocked to the floor.
+His heart broke all over again.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE BLOOD OATH (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE BLOOD OATH (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. Why do Tom and Huck decide to write their oath and sign it in blood instead of just shaking hands?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. What happens to Tom after the night in the graveyard?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom and Huck swear to "keep mum" and never tell what they saw. Do you think this is the right decision? Why or why not? Consider both the dangers of telling and the consequences of staying silent.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language Practice</h2>
+      <p>Review your grammar and language skills from previous lessons.</p>
+      <textarea rows="10" placeholder="Practice writing here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

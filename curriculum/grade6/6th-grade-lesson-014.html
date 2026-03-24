@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 14 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 14: A MISERABLE SUMMER</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 14</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">A MISERABLE SUMMER</div>
+        <div style="font-size: 1rem; color: #999;">Week 3 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 14!</h2>
+      <p>Today we're reading <strong>A MISERABLE SUMMER</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 14</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Figurative Language: Similes and Metaphors (Language)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. temperance</h3>
+        <p><strong>Definition:</strong> moderation or self-restraint, especially regarding alcohol; also, a movement promoting abstinence from alcohol</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. revival</h3>
+        <p><strong>Definition:</strong> a renewed interest in something, especially religion; a series of religious meetings designed to inspire faith</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. forbearance</h3>
+        <p><strong>Definition:</strong> patience and self-control; the ability to endure something difficult without complaint</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. temperance</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. revival</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. forbearance</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 A MISERABLE SUMMER (Part 1)</h2>
+      <div class="story">
+        <p>Tom joined the Cadets of Temperance, attracted by their fancy uniforms. He promised to stop swearing and smoking. Naturally, the moment he promised not to do these things, they were all he could think about. He quit after two days.
+The Fourth of July was a disappointment—it rained, and a visiting senator turned out to be a normal-sized man, which was deeply unsatisfying.
+A circus came to town. The boys played circus in the backyard for three days and then got bored.
+Becky Thatcher left for the summer to visit relatives in another town. Without her, nothing had any flavor.
+And underneath it all, like a toothache that never stopped, was the murder. The secret pressed on Tom&#039;s conscience every single day.
+Then came the measles. Tom was bedridden for two weeks, completely cut off from the world. When he finally dragged himself outside, everything had changed. A religious revival had swept through St. Petersburg. Everyone had &quot;gotten religion&quot;—even the boys. Tom went looking for a friendly face and found Joe Harper reading the Bible. Ben Rogers was delivering charity baskets. Jim Hollis told Tom his measles were God&#039;s warning to shape up. Even Huckleberry Finn greeted him with a Bible verse.
+Tom&#039;s heart sank. He went home and crawled into bed, convinced he was the only lost soul left in town.
+That night, a terrible thunderstorm struck. Lightning split the sky, thunder shook the house, and rain lashed the windows. Tom pulled the covers over his head, certain that all of this was aimed directly at him—that God had finally had enough of Tom Sawyer.
+But the storm passed, and he was still alive.
+Then the measles came back. He spent three more weeks in bed. When he finally recovered, the revival was over. Joe Harper was back to mischief. Ben Rogers had gone back to normal. Huck was eating a stolen melon behind a fence.
+Everything was just as it had been—except that the murder trial was about to begin.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 A MISERABLE SUMMER (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 A MISERABLE SUMMER (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. Why does Tom join the Cadets of Temperance?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. What happens to the town's religious revival by the time Tom recovers from his second bout of measles?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom discovers that "to promise not to do a thing is the surest way in the world to make a body want to go and do that very thing." How does this connect to the "great law of human nature" Tom discovered in Chapter 2 (the whitewashing)? Are these the same idea or different?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language: Figurative Language: Similes and Metaphors</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>A simile compares using &#039;like&#039; or &#039;as&#039;: &#039;Tom ran like the wind.&#039; A metaphor says something IS something else: &#039;Tom was a lightning bolt.&#039; Twain uses both to create vivid imagery. Similes are easier to spot; metaphors are more subtle.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Simile: &#039;The fence stretched like an endless desert.&#039; / Metaphor: &#039;Tom&#039;s heart was a stone when he saw the fence.&#039;"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Find two examples of figurative language (similes or metaphors) in today&#039;s reading. Explain what is being compared and what image the comparison creates. Then write your own simile and metaphor about something from the chapter.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

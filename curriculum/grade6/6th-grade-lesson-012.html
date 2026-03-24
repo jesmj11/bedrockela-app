@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 12: MAKING UP WITH BECKY</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 12</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">MAKING UP WITH BECKY</div>
+        <div style="font-size: 1rem; color: #999;">Week 3 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 12!</h2>
+      <p>Today we're reading <strong>MAKING UP WITH BECKY</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 12</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Multiple Meaning Words (Homonyms) (Language)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. vindictive</h3>
+        <p><strong>Definition:</strong> having a strong desire for revenge; spiteful</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. perplexity</h3>
+        <p><strong>Definition:</strong> a state of confusion or puzzlement</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. adoration</h3>
+        <p><strong>Definition:</strong> deep love, respect, and admiration</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. vindictive</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. perplexity</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. adoration</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 MAKING UP WITH BECKY (Part 1)</h2>
+      <div class="story">
+        <p>Something about Aunt Polly&#039;s kiss that morning lifted all the weight off Tom&#039;s shoulders. He felt light and happy for the first time in weeks. On his way to school, he ran into Becky Thatcher.
+&quot;Becky, I acted awful mean the other day, and I&#039;m so sorry. I won&#039;t ever do it again. Please—can we make up?&quot;
+She stopped and gave him a cold stare. &quot;I&#039;ll thank you to keep away from me, Tom Sawyer. I&#039;m never speaking to you again.&quot;
+She tossed her braids and walked on.
+Tom was so stunned he couldn&#039;t even think of a comeback. His good mood evaporated. He stomped into the schoolyard, furious.
+For the rest of the morning, Tom noticed Becky laughing and running around the yard, always managing to end up close to him, clearly trying to get his attention. He pretended not to notice. When he saw her looking his way, he turned and talked loudly to Amy Lawrence instead.
+Becky&#039;s smile faded. She tried to look cheerful, but the light went out of her face. She drifted away.
+Meanwhile, something dangerous was happening. The teacher, Mr. Dobbins, kept a mysterious book in his desk—locked up, always hidden. Every kid in school was dying to know what it was. On this particular day, as Becky passed the teacher&#039;s desk, she noticed the key was in the lock.
+She glanced around. The room was empty. She turned the key and opened the book. The title page said Professor Somebody&#039;s Anatomy. She didn&#039;t know what that meant, so she started flipping through it—and came upon a picture of a human body, completely naked.
+At that exact moment, Tom walked through the door. Becky slammed the book shut in a panic—and tore the picture right down the middle. She shoved the book back in the desk, turned the key, and burst into tears.
+&quot;Tom Sawyer! You are the meanest person alive, sneaking up on people!&quot;
+&quot;How was I supposed to know you were looking at anything?&quot;
+&quot;You&#039;re going to tell on me, and I&#039;ll get whipped, and I&#039;ve never been whipped in school!&quot;
+She stormed out, crying.
+Tom stood there, bewildered. &quot;What a fuss over nothing,&quot; he thought. &quot;Girls are so thin-skinned. I&#039;m not going to tell old Dobbins. But he&#039;ll figure it out on his own. He&#039;ll ask every kid in the room, and when he gets to Becky, she won&#039;t be able to hide it—girls can never keep a straight face. She&#039;s going to get it. Too bad for her.&quot;
+He paused. &quot;But she would have let ME get in trouble without thinking twice. All right, let her sweat.&quot;
+But he didn&#039;t feel right about it.
+That afternoon, Mr. Dobbins took the book from his desk. He settled into his chair to read it—and found the torn page.
+Every student sat up straight. Tom glanced at Becky. She looked like a trapped rabbit.
+Mr. Dobbins stood and faced the room. &quot;Who tore this book?&quot;
+Dead silence. You could hear a pin drop.
+&quot;Benjamin Rogers, did you tear this book?&quot;
+&quot;No sir.&quot;
+&quot;Joseph Harper, did you?&quot;
+&quot;No sir.&quot;
+One by one, the teacher worked his way through the class. Tom&#039;s heart pounded harder with each name. The teacher turned to the girls.
+&quot;Amy Lawrence?&quot;
+She shook her head.
+&quot;Susan Harper?&quot;
+No.
+&quot;Rebecca Thatcher.&quot;
+Becky&#039;s face went white. Tom looked at her. Her eyes were wide with terror, her hands pressed together.
+&quot;Did you tear this book?&quot;
+Her lips moved, but no sound came out.
+Tom leaped to his feet. &quot;I did it!&quot;
+The whole school stared in shock.
+Mr. Dobbins said nothing for a long, terrible moment. Then: &quot;Come here.&quot;
+Tom walked forward. He took the worst whipping Mr. Dobbins had ever given, plus two hours of detention after school. He didn&#039;t make a sound.
+And the whole time, he could feel Becky Thatcher&#039;s eyes on him—shining with gratitude and something that looked an awful lot like love.
+Tom went to bed that night still stinging from the whipping, but Becky&#039;s last words kept playing in his head like music:
+&quot;Tom, how could you be so noble!&quot;</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 MAKING UP WITH BECKY (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 MAKING UP WITH BECKY (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. Why does Mr. Dobbins become angry with the class?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. What does Tom do when Mr. Dobbins asks Becky if she tore the book?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom takes a whipping he doesn't deserve to protect Becky. How is this moment different from his earlier "showing off" to impress her? What has changed about Tom's feelings or motivations?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language: Multiple Meaning Words (Homonyms)</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>Many words have multiple meanings depending on context. In Tom Sawyer, words like &#039;play,&#039; &#039;work,&#039; &#039;run,&#039; &#039;fence,&#039; and &#039;beat&#039; can mean different things. Context determines which meaning fits.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"&#039;Play&#039; can mean: (1) have fun, (2) perform in a show, (3) compete in a game. Context tells you which meaning applies."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Find three words in today&#039;s chapter that have multiple meanings. For each word: write the sentence from the text, identify which meaning is used, and write a new sentence using a different meaning of the same word.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

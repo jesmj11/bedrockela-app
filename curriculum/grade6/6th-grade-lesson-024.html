@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 24 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 24: TOM SAWYER&#039;S GANG</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 24</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TOM SAWYER&#039;S GANG</div>
+        <div style="font-size: 1rem; color: #999;">Week 5 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 24!</h2>
+      <p>Today we're reading <strong>TOM SAWYER&#039;S GANG</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 24</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Dialect and Regional Language (Language)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. respectable</h3>
+        <p><strong>Definition:</strong> considered proper and socially acceptable; having a good reputation</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. initiation</h3>
+        <p><strong>Definition:</strong> a ceremony or process of admitting someone into a group</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. charitable</h3>
+        <p><strong>Definition:</strong> generous in giving help or money to those in need; kind</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. respectable</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. initiation</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. charitable</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 TOM SAWYER&#039;S GANG (Part 1)</h2>
+      <div class="story">
+        <p>The Widow Douglas&#039;s parlor was full of people—the Thatchers, the Harpers, Aunt Polly, Sid, Mary, the minister, and half the town. The boys were scrubbed and stuffed into new suits. Huck kept eyeing the window, calculating the drop.
+&quot;Tom, we can escape if we—&quot;
+&quot;Relax. It&#039;s just a party.&quot;
+The Welshman stood up and made a speech, thanking the widow for her hospitality and revealing that it was Huckleberry Finn who had saved her from Injun Joe that night on Cardiff Hill. Huck turned crimson. The widow said she meant to give Huck a permanent home, educate him, and eventually set him up in business.
+Tom couldn&#039;t wait another second. He stood up and said: &quot;Huck doesn&#039;t need charity. Huck&#039;s rich.&quot;
+Nobody laughed—they assumed it was a joke. Tom ran outside, came back dragging a small wagon, and dumped two bags of gold coins onto the table.
+&quot;Half is Huck&#039;s and half is mine!&quot;
+The room went dead silent. Then everyone started talking at once. Tom told the whole story—the haunted house, Injun Joe, Number Two under the cross, the treasure box in the cave. When he was finished, the money was counted.
+Twelve thousand dollars. More than anyone in the room had ever seen.
+The Widow Douglas invested Huck&#039;s share. Judge Thatcher did the same with Tom&#039;s, at Aunt Polly&#039;s request. Each boy had an income of about a dollar a day—a fortune for the time.
+Judge Thatcher said Tom was the bravest boy he&#039;d ever met. When Becky told her father how Tom had taken her whipping at school, the Judge said it was &quot;a noble and generous act&quot; and that Tom would make a great man someday.
+Huck&#039;s new life, however, was not going smoothly. The Widow Douglas was kind, but her world had rules. He had to eat with a fork. He had to wear shoes. He had to sleep in sheets. He had to go to church. He couldn&#039;t smoke, couldn&#039;t swear, couldn&#039;t spit. Everything was scheduled—up by a bell, meals by a bell, bed by a bell.
+After three miserable weeks, Huck disappeared.
+The whole town searched for him. Tom Sawyer found him on the second day—hiding in an empty barrel behind the old slaughter-house, happily smoking a pipe in his old rags.
+&quot;Don&#039;t talk about it, Tom. I&#039;ve tried it and it doesn&#039;t work. The widow means well, but I can&#039;t stand the rules. I&#039;ve got to get up at the same time every morning. I&#039;ve got to wash and comb my hair. I can&#039;t fish unless I ask, can&#039;t swim unless I ask. I&#039;ve got to wear shoes every Sunday. Being rich isn&#039;t what it&#039;s cracked up to be—it&#039;s just worry and work and wishing you were dead. Take my share of the money and leave me alone.&quot;
+&quot;I can&#039;t do that, Huck.&quot;
+&quot;Why not?&quot;
+&quot;Because if you&#039;re not respectable, you can&#039;t be in the gang.&quot;
+&quot;What gang?&quot;
+&quot;Tom Sawyer&#039;s Gang. I&#039;m starting a gang of robbers, and we need a proper hideout, and rules, and an oath signed in blood at midnight. But we can&#039;t let you in if you&#039;re not respectable.&quot;
+Huck thought about this for a long time.
+&quot;All right,&quot; he finally said. &quot;I&#039;ll go back to the widow for a month and try to stand it—if you let me in the gang.&quot;
+&quot;Done!&quot;
+&quot;When do we start?&quot;
+&quot;Right away. We&#039;ll get the boys together tonight for the initiation. We&#039;ll swear the oath in the cave at midnight.&quot;
+&quot;That sounds perfect, Tom.&quot;
+&quot;It will be. And Huck—I&#039;ll talk to the widow. I&#039;ll get her to ease up a little.&quot;
+&quot;Would you? That&#039;d help. If she&#039;d just let me smoke and swear in private, I think I could make it.&quot;
+Tom grinned. &quot;Come on, old friend. Let&#039;s go home.&quot;
+And so they did.
+THE END</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 TOM SAWYER&#039;S GANG (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 TOM SAWYER&#039;S GANG (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. Why does Huck run away from the Widow Douglas's house?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. How does Tom convince Huck to go back to the Widow Douglas?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. The book ends with Huck agreeing to "try" civilization so he can join Tom's robber gang. Do you think Huck will last? Why or why not? Use what you know about Huck's character from the whole book to support your prediction.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language: Dialect and Regional Language</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>Tom Sawyer includes dialect—regional ways of speaking. Jim and other characters use Southern American English dialect from the 1840s. Twain writes it phonetically to show how it sounded. Understanding dialect reveals character, setting, and social class.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Standard: &#039;I cannot do that, Master Tom.&#039; / Dialect: &#039;I dasn&#039;t do that, Mars Tom.&#039; (dasn&#039;t = dare not, Mars = Master)"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Find three examples of dialect in today&#039;s chapter. For each: write the dialect quote, translate it into standard English, and explain what the dialect tells you about the character who speaks it.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

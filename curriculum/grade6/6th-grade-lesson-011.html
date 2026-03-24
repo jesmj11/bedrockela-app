@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 11 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 11: TOM&#039;S DREAM TRICK</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 11</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TOM&#039;S DREAM TRICK</div>
+        <div style="font-size: 1rem; color: #999;">Week 3 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 11!</h2>
+      <p>Today we're reading <strong>TOM&#039;S DREAM TRICK</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 11</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Verb Moods: Indicative, Imperative, Subjunctive (Grammar)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. prophetic</h3>
+        <p><strong>Definition:</strong> accurately predicting the future; having the quality of prophecy</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. wistfully</h3>
+        <p><strong>Definition:</strong> with a feeling of sad longing or gentle desire</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. tremor</h3>
+        <p><strong>Definition:</strong> a slight shaking or quivering; an involuntary movement</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. prophetic</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. wistfully</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. tremor</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 TOM&#039;S DREAM TRICK (Part 1)</h2>
+      <div class="story">
+        <p>At breakfast on Monday, Aunt Polly was showering Tom with love, but underneath it, something was bothering her.
+&quot;Well, Tom,&quot; she finally said, &quot;I don&#039;t say it wasn&#039;t a fine joke to keep everybody worrying for a whole week while you boys had your fun. But it is a shame you could be so hard-hearted. If you could float across on a log to attend your own funeral, you could have floated across to let me know you weren&#039;t dead.&quot;
+&quot;You could have done that, Tom,&quot; said Mary. &quot;I believe you would have, if you&#039;d thought of it.&quot;
+&quot;Would you, Tom?&quot; Aunt Polly&#039;s eyes were hopeful. &quot;Would you have, if you&#039;d thought of it?&quot;
+&quot;I—well, I don&#039;t know. It would have spoiled everything.&quot;
+Aunt Polly&#039;s face fell. &quot;Tom, I hoped you loved me enough to think of it. It would have been something if you&#039;d even cared enough to consider it.&quot;
+&quot;Now, Auntie, it&#039;s not that bad,&quot; Mary said. &quot;That&#039;s just Tom&#039;s way—he&#039;s always in such a rush he never thinks ahead.&quot;
+&quot;I wish I had thought of it,&quot; Tom said, and he meant it. &quot;But I dreamed about you. That&#039;s something.&quot;
+&quot;A cat does that much. But it&#039;s better than nothing. What did you dream?&quot;
+Tom had to think fast. &quot;Well—Wednesday night I dreamed you were sitting right over there by the bed. And Sid was by the woodbox, and Mary next to him.&quot;
+&quot;Well, so we were! That&#039;s where we always sit. Go on.&quot;
+&quot;And I dreamed that Joe Harper&#039;s mother was here.&quot;
+&quot;She was! Did you dream anything else?&quot;
+&quot;Oh, lots. But it&#039;s kind of fuzzy—&quot;
+&quot;Try harder, Tom.&quot;
+&quot;It seems like—the wind blew the—the—&quot;
+&quot;What? What did the wind blow?&quot;
+&quot;It blew the candle!&quot;
+&quot;Mercy! Go on!&quot;
+&quot;And it seems like you said the door was open—&quot;
+&quot;As sure as I&#039;m sitting here, I did! Mary, didn&#039;t I?&quot;
+&quot;And then you made Sid go shut it.&quot;
+&quot;Well, I never! Go on, Tom!&quot;
+&quot;Then you said I wasn&#039;t bad, just mischievous, and not any more responsible than—a colt, or something.&quot;
+&quot;That&#039;s exactly what I said! Goodness gracious, go on!&quot;
+&quot;And then you started crying.&quot;
+&quot;So I did.&quot;
+&quot;And then Mrs. Harper cried too, and said she wished she hadn&#039;t whipped Joe for the cream—&quot;
+&quot;Tom! It&#039;s like you were right there in the room! What else?&quot;
+Tom rolled out every detail he could remember from hiding under the bed. Aunt Polly&#039;s eyes grew wider with every word. By the end she was fully convinced it had been a genuine prophetic dream—maybe even sent by angels.
+&quot;And then I thought you prayed for me,&quot; Tom said quietly. &quot;And I could hear every word. And you went to bed, and I was so sorry—I took a piece of sycamore bark and wrote on it, &#039;We aren&#039;t dead—we&#039;re only off being pirates.&#039; And I put it on the table by the candle. And then you looked so peaceful, sleeping there, that I bent down and kissed you.&quot;
+&quot;Did you, Tom? Did you really?&quot;
+&quot;Yes ma&#039;am.&quot;
+&quot;I forgive you everything for that!&quot; She crushed him in a hug. &quot;Even though it was only a dream.&quot;
+&quot;Shut up, Sid,&quot; Tom muttered, catching his brother&#039;s skeptical look.
+After Tom left for school, Aunt Polly&#039;s heart struggled between joy and suspicion. She went to the closet and got out the ragged jacket Tom had worn on his pirate adventure. She held it, arguing with herself: &quot;I won&#039;t look. It&#039;s a good lie—a kind lie. I won&#039;t let it grieve me.&quot;
+But she looked. She reached into the pocket—and pulled out a piece of sycamore bark.
+She read it through tears that wouldn&#039;t stop falling. It said: WE AIN&#039;T DEAD—WE ARE ONLY OFF BEING PIRATES.
+&quot;I could forgive that boy,&quot; she whispered, &quot;if he&#039;d committed a million sins.&quot;</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 TOM&#039;S DREAM TRICK (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 TOM&#039;S DREAM TRICK (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. How does Tom explain knowing all the details of the conversation Aunt Polly had with Mrs. Harper?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. What does Aunt Polly find in the pocket of Tom's old jacket?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Aunt Polly calls the sycamore bark message proof that Tom loved her. Tom originally planned to leave it but changed his mind. Does Tom deserve the credit Aunt Polly gives him? Why or why not?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar: Verb Moods: Indicative, Imperative, Subjunctive</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>Indicative states facts: &#039;Tom climbed the fence.&#039; Imperative gives commands: &#039;Climb the fence!&#039; Subjunctive expresses wishes or hypotheticals: &#039;If Tom were here, he would climb the fence.&#039; Twain uses all three to create dialogue and narration.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Indicative: &#039;Tom is clever.&#039; / Imperative: &#039;Be clever!&#039; / Subjunctive: &#039;If Tom were more careful, he wouldn&#039;t get caught.&#039;"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Write six sentences about today&#039;s chapter: two in indicative mood (statements), two in imperative mood (commands), and two in subjunctive mood (wishes or hypotheticals).</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Reflect on the events of Chapter 11. What do you think Tom learned?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

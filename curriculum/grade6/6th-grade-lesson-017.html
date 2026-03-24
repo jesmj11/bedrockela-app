@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 17 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 17: THE HAUNTED HOUSE</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 17</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE HAUNTED HOUSE</div>
+        <div style="font-size: 1rem; color: #999;">Week 4 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 17!</h2>
+      <p>Today we're reading <strong>THE HAUNTED HOUSE</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 17</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. rickety</h3>
+        <p><strong>Definition:</strong> poorly made or in bad condition; likely to collapse</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. hearthstone</h3>
+        <p><strong>Definition:</strong> a flat stone that forms the floor of a fireplace</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. disguise</h3>
+        <p><strong>Definition:</strong> a way of changing appearance to hide one&#039;s identity</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. rickety</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. hearthstone</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. disguise</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE HAUNTED HOUSE (Part 1)</h2>
+      <div class="story">
+        <p>On Saturday, the boys hiked to the old abandoned house on Still-House Branch. The place was a wreck—fences gone, weeds everywhere, chimney crumbling, windows empty and dark. They crept inside, hearts hammering, speaking in whispers.
+The ground floor was a ruin: floorboards rotting, fireplace cold, cobwebs hanging in thick curtains from every beam. They explored carefully, jumping at every creak. After a while, their courage grew. They even climbed the rickety stairs to the second floor, where they found nothing but an empty closet and more decay.
+They were about to head back down to start digging when Tom grabbed Huck&#039;s arm.
+&quot;Sh! Hear that?&quot;
+&quot;Yes! Let&#039;s run!&quot;
+&quot;Stay still—they&#039;re coming through the door—&quot;
+The boys dropped flat on their bellies and pressed their eyes to cracks in the floorboards. Two men walked in below them. One was a ragged, mean-looking stranger. The other appeared to be an old, deaf Spaniard who&#039;d been spotted around town a few times—dark skin, white whiskers, green glasses, a wide-brimmed hat.
+But when the &quot;Spaniard&quot; spoke, the boys nearly choked with terror. The voice belonged to Injun Joe.
+&quot;No,&quot; said the ragged man, &quot;I&#039;ve thought it over, and I don&#039;t like it. It&#039;s too dangerous.&quot;
+&quot;Dangerous?&quot; Joe growled. &quot;Don&#039;t be a coward.&quot;
+They talked about some kind of &quot;job&quot; they had planned—something risky that involved another town upriver. Then Joe said: &quot;We&#039;ll do that job after I&#039;ve had one more look around this town. Then we head for Texas.&quot;
+The men ate lunch. Then, to the boys&#039; combined horror and fascination, Joe said: &quot;We might as well bury the money while we&#039;re here—bury it deep.&quot;
+His partner went to the far wall, knelt down, lifted a hearthstone, and pulled out a bag that clinked heavily. He counted out some coins for each of them and handed the rest to Joe, who was already on his knees in the corner, digging with his bowie knife.
+The boys above could barely contain themselves. Six hundred and fifty dollars in silver! Right there!
+Joe&#039;s knife struck something solid.
+&quot;What&#039;s that?&quot; said the stranger.
+&quot;Half-rotten plank—no, it&#039;s a box.&quot; Joe broke through the wood and reached inside. &quot;It&#039;s money!&quot;
+He pulled out a handful of gold coins. The men stared at them, then at each other.
+&quot;There&#039;s thousands here,&quot; Joe whispered. &quot;This must be from Murrel&#039;s gang—they used to operate around here.&quot;
+&quot;Now we don&#039;t need to do that other job.&quot;
+Joe&#039;s face darkened. &quot;You don&#039;t know me. That job isn&#039;t about money. It&#039;s about revenge. I&#039;ll need your help. After it&#039;s done—then Texas.&quot;
+&quot;All right. What do we do with all this gold? Bury it again?&quot;
+&quot;Yes.&quot; The boys above nearly burst with joy. &quot;No—wait.&quot; Their hearts dropped. &quot;That pick and shovel over there—they&#039;ve got fresh dirt on them. Who brought them here? Who&#039;s been digging?&quot;
+Ice ran through Tom&#039;s veins. Joe was staring at the boys&#039; tools, which they&#039;d left in the corner.
+&quot;We&#039;ll take the money to my other hideout,&quot; Joe said. &quot;Number Two—under the cross.&quot;
+&quot;Which one?&quot;
+&quot;Not Number One—too risky. Number Two.&quot;
+Joe stood and moved from window to window, peering out. &quot;Whoever brought those tools could be upstairs right now.&quot;
+The boys stopped breathing. Joe put his hand on his knife and started for the staircase. The boys were about to dive for the closet when—CRACK—the rotten stairs collapsed under Joe&#039;s weight. He crashed to the ground floor in a shower of splintered wood.
+His partner said: &quot;Forget it. If anyone&#039;s up there, let them stay. It&#039;ll be dark soon—let them follow us if they dare.&quot;
+Joe cursed and grumbled, but agreed. The two men gathered the treasure box and slipped out into the fading light.
+Tom and Huck lay on the floor for a long, long time before they dared to move. When they finally crept down and out of the house, they were shaking.
+&quot;Revenge,&quot; Tom whispered. &quot;Who do you think he means?&quot;
+&quot;I don&#039;t know, but—Tom, what if he means us?&quot;
+They walked home in grim silence, sick with the knowledge that Injun Joe was somewhere close, with a knife and a grudge and a box full of gold.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE HAUNTED HOUSE (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE HAUNTED HOUSE (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What terrifying discovery do Tom and Huck make while hiding upstairs in the haunted house?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. Why does Injun Joe become suspicious that someone else has been in the haunted house?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Injun Joe says the treasure needs to go to "Number Two — under the cross" and mentions that his planned "job" is about revenge, not money. What do these details tell us about what might happen next in the story? Make a prediction and explain your reasoning.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar Practice</h2>
+      <p>Review your grammar and language skills from previous lessons.</p>
+      <textarea rows="10" placeholder="Practice writing here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Reflect on the events of Chapter 17. What do you think Tom learned?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

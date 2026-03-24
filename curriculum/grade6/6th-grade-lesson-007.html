@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 7: THE TOWN IN SHOCK</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 7</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE TOWN IN SHOCK</div>
+        <div style="font-size: 1rem; color: #999;">Week 2 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 7!</h2>
+      <p>Today we're reading <strong>THE TOWN IN SHOCK</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 7</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. electrified</h3>
+        <p><strong>Definition:</strong> shocked or thrilled; filled with sudden excitement</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. suspicion</h3>
+        <p><strong>Definition:</strong> a feeling that something is wrong or that someone is guilty</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. formidable</h3>
+        <p><strong>Definition:</strong> causing fear or respect because of great size, strength, or power</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. electrified</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. suspicion</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. formidable</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE TOWN IN SHOCK (Part 1)</h2>
+      <div class="story">
+        <p>By noon, the whole village knew. No one needed a telegraph—the news flew from mouth to mouth like wildfire. Dr. Robinson was dead. A bloody knife had been found near the body, and someone had recognized it as Muff Potter&#039;s. A man had spotted Potter washing himself in a stream at two in the morning, and Potter had run away when he saw he&#039;d been noticed.
+Horsemen were sent out in every direction. The sheriff was confident Potter would be caught before nightfall.
+The whole town drifted toward the graveyard. Tom went too—not because he wanted to, but because something he couldn&#039;t explain dragged him there. He pushed through the crowd and saw the terrible scene: the open grave, the trampled grass, the bloodstains.
+Someone pinched his arm. He turned—it was Huck. Their eyes met, and both looked away instantly, terrified that someone might notice.
+All around them, people were talking: &quot;Poor young fellow.&quot; &quot;This should be a lesson.&quot; &quot;Muff Potter will hang for sure.&quot;
+Tom shivered—because across the crowd, standing calm and still, was Injun Joe.
+Just then, a commotion rippled through the gathering. &quot;It&#039;s him! He&#039;s coming!&quot;
+&quot;Who?&quot;
+&quot;Muff Potter!&quot;
+Potter stumbled into the clearing, looking dazed and terrified. He wasn&#039;t trying to escape—he just seemed confused. He stopped in front of the body, and his whole body began to shake. He covered his face and burst into tears.
+&quot;I didn&#039;t do it, friends. I swear I didn&#039;t.&quot;
+&quot;Nobody&#039;s accused you,&quot; someone called out—but the words hit Potter like a slap.
+He looked around desperately, and his eyes landed on Injun Joe. &quot;Oh, Joe—you promised you wouldn&#039;t—&quot;
+The sheriff pushed through the crowd. &quot;Is this your knife?&quot; He held it up.
+Potter would have collapsed if people hadn&#039;t caught him. He sank to the ground and moaned, &quot;Something told me I should&#039;ve come back for that knife, but I was afraid...&quot;
+Tom and Huck stood frozen, watching the stone-faced liar tell his story to the sheriff, calm as a summer morning. They expected lightning to strike him dead at any moment. But it didn&#039;t. The sky stayed clear, and Injun Joe walked away free.
+The boys made a new silent vow: they would never, ever open their mouths.
+In the days that followed, Tom&#039;s secret ate at him like acid. He talked in his sleep, which nearly gave everything away. One morning at breakfast, Sid said: &quot;Tom, you toss and talk so much at night you keep me awake. Last night you kept saying, &#039;It&#039;s blood, it&#039;s blood, that&#039;s what it is!&#039; and &#039;Don&#039;t torment me—I&#039;ll tell!&#039;&quot;
+Tom went pale. Luckily, Aunt Polly said, &quot;That dreadful murder—I dream about it nearly every night myself.&quot; And the moment passed.
+But Tom began tying a bandage around his jaw at night, pretending he had a toothache, so that if he talked in his sleep, the words would be muffled. He never knew that Sid would sometimes untie the bandage in the dark and listen.
+Every day, Tom watched for a chance to visit the jail. It was a small brick building at the edge of a swamp—no guards, barely locked. Tom and Huck would sneak up to the grated window and pass through small gifts—tobacco, matches, whatever they could find. Potter&#039;s gratitude was heartbreaking.
+&quot;You boys are the only friends I&#039;ve got left,&quot; Potter would say, his voice cracking. &quot;I used to mend kites for all the boys, and show them the good fishing spots. Now they&#039;ve all forgotten me—except you two. I did an awful thing, boys. Drunk and crazy, that&#039;s the only way I can account for it. And now I&#039;ve got to swing for it.&quot;
+Tom went home sick with guilt every time.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE TOWN IN SHOCK (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE TOWN IN SHOCK (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. Why doesn't Muff Potter defend himself when he is arrested?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. What nearly gives away Tom's secret at the breakfast table?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom visits Muff Potter in jail and brings him small gifts. Why does Tom do this? What does it reveal about the "gnawing" effect the secret is having on his conscience?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar Practice</h2>
+      <p>Review your grammar and language skills from previous lessons.</p>
+      <textarea rows="10" placeholder="Practice writing here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Reflect on the events of Chapter 7. What do you think Tom learned?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

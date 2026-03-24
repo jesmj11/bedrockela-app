@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 23 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 23: INJUN JOE&#039;S FATE</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 23</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">INJUN JOE&#039;S FATE</div>
+        <div style="font-size: 1rem; color: #999;">Week 5 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 23!</h2>
+      <p>Today we're reading <strong>INJUN JOE&#039;S FATE</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 23</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Appositives (Grammar)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. stalagmite</h3>
+        <p><strong>Definition:</strong> a formation that grows up from the floor of a cave, created by dripping mineral water</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. vestibule</h3>
+        <p><strong>Definition:</strong> an entrance hall or small room just inside the outer door of a building</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. tedious</h3>
+        <p><strong>Definition:</strong> long, slow, and boring; tiresome</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. stalagmite</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. vestibule</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. tedious</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 INJUN JOE&#039;S FATE (Part 1)</h2>
+      <div class="story">
+        <p>Within minutes, the news was everywhere. A dozen boats launched from the riverbank. The ferryboat followed, packed with people. Tom Sawyer rode in the lead boat with Judge Thatcher.
+When they unlocked the heavy iron door of the cave, they found Injun Joe lying on the ground just inside. He was dead.
+His face was pressed against the crack at the bottom of the door, as if his eyes had been fixed on the light of the outside world until the very last moment. His bowie knife lay beside him, its blade broken in half. He&#039;d spent his final days hacking at the great oak beam of the door—useless work, since solid rock formed the threshold beneath it. Even if he&#039;d cut through the wood, he could never have squeezed under.
+He had eaten every candle stub left by tourists. He had caught and eaten bats. Near the door, a stalagmite rose from the floor, and on top of it he had placed a hollow stone to catch water that dripped from above—one drop every three minutes. A single spoonful every twenty-four hours.
+Tom stared at the cup and the slow-falling drop, and he understood exactly how the man had suffered—because he had nearly suffered the same way.
+Injun Joe was buried near the mouth of the cave. People came from miles around for the funeral. Some said they felt sorry for him. Tom did not feel sorry for him. He felt an overwhelming, bone-deep sense of relief.
+The weight he&#039;d been carrying since that night in the graveyard was finally gone.
+The morning after the funeral, Tom pulled Huck to a private spot.
+&quot;Huck, that money was never in Room Number Two at the tavern.&quot;
+&quot;What?&quot;
+&quot;The money is in the cave.&quot;
+Huck&#039;s eyes went wide. &quot;Say that again.&quot;
+&quot;The treasure—the box of gold—it&#039;s in the cave. I know exactly where.&quot;
+&quot;Tom, are you serious?&quot;
+&quot;Dead serious. Will you come with me to get it?&quot;
+&quot;I will if we can find it without getting lost.&quot;
+&quot;I can take us right to it.&quot;
+They borrowed a small rowboat and headed downriver. Tom found the opening he&#039;d escaped through—hidden behind a thick clump of bushes on the bluff. They crawled in with candles, kite string, and a couple of cloth bags.
+Tom led the way through the dark passages until they reached the spot where he&#039;d seen Injun Joe&#039;s candle. On a big rock nearby, someone had traced a cross in candle smoke.
+&quot;There it is, Huck. &#039;Number Two—under the cross.&#039; This is where Joe kept his camp.&quot;
+They searched around the base of the rock and found a blanket, some gnawed bones, and a narrow opening hidden behind a stone. Tom squeezed through and held up his candle.
+The treasure box sat in a small natural vault, along with an empty powder keg, a couple of old guns, and some moccasins. Huck plunged his hands into the tarnished gold coins.
+&quot;We&#039;re rich, Tom! We&#039;re actually rich!&quot;
+The box weighed about fifty pounds. They stuffed the coins into their bags, dragged everything back through the cave, loaded it into the boat, and rowed home.
+They hid the bags in the Widow Douglas&#039;s woodshed and set off toward town—but on the way, they ran into the old Welshman, who grabbed them and marched them straight to the Widow Douglas&#039;s front door.
+&quot;The widow&#039;s throwing a party,&quot; he said. &quot;You two are coming.&quot;
+&quot;But we&#039;re filthy—&quot;
+&quot;There are clean clothes inside. Get dressed.&quot;</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 INJUN JOE&#039;S FATE (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 INJUN JOE&#039;S FATE (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What has happened to Injun Joe when the townspeople unlock the sealed cave?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. Where do Tom and Huck find the treasure?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Tom says he feels "an overwhelming, bone-deep sense of relief" when he learns Injun Joe is dead. He also feels pity because he knows what it's like to be trapped in the cave. Can a person feel relief and pity at the same time? Explain, using details from the chapter.</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Grammar: Appositives</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>An appositive is a noun or noun phrase that renames another noun right beside it. &#039;Tom, a clever boy, tricked his friends.&#039; Appositives add detail without extra sentences. They&#039;re usually set off with commas.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Tom&#039;s friend, Ben Rogers, fell for the trick."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Write five sentences about characters or places from today&#039;s chapter. Each sentence should include an appositive that renames a noun. Use commas correctly.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Practice</h2>
+      
+      <div class="info-box">
+        <p><strong>Prompt:</strong></p>
+        <p>Reflect on the events of Chapter 23. What do you think Tom learned?</p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>8-10 sentences minimum</li>
+        <li>Include specific details from the text</li>
+        <li>Check spelling and grammar</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your essay here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

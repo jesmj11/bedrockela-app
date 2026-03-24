@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 4: THE ENGAGEMENT</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
+        <h1>Lesson 4</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE ENGAGEMENT</div>
+        <div style="font-size: 1rem; color: #999;">Week 1 • The Adventures of Tom Sawyer • 6th Grade</div>
+      </div>
+    </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to Lesson 4!</h2>
+      <p>Today we're reading <strong>THE ENGAGEMENT</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Understand key events and character development in Chapter 4</li>
+        <li>Learn 3 new vocabulary words in context</li>
+        <li>Master Prefixes: un-, re-, pre-, dis-, mis- (Language)</li>
+        <li>Practice close reading and analytical thinking</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
+      
+      
+      <div class="vocab-word">
+        <h3>1. engagement</h3>
+        <p><strong>Definition:</strong> a promise or agreement to marry; also, a commitment</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. hesitantly</h3>
+        <p><strong>Definition:</strong> in a slow, uncertain way; with doubt or reluctance</p>
+        
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. repentant</h3>
+        <p><strong>Definition:</strong> feeling regret or sorrow for something you did wrong</p>
+        
+      </div>
+      
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Match each word to its definition by writing them below:</p>
+      
+      
+      <h3>1. engagement</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>2. hesitantly</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+      <h3>3. repentant</h3>
+      <input type="text" placeholder="Write the definition in your own words...">
+      
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE ENGAGEMENT (Part 1)</h2>
+      <div class="story">
+        <p>Tom could not keep his mind on his schoolwork. Every time he tried to concentrate, his thoughts drifted right back to Becky Thatcher.
+At noon, he whispered in her ear: &quot;Put on your bonnet and pretend you&#039;re going home. When you get to the corner, sneak back through the lane. I&#039;ll meet you at the school.&quot;
+They met at the empty schoolhouse a few minutes later. They sat together with a slate between them, and Tom tried to teach Becky to draw a house. When they got tired of drawing, they talked.
+&quot;Were you ever at a circus?&quot; Tom asked.
+&quot;Yes! My pa&#039;s going to take me again sometime.&quot;
+&quot;I&#039;ve been to the circus lots of times. When I grow up, I&#039;m going to be a clown.&quot;
+&quot;Oh, that would be wonderful!&quot;
+Tom paused, then said carefully, &quot;Say, Becky—were you ever engaged?&quot;
+&quot;What&#039;s that?&quot;
+&quot;Engaged to be married.&quot;
+&quot;No. What&#039;s it like?&quot;
+&quot;It&#039;s easy. You just tell someone you&#039;ll never love anybody else, ever, and then you kiss. That&#039;s all.&quot;
+&quot;Kiss? Why?&quot;
+&quot;Because that&#039;s what people do when they&#039;re in love. Do you remember what I wrote on the slate?&quot;
+&quot;Y-yes.&quot;
+Tom leaned close and whispered in her ear: &quot;I love you.&quot; Then he said, &quot;Now you whisper it to me.&quot;
+Becky hesitated. &quot;Turn your face away so you can&#039;t see.&quot;
+He turned. She leaned in and whispered, &quot;I—love—you.&quot;
+Then she jumped up and ran around the room, and Tom chased her, laughing. When he finally caught up, she hid her face behind her hands, and Tom said:
+&quot;Now, Becky, it&#039;s all done. After this, you&#039;re never to love anybody but me, and never to marry anybody but me, ever.&quot;
+&quot;I&#039;ll never love anybody but you, Tom. And I&#039;ll never marry anybody but you.&quot;
+&quot;Good! And we always walk together to school and from school—when nobody&#039;s looking. And at parties, you pick me and I pick you. That&#039;s how it works when you&#039;re engaged.&quot;
+&quot;It&#039;s so nice! I never heard of it before.&quot;
+&quot;Oh, it&#039;s great! When me and Amy Lawrence were engaged—&quot;
+Tom stopped. Becky&#039;s big eyes told him he&#039;d made a terrible mistake.
+&quot;Oh, Tom! Then I&#039;m not the first!&quot;
+Her eyes filled with tears.
+&quot;Don&#039;t cry, Becky. I don&#039;t care about her anymore.&quot;
+&quot;Yes you do! You know you do.&quot;
+Tom tried to put his arm around her, but she pushed him away and faced the wall, crying. He tried again—same result. His pride flared up, and he walked out.
+He stood outside for a while, glancing back at the door, hoping she&#039;d come looking for him. She didn&#039;t. He started feeling awful. He screwed up his courage and went back in.
+&quot;Becky, I—I don&#039;t care for anybody but you.&quot;
+She just sobbed louder.
+Tom got out his most precious treasure—a brass knob from the top of an andiron—and held it out where she could see it. &quot;Please, Becky. Won&#039;t you take it?&quot;
+She knocked it to the floor.
+Tom walked out and kept walking—over the hills and far away. He did not come back to school that afternoon.
+Becky ran to the door too late. &quot;Tom! Come back!&quot;
+But he was gone. She sat down to cry, and when the other children came back from lunch, she had to hide her tears and get through the rest of the long, miserable afternoon alone.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE ENGAGEMENT (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE ENGAGEMENT (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
+      
+      
+      <h3>1. What mistake does Tom make that ruins his engagement to Becky?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>2. After Becky pushes Tom away and cries, Tom offers her his most prized possession — a brass knob from an andiron. What does Becky do with it?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+      <h3>3. Both Tom and Becky are stubborn in this chapter — neither one wants to be the first to apologize. Describe a moment when pride gets in the way of reconciliation between them. Why is it so hard for them to make up?</h3>
+      
+        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
+      
+      
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      
+      <h2>📝 Language: Prefixes: un-, re-, pre-, dis-, mis-</h2>
+      
+      <div class="info-box">
+        <p><strong>What is it?</strong></p>
+        <p>Prefixes change the meaning of base words. un- (not), re- (again), pre- (before), dis- (not/opposite), mis- (wrong). In Tom Sawyer, words like &#039;uncomfortable,&#039; &#039;returned,&#039; &#039;pretended,&#039; &#039;disappeared,&#039; and &#039;mischief&#039; use these prefixes.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"&#039;Uncomfortable&#039; = un (not) + comfortable. &#039;Returned&#039; = re (again) + turned."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Find five words with these prefixes in today&#039;s reading. For each word: write the prefix, the base word, and the complete word&#039;s meaning. Then create two new words using these prefixes and use them in sentences.</p>
+      <textarea rows="10" placeholder="Write your response here..."></textarea>
+      
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Informational Text</h2>
+      
+      <h3>Life Along the Mississippi in 1840s Missouri</h3>
+      <p>Historical context for this chapter.</p>
+      
+      
+      <h3 style="margin-top: 30px;">Questions:</h3>
+      
+      
+      
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Journal Entry</h2>
+      
+      <p>Reflect on today's reading in your own words:</p>
+      <ul>
+        <li>What was the most interesting part of today's chapter?</li>
+        <li>How would you have handled the situation differently?</li>
+        <li>What questions do you have about the story?</li>
+      </ul>
+      
+      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>
