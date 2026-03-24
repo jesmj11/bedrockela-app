@@ -1,0 +1,151 @@
+{
+  "grammar": {
+    "1": {
+      "topic": "Sentence Structure: Simple, Compound, Complex, Compound-Complex",
+      "explanation": "Understanding the four sentence types is essential for sophisticated writing. Simple sentences have one independent clause. Compound sentences join two independent clauses with a coordinating conjunction. Complex sentences combine an independent clause with one or more dependent clauses. Compound-complex sentences have multiple independent clauses AND at least one dependent clause.",
+      "example": "Simple: 'The king listened.' Compound: 'The king listened, and Scheherazade spoke.' Complex: 'When Scheherazade spoke, the king listened.' Compound-Complex: 'When Scheherazade spoke, the king listened, and the night passed quickly.'",
+      "prompt": "Write four sentences about today's chapter: one simple, one compound, one complex, and one compound-complex. Label each type and underline the dependent clauses."
+    },
+    "3": {
+      "topic": "Restrictive vs. Non-Restrictive Clauses and Commas",
+      "explanation": "Restrictive clauses are essential to the meaning and need no commas: 'The girl who told the stories survived.' Non-restrictive clauses add extra information and use commas: 'Scheherazade, who had read everything, told stories.' The difference changes meaning: 'Students who studied passed' vs. 'Students, who studied, passed.'",
+      "example": "Restrictive: 'The tales that changed the king came from many cultures.' Non-restrictive: 'Arabian Nights, which contains hundreds of tales, influenced world literature.'",
+      "prompt": "Find three relative clauses in today's reading. Identify whether each is restrictive or non-restrictive, explain how you know, and discuss how removing the clause would change the meaning."
+    },
+    "6": {
+      "topic": "Verbals: Participles, Gerunds, and Infinitives",
+      "explanation": "Verbals are verb forms used as other parts of speech. Participles (-ing or -ed forms) act as adjectives: 'The sleeping king.' Gerunds (-ing forms) act as nouns: 'Storytelling saved her life.' Infinitives (to + verb) act as nouns, adjectives, or adverbs: 'To survive was her goal.'",
+      "example": "Participle: 'Scheherazade, speaking carefully, chose her words.' Gerund: 'Listening became the king's obsession.' Infinitive: 'To trust again would require courage.'",
+      "prompt": "Identify five verbals in today's chapter. For each, name the type (participle, gerund, or infinitive) and explain what function it serves in the sentence. Then write three sentences using one of each type."
+    },
+    "8": {
+      "topic": "Parallel Structure in Lists and Series",
+      "explanation": "Parallel structure uses the same grammatical form for items in a series, creating rhythm and clarity. All items should be the same part of speech or phrase type: 'She was intelligent, determined, and resourceful' (all adjectives). Not parallel: 'She was intelligent, determined, and had resourcefulness.'",
+      "example": "Parallel: 'The king lost his faith, abandoned his principles, and destroyed his compassion.' Not parallel: 'The king lost his faith, his principles were abandoned, and destroying his compassion.'",
+      "prompt": "Find three examples of parallel structure in today's reading, or identify where the author could have used it. Then write five sentences with parallel structure describing characters, events, or themes from the story."
+    },
+    "11": {
+      "topic": "Active and Passive Voice: Strategic Use",
+      "explanation": "Active voice emphasizes the doer: 'Scheherazade told stories.' Passive voice emphasizes the action or receiver: 'Stories were told by Scheherazade.' Passive voice is useful when the doer is unknown, unimportant, or when you want to shift focus. Overusing passive voice weakens writing.",
+      "example": "Active: 'The king executed the women.' Passive: 'The women were executed' (focuses on victims, not perpetrator). Sometimes passive voice is more appropriate for the meaning you want to convey.",
+      "prompt": "Find three sentences in today's chapter in passive voice. Rewrite them in active voice. Discuss which version is more effective and why. Then write two sentences where passive voice would be the better choice."
+    },
+    "13": {
+      "topic": "Semicolons, Colons, and Dashes for Emphasis",
+      "explanation": "Semicolons join closely related independent clauses: 'She was not afraid; she was determined.' Colons introduce lists, explanations, or quotes: 'She needed one thing: time.' Dashes create emphasis or mark interruptions: 'Her plan—dangerous but necessary—might work.'",
+      "example": "Semicolon: 'The night ended; the story continued.' Colon: 'Scheherazade understood one truth: stories change minds.' Dash: 'The king—once kind, now cruel—listened carefully.'",
+      "prompt": "Write six sentences about today's chapter: two using semicolons, two using colons, and two using dashes. Explain why you chose each punctuation mark and how it affects the sentence's meaning or rhythm."
+    },
+    "16": {
+      "topic": "Subordination and Coordination for Sentence Variety",
+      "explanation": "Coordination (using and, but, or, so) joins equal ideas. Subordination (using because, although, when, if) shows one idea is dependent on another. Varying these creates sophisticated writing: 'She told stories because the king needed to hear them' (subordination) vs. 'She told stories, and the king listened' (coordination).",
+      "example": "Coordination: 'The tale ended, but another began.' Subordination: 'Although the tale ended, another began immediately.' Notice how subordination creates a different emphasis.",
+      "prompt": "Take five simple sentences from today's chapter. Combine them using both coordination and subordination to create variety. Explain how each combination changes the relationship between ideas."
+    },
+    "18": {
+      "topic": "Appositives and Appositive Phrases",
+      "explanation": "An appositive renames or explains a noun right beside it, usually set off with commas: 'Scheherazade, the vizier's daughter, had a plan.' Appositives add detail efficiently without needing separate sentences. Essential appositives (no commas) are rare: 'My sister Maria' (if you have multiple sisters).",
+      "example": "Nonessential: 'The king, a broken man, listened to the tale.' Essential: 'The character Ali Baba discovered treasure.' (if there are other characters to distinguish from)",
+      "prompt": "Find three appositives in today's reading. Explain what each renames and why the author used commas (or didn't). Write five sentences with appositives describing people, places, or concepts from the chapter."
+    },
+    "21": {
+      "topic": "Subjunctive Mood for Hypotheticals and Wishes",
+      "explanation": "The subjunctive mood expresses wishes, suggestions, or hypothetical situations. It often uses 'were' instead of 'was': 'If I were the king...' Common in formal writing after verbs like wish, suggest, recommend: 'I wish she were here.' 'I suggest that he study harder' (not 'studies').",
+      "example": "Subjunctive: 'If Scheherazade were to fail, she would die.' 'The king wished that his wife were faithful.' Indicative (not subjunctive): 'Scheherazade was clever.'",
+      "prompt": "Write six sentences in the subjunctive mood about today's chapter: two expressing wishes, two expressing hypotheticals (if/were), and two expressing suggestions or demands. Explain why each requires the subjunctive."
+    },
+    "23": {
+      "topic": "Noun Clauses and Their Functions",
+      "explanation": "A noun clause acts as a noun in a sentence, often starting with that, what, who, whoever, whether, if. They can be subjects, objects, or complements: 'What she said convinced him' (subject). 'He knew that she was clever' (object). 'The question is whether he will change' (complement).",
+      "example": "Subject: 'Whoever tells the best story wins.' Object: 'The king realized that he had been wrong.' Complement: 'The problem was that he couldn't trust anyone.'",
+      "prompt": "Identify four noun clauses in today's reading. For each, explain what function it serves (subject, object, or complement). Write three sentences with noun clauses in different positions, about themes or characters from the story."
+    },
+    "26": {
+      "topic": "Misplaced and Dangling Modifiers",
+      "explanation": "Modifiers should be placed next to what they modify. Misplaced: 'She told a story to the king with great skill' (the king doesn't have the skill—she does). Dangling: 'Walking through the palace, the stories came to mind' (stories can't walk). Correct: 'Walking through the palace, she thought of stories.'",
+      "example": "Misplaced: 'The merchant found treasure in the cave that was priceless' (the cave or the treasure?). Better: 'The merchant found priceless treasure in the cave.' Dangling: 'After telling the story, the king was impressed.' Better: 'After she told the story, the king was impressed.'",
+      "prompt": "Find one misplaced or dangling modifier in your own writing or create intentionally incorrect examples. Correct them and explain the problem. Then write three correctly modified sentences about today's chapter."
+    },
+    "28": {
+      "topic": "Rhetorical Devices: Parallelism, Antithesis, Anaphora",
+      "explanation": "Rhetorical devices create persuasive or memorable writing. Parallelism repeats structure: 'I came, I saw, I conquered.' Antithesis contrasts ideas: 'Not that I loved Caesar less, but that I loved Rome more.' Anaphora repeats words at the start: 'We shall fight on the beaches, we shall fight on the landing grounds...'",
+      "example": "Parallelism: 'She was not just intelligent but also brave and resourceful.' Antithesis: 'She offered stories, not arguments; patience, not force.' Anaphora: 'Night after night, she told tales. Night after night, he listened.'",
+      "prompt": "Find examples of these devices in today's reading, or write your own. Create three sentences using parallelism, two using antithesis, and two using anaphora, all related to the themes or events of today's chapter."
+    }
+  },
+  
+  "language": {
+    "2": {
+      "topic": "Context Clues: Multiple Strategies Combined",
+      "explanation": "Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation). Look for signal words: 'or,' 'such as,' 'unlike,' 'however.'",
+      "example": "From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment).",
+      "prompt": "Find three challenging vocabulary words in today's reading. For each, identify ALL context clues present (definition, synonym, antonym, example, inference). Then write sentences using new vocabulary words with at least two types of context clues."
+    },
+    "4": {
+      "topic": "Word Roots: Greek and Latin Foundations",
+      "explanation": "Most academic vocabulary comes from Greek and Latin roots. Common roots: 'aud' (hear), 'dict' (speak), 'spec' (see), 'port' (carry), 'graph' (write), 'bio' (life), 'chrono' (time), 'geo' (earth). Knowing roots unlocks hundreds of words.",
+      "example": "'Spectator' (one who sees), 'inspect' (look into), 'retrospect' (look back). Same root, different prefixes change meaning. 'Biography' (writing about life), 'biology' (study of life)—same root, different suffixes.",
+      "prompt": "Choose five words from today's chapter with Greek or Latin roots. Break down each word: identify the root, any prefixes/suffixes, and literal meaning. Then find or create three other words using the same roots."
+    },
+    "7": {
+      "topic": "Figurative Language: Metaphor, Simile, Personification, Symbolism",
+      "explanation": "Figurative language creates meaning beyond literal words. Metaphors assert identity: 'Her words were weapons.' Similes compare with 'like/as': 'Words like weapons.' Personification gives human qualities to non-human things: 'The story grabbed him.' Symbolism: objects representing ideas (Scheherazade's stories = hope, power of narrative).",
+      "example": "Metaphor: 'The king's heart was stone.' Simile: 'His heart was like stone.' Personification: 'Anger consumed him.' Symbol: 'The thousand nights represent the slow process of healing and transformation.'",
+      "prompt": "Find four examples of figurative language in today's reading—at least one of each type. Explain what each means literally versus figuratively, and why the author chose figurative language instead of literal description. Write your own examples."
+    },
+    "9": {
+      "topic": "Connotation vs. Denotation: Precision in Word Choice",
+      "explanation": "Denotation is the dictionary definition; connotation is the emotional association. 'Childish' (negative) vs. 'youthful' (positive) vs. 'childlike' (neutral/positive)—same general meaning, different feelings. Authors choose words carefully for their connotations.",
+      "example": "'The king was stubborn' (negative) vs. 'The king was determined' (positive) vs. 'The king was resolute' (strongly positive). Same action, different judgment implied by word choice.",
+      "prompt": "Find five powerful word choices in today's chapter where the author could have used synonyms. For each, identify the denotation, the connotation (positive/negative/neutral), and discuss why the author chose that specific word over alternatives."
+    },
+    "12": {
+      "topic": "Academic Vocabulary: Tier 2 Words Across Disciplines",
+      "explanation": "Tier 2 words (analyze, illustrate, demonstrate, evaluate, synthesize, contextualize) appear across subjects and are essential for academic success. They're more sophisticated than everyday words but not technical jargon. Mastering them improves reading and writing in all classes.",
+      "example": "Instead of: 'Show how Scheherazade was smart,' write: 'Analyze how Scheherazade demonstrated strategic intelligence.' The tier 2 words (analyze, demonstrated, strategic) make thinking more precise.",
+      "prompt": "Identify three tier 2 (academic) words in today's reading or questions. Use each in a sentence about the chapter. Then rewrite three simple sentences from your notes using tier 2 vocabulary to make them more academically sophisticated."
+    },
+    "14": {
+      "topic": "Idioms, Colloquialisms, and Cultural Expressions",
+      "explanation": "Idioms are expressions whose meanings aren't literal: 'Break the ice' doesn't mean breaking actual ice. Understanding cultural expressions helps comprehension and shows how language reflects culture. Some expressions translate across cultures; others don't.",
+      "example": "'The king lost his head' (lost control, not literally lost his head). 'She kept him in the dark' (kept him uninformed). Cultural expression: 'A thousand and one nights' suggests something vast, uncountable—the title itself is an idiom.",
+      "prompt": "Find three idiomatic or cultural expressions in today's reading. Explain the literal vs. actual meaning of each. Then research one expression's cultural origin and discuss what it reveals about the culture that created it."
+    },
+    "17": {
+      "topic": "Etymology: Word Histories and Evolution",
+      "explanation": "Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.",
+      "example": "'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange.",
+      "prompt": "Choose five interesting words from today's chapter. Research the etymology of each (use a dictionary with etymological information). Write the original language, literal meaning, and how the word's current usage relates to or differs from its origin."
+    },
+    "19": {
+      "topic": "Author's Purpose and Rhetorical Strategies",
+      "explanation": "Authors choose words to achieve specific purposes: inform, persuade, entertain, inspire. Rhetorical strategies include appeals to emotion (pathos), logic (logos), and credibility (ethos). Word choice, sentence structure, and figurative language all serve the author's purpose.",
+      "example": "Scheherazade uses narrative (storytelling) to persuade the king to change—this is a rhetorical strategy. She appeals to his emotions through compelling characters (pathos) and to his logic through cautionary tales (logos). Her credibility comes from her vast knowledge (ethos).",
+      "prompt": "Analyze the author's purpose in today's chapter. Identify three specific word choices or techniques that serve this purpose. Explain whether the author primarily uses emotional appeals, logical appeals, or credibility, and how effective it is."
+    },
+    "22": {
+      "topic": "Semantic Fields and Word Families",
+      "explanation": "Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.",
+      "example": "Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect.",
+      "prompt": "Identify three semantic fields in today's reading (groups of related words the author uses). For each field, list at least five words and explain how the subtle differences between them affect meaning. Create your own varied sentence using words from one semantic field."
+    },
+    "24": {
+      "topic": "Tone and Mood: Language Creates Atmosphere",
+      "explanation": "Tone is the author's attitude toward the subject (humorous, serious, ironic, respectful). Mood is the feeling created for the reader (suspenseful, hopeful, melancholy). Authors create tone and mood through word choice, sentence structure, imagery, and pacing.",
+      "example": "Serious tone: 'The king's decree devastated the kingdom.' Ironic tone: 'The king's \"justice\" brought only misery.' The quotation marks create irony. Suspenseful mood: 'The dawn approached. Would the king demand she continue or order her death?'",
+      "prompt": "Identify the dominant tone and mood of today's chapter. Find five specific language choices that create this tone/mood (word choice, sentence length, imagery, etc.). Then write two paragraphs about the same event—one creating a hopeful mood, one creating a dark mood."
+    },
+    "27": {
+      "topic": "Inference and Implication: Reading Between the Lines",
+      "explanation": "Authors don't always state things directly—they imply them through word choice, actions, and context. Readers must infer (conclude based on evidence). Strong readers notice what's suggested but not said: a character's motives, unstated conflicts, thematic messages.",
+      "example": "Text: 'The king listened without speaking.' Inference: He's processing something deeply, perhaps beginning to change. The author doesn't say 'he was changing'—the reader infers it from the behavior. Text: 'Scheherazade chose her next tale carefully.' Inference: She's strategic, not just entertaining.",
+      "prompt": "Find three moments in today's chapter where the author implies something without stating it directly. For each, cite the text, explain what's implied, and identify the textual evidence that supports your inference. Discuss why the author chose implication over direct statement."
+    },
+    "29": {
+      "topic": "Syntax and Sentence Structure for Effect",
+      "explanation": "Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.",
+      "example": "Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'",
+      "prompt": "Analyze the syntax of three sentences from today's chapter. For each, explain how the sentence structure (length, order, type) affects the meaning or impact. Then write three sentences about the chapter using varied syntax to create different effects (tension, flow, emphasis)."
+    }
+  }
+}
