@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 102 - The Count of Monte Cristo</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773022447968">
+</head>
+<body>
+    <div id="lesson-container"></div>
+    <script src="js/lesson-viewer.js?v=1773022447968"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js?v=1773022447968"></script>
+    <script src="js/lesson-autosave.js?v=1773022447968"></script>
+    <script>
+const 8th_grade_day_102Config = [
+    {
+        "type": "title",
+        "content": {
+            "lessonNumber": "Day 102",
+            "title": "The Count of Monte Cristo",
+            "subtitle": "Chapters 19 & 20 • Week 21",
+            "imageUrl": ""
+        }
+    },
+    {
+        "type": "welcome",
+        "content": {
+            "title": "Welcome to Day 102",
+            "objectives": [
+                "Read Chapters 19 & 20: Albert's Friendship and Haydée's Story",
+                "Learn 10 new vocabulary words",
+                "Practice reading comprehension",
+                "Analyze themes of justice and revenge"
+            ],
+            "estimatedTime": "45-60 minutes"
+        }
+    },
+    {
+        "type": "vocabulary",
+        "content": {
+            "words": [
+                {
+                    "word": "Genuine",
+                    "definition": "real and honest"
+                },
+                {
+                    "word": "Friendship",
+                    "definition": "close relationship"
+                },
+                {
+                    "word": "Conflict",
+                    "definition": "struggle between ideas"
+                }
+            ]
+        }
+    },
+    {
+        "type": "vocab-game",
+        "content": {
+            "gameType": "context-clues",
+            "words": [
+                {
+                    "word": "Genuine",
+                    "definition": "real and honest"
+                },
+                {
+                    "word": "Friendship",
+                    "definition": "close relationship"
+                },
+                {
+                    "word": "Conflict",
+                    "definition": "struggle between ideas"
+                },
+                {
+                    "word": "Destroying",
+                    "definition": "ruining completely"
+                },
+                {
+                    "word": "Inherited",
+                    "definition": "passed down"
+                },
+                {
+                    "word": "Princess",
+                    "definition": "royal daughter"
+                },
+                {
+                    "word": "Enslaved",
+                    "definition": "made into slave"
+                },
+                {
+                    "word": "Murder",
+                    "definition": "intentional killing"
+                },
+                {
+                    "word": "Adoption",
+                    "definition": "taking as family"
+                },
+                {
+                    "word": "Protection",
+                    "definition": "keeping safe"
+                }
+            ]
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "Albert's Friendship & Haydée's Story (Part 1)",
+            "text": "The relationship that developed between the Count of Monte Cristo and Albert de Morcerf created the most complex moral challenge of the entire mission of justice, as the young man's genuine nobility of character forced the Count to confront questions about inherited guilt and the justice of punishing children for their parents' crimes.\n\n\"Albert possesses,\" the Count observed with admiration that complicated his plans for systematic justice, \"all the virtues that his father lacks—honor, courage, generosity, and genuine concern for the welfare of others.\"\n\nThe friendship that grew between the mysterious nobleman and Fernand's son was based on mutual respect and shared interests that had nothing to do with the conspiracy that had destroyed Edmond Dantès's life decades earlier.\n\n\"Count,\" Albert said with obvious sincerity during one of their conversations about literature and philosophy, \"your friendship has enriched my understanding of honor and justice in ways that no other relationship has accomplished. You speak of these subjects with depth that suggests personal experience of their importance.\"\n\nBut the Count's response to such expressions of affection was complicated by his knowledge that Albert's entire social position depended on illusions about his father's character that would be destroyed if the truth about Fernand's crimes were ever revealed.\n\n\"Your trust honors me more than you understand,\" the Count replied with truth that his young friend could not possibly comprehend, \"and your friendship provides evidence that nobility of character can exist even in circumstances where family history might suggest otherwise.\"\n\nThe moral dilemma that this situation created was precisely what Abbé Faria had warned about when discussing the relationship between justice and mercy—sometimes righteousness required accepting incomplete satisfaction to avoid harming innocent people.\n\n\"If I destroy Fernand,\" the Count reflected during one of their meetings, \"I will also destroy Albert's understanding of his own identity and family heritage, replacing justified pride with shame that he has done nothing to deserve.\"\n\nBut perhaps more significant was Albert's own moral development, which demonstrated values that exceeded those of his father and suggested that he might be capable of understanding truth if it were presented with appropriate care and context.\n\n\"He speaks of justice,\" the Count noted, \"with passion that suggests he would support righteous causes even when doing so required personal sacrifice, and his character appears strong enough to survive knowledge that would devastate someone with less integrity.\"\n\nThe conversation that would test Albert's moral strength occurred when the Count decided to share general principles about justice and mercy without revealing specific information about his own circumstances or his father's crimes.\n\n\"What would you do,\" the Count asked with careful attention to his young friend's response, \"if you discovered that someone you loved and respected had committed serious crimes that harmed innocent people, but that exposing those crimes would cause suffering to people who were not responsible for them?\""
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "Albert's Friendship & Haydée's Story (Part 2)",
+            "text": "Albert's answer revealed both moral sophistication and emotional courage that exceeded what the Count had expected from someone so young.\n\n\"Justice that harms the innocent,\" Albert replied after careful consideration, \"becomes indistinguishable from the crimes it seeks to address. True righteousness requires finding ways to restore balance without creating new victims.\"\n\nThe recognition that Albert possessed moral wisdom that equaled or exceeded his own forced the Count to reconsider whether his mission of justice could be accomplished in ways that preserved rather than destroyed the relationship that had become one of the most meaningful aspects of his new life.\n\n*Could sins of fathers justly punish their children?*\n\n---\n\n---\n\nThe introduction of Haydée, the Greek princess whose life had been destroyed by Fernand's military treachery, provided the Count with a witness whose testimony could expose his enemy's crimes while serving justice for victims beyond himself.\n\n\"I was ten years old,\" Haydée explained as she shared her story with the Count who had rescued her from slavery and provided her with education and protection, \"when the French officer who served under my father betrayed our position to Turkish forces for money that he valued more than loyalty or honor.\"\n\nThe account that Haydée provided of her family's destruction revealed how Fernand's treachery had extended far beyond the personal betrayal that had eliminated his romantic rival—his military crimes had involved the murder of Ali Pasha and the enslavement of his daughter for financial gain that supported his later rise to social prominence in Paris.\n\n\"My father trusted him,\" Haydée continued with pain that years of the Count's kindness had only partially healed, \"because French officers were supposed to represent the values of honor and justice that the Greek independence movement was fighting to establish.\"\n\nThe evidence that Haydée possessed included documents that proved Fernand's communication with Turkish commanders and testimony from Greek survivors who had witnessed the betrayal that led to Ali Pasha's capture and torture.\n\n\"She can destroy him,\" the Count realized, \"through truth that serves justice not only for my own suffering, but for crimes that affected entire populations and violated every principle that military service is supposed to embody.\""
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "Albert's Friendship & Haydée's Story (Part 3)",
+            "text": "But perhaps more important than her ability to expose Fernand's crimes was Haydée's own moral development under the Count's guidance, which demonstrated how victims of injustice could choose between hatred and righteousness when given proper education and support.\n\n\"You saved me,\" Haydée told the Count with gratitude that was matched by her understanding of moral responsibility, \"not just from slavery, but from hatred that would have corrupted my soul as completely as my enslavement corrupted my circumstances.\"\n\nThe decision about whether to use Haydée's testimony against Fernand required considering both the justice that such exposure would serve and the effect that reliving her traumatic experiences might have on her own emotional welfare.\n\n\"I am willing,\" Haydée declared when the Count explained the role her testimony might play in achieving justice, \"to speak the truth about what happened to my family, because preventing future injustice is more important than protecting myself from painful memories.\"\n\nThe recognition that Haydée possessed courage that exceeded his own forced the Count to understand that divine justice sometimes required cooperation from multiple victims whose combined testimony could expose patterns of evil that individual accusations could not address.\n\n\"She offers,\" the Count realized, \"what I cannot provide myself—evidence of Fernand's crimes that serves justice for victims beyond my own personal suffering, proving that his corruption extended far beyond romantic jealousy to systematic betrayal of military honor and human decency.\"\n\nThe plan that began to form was designed to use Haydée's testimony in ways that would expose Fernand's true character while ensuring that she received the recognition and vindication that her courage deserved.\n\n\"Justice will speak,\" the Count decided, \"through the voices of all his victims, proving that corruption ultimately creates the conditions that lead to its own exposure and destruction.\"\n\n*Justice would speak through the voices of victims.*\n\n---"
+        }
+    },
+    {
+        "type": "comprehension",
+        "content": {
+            "questions": [
+                {
+                    "question": "What happens in \"Albert's Friendship\"?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "What happens in \"Haydée's Story\"?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "What themes of justice or revenge do you notice?",
+                    "type": "short-answer"
+                }
+            ]
+        }
+    },
+    {
+        "type": "language",
+        "content": {
+            "topic": "Language Skills",
+            "explanation": "Placeholder content",
+            "examples": [],
+            "exercises": []
+        }
+    },
+    {
+        "type": "informational-text",
+        "content": {
+            "title": "Justice and Revenge in Literature",
+            "text": "Placeholder informational text about Alexandre Dumas and 19th century France.",
+            "questions": [
+                {
+                    "question": "What did you learn from this article?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "How does it connect to the story?",
+                    "type": "short-answer"
+                }
+            ]
+        }
+    },
+    {
+        "type": "journal",
+        "content": {
+            "prompt": "Reflect on Edmond Dantès' transformation in today's chapters.",
+            "guidelines": []
+        }
+    }
+];
+
+if (typeof initLessonViewer === 'function') {
+    initLessonViewer(8th_grade_day_102Config);
+}
+    </script>
+</body>
+</html>

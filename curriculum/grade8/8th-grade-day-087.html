@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 87 - The Time Machine</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773022443234">
+</head>
+<body>
+    <div id="lesson-container"></div>
+    <script src="js/lesson-viewer.js?v=1773022443234"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js?v=1773022443234"></script>
+    <script src="js/lesson-autosave.js?v=1773022443234"></script>
+    <script>
+const 8th_grade_day_087Config = [
+    {
+        "type": "title",
+        "content": {
+            "lessonNumber": "Day 87",
+            "title": "The Time Machine",
+            "subtitle": "Chapters 19 & 20 • Week 18",
+            "imageUrl": ""
+        }
+    },
+    {
+        "type": "welcome",
+        "content": {
+            "title": "Welcome to Day 87",
+            "objectives": [
+                "Read Chapters 19 & 20: The Dying Earth and Return to Warning",
+                "Learn 3 new vocabulary words",
+                "Practice reading comprehension",
+                "Analyze time travel and evolution themes"
+            ],
+            "estimatedTime": "45-60 minutes"
+        }
+    },
+    {
+        "type": "vocabulary",
+        "content": {
+            "words": [
+                {
+                    "word": "degradation",
+                    "definition": "decline in quality"
+                },
+                {
+                    "word": "purpose",
+                    "definition": "reason for existence"
+                },
+                {
+                    "word": "terror",
+                    "definition": "extreme fear"
+                }
+            ]
+        }
+    },
+    {
+        "type": "vocab-game",
+        "content": {
+            "gameType": "context-clues",
+            "words": [
+                {
+                    "word": "degradation",
+                    "definition": "decline in quality"
+                },
+                {
+                    "word": "purpose",
+                    "definition": "reason for existence"
+                },
+                {
+                    "word": "terror",
+                    "definition": "extreme fear"
+                }
+            ]
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "The Dying Earth & Return to Warning (Part 1)",
+            "text": "The arrival at Earth's final period, when the sun had expanded into a red giant whose dying light could no longer sustain the complex ecosystems that had supported millions of years of evolutionary development, revealed the ultimate destiny that awaited every form of terrestrial existence.\n\n\"This is the end,\" the Time Traveller observed as he emerged from his machine onto a landscape where frozen seas reflected the dim radiance of a star whose nuclear fuel had been exhausted according to astronomical processes that no human intelligence could modify or reverse, \"toward which all earthly existence has always been moving, regardless of whatever social arrangements or moral achievements might have characterized intermediate periods.\"\n\nThe creatures that represented humanity's final descendants bore so little resemblance to their distant ancestors that only scientific analysis could have traced their evolutionary connection to the species that had once created civilizations, built machines, and contemplated questions about meaning and purpose.\n\n\"Crab-like beings,\" he catalogued as he observed the last remnants of human evolution, \"adapted to conditions that require basic survival capability rather than intelligence, cultural achievement, or any of the characteristics that previous generations considered essentially human.\"\n\nThe environment that supported these final descendants was one of such harsh simplicity that existence had been reduced to fundamental biological processes—finding food, avoiding predators, and reproducing according to instinctive patterns that required no conscious planning or cultural knowledge.\n\n\"Evolution has simplified,\" the Time Traveller realized as he watched these creatures move through their frozen world with mechanical efficiency that resembled the industrial operations of Morlock civilization, \"eliminating every characteristic that required energy expenditure for purposes beyond immediate survival needs.\"\n\nThe ocean that covered most of Earth's surface was a sea of ice where only the most basic forms of life could survive the cold that resulted from reduced solar radiation, while atmospheric conditions had changed in ways that made the planet increasingly inhospitable to organic existence.\n\n\"The air itself grows thin,\" he observed as he felt the effects of an atmosphere that could no longer support the complex chemistry that advanced life forms required, \"while temperatures approach absolute zero that will eventually eliminate even these final remnants of evolutionary development.\"\n\nBut perhaps most disturbing was recognition that these creatures showed no awareness of their condition, no memory of their species' previous achievements, and no aspiration toward anything beyond the immediate requirements that their reduced existence imposed.\n\n\"They have no knowledge,\" the Time Traveller concluded as he watched humanity's last descendants move through their dying world without apparent consciousness of their situation, \"of what their ancestors achieved during the brief period when Earth's conditions permitted complex civilization, and they possess no capacity for understanding what their existence represents in the broader context of cosmic development.\""
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "The Dying Earth & Return to Warning (Part 2)",
+            "text": "The silence that characterized this final world was more complete than anything he had experienced during his entire temporal journey—no sounds of human activity, no evidence of cultural creation, no indication that intelligence had ever existed to contemplate questions about existence, meaning, or destiny.\n\n\"This is what remains,\" he reflected as he prepared to witness Earth's absolute conclusion, \"when every human dream has been exhausted and every aspiration has been reduced to basic biological functions that serve no purpose except temporary resistance to entropy that must eventually overcome all forms of organization.\"\n\nThe recognition that this represented not merely humanity's future but the inevitable destiny of every form of conscious existence created perspective that placed all human concerns about progress, justice, and meaning in cosmic context that both humbled and clarified their ultimate significance.\n\n*All human achievement led only to silence and death.*\n\n---\\n\\n---\\n\\nThe journey back through time toward his Victorian present was undertaken with knowledge that no human being had ever possessed—complete understanding of humanity's destiny from its immediate future through its ultimate extinction, creating responsibility for decisions about how such knowledge should be used to influence contemporary choices.\n\n\"I have seen,\" the Time Traveller reflected as his machine carried him through the millions of years that separated Earth's dying period from his own era's confident optimism about progress and civilization, \"what awaits every human effort and every social arrangement, regardless of how successful they might appear to their contemporaries.\"\n\nThe perspective that this complete temporal knowledge provided was more disturbing than any specific revelation about Eloi and Morlock evolution or Earth's final cooling—it placed every Victorian assumption about progress, meaning, and human potential in cosmic context that reduced all earthly achievements to temporary arrangements that universal forces would eventually eliminate.\n\n\"But understanding ultimate futility,\" he reasoned as he contemplated how this knowledge might influence his approach to contemporary social questions, \"does not diminish the importance of how we use whatever time remains for human consciousness to create conditions that serve dignity, beauty, and moral development rather than suffering and degradation.\"\n\nThe recognition that his generation's choices would determine whether humanity's temporary existence produced civilizations like Victorian society or arrangements like Morlock agriculture created urgency that cosmic perspective enhanced rather than diminished.\n\n\"If our existence is brief,\" he concluded, \"then its quality becomes more rather than less significant, because we have limited opportunity to create good or evil, beauty or horror, wisdom or barbarism during whatever period cosmic forces permit complex consciousness to exist.\""
+        }
+    },
+    {
+        "type": "story",
+        "content": {
+            "title": "The Dying Earth & Return to Warning (Part 3)",
+            "text": "The decision about how much of his knowledge to share with Victorian society was complicated by understanding that complete revelation might create despair that would prevent beneficial action, while incomplete disclosure might fail to motivate changes that could prevent immediate horrors like Eloi and Morlock evolution.\n\n\"Truth that serves practical purposes,\" he reasoned, \"requires careful presentation that inspires appropriate action rather than paralyzing depression or comfortable dismissal of inconvenient knowledge that challenges assumptions about progress and social arrangements.\"\n\nThe return to 1895 that his machine accomplished was marked by recognition that his Victorian world represented both the source of future horror and the only opportunity to prevent developments that would transform human potential into systematic barbarism.\n\n\"My era,\" he observed as familiar landscapes replaced the dying vistas of Earth's final period, \"contains all the choices that will determine whether humanity achieves temporary greatness or creates conditions that waste whatever potential cosmic forces have made possible through evolutionary processes that required millions of years to develop consciousness capable of understanding existence.\"\n\nThe moral responsibility that this knowledge created was more demanding than any burden that human beings had previously been required to carry—awareness of consequences that extended beyond individual lifetimes to encompass species destiny across cosmic time scales.\n\n\"I must warn,\" he decided as he prepared to rejoin the society whose assumptions about progress and social arrangements his temporal journey had revealed to be catastrophically naive, \"while providing hope rather than despair, knowledge rather than paralysis, understanding that inspires beneficial action rather than comfortable dismissal of uncomfortable truths.\"\n\n*Could knowledge of the future change its terrible course?*\n\n---"
+        }
+    },
+    {
+        "type": "comprehension",
+        "content": {
+            "questions": [
+                {
+                    "question": "What happens in \"The Dying Earth\"?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "What happens in \"Return to Warning\"?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "What themes do you notice in these chapters?",
+                    "type": "short-answer"
+                }
+            ]
+        }
+    },
+    {
+        "type": "language",
+        "content": {
+            "topic": "Language Skills",
+            "explanation": "Placeholder content",
+            "examples": [],
+            "exercises": []
+        }
+    },
+    {
+        "type": "informational-text",
+        "content": {
+            "title": "Time Travel and Evolution",
+            "text": "Placeholder informational text about H.G. Wells and Victorian science.",
+            "questions": [
+                {
+                    "question": "What did you learn from this article?",
+                    "type": "short-answer"
+                },
+                {
+                    "question": "How does it connect to the story?",
+                    "type": "short-answer"
+                }
+            ]
+        }
+    },
+    {
+        "type": "journal",
+        "content": {
+            "prompt": "Reflect on the themes in today's chapters.",
+            "guidelines": []
+        }
+    }
+];
+
+if (typeof initLessonViewer === 'function') {
+    initLessonViewer(8th_grade_day_087Config);
+}
+    </script>
+</body>
+</html>
