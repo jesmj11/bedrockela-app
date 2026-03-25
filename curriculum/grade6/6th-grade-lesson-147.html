@@ -3,185 +3,390 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 147 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 147 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 147: RISING</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 147</h1>
-        <h2 class="lesson-subtitle">THE GOBLINS BELOW</h2>
-        <p class="lesson-meta">The Princess and the Goblin</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 147!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>THE GOBLINS BELOW</strong> from <em>The Princess and the Goblin</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Inference and Implication: Reading Between the Lines</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOBLINS BELOW </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">One evening, Curdie stayed late in the mines — later than he should have, following a vein of quartz that glittered in his candlelight. He wandered deeper than usual and found himself in a part of the tunnel system he didn't recognize.</p><p style="margin-bottom: 15px; text-indent: 2em;">The walls were smoother here. The air was warmer. And there was a sound — a low, rhythmic murmur, like many voices speaking at once.</p><p style="margin-bottom: 15px; text-indent: 2em;">Curdie pressed himself against the wall and crept forward. The tunnel opened into a large cavern, lit by a sickly greenish glow. And in the cavern, seated on a rough stone throne, was the Goblin King.</p><p style="margin-bottom: 15px; text-indent: 2em;">He was larger than the other goblins — nearly the size of a man, but wider and heavier, with a flat, broad face and small, mean eyes. His queen sat beside him, tall and thin, with feet so long and flat that she walked on them like snowshoes. Around them, hundreds of goblins crowded the cavern floor.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOBLINS BELOW (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">They were having a council.</p><p style="margin-bottom: 15px; text-indent: 2em;">Curdie couldn't hear everything, but he caught enough. The Goblin King was angry. He was tired of hiding underground. He was tired of the miners digging into his territory, stealing the mountain's treasure. He wanted revenge.</p><p style="margin-bottom: 15px; text-indent: 2em;">And he had a plan.</p><p style="margin-bottom: 15px; text-indent: 2em;">The goblins had been tunneling — secretly, quietly, for months — toward the castle on the mountainside. They were going to break through the castle floor, storm the building, and capture the princess.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOBLINS BELOW (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"The king's daughter," the Goblin Queen hissed. "She will marry our prince. Then we will have a claim to the surface. Then the mountain will be ours."</p><p style="margin-bottom: 15px; text-indent: 2em;">Curdie's blood went cold. He backed away slowly, his heart hammering, and ran for the surface.</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌋</div>
+        <h1>Lesson 147</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">RISING</div>
+        <div style="font-size: 1rem; color: #999;">Week 30 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Inference and Implication: Reading Between the Lines</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Authors don't always state things directly—they imply them through word choice, actions, and context. Readers must infer (conclude based on evidence). Strong readers notice what's suggested but not said: a character's motives, unstated conflicts, thematic messages.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Text: 'The king listened without speaking.' Inference: He's processing something deeply, perhaps beginning to change. The author doesn't say 'he was changing'—the reader infers it from the behavior. Text: 'Scheherazade chose her next tale carefully.' Inference: She's strategic, not just entertaining.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find three moments in today's chapter where the author implies something without stating it directly. For each, cite the text, explain what's implied, and identify the textual evidence that supports your inference. Discuss why the author chose implication over direct statement.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>RISING</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze RISING</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice language: Inference and Implication: Reading Between the Lines</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. propelled</h3>
+        <p><strong>Definition:</strong> driven or pushed forward by a force</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. accelerating</h3>
+        <p><strong>Definition:</strong> increasing in speed</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. magma</h3>
+        <p><strong>Definition:</strong> hot fluid or semi-fluid material below the earth's surface; molten rock</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(147)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. propelled</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. accelerating</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. magma</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 RISING (Part 1)</h2>
+      <div class="story">
+        <p>I don't know how long the fall lasted. Seconds. Minutes. Time lost all meaning.
+We plunged downward through a shaft of rushing water, spinning, tumbling, gasping for air between surges. The walls of the shaft blurred past us in the lamplight — rock, black and wet, streaking upward as we fell down.
+Then the direction changed.
+The water, which had been pulling us downward, was now pushing us upward. The shaft had curved, and we were riding a column of water that was rising — fast. Very fast.
+The temperature climbed. The water grew warm, then hot. The rock around us changed color: from gray to red to a dull, angry orange. Heat radiated from the walls. My uncle's thermometer shattered.
+"We're inside a volcanic shaft!" my uncle screamed over the roar of the water. "The explosion opened a connection to an active volcanic system! The water is being heated — it's turning to steam — it's pushing us upward!"
+We were riding a column of superheated water and steam up through the throat of a volcano. The pressure was building beneath us like a coiled spring, accelerating us upward at a terrifying speed.
+Hans, magnificent Hans, had somehow managed to lash us to the remains of the raft. We clung to the logs as the column of water hurled us toward the surface. The heat was unbearable. The noise was a continuous roar, like standing inside a cannon.
+The shaft narrowed. The speed increased. The rock walls were glowing now — actually glowing — with the heat of molten magma somewhere nearby. Steam scalded my hands. Chunks of rock tore past us.
+I thought: this is how it ends. Inside a volcano. After everything — the tunnels, the ocean, the monsters, the storm — we die inside a volcano.
+I closed my eyes and thought of Gräuben.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 RISING (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 RISING (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What pushes the travelers upward through the volcanic shaft?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Why does the rising temperature confirm they are inside an active volcano?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Axel thinks, "This is how it ends." But then he thinks of Gräuben. How does love serve as a lifeline in moments of absolute hopelessness? What does this tell us about what keeps people going?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Inference and Implication: Reading Between the Lines</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Authors don't always state things directly—they imply them through word choice, actions, and context. Readers must infer (conclude based on evidence). Strong readers notice what's suggested but not said: a character's motives, unstated conflicts, thematic messages.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Text: 'The king listened without speaking.' Inference: He's processing something deeply, perhaps beginning to change. The author doesn't say 'he was changing'—the reader infers it from the behavior. Text: 'Scheherazade chose her next tale carefully.' Inference: She's strategic, not just entertaining."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Hope and Resilience</h2>
+      <p>Survival stories throughout history show that hope matters as much as skill. Castaways who gave up died even when rescue was possible. The Robinsons maintained hope of rescue while building permanent settlement—balancing optimism with realism. Resilience means recovering from setbacks: storms destroying crops, injuries, failed projects. The family faced constant disappointment but kept working. Psychologists studying survival identify key traits: flexibility (adapting plans), humor (finding joy despite hardship), purpose (reasons to continue), and community (supporting each other). The Robinsons embodied these qualities. Their fictional survival reflects real psychology: people survive when they refuse to surrender to despair.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

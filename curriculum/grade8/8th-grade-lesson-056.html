@@ -3,261 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 56 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 56 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 56: The Complete Truth</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 56</h1>
-        <h2 class="lesson-subtitle">The Complete Truth</h2>
-        <p class="lesson-meta">Dr. Jekyll and Mr. Hyde</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 56!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Complete Truth</strong> from <em>Dr. Jekyll and Mr. Hyde</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Master Misplaced and Dangling Modifiers</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. theories</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">ideas explaining something</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. experimental</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">relating to experiments</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. methods</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">ways of doing something</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. detailed</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">including many specifics</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. eliminate</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">get rid of completely</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. theories</div>
-              <div style="flex: 2; font-style: italic; color: #666;">ideas explaining something</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. experimental</div>
-              <div style="flex: 2; font-style: italic; color: #666;">relating to experiments</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. methods</div>
-              <div style="flex: 2; font-style: italic; color: #666;">ways of doing something</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. detailed</div>
-              <div style="flex: 2; font-style: italic; color: #666;">including many specifics</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. eliminate</div>
-              <div style="flex: 2; font-style: italic; color: #666;">get rid of completely</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Complete Truth </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The full scientific explanation that Dr. Jekyll provided in his final confession revealed both the theoretical brilliance and the moral blindness that had made his transformation experiment possible.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I began this research," Jekyll wrote, "with the hypothesis that human moral development was hindered by the constant internal struggle between virtuous and evil impulses. I believed that if these opposing forces could be separated chemically, virtuous people could exist without temptation while evil impulses could be contained and controlled."</p><p style="margin-bottom: 15px; text-indent: 2em;">Jekyll's detailed description of his experimental procedures showed sophisticated understanding of chemistry, psychology, and pharmacology that exceeded anything available in contemporary scientific literature.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The transformation formula," Jekyll explained, "was based on my discovery that moral consciousness appears to be chemically determined by specific neurological patterns that can be modified through targeted pharmaceutical intervention. By altering the brain chemistry that governs empathy, conscience, and social bonding, I was able to create psychological states that eliminated moral constraints without affecting intellectual capabilities."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Jekyll's account also revealed his growing recognition that his fundamental assumptions about the nature of good and evil had been catastrophically wrong.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I assumed," Jekyll continued, "that virtue and vice were separate characteristics that could be divided without affecting each other. I did not understand that moral character depends on the constant choice between good and evil alternatives, and that eliminating the possibility of evil choice would destroy moral agency rather than strengthening it."</p><p style="margin-bottom: 15px; text-indent: 2em;">The progressive failure that Jekyll documented showed how his scientific success had become a moral catastrophe that threatened everything he had originally intended to protect.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Hyde," Jekyll explained, "represents not the controlled containment of evil impulses, but the complete liberation of destructive desires from any constraint by conscience, empathy, or social responsibility. He possesses all of my knowledge and intelligence, but applies these capabilities according to value systems that prioritize personal pleasure over human welfare."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Complete Truth (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Jekyll's analysis of his own moral corruption revealed how the experiment had affected not just his Hyde personality but his normal Jekyll consciousness as well.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Creating Hyde," Jekyll wrote, "corrupted Jekyll in ways that I had not anticipated. By allowing myself to experience evil through chemical transformation while maintaining the illusion of moral purity during normal consciousness, I became complicit in every crime that Hyde committed and began to think in ways that reflected Hyde's perspective rather than traditional ethical considerations."</p><p style="margin-bottom: 15px; text-indent: 2em;">The detailed chemical formulas that Jekyll included in his confession were accompanied by explicit warnings about the dangers of attempting to recreate his experimental procedures.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Under no circumstances," Jekyll wrote, "should any scientist attempt to replicate my research or investigate the pharmaceutical modification of moral consciousness. The knowledge that I have gained through this experiment is too dangerous for human civilization to possess safely."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Jekyll's final scientific analysis also included insights about human psychology that could potentially be valuable for understanding criminal behavior and treating mental illness.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I have learned," Jekyll wrote, "that moral character is not a fixed characteristic that some people possess and others lack, but an ongoing choice that every person makes continuously through their decisions about how to respond to competing impulses and social pressures."</p><p style="margin-bottom: 15px; text-indent: 2em;">Jekyll's conclusion about the relationship between good and evil revealed his ultimate understanding of why his experiment had failed so catastrophically.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Good and evil," Jekyll explained, "cannot be separated because they are not independent forces that exist separately within human consciousness. They are complementary aspects of moral agency that depend on each other for their meaning and their power to shape human character."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Complete Truth (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The warning that concluded Jekyll's scientific confession was directed not just at future researchers but at humanity's general approach to scientific advancement and moral development.</p><p style="margin-bottom: 15px; text-indent: 2em;">"We cannot eliminate evil from human nature," Jekyll wrote, "because the struggle against evil is precisely what creates and maintains good. Any attempt to remove moral conflict from human experience will destroy our capacity for moral choice, which means destroying the essential characteristic that makes us human."</p><p style="margin-bottom: 15px; text-indent: 2em;">Jekyll's final message was both a plea for forgiveness and a warning about the fundamental dangers of separating scientific knowledge from ethical responsibility.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I undertook this research believing that science could improve human nature," Jekyll concluded. "I have learned that human nature depends on accepting responsibility for our choices rather than seeking technological solutions that would eliminate the need for moral courage."</p><p style="margin-bottom: 15px; text-indent: 2em;">*Jekyll's final message was a warning to all future scientists.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in The Complete Truth?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of Dr. Jekyll and Mr. Hyde? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🎭</div>
+        <h1>Lesson 56</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Complete Truth</div>
+        <div style="font-size: 1rem; color: #999;">Week 12 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Misplaced and Dangling Modifiers</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Modifiers should be placed next to what they modify. Misplaced: 'She told a story to the king with great skill' (the king doesn't have the skill—she does). Dangling: 'Walking through the palace, the stories came to mind' (stories can't walk). Correct: 'Walking through the palace, she thought of stories.'</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Misplaced: 'The merchant found treasure in the cave that was priceless' (the cave or the treasure?). Better: 'The merchant found priceless treasure in the cave.' Dangling: 'After telling the story, the king was impressed.' Better: 'After she told the story, the king was impressed.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find one misplaced or dangling modifier in your own writing or create intentionally incorrect examples. Correct them and explain the problem. Then write three correctly modified sentences about today's chapter.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Complete Truth</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Complete Truth</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice grammar: Misplaced and Dangling Modifiers</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. theories</h3>
+        <p><strong>Definition:</strong> ideas explaining something</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. experimental</h3>
+        <p><strong>Definition:</strong> relating to experiments</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. methods</h3>
+        <p><strong>Definition:</strong> ways of doing something</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. detailed</h3>
+        <p><strong>Definition:</strong> including many specifics</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. eliminate</h3>
+        <p><strong>Definition:</strong> get rid of completely</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(56)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. theories</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. experimental</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. methods</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. detailed</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. eliminate</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Complete Truth (Part 1)</h2>
+      <div class="story">
+        <p>The full scientific explanation that Dr. Jekyll provided in his final confession revealed both the theoretical brilliance and the moral blindness that had made his transformation experiment possible.</p>
+        <p>"I began this research," Jekyll wrote, "with the hypothesis that human moral development was hindered by the constant internal struggle between virtuous and evil impulses. I believed that if these opposing forces could be separated chemically, virtuous people could exist without temptation while evil impulses could be contained and controlled."</p>
+        <p>Jekyll's detailed description of his experimental procedures showed sophisticated understanding of chemistry, psychology, and pharmacology that exceeded anything available in contemporary scientific literature.</p>
+        <p>"The transformation formula," Jekyll explained, "was based on my discovery that moral consciousness appears to be chemically determined by specific neurological patterns that can be modified through targeted pharmaceutical intervention. By altering the brain chemistry that governs empathy, conscience, and social bonding, I was able to create psychological states that eliminated moral constraints without affecting intellectual capabilities."</p>
+        <p>But Jekyll's account also revealed his growing recognition that his fundamental assumptions about the nature of good and evil had been catastrophically wrong.</p>
+        <p>"I assumed," Jekyll continued, "that virtue and vice were separate characteristics that could be divided without affecting each other. I did not understand that moral character depends on the constant choice between good and evil alternatives, and that eliminating the possibility of evil choice would destroy moral agency rather than strengthening it."</p>
+        <p>The progressive failure that Jekyll documented showed how his scientific success had become a moral catastrophe that threatened everything he had originally intended to protect.</p>
+        <p>"Hyde," Jekyll explained, "represents not the controlled containment of evil impulses, but the complete liberation of destructive desires from any constraint by conscience, empathy, or social responsibility. He possesses all of my knowledge and intelligence, but applies these capabilities according to value systems that prioritize personal pleasure over human welfare."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Complete Truth (Part 2)</h2>
+      <div class="story">
+        <p>Jekyll's analysis of his own moral corruption revealed how the experiment had affected not just his Hyde personality but his normal Jekyll consciousness as well.</p>
+        <p>"Creating Hyde," Jekyll wrote, "corrupted Jekyll in ways that I had not anticipated. By allowing myself to experience evil through chemical transformation while maintaining the illusion of moral purity during normal consciousness, I became complicit in every crime that Hyde committed and began to think in ways that reflected Hyde's perspective rather than traditional ethical considerations."</p>
+        <p>The detailed chemical formulas that Jekyll included in his confession were accompanied by explicit warnings about the dangers of attempting to recreate his experimental procedures.</p>
+        <p>"Under no circumstances," Jekyll wrote, "should any scientist attempt to replicate my research or investigate the pharmaceutical modification of moral consciousness. The knowledge that I have gained through this experiment is too dangerous for human civilization to possess safely."</p>
+        <p>But Jekyll's final scientific analysis also included insights about human psychology that could potentially be valuable for understanding criminal behavior and treating mental illness.</p>
+        <p>"I have learned," Jekyll wrote, "that moral character is not a fixed characteristic that some people possess and others lack, but an ongoing choice that every person makes continuously through their decisions about how to respond to competing impulses and social pressures."</p>
+        <p>Jekyll's conclusion about the relationship between good and evil revealed his ultimate understanding of why his experiment had failed so catastrophically.</p>
+        <p>"Good and evil," Jekyll explained, "cannot be separated because they are not independent forces that exist separately within human consciousness. They are complementary aspects of moral agency that depend on each other for their meaning and their power to shape human character."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Complete Truth (Part 3)</h2>
+      <div class="story">
+        <p>The warning that concluded Jekyll's scientific confession was directed not just at future researchers but at humanity's general approach to scientific advancement and moral development.</p>
+        <p>"We cannot eliminate evil from human nature," Jekyll wrote, "because the struggle against evil is precisely what creates and maintains good. Any attempt to remove moral conflict from human experience will destroy our capacity for moral choice, which means destroying the essential characteristic that makes us human."</p>
+        <p>Jekyll's final message was both a plea for forgiveness and a warning about the fundamental dangers of separating scientific knowledge from ethical responsibility.</p>
+        <p>"I undertook this research believing that science could improve human nature," Jekyll concluded. "I have learned that human nature depends on accepting responsibility for our choices rather than seeking technological solutions that would eliminate the need for moral courage."</p>
+        <p>*Jekyll's final message was a warning to all future scientists.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in The Complete Truth?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of Dr. Jekyll and Mr. Hyde? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Misplaced and Dangling Modifiers</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Modifiers should be placed next to what they modify. Misplaced: 'She told a story to the king with great skill' (the king doesn't have the skill—she does). Dangling: 'Walking through the palace, the stories came to mind' (stories can't walk). Correct: 'Walking through the palace, she thought of stories.'</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Misplaced: 'The merchant found treasure in the cave that was priceless' (the cave or the treasure?). Better: 'The merchant found priceless treasure in the cave.' Dangling: 'After telling the story, the king was impressed.' Better: 'After she told the story, the king was impressed.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Literary Context</h2>
+      <p>Informational text to be added.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

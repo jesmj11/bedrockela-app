@@ -3,254 +3,381 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 83 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 83 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 83: RETURN TO SHERWOOD</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 83</h1>
-        <h2 class="lesson-subtitle">BREAKING THE CODE</h2>
-        <p class="lesson-meta">Journey to the Center of the Earth</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 83!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>BREAKING THE CODE</strong> from <em>Journey to the Center of the Earth</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Master Noun Clauses and Their Functions</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. alchemist</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">a medieval scientist who tried to transform ordinary metals into gold and discover secrets of nature</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. audacious</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">showing a willingness to take bold risks; daring</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. condemned</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">declared unfit or wrong; sentenced to punishment</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. alchemist</div>
-              <div style="flex: 2; font-style: italic; color: #666;">a medieval scientist who tried to transform ordinary metals into gold and discover secrets of nature</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. audacious</div>
-              <div style="flex: 2; font-style: italic; color: #666;">showing a willingness to take bold risks; daring</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. condemned</div>
-              <div style="flex: 2; font-style: italic; color: #666;">declared unfit or wrong; sentenced to punishment</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 BREAKING THE CODE </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">I kept the secret for approximately four hours.
-My uncle, who had not eaten all day, announced that no one in the house would eat until the code was broken. Martha looked at me with desperate eyes. My stomach growled. Gräuben was coming for dinner, and there would be no dinner.
-"Uncle," I said miserably, "I may have figured it out."
-I showed him. He read the decoded message once, twice, three times. His face went through a series of expressions — confusion, understanding, wonder, and finally, a blazing, terrifying joy.
-"Saknussemm!" he roared. "The great Saknussemm! He went to the center of the earth, and he left us directions!"
-"Uncle, surely you don't believe—"
-"Believe? Science doesn't believe or disbelieve. Science investigates! And we are going to investigate. We leave for Iceland immediately."
-"Iceland?!"
-"Sneffels Yökull is a volcano in Iceland. The message says to descend into its crater when the shadow of a specific peak — Scartaris — falls across the correct opening. Before the first of July. That gives us less than a month."
-"But Uncle — the center of the earth is thousands of miles below the surface. The heat alone would be impossible. The pressure would crush us. This is insane."
-He turned on me with the full force of his personality — all six feet of furious German professor.
-"Science has never proven that the earth's interior is hot," he said. "That is a theory. Saknussemm went and returned. He left this message as proof. Are you a scientist, Axel, or are you a coward?"
-That was unfair. But it was effective.
-I went to Gräuben, hoping she would talk sense into me — or at least give me permission to stay home. Instead, she took my hands, looked into my eyes, and said:
-"Go, Axel. Go with your uncle, and come back to me."
-And so I went.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 BREAKING THE CODE (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 BREAKING THE CODE (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. How does Axel accidentally decipher the message?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. What does Gräuben tell Axel when he asks for advice about going?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Axel knows the decoded message will lead to danger. He keeps the secret for four hours before telling his uncle. What finally makes him reveal it? What does this tell us about the balance of power in their relationship?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏹</div>
+        <h1>Lesson 83</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">RETURN TO SHERWOOD</div>
+        <div style="font-size: 1rem; color: #999;">Week 17 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Noun Clauses and Their Functions</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">A noun clause acts as a noun in a sentence, often starting with that, what, who, whoever, whether, if. They can be subjects, objects, or complements: 'What she said convinced him' (subject). 'He knew that she was clever' (object). 'The question is whether he will change' (complement).</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Subject: 'Whoever tells the best story wins.' Object: 'The king realized that he had been wrong.' Complement: 'The problem was that he couldn't trust anyone.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Identify four noun clauses in today's reading. For each, explain what function it serves (subject, object, or complement). Write three sentences with noun clauses in different positions, about themes or characters from the story.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>RETURN TO SHERWOOD</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze RETURN TO SHERWOOD</li>
+        <li>Master 1 vocabulary words</li>
+        <li>Practice grammar: Noun Clauses and Their Functions</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. renewal</h3>
+        <p><strong>Definition:</strong> the act of beginning something again after a pause; restoring to a fresh condition
+From the text: Robin returns to the greenwood and the band reassembles.
+What aspects of Robin's life undergo renewal when he returns?
+2. DEFIANCE  (noun) — open resistance; bold disobedience
+From the text: Robin leaves London without permission, breaking his pardon.
+What does Robin's defiance of the King's wishes cost him?
+3. FUGITIVE  (noun/adjective) — a person who has escaped from captivity or is in hiding
+From the text: Robin becomes a fugitive again the moment he leaves London.
+How is being a fugitive different now than when Robin was eighteen?
+4. NOSTALGIA  (noun) — a sentimental longing for the past; homesickness</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(83)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. renewal</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 RETURN TO SHERWOOD (Part 1)</h2>
+      <div class="story">
+        <p>They left London before dawn, without permission and without farewell. Robin, Marian, Little John, Friar Tuck, Will Scarlet, Allan-a-Dale, and a dozen others rode north through the spring rain, shedding their fine clothes mile by mile until they were back in Lincoln green.
+When they reached the edge of Sherwood Forest, Robin stopped his horse and breathed deep. The smell of oak and moss and wet earth filled his lungs. A thrush sang from a high branch. Somewhere deep in the trees, a deer moved through the undergrowth.
+He was home.
+Word spread quickly. Within a week, the band was back to full strength. Men who had tried to return to normal life drifted back to the greenwood — farmers who couldn't pay their taxes, soldiers who couldn't find work, young men who wanted something more than servitude and silence.
+Robin's return was not welcome everywhere. The new Sheriff of Nottingham — the old one had been removed by King Richard, but his replacement was no better — immediately sent word to London that the outlaw had broken his pardon.
+Robin didn't care. He was done with pardons and politics and the suffocating world of power. He picked up his bow, walked into the forest, and began again.
+Marian walked beside him. "No regrets?" she asked.
+"Not one," he said.
+And for a while, the old days returned. The laughter in the greenwood, the adventures on the road, the songs around the fire at night. Allan-a-Dale composed new ballads. Friar Tuck blessed the venison. Little John challenged every stranger to a fight on the bridge, and usually won.
+But the world was changing. Robin was no longer eighteen. And time, which spares no one, was beginning to make itself felt.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 RETURN TO SHERWOOD (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 RETURN TO SHERWOOD (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What does Robin risk by returning to Sherwood Forest without permission?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What warning does the narrator give about Robin's return?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. The phrase "for a while, the old days returned" suggests the happiness won't last. What has changed about Robin and his world since the early chapters? Can anyone truly go back to the way things were?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Noun Clauses and Their Functions</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>A noun clause acts as a noun in a sentence, often starting with that, what, who, whoever, whether, if. They can be subjects, objects, or complements: 'What she said convinced him' (subject). 'He knew that she was clever' (object). 'The question is whether he will change' (complement).</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Subject: 'Whoever tells the best story wins.' Object: 'The king realized that he had been wrong.' Complement: 'The problem was that he couldn't trust anyone.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Medieval Freedom and Happiness</h2>
+      <p>In medieval England, most people were tied to the land where they were born. Serfs couldn't leave their lord's estate without permission. Even freemen needed permission to travel or change occupations. "Freedom" meant something different than it does today.</p>
+      <p>Robin Hood's band represents a radical idea: freedom matters more than security or wealth. They choose danger and hardship in the forest over safety and servitude in society. The story asks: What makes a good life? Is it better to be safe and controlled, or free and at risk?</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

@@ -3,261 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 124 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 124 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 124: The Bank Vault Heist</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 124</h1>
-        <h2 class="lesson-subtitle">The Bank Vault Heist</h2>
-        <p class="lesson-meta">Sherlock Holmes</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 124!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Bank Vault Heist</strong> from <em>Sherlock Holmes</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Word Roots: Greek and Latin Foundations</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. legitimate</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">legal and proper</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. breached</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">broken through</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. confrontation</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">direct conflict or meeting</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. genius</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">exceptional intelligence</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. evenly</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">equally or fairly</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. legitimate</div>
-              <div style="flex: 2; font-style: italic; color: #666;">legal and proper</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. breached</div>
-              <div style="flex: 2; font-style: italic; color: #666;">broken through</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. confrontation</div>
-              <div style="flex: 2; font-style: italic; color: #666;">direct conflict or meeting</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. genius</div>
-              <div style="flex: 2; font-style: italic; color: #666;">exceptional intelligence</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. evenly</div>
-              <div style="flex: 2; font-style: italic; color: #666;">equally or fairly</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Bank Vault Heist </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The criminal mastermind behind the Red-Headed League scheme was revealed to be Professor James Moriarty, whose intellectual capabilities rivaled Holmes's own but were applied to systematic lawbreaking rather than justice.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Vincent Spaulding" was actually John Clay, one of Moriarty's most skilled operatives, whose patient excavation from Wilson's basement had brought him within hours of reaching the bank vault that contained London's largest repository of gold reserves.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The tunnel," Holmes explained to Watson as they waited in the bank vault for the criminals to complete their breach, "represents months of careful planning and systematic work designed to achieve the greatest bank robbery in British history."</p><p style="margin-bottom: 15px; text-indent: 2em;">The confrontation that followed demonstrated both the sophistication of Moriarty's criminal organization and Holmes's ability to anticipate and counter even the most elaborate schemes through logical analysis and careful observation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Mr. Holmes," said Clay as he emerged from the tunnel to find the detective waiting for him, "I should have known that someone would eventually recognize the true purpose of our elaborate preparation."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Clay's capture revealed that he was merely an operative following plans created by someone whose criminal intelligence exceeded anything that London's police had previously encountered.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Bank Vault Heist (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"You may have stopped this particular scheme," Clay continued with obvious confidence in his superior's capabilities, "but Professor Moriarty has resources and planning abilities that will always keep him several steps ahead of conventional law enforcement."</p><p style="margin-bottom: 15px; text-indent: 2em;">Holmes's recognition that he faced a criminal organization led by someone of extraordinary intelligence marked the beginning of his greatest challenge as a consulting detective.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Watson," Holmes observed after Clay had been arrested and the tunnel sealed, "we have encountered evidence of criminal planning that represents a new form of threat to social order and public safety."</p><p style="margin-bottom: 15px; text-indent: 2em;">The analysis that Holmes provided of Moriarty's methods revealed how systematic criminal intelligence could create problems that exceeded the capacity of ordinary law enforcement to address.</p><p style="margin-bottom: 15px; text-indent: 2em;">"This was not simply a bank robbery," Holmes explained, "but a test of our ability to recognize and counter innovative criminal techniques that most investigators would never anticipate or understand."</p><p style="margin-bottom: 15px; text-indent: 2em;">The message that Clay delivered as he was being led away by police provided Holmes with his first direct communication from the criminal mastermind who would become his greatest nemesis.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Bank Vault Heist (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"Professor Moriarty asked me to give you this," Clay said as he handed Holmes a note written in elegant handwriting that suggested both education and confidence.</p><p style="margin-bottom: 15px; text-indent: 2em;">The content of Moriarty's message revealed that their confrontation over the Red-Headed League had been anticipated and that Holmes had gained a worthy but dangerous opponent.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Mr. Holmes," the note read, "I believe we are evenly matched in intellectual capacity, though we serve different purposes. Our future encounters will determine whether logic applied to justice can triumph over logic applied to crime."</p><p style="margin-bottom: 15px; text-indent: 2em;">*"Mr. Holmes, I believe we are evenly matched."*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main mystery in The Bank Vault Heist?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Holmes use observation and deduction to solve the case?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🔍</div>
+        <h1>Lesson 124</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Bank Vault Heist</div>
+        <div style="font-size: 1rem; color: #999;">Week 25 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Word Roots: Greek and Latin Foundations</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Most academic vocabulary comes from Greek and Latin roots. Common roots: 'aud' (hear), 'dict' (speak), 'spec' (see), 'port' (carry), 'graph' (write), 'bio' (life), 'chrono' (time), 'geo' (earth). Knowing roots unlocks hundreds of words.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'Spectator' (one who sees), 'inspect' (look into), 'retrospect' (look back). Same root, different prefixes change meaning. 'Biography' (writing about life), 'biology' (study of life)—same root, different suffixes.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Choose five words from today's chapter with Greek or Latin roots. Break down each word: identify the root, any prefixes/suffixes, and literal meaning. Then find or create three other words using the same roots.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Bank Vault Heist</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Bank Vault Heist</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Word Roots: Greek and Latin Foundations</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. legitimate</h3>
+        <p><strong>Definition:</strong> legal and proper</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. breached</h3>
+        <p><strong>Definition:</strong> broken through</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. confrontation</h3>
+        <p><strong>Definition:</strong> direct conflict or meeting</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. genius</h3>
+        <p><strong>Definition:</strong> exceptional intelligence</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. evenly</h3>
+        <p><strong>Definition:</strong> equally or fairly</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(124)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. legitimate</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. breached</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. confrontation</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. genius</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. evenly</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Bank Vault Heist (Part 1)</h2>
+      <div class="story">
+        <p>The criminal mastermind behind the Red-Headed League scheme was revealed to be Professor James Moriarty, whose intellectual capabilities rivaled Holmes's own but were applied to systematic lawbreaking rather than justice.</p>
+        <p>"Vincent Spaulding" was actually John Clay, one of Moriarty's most skilled operatives, whose patient excavation from Wilson's basement had brought him within hours of reaching the bank vault that contained London's largest repository of gold reserves.</p>
+        <p>"The tunnel," Holmes explained to Watson as they waited in the bank vault for the criminals to complete their breach, "represents months of careful planning and systematic work designed to achieve the greatest bank robbery in British history."</p>
+        <p>The confrontation that followed demonstrated both the sophistication of Moriarty's criminal organization and Holmes's ability to anticipate and counter even the most elaborate schemes through logical analysis and careful observation.</p>
+        <p>"Mr. Holmes," said Clay as he emerged from the tunnel to find the detective waiting for him, "I should have known that someone would eventually recognize the true purpose of our elaborate preparation."</p>
+        <p>But Clay's capture revealed that he was merely an operative following plans created by someone whose criminal intelligence exceeded anything that London's police had previously encountered.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Bank Vault Heist (Part 2)</h2>
+      <div class="story">
+        <p>"You may have stopped this particular scheme," Clay continued with obvious confidence in his superior's capabilities, "but Professor Moriarty has resources and planning abilities that will always keep him several steps ahead of conventional law enforcement."</p>
+        <p>Holmes's recognition that he faced a criminal organization led by someone of extraordinary intelligence marked the beginning of his greatest challenge as a consulting detective.</p>
+        <p>"Watson," Holmes observed after Clay had been arrested and the tunnel sealed, "we have encountered evidence of criminal planning that represents a new form of threat to social order and public safety."</p>
+        <p>The analysis that Holmes provided of Moriarty's methods revealed how systematic criminal intelligence could create problems that exceeded the capacity of ordinary law enforcement to address.</p>
+        <p>"This was not simply a bank robbery," Holmes explained, "but a test of our ability to recognize and counter innovative criminal techniques that most investigators would never anticipate or understand."</p>
+        <p>The message that Clay delivered as he was being led away by police provided Holmes with his first direct communication from the criminal mastermind who would become his greatest nemesis.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Bank Vault Heist (Part 3)</h2>
+      <div class="story">
+        <p>"Professor Moriarty asked me to give you this," Clay said as he handed Holmes a note written in elegant handwriting that suggested both education and confidence.</p>
+        <p>The content of Moriarty's message revealed that their confrontation over the Red-Headed League had been anticipated and that Holmes had gained a worthy but dangerous opponent.</p>
+        <p>"Mr. Holmes," the note read, "I believe we are evenly matched in intellectual capacity, though we serve different purposes. Our future encounters will determine whether logic applied to justice can triumph over logic applied to crime."</p>
+        <p>*"Mr. Holmes, I believe we are evenly matched."*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main mystery in The Bank Vault Heist?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How does Holmes use observation and deduction to solve the case?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Word Roots: Greek and Latin Foundations</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Most academic vocabulary comes from Greek and Latin roots. Common roots: 'aud' (hear), 'dict' (speak), 'spec' (see), 'port' (carry), 'graph' (write), 'bio' (life), 'chrono' (time), 'geo' (earth). Knowing roots unlocks hundreds of words.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'Spectator' (one who sees), 'inspect' (look into), 'retrospect' (look back). Same root, different prefixes change meaning. 'Biography' (writing about life), 'biology' (study of life)—same root, different suffixes."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Forensic Science: From Fiction to Reality</h2>
+      <p>When Doyle wrote the Holmes stories, fingerprint analysis was brand new and controversial. Police departments didn't routinely use it until the early 1900s. Blood typing wasn't discovered until 1901. Crime scene photography was rare. Most evidence was people's word against each other.</p>
+      <p>Holmes's fictional methods predated and inspired real forensic techniques. In the stories, Holmes:
+- Examines fingerprints and knows they're unique (1880s fiction → 1900s police practice)
+- Analyzes different types of tobacco ash (fictional → real tobacco identification developed 1920s)
+- Studies handwriting and typewriter fonts (fictional → real document analysis 1910s-1920s)
+- Uses chemical tests on bloodstains (fictional → real blood testing 1900s)
+- Photographs crime scenes (rare in 1880s → standard practice by 1920s)</p>
+      <p>Doyle, who trained as a doctor, understood scientific method and applied it to crime-solving before real police did. His stories popularized the idea that physical evidence could be more reliable than eyewitness testimony—a revolutionary concept in the 1890s when trials relied heavily on people's word.</p>
+      <p>Today's crime scene investigation—collecting evidence in carefully marked bags, photographing everything, analyzing tiny traces in laboratories—looks remarkably like what Doyle imagined Holmes doing in Victorian London. Fiction predicted and shaped reality.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

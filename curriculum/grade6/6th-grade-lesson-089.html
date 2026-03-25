@@ -3,248 +3,383 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 89 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 89 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 89: THE LEGEND</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 89</h1>
-        <h2 class="lesson-subtitle">INTO DARKNESS</h2>
-        <p class="lesson-meta">Journey to the Center of the Earth</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 89!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>INTO DARKNESS</strong> from <em>Journey to the Center of the Earth</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Syntax and Sentence Structure for Effect</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. claustrophobia</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">extreme fear of confined spaces</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. indifference</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">lack of interest or concern; not caring</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. composure</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">the state of being calm and in control of oneself</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. claustrophobia</div>
-              <div style="flex: 2; font-style: italic; color: #666;">extreme fear of confined spaces</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. indifference</div>
-              <div style="flex: 2; font-style: italic; color: #666;">lack of interest or concern; not caring</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. composure</div>
-              <div style="flex: 2; font-style: italic; color: #666;">the state of being calm and in control of oneself</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 INTO DARKNESS </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">As we went deeper, the tunnels narrowed. The ceiling dropped until we were crawling on our hands and knees through passages barely wide enough for our packs. The stone pressed close on all sides — above, below, left, right. I could touch both walls simultaneously.
-I am not a brave person. I have never claimed to be. And in those narrow tunnels, with thousands of feet of rock above my head and no way forward except on my belly through the dark, I experienced a fear more intense than anything I had ever known.
-It was not the fear of a specific danger — a snake, a fall, a predator. It was the fear of the earth itself: its weight, its silence, its absolute indifference to whether I lived or died. The rock didn't care about me. It had been there for millions of years and would be there for millions more. I was nothing — a speck of life crawling through a crack in the planet's skin.
-I began to shake. My breath came in short, ragged gasps. Sweat poured down my face despite the cool air. I wanted to turn back — to crawl upward toward the sunlight, the open air, Gräuben's voice, the normal, beautiful, terrifying surface world.
-"Uncle," I said, my voice thin. "I can't do this."
-He turned in the narrow tunnel and looked at me. For once, his expression was not impatient. It was understanding.
-"Axel," he said quietly. "One step at a time. Don't look ahead. Don't think about the weight above you. Just move one hand forward, then one knee. That's all."
-It was the kindest thing he had ever said to me.
-I did as he said. One hand. One knee. One hand. One knee. The tunnel widened. The ceiling rose. We emerged into a larger passage, and I could breathe again.
-I did not mention my panic. Neither did my uncle. But Hans handed me his water flask, and I thought I saw, just for a moment, something that might have been a nod of respect.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 INTO DARKNESS (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 INTO DARKNESS (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What causes Axel's extreme fear in the narrow tunnels?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Lidenbrock help Axel through his panic?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. This is the first time Lidenbrock shows true empathy. Why is this moment significant for their relationship? How is it different from how he usually treats Axel?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏹</div>
+        <h1>Lesson 89</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE LEGEND</div>
+        <div style="font-size: 1rem; color: #999;">Week 18 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Syntax and Sentence Structure for Effect</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Analyze the syntax of three sentences from today's chapter. For each, explain how the sentence structure (length, order, type) affects the meaning or impact. Then write three sentences about the chapter using varied syntax to create different effects (tension, flow, emphasis).</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THE LEGEND</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THE LEGEND</li>
+        <li>Master 2 vocabulary words</li>
+        <li>Practice language: Syntax and Sentence Structure for Effect</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. endure</h3>
+        <p><strong>Definition:</strong> to continue to exist; to survive through difficult conditions</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. principle</h3>
+        <p><strong>Definition:</strong> a fundamental truth or belief that guides behavior</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(89)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. endure</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. principle</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE LEGEND (Part 1)</h2>
+      <div class="story">
+        <p>They buried Robin Hood where his arrow fell — at the edge of Sherwood Forest, beneath an ancient oak tree, with the green canopy overhead and the open meadow stretching away to the south. Little John dug the grave himself. Marian laid Robin's bow beside him.
+The Merry Men gathered for the last time. Little John. Friar Tuck. Will Scarlet. Allan-a-Dale. And dozens of others — the men and women who had lived and fought and laughed together in the greenwood for more than twenty years.
+Allan-a-Dale played his lute. No one spoke. The music said everything.
+Marian stood at the grave for a long time after the others had gone. She touched the fresh earth with her hand and whispered something that no one else heard. Then she walked into the forest and disappeared among the trees.
+In the weeks that followed, the band scattered. There was no one who could replace Robin Hood — not because no one was brave enough or skilled enough, but because Robin had been the one thing that held them all together. He was the idea that had made the greenwood more than just a hiding place for outlaws.
+Little John went north. Some say he lived to be very old. Friar Tuck returned to the church — a small, poor church in a farming village, where he served the people Robin had always fought for. Will Scarlet traveled to the continent, still wearing his scarlet. Allan-a-Dale wandered England, singing songs about Robin Hood at every fair and market and manor house that would have him.
+And the songs survived.
+Long after the oaks of Sherwood Forest had grown old and fallen and been replaced by new trees, the story of Robin Hood lived on. Farmers told it to their children. Minstrels sang it in great halls and village squares. Scholars wrote it down. And every person who heard the tale understood the same simple truth that Robin had lived by:
+The strong should protect the weak. The rich owe a debt to the poor. Courage means standing up for what is right, even when the powerful say it is wrong. And no law written by a tyrant is more just than the law written in a good person's heart.
+Robin Hood is buried at the edge of Sherwood Forest, beneath the greenwood tree, with his great bow beside him and an arrow's flight between him and the world.
+But the legend never rests. The legend walks the roads of England still, looking for injustice, ready to fight, and always — always — wearing Lincoln green.
+THE END</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE LEGEND (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE LEGEND (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What happens to the Merry Men after Robin's death?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Why does the narrator say Robin Hood's legend is "immortal"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. The book ends by saying Robin Hood's principles are needed in every age. Do you agree? Where in the modern world do you see the need for someone to "rob from the rich and give to the poor"? Explain using evidence from the book and your own experience.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Syntax and Sentence Structure for Effect</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 How Legends Survive</h2>
+      <p>The Robin Hood legend has survived for over 700 years through ballads, plays, and stories. Why? Because it addresses timeless themes: rich vs. poor, justice vs. law, freedom vs. security, individual vs. authority. Every generation reinterprets the legend for its own time.</p>
+      <p>Historians debate whether Robin Hood was real. Some evidence suggests several real outlaws might have inspired the legend. But historical accuracy misses the point: Robin Hood is real as an idea. He represents the hope that someone will stand up to injustice, that the powerful can be challenged, and that one person with courage can make a difference.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

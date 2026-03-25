@@ -3,252 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 99 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 99 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 99: TENTLAND</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 99</h1>
-        <h2 class="lesson-subtitle">THE STORM</h2>
-        <p class="lesson-meta">Journey to the Center of the Earth</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 99!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>THE STORM</strong> from <em>Journey to the Center of the Earth</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Connotation vs. Denotation: Precision in Word Choice</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. intensified</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">became stronger or more extreme</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. exhilarated</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">very happy, animated, or energized</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. endurance</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">the ability to withstand hardship or adversity over a long period</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. intensified</div>
-              <div style="flex: 2; font-style: italic; color: #666;">became stronger or more extreme</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. exhilarated</div>
-              <div style="flex: 2; font-style: italic; color: #666;">very happy, animated, or energized</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. endurance</div>
-              <div style="flex: 2; font-style: italic; color: #666;">the ability to withstand hardship or adversity over a long period</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE STORM </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">On the third day at sea, the storm hit.
-It began with the wind — a sudden, violent blast from the south that nearly capsized the raft. The sail tore loose from its lashing and whipped wildly. Hans grabbed it, wrestling it down with his bare hands while my uncle and I clung to the mast.
-Then the lightning began.
-Not lightning from clouds — there were no clouds. The electrical discharge that lit the cavern ceiling intensified, concentrating into brilliant, jagged bolts that cracked between the rock above and the water below. The noise was deafening — a continuous rolling thunder that echoed off the cavern walls and multiplied into a roar.
-The waves grew enormous. The raft climbed up walls of water and plunged down the other side. Spray drenched us. Our supplies slid across the platform, and I grabbed the food barrel just before it went over the edge.
-Hans lashed everything down with methodical calm, as if tying knots in a hurricane were a perfectly normal activity. My uncle, incredibly, was exhilarated. He stood at the front of the raft, soaked and buffeted, staring into the storm with an expression of pure delight.
-"Magnificent!" he shouted over the roar. "A subterranean electrical storm! Think of the scientific implications!"
-"I'm thinking of the dying implications!" I shouted back.
-The storm lasted eighteen hours. Eighteen hours of wind, waves, lightning, and the constant fear that the next wave would be the one that broke the raft apart. I spent most of it with my arms wrapped around the mast, my face pressed against the mushroom stalk, praying.
-When it finally ended, the sea smoothed. The ceiling dimmed back to its normal pale glow. The silence was overwhelming.
-We were alive. The raft had held. Our supplies were battered but intact.
-Hans, who had not spoken a word during the entire storm, untied the sail and raised it. The breeze caught it, and we continued east.
-"How much farther?" I asked weakly.
-My uncle studied the horizon. "As far as it takes," he said.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE STORM (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE STORM (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What causes the underground storm?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do Lidenbrock and Axel react differently to the storm?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Lidenbrock finds the storm "magnificent" while Axel finds it terrifying. What does this contrast reveal about each character's relationship with danger and discovery?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏝️</div>
+        <h1>Lesson 99</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TENTLAND</div>
+        <div style="font-size: 1rem; color: #999;">Week 20 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Connotation vs. Denotation: Precision in Word Choice</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Denotation is the dictionary definition; connotation is the emotional association. 'Childish' (negative) vs. 'youthful' (positive) vs. 'childlike' (neutral/positive)—same general meaning, different feelings. Authors choose words carefully for their connotations.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'The king was stubborn' (negative) vs. 'The king was determined' (positive) vs. 'The king was resolute' (strongly positive). Same action, different judgment implied by word choice.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find five powerful word choices in today's chapter where the author could have used synonyms. For each, identify the denotation, the connotation (positive/negative/neutral), and discuss why the author chose that specific word over alternatives.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>TENTLAND</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze TENTLAND</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice language: Connotation vs. Denotation: Precision in Word Choice</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. outpost</h3>
+        <p><strong>Definition:</strong> a small settlement or military position at a distance from the main group</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. surveillance</h3>
+        <p><strong>Definition:</strong> close observation, especially of a suspected person or area</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. encyclopedia</h3>
+        <p><strong>Definition:</strong> a book or set of books containing detailed information on many subjects</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(99)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. outpost</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. surveillance</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. encyclopedia</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 TENTLAND (Part 1)</h2>
+      <div class="story">
+        <p>As our territory expanded, one home wasn't enough. We needed a second base — closer to the beach, where we could access the wreck for supplies and keep watch for passing ships.
+We built Tentland on a sandy rise overlooking the bay. It was simpler than Falconest — a large canvas tent supported by bamboo poles, with a wooden floor, a cooking area, and a storage shed. But it served a vital purpose: from Tentland, we could see the ocean for miles in every direction.
+Fritz constructed a flagpole and raised a makeshift flag — a white sheet with a red cross, visible from far out at sea. If a ship passed, we wanted to be seen.
+Elizabeth divided our time between the two homes. Weekdays at Falconest, where the garden and animals needed tending. Weekends at Tentland, where we fished, swam, and watched the horizon.
+The boys loved Tentland. It felt like a vacation — sleeping under canvas, cooking over an open fire, swimming in the warm bay. Jack and Franz built sand fortresses and defended them against imaginary pirates. Fritz practiced shooting at targets on the beach. Ernest collected shells and cataloged them in a leather-bound journal he'd salvaged from the ship, which was slowly becoming an encyclopedia of the island's natural history.
+But Tentland also served a more serious purpose. From the beach, I could study the wreck. The ship was still wedged on the reef, slowly breaking apart as the waves worked on it. Each week, more of the hull was exposed or washed away. I made regular trips to salvage whatever I could before the ocean claimed it: more tools, nails, rope, canvas, books, medicine, and — most valuably — a set of window glass that Elizabeth immediately installed in Falconest.
+"Glass windows in a treehouse," Fritz said, shaking his head. "We're building a civilization on a desert island."
+"That," Elizabeth said, "is exactly the point."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 TENTLAND (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 TENTLAND (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main purpose of building Tentland near the beach?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What does Fritz mean when he says, "We're building a civilization on a desert island"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Elizabeth responds to Fritz by saying, "That is exactly the point." What does she mean? How does Elizabeth's vision for the family differ from just "getting by"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Connotation vs. Denotation: Precision in Word Choice</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Denotation is the dictionary definition; connotation is the emotional association. 'Childish' (negative) vs. 'youthful' (positive) vs. 'childlike' (neutral/positive)—same general meaning, different feelings. Authors choose words carefully for their connotations.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'The king was stubborn' (negative) vs. 'The king was determined' (positive) vs. 'The king was resolute' (strongly positive). Same action, different judgment implied by word choice."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Animal Domestication and Hunting</h2>
+      <p>The Robinson family brought animals from the wrecked ship, giving them a huge advantage. Domesticated animals provide meat, milk, eggs, transportation, and companionship. Chickens adapt easily and provide protein. Goats give milk and can browse on almost any vegetation. Dogs help hunt and guard. Hunting wild animals requires skill—traps, snares, bows, or spears. Tropical islands host different game depending on location: wild pigs, birds, iguanas, and more. Fishing provides reliable protein if you know how. Without modern weapons, hunting is difficult and dangerous. The family's guns gave them temporary advantage, but bullets would eventually run out.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>The family builds shelter using only natural materials and salvaged tools. Describe how you would build a shelter if you were stranded. What materials would you use? How would you design it?</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

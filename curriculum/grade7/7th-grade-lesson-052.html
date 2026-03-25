@@ -3,309 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7th Grade Day 52 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 52 - BedrockELA</title>
   <style>
-    body { 
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: #FFFFFF; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
-    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    .nav-controls { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      margin-top: 30px; 
-      padding: 20px; 
-      background: #f9f9f9; 
-      border-radius: 10px; 
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
-      bottom: 20px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-btn { 
-      padding: 12px 24px; 
-      background: #305853; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: all 0.2s;
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
-    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-    .progress-bar { 
-      flex: 1; 
-      margin: 0 20px; 
-      height: 10px; 
-      background: #e0e0e0; 
-      border-radius: 10px; 
-      overflow: hidden; 
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
     }
-    .progress-fill { 
-      height: 100%; 
-      background: linear-gradient(90deg, #305853, #B06821); 
-      transition: width 0.3s ease;
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
       border-radius: 10px;
     }
-    .page-indicator { 
-      font-size: 0.9em; 
-      color: #666; 
-      font-weight: 600; 
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
     }
   </style>
 </head>
 <body>
-  <div class="lesson-container">
-    <div id="lessonContent">
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 52: Gilbert Again</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌸</div>
+        <h1>Lesson 52</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Gilbert Again</div>
+        <div style="font-size: 1rem; color: #999;">Week 11 • Classic Literature • 7th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Gilbert Again</strong> from <em>Classic Literature</em>.</p>
       
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 52</h1>
-        <h2 class="lesson-subtitle">Gilbert Again</h2>
-        <p class="lesson-meta">Anne of Green Gables</p>
-        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 52!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Gilbert Again</strong> from <em>Tales from the Arabian Nights</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Semantic Fields and Word Families</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. relinquish</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">To voluntarily give up or let go of something.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. intermediary</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">A person who acts as a go-between for two others.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. reconciliation</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">The process of restoring friendly relations after a conflict.</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. relinquish</div>
-              <div style="flex: 2; font-style: italic; color: #666;">To voluntarily give up or let go of something.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. intermediary</div>
-              <div style="flex: 2; font-style: italic; color: #666;">A person who acts as a go-between for two others.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. reconciliation</div>
-              <div style="flex: 2; font-style: italic; color: #666;">The process of restoring friendly relations after a conflict.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Gilbert Again </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Gilbert Again</p><p style="margin-bottom: 15px; text-indent: 2em;">Gilbert Blythe came to see her in October.</p><p style="margin-bottom: 15px; text-indent: 2em;">She knew he was coming — he'd sent a note asking if she'd receive him, which was formal enough that she'd read it twice to make sure it meant what she thought it meant. She'd said yes, because the grudge was six years old and she was tired of carrying it, and because Matthew was gone and she had been thinking lately about the uses of stubbornness versus the uses of letting things go.</p><p style="margin-bottom: 15px; text-indent: 2em;">He came on a Saturday afternoon. He sat in the parlor and they drank tea and looked at each other across the considerable history of their acquaintance.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I wanted to tell you," he said, "that I relinquished my claim on the Avonlea school so you could have it."</p><p style="margin-bottom: 15px; text-indent: 2em;">She'd known this. She'd been told by the school trustees. She hadn't known how to feel about it.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You gave up the school," she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You needed it more. I've arranged something at White Sands." A pause. "Also I've been trying to apologize for six years. I thought it might be a way to start."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne looked at him. He was the same — quick and dark and clever — and also different in the way people are after years of difficulty. There was something steadier in him than there had been at twelve.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Gilbert Again (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"It was carrots," she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I know. It was unkind. I was twelve and I was trying to make you look at me and I chose the wrong way."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Why did you want me to look at you?"</p><p style="margin-bottom: 15px; text-indent: 2em;">He raised his eyebrows slightly. "You were the most interesting person in the room from the moment you walked in. I'd never met anyone who actually cared that much about everything. I wanted you to notice me."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne sat with this for a moment.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You could have just said hello," she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Yes," he agreed. "I could have done that."</p><p style="margin-bottom: 15px; text-indent: 2em;">They were quiet for a moment. Outside the window the October leaves were going, the oaks burning red against the pale sky.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I forgive you," Anne said. "I think I forgave you some time ago, really. I was just too committed to the grudge to admit it."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Gilbert Again (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"I know," he said. "I could tell." A pause. "Can we — would you like to try being friends? We've been rivals for six years. I think we'd be better as something else."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne thought about the long years of watching him across classrooms. The way she'd pushed herself harder because he was there. The note he'd sent, formal and careful, because he didn't want to take her by surprise.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I think we might," she said. "Though you should know I'm still planning to be better than you at most things."</p><p style="margin-bottom: 15px; text-indent: 2em;">Gilbert laughed — the real laugh, not the school laugh. "I know," he said. "I'm counting on it."</p><p style="margin-bottom: 15px; text-indent: 2em;">She walked him to the gate when he left. The evening was coming in cool and clear, the first real chill of autumn.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Friends, then," he said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Friends," she agreed.</p><p style="margin-bottom: 15px; text-indent: 2em;">She watched him go down the lane. She felt, for the first time in a long time, that the future — the actual future, not the imagined one — might be interesting.</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. Gilbert relinquished the Avonlea school so Anne could have it. What does this action tell us about his character?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
-                      <span>A) He did not really want the school</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
-                      <span>B) He is showing — through action, not words — that he values Anne's wellbeing over his own convenience, which is a kind of love</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
-                      <span>C) He is trying to make her feel obligated to him</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
-                      <span>D) The White Sands school was actually a better opportunity</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. Anne admits she forgave Gilbert 'some time ago' but was 'too committed to the grudge to admit it.' What does this self-awareness show about her growth?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
-                      <span>A) She is being too hard on herself</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
-                      <span>B) She is now able to examine her own behavior honestly — to see when she is holding on to something for reasons that no longer serve her</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
-                      <span>C) She is trying to seem humble in front of Gilbert</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
-                      <span>D) She has outgrown the temper that started the grudge</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="9">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language Skill: Semantic Fields and Word Families</h2>
-        
-        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-          <p style="line-height: 1.8; margin-bottom: 15px;">Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
-          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-          <p style="font-style: italic; color: #555; line-height: 1.6;">Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect.</p>
-        </div>
-        
-        <div class="skill-practice">
-          <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-          <p style="margin-bottom: 15px;">Identify three semantic fields in today's reading (groups of related words the author uses). For each field, list at least five words and explain how the subtle differences between them affect meaning. Create your own varied sentence using words from one semantic field.</p>
-          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
-          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter connect to the overall theme of "Who You Want to Be vs. Who You Actually Are"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your reflection here..."></textarea>
-        <button onclick="window.saveJournal(22)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
-      </div>
-    </div>
-  
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Gilbert Again</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice language: Semantic Fields and Word Families</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
     </div>
     
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressBar"></div>
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. relinquish</h3>
+        <p><strong>Definition:</strong> To voluntarily give up or let go of something.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+      
+      <div class="vocab-word">
+        <h3>2. intermediary</h3>
+        <p><strong>Definition:</strong> A person who acts as a go-between for two others.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. reconciliation</h3>
+        <p><strong>Definition:</strong> The process of restoring friendly relations after a conflict.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
     </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. relinquish</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. intermediary</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. reconciliation</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Gilbert Again (Part 1)</h2>
+      <div class="story">
+        <p>Gilbert Again</p>
+        <p>Gilbert Blythe came to see her in October.</p>
+        <p>She knew he was coming — he'd sent a note asking if she'd receive him, which was formal enough that she'd read it twice to make sure it meant what she thought it meant. She'd said yes, because the grudge was six years old and she was tired of carrying it, and because Matthew was gone and she had been thinking lately about the uses of stubbornness versus the uses of letting things go.</p>
+        <p>He came on a Saturday afternoon. He sat in the parlor and they drank tea and looked at each other across the considerable history of their acquaintance.</p>
+        <p>"I wanted to tell you," he said, "that I relinquished my claim on the Avonlea school so you could have it."</p>
+        <p>She'd known this. She'd been told by the school trustees. She hadn't known how to feel about it.</p>
+        <p>"You gave up the school," she said.</p>
+        <p>"You needed it more. I've arranged something at White Sands." A pause. "Also I've been trying to apologize for six years. I thought it might be a way to start."</p>
+        <p>Anne looked at him. He was the same — quick and dark and clever — and also different in the way people are after years of difficulty. There was something steadier in him than there had been at twelve.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Gilbert Again (Part 2)</h2>
+      <div class="story">
+        <p>"It was carrots," she said.</p>
+        <p>"I know. It was unkind. I was twelve and I was trying to make you look at me and I chose the wrong way."</p>
+        <p>"Why did you want me to look at you?"</p>
+        <p>He raised his eyebrows slightly. "You were the most interesting person in the room from the moment you walked in. I'd never met anyone who actually cared that much about everything. I wanted you to notice me."</p>
+        <p>Anne sat with this for a moment.</p>
+        <p>"You could have just said hello," she said.</p>
+        <p>"Yes," he agreed. "I could have done that."</p>
+        <p>They were quiet for a moment. Outside the window the October leaves were going, the oaks burning red against the pale sky.</p>
+        <p>"I forgive you," Anne said. "I think I forgave you some time ago, really. I was just too committed to the grudge to admit it."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Gilbert Again (Part 3)</h2>
+      <div class="story">
+        <p>"I know," he said. "I could tell." A pause. "Can we — would you like to try being friends? We've been rivals for six years. I think we'd be better as something else."</p>
+        <p>Anne thought about the long years of watching him across classrooms. The way she'd pushed herself harder because he was there. The note he'd sent, formal and careful, because he didn't want to take her by surprise.</p>
+        <p>"I think we might," she said. "Though you should know I'm still planning to be better than you at most things."</p>
+        <p>Gilbert laughed — the real laugh, not the school laugh. "I know," he said. "I'm counting on it."</p>
+        <p>She walked him to the gate when he left. The evening was coming in cool and clear, the first real chill of autumn.</p>
+        <p>"Friends, then," he said.</p>
+        <p>"Friends," she agreed.</p>
+        <p>She watched him go down the lane. She felt, for the first time in a long time, that the future — the actual future, not the imagined one — might be interesting.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. Gilbert relinquished the Avonlea school so Anne could have it. What does this action tell us about his character?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Anne admits she forgave Gilbert 'some time ago' but was 'too committed to the grudge to admit it.' What does this self-awareness show about her growth?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Semantic Fields and Word Families</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Did You Know?</h2>
+      <p>This chapter is part of 2 and explores themes of human nature, morality, and society. These timeless stories continue to influence literature and culture today.</p>
+      
+      <h3>Think About It:</h3>
+      <p>How do you think the themes in this chapter relate to modern life? What lessons can we learn?</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>Reflect on today's chapter. What stood out to you? How do you relate to the characters or themes? What questions do you have? (10-15 sentences minimum)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
 
   <script>
@@ -313,8 +363,8 @@
     const totalPages = 11;
     
     function showPage(pageNum) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -322,20 +372,31 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
     
-    window.saveJournal = function(day) {
-      alert('Journal entry saved! ✅');
-      // In production, save to Firebase
-    };
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
     
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

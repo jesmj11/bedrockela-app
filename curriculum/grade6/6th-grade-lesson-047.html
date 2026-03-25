@@ -3,247 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 47 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 47 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 47: THE LOST CITY</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 47</h1>
-        <h2 class="lesson-subtitle">THE TINKER AND THE WARRANT</h2>
-        <p class="lesson-meta">The Merry Adventures of Robin Hood</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 47!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>THE TINKER AND THE WARRANT</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 2 new vocabulary words in context</li>
-            <li>Apply Etymology: Word Histories and Evolution</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. warrant</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">an official document authorizing arrest or some other action</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. cunning</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">clever in a sneaky or deceptive way; skill in achieving one's aims through trickery
-From the text: Robin tricks the tinker into drinking while stealing the warrant.
-How does Robin use cunning instead of force in this chapter?
-3. RECRUIT  (verb/noun) — to persuade someone to join a group; a new member</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. warrant</div>
-              <div style="flex: 2; font-style: italic; color: #666;">an official document authorizing arrest or some other action</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. cunning</div>
-              <div style="flex: 2; font-style: italic; color: #666;">clever in a sneaky or deceptive way; skill in achieving one's aims through trickery
-From the text: Robin tricks the tinker into drinking while stealing the warrant.
-How does Robin use cunning instead of force in this chapter?
-3. RECRUIT  (verb/noun) — to persuade someone to join a group; a new member</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TINKER AND THE WARRANT </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">One day, a tinker came tramping down the forest road — a big, cheerful man who mended pots and pans for a living. His name was Middle, and he carried a heavy cudgel and a rolled-up document tucked inside his shirt.
-Robin, disguised as a simple traveler, fell into step beside him.
-"Good morning, friend. Where are you headed?"
-"To find Robin Hood," the tinker said proudly. "I've got a warrant for his arrest, signed by the Sheriff himself. Fifty pounds reward if I bring him in."
-Robin nearly choked. "Robin Hood! That's a dangerous man, I hear. You'd be wise to be careful."
-"Careful?" The tinker laughed. "I've fought bears. I've wrestled bulls. One outlaw doesn't worry me."
-Robin suggested they stop at a tavern for a drink. The tinker happily agreed. Over several mugs of ale, Robin quietly slipped the warrant out of the tinker's shirt and hid it. When the tinker finally reached for the document and found it gone, he turned on Robin in a rage.
-"You stole my warrant! You're one of his men!"
-"Worse than that," Robin said, grinning. "I'm Robin Hood himself."
-The tinker swung his cudgel. Robin ducked. What followed was a furious fight — cudgel against sword, strength against speed — that went crashing through the tavern and out into the road. Tables were overturned. Mugs were shattered. The tavern keeper dove behind the bar and stayed there.
-In the end, they fought to a draw. Both men stood panting, bruised, and grinning at each other.
-"You're a fine fighter," Robin said. "Forget the warrant. Join us."
-The tinker looked at the torn warrant, looked at Robin, looked at the beautiful forest stretching in every direction — and made his choice.
-"The Sheriff can find someone else," he said.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TINKER AND THE WARRANT (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TINKER AND THE WARRANT (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. How does Robin deal with the tinker who has a warrant for his arrest?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. What convinces the tinker to join Robin's band instead of arresting him?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Robin uses cleverness rather than violence to handle the tinker. How does this approach connect to Robin's larger character? What pattern do you see in how Robin recruits new members?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌊</div>
+        <h1>Lesson 47</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE LOST CITY</div>
+        <div style="font-size: 1rem; color: #999;">Week 10 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Etymology: Word Histories and Evolution</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Choose five interesting words from today's chapter. Research the etymology of each (use a dictionary with etymological information). Write the original language, literal meaning, and how the word's current usage relates to or differs from its origin.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THE LOST CITY</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THE LOST CITY</li>
+        <li>Master 4 vocabulary words</li>
+        <li>Practice language: Etymology: Word Histories and Evolution</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. ruins</h3>
+        <p><strong>Definition:</strong> the remains of a building or city that has been destroyed or decayed</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. archaeology</h3>
+        <p><strong>Definition:</strong> the study of human history through the examination of physical remains</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. preserved</h3>
+        <p><strong>Definition:</strong> kept in its original state; protected from damage or decay</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. catastrophe</h3>
+        <p><strong>Definition:</strong> a sudden disaster causing great damage or suffering</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(47)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. ruins</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. archaeology</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. preserved</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. catastrophe</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE LOST CITY (Part 1)</h2>
+      <div class="story">
+        <p>Two nights later, Nemo woke me at midnight.
+"Get dressed, Professor. I want to show you something."
+We suited up in diving gear—just the two of us this time—and stepped out onto the ocean floor. It was pitch dark. Our electric lanterns cut narrow beams through the blackness. We were deep—very deep. The pressure squeezed my suit against my body, and every breath felt heavy.
+Nemo led me up a steep, rocky slope. We climbed for what felt like an hour, picking our way over boulders and loose stone. The ground beneath us changed—it became too regular, too flat. I looked down and realized I was walking on carved stone blocks. Steps. I was climbing steps.
+At the top of the ridge, Nemo turned off his lantern and pointed.
+Below us, lit by the red glow of an underwater volcano, lay the ruins of a city.
+Enormous columns lay toppled across wide streets. The outlines of temples and palaces were visible through the murk, their walls still standing after thousands of years beneath the sea. Statues, half-buried in sediment, stared up at us with blank stone eyes. An aqueduct stretched into the distance, its arches still intact.
+I knew what I was looking at. Every scientist in the world would have given anything to stand where I stood.
+Atlantis.
+The lost continent. The civilization that Plato wrote about twenty-four hundred years ago—a great island empire that sank beneath the waves in a single day and night of catastrophe. Most scholars considered it a myth. But here it was, spread out before me like a map of the ancient world, preserved by the cold, dark water of the deep Atlantic.
+I sank to my knees on the carved stone steps. Tears blurred my vision inside my helmet.
+Nemo stood beside me, arms crossed, staring out at the drowned city. In the red light of the volcano, his face looked like a statue itself—ancient, proud, and impossibly sad.
+We stayed for an hour. Neither of us wanted to leave. But the air supply demanded it, and we made the long walk back to the Nautilus in silence.
+I did not sleep that night. I lay in my bunk, staring at the ceiling, trying to process what I had seen. The greatest archaeological discovery in human history—and I could never tell anyone about it.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE LOST CITY (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE LOST CITY (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. How does Aronnax realize he is looking at the ruins of Atlantis?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Why does Aronnax cry when he sees Atlantis?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Aronnax says this is "the greatest archaeological discovery in human history — and I could never tell anyone about it." How does this moment capture the central tragedy of being Nemo's prisoner?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Etymology: Word Histories and Evolution</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Underwater Archaeology: Shipwrecks and Lost Cities</h2>
+      <p>The ocean floor is a museum of human history. Thousands of shipwrecks rest in the deep, from ancient Greek triremes to World War II battleships. Each one is a time capsule, preserving artifacts that would decay on land.</p>
+      <p>The RMS Titanic, discovered in 1985 at a depth of 12,500 feet, is the most famous shipwreck. Its debris field contains thousands of objects—shoes, dishes, luggage—frozen in time. The ship itself is slowly being consumed by metal-eating bacteria and will eventually collapse.</p>
+      <p>But there are older, stranger discoveries. Divers have found 3,000-year-old Phoenician cargo ships with intact wine jars. The Antikythera mechanism, discovered in a Roman shipwreck, turned out to be an ancient computer used to predict astronomical positions.</p>
+      <p>Some archaeologists search for legendary lost cities like Atlantis. While Atlantis is myth, real submerged cities exist: Heracleion in Egypt, swallowed by the Mediterranean 1,200 years ago, was rediscovered in 2000 with temples, statues, and ships intact.</p>
+      <p>The ocean preserves history that land destroys—but it also hides it. Most shipwrecks will never be found.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

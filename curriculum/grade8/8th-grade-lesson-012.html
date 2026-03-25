@@ -3,261 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 12 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 12 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 12: Rejected Connection</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 12</h1>
-        <h2 class="lesson-subtitle">Rejected Connection</h2>
-        <p class="lesson-meta">Frankenstein</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 12!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Rejected Connection</strong> from <em>Frankenstein</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Academic Vocabulary: Tier 2 Words Across Disciplines</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. rejected</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">refused or dismissed</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. blind</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">unable to see</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. violent</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">using physical force</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. transformation</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">complete change</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. innocence</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">lack of guilt or evil</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. rejected</div>
-              <div style="flex: 2; font-style: italic; color: #666;">refused or dismissed</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. blind</div>
-              <div style="flex: 2; font-style: italic; color: #666;">unable to see</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. violent</div>
-              <div style="flex: 2; font-style: italic; color: #666;">using physical force</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. transformation</div>
-              <div style="flex: 2; font-style: italic; color: #666;">complete change</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. innocence</div>
-              <div style="flex: 2; font-style: italic; color: #666;">lack of guilt or evil</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Rejected Connection </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The attempt that would determine whether the creature could find acceptance in human society despite his appearance was carefully planned over months of observation and internal debate about the risks of revealing himself to the De Lacey family.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I had learned enough about human nature," the creature explained to Victor, "to understand that initial visual contact would provoke the same horrified rejection that I had experienced in every previous encounter with human beings. But I had also observed that this family possessed unusual capacity for compassion and moral reasoning."</p><p style="margin-bottom: 15px; text-indent: 2em;">The strategy that the creature developed was based on his recognition that the blind father, unable to see his appearance, might be able to respond to his words and intentions rather than reacting with instinctive revulsion to his physical form.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I chose a time," the creature continued, "when Felix and Safie were away from the cottage, leaving the old man alone and therefore unable to receive assistance from others who might prevent rational conversation between us."</p><p style="margin-bottom: 15px; text-indent: 2em;">The months of preparation for this crucial encounter included not just language practice and philosophical development, but careful consideration of how to present himself in ways that would emphasize his peaceful intentions and intellectual capabilities.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I had rehearsed," the creature said, "explanations of my situation that would reveal my isolation and desire for connection without immediately disclosing the artificial nature of my creation or the abandonment by my creator that had shaped my early experiences."</p><p style="margin-bottom: 15px; text-indent: 2em;">The approach to the cottage required courage that exceeded anything the creature had experienced during his months of hidden existence, because this encounter would determine whether any form of human acceptance was possible or whether he was condemned to permanent isolation.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Rejected Connection (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"I knocked on the door," the creature remembered, "with hands that were trembling not from cold but from the knowledge that this conversation would either open possibilities for connection that I desperately needed or confirm that I was forever barred from the companionship that made human existence meaningful."</p><p style="margin-bottom: 15px; text-indent: 2em;">The elderly De Lacey's response to the creature's request for shelter and conversation was everything that the creature had hoped for—kindness, interest, and willingness to listen to a stranger's story without immediate judgment or rejection.</p><p style="margin-bottom: 15px; text-indent: 2em;">"He invited me in," the creature said, "offered me food and warmth, and listened to my account of being a traveler without family or community with sympathy that proved human beings were indeed capable of the compassion that their literature and philosophy claimed to value."</p><p style="margin-bottom: 15px; text-indent: 2em;">The conversation that followed was the first genuine human interaction that the creature had experienced since his awakening, and it provided him with hope that acceptance might be possible despite the challenges posed by his appearance.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The old man," the creature continued, "responded to my expressions of loneliness and desire for friendship with advice about the importance of perseverance and the possibility that even the most isolated individuals could find community with people who shared their values rather than their origins."</p><p style="margin-bottom: 15px; text-indent: 2em;">But the tragic conclusion of this hopeful encounter came when Felix and Safie returned to discover the conversation between their father and the creature whose appearance they interpreted as a threat to the blind man's safety.</p><p style="margin-bottom: 15px; text-indent: 2em;">"They saw only the monster," the creature said with pain that had not diminished during years of reflection on this pivotal moment. "Despite my peaceful posture, my respectful speech, and their father's obvious comfort with my presence, they responded with immediate violence aimed at driving me away from their home."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Rejected Connection (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The beating that followed was devastating not because of physical pain, which the creature's powerful constitution allowed him to endure, but because of the psychological destruction that resulted from having his hopes for acceptance brutally crushed.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I understood," the creature said, "that no amount of intellectual development, moral behavior, or peaceful intention could ever overcome the barrier created by my appearance. I was condemned to isolation not because of who I was, but because of what I looked like."</p><p style="margin-bottom: 15px; text-indent: 2em;">The transformation that occurred during the creature's flight from the De Lacey cottage was as complete and irreversible as Victor's original act of creation had been.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I left their clearing," the creature concluded, "as a different being than I had been when I approached their door. Hope had been replaced by rage, loneliness by hatred, and desire for acceptance by determination to make the world pay for rejecting what it had no right to judge."</p><p style="margin-bottom: 15px; text-indent: 2em;">*If he could not have love, he would have revenge.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in Rejected Connection?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of Frankenstein? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">⚡</div>
+        <h1>Lesson 12</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Rejected Connection</div>
+        <div style="font-size: 1rem; color: #999;">Week 3 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Academic Vocabulary: Tier 2 Words Across Disciplines</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Tier 2 words (analyze, illustrate, demonstrate, evaluate, synthesize, contextualize) appear across subjects and are essential for academic success. They're more sophisticated than everyday words but not technical jargon. Mastering them improves reading and writing in all classes.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Instead of: 'Show how Scheherazade was smart,' write: 'Analyze how Scheherazade demonstrated strategic intelligence.' The tier 2 words (analyze, demonstrated, strategic) make thinking more precise.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Identify three tier 2 (academic) words in today's reading or questions. Use each in a sentence about the chapter. Then rewrite three simple sentences from your notes using tier 2 vocabulary to make them more academically sophisticated.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Rejected Connection</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Rejected Connection</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Academic Vocabulary: Tier 2 Words Across Disciplines</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. rejected</h3>
+        <p><strong>Definition:</strong> refused or dismissed</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. blind</h3>
+        <p><strong>Definition:</strong> unable to see</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. violent</h3>
+        <p><strong>Definition:</strong> using physical force</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. transformation</h3>
+        <p><strong>Definition:</strong> complete change</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. innocence</h3>
+        <p><strong>Definition:</strong> lack of guilt or evil</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(12)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. rejected</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. blind</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. violent</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. transformation</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. innocence</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Rejected Connection (Part 1)</h2>
+      <div class="story">
+        <p>The attempt that would determine whether the creature could find acceptance in human society despite his appearance was carefully planned over months of observation and internal debate about the risks of revealing himself to the De Lacey family.</p>
+        <p>"I had learned enough about human nature," the creature explained to Victor, "to understand that initial visual contact would provoke the same horrified rejection that I had experienced in every previous encounter with human beings. But I had also observed that this family possessed unusual capacity for compassion and moral reasoning."</p>
+        <p>The strategy that the creature developed was based on his recognition that the blind father, unable to see his appearance, might be able to respond to his words and intentions rather than reacting with instinctive revulsion to his physical form.</p>
+        <p>"I chose a time," the creature continued, "when Felix and Safie were away from the cottage, leaving the old man alone and therefore unable to receive assistance from others who might prevent rational conversation between us."</p>
+        <p>The months of preparation for this crucial encounter included not just language practice and philosophical development, but careful consideration of how to present himself in ways that would emphasize his peaceful intentions and intellectual capabilities.</p>
+        <p>"I had rehearsed," the creature said, "explanations of my situation that would reveal my isolation and desire for connection without immediately disclosing the artificial nature of my creation or the abandonment by my creator that had shaped my early experiences."</p>
+        <p>The approach to the cottage required courage that exceeded anything the creature had experienced during his months of hidden existence, because this encounter would determine whether any form of human acceptance was possible or whether he was condemned to permanent isolation.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Rejected Connection (Part 2)</h2>
+      <div class="story">
+        <p>"I knocked on the door," the creature remembered, "with hands that were trembling not from cold but from the knowledge that this conversation would either open possibilities for connection that I desperately needed or confirm that I was forever barred from the companionship that made human existence meaningful."</p>
+        <p>The elderly De Lacey's response to the creature's request for shelter and conversation was everything that the creature had hoped for—kindness, interest, and willingness to listen to a stranger's story without immediate judgment or rejection.</p>
+        <p>"He invited me in," the creature said, "offered me food and warmth, and listened to my account of being a traveler without family or community with sympathy that proved human beings were indeed capable of the compassion that their literature and philosophy claimed to value."</p>
+        <p>The conversation that followed was the first genuine human interaction that the creature had experienced since his awakening, and it provided him with hope that acceptance might be possible despite the challenges posed by his appearance.</p>
+        <p>"The old man," the creature continued, "responded to my expressions of loneliness and desire for friendship with advice about the importance of perseverance and the possibility that even the most isolated individuals could find community with people who shared their values rather than their origins."</p>
+        <p>But the tragic conclusion of this hopeful encounter came when Felix and Safie returned to discover the conversation between their father and the creature whose appearance they interpreted as a threat to the blind man's safety.</p>
+        <p>"They saw only the monster," the creature said with pain that had not diminished during years of reflection on this pivotal moment. "Despite my peaceful posture, my respectful speech, and their father's obvious comfort with my presence, they responded with immediate violence aimed at driving me away from their home."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Rejected Connection (Part 3)</h2>
+      <div class="story">
+        <p>The beating that followed was devastating not because of physical pain, which the creature's powerful constitution allowed him to endure, but because of the psychological destruction that resulted from having his hopes for acceptance brutally crushed.</p>
+        <p>"I understood," the creature said, "that no amount of intellectual development, moral behavior, or peaceful intention could ever overcome the barrier created by my appearance. I was condemned to isolation not because of who I was, but because of what I looked like."</p>
+        <p>The transformation that occurred during the creature's flight from the De Lacey cottage was as complete and irreversible as Victor's original act of creation had been.</p>
+        <p>"I left their clearing," the creature concluded, "as a different being than I had been when I approached their door. Hope had been replaced by rage, loneliness by hatred, and desire for acceptance by determination to make the world pay for rejecting what it had no right to judge."</p>
+        <p>*If he could not have love, he would have revenge.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in Rejected Connection?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of Frankenstein? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Academic Vocabulary: Tier 2 Words Across Disciplines</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Tier 2 words (analyze, illustrate, demonstrate, evaluate, synthesize, contextualize) appear across subjects and are essential for academic success. They're more sophisticated than everyday words but not technical jargon. Mastering them improves reading and writing in all classes.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of: 'Show how Scheherazade was smart,' write: 'Analyze how Scheherazade demonstrated strategic intelligence.' The tier 2 words (analyze, demonstrated, strategic) make thinking more precise."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Monster's Education: Paradise Lost and Social Learning</h2>
+      <p>The creature's self-education reveals Shelley's ideas about how we become who we are—through observation, reading, and social interaction (or lack thereof).</p>
+      <p>**Learning by Observation**: The creature watches the De Lacey family for months, learning language, social behavior, family love, and human emotions. He learns virtue by watching virtuous people—proving nurture shapes us.</p>
+      <p>**Three Books**: The creature finds three books that form his intellectual foundation:</p>
+      <p>**1. Paradise Lost** by John Milton: The creature identifies with both Adam (God's creation) and Satan (the rebel cast out). He asks Victor: "I ought to be thy Adam, but I am rather the fallen angel." This shapes his self-understanding as both innocent creation and rejected outcast.</p>
+      <p>**2. Plutarch's Lives**: Biographies of noble Greeks and Romans. The creature learns about human greatness, virtue, politics, and history. These give him moral ideals and social understanding.</p>
+      <p>**3. The Sorrows of Young Werther** by Goethe: A romantic novel about intense emotion, unrequited love, and suicide. The creature learns about romantic feeling and the dangers of isolation.</p>
+      <p>**Victor's Papers**: The creature finds Victor's journals describing his creation with disgust. Reading his creator's horror at him shapes the creature's self-hatred and rage.</p>
+      <p>**The Tragedy of Education**: The creature's education makes his suffering worse. If he remained ignorant, rejection wouldn't hurt so deeply. Knowledge increases his pain: "Of what a strange nature is knowledge! It clings to the mind when it has once seized on it like a lichen on the rock."</p>
+      <p>**Shelley's Point**: Education and culture make us human, but without love and acceptance, knowledge brings only pain. The creature is intellectually and emotionally sophisticated—which makes his isolation unbearable.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

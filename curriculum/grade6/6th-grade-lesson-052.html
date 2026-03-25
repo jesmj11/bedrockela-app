@@ -3,258 +3,403 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 52 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 52 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 52: SUFFOCATION</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 52</h1>
-        <h2 class="lesson-subtitle">THE GOLDEN ARROW</h2>
-        <p class="lesson-meta">The Merry Adventures of Robin Hood</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 52!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>THE GOLDEN ARROW</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Semantic Fields and Word Families</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. elaborate</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">detailed and complicated; carefully planned</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. flanking</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">attacking from the side rather than head-on
-From the text: Robin's men are scattered through the crowd, positioned to help from multiple angles.
-Why is flanking more effective than a direct confrontation?
-3. AMBUSH  (noun/verb) — a surprise attack from a hidden position</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. consequence</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">a result or effect of an action, especially a negative one</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. elaborate</div>
-              <div style="flex: 2; font-style: italic; color: #666;">detailed and complicated; carefully planned</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. flanking</div>
-              <div style="flex: 2; font-style: italic; color: #666;">attacking from the side rather than head-on
-From the text: Robin's men are scattered through the crowd, positioned to help from multiple angles.
-Why is flanking more effective than a direct confrontation?
-3. AMBUSH  (noun/verb) — a surprise attack from a hidden position</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. consequence</div>
-              <div style="flex: 2; font-style: italic; color: #666;">a result or effect of an action, especially a negative one</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOLDEN ARROW </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The Sheriff had not forgotten his humiliation. He was a proud man, and Robin Hood had made a fool of him more times than he could count. He devised another plan — a second archery contest, but this time with a much more elaborate trap.
-The prize was a golden arrow on a silver shaft. The contest would be held in a field outside Nottingham, surrounded by the Sheriff's men — hundreds of them, armed and ready. Every road into the city would be watched. Every traveler would be searched.
-"This time," the Sheriff told his captain, "Robin Hood will not escape."
-Robin's scouts brought word of the trap. Little John counseled caution. "Don't go, Robin. He's laid this one carefully."
-"If I don't go, he wins," Robin said. "And I never let the Sheriff win."
-But Robin didn't walk into the trap blindly. He sent his men into Nottingham in twos and threes over several days, disguised as farmers, merchants, and monks. By the day of the contest, more than forty of Robin's men were scattered through the crowd, armed and ready.
-Robin himself came disguised as a one-eyed beggar, so convincing that his own men had to look twice to recognize him.
-The contest was fierce. Archers from across England competed. The Sheriff watched eagerly, certain that Robin would reveal himself.
-In the final round, the one-eyed beggar stepped to the line. He drew a battered bow, aimed with his one good eye, and put his arrow into the exact center of the target.
-Silence. Then thunderous applause.
-The Sheriff studied the beggar suspiciously but saw nothing familiar. He awarded the golden arrow.
-As before, Robin waited until he was safely back in the forest before sending the Sheriff a mocking message. But this time, the Sheriff had planned ahead. He had men following every suspicious person who left the tournament. They tracked Robin's men to the edge of the forest and launched an ambush.
-Arrows flew. Steel clashed. Two of Robin's men were wounded before the band could melt back into the deep woods. It was the closest the Sheriff had ever come to catching them.
-Robin sat by the campfire that night, cleaning a wound on his arm, and for the first time, he didn't laugh.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOLDEN ARROW (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE GOLDEN ARROW (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. How is the Sheriff's second archery trap different from the first?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. What makes this chapter's ending different from Chapter 4's ending?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Compare the endings of Chapter 4 (the first shooting match) and Chapter 10 (the golden arrow). How has the mood changed? What does this shift reveal about the increasing stakes of Robin's life?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌊</div>
+        <h1>Lesson 52</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">SUFFOCATION</div>
+        <div style="font-size: 1rem; color: #999;">Week 11 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Semantic Fields and Word Families</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Identify three semantic fields in today's reading (groups of related words the author uses). For each field, list at least five words and explain how the subtle differences between them affect meaning. Create your own varied sentence using words from one semantic field.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>SUFFOCATION</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze SUFFOCATION</li>
+        <li>Master 4 vocabulary words</li>
+        <li>Practice language: Semantic Fields and Word Families</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. entombed</h3>
+        <p><strong>Definition:</strong> buried or trapped as if in a tomb</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. consciousness</h3>
+        <p><strong>Definition:</strong> the state of being awake and aware; also, awareness of one's thoughts and surroundings</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. drowsiness</h3>
+        <p><strong>Definition:</strong> the state of being sleepy; a strong desire to fall asleep</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. miraculous</h3>
+        <p><strong>Definition:</strong> like a miracle; extraordinarily wonderful or unlikely</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(52)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. entombed</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. consciousness</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. drowsiness</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. miraculous</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 SUFFOCATION (Part 1)</h2>
+      <div class="story">
+        <p>We dove under the ice and headed north. But the ice had shifted. The passage we'd come through was blocked. Massive icebergs had drifted together overhead, sealing us in.
+Nemo tried every direction. North, east, west—solid ice everywhere. The Nautilus was entombed.
+"We have five days of air," Nemo said, his voice steady. "We must cut our way out."
+The crew suited up and went outside into the freezing water with picks and axes. They hacked at the ice from below, working in shifts—two hours on, two hours off—around the clock. The water was so cold that men came back inside with their fingers blue and their lips white. But they kept going.
+Inside the ship, the air grew thinner by the hour. Breathing became a conscious effort—each inhale felt incomplete, like trying to fill a glass with a trickle. My head pounded. My vision blurred at the edges. Conseil sat beside me, pale and gasping, but still trying to smile.
+Ned worked alongside Nemo's crew outside the ship, swinging a pick with furious energy. Whatever his feelings about Nemo, whatever his desperate desire to escape, he was not a man who sat idle while others fought to survive.
+By the fourth day, we were barely conscious. The air was so thin that a candle would not have stayed lit. Men lay on the floor, too weak to stand. I felt a terrible drowsiness creeping over me—a warm, peaceful desire to close my eyes and sleep forever.
+On the fifth day, just hours before our air would have run out entirely, the last wall of ice gave way. The Nautilus surged upward through the gap and broke the surface. The hatches flew open. Arctic air—cold, sharp, magnificent—poured into the ship.
+I have never tasted anything as sweet as that first breath.
+Men wept. Men laughed. Men lay on the deck and simply breathed, over and over, marveling at the simple miracle of oxygen.
+Captain Nemo stood at the bow, wind whipping his hair, staring north. His face showed nothing. But his hands, gripping the railing, were shaking.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 SUFFOCATION (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 SUFFOCATION (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the crew's plan to escape from under the ice?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Why does Aronnax describe the desire to sleep as "terrible"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Ned works alongside Nemo's crew to hack at the ice, despite hating his captivity. What does this reveal about Ned's character? How can someone fight to survive in a place they desperately want to leave?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Semantic Fields and Word Families</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Dangers of Decompression: The Bends</h2>
+      <p>When divers breathe compressed air underwater, nitrogen dissolves into their blood and tissues. The deeper you go, the more nitrogen dissolves. This is fine—until you ascend.</p>
+      <p>If a diver rises too quickly, the pressure drops rapidly and the dissolved nitrogen forms bubbles in the blood and tissues, like opening a shaken soda bottle. This is called decompression sickness or "the bends." Symptoms range from joint pain and skin rashes to paralysis, brain damage, and death.</p>
+      <p>The bends was a major mystery in the 1800s. Workers building underwater foundations for bridges would emerge from pressurized caissons (chambers) and suddenly collapse, screaming in pain. No one understood why until scientists realized the connection to gas pressure.</p>
+      <p>Modern divers avoid the bends by ascending slowly, pausing at specific depths to let nitrogen safely diffuse out of their tissues. Deep-sea divers sometimes spend hours in decompression, breathing special gas mixtures. The deepest scuba dive on record is 1,090 feet, but the diver needed 15 hours to safely return to the surface.</p>
+      <p>Nemo's crew never seems to worry about decompression—another piece of advanced technology Verne doesn't explain.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>Reflect on today's chapter. What stood out to you? How do you relate to the characters or themes? (10-15 sentences)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

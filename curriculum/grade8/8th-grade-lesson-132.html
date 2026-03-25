@@ -3,261 +3,419 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 132 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 132 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 132: The Five Orange Pips</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 132</h1>
-        <h2 class="lesson-subtitle">The Five Orange Pips</h2>
-        <p class="lesson-meta">Sherlock Holmes</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 132!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Five Orange Pips</strong> from <em>Sherlock Holmes</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Academic Vocabulary: Tier 2 Words Across Disciplines</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. conspiracy</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">secret plan to do wrong</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. revenge</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">payback for injury</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. continents</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">large land masses</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. society</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">organized group</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. decades</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">periods of ten years</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. conspiracy</div>
-              <div style="flex: 2; font-style: italic; color: #666;">secret plan to do wrong</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. revenge</div>
-              <div style="flex: 2; font-style: italic; color: #666;">payback for injury</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. continents</div>
-              <div style="flex: 2; font-style: italic; color: #666;">large land masses</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. society</div>
-              <div style="flex: 2; font-style: italic; color: #666;">organized group</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. decades</div>
-              <div style="flex: 2; font-style: italic; color: #666;">periods of ten years</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Five Orange Pips </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The international conspiracy that brought murder across continents and decades began when John Openshaw arrived at 221B Baker Street with a story that seemed to belong more to sensational fiction than to rational criminal investigation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Mr. Holmes," Openshaw began with obvious terror, "my family is being systematically murdered by people who send cryptic warnings in the form of orange seeds, and I fear that I am next unless someone can help me understand what is happening."</p><p style="margin-bottom: 15px; text-indent: 2em;">The pattern of deaths that Openshaw described revealed how past actions could create present dangers that transcended normal geographical and temporal limitations.</p><p style="margin-bottom: 15px; text-indent: 2em;">"It began with my uncle Elias," Openshaw explained, "who received an envelope containing five orange pips and a note demanding that certain papers be placed on the sundial in his garden. When he refused, he was found dead three days later under circumstances that appeared accidental."</p><p style="margin-bottom: 15px; text-indent: 2em;">Holmes listened to this account with growing recognition that international secret societies sometimes pursued vengeance with patience and systematic planning that exceeded anything normally associated with criminal activity.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Seven weeks later," Openshaw continued, "my father received a similar envelope, with three orange pips and a demand for the same papers. He also refused, and he too died in what appeared to be an accident but which followed the same pattern as my uncle's death."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Five Orange Pips (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The investigation revealed that the Openshaw family had become targets of the Ku Klux Klan, whose members were seeking revenge for Elias Openshaw's possession of documents that could expose their criminal activities and identify their leadership.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Your uncle," Holmes explained after examining the papers that had caused so much bloodshed, "served as a federal agent after the American Civil War, and he obtained evidence of Klan activities that could still be used to prosecute surviving members for murders committed during Reconstruction."</p><p style="margin-bottom: 15px; text-indent: 2em;">The systematic campaign of vengeance that the Klan had pursued across decades and continents demonstrated how organized hatred could create dangers that persisted far beyond the original circumstances that had motivated such extreme actions.</p><p style="margin-bottom: 15px; text-indent: 2em;">"They have been tracking your family," Holmes continued, "using networks of sympathizers and information sources that span multiple countries and allow them to locate targets regardless of attempts to hide or relocate."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Holmes's efforts to protect Openshaw were complicated by the international nature of the threat and the limitations of British law enforcement authority over crimes planned and directed from foreign countries.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I can provide you with advice about personal safety," Holmes told Openshaw, "but the ultimate solution requires addressing the source of the threat, which lies beyond the reach of conventional police protection."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Five Orange Pips (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The tragic conclusion of the case came when Openshaw was murdered despite Holmes's warnings, demonstrating that some forms of organized criminal activity exceeded the capacity of individual detective work to prevent or punish.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The ship carrying the Klan operatives responsible for these murders," Holmes learned through his network of international contacts, "was lost in a storm while returning to America, which provides natural justice for crimes that legal justice could never have addressed."</p><p style="margin-bottom: 15px; text-indent: 2em;">The case taught Holmes and Watson that detective work sometimes involved understanding global patterns of crime and politics that extended far beyond the individual mysteries that brought clients to their door.</p><p style="margin-bottom: 15px; text-indent: 2em;">*Some secrets were worth killing for, even after twenty years.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main mystery in The Five Orange Pips?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Holmes use observation and deduction to solve the case?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🔍</div>
+        <h1>Lesson 132</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Five Orange Pips</div>
+        <div style="font-size: 1rem; color: #999;">Week 27 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Academic Vocabulary: Tier 2 Words Across Disciplines</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Tier 2 words (analyze, illustrate, demonstrate, evaluate, synthesize, contextualize) appear across subjects and are essential for academic success. They're more sophisticated than everyday words but not technical jargon. Mastering them improves reading and writing in all classes.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Instead of: 'Show how Scheherazade was smart,' write: 'Analyze how Scheherazade demonstrated strategic intelligence.' The tier 2 words (analyze, demonstrated, strategic) make thinking more precise.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Identify three tier 2 (academic) words in today's reading or questions. Use each in a sentence about the chapter. Then rewrite three simple sentences from your notes using tier 2 vocabulary to make them more academically sophisticated.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Five Orange Pips</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Five Orange Pips</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Academic Vocabulary: Tier 2 Words Across Disciplines</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. conspiracy</h3>
+        <p><strong>Definition:</strong> secret plan to do wrong</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. revenge</h3>
+        <p><strong>Definition:</strong> payback for injury</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. continents</h3>
+        <p><strong>Definition:</strong> large land masses</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. society</h3>
+        <p><strong>Definition:</strong> organized group</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. decades</h3>
+        <p><strong>Definition:</strong> periods of ten years</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(132)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. conspiracy</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. revenge</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. continents</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. society</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. decades</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Five Orange Pips (Part 1)</h2>
+      <div class="story">
+        <p>The international conspiracy that brought murder across continents and decades began when John Openshaw arrived at 221B Baker Street with a story that seemed to belong more to sensational fiction than to rational criminal investigation.</p>
+        <p>"Mr. Holmes," Openshaw began with obvious terror, "my family is being systematically murdered by people who send cryptic warnings in the form of orange seeds, and I fear that I am next unless someone can help me understand what is happening."</p>
+        <p>The pattern of deaths that Openshaw described revealed how past actions could create present dangers that transcended normal geographical and temporal limitations.</p>
+        <p>"It began with my uncle Elias," Openshaw explained, "who received an envelope containing five orange pips and a note demanding that certain papers be placed on the sundial in his garden. When he refused, he was found dead three days later under circumstances that appeared accidental."</p>
+        <p>Holmes listened to this account with growing recognition that international secret societies sometimes pursued vengeance with patience and systematic planning that exceeded anything normally associated with criminal activity.</p>
+        <p>"Seven weeks later," Openshaw continued, "my father received a similar envelope, with three orange pips and a demand for the same papers. He also refused, and he too died in what appeared to be an accident but which followed the same pattern as my uncle's death."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Five Orange Pips (Part 2)</h2>
+      <div class="story">
+        <p>The investigation revealed that the Openshaw family had become targets of the Ku Klux Klan, whose members were seeking revenge for Elias Openshaw's possession of documents that could expose their criminal activities and identify their leadership.</p>
+        <p>"Your uncle," Holmes explained after examining the papers that had caused so much bloodshed, "served as a federal agent after the American Civil War, and he obtained evidence of Klan activities that could still be used to prosecute surviving members for murders committed during Reconstruction."</p>
+        <p>The systematic campaign of vengeance that the Klan had pursued across decades and continents demonstrated how organized hatred could create dangers that persisted far beyond the original circumstances that had motivated such extreme actions.</p>
+        <p>"They have been tracking your family," Holmes continued, "using networks of sympathizers and information sources that span multiple countries and allow them to locate targets regardless of attempts to hide or relocate."</p>
+        <p>But Holmes's efforts to protect Openshaw were complicated by the international nature of the threat and the limitations of British law enforcement authority over crimes planned and directed from foreign countries.</p>
+        <p>"I can provide you with advice about personal safety," Holmes told Openshaw, "but the ultimate solution requires addressing the source of the threat, which lies beyond the reach of conventional police protection."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Five Orange Pips (Part 3)</h2>
+      <div class="story">
+        <p>The tragic conclusion of the case came when Openshaw was murdered despite Holmes's warnings, demonstrating that some forms of organized criminal activity exceeded the capacity of individual detective work to prevent or punish.</p>
+        <p>"The ship carrying the Klan operatives responsible for these murders," Holmes learned through his network of international contacts, "was lost in a storm while returning to America, which provides natural justice for crimes that legal justice could never have addressed."</p>
+        <p>The case taught Holmes and Watson that detective work sometimes involved understanding global patterns of crime and politics that extended far beyond the individual mysteries that brought clients to their door.</p>
+        <p>*Some secrets were worth killing for, even after twenty years.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main mystery in The Five Orange Pips?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How does Holmes use observation and deduction to solve the case?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Academic Vocabulary: Tier 2 Words Across Disciplines</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Tier 2 words (analyze, illustrate, demonstrate, evaluate, synthesize, contextualize) appear across subjects and are essential for academic success. They're more sophisticated than everyday words but not technical jargon. Mastering them improves reading and writing in all classes.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of: 'Show how Scheherazade was smart,' write: 'Analyze how Scheherazade demonstrated strategic intelligence.' The tier 2 words (analyze, demonstrated, strategic) make thinking more precise."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Telegraph, Trains, and Technology in the 1890s</h2>
+      <p>The Holmes stories take place during a technological revolution that transformed Britain. New inventions changed crime, detection, and daily life:</p>
+      <p>**Railways**: Britain had the world's most extensive rail network by the 1890s. Criminals could escape London in minutes, but police could also deploy quickly. Holmes frequently races across England by train, consulting timetables to trap suspects.</p>
+      <p>**Telegraph**: Instant communication via electrical signals over wires revolutionized police work. Scotland Yard could alert constables nationwide within minutes. Holmes uses telegrams to coordinate with police and gather information rapidly.</p>
+      <p>**Telephone**: First installed in London in 1879, still rare and expensive by the 1890s. Holmes occasionally uses telephones but relies more on telegrams (more reliable and private).</p>
+      <p>**Forensic Photography**: Cameras became portable and practical in the 1880s. Crime scene photos provided permanent records. Holmes keeps photographs of known criminals.</p>
+      <p>**Newspapers**: Mass-circulation daily papers meant news spread fast. Holmes uses newspaper archives for research and plants stories to manipulate suspects.</p>
+      <p>**Gas Lighting**: London's streets were lit by gas lamps, creating distinctive light and shadow. Holmes understands how lighting affects observation and concealment.</p>
+      <p>These technologies appear constantly in Holmes stories. Doyle understood that modern detection required modern tools. Holmes combines cutting-edge technology with timeless observation and logic—both necessary for catching criminals in the new industrial age.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

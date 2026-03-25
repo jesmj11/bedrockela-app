@@ -3,253 +3,404 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 49 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 49 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 49: THE DEEP DIVE</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 49</h1>
-        <h2 class="lesson-subtitle">THE SHERIFF'S FEAST</h2>
-        <p class="lesson-meta">The Merry Adventures of Robin Hood</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 49!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>THE SHERIFF'S FEAST</strong> from <em>The Merry Adventures of Robin Hood</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 2 new vocabulary words in context</li>
-            <li>Apply Author's Purpose and Rhetorical Strategies</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. persona</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">a role or character adopted by a person, especially one that is different from their true self
-From the text: Robin adopts the persona of a butcher so convincingly that the Sheriff invites him to dinner.
-How does Robin's persona as the butcher differ from his real personality?
-2. GREEDY  (adjective) — having an intense and selfish desire for something, especially wealth</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. irony</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">a situation where the outcome is opposite to what was expected; a form of humor
-From the text: The Sheriff is robbed by the very man he invited to dinner.
-What is ironic about the Sheriff's feast?
-4. ESCORT  (noun/verb) — a person or group accompanying someone for protection; to accompany</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. persona</div>
-              <div style="flex: 2; font-style: italic; color: #666;">a role or character adopted by a person, especially one that is different from their true self
-From the text: Robin adopts the persona of a butcher so convincingly that the Sheriff invites him to dinner.
-How does Robin's persona as the butcher differ from his real personality?
-2. GREEDY  (adjective) — having an intense and selfish desire for something, especially wealth</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. irony</div>
-              <div style="flex: 2; font-style: italic; color: #666;">a situation where the outcome is opposite to what was expected; a form of humor
-From the text: The Sheriff is robbed by the very man he invited to dinner.
-What is ironic about the Sheriff's feast?
-4. ESCORT  (noun/verb) — a person or group accompanying someone for protection; to accompany</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE SHERIFF'S FEAST </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Robin loved a good disguise. It was his favorite weapon — more useful than any bow or sword. He could be a beggar, a merchant, a potter, or a monk. He changed his voice, his walk, his entire manner. The Sheriff had posted Robin's description in every village in Nottinghamshire, but descriptions were useless against a man who could become anyone.
-One market day, Robin dressed as a butcher — a broad-faced, cheerful fellow with a blood-stained apron and a cart full of meat. He drove into Nottingham, set up a stall, and began selling at prices so low that every housewife in the city came running.
-"Best beef in England! Half price today only!"
-The other butchers were furious. The customers were delighted. And the Sheriff's wife, hearing about the bargains, sent a servant to buy their entire dinner from the generous newcomer.
-The butcher was so charming, so funny, and so generous that the Sheriff himself invited him to dinner at Nottingham Castle. Robin accepted with a deep bow.
-He sat at the Sheriff's own table, ate the Sheriff's food, drank the Sheriff's wine, and told the Sheriff outrageous stories about his "cattle ranch" deep in Sherwood Forest. The Sheriff, who was greedy above all things, grew very interested.
-"You say you have hundreds of head of cattle? In the forest?"
-"Five hundred at least, my lord. Fine beasts, every one. I'd sell the whole herd for a fair price."
-"Show me," the Sheriff said, his eyes gleaming with greed.
-Robin led the Sheriff and a small escort deep into Sherwood Forest — deeper and deeper, until the trees closed overhead and the paths disappeared. Then Robin put his fingers to his lips and blew three sharp blasts on his hunting horn.
-Green-clad men appeared from behind every tree.
-"Welcome to my cattle ranch, my lord Sheriff," Robin said, dropping the butcher's accent. "I'm Robin Hood. And you are my guest."
-The Sheriff's face went white. But Robin was true to his code — he didn't harm the Sheriff. He simply took every coin the man was carrying, fed him a fine dinner of roast venison, and sent him home on a donkey, with the laughter of the Merry Men ringing in his ears.
-The Sheriff did not find it funny.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE SHERIFF'S FEAST (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE SHERIFF'S FEAST (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What makes Robin's butcher disguise successful?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Robin use the Sheriff's own greed to trap him?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Robin robs the Sheriff but doesn't harm him. Why does Robin follow this rule? What would happen to Robin's reputation if he used violence against the Sheriff?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌊</div>
+        <h1>Lesson 49</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE DEEP DIVE</div>
+        <div style="font-size: 1rem; color: #999;">Week 10 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Author's Purpose and Rhetorical Strategies</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Authors choose words to achieve specific purposes: inform, persuade, entertain, inspire. Rhetorical strategies include appeals to emotion (pathos), logic (logos), and credibility (ethos). Word choice, sentence structure, and figurative language all serve the author's purpose.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Scheherazade uses narrative (storytelling) to persuade the king to change—this is a rhetorical strategy. She appeals to his emotions through compelling characters (pathos) and to his logic through cautionary tales (logos). Her credibility comes from her vast knowledge (ethos).</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Analyze the author's purpose in today's chapter. Identify three specific word choices or techniques that serve this purpose. Explain whether the author primarily uses emotional appeals, logical appeals, or credibility, and how effective it is.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THE DEEP DIVE</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THE DEEP DIVE</li>
+        <li>Master 4 vocabulary words</li>
+        <li>Practice language: Author's Purpose and Rhetorical Strategies</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. bioluminescent</h3>
+        <p><strong>Definition:</strong> producing light through a biological process in living organisms</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. void</h3>
+        <p><strong>Definition:</strong> a completely empty space; nothingness</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. sediment</h3>
+        <p><strong>Definition:</strong> matter that settles to the bottom of a liquid; accumulated material on the ocean floor</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. desolate</h3>
+        <p><strong>Definition:</strong> empty, bleak, and lifeless; giving an impression of abandonment</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(49)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. bioluminescent</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. void</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. sediment</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. desolate</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE DEEP DIVE (Part 1)</h2>
+      <div class="story">
+        <p>Captain Nemo had been dropping hints for days. He wanted to attempt something that had never been done—a dive to the deepest point of the ocean.
+"The bottom," he said. "The absolute bottom. No one has ever been there. No one has ever seen it."
+The Nautilus descended. The light faded—first blue, then indigo, then black. The water temperature dropped until the hull was cold to the touch. The pressure increased steadily, and I could hear the iron plates groaning under the strain.
+Conseil stood beside me at the salon window, his face pressed to the glass, cataloging every creature we passed. Fish with enormous eyes. Jellyfish that glowed in the dark—bioluminescent, creating their own cold light in the eternal blackness. Creatures that looked like nothing in any textbook—transparent, boneless, drifting like ghosts.
+At sixteen thousand feet, the last fish disappeared. We were beyond the zone of life—or so I thought.
+At twenty thousand feet, the salon window showed nothing but blackness. The Nautilus was a bubble of light and warmth in an infinite void. The pressure gauge read numbers I didn't want to think about. If the glass cracked, if a single rivet failed, we would be crushed instantly.
+At twenty-five thousand feet, the searchlights hit the bottom.
+It was a flat, gray plain of fine sediment—the accumulated dust of millions of years of dead organisms drifting down from above. Nothing moved. Nothing grew. It was the most desolate landscape I had ever seen—and somehow, the most awe-inspiring.
+"The floor of the world," Nemo whispered.
+He planted a black flag on the seabed through a mechanical arm built into the hull. On it was a gold letter N.
+"I claim this place," he said, "in my own name, and no other."
+Then we rose. I breathed again only when the pressure gauge showed a safe number. Ned had spent the entire dive lying in his bunk with a pillow over his head, and I couldn't blame him.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE DEEP DIVE (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE DEEP DIVE (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What does the Nautilus find at the deepest point of the ocean?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What does Nemo do when the Nautilus reaches the ocean floor?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Nemo claims the deepest point of the ocean "in my own name, and no other." What does this act reveal about his relationship with the world above and his sense of identity?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Author's Purpose and Rhetorical Strategies</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Authors choose words to achieve specific purposes: inform, persuade, entertain, inspire. Rhetorical strategies include appeals to emotion (pathos), logic (logos), and credibility (ethos). Word choice, sentence structure, and figurative language all serve the author's purpose.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Scheherazade uses narrative (storytelling) to persuade the king to change—this is a rhetorical strategy. She appeals to his emotions through compelling characters (pathos) and to his logic through cautionary tales (logos). Her credibility comes from her vast knowledge (ethos)."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Deep Sea Food Chain: Life Without Sunlight</h2>
+      <p>On land and in shallow water, all food chains start with photosynthesis—plants use sunlight to make energy. But in the deep ocean, where no sunlight reaches, how does anything survive?</p>
+      <p>Most deep-sea creatures rely on "marine snow"—a constant rain of dead organisms, feces, and other organic matter drifting down from the sunlit zone above. Scavengers eat this debris, and predators eat the scavengers.</p>
+      <p>But in 1977, scientists discovered something revolutionary: hydrothermal vents. These underwater volcanoes spew superheated, mineral-rich water from cracks in the ocean floor. Bacteria use the chemicals (especially hydrogen sulfide) as an energy source through chemosynthesis—essentially "eating" minerals instead of light.</p>
+      <p>These vent bacteria form the base of a unique food chain. Giant tube worms, yeti crabs, and ghostly white fish cluster around vents in the permanent darkness, living off bacterial energy. Some tube worms have no mouth or digestive system—they house bacteria in their bodies and absorb nutrients directly.</p>
+      <p>This discovery changed biology. If life can exist without sunlight on Earth, maybe it can exist in the ice-covered oceans of Jupiter's moon Europa, or Saturn's moon Enceladus.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

@@ -1,7 +1,384 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>6th Grade Day 109</title></head>
-<body style="font-family:sans-serif;max-width:800px;margin:50px auto;padding:20px;">
-<h1>Day 109: Norse Mythology - Chapter 9</h1>
-<p>This lesson is being prepared. Check back soon!</p>
-<p style="color:#666;margin-top:40px;">BedrockELA - 6th Grade</p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 109 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 109: THREE YEARS</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏝️</div>
+        <h1>Lesson 109</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THREE YEARS</div>
+        <div style="font-size: 1rem; color: #999;">Week 22 • Classic Literature • 6th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THREE YEARS</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THREE YEARS</li>
+        <li>Master 2 vocabulary words</li>
+        <li>Practice language: Author's Purpose and Rhetorical Strategies</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. milestone</h3>
+        <p><strong>Definition:</strong> a significant event or stage in development</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. maturity</h3>
+        <p><strong>Definition:</strong> the quality of being fully grown or developed; emotional wisdom</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. milestone</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. maturity</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THREE YEARS (Part 1)</h2>
+      <div class="story">
+        <p>Time moves differently on an island.
+Without calendars, schedules, or the rhythm of a town's daily life, the days blend together. Seasons change — wet to dry, dry to wet — but the years accumulate quietly, unmarked by the milestones that measure time in civilization.
+It was Elizabeth who kept count. She marked each day on the wall of Rockburg with a small scratch — a habit she had started on our first morning ashore. By the time I thought to look, there were over a thousand marks.
+Three years. We had been on the island for three years.
+The boys had changed in ways that amazed and sometimes frightened me. Fritz was eighteen now — a man, tall and sunburned, with the confidence of someone who had faced wild animals, storms, and starvation and survived them all. He could sail the Elizabeth alone, shoot a bird on the wing, and track an animal through dense forest. He was also restless. The island, vast as it was, had begun to feel small to him.
+Ernest, at sixteen, had become the family's intellectual engine. His natural history journal had grown into multiple volumes — detailed observations of the island's plants, animals, weather patterns, and geology. He had taught himself basic chemistry by experimenting with island minerals. He was quiet, content, and deeply rooted in the life we had built.
+Jack, at fourteen, was still Jack — fearless, impulsive, and perpetually in motion. He rode Hurricane the ostrich across the grassland at speeds that terrified his mother. He had grown strong and wiry, with reflexes that made him the best hunter in the family after Fritz.
+Franz, at eleven, had lost his baby softness and become a thoughtful boy with a talent for music and languages. He spoke to the animals as if they could understand him, and sometimes I thought they could.
+Elizabeth had held us together through everything. She was the center — the steady, practical, unshakeable force that kept the family functioning when fear or frustration threatened to pull us apart. She had built a home from nothing, fed us from wilderness, educated four boys without a school, and done it all with a calm determination that I admired more than anything else in my life.
+And me? I was older. My hair had gone gray. My hands were rough and scarred from three years of building, farming, and improvising. But I was alive, and my family was alive, and we had created something remarkable on this forgotten island.
+Whether anyone would ever know about it was another question entirely.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THREE YEARS (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THREE YEARS (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. Which character has changed the most after three years on the island?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Why does the father say "Whether anyone would ever know about it was another question entirely"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Each Robinson boy develops differently on the island. Which boy's growth do you find most interesting, and why? Use specific details from the chapter.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Author's Purpose and Rhetorical Strategies</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Authors choose words to achieve specific purposes: inform, persuade, entertain, inspire. Rhetorical strategies include appeals to emotion (pathos), logic (logos), and credibility (ethos). Word choice, sentence structure, and figurative language all serve the author's purpose.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Scheherazade uses narrative (storytelling) to persuade the king to change—this is a rhetorical strategy. She appeals to his emotions through compelling characters (pathos) and to his logic through cautionary tales (logos). Her credibility comes from her vast knowledge (ethos)."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Boat Building and Seamanship</h2>
+      <p>Building a seaworthy boat without a shipyard is extraordinarily difficult. Wood must be cut, shaped, and fitted precisely. Planks must be sealed against water—traditionally using tar, pitch, or oakum (rope fibers). Boats need balanced design to sail without capsizing. Sails require cloth and rope. Navigation requires instruments and knowledge. The Robinson family would need to build something substantial enough to survive ocean voyage—not just a raft or canoe. Many castaways throughout history built boats that sank or broke apart. Even if successful, sailing without navigation instruments, charts, or knowledge of shipping lanes meant they might sail for weeks without seeing another ship. Leaving the island was extremely risky.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>The Robinsons must learn about tropical plants—which are safe, which are useful, which are dangerous. Write about learning something new and important. What made it challenging? How did you figure it out?</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

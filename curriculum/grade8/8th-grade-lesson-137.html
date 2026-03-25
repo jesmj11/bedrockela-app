@@ -3,261 +3,425 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 137 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 137 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 137: Switzerland Trap</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 137</h1>
-        <h2 class="lesson-subtitle">Switzerland Trap</h2>
-        <p class="lesson-meta">Sherlock Holmes</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 137!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Switzerland Trap</strong> from <em>Sherlock Holmes</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Etymology: Word Histories and Evolution</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. authorities</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">people in power</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. corrupted</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">made dishonest</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. advance</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">beforehand</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. inevitable</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">certain to happen</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. confrontation</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">direct conflict</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. authorities</div>
-              <div style="flex: 2; font-style: italic; color: #666;">people in power</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. corrupted</div>
-              <div style="flex: 2; font-style: italic; color: #666;">made dishonest</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. advance</div>
-              <div style="flex: 2; font-style: italic; color: #666;">beforehand</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. inevitable</div>
-              <div style="flex: 2; font-style: italic; color: #666;">certain to happen</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. confrontation</div>
-              <div style="flex: 2; font-style: italic; color: #666;">direct conflict</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Switzerland Trap </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The final stage of Moriarty's systematic campaign to eliminate Holmes became clear when their pursuit led them to the isolated Swiss Alps, where the criminal mastermind had prepared conditions that would ensure no witnesses or police interference with whatever confrontation he had planned.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Watson," Holmes observed as they reached the village of Meiringen, "we have been maneuvered into exactly the situation that our enemy desired. We are isolated from any assistance, surrounded by terrain that favors pursuit over escape, and dependent on local authorities whose loyalty may already have been purchased."</p><p style="margin-bottom: 15px; text-indent: 2em;">The evidence of Moriarty's advance planning was visible in the unusual behavior of hotel staff and local officials, who seemed to have received instructions about how to respond to their arrival.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The innkeeper," Watson noticed, "seems nervous about our presence, and he keeps glancing toward the telephone as if he's waiting for permission to make an important call."</p><p style="margin-bottom: 15px; text-indent: 2em;">Holmes's investigation of their immediate circumstances revealed that Moriarty had been preparing for weeks to ensure that their final confrontation would occur under conditions completely favorable to his purposes.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Local guides," Holmes discovered, "have been approached by someone offering substantial payment for information about trails leading to isolated locations where 'geological research' could be conducted without disturbance."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Switzerland Trap (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The recognition that they had been systematically driven into a trap was accompanied by Holmes's understanding that retreat was no longer possible and that their only choice was between confronting Moriarty or allowing him to determine the terms of their destruction.</p><p style="margin-bottom: 15px; text-indent: 2em;">"He has eliminated every option except direct confrontation," Holmes told Watson, "because he wants to finish our conflict personally rather than delegating our elimination to subordinates."</p><p style="margin-bottom: 15px; text-indent: 2em;">But perhaps most disturbing was the evidence that Moriarty's criminal network extended into Switzerland's law enforcement and governmental institutions, making official protection unavailable even in neutral territory.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The local constable," Watson observed, "received a telegram this morning that obviously contained instructions about how to respond to any requests for assistance that we might make."</p><p style="margin-bottom: 15px; text-indent: 2em;">The message that arrived from Moriarty on their final evening in Meiringen was both invitation and ultimatum, revealing his confidence in the strategic situation he had created.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Tomorrow," Moriarty's note read, "we will meet at Reichenbach Falls to resolve our conflict definitively. You may bring Dr. Watson as a witness, but understand that only one of us will return from that meeting."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Switzerland Trap (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Holmes's response to this challenge demonstrated the moral courage that had motivated his entire detective career and his commitment to protecting society from systematic criminal exploitation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I cannot refuse," Holmes told Watson, "because doing so would mean accepting that criminal intelligence can triumph over detective work through superior resources and systematic intimidation."</p><p style="margin-bottom: 15px; text-indent: 2em;">*The hunter had become the hunted.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main mystery in Switzerland Trap?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Holmes use observation and deduction to solve the case?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🔍</div>
+        <h1>Lesson 137</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Switzerland Trap</div>
+        <div style="font-size: 1rem; color: #999;">Week 28 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Etymology: Word Histories and Evolution</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Choose five interesting words from today's chapter. Research the etymology of each (use a dictionary with etymological information). Write the original language, literal meaning, and how the word's current usage relates to or differs from its origin.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Switzerland Trap</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Switzerland Trap</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Etymology: Word Histories and Evolution</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. authorities</h3>
+        <p><strong>Definition:</strong> people in power</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. corrupted</h3>
+        <p><strong>Definition:</strong> made dishonest</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. advance</h3>
+        <p><strong>Definition:</strong> beforehand</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. inevitable</h3>
+        <p><strong>Definition:</strong> certain to happen</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. confrontation</h3>
+        <p><strong>Definition:</strong> direct conflict</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(137)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. authorities</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. corrupted</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. advance</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. inevitable</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. confrontation</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Switzerland Trap (Part 1)</h2>
+      <div class="story">
+        <p>The final stage of Moriarty's systematic campaign to eliminate Holmes became clear when their pursuit led them to the isolated Swiss Alps, where the criminal mastermind had prepared conditions that would ensure no witnesses or police interference with whatever confrontation he had planned.</p>
+        <p>"Watson," Holmes observed as they reached the village of Meiringen, "we have been maneuvered into exactly the situation that our enemy desired. We are isolated from any assistance, surrounded by terrain that favors pursuit over escape, and dependent on local authorities whose loyalty may already have been purchased."</p>
+        <p>The evidence of Moriarty's advance planning was visible in the unusual behavior of hotel staff and local officials, who seemed to have received instructions about how to respond to their arrival.</p>
+        <p>"The innkeeper," Watson noticed, "seems nervous about our presence, and he keeps glancing toward the telephone as if he's waiting for permission to make an important call."</p>
+        <p>Holmes's investigation of their immediate circumstances revealed that Moriarty had been preparing for weeks to ensure that their final confrontation would occur under conditions completely favorable to his purposes.</p>
+        <p>"Local guides," Holmes discovered, "have been approached by someone offering substantial payment for information about trails leading to isolated locations where 'geological research' could be conducted without disturbance."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Switzerland Trap (Part 2)</h2>
+      <div class="story">
+        <p>The recognition that they had been systematically driven into a trap was accompanied by Holmes's understanding that retreat was no longer possible and that their only choice was between confronting Moriarty or allowing him to determine the terms of their destruction.</p>
+        <p>"He has eliminated every option except direct confrontation," Holmes told Watson, "because he wants to finish our conflict personally rather than delegating our elimination to subordinates."</p>
+        <p>But perhaps most disturbing was the evidence that Moriarty's criminal network extended into Switzerland's law enforcement and governmental institutions, making official protection unavailable even in neutral territory.</p>
+        <p>"The local constable," Watson observed, "received a telegram this morning that obviously contained instructions about how to respond to any requests for assistance that we might make."</p>
+        <p>The message that arrived from Moriarty on their final evening in Meiringen was both invitation and ultimatum, revealing his confidence in the strategic situation he had created.</p>
+        <p>"Tomorrow," Moriarty's note read, "we will meet at Reichenbach Falls to resolve our conflict definitively. You may bring Dr. Watson as a witness, but understand that only one of us will return from that meeting."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Switzerland Trap (Part 3)</h2>
+      <div class="story">
+        <p>Holmes's response to this challenge demonstrated the moral courage that had motivated his entire detective career and his commitment to protecting society from systematic criminal exploitation.</p>
+        <p>"I cannot refuse," Holmes told Watson, "because doing so would mean accepting that criminal intelligence can triumph over detective work through superior resources and systematic intimidation."</p>
+        <p>*The hunter had become the hunted.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main mystery in Switzerland Trap?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How does Holmes use observation and deduction to solve the case?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Etymology: Word Histories and Evolution</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Importance of Small Details: Footprints, Ash, and Mud</h2>
+      <p>Holmes famously solves cases through "trifles"—details so small that others ignore them. This reflects real developments in forensic science that were beginning in the 1890s.</p>
+      <p>**Footprint Analysis**: Doyle frequently has Holmes examine footprints, measuring length, depth, and spacing to determine:
+- Height and weight (deeper prints = heavier person)
+- Gait and injury (uneven depth reveals limping)
+- Shoe type and condition (shows economic status)
+- Recent activity (fresh vs. weathered tracks)</p>
+      <p>Real police adopted this technique slowly. The first systematic study of footprint evidence was 1910—after Holmes made it famous.</p>
+      <p>**Cigar and Tobacco Ash**: Holmes wrote a monograph identifying 140 types of tobacco ash. While this specific knowledge was Doyle's invention, the principle was sound—different substances leave distinctive traces. Modern forensic science analyzes ash and residue for evidence.</p>
+      <p>**Mud and Soil Analysis**: Holmes studies London's geology and can identify where someone has walked by analyzing mud on their clothes. Real forensic geology developed in the early 1900s.</p>
+      <p>**The Principle Behind the Details**: Holmes demonstrates that:
+1. Every action leaves traces
+2. Patterns in small details reveal larger truths
+3. What seems random often follows physical laws
+4. Careful observation beats hasty assumptions</p>
+      <p>This philosophy—that truth can be found in tiny, overlooked evidence—became the foundation of modern forensic science. Holmes taught readers to look closer, think harder, and trust physical evidence over assumptions.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

@@ -3,273 +3,446 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 134 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 134 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 134: The Web Tightens</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 134</h1>
-        <h2 class="lesson-subtitle">The Web Tightens</h2>
-        <p class="lesson-meta">Sherlock Holmes</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 134!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Web Tightens</strong> from <em>Sherlock Holmes</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Idioms, Colloquialisms, and Cultural Expressions</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. campaign</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">organized effort</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. reputation</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">public opinion of someone</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. corrupt</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">dishonest or immoral</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. planted</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">secretly placed</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. loyalty</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">faithfulness</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. campaign</div>
-              <div style="flex: 2; font-style: italic; color: #666;">organized effort</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. reputation</div>
-              <div style="flex: 2; font-style: italic; color: #666;">public opinion of someone</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. corrupt</div>
-              <div style="flex: 2; font-style: italic; color: #666;">dishonest or immoral</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. planted</div>
-              <div style="flex: 2; font-style: italic; color: #666;">secretly placed</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. loyalty</div>
-              <div style="flex: 2; font-style: italic; color: #666;">faithfulness</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Web Tightens </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The systematic destruction of Holmes's reputation began with subtle manipulations that gradually created doubt about his integrity among the clients, police officials, and social connections that had made his consulting detective work possible.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I don't understand what's happening," Mrs. Hudson confided to Watson, "but there have been strange visitors asking questions about Mr. Holmes's activities, and some of them seem to be suggesting that his success comes from questionable methods rather than legitimate detective work."</p><p style="margin-bottom: 15px; text-indent: 2em;">The campaign that Moriarty had designed was sophisticated enough to avoid obvious falsehood while creating impressions that would gradually undermine confidence in Holmes's character and professional ethics.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Evidence has been appearing," Inspector Lestrade informed Watson with obvious confusion, "suggesting that Holmes has been withholding information from police investigations or manipulating witnesses to create dramatic solutions that enhance his reputation."</p><p style="margin-bottom: 15px; text-indent: 2em;">Watson's attempts to defend his friend were complicated by the subtlety of Moriarty's approach, which used partially true information presented in misleading contexts rather than obvious lies that could be easily disproven.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The accusations are never quite specific enough to refute directly," Watson observed, "but they create a pattern of suspicion that makes people question Holmes's motivations and methods."</p><p style="margin-bottom: 15px; text-indent: 2em;">The psychological pressure that this campaign created was evident in Holmes's increasing isolation from the social and professional networks that had supported his detective career.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Former clients are avoiding me," Holmes admitted to Watson, "and even Scotland Yard officials who once welcomed my assistance are now treating me as if I might be part of the problems I've been helping them solve."</p><p style="margin-bottom: 15px; text-indent: 2em;">But perhaps most disturbing was the recognition that Moriarty's intelligence sources allowed him to anticipate and counter every attempt that Holmes made to investigate or expose the criminal organization that was destroying his reputation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"He knows what I'm going to do," Holmes realized with growing frustration, "before I know it myself. Every investigation I begin is compromised, every source I approach has already been warned about my intentions."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Web Tightens (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The isolation that resulted from this systematic campaign was both professional and personal, as friends and associates began to distance themselves from someone whose reputation had become controversial.</p><p style="margin-bottom: 15px; text-indent: 2em;">"People who once trusted me completely," Holmes observed, "are now wondering whether my detective successes have come at the expense of other people's reputations or legal rights."</p><p style="margin-bottom: 15px; text-indent: 2em;">The message that Moriarty sent during this period revealed his satisfaction with the effectiveness of his campaign while offering Holmes a final opportunity to withdraw from their conflict.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You are learning," Moriarty's note read, "what it means to face systematic opposition from someone who understands your methods and possesses the resources to counter them. This is your last opportunity to retire gracefully before the situation becomes irreversibly destructive."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Holmes's response to this pressure demonstrated the moral courage that separated detective work in service of justice from intellectual competition pursued for personal satisfaction.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I cannot withdraw," Holmes told Watson, "because doing so would mean abandoning every innocent person who depends on rational investigation and logical analysis to protect them from systematic criminal exploitation."</p><p style="margin-bottom: 15px; text-indent: 2em;">*When truth becomes lies, whom can you trust?*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p><p style="margin-bottom: 15px; text-indent: 2em;">## Discussion Questions - Chapters 7-12</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 126 (Chapters 7-8):**
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🔍</div>
+        <h1>Lesson 134</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Web Tightens</div>
+        <div style="font-size: 1rem; color: #999;">Week 27 • undefined • 8th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Web Tightens</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Web Tightens</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Idioms, Colloquialisms, and Cultural Expressions</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. campaign</h3>
+        <p><strong>Definition:</strong> organized effort</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. reputation</h3>
+        <p><strong>Definition:</strong> public opinion of someone</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. corrupt</h3>
+        <p><strong>Definition:</strong> dishonest or immoral</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. planted</h3>
+        <p><strong>Definition:</strong> secretly placed</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. loyalty</h3>
+        <p><strong>Definition:</strong> faithfulness</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. campaign</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. reputation</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. corrupt</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. planted</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. loyalty</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Web Tightens (Part 1)</h2>
+      <div class="story">
+        <p>The systematic destruction of Holmes's reputation began with subtle manipulations that gradually created doubt about his integrity among the clients, police officials, and social connections that had made his consulting detective work possible.</p>
+        <p>"I don't understand what's happening," Mrs. Hudson confided to Watson, "but there have been strange visitors asking questions about Mr. Holmes's activities, and some of them seem to be suggesting that his success comes from questionable methods rather than legitimate detective work."</p>
+        <p>The campaign that Moriarty had designed was sophisticated enough to avoid obvious falsehood while creating impressions that would gradually undermine confidence in Holmes's character and professional ethics.</p>
+        <p>"Evidence has been appearing," Inspector Lestrade informed Watson with obvious confusion, "suggesting that Holmes has been withholding information from police investigations or manipulating witnesses to create dramatic solutions that enhance his reputation."</p>
+        <p>Watson's attempts to defend his friend were complicated by the subtlety of Moriarty's approach, which used partially true information presented in misleading contexts rather than obvious lies that could be easily disproven.</p>
+        <p>"The accusations are never quite specific enough to refute directly," Watson observed, "but they create a pattern of suspicion that makes people question Holmes's motivations and methods."</p>
+        <p>The psychological pressure that this campaign created was evident in Holmes's increasing isolation from the social and professional networks that had supported his detective career.</p>
+        <p>"Former clients are avoiding me," Holmes admitted to Watson, "and even Scotland Yard officials who once welcomed my assistance are now treating me as if I might be part of the problems I've been helping them solve."</p>
+        <p>But perhaps most disturbing was the recognition that Moriarty's intelligence sources allowed him to anticipate and counter every attempt that Holmes made to investigate or expose the criminal organization that was destroying his reputation.</p>
+        <p>"He knows what I'm going to do," Holmes realized with growing frustration, "before I know it myself. Every investigation I begin is compromised, every source I approach has already been warned about my intentions."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Web Tightens (Part 2)</h2>
+      <div class="story">
+        <p>The isolation that resulted from this systematic campaign was both professional and personal, as friends and associates began to distance themselves from someone whose reputation had become controversial.</p>
+        <p>"People who once trusted me completely," Holmes observed, "are now wondering whether my detective successes have come at the expense of other people's reputations or legal rights."</p>
+        <p>The message that Moriarty sent during this period revealed his satisfaction with the effectiveness of his campaign while offering Holmes a final opportunity to withdraw from their conflict.</p>
+        <p>"You are learning," Moriarty's note read, "what it means to face systematic opposition from someone who understands your methods and possesses the resources to counter them. This is your last opportunity to retire gracefully before the situation becomes irreversibly destructive."</p>
+        <p>But Holmes's response to this pressure demonstrated the moral courage that separated detective work in service of justice from intellectual competition pursued for personal satisfaction.</p>
+        <p>"I cannot withdraw," Holmes told Watson, "because doing so would mean abandoning every innocent person who depends on rational investigation and logical analysis to protect them from systematic criminal exploitation."</p>
+        <p>*When truth becomes lies, whom can you trust?*</p>
+        <p>---</p>
+        <p>## Discussion Questions - Chapters 7-12</p>
+        <p>**Day 126 (Chapters 7-8):**
 1. How does "The Man with the Twisted Lip" show that economic desperation can force good people into deception?
 2. What makes the counterfeit operation in "The Engineer's Thumb" more dangerous than ordinary crime?</p>
-          </div>
-        </div>
       </div>
+    </div>
     
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Web Tightens (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">**Day 127 (Chapters 9-10):**
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Web Tightens (Part 3)</h2>
+      <div class="story">
+        <p>**Day 127 (Chapters 9-10):**
 3. How does Holmes prove James McCarthy's innocence despite overwhelming circumstantial evidence?
-4. What makes the Five Orange Pips case show how international hatred can pursue victims across continents?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 128 (Chapters 11-12):**
+4. What makes the Five Orange Pips case show how international hatred can pursue victims across continents?</p>
+        <p>**Day 128 (Chapters 11-12):**
 5. What makes Professor Moriarty such a dangerous opponent for Holmes?
-6. How does Moriarty's campaign to destroy Holmes's reputation show the power of systematic deception?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Week 2 Assessment Topics:**
+6. How does Moriarty's campaign to destroy Holmes's reputation show the power of systematic deception?</p>
+        <p>**Week 2 Assessment Topics:**
 - Social commentary: How economic pressure and class differences affect criminal behavior
 - International crime: How organized criminal networks operate across countries and decades
 - Criminal psychology: Understanding how intelligent criminals plan and execute complex schemes
-- Truth versus deception: How systematic lies can undermine even the most honest reputations</p><p style="margin-bottom: 15px; text-indent: 2em;">*Next: Days 131-135 covering Chapters 13-18 - "Epic Confrontation and Triumphant Return"*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p><p style="margin-bottom: 15px; text-indent: 2em;">**CRIMINAL EMPIRE STATUS: MAXIMUM SOPHISTICATION**
-Students will be fascinated by the complexity of Moriarty's criminal network while understanding how systematic thinking can counter even the most elaborate evil schemes!</p><p style="margin-bottom: 15px; text-indent: 2em;"># SHERLOCK HOLMES - Final Chapters 13-24
-*BedrockELA Classic Adventures Series - Book 8*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
+- Truth versus deception: How systematic lies can undermine even the most honest reputations</p>
+        <p>*Next: Days 131-135 covering Chapters 13-18 - "Epic Confrontation and Triumphant Return"*</p>
+        <p>---</p>
+        <p>**CRIMINAL EMPIRE STATUS: MAXIMUM SOPHISTICATION**
+Students will be fascinated by the complexity of Moriarty's criminal network while understanding how systematic thinking can counter even the most elaborate evil schemes!</p>
+        <p>
+# SHERLOCK HOLMES - Final Chapters 13-24
+*BedrockELA Classic Adventures Series - Book 8*</p>
+        <p>---</p>
       </div>
+    </div>
     
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main mystery in The Web Tightens?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Holmes use observation and deduction to solve the case?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
-      </div>
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main mystery in The Web Tightens?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How does Holmes use observation and deduction to solve the case?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about Holmes's methods or character? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Idioms, Colloquialisms, and Cultural Expressions</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Idioms are expressions whose meanings aren't literal: 'Break the ice' doesn't mean breaking actual ice. Understanding cultural expressions helps comprehension and shows how language reflects culture. Some expressions translate across cultures; others don't.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'The king lost his head' (lost control, not literally lost his head). 'She kept him in the dark' (kept him uninformed). Cultural expression: 'A thousand and one nights' suggests something vast, uncountable—the title itself is an idiom.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find three idiomatic or cultural expressions in today's reading. Explain the literal vs. actual meaning of each. Then research one expression's cultural origin and discuss what it reveals about the culture that created it.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Idioms, Colloquialisms, and Cultural Expressions</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Idioms are expressions whose meanings aren't literal: 'Break the ice' doesn't mean breaking actual ice. Understanding cultural expressions helps comprehension and shows how language reflects culture. Some expressions translate across cultures; others don't.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'The king lost his head' (lost control, not literally lost his head). 'She kept him in the dark' (kept him uninformed). Cultural expression: 'A thousand and one nights' suggests something vast, uncountable—the title itself is an idiom."</em></p>
       </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
     </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Psychology of Crime and Detection</h2>
+      <p>Holmes's methods anticipated modern criminal psychology by decades. While Victorian police focused on physical evidence and confessions, Holmes studied criminal thinking, behavior patterns, and psychology.</p>
+      <p>**Criminal Profiling**: Holmes creates psychological profiles of unknown criminals based on their methods: "This burglar is left-handed, has small hands, and works alone—he's methodical but impatient based on tool marks." Police profiling didn't develop formally until the 1970s.</p>
+      <p>**Motive Analysis**: Holmes understands that knowing WHY helps find WHO. He categorizes motives: financial gain, revenge, jealousy, concealment of other crimes. Understanding human psychology reveals patterns.</p>
+      <p>**Behavioral Evidence**: Holmes reads tiny behavioral cues—nervous gestures, voice changes, eye movement. He knows people reveal truth through unconscious signals. Modern psychology confirms this.</p>
+      <p>**Criminal Psychology**: Holmes recognizes different criminal types:
+- **Methodical planners** (Moriarty): Intelligent, patient, systematic
+- **Crimes of passion**: Emotional, impulsive, sloppy
+- **Professional criminals**: Skilled, experienced, realistic goals
+- **Desperate amateurs**: Clumsy, panicky, often caught quickly</p>
+      <p>Holmes also understands how criminals think about being caught—what they fear, what mistakes they make under pressure, how to manipulate them into confession.</p>
+      <p>This psychological insight was revolutionary for the 1890s. Most Victorian detection was physical: fingerprints, footprints, bloodstains. Holmes showed that understanding the human mind was equally important.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
   
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
 
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(134)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
-      </div>
-    </div>
-  </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
-    </div>
-  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

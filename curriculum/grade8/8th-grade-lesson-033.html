@@ -3,261 +3,418 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 33 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 33 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 33: Search for Mr. Hyde</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 33</h1>
-        <h2 class="lesson-subtitle">Search for Mr. Hyde</h2>
-        <p class="lesson-meta">Dr. Jekyll and Mr. Hyde</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 33!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Search for Mr. Hyde</strong> from <em>Dr. Jekyll and Mr. Hyde</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Master Restrictive vs. Non-Restrictive Clauses and Commas</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. systematic</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">organized and methodical</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. associates</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">companions or partners</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. revulsion</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">strong disgust</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. inexplicable</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">impossible to explain</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. manifest</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">clearly shown or obvious</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. systematic</div>
-              <div style="flex: 2; font-style: italic; color: #666;">organized and methodical</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. associates</div>
-              <div style="flex: 2; font-style: italic; color: #666;">companions or partners</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. revulsion</div>
-              <div style="flex: 2; font-style: italic; color: #666;">strong disgust</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. inexplicable</div>
-              <div style="flex: 2; font-style: italic; color: #666;">impossible to explain</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. manifest</div>
-              <div style="flex: 2; font-style: italic; color: #666;">clearly shown or obvious</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Search for Mr. Hyde </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Gabriel Utterson's investigation of Edward Hyde began with the methodical approach that had made him one of London's most respected lawyers—systematic gathering of information, careful analysis of evidence, and patient development of theories based on verifiable facts.</p><p style="margin-bottom: 15px; text-indent: 2em;">But within days of beginning his inquiry, Utterson discovered that Hyde was unlike any subject he had ever investigated. Most people left traces of their activities through normal social and economic interactions. Hyde seemed to exist in the shadows of London society, conducting his affairs through channels that left no conventional records.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Mr. Hyde?" repeated the clerk at the bank where Jekyll maintained his primary accounts. "I'm afraid we have no customer by that name. Are you certain you have the correct institution?"</p><p style="margin-bottom: 15px; text-indent: 2em;">Similar responses came from Jekyll's household staff, his professional colleagues, and the various tradesmen and service providers who conducted business with respectable members of London society.</p><p style="margin-bottom: 15px; text-indent: 2em;">It was as if Edward Hyde existed in a parallel world that intersected with conventional civilization only at specific points—like the mysterious door where Enfield had witnessed his disturbing encounter with the injured child.</p><p style="margin-bottom: 15px; text-indent: 2em;">Utterson's breakthrough came through investigation of the property records associated with the building that contained Hyde's sinister entrance.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The lease is held by a Dr. H. Jekyll," reported the clerk at the municipal records office. "Has been for approximately eight months, though the property appears to be used by a Mr. E. Hyde according to neighborhood complaints about disturbances and unsavory activities."</p><p style="margin-bottom: 15px; text-indent: 2em;">The connection between Jekyll and the building that housed Hyde was the first concrete evidence linking his friend to the mysterious creature who had so disturbed Enfield.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Search for Mr. Hyde (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">But instead of clarifying their relationship, this discovery only deepened the mystery.</p><p style="margin-bottom: 15px; text-indent: 2em;">Why would Jekyll lease property for someone he claimed to know only as "a friend whose welfare concerns me greatly"? Why would he allow his name to be associated with a building that generated complaints about "disturbances and unsavory activities"? Most puzzling of all, why would he risk his professional reputation by facilitating whatever activities Hyde was conducting behind that sinister door?</p><p style="margin-bottom: 15px; text-indent: 2em;">Utterson's investigation expanded to include the neighborhood residents who lived near Hyde's building.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Something wrong with that man," reported Mrs. Pemberton, whose kitchen window provided a view of the mysterious door. "Not wrong in any way you can point to exactly, but wrong in ways that make you want to cross to the other side of the street when you see him coming."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Gives me the shivers just thinking about him," added her neighbor Mr. Morrison. "My dog—calm as you please with everyone else—starts trembling and whimpering whenever that fellow appears. Animals know things about people that we don't always notice right away."</p><p style="margin-bottom: 15px; text-indent: 2em;">The most disturbing testimony came from Father McKenzie, whose church was located two blocks from Hyde's building.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I have counseled murderers, thieves, and people who've committed every sin described in scripture," Father McKenzie told Utterson. "But I have never encountered anyone who radiated such concentrated evil as the man you're describing. Looking at him was like staring into a window that showed you the absolute worst possibilities of human nature."</p><p style="margin-bottom: 15px; text-indent: 2em;">As Utterson compiled testimony from dozens of people who had encountered Hyde, a consistent pattern emerged that defied rational explanation.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Search for Mr. Hyde (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Everyone who met Hyde experienced the same inexplicable revulsion. Everyone described the same sense that they were confronting something fundamentally wrong with human nature itself. Everyone used variations of the same word to describe their reaction to his presence: evil.</p><p style="margin-bottom: 15px; text-indent: 2em;">But when pressed for specific details about Hyde's appearance or behavior that justified such strong reactions, witnesses became vague and uncertain.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I can't point to anything particular," Mrs. Pemberton admitted. "He's small and somewhat deformed, but London is full of people with physical disabilities who are perfectly decent human beings. There's just something about him that makes your skin crawl and your soul feel dirty."</p><p style="margin-bottom: 15px; text-indent: 2em;">By the end of his first week of investigation, Utterson had confirmed that Hyde existed, that he was connected to Jekyll through property arrangements, and that he had a consistent effect on people that exceeded normal social discomfort or physical revulsion.</p><p style="margin-bottom: 15px; text-indent: 2em;">But he was no closer to understanding what Hyde represented or why Jekyll had chosen to involve himself with someone who seemed to embody pure malevolence.</p><p style="margin-bottom: 15px; text-indent: 2em;">*Hyde wasn't just ugly - he was evil made manifest.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in Search for Mr. Hyde?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of Dr. Jekyll and Mr. Hyde? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🎭</div>
+        <h1>Lesson 33</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Search for Mr. Hyde</div>
+        <div style="font-size: 1rem; color: #999;">Week 7 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Restrictive vs. Non-Restrictive Clauses and Commas</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Restrictive clauses are essential to the meaning and need no commas: 'The girl who told the stories survived.' Non-restrictive clauses add extra information and use commas: 'Scheherazade, who had read everything, told stories.' The difference changes meaning: 'Students who studied passed' vs. 'Students, who studied, passed.'</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Restrictive: 'The tales that changed the king came from many cultures.' Non-restrictive: 'Arabian Nights, which contains hundreds of tales, influenced world literature.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find three relative clauses in today's reading. Identify whether each is restrictive or non-restrictive, explain how you know, and discuss how removing the clause would change the meaning.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Search for Mr. Hyde</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Search for Mr. Hyde</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice grammar: Restrictive vs. Non-Restrictive Clauses and Commas</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. systematic</h3>
+        <p><strong>Definition:</strong> organized and methodical</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. associates</h3>
+        <p><strong>Definition:</strong> companions or partners</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. revulsion</h3>
+        <p><strong>Definition:</strong> strong disgust</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. inexplicable</h3>
+        <p><strong>Definition:</strong> impossible to explain</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. manifest</h3>
+        <p><strong>Definition:</strong> clearly shown or obvious</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(33)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. systematic</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. associates</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. revulsion</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. inexplicable</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. manifest</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Search for Mr. Hyde (Part 1)</h2>
+      <div class="story">
+        <p>Gabriel Utterson's investigation of Edward Hyde began with the methodical approach that had made him one of London's most respected lawyers—systematic gathering of information, careful analysis of evidence, and patient development of theories based on verifiable facts.</p>
+        <p>But within days of beginning his inquiry, Utterson discovered that Hyde was unlike any subject he had ever investigated. Most people left traces of their activities through normal social and economic interactions. Hyde seemed to exist in the shadows of London society, conducting his affairs through channels that left no conventional records.</p>
+        <p>"Mr. Hyde?" repeated the clerk at the bank where Jekyll maintained his primary accounts. "I'm afraid we have no customer by that name. Are you certain you have the correct institution?"</p>
+        <p>Similar responses came from Jekyll's household staff, his professional colleagues, and the various tradesmen and service providers who conducted business with respectable members of London society.</p>
+        <p>It was as if Edward Hyde existed in a parallel world that intersected with conventional civilization only at specific points—like the mysterious door where Enfield had witnessed his disturbing encounter with the injured child.</p>
+        <p>Utterson's breakthrough came through investigation of the property records associated with the building that contained Hyde's sinister entrance.</p>
+        <p>"The lease is held by a Dr. H. Jekyll," reported the clerk at the municipal records office. "Has been for approximately eight months, though the property appears to be used by a Mr. E. Hyde according to neighborhood complaints about disturbances and unsavory activities."</p>
+        <p>The connection between Jekyll and the building that housed Hyde was the first concrete evidence linking his friend to the mysterious creature who had so disturbed Enfield.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Search for Mr. Hyde (Part 2)</h2>
+      <div class="story">
+        <p>But instead of clarifying their relationship, this discovery only deepened the mystery.</p>
+        <p>Why would Jekyll lease property for someone he claimed to know only as "a friend whose welfare concerns me greatly"? Why would he allow his name to be associated with a building that generated complaints about "disturbances and unsavory activities"? Most puzzling of all, why would he risk his professional reputation by facilitating whatever activities Hyde was conducting behind that sinister door?</p>
+        <p>Utterson's investigation expanded to include the neighborhood residents who lived near Hyde's building.</p>
+        <p>"Something wrong with that man," reported Mrs. Pemberton, whose kitchen window provided a view of the mysterious door. "Not wrong in any way you can point to exactly, but wrong in ways that make you want to cross to the other side of the street when you see him coming."</p>
+        <p>"Gives me the shivers just thinking about him," added her neighbor Mr. Morrison. "My dog—calm as you please with everyone else—starts trembling and whimpering whenever that fellow appears. Animals know things about people that we don't always notice right away."</p>
+        <p>The most disturbing testimony came from Father McKenzie, whose church was located two blocks from Hyde's building.</p>
+        <p>"I have counseled murderers, thieves, and people who've committed every sin described in scripture," Father McKenzie told Utterson. "But I have never encountered anyone who radiated such concentrated evil as the man you're describing. Looking at him was like staring into a window that showed you the absolute worst possibilities of human nature."</p>
+        <p>As Utterson compiled testimony from dozens of people who had encountered Hyde, a consistent pattern emerged that defied rational explanation.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Search for Mr. Hyde (Part 3)</h2>
+      <div class="story">
+        <p>Everyone who met Hyde experienced the same inexplicable revulsion. Everyone described the same sense that they were confronting something fundamentally wrong with human nature itself. Everyone used variations of the same word to describe their reaction to his presence: evil.</p>
+        <p>But when pressed for specific details about Hyde's appearance or behavior that justified such strong reactions, witnesses became vague and uncertain.</p>
+        <p>"I can't point to anything particular," Mrs. Pemberton admitted. "He's small and somewhat deformed, but London is full of people with physical disabilities who are perfectly decent human beings. There's just something about him that makes your skin crawl and your soul feel dirty."</p>
+        <p>By the end of his first week of investigation, Utterson had confirmed that Hyde existed, that he was connected to Jekyll through property arrangements, and that he had a consistent effect on people that exceeded normal social discomfort or physical revulsion.</p>
+        <p>But he was no closer to understanding what Hyde represented or why Jekyll had chosen to involve himself with someone who seemed to embody pure malevolence.</p>
+        <p>*Hyde wasn't just ugly - he was evil made manifest.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in Search for Mr. Hyde?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of Dr. Jekyll and Mr. Hyde? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Restrictive vs. Non-Restrictive Clauses and Commas</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Restrictive clauses are essential to the meaning and need no commas: 'The girl who told the stories survived.' Non-restrictive clauses add extra information and use commas: 'Scheherazade, who had read everything, told stories.' The difference changes meaning: 'Students who studied passed' vs. 'Students, who studied, passed.'</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Restrictive: 'The tales that changed the king came from many cultures.' Non-restrictive: 'Arabian Nights, which contains hundreds of tales, influenced world literature.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Psychology of Split Personality</h2>
+      <p>[Comprehensive informational text about The Psychology of Split Personality - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

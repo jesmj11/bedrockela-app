@@ -3,285 +3,445 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 89 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 89 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 89: The Price of Pleasure</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 89</h1>
-        <h2 class="lesson-subtitle">The Price of Pleasure</h2>
-        <p class="lesson-meta">The Picture of Dorian Gray</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 89!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Price of Pleasure</strong> from <em>The Picture of Dorian Gray</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Syntax and Sentence Structure for Effect</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. destruction</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">act of destroying</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. immediate</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">happening right away</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. discovery</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">finding something</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. virtue</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">moral excellence</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. pleasure</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">enjoyment or satisfaction</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. destruction</div>
-              <div style="flex: 2; font-style: italic; color: #666;">act of destroying</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. immediate</div>
-              <div style="flex: 2; font-style: italic; color: #666;">happening right away</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. discovery</div>
-              <div style="flex: 2; font-style: italic; color: #666;">finding something</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. virtue</div>
-              <div style="flex: 2; font-style: italic; color: #666;">moral excellence</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. pleasure</div>
-              <div style="flex: 2; font-style: italic; color: #666;">enjoyment or satisfaction</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Price of Pleasure </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The resolution that followed Dorian Gray's destruction of his supernatural portrait provided London society with its most shocking scandal while demonstrating the ultimate consequences of choosing aesthetic pleasure over moral responsibility.</p><p style="margin-bottom: 15px; text-indent: 2em;">The servants who discovered Dorian's body found a scene that challenged every assumption they had made about the relationship between physical beauty and spiritual condition.</p><p style="margin-bottom: 15px; text-indent: 2em;">"It's impossible," whispered Mrs. Leaf as she stared at the corpse that showed twenty years of accumulated aging compressed into the moments following the portrait's destruction. "He looks like an old man who's lived a life of terrible corruption, but the portrait shows the beautiful young man we all knew."</p><p style="margin-bottom: 15px; text-indent: 2em;">The transformation that had occurred was complete and irreversible—the supernatural preservation that had maintained Dorian's youthful appearance was replaced by natural aging that revealed exactly what two decades of systematic corruption had cost in terms of physical and spiritual degradation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The painting," observed Inspector Bradshaw as he examined the restored portrait that now showed innocent beauty rather than accumulated evil, "has returned to its original condition, while the man has aged all at once to show what he should have looked like after twenty years of the lifestyle he pursued."</p><p style="margin-bottom: 15px; text-indent: 2em;">The investigation that followed revealed enough evidence of Dorian's crimes to shock even London's most sophisticated social circles, but the supernatural aspects of his preservation and ultimate fate remained inexplicable to anyone who approached them through conventional understanding.</p><p style="margin-bottom: 15px; text-indent: 2em;">"We've found evidence," Inspector Bradshaw reported, "connecting him to numerous deaths, disappearances, and social scandals over the past two decades. But the specific means by which he maintained his youthful appearance while committing these crimes exceeds anything that medical science can explain."</p><p style="margin-bottom: 15px; text-indent: 2em;">The broader impact of Dorian's fate on London society was to force recognition that beauty, sophistication, and social position could mask spiritual corruption of extraordinary depth and systematic evil that exceeded anything normally conceivable.</p><p style="margin-bottom: 15px; text-indent: 2em;">"He was admired," reflected Lady Windermere during one of the many conversations that followed news of Dorian's death, "by everyone who valued aesthetic pleasure and sophisticated conversation. We celebrated someone whose beauty concealed the kind of evil that should have horrified us if we had possessed sufficient moral sensitivity to recognize it."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Price of Pleasure (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">But perhaps most significant was the recognition that Dorian's corruption had not been limited to his own moral development, but had affected an entire generation of young aristocrats who had adopted his philosophy and lifestyle without understanding their ultimate consequences.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The young men who followed his example," observed Dr. Ashton, "have learned that pursuing pleasure without moral constraint leads not to sophisticated fulfillment but to spiritual emptiness that no amount of aesthetic experience can satisfy."</p><p style="margin-bottom: 15px; text-indent: 2em;">The final lesson that emerged from Dorian Gray's tragedy was that beauty means nothing without virtue, and that no amount of physical perfection or aesthetic sophistication can compensate for moral corruption that destroys both the soul that harbors it and the communities that it influences.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Living only for pleasure destroys the soul," concluded Father McKenzie during the funeral sermon that few people attended. "When beauty serves corruption rather than inspiring virtue, it becomes not a blessing but a curse that corrupts everything it touches."</p><p style="margin-bottom: 15px; text-indent: 2em;">The portrait that survived Dorian's death was preserved as a reminder that true beauty must be united with moral goodness to avoid becoming an instrument for evil rather than a source of inspiration and positive influence.</p><p style="margin-bottom: 15px; text-indent: 2em;">*Living only for pleasure destroys the soul - beauty means nothing without virtue.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p><p style="margin-bottom: 15px; text-indent: 2em;">## Discussion Questions - Final Chapters 13-24</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 116 (Chapters 13-14):**
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🖼️</div>
+        <h1>Lesson 89</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Price of Pleasure</div>
+        <div style="font-size: 1rem; color: #999;">Week 18 • undefined • 8th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Price of Pleasure</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Price of Pleasure</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Syntax and Sentence Structure for Effect</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. destruction</h3>
+        <p><strong>Definition:</strong> act of destroying</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. immediate</h3>
+        <p><strong>Definition:</strong> happening right away</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. discovery</h3>
+        <p><strong>Definition:</strong> finding something</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. virtue</h3>
+        <p><strong>Definition:</strong> moral excellence</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. pleasure</h3>
+        <p><strong>Definition:</strong> enjoyment or satisfaction</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. destruction</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. immediate</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. discovery</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. virtue</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. pleasure</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Price of Pleasure (Part 1)</h2>
+      <div class="story">
+        <p>The resolution that followed Dorian Gray's destruction of his supernatural portrait provided London society with its most shocking scandal while demonstrating the ultimate consequences of choosing aesthetic pleasure over moral responsibility.</p>
+        <p>The servants who discovered Dorian's body found a scene that challenged every assumption they had made about the relationship between physical beauty and spiritual condition.</p>
+        <p>"It's impossible," whispered Mrs. Leaf as she stared at the corpse that showed twenty years of accumulated aging compressed into the moments following the portrait's destruction. "He looks like an old man who's lived a life of terrible corruption, but the portrait shows the beautiful young man we all knew."</p>
+        <p>The transformation that had occurred was complete and irreversible—the supernatural preservation that had maintained Dorian's youthful appearance was replaced by natural aging that revealed exactly what two decades of systematic corruption had cost in terms of physical and spiritual degradation.</p>
+        <p>"The painting," observed Inspector Bradshaw as he examined the restored portrait that now showed innocent beauty rather than accumulated evil, "has returned to its original condition, while the man has aged all at once to show what he should have looked like after twenty years of the lifestyle he pursued."</p>
+        <p>The investigation that followed revealed enough evidence of Dorian's crimes to shock even London's most sophisticated social circles, but the supernatural aspects of his preservation and ultimate fate remained inexplicable to anyone who approached them through conventional understanding.</p>
+        <p>"We've found evidence," Inspector Bradshaw reported, "connecting him to numerous deaths, disappearances, and social scandals over the past two decades. But the specific means by which he maintained his youthful appearance while committing these crimes exceeds anything that medical science can explain."</p>
+        <p>The broader impact of Dorian's fate on London society was to force recognition that beauty, sophistication, and social position could mask spiritual corruption of extraordinary depth and systematic evil that exceeded anything normally conceivable.</p>
+        <p>"He was admired," reflected Lady Windermere during one of the many conversations that followed news of Dorian's death, "by everyone who valued aesthetic pleasure and sophisticated conversation. We celebrated someone whose beauty concealed the kind of evil that should have horrified us if we had possessed sufficient moral sensitivity to recognize it."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Price of Pleasure (Part 2)</h2>
+      <div class="story">
+        <p>But perhaps most significant was the recognition that Dorian's corruption had not been limited to his own moral development, but had affected an entire generation of young aristocrats who had adopted his philosophy and lifestyle without understanding their ultimate consequences.</p>
+        <p>"The young men who followed his example," observed Dr. Ashton, "have learned that pursuing pleasure without moral constraint leads not to sophisticated fulfillment but to spiritual emptiness that no amount of aesthetic experience can satisfy."</p>
+        <p>The final lesson that emerged from Dorian Gray's tragedy was that beauty means nothing without virtue, and that no amount of physical perfection or aesthetic sophistication can compensate for moral corruption that destroys both the soul that harbors it and the communities that it influences.</p>
+        <p>"Living only for pleasure destroys the soul," concluded Father McKenzie during the funeral sermon that few people attended. "When beauty serves corruption rather than inspiring virtue, it becomes not a blessing but a curse that corrupts everything it touches."</p>
+        <p>The portrait that survived Dorian's death was preserved as a reminder that true beauty must be united with moral goodness to avoid becoming an instrument for evil rather than a source of inspiration and positive influence.</p>
+        <p>*Living only for pleasure destroys the soul - beauty means nothing without virtue.*</p>
+        <p>---</p>
+        <p>## Discussion Questions - Final Chapters 13-24</p>
+        <p>**Day 116 (Chapters 13-14):**
 1. How does Dorian's manipulation of Alan Campbell show his evolution into systematic evil?
 2. What makes his descent into the opium den represent spiritual as well as physical degradation?</p>
-          </div>
-        </div>
       </div>
+    </div>
     
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Price of Pleasure (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">**Day 117 (Chapters 15-16):**
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Price of Pleasure (Part 3)</h2>
+      <div class="story">
+        <p>**Day 117 (Chapters 15-16):**
 3. How does the portrait's horrific appearance force Dorian to confront his true nature?
-4. What makes Basil's murder represent the ultimate corruption of art and friendship?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 118 (Chapters 17-18):**
+4. What makes Basil's murder represent the ultimate corruption of art and friendship?</p>
+        <p>**Day 118 (Chapters 17-18):**
 5. How does James Vane's pursuit represent working-class justice versus aristocratic privilege?
-6. What makes Dorian's escape from immediate consequences still leave him psychologically trapped?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 119 (Chapters 19-20):**
+6. What makes Dorian's escape from immediate consequences still leave him psychologically trapped?</p>
+        <p>**Day 119 (Chapters 19-20):**
 7. How does Dorian's paranoia show that supernatural protection can't prevent psychological consequences?
-8. What does James Vane's accidental death reveal about the nature of justice and fate?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Day 120 (Chapters 21-24):**
+8. What does James Vane's accidental death reveal about the nature of justice and fate?</p>
+        <p>**Day 120 (Chapters 21-24):**
 9. Why does Dorian's attempted redemption fail to change the portrait?
 10. What makes his final choice between beauty and salvation both inevitable and tragic?
 11. How does his ultimate fate demonstrate the price of living without moral constraints?
-12. What does the story teach about the relationship between beauty, corruption, and spiritual development?</p><p style="margin-bottom: 15px; text-indent: 2em;">**Complete Series Assessment Topics:**
+12. What does the story teach about the relationship between beauty, corruption, and spiritual development?</p>
+        <p>**Complete Series Assessment Topics:**
 - Beauty and corruption: How physical perfection can mask spiritual decay
 - Influence and responsibility: The moral obligations of those who shape others
 - Pleasure and consequences: Why hedonistic philosophy ultimately destroys the soul
 - Appearance versus reality: The importance of inner character over external beauty
-- Redemption and damnation: Whether systematic evil can ever be forgiven or redeemed</p><p style="margin-bottom: 15px; text-indent: 2em;">**Series Connection - Books 1-7:**
+- Redemption and damnation: Whether systematic evil can ever be forgiven or redeemed</p>
+        <p>**Series Connection - Books 1-7:**
 - **Lost World:** External dangerous science discovered
 - **War of Worlds:** External scientific threat to humanity  
 - **Invisible Man:** External corruption through selfish science
 - **Mysterious Island:** External salvation through cooperative science
 - **Jekyll & Hyde:** Internal transformation - we create our own monsters
 - **Frankenstein:** External creation - we bear responsibility for what we create
-- **Dorian Gray:** Internal corruption - living only for pleasure destroys the soul ✨</p><p style="margin-bottom: 15px; text-indent: 2em;">**CORRUPTION MASTERPIECE STATUS: COMPLETE!**</p><p style="margin-bottom: 15px; text-indent: 2em;">Students will be profoundly moved by this ultimate exploration of beauty, influence, and moral consequence while understanding that true character matters infinitely more than physical appearance!</p>
-          </div>
-        </div>
+- **Dorian Gray:** Internal corruption - living only for pleasure destroys the soul ✨</p>
+        <p>**CORRUPTION MASTERPIECE STATUS: COMPLETE!**</p>
+        <p>Students will be profoundly moved by this ultimate exploration of beauty, influence, and moral consequence while understanding that true character matters infinitely more than physical appearance!</p>
       </div>
+    </div>
     
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in The Price of Pleasure?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of The Picture of Dorian Gray? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
-      </div>
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in The Price of Pleasure?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of The Picture of Dorian Gray? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Syntax and Sentence Structure for Effect</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Analyze the syntax of three sentences from today's chapter. For each, explain how the sentence structure (length, order, type) affects the meaning or impact. Then write three sentences about the chapter using varied syntax to create different effects (tension, flow, emphasis).</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Syntax and Sentence Structure for Effect</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'"</em></p>
       </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
     </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Literary Context</h2>
+      <p>Informational text to be added.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
   
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
 
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(89)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
-      </div>
-    </div>
-  </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
-    </div>
-  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

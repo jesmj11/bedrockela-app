@@ -1,7 +1,385 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>6th Grade Day 112</title></head>
-<body style="font-family:sans-serif;max-width:800px;margin:50px auto;padding:20px;">
-<h1>Day 112: Norse Mythology - Chapter 12</h1>
-<p>This lesson is being prepared. Check back soon!</p>
-<p style="color:#666;margin-top:40px;">BedrockELA - 6th Grade</p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 112 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 112: THE HONEY TRAP</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏝️</div>
+        <h1>Lesson 112</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE HONEY TRAP</div>
+        <div style="font-size: 1rem; color: #999;">Week 23 • Classic Literature • 6th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THE HONEY TRAP</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THE HONEY TRAP</li>
+        <li>Master 2 vocabulary words</li>
+        <li>Practice language: Semantic Fields and Word Families</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. confrontation</h3>
+        <p><strong>Definition:</strong> a hostile or argumentative meeting between opposing parties</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. initiative</h3>
+        <p><strong>Definition:</strong> the ability to act or make decisions independently without being told</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. confrontation</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. initiative</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE HONEY TRAP (Part 1)</h2>
+      <div class="story">
+        <p>The bears came in our fourth year.
+We had always known they were on the island — we had seen tracks and claw marks on trees — but they had kept their distance. Then Fritz discovered a grove of trees on the hillside where wild bees had built enormous hives, producing honey in quantities we could barely believe. We began harvesting it regularly.
+The bears noticed.
+Fritz and Jack were at the honey grove one morning when they heard branches snapping — heavy branches, breaking under considerable weight. Two bears emerged from the forest — large, brown, and very interested in the honey.
+"Don't move," Fritz whispered. "They haven't seen us."
+Jack, for once in his life, did as he was told.
+The bears went straight for the hives. They tore them apart with their claws, scooping out honeycomb and eating with happy grunts, ignoring the bees that swarmed around their thick fur. They were not aggressive — they were hungry. But a hungry bear disturbed by humans becomes an aggressive bear very quickly.
+Fritz made a decision. Rather than risk a confrontation, he and Jack backed away slowly, left the grove, and came home to report.
+We spent the next week building a defense for the honey grove — a fence of sharpened stakes around the hives, with a gate that could be locked. It was Fritz's idea, and Fritz led the construction. He organized the boys into work crews, assigned tasks based on each person's skills, and kept the project on schedule.
+I watched him work and realized something had shifted. Fritz wasn't just following my lead anymore. He was leading himself — making decisions, taking responsibility, thinking about the safety of others before his own desires. The reckless boy who had lost the Elizabeth was becoming a careful, capable young man.
+The fence worked. The bears, finding the hives inaccessible, eventually moved on to other food sources. And we kept our honey.
+Elizabeth made honey cakes to celebrate. They were the best thing any of us had ever tasted.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE HONEY TRAP (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE HONEY TRAP (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. How does Fritz handle the bear situation differently than he would have in earlier chapters?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What does the father notice about Fritz in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Compare Fritz in Chapter 17 (the dangerous shore) to Fritz in Chapter 18 (the honey trap). How has he grown as a person and a leader? What caused this growth?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Semantic Fields and Word Families</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Seasonal Changes and Planning</h2>
+      <p>Even tropical islands have seasons—wet and dry periods, temperature variations, and changes in food availability. Planning ahead is crucial. During abundance, you preserve food for scarcity. You plant crops before rainy season. You repair shelter before storm season. You gather materials when weather permits. The Robinsons came from European agricultural tradition with strong seasonal awareness, giving them advantage. But tropical seasons differ from European ones—learning new patterns was essential. Failing to prepare for seasonal changes could mean starvation or exposure. Long-term survival requires thinking months ahead, delaying gratification, and working consistently toward future needs—discipline the family needed to develop and maintain.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>Reflect on today's chapter. What stood out to you? How do you relate to the characters or themes? (10-15 sentences)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

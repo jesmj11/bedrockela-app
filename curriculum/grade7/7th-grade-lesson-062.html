@@ -3,309 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7th Grade Day 62 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 62 - BedrockELA</title>
   <style>
-    body { 
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: #FFFFFF; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
-    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    .nav-controls { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      margin-top: 30px; 
-      padding: 20px; 
-      background: #f9f9f9; 
-      border-radius: 10px; 
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
-      bottom: 20px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-btn { 
-      padding: 12px 24px; 
-      background: #305853; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: all 0.2s;
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
-    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-    .progress-bar { 
-      flex: 1; 
-      margin: 0 20px; 
-      height: 10px; 
-      background: #e0e0e0; 
-      border-radius: 10px; 
-      overflow: hidden; 
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
     }
-    .progress-fill { 
-      height: 100%; 
-      background: linear-gradient(90deg, #305853, #B06821); 
-      transition: width 0.3s ease;
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
       border-radius: 10px;
     }
-    .page-indicator { 
-      font-size: 0.9em; 
-      color: #666; 
-      font-weight: 600; 
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
     }
   </style>
 </head>
 <body>
-  <div class="lesson-container">
-    <div id="lessonContent">
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 62: Queequeg</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🐋</div>
+        <h1>Lesson 62</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Queequeg</div>
+        <div style="font-size: 1rem; color: #999;">Week 13 • Classic Literature • 7th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Queequeg</strong> from <em>Classic Literature</em>.</p>
       
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 62</h1>
-        <h2 class="lesson-subtitle">Queequeg</h2>
-        <p class="lesson-meta">Moby Dick</p>
-        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 62!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Queequeg</strong> from <em>Tales from the Arabian Nights</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Apply Context Clues: Multiple Strategies Combined</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. equanimity</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">Mental calmness and composure, especially in difficult situations.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. disposition</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">A person's inherent qualities of mind and character; natural tendency.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. propriety</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">Conformity to conventionally accepted standards of behavior.</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. equanimity</div>
-              <div style="flex: 2; font-style: italic; color: #666;">Mental calmness and composure, especially in difficult situations.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. disposition</div>
-              <div style="flex: 2; font-style: italic; color: #666;">A person's inherent qualities of mind and character; natural tendency.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. propriety</div>
-              <div style="flex: 2; font-style: italic; color: #666;">Conformity to conventionally accepted standards of behavior.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Queequeg </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Queequeg</p><p style="margin-bottom: 15px; text-indent: 2em;">The harpooner arrived at midnight.</p><p style="margin-bottom: 15px; text-indent: 2em;">I was half asleep in the big bed when I heard the door open. I saw, in the candlelight, a figure that was unlike anything I had prepared myself for: a large man, tattooed from crown to ankle in patterns I could not read, with a shaved head and a face that had been marked in ways that made his expressions difficult to interpret at first. He was carrying, of all things, a shrunken human head, and a harpoon that he leaned against the wall with the casual ease of someone setting down an umbrella.</p><p style="margin-bottom: 15px; text-indent: 2em;">He saw me in the bed. He made a sound I could not interpret.</p><p style="margin-bottom: 15px; text-indent: 2em;">I made a sound back. I may have been somewhat alarmed.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Queequeg (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">He lunged. I yelled. Peter Coffin appeared in the doorway and sorted things out, and after some conversation it became clear that we were both reasonable people who had merely startled each other, and that the bed was large enough for two, and that there was no alternative anyway.</p><p style="margin-bottom: 15px; text-indent: 2em;">His name was Queequeg. He was from an island called Rokovoko in the South Sea — a place so remote it appeared on no map, because the best things never do, he told me later, or at least I chose to believe he was telling me something like that, because my Fijian was poor and his English was limited, but we communicated well enough through tone and gesture and the patient goodwill that develops between people who have decided to trust each other.</p><p style="margin-bottom: 15px; text-indent: 2em;">By morning I had decided I liked him considerably.</p><p style="margin-bottom: 15px; text-indent: 2em;">By the end of the second day I had decided he was the finest man I had met in years. This was not despite his being foreign and tattooed and the owner of a shrunken head. It was simply about who he was: calm, competent, unexpectedly gentle, with a quality of attention — he listened to what you actually said rather than what he expected you to say — that was rare in any man of any background.</p><p style="margin-bottom: 15px; text-indent: 2em;">He smoked his pipe. He carved his idol. He sharpened his harpoon. He offered me half of everything he had without being asked, which was the custom of his people, and I was grateful for it and tried to offer half of everything I had in return.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Queequeg (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">He agreed to sail with me. He had been looking for a ship himself, and there was an understanding between us already that where one went, the other would go.</p><p style="margin-bottom: 15px; text-indent: 2em;">On Sunday we went to church together. Father Mapple stood in a pulpit shaped like the bow of a ship and preached on Jonah — the man who ran from what he was meant to do and was swallowed by a whale and spent three days in darkness before being given a second chance. Father Mapple's voice was the voice of a man who had been to sea himself and knew the difference between a sermon about the ocean and the ocean itself.</p><p style="margin-bottom: 15px; text-indent: 2em;">I thought about Jonah for a long time afterward. The man who tried to escape what he was meant to do. The whale that was not a punishment but a passage.</p><p style="margin-bottom: 15px; text-indent: 2em;">I signed on to the Pequod the following morning. Queequeg signed on beside me.</p><p style="margin-bottom: 15px; text-indent: 2em;">We did not know, either of us, what we were sailing into. We were young enough to prefer not knowing.</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. Ishmael quickly decides Queequeg is 'the finest man I had met in years' despite their very different backgrounds. What quality most earns this judgment?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
-                      <span>A) Queequeg's exotic appearance and impressive tattoos</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
-                      <span>B) Queequeg's exceptional skill with a harpoon</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
-                      <span>C) Queequeg's genuine listening — he pays attention to what you actually say rather than what he expects you to say</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
-                      <span>D) Queequeg's willingness to share his belongings without being asked</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. Father Mapple preaches about Jonah — a man who ran from what he was meant to do and was swallowed by a whale before getting a second chance. Why does Ishmael find this story significant at this moment?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
-                      <span>A) He believes he is about to be swallowed by a whale</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
-                      <span>B) The story foreshadows what will happen to Ahab — a man who also tries to force his will on something much larger than himself</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
-                      <span>C) He is religious and finds all Bible stories meaningful</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
-                      <span>D) He wants to understand whale behavior before sailing</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="9">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language Skill: Context Clues: Multiple Strategies Combined</h2>
-        
-        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-          <p style="line-height: 1.8; margin-bottom: 15px;">Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation). Look for signal words: 'or,' 'such as,' 'unlike,' 'however.'</p>
-          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-          <p style="font-style: italic; color: #555; line-height: 1.6;">From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment).</p>
-        </div>
-        
-        <div class="skill-practice">
-          <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-          <p style="margin-bottom: 15px;">Find three challenging vocabulary words in today's reading. For each, identify ALL context clues present (definition, synonym, antonym, example, inference). Then write sentences using new vocabulary words with at least two types of context clues.</p>
-          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
-          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter connect to the overall theme of "Who You Want to Be vs. Who You Actually Are"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your reflection here..."></textarea>
-        <button onclick="window.saveJournal(2)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
-      </div>
-    </div>
-  
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Queequeg</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice language: Context Clues: Multiple Strategies Combined</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
     </div>
     
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressBar"></div>
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. equanimity</h3>
+        <p><strong>Definition:</strong> Mental calmness and composure, especially in difficult situations.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+      
+      <div class="vocab-word">
+        <h3>2. disposition</h3>
+        <p><strong>Definition:</strong> A person's inherent qualities of mind and character; natural tendency.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. propriety</h3>
+        <p><strong>Definition:</strong> Conformity to conventionally accepted standards of behavior.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
     </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. equanimity</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. disposition</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. propriety</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Queequeg (Part 1)</h2>
+      <div class="story">
+        <p>Queequeg</p>
+        <p>The harpooner arrived at midnight.</p>
+        <p>I was half asleep in the big bed when I heard the door open. I saw, in the candlelight, a figure that was unlike anything I had prepared myself for: a large man, tattooed from crown to ankle in patterns I could not read, with a shaved head and a face that had been marked in ways that made his expressions difficult to interpret at first. He was carrying, of all things, a shrunken human head, and a harpoon that he leaned against the wall with the casual ease of someone setting down an umbrella.</p>
+        <p>He saw me in the bed. He made a sound I could not interpret.</p>
+        <p>I made a sound back. I may have been somewhat alarmed.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Queequeg (Part 2)</h2>
+      <div class="story">
+        <p>He lunged. I yelled. Peter Coffin appeared in the doorway and sorted things out, and after some conversation it became clear that we were both reasonable people who had merely startled each other, and that the bed was large enough for two, and that there was no alternative anyway.</p>
+        <p>His name was Queequeg. He was from an island called Rokovoko in the South Sea — a place so remote it appeared on no map, because the best things never do, he told me later, or at least I chose to believe he was telling me something like that, because my Fijian was poor and his English was limited, but we communicated well enough through tone and gesture and the patient goodwill that develops between people who have decided to trust each other.</p>
+        <p>By morning I had decided I liked him considerably.</p>
+        <p>By the end of the second day I had decided he was the finest man I had met in years. This was not despite his being foreign and tattooed and the owner of a shrunken head. It was simply about who he was: calm, competent, unexpectedly gentle, with a quality of attention — he listened to what you actually said rather than what he expected you to say — that was rare in any man of any background.</p>
+        <p>He smoked his pipe. He carved his idol. He sharpened his harpoon. He offered me half of everything he had without being asked, which was the custom of his people, and I was grateful for it and tried to offer half of everything I had in return.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Queequeg (Part 3)</h2>
+      <div class="story">
+        <p>He agreed to sail with me. He had been looking for a ship himself, and there was an understanding between us already that where one went, the other would go.</p>
+        <p>On Sunday we went to church together. Father Mapple stood in a pulpit shaped like the bow of a ship and preached on Jonah — the man who ran from what he was meant to do and was swallowed by a whale and spent three days in darkness before being given a second chance. Father Mapple's voice was the voice of a man who had been to sea himself and knew the difference between a sermon about the ocean and the ocean itself.</p>
+        <p>I thought about Jonah for a long time afterward. The man who tried to escape what he was meant to do. The whale that was not a punishment but a passage.</p>
+        <p>I signed on to the Pequod the following morning. Queequeg signed on beside me.</p>
+        <p>We did not know, either of us, what we were sailing into. We were young enough to prefer not knowing.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. Ishmael quickly decides Queequeg is 'the finest man I had met in years' despite their very different backgrounds. What quality most earns this judgment?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Father Mapple preaches about Jonah — a man who ran from what he was meant to do and was swallowed by a whale before getting a second chance. Why does Ishmael find this story significant at this moment?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Context Clues: Multiple Strategies Combined</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation). Look for signal words: 'or,' 'such as,' 'unlike,' 'however.'</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment)."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Did You Know?</h2>
+      <p>This chapter is part of 3 and explores themes of human nature, morality, and society. These timeless stories continue to influence literature and culture today.</p>
+      
+      <h3>Think About It:</h3>
+      <p>How do you think the themes in this chapter relate to modern life? What lessons can we learn?</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>Reflect on today's chapter. What stood out to you? How do you relate to the characters or themes? What questions do you have? (10-15 sentences minimum)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
 
   <script>
@@ -313,8 +352,8 @@
     const totalPages = 11;
     
     function showPage(pageNum) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -322,20 +361,31 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
     
-    window.saveJournal = function(day) {
-      alert('Journal entry saved! ✅');
-      // In production, save to Firebase
-    };
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
     
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

@@ -3,309 +3,343 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7th Grade Day 71 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 71 - BedrockELA</title>
   <style>
-    body { 
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: #FFFFFF; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
-    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    .nav-controls { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      margin-top: 30px; 
-      padding: 20px; 
-      background: #f9f9f9; 
-      border-radius: 10px; 
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
-      bottom: 20px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-btn { 
-      padding: 12px 24px; 
-      background: #305853; 
-      color: white; 
-      border: none; 
-      border-radius: 8px; 
-      font-size: 16px; 
-      font-weight: 600; 
-      cursor: pointer; 
-      transition: all 0.2s;
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
-    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-    .progress-bar { 
-      flex: 1; 
-      margin: 0 20px; 
-      height: 10px; 
-      background: #e0e0e0; 
-      border-radius: 10px; 
-      overflow: hidden; 
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
     }
-    .progress-fill { 
-      height: 100%; 
-      background: linear-gradient(90deg, #305853, #B06821); 
-      transition: width 0.3s ease;
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
       border-radius: 10px;
     }
-    .page-indicator { 
-      font-size: 0.9em; 
-      color: #666; 
-      font-weight: 600; 
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
     }
   </style>
 </head>
 <body>
-  <div class="lesson-container">
-    <div id="lessonContent">
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 71: The First Lowering</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🐋</div>
+        <h1>Lesson 71</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The First Lowering</div>
+        <div style="font-size: 1rem; color: #999;">Week 15 • Classic Literature • 7th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The First Lowering</strong> from <em>Classic Literature</em>.</p>
       
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 71</h1>
-        <h2 class="lesson-subtitle">The First Lowering</h2>
-        <p class="lesson-meta">Moby Dick</p>
-        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 71!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The First Lowering</strong> from <em>Tales from the Arabian Nights</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 3 new vocabulary words in context</li>
-            <li>Master Active and Passive Voice: Strategic Use</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. inevitability</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">The quality of being certain to happen; unable to be avoided or escaped.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. lurch</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">A sudden unsteady movement; an abrupt tipping or swaying.</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. vigilance</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">Careful and attentive watchfulness, especially for danger.</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. inevitability</div>
-              <div style="flex: 2; font-style: italic; color: #666;">The quality of being certain to happen; unable to be avoided or escaped.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. lurch</div>
-              <div style="flex: 2; font-style: italic; color: #666;">A sudden unsteady movement; an abrupt tipping or swaying.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. vigilance</div>
-              <div style="flex: 2; font-style: italic; color: #666;">Careful and attentive watchfulness, especially for danger.</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The First Lowering </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The First Lowering</p><p style="margin-bottom: 15px; text-indent: 2em;">The first time we lowered the boats for a whale, I understood what whaling actually was.</p><p style="margin-bottom: 15px; text-indent: 2em;">From the deck, it looked manageable. The whale spouted. The captain gave the order. The boats went down — three of them, each crewed by six men including a harpooner at the bow and a mate at the stern. They rowed toward the whale. The whale was visible, large but comprehensible.</p><p style="margin-bottom: 15px; text-indent: 2em;">Then I was in the water.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The First Lowering (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">Not because we capsized — not yet. Because the whale sounded, dove straight down, and the line connected to Queequeg's harpoon went out with such violence that it smoked against the oarlock and pulled the boat through the water at a speed no rowing could match. This was the Nantucket sleigh ride: being towed by a harpooned whale through the ocean, unable to do anything but hold on and wait for it to end one way or another.</p><p style="margin-bottom: 15px; text-indent: 2em;">It ended, that first time, without serious injury. The whale tired. The whale was killed and lashed to the ship, and the long, bloody, industrial work of converting a living creature into oil began — which was what we were actually there for.</p><p style="margin-bottom: 15px; text-indent: 2em;">Starbuck ran his boat with the quiet authority of a man who had done this hundreds of times. He did not shout. He said what needed to be done and his crew did it. Stubb ran his with a breezy confidence that made the work seem almost casual, smoking his pipe in the chase, smiling during things that were not particularly funny. Flask ran his with pure aggression and no apparent concern for personal safety.</p><p style="margin-bottom: 15px; text-indent: 2em;">I was in Starbuck's boat. Queequeg was our harpooner. He stood in the bow and balanced in the moving boat with the easy confidence of a man standing on solid ground, harpoon ready, watching the water with complete attention.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The First Lowering (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">When he threw, it was fast and certain and had a quality of inevitability, as if the harpoon had always been going to go exactly where it went.</p><p style="margin-bottom: 15px; text-indent: 2em;">That night, processing the whale on deck, covered in blood and oil in the dark, with the lanterns swinging and the ocean everywhere, I felt something I had not felt in years: entirely, specifically alive.</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. Ishmael describes the 'Nantucket sleigh ride' — being towed by a harpooned whale — as something that cannot be controlled, only endured. How does this moment mirror the larger situation on the Pequod?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
-                      <span>A) It shows that whaling is more dangerous than the sailors expected</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
-                      <span>B) The crew, like Ishmael in the boat, is being pulled by a force they cannot control — Ahab's obsession — and all they can do is hold on</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
-                      <span>C) It demonstrates Queequeg's skill as a harpooner</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
-                      <span>D) It foreshadows the specific way the Pequod will be destroyed</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. Ishmael says he felt 'entirely, specifically alive' while processing the whale at night. What does this suggest about why people seek out dangerous work?</p>
-              
-                <div class="options" style="margin-left: 20px;">
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
-                      <span>A) That dangerous work pays better and provides excitement</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
-                      <span>B) That real physical challenge and consequence can produce a quality of presence and aliveness that comfortable life does not — danger, for some people, is a path to feeling real</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
-                      <span>C) That Ishmael had been depressed and the work cured him</span>
-                    </label>
-                  
-                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
-                      <span>D) That night work on a ship is inherently more exciting than daytime work</span>
-                    </label>
-                  
-                </div>
-              
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="9">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Skill: Active and Passive Voice: Strategic Use</h2>
-        
-        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-          <p style="line-height: 1.8; margin-bottom: 15px;">Active voice emphasizes the doer: 'Scheherazade told stories.' Passive voice emphasizes the action or receiver: 'Stories were told by Scheherazade.' Passive voice is useful when the doer is unknown, unimportant, or when you want to shift focus. Overusing passive voice weakens writing.</p>
-          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-          <p style="font-style: italic; color: #555; line-height: 1.6;">Active: 'The king executed the women.' Passive: 'The women were executed' (focuses on victims, not perpetrator). Sometimes passive voice is more appropriate for the meaning you want to convey.</p>
-        </div>
-        
-        <div class="skill-practice">
-          <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
-          <p style="margin-bottom: 15px;">Find three sentences in today's chapter in passive voice. Rewrite them in active voice. Discuss which version is more effective and why. Then write two sentences where passive voice would be the better choice.</p>
-          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
-          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal Entry</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. If you were in their position, would you have made the same choice? Why or why not? Consider the character's motivations, the consequences they faced, and what this reveals about human nature.</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your journal entry here..."></textarea>
-        <button onclick="window.saveJournal(11)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
-      </div>
-    </div>
-  
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The First Lowering</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice grammar: Active and Passive Voice: Strategic Use</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
     </div>
     
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressBar"></div>
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. inevitability</h3>
+        <p><strong>Definition:</strong> The quality of being certain to happen; unable to be avoided or escaped.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+      
+      <div class="vocab-word">
+        <h3>2. lurch</h3>
+        <p><strong>Definition:</strong> A sudden unsteady movement; an abrupt tipping or swaying.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. vigilance</h3>
+        <p><strong>Definition:</strong> Careful and attentive watchfulness, especially for danger.</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
     </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. inevitability</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. lurch</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. vigilance</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The First Lowering (Part 1)</h2>
+      <div class="story">
+        <p>The First Lowering</p>
+        <p>The first time we lowered the boats for a whale, I understood what whaling actually was.</p>
+        <p>From the deck, it looked manageable. The whale spouted. The captain gave the order. The boats went down — three of them, each crewed by six men including a harpooner at the bow and a mate at the stern. They rowed toward the whale. The whale was visible, large but comprehensible.</p>
+        <p>Then I was in the water.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The First Lowering (Part 2)</h2>
+      <div class="story">
+        <p>Not because we capsized — not yet. Because the whale sounded, dove straight down, and the line connected to Queequeg's harpoon went out with such violence that it smoked against the oarlock and pulled the boat through the water at a speed no rowing could match. This was the Nantucket sleigh ride: being towed by a harpooned whale through the ocean, unable to do anything but hold on and wait for it to end one way or another.</p>
+        <p>It ended, that first time, without serious injury. The whale tired. The whale was killed and lashed to the ship, and the long, bloody, industrial work of converting a living creature into oil began — which was what we were actually there for.</p>
+        <p>Starbuck ran his boat with the quiet authority of a man who had done this hundreds of times. He did not shout. He said what needed to be done and his crew did it. Stubb ran his with a breezy confidence that made the work seem almost casual, smoking his pipe in the chase, smiling during things that were not particularly funny. Flask ran his with pure aggression and no apparent concern for personal safety.</p>
+        <p>I was in Starbuck's boat. Queequeg was our harpooner. He stood in the bow and balanced in the moving boat with the easy confidence of a man standing on solid ground, harpoon ready, watching the water with complete attention.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The First Lowering (Part 3)</h2>
+      <div class="story">
+        <p>When he threw, it was fast and certain and had a quality of inevitability, as if the harpoon had always been going to go exactly where it went.</p>
+        <p>That night, processing the whale on deck, covered in blood and oil in the dark, with the lanterns swinging and the ocean everywhere, I felt something I had not felt in years: entirely, specifically alive.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. Ishmael describes the 'Nantucket sleigh ride' — being towed by a harpooned whale — as something that cannot be controlled, only endured. How does this moment mirror the larger situation on the Pequod?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. Ishmael says he felt 'entirely, specifically alive' while processing the whale at night. What does this suggest about why people seek out dangerous work?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Active and Passive Voice: Strategic Use</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Active voice emphasizes the doer: 'Scheherazade told stories.' Passive voice emphasizes the action or receiver: 'Stories were told by Scheherazade.' Passive voice is useful when the doer is unknown, unimportant, or when you want to shift focus. Overusing passive voice weakens writing.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Active: 'The king executed the women.' Passive: 'The women were executed' (focuses on victims, not perpetrator). Sometimes passive voice is more appropriate for the meaning you want to convey."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Did You Know?</h2>
+      <p>This chapter is part of 3 and explores themes of human nature, morality, and society. These timeless stories continue to influence literature and culture today.</p>
+      
+      <h3>Think About It:</h3>
+      <p>How do you think the themes in this chapter relate to modern life? What lessons can we learn?</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. Support your analysis with evidence from the text. (3-4 paragraphs, 15-20 sentences minimum)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
 
   <script>
@@ -313,8 +347,8 @@
     const totalPages = 11;
     
     function showPage(pageNum) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -322,20 +356,31 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
     
-    window.saveJournal = function(day) {
-      alert('Journal entry saved! ✅');
-      // In production, save to Firebase
-    };
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
     
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

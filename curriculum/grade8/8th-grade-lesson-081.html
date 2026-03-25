@@ -3,261 +3,412 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 81 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 81 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 81: The Murder</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 81</h1>
-        <h2 class="lesson-subtitle">The Murder</h2>
-        <p class="lesson-meta">The Picture of Dorian Gray</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 81!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Murder</strong> from <em>The Picture of Dorian Gray</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Master Subjunctive Mood for Hypotheticals and Wishes</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. murder</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">intentional killing</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. ultimate</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">final or extreme</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. evidence</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">proof of something</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. restraint</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">self-control</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. expression</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">way of showing</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. murder</div>
-              <div style="flex: 2; font-style: italic; color: #666;">intentional killing</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. ultimate</div>
-              <div style="flex: 2; font-style: italic; color: #666;">final or extreme</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. evidence</div>
-              <div style="flex: 2; font-style: italic; color: #666;">proof of something</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. restraint</div>
-              <div style="flex: 2; font-style: italic; color: #666;">self-control</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. expression</div>
-              <div style="flex: 2; font-style: italic; color: #666;">way of showing</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Murder </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The decision that transformed Dorian Gray from systematic corruptor into direct killer was precipitated by his recognition that Basil Hallward's knowledge of his supernatural secret posed an unacceptable threat to his continued ability to maintain respectable appearances.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You have to reform," Basil pleaded as he processed the horrific revelation of what his artistic creation had enabled. "Destroy the portrait, confess your crimes, accept whatever consequences follow, and try to save what remains of your soul."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Dorian's response revealed how completely his moral development had been arrested at the moment when he chose aesthetic pleasure over ethical responsibility—he was incapable of accepting genuine accountability for actions that had become increasingly monstrous over two decades.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Reform?" Dorian asked with incredulous anger at the suggestion that he should sacrifice his supernatural advantages to satisfy conventional moral demands. "You expect me to give up eternal youth and perfect beauty to appease people whose opinions matter nothing to me?"</p><p style="margin-bottom: 15px; text-indent: 2em;">The argument that followed demonstrated the fundamental difference between someone whose moral sensitivity had been preserved through genuine artistic dedication and someone whose aesthetic appreciation had been corrupted into justification for systematic evil.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I created that portrait," Basil insisted, "with love for beauty and hope for your moral development. I never intended to enable the kind of corruption that you've chosen to pursue."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Murder (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">But Dorian's analysis of their respective responsibilities reflected his sophisticated understanding of how to manipulate guilt and assign blame in ways that avoided personal accountability for choices that he had made deliberately and systematically.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You gave me the power," Dorian replied with growing fury at Basil's moral presumption. "Every person I've destroyed, every soul I've corrupted, every crime I've committed—all of it flows from your decision to create a portrait that captured more than mere physical appearance."</p><p style="margin-bottom: 15px; text-indent: 2em;">The escalation from verbal confrontation to physical violence occurred with supernatural swiftness, as if twenty years of accumulated corruption had finally found expression in direct action rather than sophisticated manipulation.</p><p style="margin-bottom: 15px; text-indent: 2em;">The knife that Dorian used to kill Basil had been acquired during one of his expeditions into London's criminal underworld, where he had learned that certain tools could be valuable for resolving problems that sophisticated argument could not address.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You wanted to see the reality behind beautiful appearances," Dorian said as he struck with the precision that came from understanding exactly how much force was required to eliminate someone whose knowledge posed a threat. "Now you can experience it directly."</p><p style="margin-bottom: 15px; text-indent: 2em;">The death that followed was swift and efficient, but also symbolic—the artist who had created supernatural beauty was destroyed by the corruption that his creation had enabled, completing a cycle of cause and effect that had been building for twenty years.</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Murder (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"Murder is just another form of aesthetic experience," Dorian reflected as he studied Basil's lifeless body with the detached appreciation that he brought to all forms of sensation. "The finality, the irreversibility, the absolute power over another human being—it provides a form of satisfaction that more conventional pleasures cannot match."</p><p style="margin-bottom: 15px; text-indent: 2em;">The practical problem of concealing evidence was resolved through Dorian's systematic blackmail of Alan Campbell, whose scientific knowledge provided methods for eliminating physical traces of violence that conventional criminal techniques could not address.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You will help me," Dorian informed Alan with the calm certainty of someone who understood exactly what leverage was required to ensure cooperation. "Your chemical expertise will ensure that no evidence remains of tonight's unfortunate necessity."</p><p style="margin-bottom: 15px; text-indent: 2em;">*Murder was just another form of artistic expression.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in The Murder?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of The Picture of Dorian Gray? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🖼️</div>
+        <h1>Lesson 81</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Murder</div>
+        <div style="font-size: 1rem; color: #999;">Week 17 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Subjunctive Mood for Hypotheticals and Wishes</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">The subjunctive mood expresses wishes, suggestions, or hypothetical situations. It often uses 'were' instead of 'was': 'If I were the king...' Common in formal writing after verbs like wish, suggest, recommend: 'I wish she were here.' 'I suggest that he study harder' (not 'studies').</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Subjunctive: 'If Scheherazade were to fail, she would die.' 'The king wished that his wife were faithful.' Indicative (not subjunctive): 'Scheherazade was clever.'</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Write six sentences in the subjunctive mood about today's chapter: two expressing wishes, two expressing hypotheticals (if/were), and two expressing suggestions or demands. Explain why each requires the subjunctive.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Murder</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Murder</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice grammar: Subjunctive Mood for Hypotheticals and Wishes</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. murder</h3>
+        <p><strong>Definition:</strong> intentional killing</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. ultimate</h3>
+        <p><strong>Definition:</strong> final or extreme</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. evidence</h3>
+        <p><strong>Definition:</strong> proof of something</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. restraint</h3>
+        <p><strong>Definition:</strong> self-control</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. expression</h3>
+        <p><strong>Definition:</strong> way of showing</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(81)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. murder</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. ultimate</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. evidence</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. restraint</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. expression</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Murder (Part 1)</h2>
+      <div class="story">
+        <p>The decision that transformed Dorian Gray from systematic corruptor into direct killer was precipitated by his recognition that Basil Hallward's knowledge of his supernatural secret posed an unacceptable threat to his continued ability to maintain respectable appearances.</p>
+        <p>"You have to reform," Basil pleaded as he processed the horrific revelation of what his artistic creation had enabled. "Destroy the portrait, confess your crimes, accept whatever consequences follow, and try to save what remains of your soul."</p>
+        <p>But Dorian's response revealed how completely his moral development had been arrested at the moment when he chose aesthetic pleasure over ethical responsibility—he was incapable of accepting genuine accountability for actions that had become increasingly monstrous over two decades.</p>
+        <p>"Reform?" Dorian asked with incredulous anger at the suggestion that he should sacrifice his supernatural advantages to satisfy conventional moral demands. "You expect me to give up eternal youth and perfect beauty to appease people whose opinions matter nothing to me?"</p>
+        <p>The argument that followed demonstrated the fundamental difference between someone whose moral sensitivity had been preserved through genuine artistic dedication and someone whose aesthetic appreciation had been corrupted into justification for systematic evil.</p>
+        <p>"I created that portrait," Basil insisted, "with love for beauty and hope for your moral development. I never intended to enable the kind of corruption that you've chosen to pursue."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Murder (Part 2)</h2>
+      <div class="story">
+        <p>But Dorian's analysis of their respective responsibilities reflected his sophisticated understanding of how to manipulate guilt and assign blame in ways that avoided personal accountability for choices that he had made deliberately and systematically.</p>
+        <p>"You gave me the power," Dorian replied with growing fury at Basil's moral presumption. "Every person I've destroyed, every soul I've corrupted, every crime I've committed—all of it flows from your decision to create a portrait that captured more than mere physical appearance."</p>
+        <p>The escalation from verbal confrontation to physical violence occurred with supernatural swiftness, as if twenty years of accumulated corruption had finally found expression in direct action rather than sophisticated manipulation.</p>
+        <p>The knife that Dorian used to kill Basil had been acquired during one of his expeditions into London's criminal underworld, where he had learned that certain tools could be valuable for resolving problems that sophisticated argument could not address.</p>
+        <p>"You wanted to see the reality behind beautiful appearances," Dorian said as he struck with the precision that came from understanding exactly how much force was required to eliminate someone whose knowledge posed a threat. "Now you can experience it directly."</p>
+        <p>The death that followed was swift and efficient, but also symbolic—the artist who had created supernatural beauty was destroyed by the corruption that his creation had enabled, completing a cycle of cause and effect that had been building for twenty years.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Murder (Part 3)</h2>
+      <div class="story">
+        <p>"Murder is just another form of aesthetic experience," Dorian reflected as he studied Basil's lifeless body with the detached appreciation that he brought to all forms of sensation. "The finality, the irreversibility, the absolute power over another human being—it provides a form of satisfaction that more conventional pleasures cannot match."</p>
+        <p>The practical problem of concealing evidence was resolved through Dorian's systematic blackmail of Alan Campbell, whose scientific knowledge provided methods for eliminating physical traces of violence that conventional criminal techniques could not address.</p>
+        <p>"You will help me," Dorian informed Alan with the calm certainty of someone who understood exactly what leverage was required to ensure cooperation. "Your chemical expertise will ensure that no evidence remains of tonight's unfortunate necessity."</p>
+        <p>*Murder was just another form of artistic expression.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in The Murder?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of The Picture of Dorian Gray? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Subjunctive Mood for Hypotheticals and Wishes</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>The subjunctive mood expresses wishes, suggestions, or hypothetical situations. It often uses 'were' instead of 'was': 'If I were the king...' Common in formal writing after verbs like wish, suggest, recommend: 'I wish she were here.' 'I suggest that he study harder' (not 'studies').</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Subjunctive: 'If Scheherazade were to fail, she would die.' 'The king wished that his wife were faithful.' Indicative (not subjunctive): 'Scheherazade was clever.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Literary Context</h2>
+      <p>Informational text to be added.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

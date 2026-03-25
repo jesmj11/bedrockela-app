@@ -3,269 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6th Grade Day 32 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 32 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 32: THE ABRAHAM LINCOLN</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 32</h1>
-        <h2 class="lesson-subtitle">ATTACK OF THE SAVAGES</h2>
-        <p class="lesson-meta">Twenty Thousand Leagues Under the Sea</p>
-        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 32!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>ATTACK OF THE SAVAGES</strong> from <em>Twenty Thousand Leagues Under the Sea</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 4 new vocabulary words in context</li>
-            <li>Apply Context Clues: Multiple Strategies Combined</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. hostile</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">unfriendly and aggressive; showing opposition</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. electrified</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">charged with electricity; also, thrilled or shocked</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. technology</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">the application of scientific knowledge for practical purposes; machines and equipment</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. retreat</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">to withdraw from a dangerous situation; the act of pulling back</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. hostile</div>
-              <div style="flex: 2; font-style: italic; color: #666;">unfriendly and aggressive; showing opposition</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. electrified</div>
-              <div style="flex: 2; font-style: italic; color: #666;">charged with electricity; also, thrilled or shocked</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. technology</div>
-              <div style="flex: 2; font-style: italic; color: #666;">the application of scientific knowledge for practical purposes; machines and equipment</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. retreat</div>
-              <div style="flex: 2; font-style: italic; color: #666;">to withdraw from a dangerous situation; the act of pulling back</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 ATTACK OF THE SAVAGES </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">We were on the beach, roasting a wild pig over a fire, when Conseil noticed movement at the edge of the forest.
-"Sir," he said quietly. "I believe we have company."
-Men were emerging from the trees—dozens of them. They were tall, dark-skinned, and armed with bows, spears, and clubs. Their faces and bodies were painted in bold patterns. They did not look friendly.
-"Back to the boat!" Ned snapped. "Now!"
-We scrambled for our small dinghy, loaded it with as much food as we could grab, and rowed hard for the Nautilus. The warriors followed us to the waterline, shaking their weapons and shouting. Some waded into the shallows after us. A spear splashed into the water inches from our hull.
-We reached the submarine and tumbled through the hatch, slamming it shut behind us. I went immediately to find Captain Nemo. He was in the salon, playing his organ, completely unconcerned.
-"Captain! There are warriors on the beach. Dozens of them. They're hostile."
-Nemo didn't stop playing. "Yes, I know. They've been watching us since we arrived."
-"They followed us to the ship. What if they try to board?"
-"They are welcome to try."
-That night, through the salon windows, we could see canoes approaching in the darkness—thirty, forty, perhaps fifty of them. By morning, the beach was swarming with warriors. They crossed the reef at low tide and surrounded the Nautilus, pounding on the hull with their fists and weapons.
-Ned readied a harpoon. Conseil looked worried. I looked at Nemo.
-He finished his coffee and said, "Open the hatches."
-"What?"
-"Open the hatches. It is time to go. The tide will float us free today. But first—watch."
-The crewmen opened the hatches as ordered. A warrior leaped onto the platform and grabbed the metal railing—and was hurled backward as if struck by lightning. He splashed into the water, convulsing.
-The railing was electrified.
-Every warrior who touched the ship received the same jolt. Within seconds, they were in full retreat, paddling their canoes away in terror.
-Nemo sipped his coffee and watched them go. "The Nautilus has many defenses," he said mildly. "Violence is unnecessary when technology is sufficient."
-The tide rose. The ship lifted free of the reef. The engines hummed to life, and we slipped beneath the waves and left the Torres Strait behind.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 ATTACK OF THE SAVAGES (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 ATTACK OF THE SAVAGES (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. How does Captain Nemo defend the Nautilus from the warriors without using weapons?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. What does Nemo's statement "Violence is unnecessary when technology is sufficient" reveal about his character?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. Compare Nemo's use of technology in this chapter to the warriors' use of weapons. What larger theme about power and knowledge does this contrast develop?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌊</div>
+        <h1>Lesson 32</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">THE ABRAHAM LINCOLN</div>
+        <div style="font-size: 1rem; color: #999;">Week 7 • Classic Literature • 6th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Context Clues: Multiple Strategies Combined</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation). Look for signal words: 'or,' 'such as,' 'unlike,' 'however.'</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment).</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Find three challenging vocabulary words in today's reading. For each, identify ALL context clues present (definition, synonym, antonym, example, inference). Then write sentences using new vocabulary words with at least two types of context clues.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>THE ABRAHAM LINCOLN</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze THE ABRAHAM LINCOLN</li>
+        <li>Master 4 vocabulary words</li>
+        <li>Practice language: Context Clues: Multiple Strategies Combined</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. frigate</h3>
+        <p><strong>Definition:</strong> a fast warship, usually smaller than a battleship</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. harpooner</h3>
+        <p><strong>Definition:</strong> a person who throws harpoons to hunt large sea animals</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. skeptical</h3>
+        <p><strong>Definition:</strong> having doubts; not easily convinced</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. horizon</h3>
+        <p><strong>Definition:</strong> the line where the earth and sky appear to meet; also, the limit of a person's knowledge or experience</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(32)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. frigate</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. harpooner</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. skeptical</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. horizon</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 THE ABRAHAM LINCOLN (Part 1)</h2>
+      <div class="story">
+        <p>The Abraham Lincoln was a fast frigate—a warship built for speed. Her captain, Commander Farragut, was a bold and determined man who had sworn not to return until the monster was dead or he had proven it didn't exist.
+The ship was armed with every weapon the Navy could provide: cannons, rifles, harpoons, and a massive bow-mounted gun that could fire an explosive shell over a mile. If the creature was an animal, it wouldn't stand a chance. At least, that was the theory.
+The crew was eager. The Navy had offered a reward of two thousand dollars to whoever first spotted the creature, and every sailor on board spent his free time scanning the horizon with a telescope. The lookouts barely blinked.
+I spent my first days aboard studying my notes, reviewing the reports of sightings, and debating with a man who would become central to everything that followed: Ned Land.
+Ned Land was a Canadian harpooner—the best in the world, by most accounts. He was about forty years old, tall and powerfully built, with a serious face and a temper that could flare without warning. He spoke little, but when he did, his words were blunt and direct.
+"Professor," he said to me on the third day out, "I don't believe in your monster."
+"You don't?"
+"I've been whaling since I was a boy. I've harpooned every kind of creature that swims. If this thing were a whale or a narwhal, I'd have heard of it. It's nothing."
+"The Scotia's hull would disagree with you, Ned."
+He shrugged. "Rocks. Currents. Bad luck. Not a sea monster."
+I admired his stubbornness. I would come to admire it even more.
+Meanwhile, Conseil followed me everywhere with the patience of a shadow. He organized my papers, labeled my samples, and asked no questions. If I fell overboard, I was fairly certain Conseil would jump in after me without a word of complaint.
+We searched for three months.
+North Pacific, South Pacific, across the equator and back again. Nothing. The crew grew restless. Some began to agree with Ned—the creature was a myth. Commander Farragut's determination hardened into something that looked more like desperation.
+Then, on November 5th, at three o'clock in the afternoon, Ned Land's voice rang out from the masthead:
+"There it is! Dead ahead! The thing itself!"</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 THE ABRAHAM LINCOLN (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 THE ABRAHAM LINCOLN (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. Why is Ned Land skeptical about the existence of the sea monster?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What motivates the crew of the Abraham Lincoln to search so eagerly?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. Compare Aronnax, Ned Land, and Conseil. How does each character's personality prepare them for the adventure ahead? Use specific details.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Context Clues: Multiple Strategies Combined</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation). Look for signal words: 'or,' 'such as,' 'unlike,' 'however.'</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment)."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Naval Warfare in the 1860s</h2>
+      <p>The Abraham Lincoln was a frigate—a fast, medium-sized warship designed for speed and maneuverability. In the 1860s, the world's navies were going through a revolution. For thousands of years, warships had been made of wood and powered by wind. But during the American Civil War (1861-1865), both sides built ironclad warships with steam engines and armor plating.</p>
+      <p>The first battle between ironclads happened in 1862 at Hampton Roads, Virginia, when the USS Monitor fought the CSS Virginia. Neither ship could sink the other—cannonballs just bounced off their iron armor. This battle changed naval warfare forever. Within a decade, every major navy had switched to steam-powered iron ships.</p>
+      <p>Captain Farragut, who commands the Abraham Lincoln in this story, was a real Union Navy admiral during the Civil War. He was famous for saying "Damn the torpedoes! Full speed ahead!" during the Battle of Mobile Bay. Verne named his fictional captain after this real American hero.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>Reflect on today's chapter. What stood out to you? How do you relate to the characters or themes? (10-15 sentences)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

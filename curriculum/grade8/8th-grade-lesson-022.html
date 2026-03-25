@@ -3,261 +3,414 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 22 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 22 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 22: Total Despair</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 22</h1>
-        <h2 class="lesson-subtitle">Total Despair</h2>
-        <p class="lesson-meta">Frankenstein</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 22!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>Total Despair</strong> from <em>Frankenstein</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Semantic Fields and Word Families</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. despair</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">complete hopelessness</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. grief</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">deep sorrow</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. destruction</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">act of destroying</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. hunter</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">one who pursues</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. vow</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">solemn promise</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. despair</div>
-              <div style="flex: 2; font-style: italic; color: #666;">complete hopelessness</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. grief</div>
-              <div style="flex: 2; font-style: italic; color: #666;">deep sorrow</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. destruction</div>
-              <div style="flex: 2; font-style: italic; color: #666;">act of destroying</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. hunter</div>
-              <div style="flex: 2; font-style: italic; color: #666;">one who pursues</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. vow</div>
-              <div style="flex: 2; font-style: italic; color: #666;">solemn promise</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Total Despair </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The final destruction of Victor Frankenstein's family was completed when his father died of grief and shock after learning that Elizabeth, whom he had loved as a daughter for twenty years, had been murdered on her wedding night.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The news of Elizabeth's death," Victor told Captain Walton, "affected my father with an intensity that exceeded his physical and emotional capacity to endure. He had already suffered the loss of William and the execution of Justine, but Elizabeth's murder represented the complete destruction of the family happiness that had been the center of his existence."</p><p style="margin-bottom: 15px; text-indent: 2em;">Alphonse Frankenstein's death was not the result of violence but of moral and emotional collapse that occurred when the loving father understood that his family had been systematically destroyed by forces beyond his comprehension or control.</p><p style="margin-bottom: 15px; text-indent: 2em;">"He died peacefully," Victor said, "but his final words revealed that he understood the connection between my scientific studies and the tragedies that had befallen our household. He did not blame me directly, but he recognized that my pursuits had somehow brought this destruction upon everyone he cherished."</p><p style="margin-bottom: 15px; text-indent: 2em;">The funeral that marked the end of the Frankenstein family was attended only by Victor himself and a few distant relatives who had been spared his creature's revenge by virtue of their limited emotional significance to their target.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I stood alone," Victor reflected, "at the graves of my father, my wife, and my youngest brother, understanding that my scientific ambition had not just corrupted my own moral character but had eliminated everyone whose love had made my existence meaningful."</p><p style="margin-bottom: 15px; text-indent: 2em;">But the most devastating aspect of Victor's complete isolation was his recognition that his creature had achieved precisely the psychological state that he himself had experienced since his awakening—absolute loneliness combined with knowledge that social connection was forever impossible.</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Total Despair (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">"My creature," Victor realized, "had succeeded in making me as miserable as he had been since the moment I abandoned him in my laboratory. I now understood, through direct experience, the psychological torture that my irresponsibility had inflicted upon him."</p><p style="margin-bottom: 15px; text-indent: 2em;">The transformation that occurred in Victor during this period of total despair was as complete as any of his scientific experiments had achieved—he ceased to be a member of human society and became instead a creature devoted entirely to hunting his creation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I abandoned," Victor said, "every social connection, every professional obligation, and every moral consideration except the single purpose of pursuing my creature across the world until one of us was destroyed."</p><p style="margin-bottom: 15px; text-indent: 2em;">The vow that Victor made at Elizabeth's grave was both a promise of revenge and a recognition that his own human existence had ended with the completion of his family's destruction.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I swore," Victor continued, "by the sacred earth on which I knelt, by the shades that wandered near me, by the deep and eternal grief that I felt, that I would pursue the demon who had caused this misery until he or I would perish in mortal conflict."</p><p style="margin-bottom: 15px; text-indent: 2em;">But Victor's transformation into a hunter was also an acknowledgment that he had become as much a monster as the being he had created, driven by purposes that exceeded normal human motivation.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I was no longer," Victor admitted, "motivated by love for the people I had lost, but by hatred for the creature who had taken them from me. My pursuit was not justice but vengeance, not moral purpose but obsessive need for destruction that matched my creature's original corruption."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 Total Despair (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The resources that Victor devoted to his pursuit exceeded everything he had previously invested in scientific research, demonstrating how completely his priorities had been reordered by loss and rage.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I spent," Victor said, "my remaining inheritance, my physical health, and my mental stability in following traces of my creature's movement across Europe and toward the Arctic regions where he seemed to be leading me for some final confrontation."</p><p style="margin-bottom: 15px; text-indent: 2em;">The years of pursuit that followed Elizabeth's death represented Victor's complete abandonment of the human community that had once provided moral guidance and social purpose.</p><p style="margin-bottom: 15px; text-indent: 2em;">*Who was the real monster now?*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in Total Despair?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of Frankenstein? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">⚡</div>
+        <h1>Lesson 22</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">Total Despair</div>
+        <div style="font-size: 1rem; color: #999;">Week 5 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Semantic Fields and Word Families</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Identify three semantic fields in today's reading (groups of related words the author uses). For each field, list at least five words and explain how the subtle differences between them affect meaning. Create your own varied sentence using words from one semantic field.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>Total Despair</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze Total Despair</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Semantic Fields and Word Families</li>
+        <li>Complete reflective journal exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. despair</h3>
+        <p><strong>Definition:</strong> complete hopelessness</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. grief</h3>
+        <p><strong>Definition:</strong> deep sorrow</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. destruction</h3>
+        <p><strong>Definition:</strong> act of destroying</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. hunter</h3>
+        <p><strong>Definition:</strong> one who pursues</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. vow</h3>
+        <p><strong>Definition:</strong> solemn promise</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(22)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. despair</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. grief</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. destruction</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. hunter</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. vow</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 Total Despair (Part 1)</h2>
+      <div class="story">
+        <p>The final destruction of Victor Frankenstein's family was completed when his father died of grief and shock after learning that Elizabeth, whom he had loved as a daughter for twenty years, had been murdered on her wedding night.</p>
+        <p>"The news of Elizabeth's death," Victor told Captain Walton, "affected my father with an intensity that exceeded his physical and emotional capacity to endure. He had already suffered the loss of William and the execution of Justine, but Elizabeth's murder represented the complete destruction of the family happiness that had been the center of his existence."</p>
+        <p>Alphonse Frankenstein's death was not the result of violence but of moral and emotional collapse that occurred when the loving father understood that his family had been systematically destroyed by forces beyond his comprehension or control.</p>
+        <p>"He died peacefully," Victor said, "but his final words revealed that he understood the connection between my scientific studies and the tragedies that had befallen our household. He did not blame me directly, but he recognized that my pursuits had somehow brought this destruction upon everyone he cherished."</p>
+        <p>The funeral that marked the end of the Frankenstein family was attended only by Victor himself and a few distant relatives who had been spared his creature's revenge by virtue of their limited emotional significance to their target.</p>
+        <p>"I stood alone," Victor reflected, "at the graves of my father, my wife, and my youngest brother, understanding that my scientific ambition had not just corrupted my own moral character but had eliminated everyone whose love had made my existence meaningful."</p>
+        <p>But the most devastating aspect of Victor's complete isolation was his recognition that his creature had achieved precisely the psychological state that he himself had experienced since his awakening—absolute loneliness combined with knowledge that social connection was forever impossible.</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 Total Despair (Part 2)</h2>
+      <div class="story">
+        <p>"My creature," Victor realized, "had succeeded in making me as miserable as he had been since the moment I abandoned him in my laboratory. I now understood, through direct experience, the psychological torture that my irresponsibility had inflicted upon him."</p>
+        <p>The transformation that occurred in Victor during this period of total despair was as complete as any of his scientific experiments had achieved—he ceased to be a member of human society and became instead a creature devoted entirely to hunting his creation.</p>
+        <p>"I abandoned," Victor said, "every social connection, every professional obligation, and every moral consideration except the single purpose of pursuing my creature across the world until one of us was destroyed."</p>
+        <p>The vow that Victor made at Elizabeth's grave was both a promise of revenge and a recognition that his own human existence had ended with the completion of his family's destruction.</p>
+        <p>"I swore," Victor continued, "by the sacred earth on which I knelt, by the shades that wandered near me, by the deep and eternal grief that I felt, that I would pursue the demon who had caused this misery until he or I would perish in mortal conflict."</p>
+        <p>But Victor's transformation into a hunter was also an acknowledgment that he had become as much a monster as the being he had created, driven by purposes that exceeded normal human motivation.</p>
+        <p>"I was no longer," Victor admitted, "motivated by love for the people I had lost, but by hatred for the creature who had taken them from me. My pursuit was not justice but vengeance, not moral purpose but obsessive need for destruction that matched my creature's original corruption."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 Total Despair (Part 3)</h2>
+      <div class="story">
+        <p>The resources that Victor devoted to his pursuit exceeded everything he had previously invested in scientific research, demonstrating how completely his priorities had been reordered by loss and rage.</p>
+        <p>"I spent," Victor said, "my remaining inheritance, my physical health, and my mental stability in following traces of my creature's movement across Europe and toward the Arctic regions where he seemed to be leading me for some final confrontation."</p>
+        <p>The years of pursuit that followed Elizabeth's death represented Victor's complete abandonment of the human community that had once provided moral guidance and social purpose.</p>
+        <p>*Who was the real monster now?*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in Total Despair?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of Frankenstein? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Semantic Fields and Word Families</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute). Authors vary words within semantic fields to create precise meanings and avoid repetition.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Literary Context</h2>
+      <p>Informational text to be added.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>📔 Journal Entry</h2>
+      <p><strong>Journal Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>

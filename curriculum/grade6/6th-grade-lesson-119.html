@@ -1,7 +1,404 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>6th Grade Day 119</title></head>
-<body style="font-family:sans-serif;max-width:800px;margin:50px auto;padding:20px;">
-<h1>Day 119: Norse Mythology - Chapter 19</h1>
-<p>This lesson is being prepared. Check back soon!</p>
-<p style="color:#666;margin-top:40px;">BedrockELA - 6th Grade</p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 119 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 119: NEW DORADO</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🏝️</div>
+        <h1>Lesson 119</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">NEW DORADO</div>
+        <div style="font-size: 1rem; color: #999;">Week 24 • Classic Literature • 6th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>NEW DORADO</strong> from <em>Classic Literature</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze NEW DORADO</li>
+        <li>Master 3 vocabulary words</li>
+        <li>Practice language: Syntax and Sentence Structure for Effect</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. legacy</h3>
+        <p><strong>Definition:</strong> something handed down from the past; the lasting impact of a person or event</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. colony</h3>
+        <p><strong>Definition:</strong> a settlement established by people who move to a new territory</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. bittersweet</h3>
+        <p><strong>Definition:</strong> involving a mixture of happiness and sadness
+From the text: Fritz and Jack leave while Ernest, Franz, Elizabeth, and William stay.
+Why is the ending bittersweet rather than purely happy or purely sad?
+4. CONTENTMENT  (noun) — a state of happiness and satisfaction</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. legacy</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. colony</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. bittersweet</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 NEW DORADO (Part 1)</h2>
+      <div class="story">
+        <p>Captain Doyle understood. More than that — he was moved.
+Before the Doyle departed, he and I made an agreement. He would carry our story back to the civilized world. He would report the island's location to the British authorities and recommend it as a site for a permanent colony. He would deliver letters we had written to family in Switzerland. And he would spread the word that the island — which we named New Switzerland, though the boys wanted to call it New Dorado, the golden land — was open to settlement by any honest family willing to work.
+Fritz packed his things: his musket, his journal, a bag of pearls for trade, and a carved wooden figure of a falcon that Ernest had made him as a farewell gift. Jack packed almost nothing — a knife, a change of clothes, and Hurricane's tail feather, which he tucked inside his hat.
+Jenny said her goodbyes with grace and gratitude. She embraced Elizabeth for a long time. She shook Ernest's hand. She let Franz cry on her shoulder without embarrassment.
+Fritz and I stood on the beach for the last time together.
+"Take care of them," he said, meaning his mother and brothers.
+"Take care of yourself," I said, meaning the world was harder than any island.
+We embraced. He walked to the longboat without looking back. Jack waved from the railing of the Doyle until the ship was a white speck on the horizon.
+Elizabeth, Ernest, Franz, and I stood on the beach and watched them go. The dogs sat at our feet. The goats grazed behind us. The flag snapped on its pole. The garden was green. The treehouse was solid. The cave was home.
+I put my arm around Elizabeth.
+"Well," she said. "That's that."
+"That's that," I agreed.
+We walked back up the path to Rockburg — our home in the cliffs, built with our own hands, on an island we had claimed from the wild. The sun was setting. The birds were singing their evening songs. Somewhere in the forest, a monkey chattered and an ostrich complained.
+Ernest opened his journal to a fresh page and began to write.
+Franz picked up his flute and played.
+Elizabeth started dinner.
+And I sat on the balcony of Rockburg, looking out over the island we had built from nothing — from a shipwreck and a prayer — and I thought: this is enough. This is more than enough.
+This is everything.
+THE END</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 NEW DORADO (Part 2)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 NEW DORADO (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What agreement does the father make with Captain Doyle?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What does the father mean when he says, "This is everything"?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. The book ends with a family divided — Fritz and Jack leave, while the others stay. Is this a happy ending, a sad ending, or something more complicated? Use evidence from the chapter to support your answer.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Syntax and Sentence Structure for Effect</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Syntax is the arrangement of words and phrases. Authors manipulate syntax for emphasis, rhythm, and meaning. Short sentences create tension. Long, flowing sentences create contemplation. Inverted syntax ('Never had he felt such anger') creates emphasis. Sentence fragments can be powerful.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Standard: 'She told the story carefully.' Inverted for emphasis: 'Carefully, she told the story.' Fragment for drama: 'One thousand nights. And one.' Varied syntax: 'The king listened. He said nothing. He simply listened, hour after hour, as if hearing for the first time.'"</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Meaning of Home</h2>
+      <p>The word "home" means more than physical location. The Robinson family left European home involuntarily, expecting to rebuild in a colony. Instead, they created home on an unnamed island. Over time, the island became familiar, beloved even. They knew every tree, stream, and landmark. They'd built everything with their own hands. Would they still want rescue? Could they return to European society after years of independence? Many real castaways who eventually returned home felt like strangers in their own culture, missing island life's simplicity and freedom. Home is wherever people create belonging, security, and meaning. The Robinsons discovered that home isn't a place on a map—it's where your family is, where your work matters, and where you belong.</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write an analytical essay about today's chapter. Focus on character development, themes, or literary devices. (3-4 paragraphs)</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

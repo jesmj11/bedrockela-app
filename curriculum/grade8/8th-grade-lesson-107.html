@@ -3,261 +3,411 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8th Grade Day 107 - BedrockELA</title>
-  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <title>Lesson 107 - BedrockELA</title>
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
-    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .lesson-page { display: none; min-height: 500px; }
-    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .page-content { padding: 30px; }
-    .title-page { text-align: center; padding: 60px 30px; }
-    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
-    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
-    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
-    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
-    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
-    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
-      .top-progress-bar { position: sticky; top: 0; width: 100%; height: 8px; background: #e0e0e0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .top-progress-fill { height: 100%; background: linear-gradient(90deg, #305853, #B06821); transition: width 0.3s ease; }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
   </style>
 </head>
 <body>
-  <div class="top-progress-bar">
-    <div class="top-progress-fill" id="topProgressBar"></div>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 107: The Mere of Monsters</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
-  <div class="lesson-container">
-    <div id="lessonContent">
-    <div class="lesson-page" data-page="1">
-      <div class="page-content title-page">
-        <div class="lesson-icon">📖</div>
-        <h1 class="lesson-title">Day 107</h1>
-        <h2 class="lesson-subtitle">The Mere of Monsters</h2>
-        <p class="lesson-meta">Beowulf</p>
-        <p class="lesson-focus"><strong>8th Grade ELA</strong></p>
-      </div>
-    </div>
   
-
-    <div class="lesson-page" data-page="2">
-      <div class="page-content">
-        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 107!</h2>
-        <div class="welcome-content">
-          <p style="margin-bottom: 15px;">Today we're reading <strong>The Mere of Monsters</strong> from <em>Beowulf</em>.</p>
-          
-          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
-          <ul style="line-height: 1.8; margin-left: 20px;">
-            <li>Understand key events and character development in this chapter</li>
-            <li>Learn 5 new vocabulary words in context</li>
-            <li>Apply Etymology: Word Histories and Evolution</li>
-            <li>Practice close reading and analytical thinking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="3">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
-        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
-        <div class="vocab-list">
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">1. mere</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">lake or pond</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">2. trail</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">track or path</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">3. boiling</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">bubbling violently</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">4. serpents</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">snakes</p>
-            </div>
-          
-            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
-              <h3 style="color: #305853; margin-bottom: 10px;">5. cursed</h3>
-              <p style="font-style: italic; color: #555; line-height: 1.6;">under evil spell</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-    <div class="lesson-page" data-page="4">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
-        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
-        <div class="vocab-matching-game">
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">1. mere</div>
-              <div style="flex: 2; font-style: italic; color: #666;">lake or pond</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">2. trail</div>
-              <div style="flex: 2; font-style: italic; color: #666;">track or path</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">3. boiling</div>
-              <div style="flex: 2; font-style: italic; color: #666;">bubbling violently</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">4. serpents</div>
-              <div style="flex: 2; font-style: italic; color: #666;">snakes</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
-              <div style="flex: 1; font-weight: 700; color: #305853;">5. cursed</div>
-              <div style="flex: 2; font-style: italic; color: #666;">under evil spell</div>
-              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  
-
-      <div class="lesson-page" data-page="5">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Mere of Monsters </h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The tracking of Grendel's mother led the Danish and Geatish warriors to a landscape that seemed to belong to nightmare rather than the natural world—a region where supernatural evil had corrupted the very earth and water into forms that filled brave men's hearts with dread.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Follow the trail of blood and supernatural fire," Hrothgar commanded as he led the expedition that included both his own remaining warriors and the Geatish heroes who had thought their mission was complete, "to whatever realm this ancient evil calls home, for we can have no peace while she lives to seek vengeance for her son's destruction."</p><p style="margin-bottom: 15px; text-indent: 2em;">The path that led away from Heorot wound through moors and forests that showed increasing signs of supernatural corruption—trees grew twisted and black, while the very air seemed thick with malevolent presence that made breathing difficult and clear thinking nearly impossible.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Look," whispered Wiglaf as they progressed deeper into the cursed landscape, "how even the wildlife flees from these regions, and how the earth itself seems diseased by whatever evil dwells in these places."</p><p style="margin-bottom: 15px; text-indent: 2em;">But the destination toward which the trail led was more horrible than anything the warriors had imagined during their march through the corrupted countryside—a mere whose black waters seemed to boil with unnatural heat while creatures that belonged to no earthly classification swam in its depths.</p><p style="margin-bottom: 15px; text-indent: 2em;">"The very water burns with supernatural fire," observed Unferth as they approached the edge of the cursed lake, "while serpents and creatures of unknown origin make their home in depths that no mortal man was meant to explore."</p>
-          </div>
-        </div>
-      </div>
+  <div class="container">
     
-
-      <div class="lesson-page" data-page="6">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Mere of Monsters (Part 2)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The examination of the mere's characteristics revealed evidence that this was no ordinary body of water, but a gateway between the world of mortal men and realms where demons and cursed spirits made their dwelling.</p><p style="margin-bottom: 15px; text-indent: 2em;">"See how the water glows with its own light," Beowulf noted as he studied the supernatural lake that would serve as the arena for his greatest challenge, "and how no bird will fly above its surface, and how even the hardiest trees refuse to grow within sight of its cursed waters."</p><p style="margin-bottom: 15px; text-indent: 2em;">The discovery of Aeschere's head mounted on a stake beside the mere confirmed that this was indeed the dwelling place of Grendel's mother and the destination where Danish wisdom and Geatish courage would face their ultimate test.</p><p style="margin-bottom: 15px; text-indent: 2em;">"She displays our friend's remains," Hrothgar said with grief that was mixed with rage, "as a challenge to any who would dare follow her into the depths where human strength has never before attempted to venture."</p><p style="margin-bottom: 15px; text-indent: 2em;">But perhaps most disturbing was the recognition that the mere's supernatural characteristics made conventional military tactics completely useless—no army could fight underwater against enemies that had made such places their home for centuries.</p><p style="margin-bottom: 15px; text-indent: 2em;">"This is a battle," Beowulf realized as he contemplated the challenge that awaited him, "that only one man can fight, using courage and divine favor rather than conventional weapons or normal tactics."</p>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="lesson-page" data-page="7">
-        <div class="page-content">
-          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Mere of Monsters (Part 3)</h2>
-          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
-            <p style="margin-bottom: 15px; text-indent: 2em;">The preparation for the descent into supernatural waters required both practical consideration of how to survive underwater combat and spiritual preparation for confronting evil that exceeded anything previously encountered in mortal warfare.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I will follow her into whatever depths she has chosen," Beowulf declared as he studied the boiling waters that concealed his enemy, "for courage that turns back at the threshold of the impossible is not worthy of the name heroism."</p><p style="margin-bottom: 15px; text-indent: 2em;">*Even brave men would not enter those cursed waters.*</p><p style="margin-bottom: 15px; text-indent: 2em;">---</p>
-          </div>
-        </div>
-      </div>
-    
-
-    <div class="lesson-page" data-page="8">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
-        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
-        <div class="comprehension-questions">
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main conflict or challenge in The Mere of Monsters?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">2. How do the characters respond to the events in this chapter?</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-              <p style="font-weight: 700; margin-bottom: 15px;">3. What does this chapter reveal about the themes of Beowulf? Use evidence from the text.</p>
-              
-                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
-              
-            </div>
-          
-        </div>
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">⚔️</div>
+        <h1>Lesson 107</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Mere of Monsters</div>
+        <div style="font-size: 1rem; color: #999;">Week 22 • undefined • 8th Grade</div>
       </div>
     </div>
-  
-
-      <div class="lesson-page" data-page="9">
-        <div class="page-content">
-          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Etymology: Word Histories and Evolution</h2>
-          
-          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
-            <p style="line-height: 1.8; margin-bottom: 15px;">Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
-            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
-            <p style="font-style: italic; color: #555; line-height: 1.6;">'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange.</p>
-          </div>
-          
-          <div class="skill-practice">
-            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
-            <p style="margin-bottom: 15px;">Choose five interesting words from today's chapter. Research the etymology of each (use a dictionary with etymological information). Write the original language, literal meaning, and how the word's current usage relates to or differs from its origin.</p>
-            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
-          </div>
-        </div>
-      </div>
     
-
-    <div class="lesson-page" data-page="10">
-      <div class="page-content">
-        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
-        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
-          <p>Historical and cultural context for today's reading.</p>
-        </div>
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Mere of Monsters</strong> from <em>undefined</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read and analyze The Mere of Monsters</li>
+        <li>Master 5 vocabulary words</li>
+        <li>Practice language: Etymology: Word Histories and Evolution</li>
+        <li>Complete analytical writing exercise</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. mere</h3>
+        <p><strong>Definition:</strong> lake or pond</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. trail</h3>
+        <p><strong>Definition:</strong> track or path</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>3. boiling</h3>
+        <p><strong>Definition:</strong> bubbling violently</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>4. serpents</h3>
+        <p><strong>Definition:</strong> snakes</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>5. cursed</h3>
+        <p><strong>Definition:</strong> under evil spell</p>
+        <p><strong>In the story:</strong> <em>"undefined"</em></p>
       </div>
     </div>
-  
-
-    <div class="lesson-page" data-page="11">
-      <div class="page-content">
-        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
-        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
-        <button onclick="window.saveJournal(107)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. mere</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. trail</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>3. boiling</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>4. serpents</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>5. cursed</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Mere of Monsters (Part 1)</h2>
+      <div class="story">
+        <p>The tracking of Grendel's mother led the Danish and Geatish warriors to a landscape that seemed to belong to nightmare rather than the natural world—a region where supernatural evil had corrupted the very earth and water into forms that filled brave men's hearts with dread.</p>
+        <p>"Follow the trail of blood and supernatural fire," Hrothgar commanded as he led the expedition that included both his own remaining warriors and the Geatish heroes who had thought their mission was complete, "to whatever realm this ancient evil calls home, for we can have no peace while she lives to seek vengeance for her son's destruction."</p>
+        <p>The path that led away from Heorot wound through moors and forests that showed increasing signs of supernatural corruption—trees grew twisted and black, while the very air seemed thick with malevolent presence that made breathing difficult and clear thinking nearly impossible.</p>
+        <p>"Look," whispered Wiglaf as they progressed deeper into the cursed landscape, "how even the wildlife flees from these regions, and how the earth itself seems diseased by whatever evil dwells in these places."</p>
+        <p>But the destination toward which the trail led was more horrible than anything the warriors had imagined during their march through the corrupted countryside—a mere whose black waters seemed to boil with unnatural heat while creatures that belonged to no earthly classification swam in its depths.</p>
+        <p>"The very water burns with supernatural fire," observed Unferth as they approached the edge of the cursed lake, "while serpents and creatures of unknown origin make their home in depths that no mortal man was meant to explore."</p>
       </div>
     </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Mere of Monsters (Part 2)</h2>
+      <div class="story">
+        <p>The examination of the mere's characteristics revealed evidence that this was no ordinary body of water, but a gateway between the world of mortal men and realms where demons and cursed spirits made their dwelling.</p>
+        <p>"See how the water glows with its own light," Beowulf noted as he studied the supernatural lake that would serve as the arena for his greatest challenge, "and how no bird will fly above its surface, and how even the hardiest trees refuse to grow within sight of its cursed waters."</p>
+        <p>The discovery of Aeschere's head mounted on a stake beside the mere confirmed that this was indeed the dwelling place of Grendel's mother and the destination where Danish wisdom and Geatish courage would face their ultimate test.</p>
+        <p>"She displays our friend's remains," Hrothgar said with grief that was mixed with rage, "as a challenge to any who would dare follow her into the depths where human strength has never before attempted to venture."</p>
+        <p>But perhaps most disturbing was the recognition that the mere's supernatural characteristics made conventional military tactics completely useless—no army could fight underwater against enemies that had made such places their home for centuries.</p>
+        <p>"This is a battle," Beowulf realized as he contemplated the challenge that awaited him, "that only one man can fight, using courage and divine favor rather than conventional weapons or normal tactics."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Mere of Monsters (Part 3)</h2>
+      <div class="story">
+        <p>The preparation for the descent into supernatural waters required both practical consideration of how to survive underwater combat and spiritual preparation for confronting evil that exceeded anything previously encountered in mortal warfare.</p>
+        <p>"I will follow her into whatever depths she has chosen," Beowulf declared as he studied the boiling waters that concealed his enemy, "for courage that turns back at the threshold of the impossible is not worthy of the name heroism."</p>
+        <p>*Even brave men would not enter those cursed waters.*</p>
+        <p>---</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. What is the main conflict or challenge in The Mere of Monsters?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How do the characters respond to the events in this chapter?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>3. What does this chapter reveal about the themes of Beowulf? Use evidence from the text.</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>🗣️ Language: Etymology: Word Histories and Evolution</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Words have histories—they come from other languages, change meanings over time, and carry their origins with them. 'Sinbad' comes from Arabic. 'Scheherazade' is Persian. 'Genie' comes from Arabic 'jinn.' Knowing etymology deepens understanding and makes words memorable.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"'Assassin' comes from Arabic 'hashashiyyin' (users of hashish), from a medieval group. 'Admiral' from Arabic 'amir al-' (commander of). Many English words have Arabic origins through trade and cultural exchange."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 The Dragon: Mortality and Greed</h2>
+      <p>[Comprehensive informational text about The Dragon: Mortality and Greed - to be expanded with full content matching the depth of Sherlock Holmes and Frankenstein examples.]</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>undefined</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
   </div>
-    <div class="nav-controls">
-      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
-      <span id="pageIndicator">Page 1 of 11</span>
-      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
   </div>
+
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    function showPage(n) {
-      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
-      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
-      document.getElementById('prevBtn').disabled = (n === 1);
-      document.getElementById('nextBtn').disabled = (n === totalPages);
-      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
-      const progress = (n / totalPages) * 100;
-      if (document.getElementById('topProgressBar')) document.getElementById('topProgressBar').style.width = progress + '%';
-      currentPage = n;
-      window.scrollTo({top:0,behavior:'smooth'});
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
-    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
-    window.saveJournal = function() { alert('Journal saved!'); };
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
     showPage(1);
   </script>
 </body>
