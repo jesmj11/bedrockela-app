@@ -3,438 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 23 - BedrockELA</title>
+  <title>6th Grade Day 23 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 23</h1>
+        <h2 class="lesson-subtitle">THE HUNT</h2>
+        <p class="lesson-meta">Twenty Thousand Leagues Under the Sea</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 23: INJUN JOE&#039;S FATE</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 23</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">INJUN JOE&#039;S FATE</div>
-        <div style="font-size: 1rem; color: #999;">Week 5 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 23!</h2>
-      <p>Today we're reading <strong>INJUN JOE&#039;S FATE</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 23</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        <li>Master Appositives (Grammar)</li>
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. stalagmite</h3>
-        <p><strong>Definition:</strong> a formation that grows up from the floor of a cave, created by dripping mineral water</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. vestibule</h3>
-        <p><strong>Definition:</strong> an entrance hall or small room just inside the outer door of a building</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. tedious</h3>
-        <p><strong>Definition:</strong> long, slow, and boring; tiresome</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. stalagmite</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. vestibule</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. tedious</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 INJUN JOE&#039;S FATE (Part 1)</h2>
-      <div class="story">
-        <p>Within minutes, the news was everywhere. A dozen boats launched from the riverbank. The ferryboat followed, packed with people. Tom Sawyer rode in the lead boat with Judge Thatcher.
-When they unlocked the heavy iron door of the cave, they found Injun Joe lying on the ground just inside. He was dead.
-His face was pressed against the crack at the bottom of the door, as if his eyes had been fixed on the light of the outside world until the very last moment. His bowie knife lay beside him, its blade broken in half. He&#039;d spent his final days hacking at the great oak beam of the door—useless work, since solid rock formed the threshold beneath it. Even if he&#039;d cut through the wood, he could never have squeezed under.
-He had eaten every candle stub left by tourists. He had caught and eaten bats. Near the door, a stalagmite rose from the floor, and on top of it he had placed a hollow stone to catch water that dripped from above—one drop every three minutes. A single spoonful every twenty-four hours.
-Tom stared at the cup and the slow-falling drop, and he understood exactly how the man had suffered—because he had nearly suffered the same way.
-Injun Joe was buried near the mouth of the cave. People came from miles around for the funeral. Some said they felt sorry for him. Tom did not feel sorry for him. He felt an overwhelming, bone-deep sense of relief.
-The weight he&#039;d been carrying since that night in the graveyard was finally gone.
-The morning after the funeral, Tom pulled Huck to a private spot.
-&quot;Huck, that money was never in Room Number Two at the tavern.&quot;
-&quot;What?&quot;
-&quot;The money is in the cave.&quot;
-Huck&#039;s eyes went wide. &quot;Say that again.&quot;
-&quot;The treasure—the box of gold—it&#039;s in the cave. I know exactly where.&quot;
-&quot;Tom, are you serious?&quot;
-&quot;Dead serious. Will you come with me to get it?&quot;
-&quot;I will if we can find it without getting lost.&quot;
-&quot;I can take us right to it.&quot;
-They borrowed a small rowboat and headed downriver. Tom found the opening he&#039;d escaped through—hidden behind a thick clump of bushes on the bluff. They crawled in with candles, kite string, and a couple of cloth bags.
-Tom led the way through the dark passages until they reached the spot where he&#039;d seen Injun Joe&#039;s candle. On a big rock nearby, someone had traced a cross in candle smoke.
-&quot;There it is, Huck. &#039;Number Two—under the cross.&#039; This is where Joe kept his camp.&quot;
-They searched around the base of the rock and found a blanket, some gnawed bones, and a narrow opening hidden behind a stone. Tom squeezed through and held up his candle.
-The treasure box sat in a small natural vault, along with an empty powder keg, a couple of old guns, and some moccasins. Huck plunged his hands into the tarnished gold coins.
-&quot;We&#039;re rich, Tom! We&#039;re actually rich!&quot;
-The box weighed about fifty pounds. They stuffed the coins into their bags, dragged everything back through the cave, loaded it into the boat, and rowed home.
-They hid the bags in the Widow Douglas&#039;s woodshed and set off toward town—but on the way, they ran into the old Welshman, who grabbed them and marched them straight to the Widow Douglas&#039;s front door.
-&quot;The widow&#039;s throwing a party,&quot; he said. &quot;You two are coming.&quot;
-&quot;But we&#039;re filthy—&quot;
-&quot;There are clean clothes inside. Get dressed.&quot;</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 INJUN JOE&#039;S FATE (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 INJUN JOE&#039;S FATE (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. What has happened to Injun Joe when the townspeople unlock the sealed cave?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. Where do Tom and Huck find the treasure?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. Tom says he feels "an overwhelming, bone-deep sense of relief" when he learns Injun Joe is dead. He also feels pity because he knows what it's like to be trapped in the cave. Can a person feel relief and pity at the same time? Explain, using details from the chapter.</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Grammar: Appositives</h2>
-      
-      <div class="info-box">
-        <p><strong>What is it?</strong></p>
-        <p>An appositive is a noun or noun phrase that renames another noun right beside it. &#039;Tom, a clever boy, tricked his friends.&#039; Appositives add detail without extra sentences. They&#039;re usually set off with commas.</p>
-        <p style="margin-top: 15px;"><strong>Example:</strong></p>
-        <p><em>"Tom&#039;s friend, Ben Rogers, fell for the trick."</em></p>
-      </div>
-      
-      <h3>✍️ Your Turn:</h3>
-      <p>Write five sentences about characters or places from today&#039;s chapter. Each sentence should include an appositive that renames a noun. Use commas correctly.</p>
-      <textarea rows="10" placeholder="Write your response here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Writing Practice</h2>
-      
-      <div class="info-box">
-        <p><strong>Prompt:</strong></p>
-        <p>Reflect on the events of Chapter 23. What do you think Tom learned?</p>
-      </div>
-      <p><strong>Requirements:</strong></p>
-      <ul>
-        <li>8-10 sentences minimum</li>
-        <li>Include specific details from the text</li>
-        <li>Check spelling and grammar</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your essay here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 23!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>THE HUNT</strong> from <em>Twenty Thousand Leagues Under the Sea</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 4 new vocabulary words in context</li>
+            <li>Master Noun Clauses and Their Functions</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. luminous</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">giving off light; glowing; bright</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. accelerated</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">increased in speed; moved faster</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. intensity</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">the quality of being very strong, powerful, or extreme</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">4. collision</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a violent crash between two objects</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. luminous</div>
+              <div style="flex: 2; font-style: italic; color: #666;">giving off light; glowing; bright</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. accelerated</div>
+              <div style="flex: 2; font-style: italic; color: #666;">increased in speed; moved faster</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. intensity</div>
+              <div style="flex: 2; font-style: italic; color: #666;">the quality of being very strong, powerful, or extreme</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">4. collision</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a violent crash between two objects</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE HUNT </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Every man on deck rushed to the bow. There, in the fading light, about two miles ahead, the ocean was glowing. Just below the surface, a long, luminous shape moved through the water, leaving a trail of pale green fire.
+"Full speed ahead!" Commander Farragut ordered.
+The Abraham Lincoln surged forward, her engines roaring. But the creature moved faster—far faster than any whale had a right to move. It stayed just ahead of us, as if teasing us, its glow pulsing like a heartbeat beneath the waves.
+For hours the chase continued. Every time we gained ground, the creature accelerated. It seemed to be playing with us. The crew fired at it—rifles, cannons, everything they had. The shots disappeared into the sea without effect.
+Near midnight, the creature stopped. It floated motionless on the surface, its glow dimming to a faint shimmer. Steam rose from the water around it, as if the thing were breathing.
+"Now!" Farragut shouted. "Ned, take your position!"
+Ned Land stood at the bow, harpoon raised. The ship crept forward in the darkness.
+"Steady," Ned murmured. "Steady..."
+He hurled the harpoon with all his strength. It struck the creature with a ringing clang—the sound of metal on metal.
+Metal?
+In the same instant, the creature's light blazed to blinding intensity. Two enormous jets of water shot into the air, crashed down on the deck of the Abraham Lincoln, and swept across the ship like a tidal wave.
+I was thrown over the railing.
+The last thing I heard before the black water closed over my head was Conseil's voice shouting my name.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE HUNT (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE HUNT (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. What happens when Ned Land's harpoon strikes the creature?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Aronnax end up in the water?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. How does Verne build suspense during the chase scene? Identify at least two techniques he uses and explain their effect on the reader.</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Noun Clauses and Their Functions</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">A noun clause acts as a noun in a sentence, often starting with that, what, who, whoever, whether, if. They can be subjects, objects, or complements: 'What she said convinced him' (subject). 'He knew that she was clever' (object). 'The question is whether he will change' (complement).</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">Subject: 'Whoever tells the best story wins.' Object: 'The king realized that he had been wrong.' Complement: 'The problem was that he couldn't trust anyone.'</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Identify four noun clauses in today's reading. For each, explain what function it serves (subject, object, or complement). Write three sentences with noun clauses in different positions, about themes or characters from the story.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(23)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

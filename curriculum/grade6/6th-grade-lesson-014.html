@@ -3,417 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 14 - BedrockELA</title>
+  <title>6th Grade Day 14 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 14</h1>
+        <h2 class="lesson-subtitle">MAKING UP WITH BECKY</h2>
+        <p class="lesson-meta">The Adventures of Tom Sawyer</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 14: A MISERABLE SUMMER</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 14</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">A MISERABLE SUMMER</div>
-        <div style="font-size: 1rem; color: #999;">Week 3 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 14!</h2>
-      <p>Today we're reading <strong>A MISERABLE SUMMER</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 14</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        <li>Master Figurative Language: Similes and Metaphors (Language)</li>
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. temperance</h3>
-        <p><strong>Definition:</strong> moderation or self-restraint, especially regarding alcohol; also, a movement promoting abstinence from alcohol</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. revival</h3>
-        <p><strong>Definition:</strong> a renewed interest in something, especially religion; a series of religious meetings designed to inspire faith</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. forbearance</h3>
-        <p><strong>Definition:</strong> patience and self-control; the ability to endure something difficult without complaint</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. temperance</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. revival</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. forbearance</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 A MISERABLE SUMMER (Part 1)</h2>
-      <div class="story">
-        <p>Tom joined the Cadets of Temperance, attracted by their fancy uniforms. He promised to stop swearing and smoking. Naturally, the moment he promised not to do these things, they were all he could think about. He quit after two days.
-The Fourth of July was a disappointment—it rained, and a visiting senator turned out to be a normal-sized man, which was deeply unsatisfying.
-A circus came to town. The boys played circus in the backyard for three days and then got bored.
-Becky Thatcher left for the summer to visit relatives in another town. Without her, nothing had any flavor.
-And underneath it all, like a toothache that never stopped, was the murder. The secret pressed on Tom&#039;s conscience every single day.
-Then came the measles. Tom was bedridden for two weeks, completely cut off from the world. When he finally dragged himself outside, everything had changed. A religious revival had swept through St. Petersburg. Everyone had &quot;gotten religion&quot;—even the boys. Tom went looking for a friendly face and found Joe Harper reading the Bible. Ben Rogers was delivering charity baskets. Jim Hollis told Tom his measles were God&#039;s warning to shape up. Even Huckleberry Finn greeted him with a Bible verse.
-Tom&#039;s heart sank. He went home and crawled into bed, convinced he was the only lost soul left in town.
-That night, a terrible thunderstorm struck. Lightning split the sky, thunder shook the house, and rain lashed the windows. Tom pulled the covers over his head, certain that all of this was aimed directly at him—that God had finally had enough of Tom Sawyer.
-But the storm passed, and he was still alive.
-Then the measles came back. He spent three more weeks in bed. When he finally recovered, the revival was over. Joe Harper was back to mischief. Ben Rogers had gone back to normal. Huck was eating a stolen melon behind a fence.
-Everything was just as it had been—except that the murder trial was about to begin.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 A MISERABLE SUMMER (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 A MISERABLE SUMMER (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. Why does Tom join the Cadets of Temperance?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. What happens to the town's religious revival by the time Tom recovers from his second bout of measles?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. Tom discovers that "to promise not to do a thing is the surest way in the world to make a body want to go and do that very thing." How does this connect to the "great law of human nature" Tom discovered in Chapter 2 (the whitewashing)? Are these the same idea or different?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Language: Figurative Language: Similes and Metaphors</h2>
-      
-      <div class="info-box">
-        <p><strong>What is it?</strong></p>
-        <p>A simile compares using &#039;like&#039; or &#039;as&#039;: &#039;Tom ran like the wind.&#039; A metaphor says something IS something else: &#039;Tom was a lightning bolt.&#039; Twain uses both to create vivid imagery. Similes are easier to spot; metaphors are more subtle.</p>
-        <p style="margin-top: 15px;"><strong>Example:</strong></p>
-        <p><em>"Simile: &#039;The fence stretched like an endless desert.&#039; / Metaphor: &#039;Tom&#039;s heart was a stone when he saw the fence.&#039;"</em></p>
-      </div>
-      
-      <h3>✍️ Your Turn:</h3>
-      <p>Find two examples of figurative language (similes or metaphors) in today&#039;s reading. Explain what is being compared and what image the comparison creates. Then write your own simile and metaphor about something from the chapter.</p>
-      <textarea rows="10" placeholder="Write your response here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Journal Entry</h2>
-      
-      <p>Reflect on today's reading in your own words:</p>
-      <ul>
-        <li>What was the most interesting part of today's chapter?</li>
-        <li>How would you have handled the situation differently?</li>
-        <li>What questions do you have about the story?</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 14!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>MAKING UP WITH BECKY</strong> from <em>The Adventures of Tom Sawyer</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Apply Idioms, Colloquialisms, and Cultural Expressions</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. vindictive</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">having a strong desire for revenge; spiteful</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. perplexity</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a state of confusion or puzzlement</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. adoration</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">deep love, respect, and admiration</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. vindictive</div>
+              <div style="flex: 2; font-style: italic; color: #666;">having a strong desire for revenge; spiteful</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. perplexity</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a state of confusion or puzzlement</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. adoration</div>
+              <div style="flex: 2; font-style: italic; color: #666;">deep love, respect, and admiration</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 MAKING UP WITH BECKY </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Something about Aunt Polly's kiss that morning lifted all the weight off Tom's shoulders. He felt light and happy for the first time in weeks. On his way to school, he ran into Becky Thatcher.
+"Becky, I acted awful mean the other day, and I'm so sorry. I won't ever do it again. Please—can we make up?"
+She stopped and gave him a cold stare. "I'll thank you to keep away from me, Tom Sawyer. I'm never speaking to you again."
+She tossed her braids and walked on.
+Tom was so stunned he couldn't even think of a comeback. His good mood evaporated. He stomped into the schoolyard, furious.
+For the rest of the morning, Tom noticed Becky laughing and running around the yard, always managing to end up close to him, clearly trying to get his attention. He pretended not to notice. When he saw her looking his way, he turned and talked loudly to Amy Lawrence instead.
+Becky's smile faded. She tried to look cheerful, but the light went out of her face. She drifted away.
+Meanwhile, something dangerous was happening. The teacher, Mr. Dobbins, kept a mysterious book in his desk—locked up, always hidden. Every kid in school was dying to know what it was. On this particular day, as Becky passed the teacher's desk, she noticed the key was in the lock.
+She glanced around. The room was empty. She turned the key and opened the book. The title page said Professor Somebody's Anatomy. She didn't know what that meant, so she started flipping through it—and came upon a picture of a human body, completely naked.
+At that exact moment, Tom walked through the door. Becky slammed the book shut in a panic—and tore the picture right down the middle. She shoved the book back in the desk, turned the key, and burst into tears.
+"Tom Sawyer! You are the meanest person alive, sneaking up on people!"
+"How was I supposed to know you were looking at anything?"
+"You're going to tell on me, and I'll get whipped, and I've never been whipped in school!"
+She stormed out, crying.
+Tom stood there, bewildered. "What a fuss over nothing," he thought. "Girls are so thin-skinned. I'm not going to tell old Dobbins. But he'll figure it out on his own. He'll ask every kid in the room, and when he gets to Becky, she won't be able to hide it—girls can never keep a straight face. She's going to get it. Too bad for her."
+He paused. "But she would have let ME get in trouble without thinking twice. All right, let her sweat."
+But he didn't feel right about it.
+That afternoon, Mr. Dobbins took the book from his desk. He settled into his chair to read it—and found the torn page.
+Every student sat up straight. Tom glanced at Becky. She looked like a trapped rabbit.
+Mr. Dobbins stood and faced the room. "Who tore this book?"
+Dead silence. You could hear a pin drop.
+"Benjamin Rogers, did you tear this book?"
+"No sir."
+"Joseph Harper, did you?"
+"No sir."
+One by one, the teacher worked his way through the class. Tom's heart pounded harder with each name. The teacher turned to the girls.
+"Amy Lawrence?"
+She shook her head.
+"Susan Harper?"
+No.
+"Rebecca Thatcher."
+Becky's face went white. Tom looked at her. Her eyes were wide with terror, her hands pressed together.
+"Did you tear this book?"
+Her lips moved, but no sound came out.
+Tom leaped to his feet. "I did it!"
+The whole school stared in shock.
+Mr. Dobbins said nothing for a long, terrible moment. Then: "Come here."
+Tom walked forward. He took the worst whipping Mr. Dobbins had ever given, plus two hours of detention after school. He didn't make a sound.
+And the whole time, he could feel Becky Thatcher's eyes on him—shining with gratitude and something that looked an awful lot like love.
+Tom went to bed that night still stinging from the whipping, but Becky's last words kept playing in his head like music:
+"Tom, how could you be so noble!"</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 MAKING UP WITH BECKY (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 MAKING UP WITH BECKY (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Why does Mr. Dobbins become angry with the class?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. What does Tom do when Mr. Dobbins asks Becky if she tore the book?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Tom takes a whipping he doesn't deserve to protect Becky. How is this moment different from his earlier "showing off" to impress her? What has changed about Tom's feelings or motivations?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Idioms, Colloquialisms, and Cultural Expressions</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">Idioms are expressions whose meanings aren't literal: 'Break the ice' doesn't mean breaking actual ice. Understanding cultural expressions helps comprehension and shows how language reflects culture. Some expressions translate across cultures; others don't.</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">'The king lost his head' (lost control, not literally lost his head). 'She kept him in the dark' (kept him uninformed). Cultural expression: 'A thousand and one nights' suggests something vast, uncountable—the title itself is an idiom.</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Find three idiomatic or cultural expressions in today's reading. Explain the literal vs. actual meaning of each. Then research one expression's cultural origin and discuss what it reveals about the culture that created it.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(14)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

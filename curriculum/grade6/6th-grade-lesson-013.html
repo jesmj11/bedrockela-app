@@ -3,423 +3,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 13 - BedrockELA</title>
+  <title>6th Grade Day 13 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 13</h1>
+        <h2 class="lesson-subtitle">TOM'S DREAM TRICK</h2>
+        <p class="lesson-meta">The Adventures of Tom Sawyer</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 13: EXAMINATION DAY</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 13</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">EXAMINATION DAY</div>
-        <div style="font-size: 1rem; color: #999;">Week 3 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 13!</h2>
-      <p>Today we're reading <strong>EXAMINATION DAY</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 13</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        <li>Master Adjective and Adverb Clauses (Grammar)</li>
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. examination</h3>
-        <p><strong>Definition:</strong> a formal test of knowledge; also, a careful inspection</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. recitation</h3>
-        <p><strong>Definition:</strong> the act of speaking a memorized piece of writing aloud to an audience</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. vengeance</h3>
-        <p><strong>Definition:</strong> punishment or harm inflicted in return for a wrong; revenge</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. examination</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. recitation</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. vengeance</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 EXAMINATION DAY (Part 1)</h2>
-      <div class="story">
-        <p>Vacation was coming, and Mr. Dobbins was getting meaner by the day. He seemed to take a vicious pleasure in whipping students for the smallest mistakes. The younger kids spent their days in terror and their nights plotting revenge.
-They finally came up with a plan—and it was a beauty.
-The sign-painter&#039;s boy was in on it. His father rented a room to Mr. Dobbins, so the boy had his own reasons for wanting revenge. The plan required the teacher&#039;s wife to be out of town, and it required Mr. Dobbins to be drunk—neither of which was unusual.
-On Examination Evening, the schoolhouse was packed. Parents, town leaders, and visitors filled every seat. The teacher sat on a raised platform with a blackboard behind him, looking only slightly unsteady. Rows of students sat on a temporary stage—boys scrubbed raw and miserable in stiff clothes, girls in white dresses with ribbons in their hair.
-The performances began. A tiny boy recited a poem with robotic gestures and nearly fainted from stage fright. A girl lisped her way through &quot;Mary Had a Little Lamb.&quot; Tom Sawyer stepped forward with grand confidence and launched into a dramatic speech—&quot;Give me liberty or give me death!&quot;—but froze halfway through. Stage fright hit him like a wall. His legs shook, his throat closed. The audience stared in painful silence. He gave up and slunk off the stage.
-More recitations followed. Then came the spelling bee, the Latin class, and finally the main event—original essays by the older girls. Every single essay, no matter the topic, ended with the same kind of preachy moral lesson. The audience clapped politely and pretended to be moved.
-Then Mr. Dobbins stood to lead the geography class. He turned to the blackboard and began drawing a map of America. But his hand was unsteady from drink, and the map came out crooked and wrong. A ripple of laughter ran through the crowd. He erased and tried again—worse. The laughter grew louder.
-He concentrated harder, determined to get it right. He didn&#039;t notice what was happening above him.
-In the ceiling, there was a small opening—a trapdoor to the attic. Through it, slowly, came a cat. She was tied to a rope and lowered inch by inch, a rag around her head to keep her quiet. She dangled and twisted, clawing at the air, getting closer and closer to the teacher&#039;s head.
-The audience was shaking with laughter now. The cat was six inches from Mr. Dobbins—four inches—two—
-She grabbed his wig with both paws and was yanked back up into the attic, taking the wig with her.
-The teacher&#039;s bald head gleamed in the lamplight. The sign-painter&#039;s boy had gilded it while the teacher napped. It shone like a mirror.
-The room exploded. The meeting was over. The boys were avenged. And vacation had begun.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 EXAMINATION DAY (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 EXAMINATION DAY (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. What is the boys' plan for getting revenge on Mr. Dobbins?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. Why does the audience laugh even harder when the cat removes Mr. Dobbins's wig?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. The chapter describes students performing recitations, essays, and demonstrations on Examination Day. How is Examination Day different from how we test students today? Which approach do you think is better, and why?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Grammar: Adjective and Adverb Clauses</h2>
-      
-      <div class="info-box">
-        <p><strong>What is it?</strong></p>
-        <p>An adjective clause modifies a noun: &#039;Tom, who was very clever, tricked his friends.&#039; An adverb clause modifies a verb, adjective, or adverb: &#039;Tom worked quickly because he wanted to finish.&#039; Both add detail to sentences.</p>
-        <p style="margin-top: 15px;"><strong>Example:</strong></p>
-        <p><em>"Adjective: &#039;The fence that Tom painted stood in the yard.&#039; / Adverb: &#039;Tom ran when he saw Aunt Polly.&#039;"</em></p>
-      </div>
-      
-      <h3>✍️ Your Turn:</h3>
-      <p>Write four sentences about today&#039;s reading: two with adjective clauses (use who, which, that) and two with adverb clauses (use when, because, if, although).</p>
-      <textarea rows="10" placeholder="Write your response here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Writing Practice</h2>
-      
-      <div class="info-box">
-        <p><strong>Prompt:</strong></p>
-        <p>Reflect on the events of Chapter 13. What do you think Tom learned?</p>
-      </div>
-      <p><strong>Requirements:</strong></p>
-      <ul>
-        <li>8-10 sentences minimum</li>
-        <li>Include specific details from the text</li>
-        <li>Check spelling and grammar</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your essay here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 13!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>TOM'S DREAM TRICK</strong> from <em>The Adventures of Tom Sawyer</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Master Semicolons, Colons, and Dashes for Emphasis</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. prophetic</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">accurately predicting the future; having the quality of prophecy</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. wistfully</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">with a feeling of sad longing or gentle desire</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. tremor</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a slight shaking or quivering; an involuntary movement</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. prophetic</div>
+              <div style="flex: 2; font-style: italic; color: #666;">accurately predicting the future; having the quality of prophecy</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. wistfully</div>
+              <div style="flex: 2; font-style: italic; color: #666;">with a feeling of sad longing or gentle desire</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. tremor</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a slight shaking or quivering; an involuntary movement</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 TOM'S DREAM TRICK </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">At breakfast on Monday, Aunt Polly was showering Tom with love, but underneath it, something was bothering her.
+"Well, Tom," she finally said, "I don't say it wasn't a fine joke to keep everybody worrying for a whole week while you boys had your fun. But it is a shame you could be so hard-hearted. If you could float across on a log to attend your own funeral, you could have floated across to let me know you weren't dead."
+"You could have done that, Tom," said Mary. "I believe you would have, if you'd thought of it."
+"Would you, Tom?" Aunt Polly's eyes were hopeful. "Would you have, if you'd thought of it?"
+"I—well, I don't know. It would have spoiled everything."
+Aunt Polly's face fell. "Tom, I hoped you loved me enough to think of it. It would have been something if you'd even cared enough to consider it."
+"Now, Auntie, it's not that bad," Mary said. "That's just Tom's way—he's always in such a rush he never thinks ahead."
+"I wish I had thought of it," Tom said, and he meant it. "But I dreamed about you. That's something."
+"A cat does that much. But it's better than nothing. What did you dream?"
+Tom had to think fast. "Well—Wednesday night I dreamed you were sitting right over there by the bed. And Sid was by the woodbox, and Mary next to him."
+"Well, so we were! That's where we always sit. Go on."
+"And I dreamed that Joe Harper's mother was here."
+"She was! Did you dream anything else?"
+"Oh, lots. But it's kind of fuzzy—"
+"Try harder, Tom."
+"It seems like—the wind blew the—the—"
+"What? What did the wind blow?"
+"It blew the candle!"
+"Mercy! Go on!"
+"And it seems like you said the door was open—"
+"As sure as I'm sitting here, I did! Mary, didn't I?"
+"And then you made Sid go shut it."
+"Well, I never! Go on, Tom!"
+"Then you said I wasn't bad, just mischievous, and not any more responsible than—a colt, or something."
+"That's exactly what I said! Goodness gracious, go on!"
+"And then you started crying."
+"So I did."
+"And then Mrs. Harper cried too, and said she wished she hadn't whipped Joe for the cream—"
+"Tom! It's like you were right there in the room! What else?"
+Tom rolled out every detail he could remember from hiding under the bed. Aunt Polly's eyes grew wider with every word. By the end she was fully convinced it had been a genuine prophetic dream—maybe even sent by angels.
+"And then I thought you prayed for me," Tom said quietly. "And I could hear every word. And you went to bed, and I was so sorry—I took a piece of sycamore bark and wrote on it, 'We aren't dead—we're only off being pirates.' And I put it on the table by the candle. And then you looked so peaceful, sleeping there, that I bent down and kissed you."
+"Did you, Tom? Did you really?"
+"Yes ma'am."
+"I forgive you everything for that!" She crushed him in a hug. "Even though it was only a dream."
+"Shut up, Sid," Tom muttered, catching his brother's skeptical look.
+After Tom left for school, Aunt Polly's heart struggled between joy and suspicion. She went to the closet and got out the ragged jacket Tom had worn on his pirate adventure. She held it, arguing with herself: "I won't look. It's a good lie—a kind lie. I won't let it grieve me."
+But she looked. She reached into the pocket—and pulled out a piece of sycamore bark.
+She read it through tears that wouldn't stop falling. It said: WE AIN'T DEAD—WE ARE ONLY OFF BEING PIRATES.
+"I could forgive that boy," she whispered, "if he'd committed a million sins."</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 TOM'S DREAM TRICK (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 TOM'S DREAM TRICK (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. How does Tom explain knowing all the details of the conversation Aunt Polly had with Mrs. Harper?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. What does Aunt Polly find in the pocket of Tom's old jacket?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Aunt Polly calls the sycamore bark message proof that Tom loved her. Tom originally planned to leave it but changed his mind. Does Tom deserve the credit Aunt Polly gives him? Why or why not?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Semicolons, Colons, and Dashes for Emphasis</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">Semicolons join closely related independent clauses: 'She was not afraid; she was determined.' Colons introduce lists, explanations, or quotes: 'She needed one thing: time.' Dashes create emphasis or mark interruptions: 'Her plan—dangerous but necessary—might work.'</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">Semicolon: 'The night ended; the story continued.' Colon: 'Scheherazade understood one truth: stories change minds.' Dash: 'The king—once kind, now cruel—listened carefully.'</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Write six sentences about today's chapter: two using semicolons, two using colons, and two using dashes. Explain why you chose each punctuation mark and how it affects the sentence's meaning or rhythm.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(13)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

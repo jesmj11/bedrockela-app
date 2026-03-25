@@ -3,469 +3,290 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 3 - BedrockELA</title>
+  <title>6th Grade Day 3 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 3</h1>
+        <h2 class="lesson-subtitle">SHOWING OFF FOR BECKY</h2>
+        <p class="lesson-meta">The Adventures of Tom Sawyer</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 3: SHOWING OFF FOR BECKY</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 3!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>SHOWING OFF FOR BECKY</strong> from <em>The Adventures of Tom Sawyer</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Master Restrictive vs. Non-Restrictive Clauses and Commas</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 3</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">SHOWING OFF FOR BECKY</div>
-        <div style="font-size: 1rem; color: #999;">Week 1 • The Adventures of Tom Sawyer • 6th Grade</div>
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. mortified</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">extremely embarrassed or humiliated</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. caricature</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">an exaggerated or distorted drawing or description of someone</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. fascinate</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">to attract and hold someone's attention completely</p>
+            </div>
+          
+        </div>
       </div>
     </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 3!</h2>
-      <p>Today we're reading <strong>SHOWING OFF FOR BECKY</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 3</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        <li>Master Independent vs. Dependent Clauses (Grammar)</li>
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. mortified</div>
+              <div style="flex: 2; font-style: italic; color: #666;">extremely embarrassed or humiliated</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. caricature</div>
+              <div style="flex: 2; font-style: italic; color: #666;">an exaggerated or distorted drawing or description of someone</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. fascinate</div>
+              <div style="flex: 2; font-style: italic; color: #666;">to attract and hold someone's attention completely</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
       </div>
     </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. mortified</h3>
-        <p><strong>Definition:</strong> extremely embarrassed or humiliated</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. caricature</h3>
-        <p><strong>Definition:</strong> an exaggerated or distorted drawing or description of someone</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. fascinate</h3>
-        <p><strong>Definition:</strong> to attract and hold someone&#039;s attention completely</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. mortified</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. caricature</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. fascinate</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 SHOWING OFF FOR BECKY (Part 1)</h2>
-      <div class="story">
-        <p>After church on Sunday, Tom sat through a long, boring sermon. The only interesting moment came when a stray poodle wandered down the aisle and sat on a large beetle. The resulting yelp sent the dog flying around the church like a furry comet, and the whole congregation nearly suffocated trying not to laugh. The sermon never recovered, and Tom went home in a fine mood.
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 SHOWING OFF FOR BECKY </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">After church on Sunday, Tom sat through a long, boring sermon. The only interesting moment came when a stray poodle wandered down the aisle and sat on a large beetle. The resulting yelp sent the dog flying around the church like a furry comet, and the whole congregation nearly suffocated trying not to laugh. The sermon never recovered, and Tom went home in a fine mood.
 Monday morning found Tom miserable. Monday mornings always found him miserable, because Monday meant another long week of school.
-Tom lay in bed, trying to think of an excuse to stay home. He checked himself for symptoms. He thought he might be getting a stomachache, but it faded before he could get his hopes up. Then he discovered something—one of his front teeth was loose! He was about to start groaning when he realized that if Aunt Polly found out, she&#039;d just yank it out. Better save the tooth for later.
-Then he remembered hearing the doctor talk about a disease that could lay a person up for weeks. Tom pulled his sore toe out from under the covers and examined it with great interest. He didn&#039;t actually know what the symptoms were, but it seemed worth a try.
-&quot;Oh!&quot; he groaned. &quot;Ohhhh, my sore toe!&quot;
+Tom lay in bed, trying to think of an excuse to stay home. He checked himself for symptoms. He thought he might be getting a stomachache, but it faded before he could get his hopes up. Then he discovered something—one of his front teeth was loose! He was about to start groaning when he realized that if Aunt Polly found out, she'd just yank it out. Better save the tooth for later.
+Then he remembered hearing the doctor talk about a disease that could lay a person up for weeks. Tom pulled his sore toe out from under the covers and examined it with great interest. He didn't actually know what the symptoms were, but it seemed worth a try.
+"Oh!" he groaned. "Ohhhh, my sore toe!"
 Sid kept sleeping.
-Tom groaned louder. &quot;Ohhhh, I&#039;m dying!&quot;
+Tom groaned louder. "Ohhhh, I'm dying!"
 Nothing from Sid.
-Tom shook him. &quot;Sid! Sid!&quot;
-Sid finally woke up. &quot;Tom? What&#039;s the matter?&quot;
-Tom moaned, &quot;Don&#039;t jostle me. My sore toe is turning black and about to fall off.&quot;
-&quot;Tom! Let me get Aunt Polly—&quot;
-&quot;No! It&#039;ll pass. Don&#039;t call anyone. I just want you to know—if I don&#039;t make it, Sid—I forgive you for everything. Tell everyone I said so. And give my cat and my window sash to that new girl who just moved to town...&quot;
-But Sid was already thundering down the stairs. &quot;Aunt Polly! Come quick! Tom&#039;s dying!&quot;
-&quot;Dying?&quot; She flew upstairs with Sid and Mary right behind her. Her face went white. &quot;Tom! What&#039;s wrong with you?&quot;
-&quot;Oh, Auntie—my sore toe is infected!&quot;
-The old woman sank into a chair and laughed, then cried, then laughed again. &quot;Tom Sawyer, you gave me a heart attack. Now stop that nonsense and get out of that bed.&quot;
-The groaning stopped. The toe felt fine. &quot;It really did seem infected, Aunt Polly. It hurt so bad I forgot all about my tooth.&quot;
-&quot;Your tooth? What&#039;s wrong with your tooth?&quot;
-&quot;One of them&#039;s loose, and it aches something awful.&quot;
-&quot;Open your mouth. Well, your tooth is loose, all right, but you&#039;re not going to die from it. Mary, get me a silk thread and a hot coal from the kitchen.&quot;
-Tom started backpedaling fast. &quot;Please don&#039;t pull it! It doesn&#039;t hurt anymore! Please, Aunt Polly—I don&#039;t want to stay home from school!&quot;
-&quot;Oh, so now you don&#039;t want to stay home! This whole production was about skipping school.&quot; She tied one end of the thread to his tooth and the other end to the bedpost. Then she waved the hot coal near his face—and out popped the tooth.
+Tom shook him. "Sid! Sid!"
+Sid finally woke up. "Tom? What's the matter?"
+Tom moaned, "Don't jostle me. My sore toe is turning black and about to fall off."
+"Tom! Let me get Aunt Polly—"
+"No! It'll pass. Don't call anyone. I just want you to know—if I don't make it, Sid—I forgive you for everything. Tell everyone I said so. And give my cat and my window sash to that new girl who just moved to town..."
+But Sid was already thundering down the stairs. "Aunt Polly! Come quick! Tom's dying!"
+"Dying?" She flew upstairs with Sid and Mary right behind her. Her face went white. "Tom! What's wrong with you?"
+"Oh, Auntie—my sore toe is infected!"
+The old woman sank into a chair and laughed, then cried, then laughed again. "Tom Sawyer, you gave me a heart attack. Now stop that nonsense and get out of that bed."
+The groaning stopped. The toe felt fine. "It really did seem infected, Aunt Polly. It hurt so bad I forgot all about my tooth."
+"Your tooth? What's wrong with your tooth?"
+"One of them's loose, and it aches something awful."
+"Open your mouth. Well, your tooth is loose, all right, but you're not going to die from it. Mary, get me a silk thread and a hot coal from the kitchen."
+Tom started backpedaling fast. "Please don't pull it! It doesn't hurt anymore! Please, Aunt Polly—I don't want to stay home from school!"
+"Oh, so now you don't want to stay home! This whole production was about skipping school." She tied one end of the thread to his tooth and the other end to the bedpost. Then she waved the hot coal near his face—and out popped the tooth.
 But there was a silver lining. On his way to school, every boy he passed was jealous of the gap in his teeth, because it let him spit in a spectacular new way. He gathered a following of admirers.
-Shortly after, Tom ran into Huckleberry Finn—the most envied boy in town. Huck was the son of the town drunk. He didn&#039;t have to go to school, didn&#039;t have to go to church, didn&#039;t answer to anyone. He went fishing whenever he wanted, slept wherever he pleased, and nobody told him what to do. He wore ragged hand-me-downs from grown men, and his hat was full of holes. Every respectable mother in St. Petersburg hated him, and every boy wished he could be him.
-&quot;Hey, Huckleberry! What&#039;ve you got there?&quot;
-&quot;Dead cat.&quot;
-&quot;Lemme see. What are dead cats good for?&quot;
-&quot;Curing warts.&quot;
+Shortly after, Tom ran into Huckleberry Finn—the most envied boy in town. Huck was the son of the town drunk. He didn't have to go to school, didn't have to go to church, didn't answer to anyone. He went fishing whenever he wanted, slept wherever he pleased, and nobody told him what to do. He wore ragged hand-me-downs from grown men, and his hat was full of holes. Every respectable mother in St. Petersburg hated him, and every boy wished he could be him.
+"Hey, Huckleberry! What've you got there?"
+"Dead cat."
+"Lemme see. What are dead cats good for?"
+"Curing warts."
 The two boys fell into a long, serious discussion about warts, dead cats, spells, and superstitions—the kind of conversation that felt like the most important thing in the world. Huck was heading to the graveyard that night to try the dead cat cure, and Tom made him promise to come get him first.
 Tom was late to school. He marched in briskly, hoping to slide into his seat unnoticed.
-&quot;Thomas Sawyer!&quot;
+"Thomas Sawyer!"
 Tom knew that whenever his full name was used, it meant trouble.
-&quot;Sir?&quot;
-&quot;Come here. Why are you late again?&quot;
-Tom was about to lie, but then he noticed two long braids of yellow hair hanging down a back he didn&#039;t recognize. The only empty seat on the girls&#039; side of the room was right next to those braids. He made a split-second decision.
-&quot;I stopped to talk with Huckleberry Finn!&quot;
-The teacher&#039;s jaw dropped. &quot;You—you did what?&quot;
-&quot;Stopped to talk with Huckleberry Finn.&quot;
-There was no mistaking the words. The teacher said: &quot;Thomas Sawyer, that is the most shocking thing I have ever heard. Take off your jacket—you will be whipped. And then you will go sit with the girls.&quot;
+"Sir?"
+"Come here. Why are you late again?"
+Tom was about to lie, but then he noticed two long braids of yellow hair hanging down a back he didn't recognize. The only empty seat on the girls' side of the room was right next to those braids. He made a split-second decision.
+"I stopped to talk with Huckleberry Finn!"
+The teacher's jaw dropped. "You—you did what?"
+"Stopped to talk with Huckleberry Finn."
+There was no mistaking the words. The teacher said: "Thomas Sawyer, that is the most shocking thing I have ever heard. Take off your jacket—you will be whipped. And then you will go sit with the girls."
 A ripple of laughter went through the room. Tom pretended to be embarrassed, but his heart was soaring. He took his punishment and sat down at the end of the bench next to the girl with the yellow braids.
 She turned away from him with a toss of her head. But Tom slid a peach across the desk toward her. She pushed it away. He slid it back. She pushed it away again—but with less force. He slid it back once more. This time she let it stay.
 Tom began drawing something on his slate, hiding it with his hand. The girl tried not to look. She failed.
-&quot;Let me see,&quot; she whispered.
+"Let me see," she whispered.
 Tom uncovered a lopsided drawing of a house with a curly bit of smoke coming out of the chimney.
-&quot;It&#039;s nice. Draw a man.&quot;
-Tom drew a figure that could have been a man or a scarecrow. &quot;It&#039;s beautiful,&quot; she whispered. &quot;I wish I could draw.&quot;
-&quot;It&#039;s easy. I&#039;ll teach you. What&#039;s your name?&quot;
-&quot;Becky Thatcher. What&#039;s yours? Oh—I know. It&#039;s Thomas Sawyer.&quot;
-&quot;That&#039;s what they call me when I&#039;m in trouble. I&#039;m Tom when I&#039;m good. Call me Tom, will you?&quot;
+"It's nice. Draw a man."
+Tom drew a figure that could have been a man or a scarecrow. "It's beautiful," she whispered. "I wish I could draw."
+"It's easy. I'll teach you. What's your name?"
+"Becky Thatcher. What's yours? Oh—I know. It's Thomas Sawyer."
+"That's what they call me when I'm in trouble. I'm Tom when I'm good. Call me Tom, will you?"
 Tom began scrawling something else on the slate, hiding the words carefully.
-&quot;Let me see!&quot; Becky said.
-&quot;You&#039;ll tell.&quot;
-&quot;No I won&#039;t. I promise.&quot;
-&quot;You won&#039;t tell anybody? Ever?&quot;
-&quot;I won&#039;t ever tell anybody. Let me see!&quot;
+"Let me see!" Becky said.
+"You'll tell."
+"No I won't. I promise."
+"You won't tell anybody? Ever?"
+"I won't ever tell anybody. Let me see!"
 Tom moved his hand. On the slate it said: I LOVE YOU.
-&quot;Oh, you bad thing!&quot; She slapped his hand—but her cheeks turned pink, and she looked pleased.
-At that exact moment, the teacher&#039;s hand clamped down on Tom&#039;s ear, and he was hauled across the room back to his own seat. The whole school giggled. But Tom&#039;s heart was doing cartwheels.</p>
+"Oh, you bad thing!" She slapped his hand—but her cheeks turned pink, and she looked pleased.
+At that exact moment, the teacher's hand clamped down on Tom's ear, and he was hauled across the room back to his own seat. The whole school giggled. But Tom's heart was doing cartwheels.</p>
+          </div>
+        </div>
       </div>
-    </div>
     
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 SHOWING OFF FOR BECKY (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 SHOWING OFF FOR BECKY (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. Why does Tom deliberately tell the teacher he was talking to Huckleberry Finn?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. How does Becky first respond when Tom slides a peach toward her on the desk?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. Tom gets himself whipped and sent to the girls' side on purpose. What does this decision reveal about Tom's character? Is he foolish, brave, romantic, or something else? Explain your thinking using details from the chapter.</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Grammar: Independent vs. Dependent Clauses</h2>
-      
-      <div class="info-box">
-        <p><strong>What is it?</strong></p>
-        <p>An independent clause can stand alone as a complete sentence. A dependent clause starts with a subordinating conjunction and needs an independent clause to complete its meaning. In Tom Sawyer, Twain uses both types to create varied sentence structures.</p>
-        <p style="margin-top: 15px;"><strong>Example:</strong></p>
-        <p><em>"Independent: &#039;Tom climbed the fence.&#039; / Dependent: &#039;Because he wanted to escape&#039; (needs more to be complete)"</em></p>
-      </div>
-      
-      <h3>✍️ Your Turn:</h3>
-      <p>Find two sentences in today&#039;s reading. Identify the independent and dependent clauses in each. Then write two of your own complex sentences and label the clauses.</p>
-      <textarea rows="10" placeholder="Write your response here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Writing Practice</h2>
-      
-      <div class="info-box">
-        <p><strong>Prompt:</strong></p>
-        <p>Reflect on the events of Chapter 3. What do you think Tom learned?</p>
-      </div>
-      <p><strong>Requirements:</strong></p>
-      <ul>
-        <li>8-10 sentences minimum</li>
-        <li>Include specific details from the text</li>
-        <li>Check spelling and grammar</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your essay here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 SHOWING OFF FOR BECKY (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 SHOWING OFF FOR BECKY (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Why does Tom deliberately tell the teacher he was talking to Huckleberry Finn?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. How does Becky first respond when Tom slides a peach toward her on the desk?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Tom gets himself whipped and sent to the girls' side on purpose. What does this decision reveal about Tom's character? Is he foolish, brave, romantic, or something else? Explain your thinking using details from the chapter.</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Restrictive vs. Non-Restrictive Clauses and Commas</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">Restrictive clauses are essential to the meaning and need no commas: 'The girl who told the stories survived.' Non-restrictive clauses add extra information and use commas: 'Scheherazade, who had read everything, told stories.' The difference changes meaning: 'Students who studied passed' vs. 'Students, who studied, passed.'</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">Restrictive: 'The tales that changed the king came from many cultures.' Non-restrictive: 'Arabian Nights, which contains hundreds of tales, influenced world literature.'</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Find three relative clauses in today's reading. Identify whether each is restrictive or non-restrictive, explain how you know, and discuss how removing the clause would change the meaning.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(3)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

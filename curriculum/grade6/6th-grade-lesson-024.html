@@ -3,437 +3,259 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 24 - BedrockELA</title>
+  <title>6th Grade Day 24 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 24</h1>
+        <h2 class="lesson-subtitle">PRISONERS OF THE SEA</h2>
+        <p class="lesson-meta">Twenty Thousand Leagues Under the Sea</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 24: TOM SAWYER&#039;S GANG</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 24</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TOM SAWYER&#039;S GANG</div>
-        <div style="font-size: 1rem; color: #999;">Week 5 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 24!</h2>
-      <p>Today we're reading <strong>TOM SAWYER&#039;S GANG</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 24</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        <li>Master Dialect and Regional Language (Language)</li>
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. respectable</h3>
-        <p><strong>Definition:</strong> considered proper and socially acceptable; having a good reputation</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. initiation</h3>
-        <p><strong>Definition:</strong> a ceremony or process of admitting someone into a group</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. charitable</h3>
-        <p><strong>Definition:</strong> generous in giving help or money to those in need; kind</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. respectable</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. initiation</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. charitable</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 TOM SAWYER&#039;S GANG (Part 1)</h2>
-      <div class="story">
-        <p>The Widow Douglas&#039;s parlor was full of people—the Thatchers, the Harpers, Aunt Polly, Sid, Mary, the minister, and half the town. The boys were scrubbed and stuffed into new suits. Huck kept eyeing the window, calculating the drop.
-&quot;Tom, we can escape if we—&quot;
-&quot;Relax. It&#039;s just a party.&quot;
-The Welshman stood up and made a speech, thanking the widow for her hospitality and revealing that it was Huckleberry Finn who had saved her from Injun Joe that night on Cardiff Hill. Huck turned crimson. The widow said she meant to give Huck a permanent home, educate him, and eventually set him up in business.
-Tom couldn&#039;t wait another second. He stood up and said: &quot;Huck doesn&#039;t need charity. Huck&#039;s rich.&quot;
-Nobody laughed—they assumed it was a joke. Tom ran outside, came back dragging a small wagon, and dumped two bags of gold coins onto the table.
-&quot;Half is Huck&#039;s and half is mine!&quot;
-The room went dead silent. Then everyone started talking at once. Tom told the whole story—the haunted house, Injun Joe, Number Two under the cross, the treasure box in the cave. When he was finished, the money was counted.
-Twelve thousand dollars. More than anyone in the room had ever seen.
-The Widow Douglas invested Huck&#039;s share. Judge Thatcher did the same with Tom&#039;s, at Aunt Polly&#039;s request. Each boy had an income of about a dollar a day—a fortune for the time.
-Judge Thatcher said Tom was the bravest boy he&#039;d ever met. When Becky told her father how Tom had taken her whipping at school, the Judge said it was &quot;a noble and generous act&quot; and that Tom would make a great man someday.
-Huck&#039;s new life, however, was not going smoothly. The Widow Douglas was kind, but her world had rules. He had to eat with a fork. He had to wear shoes. He had to sleep in sheets. He had to go to church. He couldn&#039;t smoke, couldn&#039;t swear, couldn&#039;t spit. Everything was scheduled—up by a bell, meals by a bell, bed by a bell.
-After three miserable weeks, Huck disappeared.
-The whole town searched for him. Tom Sawyer found him on the second day—hiding in an empty barrel behind the old slaughter-house, happily smoking a pipe in his old rags.
-&quot;Don&#039;t talk about it, Tom. I&#039;ve tried it and it doesn&#039;t work. The widow means well, but I can&#039;t stand the rules. I&#039;ve got to get up at the same time every morning. I&#039;ve got to wash and comb my hair. I can&#039;t fish unless I ask, can&#039;t swim unless I ask. I&#039;ve got to wear shoes every Sunday. Being rich isn&#039;t what it&#039;s cracked up to be—it&#039;s just worry and work and wishing you were dead. Take my share of the money and leave me alone.&quot;
-&quot;I can&#039;t do that, Huck.&quot;
-&quot;Why not?&quot;
-&quot;Because if you&#039;re not respectable, you can&#039;t be in the gang.&quot;
-&quot;What gang?&quot;
-&quot;Tom Sawyer&#039;s Gang. I&#039;m starting a gang of robbers, and we need a proper hideout, and rules, and an oath signed in blood at midnight. But we can&#039;t let you in if you&#039;re not respectable.&quot;
-Huck thought about this for a long time.
-&quot;All right,&quot; he finally said. &quot;I&#039;ll go back to the widow for a month and try to stand it—if you let me in the gang.&quot;
-&quot;Done!&quot;
-&quot;When do we start?&quot;
-&quot;Right away. We&#039;ll get the boys together tonight for the initiation. We&#039;ll swear the oath in the cave at midnight.&quot;
-&quot;That sounds perfect, Tom.&quot;
-&quot;It will be. And Huck—I&#039;ll talk to the widow. I&#039;ll get her to ease up a little.&quot;
-&quot;Would you? That&#039;d help. If she&#039;d just let me smoke and swear in private, I think I could make it.&quot;
-Tom grinned. &quot;Come on, old friend. Let&#039;s go home.&quot;
-And so they did.
-THE END</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 TOM SAWYER&#039;S GANG (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 TOM SAWYER&#039;S GANG (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. Why does Huck run away from the Widow Douglas's house?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. How does Tom convince Huck to go back to the Widow Douglas?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. The book ends with Huck agreeing to "try" civilization so he can join Tom's robber gang. Do you think Huck will last? Why or why not? Use what you know about Huck's character from the whole book to support your prediction.</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Language: Dialect and Regional Language</h2>
-      
-      <div class="info-box">
-        <p><strong>What is it?</strong></p>
-        <p>Tom Sawyer includes dialect—regional ways of speaking. Jim and other characters use Southern American English dialect from the 1840s. Twain writes it phonetically to show how it sounded. Understanding dialect reveals character, setting, and social class.</p>
-        <p style="margin-top: 15px;"><strong>Example:</strong></p>
-        <p><em>"Standard: &#039;I cannot do that, Master Tom.&#039; / Dialect: &#039;I dasn&#039;t do that, Mars Tom.&#039; (dasn&#039;t = dare not, Mars = Master)"</em></p>
-      </div>
-      
-      <h3>✍️ Your Turn:</h3>
-      <p>Find three examples of dialect in today&#039;s chapter. For each: write the dialect quote, translate it into standard English, and explain what the dialect tells you about the character who speaks it.</p>
-      <textarea rows="10" placeholder="Write your response here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Journal Entry</h2>
-      
-      <p>Reflect on today's reading in your own words:</p>
-      <ul>
-        <li>What was the most interesting part of today's chapter?</li>
-        <li>How would you have handled the situation differently?</li>
-        <li>What questions do you have about the story?</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 24!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>PRISONERS OF THE SEA</strong> from <em>Twenty Thousand Leagues Under the Sea</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 4 new vocabulary words in context</li>
+            <li>Apply Tone and Mood: Language Creates Atmosphere</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. submarine</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a vessel designed to operate underwater</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. riveted</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">fastened with metal bolts; also, completely fascinated</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. hatch</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a door or opening in the deck or hull of a ship</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">4. captive</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a person who is held prisoner; unable to escape</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. submarine</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a vessel designed to operate underwater</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. riveted</div>
+              <div style="flex: 2; font-style: italic; color: #666;">fastened with metal bolts; also, completely fascinated</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. hatch</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a door or opening in the deck or hull of a ship</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">4. captive</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a person who is held prisoner; unable to escape</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PRISONERS OF THE SEA </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">I sank into the dark ocean, choking, tumbling. My heavy clothes dragged me down. I kicked and clawed my way back to the surface, gasping for air. The Abraham Lincoln was already a quarter mile away, her lights growing smaller. She hadn't seen me go over.
+"Sir! Professor!"
+A hand grabbed my collar. It was Conseil. He had jumped in after me—without hesitation, without being asked.
+"Conseil! Are you insane?"
+"I am in your service, sir. Where you go, I go."
+We treaded water in the black ocean, watching the ship's lights shrink to pinpricks and vanish. We were alone.
+For hours we floated, taking turns resting against each other. The cold crept into our bones. My legs went numb. Conseil never complained, but I could feel him shivering. We were going to die out here—drowned in the middle of the Pacific.
+Then my foot struck something solid.
+Not the ocean floor—we were miles from land. Something hard, something flat, something that rang under my boot like iron.
+"What on earth—"
+"Up here!" a voice called. It was Ned Land. He was sitting on top of the very creature we had been hunting, and he was grinning.
+"It's not an animal," Ned said, pulling us up onto the metal surface. "It's a machine. A submarine."
+He was right. Beneath us was a long, smooth hull made of riveted iron plates. No scales, no skin—just metal, bolted together by human hands. The "eye" that had glowed was a powerful electric light. The jets of water were exhaust vents.
+We lay on the hull, catching our breath, trying to understand what we had found. A man-made vessel, shaped like a giant cigar, that could outrun the fastest warship in the world. It was impossible—and it was right beneath us.
+A hatch opened with a clang. Eight men in dark uniforms emerged, grabbed us without a word, and dragged us inside.
+The hatch sealed shut behind us. We were in absolute darkness.
+We were prisoners.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PRISONERS OF THE SEA (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PRISONERS OF THE SEA (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the most important discovery Aronnax, Conseil, and Ned make in this chapter?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. What does Conseil's decision to jump into the ocean after Aronnax reveal about him?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Ned says, "It's not an animal. It's a machine." How does this revelation change everything the characters — and the reader — believed up to this point?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Tone and Mood: Language Creates Atmosphere</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">Tone is the author's attitude toward the subject (humorous, serious, ironic, respectful). Mood is the feeling created for the reader (suspenseful, hopeful, melancholy). Authors create tone and mood through word choice, sentence structure, imagery, and pacing.</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">Serious tone: 'The king's decree devastated the kingdom.' Ironic tone: 'The king's "justice" brought only misery.' The quotation marks create irony. Suspenseful mood: 'The dawn approached. Would the king demand she continue or order her death?'</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Identify the dominant tone and mood of today's chapter. Find five specific language choices that create this tone/mood (word choice, sentence length, imagery, etc.). Then write two paragraphs about the same event—one creating a hopeful mood, one creating a dark mood.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(24)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

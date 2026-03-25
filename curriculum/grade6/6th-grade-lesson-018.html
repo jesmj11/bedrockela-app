@@ -3,418 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 18 - BedrockELA</title>
+  <title>6th Grade Day 18 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 18</h1>
+        <h2 class="lesson-subtitle">THE TRIAL</h2>
+        <p class="lesson-meta">The Adventures of Tom Sawyer</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 18: TRACKING NUMBER TWO</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 18</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">TRACKING NUMBER TWO</div>
-        <div style="font-size: 1rem; color: #999;">Week 4 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 18!</h2>
-      <p>Today we're reading <strong>TRACKING NUMBER TWO</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 18</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. investigate</h3>
-        <p><strong>Definition:</strong> to examine or research carefully in order to discover facts</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. auspicious</h3>
-        <p><strong>Definition:</strong> suggesting that success is likely; favorable</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. tavern</h3>
-        <p><strong>Definition:</strong> a place that serves food and drink; an inn</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. investigate</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. auspicious</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. tavern</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 TRACKING NUMBER TWO (Part 1)</h2>
-      <div class="story">
-        <p>The treasure haunted Tom&#039;s dreams—but so did Injun Joe. The gold was out there somewhere, hidden in a place called &quot;Number Two, under the cross.&quot; Tom had to find it. But he also had to avoid getting killed.
-He and Huck talked it through. &quot;Number Two&quot; had to be a room number—probably in one of the town&#039;s two taverns. Tom went to investigate. At the better tavern, Room Number Two was occupied by a young lawyer. At the cheaper tavern, the owner&#039;s son said Room Number Two was always locked. Nobody went in or out except late at night. He didn&#039;t know why. Most people figured it was haunted.
-&quot;That&#039;s our place,&quot; Tom told Huck. &quot;The back door of that room opens into the alley. You get every old key you can find, and I&#039;ll get Aunt Polly&#039;s keys. The first dark night, we&#039;ll try them all.&quot;
-&quot;What if we run into Injun Joe?&quot;
-&quot;It&#039;ll be dark—he probably won&#039;t see us. And if he does—well, we run.&quot;
-&quot;I don&#039;t like this one bit, Tom.&quot;
-&quot;I don&#039;t love it either. But think about that gold.&quot;
-They tried on Thursday night. The alley behind the tavern was pitch dark—perfect. Tom crept up to the door, heart slamming against his ribs. He tried one key. It didn&#039;t turn. He tried another—a third—
-Then his hand closed on the doorknob, and the door swung open. It wasn&#039;t even locked.
-He eased inside, peeled back the towel he&#039;d wrapped around his lantern, and—
-Something moved on the floor. A body. An arm. Tom&#039;s light fell on a face—Injun Joe, passed out drunk, sprawled on the floor in a puddle of whiskey.
-Tom didn&#039;t breathe. He didn&#039;t think. He ran.
-He burst out of the alley like a bullet and didn&#039;t stop until he found Huck three blocks away.
-&quot;Run!&quot; he gasped. &quot;Run!&quot;
-They didn&#039;t stop until they reached an abandoned shed on the edge of town. Rain began hammering the roof as they crouched inside, panting.
-&quot;Tom, what happened?&quot;
-&quot;He&#039;s in there. Injun Joe. Asleep on the floor—drunk.&quot;
-&quot;Did you see the box?&quot;
-&quot;I didn&#039;t wait to look around! I saw him and I ran.&quot;
-They agreed to keep watch on the tavern. Every night, Huck would patrol the area. If he ever saw Injun Joe leave, he would come straight to Tom&#039;s window and signal. Then they&#039;d make their move.
-Huck took the first watch that night. And the next night. And the next. But Injun Joe never appeared.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 TRACKING NUMBER TWO (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 TRACKING NUMBER TWO (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. How does Tom figure out that "Number Two" is a room in a tavern?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. What does Tom find when he sneaks into Room Number Two?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. Tom and Huck take enormous risks to track down the treasure — sneaking into a room where a murderer is sleeping. Is the treasure worth the danger? What would you do in their situation?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Language Practice</h2>
-      <p>Review your grammar and language skills from previous lessons.</p>
-      <textarea rows="10" placeholder="Practice writing here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Journal Entry</h2>
-      
-      <p>Reflect on today's reading in your own words:</p>
-      <ul>
-        <li>What was the most interesting part of today's chapter?</li>
-        <li>How would you have handled the situation differently?</li>
-        <li>What questions do you have about the story?</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your journal entry here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 18!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>THE TRIAL</strong> from <em>The Adventures of Tom Sawyer</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Master Appositives and Appositive Phrases</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. testimony</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a formal statement given under oath, especially in court</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. prosecution</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">the legal team that tries to prove someone is guilty in court</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. paralyzed</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">unable to move or act, often because of fear or shock</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. testimony</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a formal statement given under oath, especially in court</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. prosecution</div>
+              <div style="flex: 2; font-style: italic; color: #666;">the legal team that tries to prove someone is guilty in court</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. paralyzed</div>
+              <div style="flex: 2; font-style: italic; color: #666;">unable to move or act, often because of fear or shock</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TRIAL </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">The trial of Muff Potter consumed the entire village. It was all anyone talked about. Tom couldn't escape it—every conversation, every rumor, every whispered opinion was like a needle in his conscience. He pulled Huck to a private spot to make sure they were still in agreement.
+"Huck, have you told anybody?"
+"Told anybody about what?"
+"You know what."
+"Of course I haven't. Not one word. Why?"
+"I was just making sure. I'm scared, Huck."
+"Me too. If Injun Joe ever found out—we wouldn't last two days."
+They swore their oath again, just to be safe.
+The trial dragged on for days. Witness after witness testified against Muff Potter. They described finding the knife, seeing Potter wash blood off himself in the middle of the night, his suspicious behavior. Potter's own lawyer barely asked a single question. The courtroom grew restless—did the defense attorney plan to just give up?
+Tom and Huck haunted the edges of the courthouse, drawn by the same horrible fascination. Every day, they heard worse news. The evidence was piling up. The verdict seemed certain.
+On the last day of the trial, the courtroom was packed. Potter sat in chains, pale and broken, his eyes empty. Injun Joe sat nearby, calm and expressionless as stone.
+The prosecution rested its case. Potter's lawyer stood and said something that shocked the room: "Call Thomas Sawyer to the stand."
+Every eye turned to Tom as he walked forward. He looked terrified. He was terrified. He took the oath and sat down.
+"Thomas Sawyer, where were you on the night of June seventeenth, around midnight?"
+Tom looked at Injun Joe's face—hard, dark, and still as iron. His tongue wouldn't work. The audience leaned forward. Silence stretched like a wire about to snap.
+Finally, Tom managed to push words out, barely above a whisper: "In the graveyard."
+"A little louder, please. Where were you?"
+"In the graveyard."
+Injun Joe's eyes flickered—just slightly.
+"Were you near the grave of Hoss Williams?"
+"Yes, sir."
+"How near?"
+"As near as I am to you right now."
+"Were you hidden?"
+"Yes, sir. Behind the elm trees."
+"Was anyone with you?"
+"Yes, sir."
+"Tell us everything that happened. Tell it in your own way. Don't skip anything."
+Tom began slowly, haltingly. But as the story poured out of him, his voice grew stronger. Every person in that courtroom stopped breathing. They sat frozen, mouths open, eyes fixed on this boy who was describing, in vivid and terrible detail, everything that had happened in the graveyard that night.
+"—and as the doctor swung the headboard and hit Muff Potter, Injun Joe jumped up with the knife and—"
+CRASH!
+Injun Joe hurled himself at the nearest window. Glass exploded outward. Before anyone could move, he was through it and gone—running, leaping over a fence, disappearing into the night.
+The courtroom erupted into chaos. But Muff Potter was free.
+And Tom Sawyer was a hero—again.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TRIAL (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 THE TRIAL (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the most surprising moment at Muff Potter's trial?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. What happens immediately after Tom describes seeing Injun Joe stab the doctor?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Tom must have known that testifying would put him in danger from Injun Joe. Why does he do it anyway? What has finally become stronger than his fear?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar: Appositives and Appositive Phrases</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">An appositive renames or explains a noun right beside it, usually set off with commas: 'Scheherazade, the vizier's daughter, had a plan.' Appositives add detail efficiently without needing separate sentences. Essential appositives (no commas) are rare: 'My sister Maria' (if you have multiple sisters).</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">Nonessential: 'The king, a broken man, listened to the tale.' Essential: 'The character Ali Baba discovered treasure.' (if there are other characters to distinguish from)</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Find three appositives in today's reading. Explain what each renames and why the author used commas (or didn't). Write five sentences with appositives describing people, places, or concepts from the chapter.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. What does this reveal about their values?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(18)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>

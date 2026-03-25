@@ -3,424 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 9 - BedrockELA</title>
+  <title>6th Grade Day 9 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* Body */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
-    }
-    
-    /* Top Navigation Bar */
-    .top-nav {
-      background: #305853;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .top-nav .home-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-    }
-    
-    .top-nav .home-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    .top-nav .day-info {
-      flex: 1;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    
-    .top-nav .page-progress {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-    
-    /* Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      min-height: calc(100vh - 120px);
-    }
-    
-    /* Page content */
-    .page {
-      display: none;
-      padding: 40px 30px 80px;
-    }
-    
-    .page.active {
-      display: block;
-    }
-    
-    /* Bottom Navigation */
-    .bottom-nav {
-      position: sticky;
-      bottom: 0;
-      background: white;
-      border-top: 2px solid #eee;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    
-    .bottom-nav button {
-      padding: 12px 24px;
-      background: #305853;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .bottom-nav button:hover:not(:disabled) {
-      background: #3d6b65;
-    }
-    
-    .bottom-nav button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .bottom-nav .progress {
-      flex: 1;
-      height: 8px;
-      background: #eee;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .bottom-nav .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #305853, #B06821);
-      transition: width 0.3s;
-      border-radius: 10px;
-    }
-    
-    /* Content styles */
-    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
-    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
-    p { margin-bottom: 1rem; line-height: 1.8; }
-    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-    li { margin-bottom: 0.5rem; }
-    
-    /* Form elements */
-    textarea, input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 1rem;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    /* Vocab words */
-    .vocab-word {
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid #B06821;
-    }
-    
-    .vocab-word h3 {
-      margin-top: 0;
-      color: #305853;
-    }
-    
-    /* Story text */
-    .story p {
-      text-indent: 2em;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-    
-    /* Info box */
-    .info-box {
-      background: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-      border-left: 4px solid #305853;
-    }
+    body { font-family: 'Nunito', sans-serif; background: #fff; margin: 0; padding: 0; }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .nav-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+    .nav-btn { padding: 12px 24px; background: #305853; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 9</h1>
+        <h2 class="lesson-subtitle">PIRATES OF JACKSON'S ISLAND</h2>
+        <p class="lesson-meta">The Adventures of Tom Sawyer</p>
+        <p class="lesson-focus"><strong>6th Grade ELA</strong></p>
+      </div>
+    </div>
   
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <a href="../student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Lesson 9: LIFE ON THE ISLAND</div>
-    <div class="page-progress" id="topProgress">Page 1 of 11</div>
-  </div>
-  
-  <div class="container">
-    
-    <!-- PAGE 1: TITLE -->
-    <div class="page active" data-page="1">
-      <div style="text-align: center; padding: 60px 30px;">
-        <div style="font-size: 4rem; margin-bottom: 20px;">📖</div>
-        <h1>Lesson 9</h1>
-        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">LIFE ON THE ISLAND</div>
-        <div style="font-size: 1rem; color: #999;">Week 2 • The Adventures of Tom Sawyer • 6th Grade</div>
-      </div>
-    </div>
-    
-    <!-- PAGE 2: WELCOME & OBJECTIVES -->
-    <div class="page" data-page="2">
-      <h2>Welcome to Lesson 9!</h2>
-      <p>Today we're reading <strong>LIFE ON THE ISLAND</strong> from <em>The Adventures of Tom Sawyer</em> by Mark Twain.</p>
-      
-      <h3>📚 Today's Objectives:</h3>
-      <ul>
-        <li>Understand key events and character development in Chapter 9</li>
-        <li>Learn 3 new vocabulary words in context</li>
-        
-        <li>Practice close reading and analytical thinking</li>
-      </ul>
-      
-      <div class="info-box">
-        <p><strong>📝 Remember:</strong> As you read, think about how the characters' choices affect the story. Mark Twain often uses humor to teach lessons about human nature.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 3: VOCABULARY -->
-    <div class="page" data-page="3">
-      <h2>📖 Vocabulary</h2>
-      <p>These words appear in today's chapter. As you read, notice how they're used in context!</p>
-      
-      
-      <div class="vocab-word">
-        <h3>1. pervading</h3>
-        <p><strong>Definition:</strong> spreading throughout; present everywhere</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>2. expedition</h3>
-        <p><strong>Definition:</strong> a journey undertaken for a specific purpose, especially exploration</p>
-        
-      </div>
-      
-      <div class="vocab-word">
-        <h3>3. sumptuous</h3>
-        <p><strong>Definition:</strong> splendid and expensive-looking; lavish</p>
-        
-      </div>
-      
-    </div>
-    
-    <!-- PAGE 4: VOCABULARY PRACTICE -->
-    <div class="page" data-page="4">
-      <h2>🎯 Vocabulary Practice</h2>
-      <p>Match each word to its definition by writing them below:</p>
-      
-      
-      <h3>1. pervading</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>2. expedition</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-      <h3>3. sumptuous</h3>
-      <input type="text" placeholder="Write the definition in your own words...">
-      
-    </div>
-    
-    <!-- PAGE 5: STORY PART 1 -->
-    <div class="page" data-page="5">
-      <h2>📜 LIFE ON THE ISLAND (Part 1)</h2>
-      <div class="story">
-        <p>When Tom woke in the morning, he couldn&#039;t remember where he was. He sat up and looked around. A cool gray dawn filtered through the trees. The forest was perfectly still. Dew sparkled on every leaf and blade of grass. A thin ribbon of smoke rose straight up from the dying campfire.
-Then the woods began to wake up. A bird called. Another answered. A woodpecker hammered somewhere in the distance. A little green worm crawled onto Tom&#039;s leg, and he sat stone-still, watching it, because if a measuring worm walks all the way across you, it means you&#039;re going to get new clothes.
-Gradually the forest came alive—ants marching, a catbird singing, a blue jay flashing through the trees, a squirrel chattering at the boys from a branch. The sun broke through the canopy like golden spears.
-Tom shook the other two pirates awake, and within minutes they were all stripped down and splashing in the shallow water of the sandbar, laughing and ducking each other. No one missed the little village sleeping in the distance across the wide water.
-They came back to camp starving and got the fire roaring again. Huck found a cold spring nearby. Tom and Joe went to the riverbank with hooks and lines, and within minutes they had enough bass and catfish for a feast. They fried the fish with bacon and declared it the best breakfast in history.
-After the meal, they explored the island. It was about three miles long and a quarter mile wide, separated from the far shore by a narrow channel. They swam every hour or so, and by afternoon they knew the island like the back of their hands.
-But as the afternoon wore on and the excitement faded, a strange heaviness crept over them. They stopped talking. They stopped playing. They sat looking across the water at the distant town and thought about things they didn&#039;t want to think about.
-Suddenly, a deep, dull boom echoed across the river.
-&quot;What was that?&quot; Joe whispered.
-&quot;I don&#039;t know,&quot; said Tom.
-&quot;It isn&#039;t thunder,&quot; said Huck.
-They crept to the shore and peered through the bushes. The town&#039;s small ferryboat was in the river about a mile below the village. People crowded its deck. Then a great puff of white smoke burst from the boat&#039;s side, and after a pause, the same heavy boom rolled across the water.
-&quot;I know!&quot; Tom cried. &quot;Somebody&#039;s drowned! They shoot a cannon over the water—it&#039;s supposed to make the body come up.&quot;
-&quot;That&#039;s right,&quot; said Huck. &quot;They did the same thing last summer when Bill Turner drowned.&quot;
-&quot;I wonder who it is,&quot; said Joe.
-They watched the boat go back and forth. Then, slowly, it dawned on Tom.
-&quot;Boys,&quot; he said, &quot;I know who drowned. It&#039;s us!&quot;
-They felt like heroes. They were missed! They were mourned! People were crying over them! They were the talk of the whole town! It was glorious.
-As night fell, the ferryboat gave up and went home. The pirates returned to camp, puffed up with pride. They caught more fish, cooked supper, and spent the evening imagining what the whole village must be saying about them.
-But when the fire burned low and the darkness closed in, the pride faded. Tom and Joe couldn&#039;t stop thinking about certain people at home who were not having a good time right now. They grew quiet and miserable.
-Joe timidly suggested that maybe they could go home—not right now, but maybe—
-Tom shut him down instantly. &quot;Go home? A pirate doesn&#039;t go home! We&#039;d be laughed at!&quot;
-But later that night, after Joe and Huck had fallen asleep, Tom lay awake thinking. Carefully, quietly, he wrote something on two pieces of sycamore bark. He put one in his pocket and one in Joe&#039;s hat. Then he crept out of camp and disappeared into the night.</p>
-      </div>
-    </div>
-    
-    <!-- PAGE 6: STORY PART 2 -->
-    <div class="page" data-page="6">
-      <h2>📜 LIFE ON THE ISLAND (Part 2)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 7: STORY PART 3 -->
-    <div class="page" data-page="7">
-      <h2>📜 LIFE ON THE ISLAND (Part 3)</h2>
-      <div class="story">
-        <p></p>
-      </div>
-    </div>
-    
-    <!-- PAGE 8: COMPREHENSION -->
-    <div class="page" data-page="8">
-      <h2>🤔 Reading Comprehension</h2>
-      <p>Answer these questions about today's chapter. Use evidence from the text to support your answers.</p>
-      
-      
-      <h3>1. What do the boys hear booming across the river, and what does it mean?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>2. How do the boys feel when they realize the town thinks they are dead?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-      <h3>3. At the end of the chapter, Tom sneaks away from camp and writes something on two pieces of sycamore bark. Why do you think the author doesn't tell us yet what Tom wrote? How does this create suspense?</h3>
-      
-        <textarea placeholder="Write your answer with evidence from the text..."></textarea>
-      
-      
-    </div>
-    
-    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
-    <div class="page" data-page="9">
-      
-      <h2>📝 Grammar Practice</h2>
-      <p>Review your grammar and language skills from previous lessons.</p>
-      <textarea rows="10" placeholder="Practice writing here..."></textarea>
-      
-    </div>
-    
-    <!-- PAGE 10: INFORMATIONAL TEXT -->
-    <div class="page" data-page="10">
-      <h2>📰 Informational Text</h2>
-      
-      <h3>Life Along the Mississippi in 1840s Missouri</h3>
-      <p>Historical context for this chapter.</p>
-      
-      
-      <h3 style="margin-top: 30px;">Questions:</h3>
-      
-      
-      
-    </div>
-    
-    <!-- PAGE 11: WRITING/JOURNAL -->
-    <div class="page" data-page="11">
-      <h2>✏️ Writing Practice</h2>
-      
-      <div class="info-box">
-        <p><strong>Prompt:</strong></p>
-        <p>Reflect on the events of Chapter 9. What do you think Tom learned?</p>
-      </div>
-      <p><strong>Requirements:</strong></p>
-      <ul>
-        <li>8-10 sentences minimum</li>
-        <li>Include specific details from the text</li>
-        <li>Check spelling and grammar</li>
-      </ul>
-      
-      <textarea rows="15" placeholder="Write your essay here..."></textarea>
-    </div>
-    
-  </div>
-  
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <button id="prevBtn" onclick="prevPage()">← Previous</button>
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <button id="nextBtn" onclick="nextPage()">Next →</button>
-  </div>
 
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 9!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>PIRATES OF JACKSON'S ISLAND</strong> from <em>The Adventures of Tom Sawyer</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Apply Connotation vs. Denotation: Precision in Word Choice</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter:</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. forsaken</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">abandoned; left behind by everyone</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. conspicuous</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">easily seen; attracting attention</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. rendezvous</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">a planned meeting at a specific time and place</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. forsaken</div>
+              <div style="flex: 2; font-style: italic; color: #666;">abandoned; left behind by everyone</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. conspicuous</div>
+              <div style="flex: 2; font-style: italic; color: #666;">easily seen; attracting attention</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. rendezvous</div>
+              <div style="flex: 2; font-style: italic; color: #666;">a planned meeting at a specific time and place</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PIRATES OF JACKSON'S ISLAND </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Tom's mind was made up. He was a friendless, miserable boy. Nobody loved him. Aunt Polly was disappointed in him. Becky Thatcher wouldn't speak to him. The secret of the murder was crushing his soul. Fine. If this was how the world wanted to treat him, he would leave. He would run away and never come back. Then they'd all be sorry.
+He was walking down Meadow Lane, feeling very dramatic about it all, when he ran into Joe Harper. Joe looked just as grim.
+It turned out Joe was running away too. His mother had whipped him for drinking cream that he'd never even touched—she'd thrown it out herself and forgotten. So Joe figured she was tired of him and wanted him gone.
+The two miserable boys walked together, swearing a solemn pact to stand by each other forever. Joe wanted to be a hermit and live in a cave, but Tom convinced him that being a pirate was much better.
+Three miles below St. Petersburg, in the middle of the wide Mississippi, lay Jackson's Island—a long, narrow strip of wooded land. Nobody lived there. It was perfect.
+They found Huck Finn and recruited him. He didn't care what they did—any career was fine with him. They agreed to meet at midnight on the riverbank, two miles above town, where a small log raft was tied up.
+At midnight, Tom arrived with a stolen ham and a few other supplies. The night was still and full of stars. The great river lay wide and dark, like a sleeping ocean.
+Tom gave a low whistle. It was answered from below the bluff. He whistled twice more.
+"Who goes there?" came a voice.
+"Tom Sawyer, the Black Avenger of the Spanish Main. Name yourselves."
+"Huck Finn the Red-Handed. Joe Harper, the Terror of the Seas."
+"Give the password."
+Two voices whispered the same word at the same time: "Blood!"
+Tom tumbled his ham over the bluff and climbed down after it. Joe had brought a side of bacon and some corn bread. Huck brought a skillet, some tobacco, and a few corn cobs for making pipes.
+They shoved off on the raft, Tom at the helm, giving whispered orders in proper pirate fashion: "Luff and bring her to the wind!" "Steady, steady!" "Let her go off a point!" None of these commands meant anything in particular, but they sounded magnificent.
+The raft drifted past the sleeping town. Two or three faint lights glimmered in the distance. Tom stood with his arms folded, taking one last dramatic look at the place he was leaving forever—or at least until next week.
+Around two in the morning, the raft grounded on a sandbar at the head of Jackson's Island. The boys unloaded their supplies, built a fire against a great fallen log, and cooked bacon in the skillet. They had never tasted anything so delicious. They lay on the grass afterward, staring at the flames, feeling like kings.
+"Isn't this great?" said Joe.
+"It's perfect," said Tom. "What would the boys at school say if they could see us?"
+"They'd die of jealousy," said Huck. "I don't ever want to go back. I never get enough to eat at home, and nobody bothers me here."
+"Pirates don't have to get up in the morning," said Tom. "They don't have to go to school, or wash, or any of that."
+They talked about pirate life for a while—treasure and ships and sword fights. Then, one by one, they fell quiet. The fire crackled. The river murmured. And the three pirates, who had sworn to never return to civilization, began to think—just a tiny bit—about home.
+They pushed those thoughts down and fell asleep under the stars.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PIRATES OF JACKSON'S ISLAND (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 PIRATES OF JACKSON'S ISLAND (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;"></p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. What is the main reason Tom decides to run away and become a pirate?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Why does Joe Harper want to run away?</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">3. Tom, Joe, and Huck each have different reasons for running away. Compare their reasons. Whose reason seems the most serious, and whose seems the most dramatic? Explain.</p>
+              
+                <textarea class="comp-answer" rows="4" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your answer..."></textarea>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="9">
+        <div class="page-content">
+          <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language: Connotation vs. Denotation: Precision in Word Choice</h2>
+          
+          <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="line-height: 1.8; margin-bottom: 15px;">Denotation is the dictionary definition; connotation is the emotional association. 'Childish' (negative) vs. 'youthful' (positive) vs. 'childlike' (neutral/positive)—same general meaning, different feelings. Authors choose words carefully for their connotations.</p>
+            <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+            <p style="font-style: italic; color: #555; line-height: 1.6;">'The king was stubborn' (negative) vs. 'The king was determined' (positive) vs. 'The king was resolute' (strongly positive). Same action, different judgment implied by word choice.</p>
+          </div>
+          
+          <div class="skill-practice">
+            <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+            <p style="margin-bottom: 15px;">Find five powerful word choices in today's chapter where the author could have used synonyms. For each, identify the denotation, the connotation (positive/negative/neutral), and discuss why the author chose that specific word over alternatives.</p>
+            <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;"></textarea>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Context & Background</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p>Historical and cultural context for today's reading.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter develop the story's themes? What did you learn?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;"></textarea>
+        <button onclick="window.saveJournal(9)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span id="pageIndicator">Page 1 of 11</span>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
   <script>
     let currentPage = 1;
     const totalPages = 11;
-    
-    function showPage(pageNum) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
-      if (page) page.classList.add('active');
-      
-      document.getElementById('prevBtn').disabled = (pageNum === 1);
-      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-      
-      const progress = (pageNum / totalPages) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
-      
-      currentPage = pageNum;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPage(n) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      document.querySelector('.lesson-page[data-page="'+n+'"]').classList.add('active');
+      document.getElementById('prevBtn').disabled = (n === 1);
+      document.getElementById('nextBtn').disabled = (n === totalPages);
+      document.getElementById('pageIndicator').textContent = 'Page '+n+' of '+totalPages;
+      currentPage = n;
+      window.scrollTo({top:0,behavior:'smooth'});
     }
-    
-    function nextPage() {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
-    }
-    
-    function prevPage() {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
-    }
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextPage();
-      if (e.key === 'ArrowLeft') prevPage();
-    });
-    
-    // Initialize
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    window.saveJournal = function() { alert('Journal saved!'); };
     showPage(1);
   </script>
 </body>
