@@ -148,15 +148,17 @@ What's remarkable is how these stories functioned in their original context—th
 
 // Generate regular lesson (Days 1-4, 6-9, 11-14, 16-19, 21-24, 26-29)
 function buildRegularLesson(day) {
-  const chapter = unitCard.chapters[day - 1]; // Day 1 = Chapter 1, etc.
+  // Calculate chapter index accounting for assessment days (every 5th day)
+  const assessmentsBefore = Math.floor((day - 1) / 5);
+  const chapterIndex = day - assessmentsBefore - 1;
+  const chapter = unitCard.chapters[chapterIndex];
   if (!chapter) return null;
   
-  const isOdd = day % 2 === 1;
-  const grammarDay = isOdd ? day : day - 1;
-  const languageDay = isOdd ? day + 1 : day;
-  
-  const grammarTopic = grammarLanguage.grammar[grammarDay];
-  const languageTopic = grammarLanguage.language[languageDay];
+  // Check which topic exists for this day
+  const grammarTopic = grammarLanguage.grammar[day.toString()];
+  const languageTopic = grammarLanguage.language[day.toString()];
+  const isGrammarDay = !!grammarTopic;
+  const isLanguageDay = !!languageTopic;
   
   const pages = [];
   
@@ -185,7 +187,7 @@ function buildRegularLesson(day) {
           <ul style="line-height: 1.8; margin-left: 20px;">
             <li>Understand key events and character development in this chapter</li>
             <li>Learn ${chapter.vocabulary.length} new vocabulary words in context</li>
-            <li>${isOdd ? `Master ${grammarTopic.topic}` : `Apply ${languageTopic.topic}`}</li>
+            <li>${isGrammarDay ? `Master ${grammarTopic.topic}` : `Apply ${languageTopic.topic}`}</li>
             <li>Practice close reading and analytical thinking</li>
           </ul>
         </div>
@@ -275,9 +277,9 @@ function buildRegularLesson(day) {
   `);
   
   // PAGE 9: GRAMMAR OR LANGUAGE
-  const skillTopic = isOdd ? grammarTopic : languageTopic;
-  const skillType = isOdd ? 'Grammar' : 'Language';
-  const skillColor = isOdd ? colors.deepTeal : colors.goldenAmber;
+  const skillTopic = isGrammarDay ? grammarTopic : languageTopic;
+  const skillType = isGrammarDay ? 'Grammar' : 'Language';
+  const skillColor = isGrammarDay ? colors.deepTeal : colors.goldenAmber;
   
   pages.push(`
     <div class="lesson-page" data-page="9">
@@ -313,16 +315,16 @@ function buildRegularLesson(day) {
   `);
   
   // PAGE 11: JOURNAL/WRITING
-  const writingPrompt = isOdd ? 
+  const writingPrompt = isGrammarDay ? 
     `Reflect on a choice a character made in today's chapter. If you were in their position, would you have made the same choice? Why or why not? Consider the character's motivations, the consequences they faced, and what this reveals about human nature.` :
     `How does today's chapter connect to the overall theme of "${unitCard.theme}"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?`;
   
   pages.push(`
     <div class="lesson-page" data-page="11">
       <div class="page-content">
-        <h2 style="color: ${colors.goldenAmber}; margin-bottom: 20px;">✏️ ${isOdd ? 'Journal Entry' : 'Reflection'}</h2>
+        <h2 style="color: ${colors.goldenAmber}; margin-bottom: 20px;">✏️ ${isGrammarDay ? 'Journal Entry' : 'Reflection'}</h2>
         <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> ${writingPrompt}</p>
-        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your ${isOdd ? 'journal entry' : 'reflection'} here..."></textarea>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your ${isGrammarDay ? 'journal entry' : 'reflection'} here..."></textarea>
         <button onclick="window.saveJournal(${day})" style="margin-top: 20px; padding: 15px 30px; background: ${colors.deepTeal}; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
       </div>
     </div>
@@ -333,9 +335,165 @@ function buildRegularLesson(day) {
 
 // Build assessment lesson (Days 5, 10, 15, 20, 25, 30)
 function buildAssessmentLesson(day) {
-  // Implementation similar to 6th grade but with 7th grade content
-  // Will be completed in next step
-  return null;
+  const weekNumber = day / 5;
+  const assessmentName = writingPrompts[`day${day}`]?.title || `Week ${weekNumber} Assessment`;
+  const writingPrompt = writingPrompts[`day${day}`];
+  const infoText = informationalTexts[`day${day}`];
+  
+  const pages = [];
+  
+  // PAGE 1: TITLE
+  pages.push(`
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📝</div>
+        <h1 class="lesson-title">Day ${day}</h1>
+        <h2 class="lesson-subtitle">Assessment</h2>
+        <p class="lesson-meta">Week ${weekNumber} - Tales from the Arabian Nights</p>
+        <p class="lesson-focus"><strong>Testing Days ${day-4} through ${day-1}</strong></p>
+      </div>
+    </div>
+  `);
+  
+  // PAGE 2: VOCABULARY (12 words from previous 4 days)
+  const vocabDays = [day-4, day-3, day-2, day-1];
+  const vocabWords = [];
+  vocabDays.forEach(d => {
+    const chapter = unitCard.chapters[d - 1];
+    if (chapter) {
+      vocabWords.push(...chapter.vocabulary);
+    }
+  });
+  
+  pages.push(`
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: ${colors.goldenAmber}; margin-bottom: 20px;">📖 Vocabulary Assessment</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching">
+          ${vocabWords.map((v, i) => `
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: ${colors.deepTeal};">${i + 1}.</div>
+              <div style="flex: 1; font-weight: 600;">${v.word}</div>
+              <div style="flex: 2; color: #666; font-style: italic;">${v.definition}</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `);
+  
+  // PAGE 3: GRAMMAR ASSESSMENT
+  pages.push(generateGrammarAssessment(grammarLanguage.grammar, day, 7, 'Arabian Nights'));
+  
+  // PAGE 4: LANGUAGE ASSESSMENT
+  pages.push(generateLanguageAssessment(grammarLanguage.language, day, 7, 'Arabian Nights'));
+  
+  // PAGE 5: READING COMPREHENSION
+  const compChapter = unitCard.chapters[day - 2]; // Use day-2 chapter
+  pages.push(`
+    <div class="lesson-page" data-page="5">
+      <div class="page-content">
+        <h2 style="color: ${colors.brickRed}; margin-bottom: 20px;">📚 Reading Comprehension</h2>
+        <div class="comp-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+          <h3 style="color: ${colors.deepTeal}; margin-bottom: 15px;">Passage from "${compChapter?.title}"</h3>
+          ${compChapter ? compChapter.text.split('\n\n').slice(0, 3).map(p => `<p style="margin-bottom: 15px;">${p}</p>`).join('') : '<p>No passage available.</p>'}
+        </div>
+        <div class="comp-questions">
+          ${compChapter ? compChapter.comprehension.slice(0, 6).map((q, i) => `
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">${i + 1}. ${q.question}</p>
+              ${q.options ? `
+                <div class="options" style="margin-left: 20px;">
+                  ${q.options.map((opt, idx) => `
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp${i}" value="${String.fromCharCode(65 + idx)}" style="margin-right: 10px;">
+                      ${String.fromCharCode(65 + idx)}) ${opt}
+                    </label>
+                  `).join('')}
+                </div>
+              ` : `
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;"></textarea>
+              `}
+            </div>
+          `).join('') : '<p>No questions available.</p>'}
+        </div>
+      </div>
+    </div>
+  `);
+  
+  // PAGE 6: WRITING PROMPT
+  if (writingPrompt) {
+    pages.push(`
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: ${colors.goldenAmber}; margin-bottom: 20px;">✍️ Writing: ${writingPrompt.title}</h2>
+          <div class="writing-prompt" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Context:</strong> ${writingPrompt.prompt}</p>
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Task:</strong> ${writingPrompt.task}</p>
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 6px;">
+              <h3 style="color: ${colors.deepTeal}; margin-bottom: 10px;">Requirements:</h3>
+              <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Length:</strong> ${writingPrompt.requirements.length}</li>
+                ${writingPrompt.requirements.structure ? `
+                  <li><strong>Structure:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      ${writingPrompt.requirements.structure.map(s => `<li>${s}</li>`).join('')}
+                    </ul>
+                  </li>
+                ` : ''}
+                ${writingPrompt.requirements.mustInclude ? `
+                  <li><strong>Must Include:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      ${writingPrompt.requirements.mustInclude.map(m => `<li>${m}</li>`).join('')}
+                    </ul>
+                  </li>
+                ` : ''}
+              </ul>
+            </div>
+          </div>
+          <textarea class="writing-response" rows="20" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.8;" placeholder="Write your essay here..."></textarea>
+        </div>
+      </div>
+    `);
+  }
+  
+  // PAGE 7: INFORMATIONAL TEXT
+  if (infoText) {
+    pages.push(`
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: ${colors.brickRed}; margin-bottom: 20px;">📰 ${infoText.title}</h2>
+          <div class="info-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+            ${infoText.passage.split('\n\n').map(p => `<p style="margin-bottom: 15px;">${p.trim()}</p>`).join('')}
+          </div>
+          <div class="info-questions">
+            ${infoText.questions.map((q, i) => `
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">${i + 1}. ${q.question}</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `);
+  }
+  
+  // PAGE 8: COMPLETION
+  pages.push(`
+    <div class="lesson-page" data-page="8">
+      <div class="page-content title-page">
+        <div class="lesson-icon">🎉</div>
+        <h1 style="color: ${colors.deepTeal}; font-size: 2.5rem; margin-bottom: 15px;">Week ${weekNumber} Complete!</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 25px;">You've finished your assessment for Tales from the Arabian Nights.</p>
+        <button onclick="submitAssessment(${day})" style="padding: 15px 40px; background: ${colors.goldenAmber}; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: 700; cursor: pointer;">Submit Assessment →</button>
+      </div>
+    </div>
+  `);
+  
+  return buildFullHTML(day, pages, true);
 }
 
 // Helper: Split text into equal parts
@@ -483,23 +641,31 @@ const lessonsToGenerate = process.argv[2] ? parseInt(process.argv[2]) : 4;
 console.log(`\n🏗️  Building 7th Grade Arabian Nights - Days 1-${lessonsToGenerate}\n`);
 
 for (let day = 1; day <= lessonsToGenerate; day++) {
-  if (day % 5 === 0) {
-    // Assessment day - skip for now, will build separately
-    console.log(`⏭️  Day ${day}: Assessment (will build separately)`);
-    continue;
+  let html;
+  
+  // Create directory if needed
+  if (!fs.existsSync('curriculum/grade7')) {
+    fs.mkdirSync('curriculum/grade7', { recursive: true });
   }
   
-  const html = buildRegularLesson(day);
-  if (html) {
-    const filename = `curriculum/grade7/7th-grade-lesson-${day.toString().padStart(3, '0')}.html`;
-    
-    // Create directory if needed
-    if (!fs.existsSync('curriculum/grade7')) {
-      fs.mkdirSync('curriculum/grade7', { recursive: true });
+  if (day % 5 === 0) {
+    // Assessment day
+    html = buildAssessmentLesson(day);
+    if (html) {
+      const filename = `curriculum/grade7/7th-grade-lesson-${day.toString().padStart(3, '0')}.html`;
+      fs.writeFileSync(filename, html);
+      console.log(`✅ Day ${day}: Week ${day/5} Assessment`);
     }
-    
-    fs.writeFileSync(filename, html);
-    console.log(`✅ Day ${day}: ${unitCard.chapters[day-1].title}`);
+  } else {
+    // Regular lesson day
+    html = buildRegularLesson(day);
+    if (html) {
+      const filename = `curriculum/grade7/7th-grade-lesson-${day.toString().padStart(3, '0')}.html`;
+      fs.writeFileSync(filename, html);
+      const assessmentsBefore = Math.floor((day - 1) / 5);
+      const chapterIndex = day - assessmentsBefore - 1;
+      console.log(`✅ Day ${day}: ${unitCard.chapters[chapterIndex].title}`);
+    }
   }
 }
 

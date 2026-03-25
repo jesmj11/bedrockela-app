@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 25 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📝</div>
+        <h1 class="lesson-title">Day 25</h1>
+        <h2 class="lesson-subtitle">Assessment</h2>
+        <p class="lesson-meta">Week 5 - Tales from the Arabian Nights</p>
+        <p class="lesson-focus"><strong>Testing Days 21 through 24</strong></p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Vocabulary Assessment</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching">
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">1.</div>
+              <div style="flex: 1; font-weight: 600;">deference</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Respectful submission to the authority or judgment of another.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">2.</div>
+              <div style="flex: 1; font-weight: 600;">constraint</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A limitation or restriction; something that holds you back or requires a certain behavior.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">3.</div>
+              <div style="flex: 1; font-weight: 600;">magnanimous</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Generous or forgiving, especially toward a rival or less powerful person.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">4.</div>
+              <div style="flex: 1; font-weight: 600;">legacy</div>
+              <div style="flex: 2; color: #666; font-style: italic;">What is left behind after someone or something is gone; the lasting impact of a person or civilization.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">5.</div>
+              <div style="flex: 1; font-weight: 600;">complacency</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Smug satisfaction with oneself; dangerous self-satisfaction that stops you from improving or noticing problems.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">6.</div>
+              <div style="flex: 1; font-weight: 600;">ephemeral</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Lasting for a very short time; transient.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">7.</div>
+              <div style="flex: 1; font-weight: 600;">reparation</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Making amends for a wrong; an attempt to repair damage that has been done.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">8.</div>
+              <div style="flex: 1; font-weight: 600;">adequate</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Satisfactory or acceptable; enough for a particular purpose.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">9.</div>
+              <div style="flex: 1; font-weight: 600;">retrospect</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A review or survey of past events; understanding something after the fact.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">10.</div>
+              <div style="flex: 1; font-weight: 600;">disseminate</div>
+              <div style="flex: 2; color: #666; font-style: italic;">To spread something widely; to distribute information or knowledge to many people.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">11.</div>
+              <div style="flex: 1; font-weight: 600;">retrospective</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Looking back on past events; understanding something after experiencing it.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">12.</div>
+              <div style="flex: 1; font-weight: 600;">intentional</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Done on purpose; deliberate.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Assessment</h2>
+        <p style="margin-bottom: 25px;">Answer the following questions about the grammar skills you learned this week:</p>
+        <div class="grammar-questions">
+  
+      <div class="grammar-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+        <h3 style="color: #B06821; margin-bottom: 15px;">Day 21 Topic: Subjunctive Mood for Hypotheticals and Wishes</h3>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">1. Identify the subjunctive mood for hypotheticals and wishes in this sentence:</p>
+        <p style="font-style: italic; margin-bottom: 10px; padding: 10px; background: white; border-radius: 4px;">"Subjunctive: 'If Scheherazade were to fail, she would die.' 'The king wished that his wife were faithful.' Indicative (not subjunctive): 'Scheherazade was clever.'"</p>
+        <textarea class="grammar-answer" rows="2" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">2. The subjunctive mood expresses wishes, suggestions, or hypothetical situations. Give an example from Arabian Nights:</p>
+        <textarea class="grammar-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the sentence and explain..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">3. Write TWO sentences in the subjunctive mood about today's chapter: two expressing wishes, two expressing hypotheticals (if/were), and two expressing suggestions or demands. Explain why each requires the subjunctive.</p>
+        <textarea class="grammar-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your sentences here..."></textarea>
+      </div>
+    </div>
+      <div class="grammar-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+        <h3 style="color: #B06821; margin-bottom: 15px;">Day 23 Topic: Noun Clauses and Their Functions</h3>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">4. Identify the noun clauses and their functions in this sentence:</p>
+        <p style="font-style: italic; margin-bottom: 10px; padding: 10px; background: white; border-radius: 4px;">"Subject: 'Whoever tells the best story wins.' Object: 'The king realized that he had been wrong.' Complement: 'The problem was that he couldn't trust anyone.'"</p>
+        <textarea class="grammar-answer" rows="2" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">5. A noun clause acts as a noun in a sentence, often starting with that, what, who, whoever, whether, if. Give an example from Arabian Nights:</p>
+        <textarea class="grammar-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the sentence and explain..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">6. Identify four noun clauses in today's reading. For each, explain what function it serves (subject, object, or complement). Write TWO sentences with noun clauses in different positions, about themes or characters from the story.</p>
+        <textarea class="grammar-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your sentences here..."></textarea>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📚 Language Skills Assessment</h2>
+        <p style="margin-bottom: 25px;">Apply the vocabulary strategies you learned this week:</p>
+        <div class="language-questions">
+  
+      <div class="language-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #9E2C21;">
+        <h3 style="color: #9E2C21; margin-bottom: 15px;">Day 22 Topic: Semantic Fields and Word Families</h3>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">1. Find an example of semantic fields and word families in this week's reading from Arabian Nights:</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Hint: Semantic fields are groups of words related by meaning: words for 'saying' (whisper, shout, murmur, declare, announce), 'intelligence' (clever, wise, shrewd, cunning, astute).</em></p>
+        <textarea class="language-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the example and explain how you identified it..."></textarea>
+      </div>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">2. Identify three semantic fields in today's reading (groups of related words the author uses). For each field, list at least five words and explain how the subtle differences between them affect meaning. Create your own varied sentence using words from one semantic field.</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Example: Instead of repeating 'said,' the author might use: 'whispered,' 'announced,' 'murmured,' 'declared'—each adds different meaning (volume, formality, emotion). Each word in the semantic field of 'speaking' creates a different effect.</em></p>
+        <textarea class="language-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your examples..."></textarea>
+      </div>
+    </div>
+      <div class="language-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #9E2C21;">
+        <h3 style="color: #9E2C21; margin-bottom: 15px;">Day 24 Topic: Tone and Mood: Language Creates Atmosphere</h3>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">3. Find an example of tone and mood: language creates atmosphere in this week's reading from Arabian Nights:</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Hint: Tone is the author's attitude toward the subject (humorous, serious, ironic, respectful).</em></p>
+        <textarea class="language-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the example and explain how you identified it..."></textarea>
+      </div>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">4. Identify the dominant tone and mood of today's chapter. Find five specific language choices that create this tone/mood (word choice, sentence length, imagery, etc.). Then write two paragraphs about the same event—one creating a hopeful mood, one creating a dark mood.</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Example: Serious tone: 'The king's decree devastated the kingdom.' Ironic tone: 'The king's "justice" brought only misery.' The quotation marks create irony. Suspenseful mood: 'The dawn approached. Would the king demand she continue or order her death?'</em></p>
+        <textarea class="language-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your examples..."></textarea>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="5">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📚 Reading Comprehension</h2>
+        <div class="comp-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+          <h3 style="color: #305853; margin-bottom: 15px;">Passage from "What Stories Leave Behind"</h3>
+          <p style="margin-bottom: 15px;">What Stories Leave Behind</p><p style="margin-bottom: 15px;">In the morning — the first morning in a thousand and one days that Scheherazade had woken without the particular weight of not knowing what the morning would bring — she sat at the window of her chamber and looked at the city.
+It was ordinary. Markets opening. Children going to school. Women at the wells. Men driving carts to the river. The ordinary life of a city that had been afraid for three years and was not yet sure it could stop being afraid, not sure the news was real.
+Dunyazad came and sat beside her.
+'It's done,' Dunyazad said.
+'It's done,' Scheherazade agreed.
+They sat in silence for a while, watching the city. The city did not know yet. The news would take days to spread fully — the announcement, the gradual understanding that the practice was finished, the slow relaxation of a fear that had been carried so long it had started to feel like weather.
+'Do you think it will hold?' Dunyazad asked. 'His change.'
+Scheherazade thought about this honestly, because she was a person who tried to be honest.
+'I think change is not a destination,' she said. 'It is a practice. He will need to keep choosing it. There will be days when it is harder than others. There will be moments when the old habits surface.' She paused. 'But I think he is a man who is paying attention now. And a man who is paying attention can correct himself when he goes wrong.'
+'You changed him with stories,' Dunyazad said.
+'No,' Scheherazade said. 'He changed himself. I gave him something to think about. He did the thinking. I gave him evidence he hadn't considered. He considered it.' She looked at the city below. 'Stories can't change anyone. They can only show a person something they hadn't seen. Whether they change is always their own choice.'
+She thought about a thousand and one nights of tales — the sailor and his voyages, the fisherman and the genie, Aladdin and his lamp, Ali Baba and his cave, Morgiana with her clear seeing and her dancer's dagger, the young king with his marble legs, the prince who kept finding the mechanism to descend.
+Each one had been chosen. Each one had been placed where it was for a reason.
+What she had done was not magic. It was simply the deliberate use of the one tool she had, applied with everything she knew.
+'The city will be different now,' Dunyazad said.
+'The city will be different now,' Scheherazade agreed.
+She stood. She had things to do — children to see, a father to send a letter to, a conversation with the king that she suspected would continue for many years if they were both fortunate. There was a library she intended to expand. There were scholars she intended to bring to the palace.
+She had lived, after all. She had more time than she had spent the last three years planning for.
+She intended to use it.
+'What will you do now?' Dunyazad asked.
+Scheherazade smiled — the real one, the one she had kept mostly to herself for a thousand nights because there had not been room for it.
+'Everything,' she said. 'I've been waiting long enough.'
+She walked out into the morning.
+The stories she had told would travel — carried by people who heard them, changed slightly by each retelling, taking root in different soils and growing differently in each place. That was what stories did. They outlasted the teller. They went where the teller could not go. They changed minds the teller would never meet.
+A thousand and one nights. A thousand and one chances.
+She had used every one.</p>
+        </div>
+        <div class="comp-questions">
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">1. Scheherazade insists she did not change the king — he changed himself. Why does this distinction matter to her?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="A" style="margin-right: 10px;">
+                      A) She is being modest about her achievement
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="B" style="margin-right: 10px;">
+                      B) Change imposed from outside is fragile; change chosen from within is lasting — she needs him to own his transformation for it to be real and permanent
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="C" style="margin-right: 10px;">
+                      C) She does not want credit in case the change does not hold
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="D" style="margin-right: 10px;">
+                      D) She knows her stories were imperfect and some nights were not effective
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">2. The final paragraph describes stories traveling beyond the teller, changing with each retelling, taking root in different soils. What is Scheherazade's — and the author's — final claim about what stories do?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="A" style="margin-right: 10px;">
+                      A) That stories become distorted over time and lose their original meaning
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="B" style="margin-right: 10px;">
+                      B) That the purpose of a story is entertainment, not instruction
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="C" style="margin-right: 10px;">
+                      C) That stories outlast the people who tell them and go where no single person can go — their power is in the spreading, not the source
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="D" style="margin-right: 10px;">
+                      D) That only written stories have lasting value
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content title-page">
+        <div class="lesson-icon">🎉</div>
+        <h1 style="color: #305853; font-size: 2.5rem; margin-bottom: 15px;">Week 5 Complete!</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 25px;">You've finished your assessment for Tales from the Arabian Nights.</p>
+        <button onclick="submitAssessment(25)" style="padding: 15px 40px; background: #B06821; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: 700; cursor: pointer;">Submit Assessment →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 6</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 6;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

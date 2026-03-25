@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 5 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📝</div>
+        <h1 class="lesson-title">Day 5</h1>
+        <h2 class="lesson-subtitle">Assessment</h2>
+        <p class="lesson-meta">Week 1 - Tales from the Arabian Nights</p>
+        <p class="lesson-focus"><strong>Testing Days 1 through 4</strong></p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Vocabulary Assessment</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching">
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">1.</div>
+              <div style="flex: 1; font-weight: 600;">prostrate</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Lying flat on the ground, usually in submission or despair; completely overcome by something.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">2.</div>
+              <div style="flex: 1; font-weight: 600;">haggard</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Looking exhausted and unwell, especially from worry or suffering.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">3.</div>
+              <div style="flex: 1; font-weight: 600;">conviction</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A firmly held belief or opinion; the feeling of being certain about something.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">4.</div>
+              <div style="flex: 1; font-weight: 600;">deliberate</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Done intentionally and carefully; fully thought through in advance.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">5.</div>
+              <div style="flex: 1; font-weight: 600;">calibrate</div>
+              <div style="flex: 2; color: #666; font-style: italic;">To carefully adjust or measure something for a specific purpose.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">6.</div>
+              <div style="flex: 1; font-weight: 600;">unobtrusive</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Not attracting attention; staying in the background without being noticed.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">7.</div>
+              <div style="flex: 1; font-weight: 600;">Thieves</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Part One
+VOCABULARY
+contentment  —  A state of happiness and satisfaction with what one has.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">8.</div>
+              <div style="flex: 1; font-weight: 600;">calculating</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Acting with careful, selfish planning; concerned mainly with self-interest.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">9.</div>
+              <div style="flex: 1; font-weight: 600;">abundance</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A very large quantity of something; more than enough.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">10.</div>
+              <div style="flex: 1; font-weight: 600;">Thieves</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Part Two
+VOCABULARY
+diligent  —  Careful and persistent in work or effort.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">11.</div>
+              <div style="flex: 1; font-weight: 600;">scope</div>
+              <div style="flex: 2; color: #666; font-style: italic;">The extent or range of something; how far something reaches.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">12.</div>
+              <div style="flex: 1; font-weight: 600;">indistinguishable</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Unable to be told apart; appearing exactly the same.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Assessment</h2>
+        <p style="margin-bottom: 25px;">Answer the following questions about the grammar skills you learned this week:</p>
+        <div class="grammar-questions">
+  
+      <div class="grammar-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+        <h3 style="color: #B06821; margin-bottom: 15px;">Day 1 Topic: Sentence Structure: Simple, Compound, Complex, Compound-Complex</h3>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">1. Identify the sentence structure: simple, compound, complex, compound-complex in this sentence:</p>
+        <p style="font-style: italic; margin-bottom: 10px; padding: 10px; background: white; border-radius: 4px;">"Simple: 'The king listened.' Compound: 'The king listened, and Scheherazade spoke.' Complex: 'When Scheherazade spoke, the king listened.' Compound-Complex: 'When Scheherazade spoke, the king listened, and the night passed quickly.'"</p>
+        <textarea class="grammar-answer" rows="2" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">2. Understanding the four sentence types is essential for sophisticated writing. Give an example from Arabian Nights:</p>
+        <textarea class="grammar-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the sentence and explain..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">3. Write TWO sentences about today's chapter: one simple, one compound, one complex, and one compound-complex. Label each type and underline the dependent clauses.</p>
+        <textarea class="grammar-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your sentences here..."></textarea>
+      </div>
+    </div>
+      <div class="grammar-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+        <h3 style="color: #B06821; margin-bottom: 15px;">Day 3 Topic: Restrictive vs. Non-Restrictive Clauses and Commas</h3>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">4. Identify the restrictive vs. non-restrictive clauses and commas in this sentence:</p>
+        <p style="font-style: italic; margin-bottom: 10px; padding: 10px; background: white; border-radius: 4px;">"Restrictive: 'The tales that changed the king came from many cultures.' Non-restrictive: 'Arabian Nights, which contains hundreds of tales, influenced world literature.'"</p>
+        <textarea class="grammar-answer" rows="2" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">5. Restrictive clauses are essential to the meaning and need no commas: 'The girl who told the stories survived. Give an example from Arabian Nights:</p>
+        <textarea class="grammar-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the sentence and explain..."></textarea>
+      </div>
+    
+      <div class="grammar-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">6. Find three relative clauses in today's reading. Identify whether each is restrictive or non-restrictive, explain how you know, and discuss how removing the clause would change the meaning.</p>
+        <textarea class="grammar-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your sentences here..."></textarea>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📚 Language Skills Assessment</h2>
+        <p style="margin-bottom: 25px;">Apply the vocabulary strategies you learned this week:</p>
+        <div class="language-questions">
+  
+      <div class="language-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #9E2C21;">
+        <h3 style="color: #9E2C21; margin-bottom: 15px;">Day 2 Topic: Context Clues: Multiple Strategies Combined</h3>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">1. Find an example of context clues: multiple strategies combined in this week's reading from Arabian Nights:</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Hint: Expert readers use multiple context clue types simultaneously: definition/restatement (author defines it), synonym/antonym (similar/opposite word nearby), example (specific instances given), inference (reasoning from situation).</em></p>
+        <textarea class="language-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the example and explain how you identified it..."></textarea>
+      </div>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">2. Create TWO examples of three challenging vocabulary words related to this week's reading. For each, identify ALL context clues present (definition, synonym, antonym, example, inference). Then write sentences using new vocabulary words with at least two types of context clues.</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Example: From Arabian Nights: 'The king was consumed by a rage that was also grief—unlike simple anger, this sorrow-fury combination destroyed his judgment.' Multiple clues: definition ('sorrow-fury'), contrast ('unlike simple anger'), and effect (destroyed judgment).</em></p>
+        <textarea class="language-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your examples..."></textarea>
+      </div>
+    </div>
+      <div class="language-section" style="margin-bottom: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #9E2C21;">
+        <h3 style="color: #9E2C21; margin-bottom: 15px;">Day 4 Topic: Word Roots: Greek and Latin Foundations</h3>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">3. Find an example of word roots: greek and latin foundations in this week's reading from Arabian Nights:</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Hint: Most academic vocabulary comes from Greek and Latin roots.</em></p>
+        <textarea class="language-answer" rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write the example and explain how you identified it..."></textarea>
+      </div>
+    
+      <div class="language-question" style="margin-bottom: 25px;">
+        <p style="font-weight: 700; margin-bottom: 10px;">4. Choose five words from today's chapter with Greek or Latin roots. Break down each word: identify the root, any prefixes/suffixes, and literal meaning. Then find or create three other words using the same roots.</p>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;"><em>Example: 'Spectator' (one who sees), 'inspect' (look into), 'retrospect' (look back). Same root, different prefixes change meaning. 'Biography' (writing about life), 'biology' (study of life)—same root, different suffixes.</em></p>
+        <textarea class="language-answer" rows="4" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Write your examples..."></textarea>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="5">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📚 Reading Comprehension</h2>
+        <div class="comp-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+          <h3 style="color: #305853; margin-bottom: 15px;">Passage from "Ali Baba and the Forty Thieves — Part Two"</h3>
+          <p style="margin-bottom: 15px;">Ali Baba and the Forty Thieves — Part Two</p><p style="margin-bottom: 15px;">Cassim's wife showed her husband the gold coin, and Cassim went immediately to find his brother.
+He was not pleased. He was not the sort of man who received news of another's good fortune with generosity, especially when that person was his less-successful brother. He demanded to know where the gold had come from, and when Ali Baba, after some hesitation, told him the whole story — the mountain, the cave, the forty thieves, the magic words — Cassim's eyes lit with a fire that had nothing to do with sharing.
+'I will go tomorrow,' he said.
+Ali Baba warned him to be careful, to take only a little, to come home before the thieves returned.
+Cassim heard none of this. He was already calculating.
+In the morning he rode to the mountain with ten mules and went to the cave. He said 'Open Sesame' and the rock opened and he went inside. He was not prepared for what he found — the scale of it, the sheer overwhelming abundance. He walked through it in a daze, touching things, counting things, trying to decide what to take first, then changing his mind, then changing it again.
+Time passed. More time than he had intended.
+When he finally decided he had loaded enough and went to the door to leave, he could not remember the magic words.
+He said 'Open Wheat.' He said 'Open Barley.' He said the names of every grain he knew, every seed, every plant, because for some reason his mind had organized 'Sesame' alongside other things you grew in a garden, and it wouldn't come. He paced. He sweated. He could hear, distantly, the sound of hoofbeats.
+The forty thieves found him when they returned.
+We need not say more than that they were not merciful men.
+When Cassim did not come home, his wife wept and then, being a practical woman in a difficult situation, went to Ali Baba. Ali Baba went to the cave and found what was left of his brother and brought him home with great sorrow and proper ceremony, and buried him respectfully.
+And then the problem of the thieves.
+They would know, the captain of the thieves understood, that someone else had discovered the cave. He sent a spy into the city to find out who. The spy was clever and diligent, and he traced the story back through a chain of small details to Ali Baba's house. He marked the door with a chalk mark so the captain could find it.
+But Ali Baba had a servant — a woman named Morgiana, who was the most observant and resourceful person in the household. She noticed the chalk mark that evening. She did not know what it meant, but she knew that an unmarked mark on a door was never good news. She took a piece of chalk and put the same mark on every door in the street.
+The captain's men came in the night and stood in the street, looking at forty identical marks, and did not know which house to enter.
+Scheherazade smiled at the memory of telling this part. The king had leaned forward, she noticed. He was not a man who leaned forward at things.
+Morgiana, she continued, was not done. When the captain tried again with a different disguise — an oil merchant, with large jars supposedly full of oil — Morgiana discovered the jars contained not oil but armed men, each one waiting for the signal to climb out and kill the household in their beds.
+Morgiana built up the kitchen fire. She heated the real oil until it was scalding. And then, very quietly, she dealt with the situation.
+The captain escaped. But his forty men did not.
+'The rest,' Scheherazade told the king, 'I will tell you tomorrow — how the captain returned in a final disguise, and how Morgiana recognized him, and what she did.'</p>
+        </div>
+        <div class="comp-questions">
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">1. Morgiana puts the same chalk mark on every door in the street. What quality does this action demonstrate?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="A" style="margin-right: 10px;">
+                      A) She is trying to protect all her neighbors equally
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="B" style="margin-right: 10px;">
+                      B) She sees clearly and acts decisively on incomplete information — she doesn't know the mark's purpose but knows an unmarked mark is dangerous
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="C" style="margin-right: 10px;">
+                      C) She wants to confuse the thieves so they will give up
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="D" style="margin-right: 10px;">
+                      D) She is following instructions she received earlier
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">2. Cassim forgets the magic words because his mind organized 'sesame' alongside other grains. What caused his fatal mistake?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="A" style="margin-right: 10px;">
+                      A) He was too greedy and stayed too long
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="B" style="margin-right: 10px;">
+                      B) He was not as intelligent as Ali Baba
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="C" style="margin-right: 10px;">
+                      C) Both — his greed caused him to stay too long, and his panic blocked the word. His downfall was the combination of excess and losing his head under pressure
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="D" style="margin-right: 10px;">
+                      D) He was betrayed by someone who told the thieves he was there
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #B06821; margin-bottom: 20px;">✍️ Writing: Theme Analysis: Power and Narrative</h2>
+          <div class="writing-prompt" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Context:</strong> In the first week of Arabian Nights, we see how Scheherazade uses storytelling as a tool of survival and change. The king holds physical power, but Scheherazade wields narrative power.</p>
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Task:</strong> Write an analytical essay examining how storytelling functions as power in these opening chapters. How does Scheherazade's narrative strategy differ from direct argument or confrontation? What does this suggest about how minds and hearts are changed?</p>
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 6px;">
+              <h3 style="color: #305853; margin-bottom: 10px;">Requirements:</h3>
+              <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Length:</strong> 3-4 paragraphs (15-20 sentences minimum)</li>
+                
+                  <li><strong>Structure:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      <li>Paragraph 1: Introduction with thesis statement about narrative power</li><li>Paragraph 2: How Scheherazade uses stories strategically (with examples)</li><li>Paragraph 3: Why this method works when direct confrontation would fail</li><li>Paragraph 4: Conclusion - broader implications about persuasion and change</li>
+                    </ul>
+                  </li>
+                
+                
+                  <li><strong>Must Include:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      <li>At least 4 vocabulary words from this week</li><li>At least 3 specific examples from the text with quotes or close paraphrasing</li><li>Complex sentence structures including subordination</li>
+                    </ul>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+          <textarea class="writing-response" rows="20" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.8;" placeholder="Write your essay here..."></textarea>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 The Historical Arabian Nights: Origins and Cultural Context</h2>
+          <div class="info-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px;">The collection we know as "One Thousand and One Nights" or "Arabian Nights" didn't originate in a single place or time—it's a compilation of stories gathered over centuries from across the Islamic world, from India to North Africa.</p><p style="margin-bottom: 15px;">The frame story of Scheherazade and King Shahryar first appeared in a Persian book called "Hezār Afsān" (A Thousand Tales) sometime before the 10th century. As the collection traveled westward into the Arab world, it absorbed stories from many cultures: Indian fables, Persian romances, Egyptian folklore, and stories from Baghdad during the Islamic Golden Age.</p><p style="margin-bottom: 15px;">The first European translation, by Antoine Galland in the early 1700s, introduced these tales to Western audiences—but Galland made significant changes, adding some stories (like Aladdin and Ali Baba) that weren't in the original Arabic manuscripts. This raises an interesting question about authenticity: what makes a story "part of" Arabian Nights?</p><p style="margin-bottom: 15px;">The tales reflect the cosmopolitan culture of the medieval Islamic world, where trade routes connected China, India, Africa, and Europe. Sinbad's voyages mirror real merchant expeditions. The genies and magic carpets represent the mythological imagination of multiple cultures blending together.</p><p style="margin-bottom: 15px;">What's remarkable is how these stories functioned in their original context—they were oral tales, told in coffeehouses and homes, passed down through generations. Professional storytellers would spin them out over many nights, stopping at crucial moments (just as Scheherazade does) to ensure their audience returned. The structure of the frame story literally mimics the social function of storytelling in that culture: creating suspense, building community, passing time, and transmitting wisdom.</p>
+          </div>
+          <div class="info-questions">
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">1. According to the passage, why is it difficult to define what stories are 'authentically' part of Arabian Nights?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">2. How did the original function of these stories (oral performance in coffeehouses) influence their structure?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">3. What does the passage suggest about cultural exchange in the medieval Islamic world?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content title-page">
+        <div class="lesson-icon">🎉</div>
+        <h1 style="color: #305853; font-size: 2.5rem; margin-bottom: 15px;">Week 1 Complete!</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 25px;">You've finished your assessment for Tales from the Arabian Nights.</p>
+        <button onclick="submitAssessment(5)" style="padding: 15px 40px; background: #B06821; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: 700; cursor: pointer;">Submit Assessment →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 8</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 8;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>
