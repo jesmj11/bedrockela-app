@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 54 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 54</h1>
+        <h2 class="lesson-subtitle">Redmond After All</h2>
+        <p class="lesson-meta">Anne of Green Gables</p>
+        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 54!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>Redmond After All</strong> from <em>Tales from the Arabian Nights</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Apply Tone and Mood: Language Creates Atmosphere</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. defer</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">To put off to a later time; to delay.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. negotiable</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Not open to discussion or change; fixed and final.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. pragmatic</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Dealing with things in a practical, sensible way.</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. defer</div>
+              <div style="flex: 2; font-style: italic; color: #666;">To put off to a later time; to delay.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. negotiable</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Not open to discussion or change; fixed and final.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. pragmatic</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Dealing with things in a practical, sensible way.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Redmond After All </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Redmond After All</p><p style="margin-bottom: 15px; text-indent: 2em;">In the spring of her second year of teaching, Marilla told Anne she was going to Redmond.</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne looked up from her marking.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Your eyes —" she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Are managing," Marilla said. "Better than expected. The doctor says I've been careful enough." She sat down across from Anne with the air of someone who has prepared a case. "Also, Miss Barry has offered to stay with me when needed — she likes the countryside and she likes me well enough. Also, there's a girl in the village who comes to clean and who could help in the mornings. Also, I've arranged it."</p><p style="margin-bottom: 15px; text-indent: 2em;">"You've —"</p><p style="margin-bottom: 15px; text-indent: 2em;">"I wrote to Redmond. You still have your scholarship. I wrote to ask if it could be deferred a second year. They said yes. I wrote to accept." She folded her hands. "You are going in September."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne stared at her.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Marilla, you can't —"</p><p style="margin-bottom: 15px; text-indent: 2em;">"I have," Marilla said. "It's done. You're not going to argue me out of something I've already done."</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Redmond After All (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Anne opened her mouth. She closed it. She thought about arguing. She thought about all the reasons she'd given herself for staying — Marilla's eyes, the farm, the practicalities. She looked at Marilla, who was sitting very straight and looking very firm and had clearly thought about all of those reasons too and had an answer for each of them.</p><p style="margin-bottom: 15px; text-indent: 2em;">"You planned this," Anne said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"For several months. I wanted to be sure it would work before I told you."</p><p style="margin-bottom: 15px; text-indent: 2em;">"You went to all that trouble —"</p><p style="margin-bottom: 15px; text-indent: 2em;">"You gave up Redmond for me. The least I could do was find a way to give it back." Marilla picked up her knitting, which was what she did when a conversation was over. "You'll write every week."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Of course."</p><p style="margin-bottom: 15px; text-indent: 2em;">"And come home for holidays."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Obviously."</p><p style="margin-bottom: 15px; text-indent: 2em;">"And you'll eat properly."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Marilla —"</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Redmond After All (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">"You'll eat properly," Marilla repeated, with the tone of someone who considers this non-negotiable.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Yes," Anne said. "I'll eat properly."</p><p style="margin-bottom: 15px; text-indent: 2em;">She sat there for a moment, the marking forgotten, looking at the woman who had said she'd wanted to send her back and had kept a newspaper notice in the back of her Bible and had spent several months quietly arranging for Anne to have the thing Anne had given up.</p><p style="margin-bottom: 15px; text-indent: 2em;">She could not find words for it. The feeling was too large.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Thank you," she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">Marilla said it was only sensible. She kept knitting.</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne went upstairs and stood at the east window for a long time, looking at the apple trees. The world had changed on her several times, in directions she hadn't chosen. But she was going to Redmond. She was going to write. She was going to teach and learn and become the person she was building herself into, one difficult year at a time.</p><p style="margin-bottom: 15px; text-indent: 2em;">She thought of Matthew. She thought of the puffed sleeves.</p><p style="margin-bottom: 15px; text-indent: 2em;">She went back downstairs to finish her marking.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Marilla arranges everything before telling Anne, so that Anne cannot argue her out of it. What does this strategy reveal about how Marilla loves?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+                      <span>A) She is manipulative and doesn't trust Anne's judgment</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+                      <span>B) She knows Anne well enough to know Anne would sacrifice herself — so she removes the option before Anne can take it, which is a form of profound care</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+                      <span>C) She wants to be in control of the situation</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+                      <span>D) She thinks Redmond is important for the farm's future</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Anne gives up Redmond for Marilla. Marilla gives it back. What does this exchange say about the relationship they have built?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+                      <span>A) That they owe each other debts and keep track of them</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+                      <span>B) That their love has become mutual — each is willing to sacrifice for the other, and each refuses to let the other sacrifice too much</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+                      <span>C) That Marilla feels guilty about how she treated Anne at first</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+                      <span>D) That practical problems can always be solved with planning</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="9">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language Skill: Tone and Mood: Language Creates Atmosphere</h2>
+        
+        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+          <p style="line-height: 1.8; margin-bottom: 15px;">Tone is the author's attitude toward the subject (humorous, serious, ironic, respectful). Mood is the feeling created for the reader (suspenseful, hopeful, melancholy). Authors create tone and mood through word choice, sentence structure, imagery, and pacing.</p>
+          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+          <p style="font-style: italic; color: #555; line-height: 1.6;">Serious tone: 'The king's decree devastated the kingdom.' Ironic tone: 'The king's "justice" brought only misery.' The quotation marks create irony. Suspenseful mood: 'The dawn approached. Would the king demand she continue or order her death?'</p>
+        </div>
+        
+        <div class="skill-practice">
+          <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+          <p style="margin-bottom: 15px;">Identify the dominant tone and mood of today's chapter. Find five specific language choices that create this tone/mood (word choice, sentence length, imagery, etc.). Then write two paragraphs about the same event—one creating a hopeful mood, one creating a dark mood.</p>
+          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
+          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter connect to the overall theme of "Who You Want to Be vs. Who You Actually Are"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your reflection here..."></textarea>
+        <button onclick="window.saveJournal(24)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

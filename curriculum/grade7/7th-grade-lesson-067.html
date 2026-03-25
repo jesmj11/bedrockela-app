@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 67 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 67</h1>
+        <h2 class="lesson-subtitle">Starbuck</h2>
+        <p class="lesson-meta">Moby Dick</p>
+        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 67!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>Starbuck</strong> from <em>Tales from the Arabian Nights</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Apply Figurative Language: Metaphor, Simile, Personification, Symbolism</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. integrity</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">The quality of being honest and having strong moral principles; wholeness of character.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. calculus</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">A system of calculation; here used figuratively to mean a method of weighing factors to reach a decision.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. erratic</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Not regular or consistent; unpredictable in behavior.</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. integrity</div>
+              <div style="flex: 2; font-style: italic; color: #666;">The quality of being honest and having strong moral principles; wholeness of character.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. calculus</div>
+              <div style="flex: 2; font-style: italic; color: #666;">A system of calculation; here used figuratively to mean a method of weighing factors to reach a decision.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. erratic</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Not regular or consistent; unpredictable in behavior.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Starbuck </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Starbuck</p><p style="margin-bottom: 15px; text-indent: 2em;">Starbuck was the most decent man on the Pequod, and the most tormented by it.</p><p style="margin-bottom: 15px; text-indent: 2em;">He was a Nantucket man through and through — Quaker-raised, careful in all things, with the sober integrity of someone who genuinely believed that the right thing and the practical thing were usually the same thing. He was brave in the way that good officers are brave: not recklessly, but with a clear-eyed assessment of what risks were necessary. He had a wife and children in Nantucket. He thought about them every day.</p><p style="margin-bottom: 15px; text-indent: 2em;">He did not want to chase Moby Dick.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Starbuck (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">He was not afraid of the whale. He was afraid of what the whale had made Ahab. He had shipped under difficult captains before — the sea produces a type of commanding personality that does not always translate well to ordinary human interaction. But Ahab was something different. The obsession was not a personality trait. It was an organizing principle. Everything on the ship ran through it.</p><p style="margin-bottom: 15px; text-indent: 2em;">I had several conversations with Starbuck during the early weeks. He was a man precise with his words, who said what he meant and meant what he said, and who listened to you as if you were worth listening to. He was not warm exactly, but he was honest, and honesty done consistently is its own kind of warmth.</p><p style="margin-bottom: 15px; text-indent: 2em;">He told me about his father. Lost at sea. His brother. Lost at sea. He had grown up understanding the ocean as a place where people you loved did not always come back from. He had gone to sea anyway, because it was the only trade he knew and he was good at it, and he had made peace with the risk in a particular way: by being excellent, by never taking an unnecessary chance, by being the officer who brought men home.</p><p style="margin-bottom: 15px; text-indent: 2em;">'What about Ahab?' I asked.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 Starbuck (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Starbuck was quiet for a moment. 'Ahab is looking for extra,' he said. He did not say more, but the weight behind the words told me this was not a new thought. That he had been thinking about what to do with it for a long time and had not yet arrived at an answer.</p><p style="margin-bottom: 15px; text-indent: 2em;">What Starbuck did not yet know was how far Ahab's obsession would take us before it found its end. He was calculating the risk as a man of his training would: as a variable, something to be weighed and managed. He had not yet understood that the calculus of obsession does not yield to ordinary management.</p><p style="margin-bottom: 15px; text-indent: 2em;">He stood at his watch that evening, looking at the dark sea, and I watched him and thought: he is the only man on this ship who might stop this. And I do not think he knows how.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Starbuck says 'a bad officer is better than no officer' as his reason for staying. What does this reasoning reveal about how he sees his role?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+                      <span>A) He has given up trying to stop Ahab and is making excuses</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+                      <span>B) He believes his continued presence as a check on Ahab, even an imperfect one, is more valuable than his absence — he is choosing the lesser harm</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+                      <span>C) He is afraid to leave the ship in the middle of the ocean</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+                      <span>D) He is waiting for an opportunity to take command himself</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Starbuck is described as brave 'not recklessly, but with a clear-eyed assessment of what risks were necessary.' How does this definition of bravery differ from Ahab's?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+                      <span>A) Starbuck is actually less brave than Ahab because he avoids unnecessary risks</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+                      <span>B) Starbuck's bravery is proportionate and purposeful — it serves the goal of keeping men alive; Ahab's bravery serves only his obsession and disregards cost entirely</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+                      <span>C) Ahab is not brave — he is simply reckless</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+                      <span>D) There is no real difference — both men are willing to risk their lives</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="9">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language Skill: Figurative Language: Metaphor, Simile, Personification, Symbolism</h2>
+        
+        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+          <p style="line-height: 1.8; margin-bottom: 15px;">Figurative language creates meaning beyond literal words. Metaphors assert identity: 'Her words were weapons.' Similes compare with 'like/as': 'Words like weapons.' Personification gives human qualities to non-human things: 'The story grabbed him.' Symbolism: objects representing ideas (Scheherazade's stories = hope, power of narrative).</p>
+          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+          <p style="font-style: italic; color: #555; line-height: 1.6;">Metaphor: 'The king's heart was stone.' Simile: 'His heart was like stone.' Personification: 'Anger consumed him.' Symbol: 'The thousand nights represent the slow process of healing and transformation.'</p>
+        </div>
+        
+        <div class="skill-practice">
+          <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+          <p style="margin-bottom: 15px;">Find four examples of figurative language in today's reading—at least one of each type. Explain what each means literally versus figuratively, and why the author chose figurative language instead of literal description. Write your own examples.</p>
+          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
+          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter connect to the overall theme of "Who You Want to Be vs. Who You Actually Are"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your reflection here..."></textarea>
+        <button onclick="window.saveJournal(7)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

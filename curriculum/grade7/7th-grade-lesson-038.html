@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 38 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 38</h1>
+        <h2 class="lesson-subtitle">The Haunted Wood</h2>
+        <p class="lesson-meta">Anne of Green Gables</p>
+        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 38!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>The Haunted Wood</strong> from <em>Tales from the Arabian Nights</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Master Parallel Structure in Lists and Series</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. atmospheric</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Creating a particular mood or feeling, especially one that is mysterious or eerie.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. legend</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">A traditional story or belief, often exaggerated over time, that becomes widely known.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. dramatic</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Exaggerated for effect; more intense or striking than is strictly necessary.</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. atmospheric</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Creating a particular mood or feeling, especially one that is mysterious or eerie.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. legend</div>
+              <div style="flex: 2; font-style: italic; color: #666;">A traditional story or belief, often exaggerated over time, that becomes widely known.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. dramatic</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Exaggerated for effect; more intense or striking than is strictly necessary.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Haunted Wood </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">The Haunted Wood</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne had one significant weakness that she was somewhat ashamed of: she was afraid of the dark, and specifically of a stand of woods between Green Gables and the Barry farm that she had, in a moment of literary inspiration, named the Haunted Wood.</p><p style="margin-bottom: 15px; text-indent: 2em;">The naming had been a mistake. Once you named a place the Haunted Wood, the imagination supplied the rest without being asked.</p><p style="margin-bottom: 15px; text-indent: 2em;">She had begun seeing things there. Not real things — she knew they weren't real things, which was almost worse. A pale shape among the trees. Something at the edge of the path that retreated when she looked directly at it. She stopped going through the wood after dark.</p><p style="margin-bottom: 15px; text-indent: 2em;">Then she told Diana about the hauntings, because she told Diana everything.</p><p style="margin-bottom: 15px; text-indent: 2em;">And then Diana told three other people, because Diana's gift for keeping secrets was not quite equal to her other gifts.</p><p style="margin-bottom: 15px; text-indent: 2em;">And then the haunting of the wood became a neighborhood legend, and Avonlea children started daring each other to walk through it at night, which they did, and reported various atmospheric experiences, none of which were supernatural.</p><p style="margin-bottom: 15px; text-indent: 2em;">Marilla found out, as Marilla found out everything.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Haunted Wood (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">"You've been telling ghost stories," she said.</p><p style="margin-bottom: 15px; text-indent: 2em;">"It started as imagination," Anne said. "It got out of hand."</p><p style="margin-bottom: 15px; text-indent: 2em;">"You terrified half the children in the neighborhood."</p><p style="margin-bottom: 15px; text-indent: 2em;">"I may have also terrified myself," Anne said, with honesty.</p><p style="margin-bottom: 15px; text-indent: 2em;">Marilla told her to stop going around with her head in the clouds and to remember that imaginary things had real effects on real people.</p><p style="margin-bottom: 15px; text-indent: 2em;">This stayed with Anne. She had always thought of her imagination as purely a gift — something that made dull things interesting and difficult things bearable. She had not entirely considered that it could mislead her, or affect others in ways she didn't intend.</p><p style="margin-bottom: 15px; text-indent: 2em;">She walked through the Haunted Wood in the daytime and looked at it carefully. It was birch and maple, the ordinary lovely woods of Prince Edward Island in autumn, the light coming through the leaves in pale gold columns. There was nothing there. There had never been anything there.</p><p style="margin-bottom: 15px; text-indent: 2em;">"I did that myself," she told Diana, on the walk home. "I made myself afraid of trees."</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Haunted Wood (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">"We all did," Diana said fairly. "We all wanted there to be something there."</p><p style="margin-bottom: 15px; text-indent: 2em;">"Why?"</p><p style="margin-bottom: 15px; text-indent: 2em;">Diana thought about it. "I suppose," she said, "because something being there would have been more interesting than just trees."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne thought about this for the rest of the walk home. It was a truth about herself she had not quite faced: that she sometimes preferred the more dramatic version of things, even when the dramatic version caused trouble. She liked the story better than the facts, and this was not always a virtue.</p><p style="margin-bottom: 15px; text-indent: 2em;">She told Marilla she had sorted out the Haunted Wood.</p><p style="margin-bottom: 15px; text-indent: 2em;">"Good," Marilla said. "Try not to invent any new ones."</p><p style="margin-bottom: 15px; text-indent: 2em;">Anne thought she probably would, eventually. But she would try to be more careful about who she told.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. What lesson does Anne take from the Haunted Wood situation?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+                      <span>A) That she should stop naming places</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+                      <span>B) That her imagination can mislead her and affect others in ways she doesn't intend — that stories have real consequences</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+                      <span>C) That she should not share her imagination with other people</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+                      <span>D) That the moor is genuinely dangerous at night</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Diana suggests they all wanted something to be in the wood because it would have been more interesting than just trees. What does this reveal about human nature?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+                      <span>A) Children are naturally afraid of the dark</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+                      <span>B) People sometimes prefer the more dramatic version of reality, even when the plain truth is perfectly fine</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+                      <span>C) Diana has the same imagination as Anne</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+                      <span>D) The children of Avonlea are unusually superstitious</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="9">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Skill: Parallel Structure in Lists and Series</h2>
+        
+        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+          <p style="line-height: 1.8; margin-bottom: 15px;">Parallel structure uses the same grammatical form for items in a series, creating rhythm and clarity. All items should be the same part of speech or phrase type: 'She was intelligent, determined, and resourceful' (all adjectives). Not parallel: 'She was intelligent, determined, and had resourcefulness.'</p>
+          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+          <p style="font-style: italic; color: #555; line-height: 1.6;">Parallel: 'The king lost his faith, abandoned his principles, and destroyed his compassion.' Not parallel: 'The king lost his faith, his principles were abandoned, and destroying his compassion.'</p>
+        </div>
+        
+        <div class="skill-practice">
+          <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+          <p style="margin-bottom: 15px;">Find three examples of parallel structure in today's reading, or identify where the author could have used it. Then write five sentences with parallel structure describing characters, events, or themes from the story.</p>
+          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
+          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal Entry</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. If you were in their position, would you have made the same choice? Why or why not? Consider the character's motivations, the consequences they faced, and what this reveals about human nature.</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your journal entry here..."></textarea>
+        <button onclick="window.saveJournal(8)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

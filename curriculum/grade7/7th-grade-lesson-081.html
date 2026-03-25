@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 81 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 81</h1>
+        <h2 class="lesson-subtitle">The Pacific</h2>
+        <p class="lesson-meta">Moby Dick</p>
+        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 81!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>The Pacific</strong> from <em>Tales from the Arabian Nights</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Master Subjunctive Mood for Hypotheticals and Wishes</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. vastness</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Immense size or extent; enormity.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. abstraction</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Something considered apart from concrete reality; an idea rather than a physical thing.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. visceral</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Relating to deep, instinctive feelings rather than intellectual reasoning; felt in the body.</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. vastness</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Immense size or extent; enormity.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. abstraction</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Something considered apart from concrete reality; an idea rather than a physical thing.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. visceral</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Relating to deep, instinctive feelings rather than intellectual reasoning; felt in the body.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Pacific </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">The Pacific</p><p style="margin-bottom: 15px; text-indent: 2em;">We entered the Pacific through the Straits and the ocean opened before us like a held breath releasing.</p><p style="margin-bottom: 15px; text-indent: 2em;">The Pacific is not like the Atlantic. The Atlantic has weather and history and the presence of continents on either side giving it edges. The Pacific is simply enormous. It covers more of the earth than all the land combined. Standing at the bow and looking out at it, you understood things about the scale of the world that no map can convey.</p><p style="margin-bottom: 15px; text-indent: 2em;">Ahab became more himself in the Pacific. He was at the rail more hours of the day. He consulted his chart. He spoke to the crew with a directness that had a quality of imminence, as if the thing he had been sailing toward was now close enough to smell.</p><p style="margin-bottom: 15px; text-indent: 2em;">He climbed the masthead himself some mornings, which captains normally did not do. He stood in the crow's nest with his spyglass and looked at the ocean.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Pacific (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">He was looking for white.</p><p style="margin-bottom: 15px; text-indent: 2em;">The rest of us looked too — not with his intensity, but with the natural vigilance of men at sea who know that spotting a whale means a share of profit. Every splash examined. Every disturbance in the water considered.</p><p style="margin-bottom: 15px; text-indent: 2em;">I was at the masthead one afternoon when I saw — or thought I saw — something large and pale beneath the surface. I held my breath. I looked again. It was a trick of the light, a shadow, a wave.</p><p style="margin-bottom: 15px; text-indent: 2em;">But for one moment it had been there: something vast and white in the green water, moving with the purposeful ease of something that owned the ocean.</p><p style="margin-bottom: 15px; text-indent: 2em;">I said nothing. I had not seen it clearly enough to report.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 The Pacific (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">But I thought about it for the rest of my watch, and I thought: I understand now. Not the obsession — that I still could not justify — but the whale itself. The white shape in the water that was real and enormous and belonged to a world that existed entirely without reference to us.</p><p style="margin-bottom: 15px; text-indent: 2em;">There was something about that which was both terrible and magnificent. A thing that large, that indifferent, that genuinely other.</p><p style="margin-bottom: 15px; text-indent: 2em;">I thought: if I were less sane than I am, I might need to pursue that to its end too.</p><p style="margin-bottom: 15px; text-indent: 2em;">I went down from the masthead and said nothing to anyone.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Ishmael sees what might be the whale but says nothing because he has not seen it clearly enough to report. What does this moment reveal about him?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+                      <span>A) He is afraid to be the one who reports the whale</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+                      <span>B) He is honest enough to distinguish between what he has actually seen and what he thinks he saw — he will not feed the obsession with uncertain evidence</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+                      <span>C) He does not want the chase to begin because he is afraid</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+                      <span>D) He is not paying close enough attention to his duties</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Standing before the Pacific, Ishmael says he begins to understand — 'not the obsession, but the whale itself.' What distinction is he making?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+                      <span>A) He now agrees with Ahab that the whale should be hunted</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+                      <span>B) He can understand why something that vast and indifferent might provoke an extreme response, without agreeing that the extreme response is justified — understanding is not agreement</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+                      <span>C) He is beginning to lose his own sanity under the whale's influence</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+                      <span>D) He has decided the whale is genuinely dangerous and should be killed</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="9">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">📝 Grammar Skill: Subjunctive Mood for Hypotheticals and Wishes</h2>
+        
+        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+          <p style="line-height: 1.8; margin-bottom: 15px;">The subjunctive mood expresses wishes, suggestions, or hypothetical situations. It often uses 'were' instead of 'was': 'If I were the king...' Common in formal writing after verbs like wish, suggest, recommend: 'I wish she were here.' 'I suggest that he study harder' (not 'studies').</p>
+          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+          <p style="font-style: italic; color: #555; line-height: 1.6;">Subjunctive: 'If Scheherazade were to fail, she would die.' 'The king wished that his wife were faithful.' Indicative (not subjunctive): 'Scheherazade was clever.'</p>
+        </div>
+        
+        <div class="skill-practice">
+          <h3 style="color: #305853; margin-bottom: 15px;">✍️ Your Turn:</h3>
+          <p style="margin-bottom: 15px;">Write six sentences in the subjunctive mood about today's chapter: two expressing wishes, two expressing hypotheticals (if/were), and two expressing suggestions or demands. Explain why each requires the subjunctive.</p>
+          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
+          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Journal Entry</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> Reflect on a choice a character made in today's chapter. If you were in their position, would you have made the same choice? Why or why not? Consider the character's motivations, the consequences they faced, and what this reveals about human nature.</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your journal entry here..."></textarea>
+        <button onclick="window.saveJournal(21)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

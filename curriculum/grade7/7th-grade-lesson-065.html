@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 65 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📝</div>
+        <h1 class="lesson-title">Day 65</h1>
+        <h2 class="lesson-subtitle">Assessment</h2>
+        <p class="lesson-meta">Week 7 - Moby Dick</p>
+        <p class="lesson-focus"><strong>Testing Days 61 through 64</strong></p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Vocabulary Assessment</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching">
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">1.</div>
+              <div style="flex: 1; font-weight: 600;">contemplative</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Involving or given to long, thoughtful consideration; meditative.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">2.</div>
+              <div style="flex: 1; font-weight: 600;">proportion</div>
+              <div style="flex: 2; color: #666; font-style: italic;">The correct or appropriate relation of parts to a whole; proper balance.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">3.</div>
+              <div style="flex: 1; font-weight: 600;">forthright</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Direct and outspoken; not evasive or secretive.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">4.</div>
+              <div style="flex: 1; font-weight: 600;">equanimity</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Mental calmness and composure, especially in difficult situations.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">5.</div>
+              <div style="flex: 1; font-weight: 600;">disposition</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A person's inherent qualities of mind and character; natural tendency.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">6.</div>
+              <div style="flex: 1; font-weight: 600;">propriety</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Conformity to conventionally accepted standards of behavior.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">7.</div>
+              <div style="flex: 1; font-weight: 600;">austerity</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Sternness or severity of manner; plainness and simplicity in lifestyle.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">8.</div>
+              <div style="flex: 1; font-weight: 600;">omen</div>
+              <div style="flex: 2; color: #666; font-style: italic;">A sign of things to come, especially something that suggests a future event — usually bad.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">9.</div>
+              <div style="flex: 1; font-weight: 600;">vengeance</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Punishment inflicted as revenge for a wrong; retaliation.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">10.</div>
+              <div style="flex: 1; font-weight: 600;">imminence</div>
+              <div style="flex: 2; color: #666; font-style: italic;">The state of being about to happen very soon; nearness in time.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">11.</div>
+              <div style="flex: 1; font-weight: 600;">weathered</div>
+              <div style="flex: 2; color: #666; font-style: italic;">Worn, toughened, or damaged by long exposure to the elements; showing the effects of difficult experience.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+            <div class="vocab-match-item" style="display: flex; margin-bottom: 12px; padding: 12px; background: #f9f9f9; border-radius: 6px;">
+              <div style="flex: 0 0 30px; font-weight: 700; color: #305853;">12.</div>
+              <div style="flex: 1; font-weight: 600;">prosthetic</div>
+              <div style="flex: 2; color: #666; font-style: italic;">An artificial body part, used to replace a missing one.</div>
+              <input type="checkbox" style="margin-left: 10px; transform: scale(1.3);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+<p><em>Grammar assessment data not available.</em></p>
+<p><em>Language assessment data not available.</em></p>
+
+    <div class="lesson-page" data-page="5">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📚 Reading Comprehension</h2>
+        <div class="comp-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+          <h3 style="color: #305853; margin-bottom: 15px;">Passage from "The Captain"</h3>
+          <p style="margin-bottom: 15px;">The Captain</p><p style="margin-bottom: 15px;"></p><p style="margin-bottom: 15px;">We did not see Ahab for the first several days at sea.</p>
+        </div>
+        <div class="comp-questions">
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">1. Ahab's ivory leg makes a knocking sound on the deck that can be heard before he is seen. What does this detail establish about him?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="A" style="margin-right: 10px;">
+                      A) He is clumsy and lacks balance
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="B" style="margin-right: 10px;">
+                      B) His presence announces itself — he is a force that fills the space around him even before arriving, impossible to ignore
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="C" style="margin-right: 10px;">
+                      C) The leg is poorly fitted and he is in constant discomfort
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp0" value="D" style="margin-right: 10px;">
+                      D) The crew learns to avoid him by listening for the sound
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 25px;">
+              <p style="font-weight: 700; margin-bottom: 10px;">2. Ishmael notes that Ahab has 'the eyes of a man who has decided something — not recently, but long ago.' What is more dangerous about a long-ago decision than a recent one?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="A" style="margin-right: 10px;">
+                      A) Long-ago decisions are usually based on faulty information
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="B" style="margin-right: 10px;">
+                      B) A decision made long ago and lived with for years has hardened into identity — it is no longer a choice that can be revisited but simply who the person is
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="C" style="margin-right: 10px;">
+                      C) Recent decisions can be changed but long-ago ones are legally binding
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 8px;">
+                      <input type="radio" name="comp1" value="D" style="margin-right: 10px;">
+                      D) Long-ago decisions are made without the benefit of experience
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #B06821; margin-bottom: 20px;">✍️ Writing: Theme Analysis: Power and Narrative</h2>
+          <div class="writing-prompt" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Context:</strong> In the first week of Arabian Nights, we see how Scheherazade uses storytelling as a tool of survival and change. The king holds physical power, but Scheherazade wields narrative power.</p>
+            <p style="margin-bottom: 15px; line-height: 1.7;"><strong>Task:</strong> Write an analytical essay examining how storytelling functions as power in these opening chapters. How does Scheherazade's narrative strategy differ from direct argument or confrontation? What does this suggest about how minds and hearts are changed?</p>
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 6px;">
+              <h3 style="color: #305853; margin-bottom: 10px;">Requirements:</h3>
+              <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Length:</strong> 3-4 paragraphs (15-20 sentences minimum)</li>
+                
+                  <li><strong>Structure:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      <li>Paragraph 1: Introduction with thesis statement about narrative power</li><li>Paragraph 2: How Scheherazade uses stories strategically (with examples)</li><li>Paragraph 3: Why this method works when direct confrontation would fail</li><li>Paragraph 4: Conclusion - broader implications about persuasion and change</li>
+                    </ul>
+                  </li>
+                
+                
+                  <li><strong>Must Include:</strong>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                      <li>At least 4 vocabulary words from this week</li><li>At least 3 specific examples from the text with quotes or close paraphrasing</li><li>Complex sentence structures including subordination</li>
+                    </ul>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+          <textarea class="writing-response" rows="20" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.8;" placeholder="Write your essay here..."></textarea>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 The Historical Arabian Nights: Origins and Cultural Context</h2>
+          <div class="info-passage" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px;">The collection we know as "One Thousand and One Nights" or "Arabian Nights" didn't originate in a single place or time—it's a compilation of stories gathered over centuries from across the Islamic world, from India to North Africa.</p><p style="margin-bottom: 15px;">The frame story of Scheherazade and King Shahryar first appeared in a Persian book called "Hezār Afsān" (A Thousand Tales) sometime before the 10th century. As the collection traveled westward into the Arab world, it absorbed stories from many cultures: Indian fables, Persian romances, Egyptian folklore, and stories from Baghdad during the Islamic Golden Age.</p><p style="margin-bottom: 15px;">The first European translation, by Antoine Galland in the early 1700s, introduced these tales to Western audiences—but Galland made significant changes, adding some stories (like Aladdin and Ali Baba) that weren't in the original Arabic manuscripts. This raises an interesting question about authenticity: what makes a story "part of" Arabian Nights?</p><p style="margin-bottom: 15px;">The tales reflect the cosmopolitan culture of the medieval Islamic world, where trade routes connected China, India, Africa, and Europe. Sinbad's voyages mirror real merchant expeditions. The genies and magic carpets represent the mythological imagination of multiple cultures blending together.</p><p style="margin-bottom: 15px;">What's remarkable is how these stories functioned in their original context—they were oral tales, told in coffeehouses and homes, passed down through generations. Professional storytellers would spin them out over many nights, stopping at crucial moments (just as Scheherazade does) to ensure their audience returned. The structure of the frame story literally mimics the social function of storytelling in that culture: creating suspense, building community, passing time, and transmitting wisdom.</p>
+          </div>
+          <div class="info-questions">
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">1. According to the passage, why is it difficult to define what stories are 'authentically' part of Arabian Nights?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">2. How did the original function of these stories (oral performance in coffeehouses) influence their structure?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+              <div class="info-question" style="margin-bottom: 25px;">
+                <p style="font-weight: 700; margin-bottom: 10px;">3. What does the passage suggest about cultural exchange in the medieval Islamic world?</p>
+                <textarea rows="3" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-family: inherit;" placeholder="Your answer..."></textarea>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content title-page">
+        <div class="lesson-icon">🎉</div>
+        <h1 style="color: #305853; font-size: 2.5rem; margin-bottom: 15px;">Week 7 Complete!</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 25px;">You've finished your assessment for Moby Dick.</p>
+        <button onclick="submitAssessment(65)" style="padding: 15px 40px; background: #B06821; color: white; border: none; border-radius: 10px; font-size: 20px; font-weight: 700; cursor: pointer;">Submit Assessment →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 8</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 8;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>

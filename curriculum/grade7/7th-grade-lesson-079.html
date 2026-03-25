@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7th Grade Day 79 - BedrockELA</title>
+  <link rel="stylesheet" href="css/lesson-viewer.css">
+  <style>
+    body { 
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #FFFFFF; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .lesson-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lesson-page { display: none; min-height: 500px; }
+    .lesson-page.active { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .page-content { padding: 30px; }
+    .title-page { text-align: center; padding: 60px 30px; }
+    .lesson-icon { font-size: 5rem; margin-bottom: 20px; }
+    .lesson-title { color: #305853; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+    .lesson-subtitle { color: #B06821; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+    .lesson-meta { color: #666; font-size: 1.2rem; margin-bottom: 10px; }
+    .lesson-focus { color: #444; font-size: 1.1rem; font-style: italic; }
+    
+    .nav-controls { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 30px; 
+      padding: 20px; 
+      background: #f9f9f9; 
+      border-radius: 10px; 
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn { 
+      padding: 12px 24px; 
+      background: #305853; 
+      color: white; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 16px; 
+      font-weight: 600; 
+      cursor: pointer; 
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #B06821; transform: translateY(-2px); }
+    .nav-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+    .progress-bar { 
+      flex: 1; 
+      margin: 0 20px; 
+      height: 10px; 
+      background: #e0e0e0; 
+      border-radius: 10px; 
+      overflow: hidden; 
+    }
+    .progress-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, #305853, #B06821); 
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+    .page-indicator { 
+      font-size: 0.9em; 
+      color: #666; 
+      font-weight: 600; 
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <div id="lessonContent">
+      
+    <div class="lesson-page" data-page="1">
+      <div class="page-content title-page">
+        <div class="lesson-icon">📖</div>
+        <h1 class="lesson-title">Day 79</h1>
+        <h2 class="lesson-subtitle">What Starbuck Almost Did</h2>
+        <p class="lesson-meta">Moby Dick</p>
+        <p class="lesson-focus"><strong>Theme:</strong> Who You Want to Be vs. Who You Actually Are</p>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="2">
+      <div class="page-content">
+        <h2 style="color: #305853; margin-bottom: 20px;">Welcome to Day 79!</h2>
+        <div class="welcome-content">
+          <p style="margin-bottom: 15px;">Today we're reading <strong>What Starbuck Almost Did</strong> from <em>Tales from the Arabian Nights</em>.</p>
+          
+          <h3 style="color: #B06821; margin-top: 25px; margin-bottom: 15px;">📚 Today's Objectives:</h3>
+          <ul style="line-height: 1.8; margin-left: 20px;">
+            <li>Understand key events and character development in this chapter</li>
+            <li>Learn 3 new vocabulary words in context</li>
+            <li>Apply Author's Purpose and Rhetorical Strategies</li>
+            <li>Practice close reading and analytical thinking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="3">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📖 Words of the Day</h2>
+        <p style="margin-bottom: 20px;">These words appear in today's chapter. As you read, notice how they're used in context!</p>
+        <div class="vocab-list">
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">1. justification</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">A reason or explanation that makes an action seem right or acceptable.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">2. culpability</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Responsibility for a fault or wrong; blameworthiness.</p>
+            </div>
+          
+            <div class="vocab-word" style="margin-bottom: 25px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #B06821;">
+              <h3 style="color: #305853; margin-bottom: 10px;">3. complicit</h3>
+              <p style="font-style: italic; color: #555; line-height: 1.6;">Involved in or partly responsible for something wrong; going along with wrongdoing.</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="4">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">🎯 Vocabulary Matching</h2>
+        <p style="margin-bottom: 20px;">Match each word to its definition:</p>
+        <div class="vocab-matching-game">
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">1. justification</div>
+              <div style="flex: 2; font-style: italic; color: #666;">A reason or explanation that makes an action seem right or acceptable.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">2. culpability</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Responsibility for a fault or wrong; blameworthiness.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+            <div class="matching-item" style="display: flex; align-items: center; margin-bottom: 15px; padding: 15px; background: #fff; border: 2px solid #e0e0e0; border-radius: 8px;">
+              <div style="flex: 1; font-weight: 700; color: #305853;">3. complicit</div>
+              <div style="flex: 2; font-style: italic; color: #666;">Involved in or partly responsible for something wrong; going along with wrongdoing.</div>
+              <input type="checkbox" style="margin-left: 15px; transform: scale(1.5);">
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="lesson-page" data-page="5">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 What Starbuck Almost Did </h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">What Starbuck Almost Did</p><p style="margin-bottom: 15px; text-indent: 2em;">There was a night, when we were two months from what we did not yet know would be the end, when Starbuck stood outside Ahab's cabin with a musket in his hands.</p><p style="margin-bottom: 15px; text-indent: 2em;">He had not planned this. He had come to the cabin for a legitimate purpose — to report a weather change. And he had found Ahab asleep with his face in the chart, the ivory leg hooked around the leg of the chair. And the musket rack was right there, and the thought came to him with terrible clarity.</p><p style="margin-bottom: 15px; text-indent: 2em;">He could end it. One shot, one decision, and the Pequod would turn for home. The crew would live. He would be the murderer of a captain, with all the legal and moral consequences of that — but the consequences could be managed, argued, perhaps justified. And the crew would live.</p><p style="margin-bottom: 15px; text-indent: 2em;">He stood there for a long time.</p><p style="margin-bottom: 15px; text-indent: 2em;">He did not shoot.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="6">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 What Starbuck Almost Did (Part 2)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">He told me later that he had looked at Ahab sleeping and had seen — not the obsessed captain, not the commander of the death voyage — but a man. An old man with a white leg and a ruined face who was asleep with his cheek on a map.</p><p style="margin-bottom: 15px; text-indent: 2em;">'He looked tired,' Starbuck said. 'Not frightening. Just tired.'</p><p style="margin-bottom: 15px; text-indent: 2em;">'That changed your mind?'</p><p style="margin-bottom: 15px; text-indent: 2em;">'It reminded me that I was thinking about killing a person,' he said. 'Not an idea. A person.' He paused. 'I am not capable of killing a person who is asleep.'</p><p style="margin-bottom: 15px; text-indent: 2em;">He put the musket back. He went to report the weather.</p><p style="margin-bottom: 15px; text-indent: 2em;">I have thought about this moment many times since. Starbuck had the opportunity, the weapon, the justification, and the will — until he looked directly at the human being in the chair, and the human being was enough to stop him.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="lesson-page" data-page="7">
+        <div class="page-content">
+          <h2 style="color: #305853; margin-bottom: 20px;">📜 What Starbuck Almost Did (Part 3)</h2>
+          <div class="story-text" style="line-height: 1.8; font-size: 1.05em;">
+            <p style="margin-bottom: 15px; text-indent: 2em;">Was he right?</p><p style="margin-bottom: 15px; text-indent: 2em;">If he had acted, a hundred men would have come home.</p><p style="margin-bottom: 15px; text-indent: 2em;">If he had acted, he would have been a murderer.</p><p style="margin-bottom: 15px; text-indent: 2em;">I cannot tell you what the right answer is. I was not the one standing there. I was not the one who had to choose between the lives of a hundred men and the life in the chair.</p><p style="margin-bottom: 15px; text-indent: 2em;">What I know is that Starbuck chose the man. And the choice was completely who he was. And it was also the choice that allowed what happened next to happen.</p><p style="margin-bottom: 15px; text-indent: 2em;">That is the kind of thing that makes morality complicated.</p>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="lesson-page" data-page="8">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">🤔 Reading Comprehension</h2>
+        <p style="margin-bottom: 20px;">Answer these questions about today's chapter:</p>
+        <div class="comprehension-questions">
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">1. Starbuck puts down the musket when he sees Ahab as a tired old man rather than a captain. What does this moment say about the limits of abstract moral reasoning?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="A" style="margin-right: 10px;">
+                      <span>A) Abstract moral reasoning is useless when it comes to hard decisions</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="B" style="margin-right: 10px;">
+                      <span>B) Moral decisions are made about actual human beings, not ideas — seeing the person clearly, in their full humanity, creates a resistance that pure logic cannot always override</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="C" style="margin-right: 10px;">
+                      <span>C) Starbuck was never actually going to shoot and was only testing himself</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q0" value="D" style="margin-right: 10px;">
+                      <span>D) Starbuck's compassion overcomes his better judgment</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+            <div class="comp-question" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+              <p style="font-weight: 700; margin-bottom: 15px;">2. Ishmael says Starbuck's choice 'allowed what happened next to happen' and calls this 'the kind of thing that makes morality complicated.' What genuine moral difficulty is he pointing to?</p>
+              
+                <div class="options" style="margin-left: 20px;">
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="A" style="margin-right: 10px;">
+                      <span>A) That killing is always wrong, even to save lives</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="B" style="margin-right: 10px;">
+                      <span>B) That a choice made from genuine principle — in this case, not killing a sleeping man — can have catastrophic consequences; good intentions do not protect you from bad outcomes</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="C" style="margin-right: 10px;">
+                      <span>C) That Starbuck was a coward who hid his cowardice behind principles</span>
+                    </label>
+                  
+                    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
+                      <input type="radio" name="q1" value="D" style="margin-right: 10px;">
+                      <span>D) That Ishmael blames Starbuck for what happened</span>
+                    </label>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="9">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">📝 Language Skill: Author's Purpose and Rhetorical Strategies</h2>
+        
+        <div class="skill-explanation" style="padding: 20px; background: #f0f8ff; border-radius: 8px; margin-bottom: 25px;">
+          <p style="line-height: 1.8; margin-bottom: 15px;">Authors choose words to achieve specific purposes: inform, persuade, entertain, inspire. Rhetorical strategies include appeals to emotion (pathos), logic (logos), and credibility (ethos). Word choice, sentence structure, and figurative language all serve the author's purpose.</p>
+          <p style="font-weight: 700; margin-top: 15px;">Example:</p>
+          <p style="font-style: italic; color: #555; line-height: 1.6;">Scheherazade uses narrative (storytelling) to persuade the king to change—this is a rhetorical strategy. She appeals to his emotions through compelling characters (pathos) and to his logic through cautionary tales (logos). Her credibility comes from her vast knowledge (ethos).</p>
+        </div>
+        
+        <div class="skill-practice">
+          <h3 style="color: #B06821; margin-bottom: 15px;">✍️ Your Turn:</h3>
+          <p style="margin-bottom: 15px;">Analyze the author's purpose in today's chapter. Identify three specific word choices or techniques that serve this purpose. Explain whether the author primarily uses emotional appeals, logical appeals, or credibility, and how effective it is.</p>
+          <textarea class="skill-response" rows="10" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; line-height: 1.6;" placeholder="Write your response here..."></textarea>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="10">
+      <div class="page-content">
+        <h2 style="color: #9E2C21; margin-bottom: 20px;">📰 Cultural Context</h2>
+        <div class="info-text" style="padding: 20px; background: #f9f9f9; border-radius: 8px; line-height: 1.8;">
+          <p style="margin-bottom: 15px;">Arabian Nights reflects the rich cultural exchange of the medieval Islamic world, where stories from India, Persia, Arabia, and beyond blended together through trade routes and oral tradition.</p>
+          <p style="margin-bottom: 15px;">The frame story structure—stories within stories—mirrors how professional storytellers in coffeehouses would spin tales over many nights, stopping at cliffhangers to ensure audiences returned.</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="lesson-page" data-page="11">
+      <div class="page-content">
+        <h2 style="color: #B06821; margin-bottom: 20px;">✏️ Reflection</h2>
+        <p style="margin-bottom: 20px; line-height: 1.6;"><strong>Prompt:</strong> How does today's chapter connect to the overall theme of "Who You Want to Be vs. Who You Actually Are"? What does this chapter reveal about identity, authenticity, or the difference between who someone appears to be and who they truly are?</p>
+        <textarea class="journal-entry" rows="12" style="width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1em; line-height: 1.6;" placeholder="Write your reflection here..."></textarea>
+        <button onclick="window.saveJournal(19)" style="margin-top: 20px; padding: 15px 30px; background: #305853; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer;">Save Entry →</button>
+      </div>
+    </div>
+  
+    </div>
+    
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="previousPage()">← Previous</button>
+      <span class="page-indicator" id="pageIndicator">Page 1 of 11</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.lesson-page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.lesson-page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('pageIndicator').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+    function previousPage() { if (currentPage > 1) showPage(currentPage - 1); }
+    
+    window.saveJournal = function(day) {
+      alert('Journal entry saved! ✅');
+      // In production, save to Firebase
+    };
+    
+    showPage(1);
+  </script>
+</body>
+</html>
