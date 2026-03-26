@@ -156,6 +156,54 @@
       margin: 20px 0;
       border-left: 4px solid #B06821;
     }
+    
+    .vocab-card {
+      padding: 15px;
+      margin-bottom: 10px;
+      background: white;
+      border: 3px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    .vocab-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .vocab-card.selected {
+      border-color: #305853;
+      background: #e6f4f1;
+      transform: scale(1.02);
+    }
+    
+    .vocab-card.matched {
+      border-color: #4CAF50;
+      background: #e8f5e9;
+      opacity: 0.6;
+      cursor: not-allowed;
+      animation: matchPulse 0.5s;
+    }
+    
+    .vocab-card.wrong {
+      border-color: #f44336;
+      background: #ffebee;
+      animation: shake 0.5s;
+    }
+    
+    @keyframes matchPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
   </style>
 </head>
 <body>
@@ -201,66 +249,92 @@
       <p style="margin-top: 30px;"><strong>Remember:</strong> Take your time and do your best work!</p>
     </div>
     
-    <!-- PAGE 3: VOCABULARY -->
+    <!-- PAGE 3: VOCABULARY GAME -->
     <div class="page" data-page="3">
-      <h2>📖 Vocabulary Review</h2>
-      <p>Match each word with its definition by writing your answer in the box.</p>
+      <h2>🎮 Vocabulary Matching Game</h2>
+      <p>Click a word, then click its definition to make a match!</p>
       
-      
-      <div class="vocab-item">
-        <h3>1. nature</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: what someone is...</em></p>
+      <div class="info-box" style="margin-bottom: 20px;">
+        <p><strong>Matches: <span id="matchCount">0</span> / 8</strong></p>
+        <p id="gameMessage" style="margin-top: 10px; font-weight: bold; color: #305853;"></p>
       </div>
       
-      <div class="vocab-item">
-        <h3>2. escape</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: to get away...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>3. eyesight</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: the ability to...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>4. safety</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: being safe from...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>5. traveler</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: a person who...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>6. village</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: a small town...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>7. spare</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: to give something...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>8. pretend</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: to act like...</em></p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Words</h3>
+          <div id="wordColumn">
+            
+            <div class="vocab-card word-card" data-id="0" data-word="nature" onclick="selectWord(0)">
+              nature
+            </div>
+            
+            <div class="vocab-card word-card" data-id="1" data-word="escape" onclick="selectWord(1)">
+              escape
+            </div>
+            
+            <div class="vocab-card word-card" data-id="2" data-word="eyesight" onclick="selectWord(2)">
+              eyesight
+            </div>
+            
+            <div class="vocab-card word-card" data-id="3" data-word="safety" onclick="selectWord(3)">
+              safety
+            </div>
+            
+            <div class="vocab-card word-card" data-id="4" data-word="traveler" onclick="selectWord(4)">
+              traveler
+            </div>
+            
+            <div class="vocab-card word-card" data-id="5" data-word="village" onclick="selectWord(5)">
+              village
+            </div>
+            
+            <div class="vocab-card word-card" data-id="6" data-word="spare" onclick="selectWord(6)">
+              spare
+            </div>
+            
+            <div class="vocab-card word-card" data-id="7" data-word="pretend" onclick="selectWord(7)">
+              pretend
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Definitions</h3>
+          <div id="defColumn">
+            
+            <div class="vocab-card def-card" data-id="7" data-definition="to act like something that isn't true" onclick="selectDefinition(7)">
+              to act like something that isn't true
+            </div>
+            
+            <div class="vocab-card def-card" data-id="2" data-definition="the ability to see" onclick="selectDefinition(2)">
+              the ability to see
+            </div>
+            
+            <div class="vocab-card def-card" data-id="6" data-definition="to give something you don't really need" onclick="selectDefinition(6)">
+              to give something you don't really need
+            </div>
+            
+            <div class="vocab-card def-card" data-id="1" data-definition="to get away from a dangerous place" onclick="selectDefinition(1)">
+              to get away from a dangerous place
+            </div>
+            
+            <div class="vocab-card def-card" data-id="3" data-definition="being safe from danger" onclick="selectDefinition(3)">
+              being safe from danger
+            </div>
+            
+            <div class="vocab-card def-card" data-id="4" data-definition="a person who goes from place to place" onclick="selectDefinition(4)">
+              a person who goes from place to place
+            </div>
+            
+            <div class="vocab-card def-card" data-id="0" data-definition="what someone is really like inside" onclick="selectDefinition(0)">
+              what someone is really like inside
+            </div>
+            
+            <div class="vocab-card def-card" data-id="5" data-definition="a small town with a few houses" onclick="selectDefinition(5)">
+              a small town with a few houses
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -380,6 +454,92 @@
       if (e.key === 'ArrowRight') nextPage();
       if (e.key === 'ArrowLeft') prevPage();
     });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let matches = 0;
+    const totalMatches = 8;
+    
+    function selectWord(id) {
+      const card = document.querySelector(`.word-card[data-id="${id}"]`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous word
+      document.querySelectorAll('.word-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedWord = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedDef !== null) {
+        checkMatch();
+      }
+    }
+    
+    function selectDefinition(id) {
+      const card = document.querySelector(`.def-card[data-id="${id}"]`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous definition
+      document.querySelectorAll('.def-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedDef = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedWord !== null) {
+        checkMatch();
+      }
+    }
+    
+    function checkMatch() {
+      if (selectedWord === selectedDef) {
+        // Correct match!
+        const wordCard = document.querySelector(`.word-card[data-id="${selectedWord}"]`);
+        const defCard = document.querySelector(`.def-card[data-id="${selectedDef}"]`);
+        
+        wordCard.classList.remove('selected');
+        wordCard.classList.add('matched');
+        defCard.classList.remove('selected');
+        defCard.classList.add('matched');
+        
+        matches++;
+        document.getElementById('matchCount').textContent = matches;
+        
+        if (matches === totalMatches) {
+          document.getElementById('gameMessage').innerHTML = '🎉 Perfect! You matched all the words!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+        } else {
+          document.getElementById('gameMessage').innerHTML = '✅ Great match!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+          setTimeout(() => {
+            document.getElementById('gameMessage').innerHTML = '';
+          }, 2000);
+        }
+        
+        selectedWord = null;
+        selectedDef = null;
+      } else {
+        // Wrong match
+        const wordCard = document.querySelector(`.word-card[data-id="${selectedWord}"]`);
+        const defCard = document.querySelector(`.def-card[data-id="${selectedDef}"]`);
+        
+        wordCard.classList.add('wrong');
+        defCard.classList.add('wrong');
+        
+        document.getElementById('gameMessage').innerHTML = '❌ Not quite - try again!';
+        document.getElementById('gameMessage').style.color = '#f44336';
+        
+        setTimeout(() => {
+          wordCard.classList.remove('selected', 'wrong');
+          defCard.classList.remove('selected', 'wrong');
+          document.getElementById('gameMessage').innerHTML = '';
+          selectedWord = null;
+          selectedDef = null;
+        }, 1000);
+      }
+    }
     
     showPage(1);
   </script>

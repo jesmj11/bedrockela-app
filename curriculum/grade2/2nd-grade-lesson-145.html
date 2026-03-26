@@ -156,6 +156,54 @@
       margin: 20px 0;
       border-left: 4px solid #B06821;
     }
+    
+    .vocab-card {
+      padding: 15px;
+      margin-bottom: 10px;
+      background: white;
+      border: 3px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    .vocab-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .vocab-card.selected {
+      border-color: #305853;
+      background: #e6f4f1;
+      transform: scale(1.02);
+    }
+    
+    .vocab-card.matched {
+      border-color: #4CAF50;
+      background: #e8f5e9;
+      opacity: 0.6;
+      cursor: not-allowed;
+      animation: matchPulse 0.5s;
+    }
+    
+    .vocab-card.wrong {
+      border-color: #f44336;
+      background: #ffebee;
+      animation: shake 0.5s;
+    }
+    
+    @keyframes matchPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
   </style>
 </head>
 <body>
@@ -201,66 +249,92 @@
       <p style="margin-top: 30px;"><strong>Remember:</strong> Take your time and do your best work!</p>
     </div>
     
-    <!-- PAGE 3: VOCABULARY -->
+    <!-- PAGE 3: VOCABULARY GAME -->
     <div class="page" data-page="3">
-      <h2>📖 Vocabulary Review</h2>
-      <p>Match each word with its definition by writing your answer in the box.</p>
+      <h2>🎮 Vocabulary Matching Game</h2>
+      <p>Click a word, then click its definition to make a match!</p>
       
-      
-      <div class="vocab-item">
-        <h3>1. disheveled</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: messy and untidy;...</em></p>
+      <div class="info-box" style="margin-bottom: 20px;">
+        <p><strong>Matches: <span id="matchCount">0</span> / 8</strong></p>
+        <p id="gameMessage" style="margin-top: 10px; font-weight: bold; color: #305853;"></p>
       </div>
       
-      <div class="vocab-item">
-        <h3>2. distinguished</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: having an elegant...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>3. sympathetic</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: understanding and caring...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>4. parading</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: walking around proudly...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>5. troublesome</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: causing problems or...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>6. distressed</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: upset and worried;...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>7. peculiar</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: strange or unusual;...</em></p>
-      </div>
-      
-      <div class="vocab-item">
-        <h3>8. overwhelming</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: very strong or...</em></p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Words</h3>
+          <div id="wordColumn">
+            
+            <div class="vocab-card word-card" data-id="0" data-word="disheveled" onclick="selectWord(0)">
+              disheveled
+            </div>
+            
+            <div class="vocab-card word-card" data-id="1" data-word="distinguished" onclick="selectWord(1)">
+              distinguished
+            </div>
+            
+            <div class="vocab-card word-card" data-id="2" data-word="sympathetic" onclick="selectWord(2)">
+              sympathetic
+            </div>
+            
+            <div class="vocab-card word-card" data-id="3" data-word="parading" onclick="selectWord(3)">
+              parading
+            </div>
+            
+            <div class="vocab-card word-card" data-id="4" data-word="troublesome" onclick="selectWord(4)">
+              troublesome
+            </div>
+            
+            <div class="vocab-card word-card" data-id="5" data-word="distressed" onclick="selectWord(5)">
+              distressed
+            </div>
+            
+            <div class="vocab-card word-card" data-id="6" data-word="peculiar" onclick="selectWord(6)">
+              peculiar
+            </div>
+            
+            <div class="vocab-card word-card" data-id="7" data-word="overwhelming" onclick="selectWord(7)">
+              overwhelming
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Definitions</h3>
+          <div id="defColumn">
+            
+            <div class="vocab-card def-card" data-id="1" data-definition="having an elegant and important appearance" onclick="selectDefinition(1)">
+              having an elegant and important appearance
+            </div>
+            
+            <div class="vocab-card def-card" data-id="0" data-definition="messy and untidy; not neat in appearance" onclick="selectDefinition(0)">
+              messy and untidy; not neat in appearance
+            </div>
+            
+            <div class="vocab-card def-card" data-id="4" data-definition="causing problems or difficulties; bothersome" onclick="selectDefinition(4)">
+              causing problems or difficulties; bothersome
+            </div>
+            
+            <div class="vocab-card def-card" data-id="7" data-definition="very strong or powerful; hard to resist" onclick="selectDefinition(7)">
+              very strong or powerful; hard to resist
+            </div>
+            
+            <div class="vocab-card def-card" data-id="6" data-definition="strange or unusual; odd" onclick="selectDefinition(6)">
+              strange or unusual; odd
+            </div>
+            
+            <div class="vocab-card def-card" data-id="5" data-definition="upset and worried; feeling troubled" onclick="selectDefinition(5)">
+              upset and worried; feeling troubled
+            </div>
+            
+            <div class="vocab-card def-card" data-id="2" data-definition="understanding and caring about someone's problems" onclick="selectDefinition(2)">
+              understanding and caring about someone's problems
+            </div>
+            
+            <div class="vocab-card def-card" data-id="3" data-definition="walking around proudly to show off" onclick="selectDefinition(3)">
+              walking around proudly to show off
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -380,6 +454,92 @@
       if (e.key === 'ArrowRight') nextPage();
       if (e.key === 'ArrowLeft') prevPage();
     });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let matches = 0;
+    const totalMatches = 8;
+    
+    function selectWord(id) {
+      const card = document.querySelector(`.word-card[data-id="${id}"]`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous word
+      document.querySelectorAll('.word-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedWord = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedDef !== null) {
+        checkMatch();
+      }
+    }
+    
+    function selectDefinition(id) {
+      const card = document.querySelector(`.def-card[data-id="${id}"]`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous definition
+      document.querySelectorAll('.def-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedDef = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedWord !== null) {
+        checkMatch();
+      }
+    }
+    
+    function checkMatch() {
+      if (selectedWord === selectedDef) {
+        // Correct match!
+        const wordCard = document.querySelector(`.word-card[data-id="${selectedWord}"]`);
+        const defCard = document.querySelector(`.def-card[data-id="${selectedDef}"]`);
+        
+        wordCard.classList.remove('selected');
+        wordCard.classList.add('matched');
+        defCard.classList.remove('selected');
+        defCard.classList.add('matched');
+        
+        matches++;
+        document.getElementById('matchCount').textContent = matches;
+        
+        if (matches === totalMatches) {
+          document.getElementById('gameMessage').innerHTML = '🎉 Perfect! You matched all the words!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+        } else {
+          document.getElementById('gameMessage').innerHTML = '✅ Great match!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+          setTimeout(() => {
+            document.getElementById('gameMessage').innerHTML = '';
+          }, 2000);
+        }
+        
+        selectedWord = null;
+        selectedDef = null;
+      } else {
+        // Wrong match
+        const wordCard = document.querySelector(`.word-card[data-id="${selectedWord}"]`);
+        const defCard = document.querySelector(`.def-card[data-id="${selectedDef}"]`);
+        
+        wordCard.classList.add('wrong');
+        defCard.classList.add('wrong');
+        
+        document.getElementById('gameMessage').innerHTML = '❌ Not quite - try again!';
+        document.getElementById('gameMessage').style.color = '#f44336';
+        
+        setTimeout(() => {
+          wordCard.classList.remove('selected', 'wrong');
+          defCard.classList.remove('selected', 'wrong');
+          document.getElementById('gameMessage').innerHTML = '';
+          selectedWord = null;
+          selectedDef = null;
+        }, 1000);
+      }
+    }
     
     showPage(1);
   </script>

@@ -20,6 +20,13 @@ function generateAssessment({
     }
   });
   
+  // Shuffle definitions for the game (keep words in order)
+  const shuffledIndices = Array.from({length: Math.min(allVocab.length, 8)}, (_, i) => i);
+  for (let i = shuffledIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+  }
+  
   // Get comprehension questions from the week
   const weekSummary = weekLessons.map(l => l.title).join(', ');
   
@@ -181,6 +188,54 @@ function generateAssessment({
       margin: 20px 0;
       border-left: 4px solid #B06821;
     }
+    
+    .vocab-card {
+      padding: 15px;
+      margin-bottom: 10px;
+      background: white;
+      border: 3px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    .vocab-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .vocab-card.selected {
+      border-color: #305853;
+      background: #e6f4f1;
+      transform: scale(1.02);
+    }
+    
+    .vocab-card.matched {
+      border-color: #4CAF50;
+      background: #e8f5e9;
+      opacity: 0.6;
+      cursor: not-allowed;
+      animation: matchPulse 0.5s;
+    }
+    
+    .vocab-card.wrong {
+      border-color: #f44336;
+      background: #ffebee;
+      animation: shake 0.5s;
+    }
+    
+    @keyframes matchPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
   </style>
 </head>
 <body>
@@ -226,18 +281,40 @@ function generateAssessment({
       <p style="margin-top: 30px;"><strong>Remember:</strong> Take your time and do your best work!</p>
     </div>
     
-    <!-- PAGE 3: VOCABULARY -->
+    <!-- PAGE 3: VOCABULARY GAME -->
     <div class="page" data-page="3">
-      <h2>📖 Vocabulary Review</h2>
-      <p>Match each word with its definition by writing your answer in the box.</p>
+      <h2>🎮 Vocabulary Matching Game</h2>
+      <p>Click a word, then click its definition to make a match!</p>
       
-      ${allVocab.slice(0, 8).map((v, i) => `
-      <div class="vocab-item">
-        <h3>${i + 1}. ${v.word}</h3>
-        <p><strong>Write the definition you remember:</strong></p>
-        <input type="text" placeholder="What does this word mean?">
-        <p style="margin-top: 10px; font-size: 0.9rem; color: #666;"><em>Hint: ${v.definition.split(' ').slice(0, 3).join(' ')}...</em></p>
-      </div>`).join('\n      ')}
+      <div class="info-box" style="margin-bottom: 20px;">
+        <p><strong>Matches: <span id="matchCount">0</span> / ${Math.min(allVocab.length, 8)}</strong></p>
+        <p id="gameMessage" style="margin-top: 10px; font-weight: bold; color: #305853;"></p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Words</h3>
+          <div id="wordColumn">
+            ${allVocab.slice(0, 8).map((v, i) => `
+            <div class="vocab-card word-card" data-id="${i}" data-word="${v.word}" onclick="selectWord(${i})">
+              ${v.word}
+            </div>`).join('\n            ')}
+          </div>
+        </div>
+        
+        <div>
+          <h3 style="text-align: center; margin-bottom: 15px;">Definitions</h3>
+          <div id="defColumn">
+            ${shuffledIndices.map(originalIndex => {
+              const v = allVocab[originalIndex];
+              return `
+            <div class="vocab-card def-card" data-id="${originalIndex}" data-definition="${v.definition.replace(/"/g, '&quot;')}" onclick="selectDefinition(${originalIndex})">
+              ${v.definition}
+            </div>`;
+            }).join('\n            ')}
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- PAGE 4: COMPREHENSION -->
@@ -359,6 +436,92 @@ function generateAssessment({
       if (e.key === 'ArrowRight') nextPage();
       if (e.key === 'ArrowLeft') prevPage();
     });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let matches = 0;
+    const totalMatches = ${Math.min(allVocab.length, 8)};
+    
+    function selectWord(id) {
+      const card = document.querySelector(\`.word-card[data-id="\${id}"]\`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous word
+      document.querySelectorAll('.word-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedWord = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedDef !== null) {
+        checkMatch();
+      }
+    }
+    
+    function selectDefinition(id) {
+      const card = document.querySelector(\`.def-card[data-id="\${id}"]\`);
+      if (card.classList.contains('matched')) return;
+      
+      // Deselect previous definition
+      document.querySelectorAll('.def-card').forEach(c => c.classList.remove('selected'));
+      
+      selectedDef = id;
+      card.classList.add('selected');
+      
+      // Check if we have both selections
+      if (selectedWord !== null) {
+        checkMatch();
+      }
+    }
+    
+    function checkMatch() {
+      if (selectedWord === selectedDef) {
+        // Correct match!
+        const wordCard = document.querySelector(\`.word-card[data-id="\${selectedWord}"]\`);
+        const defCard = document.querySelector(\`.def-card[data-id="\${selectedDef}"]\`);
+        
+        wordCard.classList.remove('selected');
+        wordCard.classList.add('matched');
+        defCard.classList.remove('selected');
+        defCard.classList.add('matched');
+        
+        matches++;
+        document.getElementById('matchCount').textContent = matches;
+        
+        if (matches === totalMatches) {
+          document.getElementById('gameMessage').innerHTML = '🎉 Perfect! You matched all the words!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+        } else {
+          document.getElementById('gameMessage').innerHTML = '✅ Great match!';
+          document.getElementById('gameMessage').style.color = '#4CAF50';
+          setTimeout(() => {
+            document.getElementById('gameMessage').innerHTML = '';
+          }, 2000);
+        }
+        
+        selectedWord = null;
+        selectedDef = null;
+      } else {
+        // Wrong match
+        const wordCard = document.querySelector(\`.word-card[data-id="\${selectedWord}"]\`);
+        const defCard = document.querySelector(\`.def-card[data-id="\${selectedDef}"]\`);
+        
+        wordCard.classList.add('wrong');
+        defCard.classList.add('wrong');
+        
+        document.getElementById('gameMessage').innerHTML = '❌ Not quite - try again!';
+        document.getElementById('gameMessage').style.color = '#f44336';
+        
+        setTimeout(() => {
+          wordCard.classList.remove('selected', 'wrong');
+          defCard.classList.remove('selected', 'wrong');
+          document.getElementById('gameMessage').innerHTML = '';
+          selectedWord = null;
+          selectedDef = null;
+        }, 1000);
+      }
+    }
     
     showPage(1);
   </script>
