@@ -78,7 +78,35 @@ books.forEach(book => {
       const isAssessment = relativeDay % 5 === 0;
       
       if (isAssessment) {
-        console.log(`  📝 Day ${dayCounter} - Assessment (skipping)`);
+        console.log(`  📝 Day ${dayCounter} - Assessment (building placeholder)`);
+        
+        // Build simple assessment placeholder
+        const assessmentHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day ${dayCounter} Assessment - BedrockELA</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; }
+    h1 { color: #305853; }
+    p { line-height: 1.8; }
+    .home-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #305853; color: white; text-decoration: none; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Day ${dayCounter} - Assessment</h1>
+    <p>Assessment content coming soon.</p>
+    <a href="../student-dashboard.html" class="home-btn">← Back to Dashboard</a>
+  </div>
+</body>
+</html>`;
+        
+        const filename = `curriculum/grade2/2nd-grade-lesson-${dayCounter.toString().padStart(3, '0')}.html`;
+        fs.writeFileSync(filename, assessmentHTML);
+        
         dayCounter++;
         return;
       }
