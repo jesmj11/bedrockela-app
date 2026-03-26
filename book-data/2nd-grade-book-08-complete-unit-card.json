@@ -1,0 +1,377 @@
+{
+  "unitInfo": {
+    "book": "The Crow and the Pitcher",
+    "author": "Traditional",
+    "grade": 2
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "A Thirsty Traveler",
+      "text": "On a blazing hot summer day when the sun beat down mercilessly from a cloudless sky, a clever black crow was flying across the countryside in search of water to quench his burning thirst. The heat had lasted for many weeks, turning streams into dry beds of cracked mud and causing even the deepest wells to run dangerously low. Every bird and animal in the region was struggling to find enough water to survive the terrible drought.\n\nThe crow had already flown for miles without finding a single drop of water. His throat felt like sandpaper, and his tongue was so dry it stuck to the roof of his mouth. The usual places where he would stop to drink had all dried up completely. Ponds that once reflected the sky now showed only baked earth covered with curling leaves and withered grass.\n\nAs the crow flew over a small village, his sharp eyes spotted something that made his heart leap with hope. Below him, sitting in the shade of an old oak tree, was a tall clay pitcher that appeared to contain water. The sight filled him with such joy that he forgot his exhaustion and swooped down eagerly, landing with a soft thud beside the precious container.\n\nThe crow peered inside the pitcher with growing excitement, and sure enough, there was water at the bottom! The liquid gleamed like a mirror in the dim light, promising relief from his desperate thirst. But as he looked more carefully, his excitement began to turn to dismay. The water level was very low, sitting far below the narrow neck of the pitcher, completely out of reach of his beak.",
+      "vocabulary": [
+        {
+          "word": "mercilessly",
+          "definition": "without pity or compassion; harshly",
+          "sentence": "\"mercilessly\" is used in this chapter."
+        },
+        {
+          "word": "quench",
+          "definition": "to satisfy thirst by drinking",
+          "sentence": "\"quench\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What was the crow searching for on the hot summer day?",
+          "options": [
+            "Food to eat",
+            "Water to quench his thirst",
+            "A place to build a nest"
+          ]
+        },
+        {
+          "question": "What problem did the crow discover with the pitcher?",
+          "options": [
+            "It was completely empty",
+            "The water was too low for his beak to reach",
+            "It was too heavy to move"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 1,
+        "topic": "A Thirsty Traveler",
+        "title": "Glaciers",
+        "content": "A glacier is a massive sheet of ice that forms when snow accumulates for many years without completely melting. As more snow piles up, the weight compresses the lower layers into dense ice. Over thousands of years, these ice sheets can become hundreds of feet thick and begin to move slowly downhill due to gravity, like very slow rivers of ice.\nGlaciers are incredibly powerful forces that shape the landscape around them. As they move, they carve deep valleys, create lakes, and transport huge boulders for miles. Today, most of the world's glaciers are found in places like Antarctica, Greenland, and high mountain ranges. Scientists study glaciers carefully because they contain important information about Earth's climate history and are sensitive indicators of climate change.\n",
+        "questions": [
+          {
+            "question": "How do glaciers form?",
+            "options": [
+              "snow accumulates for many years and gets compressed into ice",
+              "rivers freeze completely",
+              "rain turns into ice"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "How do glaciers change the landscape?",
+            "options": [
+              "they carve valleys, create lakes, and move boulders",
+              "they make the ground flat",
+              "they only melt and disappear"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "day": 1,
+        "prompt": "Write about a time like in The Crow and the Pitcher."
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 2,
+      "title": "The Impossible Challenge",
+      "text": "The crow stared at the water with growing frustration. So close, yet so impossibly far away! He stretched his neck as far as it would go, extending his beak toward the precious liquid, but no matter how hard he tried, the tip of his beak remained several inches above the water's surface. The narrow opening of the pitcher made it impossible for him to fit more than his head inside.\n\nDesperate with thirst, the crow tried to tip the pitcher over so the water would spill out where he could reach it. He pushed against the clay vessel with his strong claws and beat his wings against its sides, but the pitcher was too heavy and too well-balanced to budge. It sat firmly rooted in the earth, as immovable as the oak tree that shaded it.\n\nThe crow hopped around the pitcher in circles, examining it from every angle, looking for any crack or opening that might help him reach the water. But the clay walls were thick and solid, without a single flaw that he could exploit. The situation seemed hopeless, and for a moment, the crow felt like giving up entirely.\n\nBut the crow was known throughout the forest for his intelligence and problem-solving abilities. Other animals often came to him for advice when they faced difficult situations, and he had never failed to find a solution when he put his mind to it. Surely there had to be some way to reach that water! He just needed to think more carefully and creatively about the challenge before him.",
+      "vocabulary": [
+        {
+          "word": "immovable",
+          "definition": "impossible to move or change",
+          "sentence": "\"immovable\" is used in this chapter."
+        },
+        {
+          "word": "exploit",
+          "definition": "to make use of a situation or weakness",
+          "sentence": "\"exploit\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the crow try to do to reach the water?",
+          "options": [
+            "He tried to break the pitcher",
+            "He tried to stretch his neck and tip the pitcher over",
+            "He tried to call for help"
+          ]
+        },
+        {
+          "question": "What was the crow known for throughout the forest?",
+          "options": [
+            "His beautiful singing voice",
+            "His intelligence and problem-solving abilities",
+            "His ability to fly very fast"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 2,
+        "topic": "The Impossible Challenge",
+        "title": "Engineers",
+        "content": "Engineers are problem-solvers who design and build things that make our lives better and safer. There are many different types of engineers: civil engineers design roads and bridges, electrical engineers work with power systems and electronics, mechanical engineers create machines and engines, and aerospace engineers develop airplanes and spacecraft. All engineers use math, science, and creativity to solve complex challenges.\nTo become an engineer, a person must study mathematics and science extensively in college. Engineers must think carefully about safety, cost, and how their designs will affect people and the environment. They often work in teams, testing their ideas multiple times before building the final product. From the smartphones we use to the buildings we live in, engineers have helped create almost everything in our modern world.\n",
+        "questions": [
+          {
+            "question": "What do all types of engineers have in common?",
+            "options": [
+              "they use math, science, and creativity to solve problems",
+              "they only work with computers",
+              "they only build bridges"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "What must engineers consider when designing?",
+            "options": [
+              "safety, cost, and environmental impact",
+              "only how much money they can make",
+              "just what looks pretty"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 2,
+        "prompt": "What do you think will happen next?"
+      }
+    },
+    {
+      "number": 3,
+      "title": "A Moment of Inspiration",
+      "text": "The crow sat quietly beside the pitcher, thinking as hard as he had ever thought in his life. He studied the problem from every angle, trying to imagine different approaches that might work where brute force had failed. The water was definitely there, tantalizingly close, but the narrow neck of the pitcher made it completely inaccessible to his beak.\n\nAs he pondered the situation, the crow's keen eyes noticed something scattered around the base of the oak tree. Small stones and pebbles lay everywhere, dropped by other animals or washed there by long-ago rains. Most birds would have ignored these ordinary rocks completely, but the crow's sharp mind began to see possibilities in even the most common objects.\n\nSuddenly, like a flash of lightning on a dark night, an idea struck the clever crow. What if he couldn't reach down to the water, but could somehow make the water come up to him? The stones around the tree weren't just random debris - they could be tools! If he dropped them into the pitcher, they would take up space at the bottom and force the water to rise higher.\n\nThe more the crow thought about this plan, the more excited he became. It was simple, but it just might work! He wouldn't need to move the heavy pitcher or somehow stretch his neck impossibly long. Instead, he would use the stones to bring the water up to where he could reach it. It would take patience and hard work, but it was definitely possible.",
+      "vocabulary": [
+        {
+          "word": "tantalizingly",
+          "definition": "in a way that is tempting but out of reach",
+          "sentence": "\"tantalizingly\" is used in this chapter."
+        },
+        {
+          "word": "debris",
+          "definition": "scattered pieces of waste or remains",
+          "sentence": "\"debris\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the crow notice around the base of the oak tree?",
+          "options": [
+            "Other birds and animals",
+            "Small stones and pebbles scattered everywhere",
+            "Food and water"
+          ]
+        },
+        {
+          "question": "What was the crow's brilliant idea?",
+          "options": [
+            "To find a different pitcher",
+            "To drop stones in the pitcher to make the water rise",
+            "To break the pitcher with rocks"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 3,
+        "topic": "A Moment of Inspiration",
+        "title": "Coral Reefs",
+        "content": "Coral reefs are underwater ecosystems built by tiny marine animals called coral polyps. These small creatures create hard, colorful skeletons from calcium carbonate, and over thousands of years, millions of these skeletons build up to form large reef structures. Coral reefs are found in warm, shallow ocean waters and are often called \"rainforests of the sea\" because they support incredible biodiversity.\nThousands of different species call coral reefs home, including colorful fish, sea turtles, sharks, and countless invertebrates. The reefs provide food, shelter, and breeding grounds for these animals. Coral reefs also protect coastlines from storms and waves, and provide food and income for millions of people worldwide. Unfortunately, pollution, warming ocean temperatures, and other human activities are threatening coral reefs around the globe.\n",
+        "questions": [
+          {
+            "question": "What builds coral reefs?",
+            "options": [
+              "tiny marine animals called coral polyps",
+              "large fish",
+              "underwater plants"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "Why are coral reefs important?",
+            "options": [
+              "they support biodiversity and protect coastlines",
+              "they are pretty to look at",
+              "they make the water warmer"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "day": 3,
+        "prompt": "Write about a time like in The Crow and the Pitcher."
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 4,
+      "title": "Hard Work and Patience",
+      "text": "Without wasting another moment, the crow began to put his plan into action. He selected the largest stone he could carry in his beak and flew up to the rim of the pitcher. Carefully balancing on the edge, he opened his beak and let the stone drop into the water below. It landed with a satisfying splash, and the crow was delighted to see that the water level rose just a tiny bit.\n\nOne stone down, but many more to go! The crow hopped down and selected another rock, then another, carrying each one carefully to the pitcher and dropping it in. The work was exhausting, especially under the blazing sun, but each stone brought the water level a little bit higher. Splash, splash, splash - slowly but surely, his plan was working.\n\nAs the crow continued his patient work, other animals began to gather around to watch this unusual activity. A family of rabbits hopped over to see what the commotion was about. A wise old tortoise crawled slowly toward the oak tree, curious about the repeated splashing sounds. Even a busy squirrel paused in his nut-gathering to observe the determined bird's efforts.\n\nSome of the watching animals began to doubt whether the crow's plan would work. \"That's going to take forever,\" whispered one of the rabbits. \"The stones are so small, and there's so much space to fill,\" observed the tortoise. But the crow paid no attention to their skepticism. He knew that persistence and determination could overcome even the most challenging problems.",
+      "vocabulary": [
+        {
+          "word": "persistence",
+          "definition": "continuing to try despite difficulties",
+          "sentence": "\"persistence\" is used in this chapter."
+        },
+        {
+          "word": "skepticism",
+          "definition": "doubt about whether something will work",
+          "sentence": "\"skepticism\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happened each time the crow dropped a stone in the pitcher?",
+          "options": [
+            "Nothing changed",
+            "The water level rose just a tiny bit",
+            "The pitcher cracked"
+          ]
+        },
+        {
+          "question": "How did the crow respond to the other animals' doubts?",
+          "options": [
+            "He gave up and went home",
+            "He paid no attention and continued working",
+            "He argued with them"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 4,
+        "topic": "Hard Work and Patience",
+        "title": "Architects",
+        "content": "Architects are professionals who design buildings and other structures where people live, work, and play. They create detailed plans that show how buildings should look and function, considering factors like safety, beauty, cost, and how the building will be used. Architects must understand engineering principles, local building codes, and environmental concerns when creating their designs.\nBefore any construction begins, architects work closely with their clients to understand their needs and preferences. They create drawings, blueprints, and sometimes even computer models to show what the finished building will look like. Architects also coordinate with engineers, contractors, and other specialists throughout the building process to ensure that their vision becomes reality safely and efficiently.\n",
+        "questions": [
+          {
+            "question": "What factors must architects consider when designing?",
+            "options": [
+              "safety, beauty, cost, and how the building will be used",
+              "only what looks nice",
+              "just the color of the building"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "Who do architects work with during the building process?",
+            "options": [
+              "engineers, contractors, and other specialists",
+              "only their clients",
+              "nobody else\n** Note: This document shows the first 10 of 36 informational texts **\nRemaining 26 texts would continue with topics like:\nEarthquakes • Astronauts • Whales • Meteorologists • Fossils\nEcosystems • Technology • Space • Advanced Science Topics\n\f\nAnswer Key - First 10 Texts"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 4,
+        "prompt": "What do you think will happen next?"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Success at Last",
+      "text": "Stone by stone, pebble by pebble, the crow continued his tireless work. His wings ached from flying back and forth, and his beak was sore from gripping so many rocks, but he refused to give up. Each tiny splash encouraged him to keep going, because he could see that his plan was actually working. The water was definitely rising, even if very slowly.\n\nAs the afternoon wore on and more stones accumulated at the bottom of the pitcher, the water level began to rise more noticeably. What had started as an impossible gap between his beak and the water was now becoming smaller with each stone he added. The watching animals began to murmur with amazement as they realized the crow's ingenious plan was actually going to succeed.\n\nFinally, after what felt like hundreds of trips between the ground and the pitcher, the crow dropped in one last pebble and watched with joy as the water rose to within reach of his beak! The precious liquid was now high enough in the narrow neck that he could finally satisfy his desperate thirst. His brilliant idea and hard work had paid off at last.\n\nThe crow dipped his beak into the cool, clear water and drank deeply, savoring every drop. It was the most delicious water he had ever tasted, made even sweeter by the knowledge that he had earned it through his own cleverness and determination. The relief of finally quenching his thirst was matched only by the satisfaction of solving such a challenging problem.",
+      "vocabulary": [
+        {
+          "word": "accumulated",
+          "definition": "collected or gathered over time",
+          "sentence": "\"accumulated\" is used in this chapter."
+        },
+        {
+          "word": "ingenious",
+          "definition": "very clever and creative",
+          "sentence": "\"ingenious\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What happened as more stones accumulated in the pitcher?",
+          "options": [
+            "The pitcher became too heavy",
+            "The water level began to rise more noticeably",
+            "The stones broke the pitcher"
+          ]
+        },
+        {
+          "question": "Why did the water taste so delicious to the crow?",
+          "options": [
+            "Because it was magical water",
+            "Because he had earned it through cleverness and hard work",
+            "Because it came from a special well"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 5,
+        "topic": "Success at Last",
+        "title": "Volcanoes",
+        "content": "1. a) it gets so hot that it melts into magma\n2. b) magma is underground, lava is on the surface\n"
+      },
+      "writingPrompt": {
+        "day": 5,
+        "prompt": "Write about a time like in The Crow and the Pitcher."
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 6,
+      "title": "The Lesson Learned",
+      "text": "As the crow finished drinking and prepared to continue his journey, the animals who had watched his remarkable achievement gathered around to congratulate him. The rabbits apologized for doubting his plan, and the old tortoise nodded with approval. \"That was truly impressive,\" said the squirrel. \"I never would have thought of using stones to raise the water level.\"\n\nThe crow, feeling refreshed and proud but not boastful, smiled at his new friends. \"Sometimes when we can't change a situation directly, we have to find creative ways to work around the problem,\" he explained. \"The pitcher was too heavy to tip and my beak was too short to reach, but I could change what was inside the pitcher instead.\"\n\nThe wise tortoise nodded thoughtfully. \"You've shown us that patience and persistence can overcome obstacles that seem impossible at first,\" he said. \"Many of us would have given up when the first few stones seemed to make so little difference, but you kept working until you achieved your goal.\"\n\nAs the crow flew away, feeling satisfied and grateful for the lesson he had learned, the other animals continued to talk about his remarkable solution. His story spread throughout the forest, inspiring other creatures to think more creatively when they faced difficult challenges. The crow had proven that with determination, patience, and creative thinking, even the most impossible problems can have solutions.",
+      "vocabulary": [
+        {
+          "word": "boastful",
+          "definition": "showing off or bragging about achievements",
+          "sentence": "\"boastful\" is used in this chapter."
+        },
+        {
+          "word": "obstacles",
+          "definition": "things that block progress or make something difficult",
+          "sentence": "\"obstacles\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the crow teach the other animals about problem-solving?",
+          "options": [
+            "That problems are always impossible to solve",
+            "That creative thinking can find ways around obstacles",
+            "That only crows are smart enough to solve problems"
+          ]
+        },
+        {
+          "question": "What lesson did the crow's story teach throughout the forest?",
+          "options": [
+            "That water is always easy to find",
+            "That determination, patience, and creative thinking can solve impossible problems",
+            "That stones are more valuable than water\n\f\nAnswer Key\nChapter 1"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 6,
+        "topic": "The Lesson Learned",
+        "title": "Veterinarians",
+        "content": "1. a) pets, farm animals, and wild animals\n2. b) go to school for many years to learn about animal care\n"
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 6,
+        "prompt": "What do you think will happen next?"
+      }
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 37 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 37: The King of Beasts</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🦁</div>
+        <h1>Lesson 37</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The King of Beasts</div>
+        <div style="font-size: 1rem; color: #999;">Week 8 • The Lion and the Lamb • 2th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The King of Beasts</strong> from <em>The Lion and the Lamb</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read The King of Beasts</li>
+        <li>Learn 2 new words</li>
+        <li>Practice Review</li>
+        <li>Write about the story</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. dominance</h3>
+        <p><strong>Definition:</strong> power and control over others</p>
+        <p><strong>In the story:</strong> <em>""dominance" is used in this chapter."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. formidable</h3>
+        <p><strong>Definition:</strong> inspiring fear through being powerful</p>
+        <p><strong>In the story:</strong> <em>""formidable" is used in this chapter."</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. dominance</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. formidable</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The King of Beasts (Part 1)</h2>
+      <div class="story">
+        <p>In the heart of a great wilderness where tall grasses swayed in the afternoon breeze and acacia trees provided scattered shade, there ruled a magnificent lion whose golden mane caught the sunlight like a crown. All the animals of the savanna knew of his strength and power, from the smallest field mouse to the largest elephant. This lion was proud of his position as king of all the beasts, and he ruled his domain with fierce authority that none dared to question.</p>
+        <p>The lion spent his days patrolling his territory, making sure that every creature understood his dominance and respected his commands. He would roar loudly each morning to announce his presence, and the sound would echo across the plains, reminding all who heard it that he was the undisputed ruler of this wild kingdom. His powerful muscles rippled beneath his tawny coat, and his sharp claws and teeth showed clearly that he was built for hunting and fighting.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The King of Beasts (Part 2)</h2>
+      <div class="story">
+        <p>Other animals would scatter when they heard the lion approaching, hiding behind rocks or in tall grass until the danger passed. The zebras would stop their grazing and bound away on swift legs. The antelope would freeze with fear before leaping to safety. Even the proud elephants would move aside respectfully when the lion prowled through their gathering places, understanding that it was wiser to avoid conflict with such a formidable predator.</p>
+        <p>The lion took great pride in the fear he inspired and the respect he commanded from all the other animals. He believed that his strength made him superior to every other creature, and that his position as the most powerful hunter gave him the right to rule over all the gentler animals who could not defend themselves against his mighty roar and sharp claws. This belief filled him with arrogance and made him feel that he was the most important animal in all the world.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The King of Beasts (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. How did the lion show his authority?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How did other animals react to the lion?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Review</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Practice what we've learned.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Review your work."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Volcanoes</h2>
+      <p>A volcano is a mountain with an opening that connects to deep inside the Earth. Far below the ground, rock gets so hot that it melts into a thick liquid called magma. This magma is lighter than solid rock, so it rises up through cracks in the Earth's crust. When pressure builds up, the magma can shoot out of the volcano's opening in an explosive eruption.
+Once magma reaches the surface, it's called lava, and it flows down the mountainsides like a river of melted rock. Lava is extremely hot - over 2,000 degrees Fahrenheit! Eventually, the lava cools down and hardens into new rock. Some volcanoes erupt often, while others stay quiet for hundreds of years. Scientists study volcanoes carefully to predict eruptions and keep people safe.
+</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write about a time like in The Lion and the Lamb.</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

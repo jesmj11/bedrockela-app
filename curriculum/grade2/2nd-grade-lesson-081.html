@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 81 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 81: A Conversation About Strength</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌳</div>
+        <h1>Lesson 81</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">A Conversation About Strength</div>
+        <div style="font-size: 1rem; color: #999;">Week 17 • The Oak and the Reed • 2th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>A Conversation About Strength</strong> from <em>The Oak and the Reed</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read A Conversation About Strength</li>
+        <li>Learn 2 new words</li>
+        <li>Practice Review</li>
+        <li>Write about the story</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. condescension</h3>
+        <p><strong>Definition:</strong> an attitude of superiority toward someone you consider inferior</p>
+        <p><strong>In the story:</strong> <em>""condescension" is used in this chapter."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. patronizing</h3>
+        <p><strong>Definition:</strong> treating someone as if they are less intelligent or important</p>
+        <p><strong>In the story:</strong> <em>""patronizing" is used in this chapter."</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. condescension</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. patronizing</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 A Conversation About Strength (Part 1)</h2>
+      <div class="story">
+        <p>One peaceful afternoon, when the sun was shining warmly on the valley and a gentle breeze was stirring the leaves, the mighty oak noticed the reed swaying softly beside the riverbank. In a moment of what he considered generous condescension, the oak decided to engage his smaller neighbor in conversation and perhaps share some of his accumulated wisdom about survival and strength.</p>
+        <p>"My poor little friend," the oak addressed the reed in what he believed was a kindly but superior tone, "I cannot help but feel sorry for you and your constant movement. Look at how you bend and sway with every little puff of wind! How exhausting it must be to never stand firm and steady like a proper tree should. You seem so fragile and vulnerable compared to my magnificent stability."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 A Conversation About Strength (Part 2)</h2>
+      <div class="story">
+        <p>The reed listened thoughtfully to the oak's patronizing comments without taking offense, recognizing that the great tree spoke from a place of pride rather than malicious intent. "Thank you for your concern," the reed replied politely, "but I have found that my way of living serves me well. While I may appear weak to you, my flexibility allows me to survive challenges that might prove difficult for someone more rigid."</p>
+        <p>The oak chuckled deeply, his massive trunk creaking with amusement. "Survive challenges? My dear reed, you have obviously never faced a real challenge in your simple life. When truly powerful forces are unleashed by nature, only those with genuine strength and deep roots can withstand them. Your bending and swaying may work for gentle breezes, but they would be useless against the kind of storms that I regularly endure and conquer."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 A Conversation About Strength (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. How did the oak speak to the reed?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. How did the reed respond to the oak's comments?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Review</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Practice what we've learned.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Review your work."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Food Webs</h2>
+      <p>A food web is a complex network that shows how different organisms in an ecosystem depend on each other for food and energy. Unlike a simple food chain that shows a single pathway of energy transfer, food webs reveal the intricate connections between multiple species and demonstrate that most animals have several different food sources and face threats from various predators. These interconnected relationships create a delicate balance that keeps ecosystems healthy and stable.
+Every food web begins with primary producers, usually green plants that create their own food through photosynthesis using energy from the sun. These plants are eaten by primary consumers, which are herbivores like rabbits, deer, or grasshoppers. Secondary consumers are carnivores that eat the herbivores, while tertiary consumers are top predators that eat other carnivores. Decomposers like bacteria and fungi play a crucial role by breaking down dead organisms and returning nutrients to the soil for plants to use again.
+When one species in a food web is removed or its population changes dramatically, the effects ripple throughout the entire ecosystem. For example, if wolves disappear from a forest, deer populations might grow too large and eat too many plants, which could affect insects, birds, and soil quality. This interconnectedness means that protecting biodiversity and maintaining healthy populations of all species is essential for ecosystem stability. Scientists study food webs to understand these relationships and predict how environmental changes might affect different communities of organisms.
+</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>What would you do if you were in this story?</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>

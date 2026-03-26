@@ -1,0 +1,377 @@
+{
+  "unitInfo": {
+    "book": "Stone Soup",
+    "author": "Traditional",
+    "grade": 2
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "A Hungry Traveler",
+      "text": "One cold winter day, a tired traveler came walking down the road. He had been traveling for many days and was very hungry. His stomach was empty and he had no food.\n\nThe traveler saw a small village ahead. Smoke was coming from the chimneys. \"Maybe the people in this village will share some food with me,\" he thought hopefully.\n\nHe knocked on the first door. \"Excuse me,\" he said to the woman who answered. \"I am very hungry. Could you spare a little food for a tired traveler?\"\n\n\"I have no food to give,\" the woman said quickly and shut the door. The traveler was surprised, but he tried the next house. The same thing happened again.",
+      "vocabulary": [
+        {
+          "word": "traveler",
+          "definition": "a person who goes from place to place",
+          "sentence": "\"traveler\" is used in this chapter."
+        },
+        {
+          "word": "village",
+          "definition": "a small town with a few houses",
+          "sentence": "\"village\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "Why was the traveler hungry?",
+          "options": [
+            "He didn't like to eat",
+            "He had no food and had been traveling for days",
+            "He was saving his food for later"
+          ]
+        },
+        {
+          "question": "What did the woman do when the traveler asked for food?",
+          "options": [
+            "She invited him in for dinner",
+            "She said she had no food and shut the door",
+            "She gave him a big meal"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 1,
+        "topic": "Sharing",
+        "title": "Rain",
+        "content": "1. a) the sun heats up water and turns it into water vapor\n2. a) it gives plants water and fills up rivers and lakes\n"
+      },
+      "writingPrompt": {
+        "day": 1,
+        "prompt": "Write about a time like in Stone Soup."
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 2,
+      "title": "No One Will Share",
+      "text": "The traveler went from house to house in the village. At each door, he asked politely for just a little food. But every person said the same thing: \"We have no food to spare.\"\n\nThis seemed strange to the traveler. He could smell delicious food cooking in many of the houses. He could see gardens full of vegetables behind the homes.\n\nThe people in this village were not mean, but they were afraid. They thought that if they shared their food with one person, many more hungry people would come to their village.\n\nSo they decided to pretend they had no food at all. They hid their vegetables and kept their pots of soup out of sight. But the traveler had a clever plan.",
+      "vocabulary": [
+        {
+          "word": "spare",
+          "definition": "to give something you don't really need",
+          "sentence": "\"spare\" is used in this chapter."
+        },
+        {
+          "word": "pretend",
+          "definition": "to act like something that isn't true",
+          "sentence": "\"pretend\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the traveler notice about the village?",
+          "options": [
+            "It was empty with no people",
+            "He could smell food and see gardens",
+            "All the houses were broken down"
+          ]
+        },
+        {
+          "question": "Why wouldn't the villagers share their food?",
+          "options": [
+            "They didn't have any food",
+            "They were afraid more hungry people would come",
+            "They didn't like the traveler"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 2,
+        "topic": "Community",
+        "title": "Police Officers",
+        "content": "1. a) to keep communities safe\n2. a) neighborhoods in cars, on foot, or on bicycles\n"
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 2,
+        "prompt": "What do you think will happen next?"
+      }
+    },
+    {
+      "number": 3,
+      "title": "The Magic Stone",
+      "text": "The clever traveler walked to the center of the village. He found a nice smooth stone on the ground and picked it up. Then he called out in a loud voice.\n\n\"Good people of this village!\" he announced. \"Since you have no food to share, I will make stone soup for everyone! I have a magic stone that makes delicious soup!\"\n\nThe villagers peeked out of their windows and doors. A magic stone? Stone soup? They had never heard of such a thing. This sounded very interesting indeed!\n\nThe traveler asked for a large pot and some water. One curious villager brought a big pot. Another brought water from the well. Everyone watched as he filled the pot and put it over a fire.",
+      "vocabulary": [
+        {
+          "word": "announced",
+          "definition": "said something in a loud, clear voice",
+          "sentence": "\"announced\" is used in this chapter."
+        },
+        {
+          "word": "curious",
+          "definition": "wanting to know more about something",
+          "sentence": "\"curious\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the traveler say his stone could do?",
+          "options": [
+            "Turn into gold",
+            "Make delicious soup",
+            "Grant three wishes"
+          ]
+        },
+        {
+          "question": "How did the villagers feel about the stone soup?",
+          "options": [
+            "They were scared",
+            "They thought it was very interesting",
+            "They didn't care"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 3,
+        "topic": "Making soup",
+        "title": "Firefighters",
+        "content": "Firefighters are brave people who risk their lives to put out fires and help people during emergencies. When there is a fire, firefighters rush to the scene in fire trucks equipped with hoses, ladders, and other special tools. They wear heavy protective gear to keep themselves safe from heat, smoke, and dangerous chemicals. Firefighters work as a team to rescue people and save buildings from being destroyed by fire.\nBesides fighting fires, firefighters respond to many other types of emergencies. They help people who are trapped in car accidents, rescue cats stuck in trees, and assist during natural disasters like floods or earthquakes. Many firefighters also teach fire safety to children and adults, showing them how to prevent fires and what to do if a fire starts. Becoming a firefighter requires special training and physical fitness because the job can be very demanding.\n",
+        "questions": [
+          {
+            "question": "What protective gear do firefighters wear?",
+            "options": [
+              "heavy protective gear to keep safe from heat and smoke",
+              "only a hat",
+              "regular clothes"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "What other emergencies do firefighters help with?",
+            "options": [
+              "only fires",
+              "car accidents, rescues, and natural disasters",
+              "only medical problems"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "day": 3,
+        "prompt": "What would you do if you were in this story?"
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 4,
+      "title": "Adding to the Soup",
+      "text": "The traveler dropped his stone into the pot of boiling water. He stirred it slowly and tasted it with a spoon. \"Mmm,\" he said. \"This stone soup is good, but it would taste even better with just a few carrots.\"\n\n\"I have some carrots!\" said one villager. She ran to her house and came back with an armful of orange carrots. The traveler thanked her and added them to the pot.\n\nAfter a few more minutes, the traveler tasted the soup again. \"This is getting better,\" he said. \"But you know what would make it perfect? Some potatoes and onions.\"\n\n\"I have potatoes!\" called out another villager. \"And I have onions!\" said his neighbor. Soon the pot was bubbling with carrots, potatoes, and onions. The soup smelled wonderful!",
+      "vocabulary": [
+        {
+          "word": "boiling",
+          "definition": "water that is very hot and bubbling",
+          "sentence": "\"boiling\" is used in this chapter."
+        },
+        {
+          "word": "bubbling",
+          "definition": "making bubbles as it cooks",
+          "sentence": "\"bubbling\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What was the first ingredient the traveler asked for?",
+          "options": [
+            "Potatoes",
+            "Carrots",
+            "Onions"
+          ]
+        },
+        {
+          "question": "How did the villagers respond to the traveler's requests?",
+          "options": [
+            "They ignored him",
+            "They eagerly brought ingredients",
+            "They told him to go away"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 4,
+        "topic": "Working together",
+        "title": "Snow",
+        "content": "Snow forms when water vapor in clouds freezes into tiny ice crystals instead of turning into raindrops. This happens when the temperature in the clouds is below freezing. The ice crystals stick together as they fall through the cold air, creating snowflakes. Each snowflake has a unique shape with six sides, and no two snowflakes are exactly alike!\nSnow is important for many reasons. It provides water for plants and animals when it melts in the spring. Many places depend on melted snow for their drinking water and to water crops. Snow also helps keep the ground warm in winter by acting like a blanket over plants and small animals. Some animals, like polar bears and penguins, need snow and ice to survive in their natural habitats.\n",
+        "questions": [
+          {
+            "question": "How does snow form?",
+            "options": [
+              "when water vapor freezes into ice crystals in cold clouds",
+              "when rain gets very cold",
+              "when clouds get too heavy"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "Why is snow important?",
+            "options": [
+              "it's only good for making snowmen",
+              "it provides water when it melts and helps keep the ground warm",
+              "it makes winter look pretty"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 4,
+        "prompt": "Which character do you like best? Why?"
+      }
+    },
+    {
+      "number": 5,
+      "title": "More and More Ingredients",
+      "text": "The delicious smell of the soup brought more villagers to the town square. Everyone wanted to see this amazing stone soup being made. The traveler stirred and tasted again.\n\n\"This soup is very good,\" he said thoughtfully. \"But it would be even more delicious with some cabbage and beans.\" More villagers hurried home to get vegetables.\n\nSoon people were bringing all kinds of good things. Someone brought meat. Another person brought herbs and spices. One woman brought fresh bread to go with the soup.\n\nThe villagers were getting excited. They had not had a community meal like this in a very long time. Everyone was laughing and talking as they waited for the soup to finish cooking.",
+      "vocabulary": [
+        {
+          "word": "thoughtfully",
+          "definition": "thinking carefully about something",
+          "sentence": "\"thoughtfully\" is used in this chapter."
+        },
+        {
+          "word": "community",
+          "definition": "a group of people who live in the same place",
+          "sentence": "\"community\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What brought more villagers to the town square?",
+          "options": [
+            "Loud music",
+            "The delicious smell of the soup",
+            "A big bell ringing"
+          ]
+        },
+        {
+          "question": "How were the villagers feeling as they waited?",
+          "options": [
+            "Sad and worried",
+            "Excited and happy",
+            "Angry and upset"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 5,
+        "topic": "Generosity",
+        "title": "Giraffes",
+        "content": "Giraffes are the tallest animals in the world, with long necks that can be up to 6 feet long! They live in Africa and use their height to eat leaves from tall acacia trees that other animals cannot reach. Giraffes have long, dark tongues that can be 18 inches long, which helps them grab leaves and branches. Their tall height also helps them see predators like lions from far away.\nEven though giraffes are very tall, they are gentle animals that live in groups called herds. Baby giraffes are called calves, and they are already 6 feet tall when they are born! Giraffes have unique spotted patterns on their fur, and each giraffe's spots are different, just like human fingerprints. They can run up to 35 miles per hour when they need to escape from danger.\n",
+        "questions": [
+          {
+            "question": "Why are giraffes so tall?",
+            "options": [
+              "to eat leaves from tall trees that other animals can't reach",
+              "to look scary",
+              "to swim better"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "What are baby giraffes called?",
+            "options": [
+              "cubs",
+              "calves",
+              "kids"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "day": 5,
+        "prompt": "What is the lesson in this story?"
+      },
+      "journalPrompt": {
+        "prompt": "How would you feel if you were in this story? Write about your thoughts."
+      }
+    },
+    {
+      "number": 6,
+      "title": "The Best Soup Ever",
+      "text": "Finally, the stone soup was ready! The traveler lifted out his stone with a spoon and put it safely in his pocket. \"The soup is perfect now,\" he announced to the hungry crowd.\n\nEveryone in the village brought bowls and spoons. They all sat together in the town square and shared the delicious soup. It was the best soup any of them had ever tasted!\n\n\"This stone soup is amazing!\" said the villagers. \"Your magic stone is wonderful!\" But the wise traveler just smiled. He knew the real magic was not in the stone.\n\nThe real magic was in sharing. When people work together and share what they have, they can make something much better than anyone could make alone. And that was the best lesson of all.",
+      "vocabulary": [
+        {
+          "word": "crowd",
+          "definition": "a large group of people",
+          "sentence": "\"crowd\" is used in this chapter."
+        },
+        {
+          "word": "sharing",
+          "definition": "giving some of what you have to others",
+          "sentence": "\"sharing\" is used in this chapter."
+        }
+      ],
+      "comprehension": [
+        {
+          "question": "What did the traveler do with his stone when the soup was ready?",
+          "options": [
+            "He left it in the soup",
+            "He put it safely in his pocket",
+            "He threw it away"
+          ]
+        },
+        {
+          "question": "What was the real magic in the story?",
+          "options": [
+            "The magic stone",
+            "Sharing and working together",
+            "The big cooking pot\n\f\nAnswer Key\nChapter 1"
+          ]
+        }
+      ],
+      "informationalText": {
+        "day": 6,
+        "topic": "Strangers becoming friends",
+        "title": "Construction Workers",
+        "content": "Construction workers are people who build houses, schools, roads, bridges, and other important structures that we use every day. They use many different tools and machines, from simple hammers and saws to huge cranes and bulldozers. Construction workers must be strong and skilled because their job involves heavy lifting, precise measurements, and working with dangerous equipment. They also need to work well as a team since most construction projects require many people working together.\nThere are many different types of construction workers with special skills. Carpenters work with wood to build frames for houses and make furniture. Electricians install wiring so buildings have electricity for lights and appliances. Plumbers put in pipes to bring clean water into buildings and take dirty water away. All construction workers must follow safety rules and wear protective gear like hard hats and safety boots to prevent injuries on job sites.\n",
+        "questions": [
+          {
+            "question": "What do construction workers build?",
+            "options": [
+              "only houses",
+              "houses, schools, roads, bridges, and other structures",
+              "only roads"
+            ],
+            "correct": 1
+          },
+          {
+            "question": "What safety equipment do construction workers wear?",
+            "options": [
+              "hard hats and safety boots",
+              "only gloves",
+              "regular clothes"
+            ],
+            "correct": 1
+          }
+        ]
+      },
+      "writingPrompt": {
+        "prompt": "Write about what happened in this chapter. Use details from the story."
+      },
+      "journalPrompt": {
+        "day": 6,
+        "prompt": "How does this story make you feel?"
+      }
+    }
+  ]
+}

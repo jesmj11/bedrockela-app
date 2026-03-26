@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 79 - BedrockELA</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Body */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    /* Top Navigation Bar */
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .top-nav .home-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    /* Page content */
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+      border-radius: 10px;
+    }
+    
+    /* Content styles */
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; margin-top: 2rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; margin-top: 1.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    /* Form elements */
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Vocab words */
+    .vocab-word {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .vocab-word h3 {
+      margin-top: 0;
+      color: #305853;
+    }
+    
+    /* Story text */
+    .story p {
+      text-indent: 2em;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    
+    /* Info box */
+    .info-box {
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #305853;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- TOP NAVIGATION -->
+  <div class="top-nav">
+    <a href="../student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Lesson 79: The Mighty Oak</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
+  </div>
+  
+  <div class="container">
+    
+    <!-- PAGE 1: TITLE -->
+    <div class="page active" data-page="1">
+      <div style="text-align: center; padding: 60px 30px;">
+        <div style="font-size: 4rem; margin-bottom: 20px;">🌳</div>
+        <h1>Lesson 79</h1>
+        <div style="font-size: 1.25rem; color: #666; margin-bottom: 10px;">The Mighty Oak</div>
+        <div style="font-size: 1rem; color: #999;">Week 16 • The Oak and the Reed • 2th Grade</div>
+      </div>
+    </div>
+    
+    
+    <!-- PAGE 2: WELCOME & OBJECTIVES -->
+    <div class="page" data-page="2">
+      <h2>Welcome to this lesson!</h2>
+      <p>Today we're reading <strong>The Mighty Oak</strong> from <em>The Oak and the Reed</em>.</p>
+      
+      <h3>📚 Today's Objectives:</h3>
+      <ul>
+        <li>Read The Mighty Oak</li>
+        <li>Learn 2 new words</li>
+        <li>Practice Review</li>
+        <li>Write about the story</li>
+      </ul>
+    </div>
+    
+    <!-- PAGE 3: VOCABULARY -->
+    <div class="page" data-page="3">
+      <h2>📖 Vocabulary</h2>
+      <p>These words appear in today's chapter. Look for them as you read!</p>
+      
+      <div class="vocab-word">
+        <h3>1. encircle</h3>
+        <p><strong>Definition:</strong> to go completely around something</p>
+        <p><strong>In the story:</strong> <em>""encircle" is used in this chapter."</em></p>
+      </div>
+      
+      <div class="vocab-word">
+        <h3>2. canopy</h3>
+        <p><strong>Definition:</strong> the upper layer of leaves and branches that covers like a roof</p>
+        <p><strong>In the story:</strong> <em>""canopy" is used in this chapter."</em></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 4: VOCABULARY PRACTICE -->
+    <div class="page" data-page="4">
+      <h2>🎯 Vocabulary Practice</h2>
+      <p>Write the definitions in your own words:</p>
+      
+      <h3>1. encircle</h3>
+      <input type="text" placeholder="What does this word mean?">
+      
+      <h3>2. canopy</h3>
+      <input type="text" placeholder="What does this word mean?">
+    </div>
+    
+    <!-- PAGE 5: STORY PART 1 -->
+    <div class="page" data-page="5">
+      <h2>📜 The Mighty Oak (Part 1)</h2>
+      <div class="story">
+        <p>In a peaceful valley beside a gently flowing river, there stood the most magnificent oak tree that anyone in the surrounding countryside had ever seen. This ancient giant had been growing in the same spot for over two hundred years, its massive trunk requiring several people holding hands to encircle it completely, and its enormous branches spreading so wide they provided shade for an entire meadow.</p>
+        <p>The oak tree was tremendously proud of his impressive size and remarkable strength, and he had good reason to feel confident about his abilities. Through countless seasons of harsh weather, including fierce thunderstorms, blazing summer heat, and bitter winter cold, he had stood unmovable and unbroken, his deep roots anchoring him firmly to the earth while his sturdy branches reached majestically toward the sky.</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 6: STORY PART 2 -->
+    <div class="page" data-page="6">
+      <h2>📜 The Mighty Oak (Part 2)</h2>
+      <div class="story">
+        <p>All the other plants and trees in the valley looked up to the mighty oak with tremendous respect and admiration, often seeking shelter beneath his protective canopy during storms and asking for his wise advice about surviving the challenges of nature. His reputation for strength and endurance had spread far beyond the immediate area, and travelers would sometimes make detours just to see this legendary tree.</p>
+        <p>"I am the strongest and most powerful tree in this entire region," the oak would often declare with considerable pride to anyone who would listen. "My trunk is so thick that axes cannot harm me, my roots so deep that drought cannot reach them, and my branches so sturdy that no wind has ever been able to break them. I am truly a marvel of nature's engineering."</p>
+      </div>
+    </div>
+    
+    <!-- PAGE 7: STORY PART 3 -->
+    <div class="page" data-page="7">
+      <h2>📜 The Mighty Oak (Part 3)</h2>
+      <div class="story">
+        <p></p>
+      </div>
+    </div>
+    
+    <!-- PAGE 8: COMPREHENSION -->
+    <div class="page" data-page="8">
+      <h2>🤔 Reading Comprehension</h2>
+      <p>Answer these questions about today's chapter:</p>
+      
+      <h3>1. How old was the oak tree?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+      
+      <h3>2. What did other plants and trees do during storms?</h3>
+      <textarea placeholder="Write your answer..."></textarea>
+    </div>
+    
+    <!-- PAGE 9: GRAMMAR OR LANGUAGE -->
+    <div class="page" data-page="9">
+      <h2>📝 Grammar: Review</h2>
+      
+      <div class="info-box">
+        <p><strong>Learn:</strong></p>
+        <p>Practice what we've learned.</p>
+        <p style="margin-top: 15px;"><strong>Example:</strong></p>
+        <p><em>"Review your work."</em></p>
+      </div>
+      
+      <h3>✍️ Your Turn:</h3>
+      <p>Practice this concept using examples from today's reading:</p>
+      <textarea rows="10" placeholder="Write your practice here..."></textarea>
+    </div>
+    
+    <!-- PAGE 10: INFORMATIONAL TEXT -->
+    <div class="page" data-page="10">
+      <h2>📰 Photosynthesis</h2>
+      <p>Photosynthesis is the remarkable process by which green plants and some other organisms convert sunlight, carbon dioxide, and water into glucose sugar and oxygen. This process takes place primarily in the leaves of plants, inside tiny structures called chloroplasts that contain a green pigment called chlorophyll. Chlorophyll absorbs light energy from the sun, which provides the power needed to drive the complex chemical reactions that transform simple molecules into food and oxygen.
+The photosynthesis process occurs in two main stages: the light-dependent reactions and the light-independent reactions, also known as the Calvin cycle. During the light-dependent reactions, chlorophyll captures solar energy and uses it to split water molecules, releasing oxygen as a byproduct. The energy is then stored in special molecules that power the second stage. In the Calvin cycle, carbon dioxide from the air is combined with hydrogen to create glucose, which plants use as food for growth and energy.
+Photosynthesis is absolutely crucial for life on Earth because it produces the oxygen that most living things need to breathe and forms the foundation of nearly all food webs. Plants use the glucose they create for their own energy needs, but they also serve as food for herbivores, which in turn feed carnivores. Additionally, photosynthesis helps remove excess carbon dioxide from the atmosphere, which helps regulate Earth's climate and prevent excessive global warming.
+</p>
+      
+      <h3>Think About It:</h3>
+      <p>undefined</p>
+      <textarea placeholder="Write your thoughts..."></textarea>
+    </div>
+    
+    <!-- PAGE 11: WRITING/JOURNAL -->
+    <div class="page" data-page="11">
+      <h2>✏️ Writing Time</h2>
+      <p><strong>Writing Prompt:</strong></p>
+      <p>Write about a time like in The Oak and the Reed.</p>
+      <textarea rows="15" placeholder="Start writing here..."></textarea>
+    </div>
+    
+  </div>
+  
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 11;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Initialize
+    showPage(1);
+  </script>
+</body>
+</html>
