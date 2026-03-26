@@ -388,7 +388,7 @@ function generateInformationalPage(informationalText) {
     <!-- PAGE 10: INFORMATIONAL TEXT -->
     <div class="page" data-page="10">
       <h2>📰 ${title}</h2>
-      ${content.split('\n\n').map(para => `<p>${para}</p>`).join('\n      ')}
+      ${(content || '').split('\n\n').filter(p => p).map(para => `<p>${para}</p>`).join('\n      ')}
       
       <h3>Think About It:</h3>
       <p>${question}</p>
