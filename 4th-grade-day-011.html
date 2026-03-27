@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Great and Terrible Oz - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Great and Terrible Oz - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">A soldier with a long green beard led them through the gleaming streets to the Palace of Oz. The palace was the grandest building Dorothy had ever seen — towering green walls, emerald-studded gates, and corridors so bright they seemed to glow from within.</p><p style="margin-bottom: 15px;">"The great Oz will see you," the soldier told them, "but only one at a time. Who will go first?"</p><p style="margin-bottom: 15px;">"I will," said Dorothy.</p><p style="margin-bottom: 15px;">The soldier led her into a vast, round room. The ceiling was so high she could barely see it. The walls were covered with emeralds, and in the center of the room stood an enormous throne made of green marble.</p><p style="margin-bottom: 15px;">On the throne sat nothing but a giant head.</p><p style="margin-bottom: 15px;">It had no body, no arms, no legs — just an enormous head, bigger than the head of the biggest giant. It had no hair, and its eyes rolled slowly, looking down at Dorothy. Its mouth moved.</p><p style="margin-bottom: 15px;">"I am Oz, the Great and Terrible," the head said in a voice that echoed through the chamber. "Who are you, and why do you seek me?"</p><p style="margin-bottom: 15px;">Dorothy's knees trembled, but she took a breath and spoke clearly. "I am Dorothy, the small and meek. I have come to ask you to send me back to Kansas, where my Aunt Em and Uncle Henry are. I do not like your country, although it is so beautiful. And I am sure Aunt Em must be terribly worried about me."</p><p style="margin-bottom: 15px;">The eyes on the great head blinked slowly. "Where did you get those silver shoes?" the voice boomed.</p><p style="margin-bottom: 15px;">"From the Wicked Witch of the East. My house fell on her when the cyclone brought me here."</p><p style="margin-bottom: 15px;">"And where did you get that mark on your forehead?"</p><p style="margin-bottom: 15px;">Dorothy touched the spot where the Witch of the North had kissed her. "The Witch of the North kissed me when she said goodbye and sent me to you."</p><p style="margin-bottom: 15px;">The great head was silent for a long time. Then it spoke. "I will help you — but only if you do something for me first."</p><p style="margin-bottom: 15px;">"What must I do?" Dorothy asked.</p><p style="margin-bottom: 15px;">"You must kill the Wicked Witch of the West."</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Great and Terrible Oz - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Dorothy's heart sank. "But I cannot!" she cried. "I am just a girl. I have never killed anything in my life, and I do not want to start now."</p><p style="margin-bottom: 15px;">"The Wicked Witch of the West is the only truly wicked creature left in this land," the great head said. "You wear the silver shoes that hold her sister's power. You bear the mark of the Witch of the North's kiss, which protects you. You are stronger than you know. Kill the Witch, and I will send you home."</p><p style="margin-bottom: 15px;">Dorothy left the throne room with tears in her eyes.</p><p style="margin-bottom: 15px;">The Scarecrow went next. When he entered the great room, the throne was empty. Instead, a beautiful fairy floated in the air above it, with shimmering wings and a crown of jewels.</p><p style="margin-bottom: 15px;">"I am Oz, the Great and Terrible," the fairy said. "Why do you seek me?"</p><p style="margin-bottom: 15px;">"I want brains," the Scarecrow said. "My head is stuffed with straw, and I wish to have real brains so I can think properly."</p><p style="margin-bottom: 15px;">"Kill the Wicked Witch of the West," the fairy said, "and I will give you brains — the finest brains in the land of Oz."</p><p style="margin-bottom: 15px;">The Tin Woodman went third. He found on the throne a terrible beast, covered in thick fur, with the head of a rhinoceros and five long arms. Five eyes of flame stared down at him.</p><p style="margin-bottom: 15px;">"I am Oz, the Great and Terrible," the beast growled. "Why do you seek me?"</p><p style="margin-bottom: 15px;">"I want a heart," the Tin Woodman said. "I am made of tin and cannot feel. I want to love and be loved."</p><p style="margin-bottom: 15px;">"Kill the Wicked Witch of the West," the beast said, "and I will give you a heart."</p><p style="margin-bottom: 15px;">The Cowardly Lion went last. When he entered, the throne held nothing but a ball of fire, so bright and fierce that he could barely look at it. The room was unbearably hot.</p><p style="margin-bottom: 15px;">"I am Oz, the Great and Terrible," the fire roared. "Why do you seek me?"</p><p style="margin-bottom: 15px;">"I — I want courage," the Lion stammered, crouching low. "I am a coward, and I want to be brave."</p><p style="margin-bottom: 15px;">"Kill the Wicked Witch of the West," the fire blazed, "and I will give you courage."</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Great and Terrible Oz - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The four companions gathered in a hallway afterward and compared their experiences.</p><p style="margin-bottom: 15px;">"He appeared as a giant head to me," Dorothy said.</p><p style="margin-bottom: 15px;">"A beautiful fairy to me," the Scarecrow said.</p><p style="margin-bottom: 15px;">"A terrible beast to me," the Tin Woodman said.</p><p style="margin-bottom: 15px;">"A ball of fire to me," the Lion said.</p><p style="margin-bottom: 15px;">They stared at each other.</p><p style="margin-bottom: 15px;">"Why would he look different to each of us?" the Scarecrow asked slowly.</p><p style="margin-bottom: 15px;">No one had an answer. But a seed of doubt had been planted, and it sat quietly in each of their minds.</p><p style="margin-bottom: 15px;">"He wants us to kill the Wicked Witch," Dorothy said unhappily. "How can we possibly do that?"</p><p style="margin-bottom: 15px;">"We must try," the Scarecrow said. "It is the only way to get what we need."</p><p style="margin-bottom: 15px;">"I do not like it," the Tin Woodman said. "But Dorothy needs to get home. So we will go."</p><p style="margin-bottom: 15px;">"Together," the Lion said. His voice shook, but he said it anyway. "We will go together."</p><p style="margin-bottom: 15px;">Dorothy looked at her friends — the Scarecrow standing tall, the Tin Woodman gripping his axe, the Lion trembling but determined — and she felt something warm spread through her chest.</p><p style="margin-bottom: 15px;">"Together," she agreed.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Past Tense Verbs</h2>
                         <div class="skill-explanation">
                             <p>Past tense verbs tell about actions that already happened.
@@ -304,7 +280,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Tricksters and Humbugs in Folklore</h2>
                         <div class="informational-article">
                             <p>The Wizard of Oz is a humbug — a fraud, a fake, a charlatan. He admits he's just an ordinary man from Omaha who stumbled into Oz by accident and decided to pretend he was powerful. This makes him part of a long tradition of trickster characters in world folklore.</p><p>Tricksters appear in stories across all cultures. In Native American tales, Coyote and Raven trick others but often teach important lessons. In African folklore, Anansi the Spider uses cleverness to overcome stronger opponents. In European fairy tales, characters like Puss in Boots use deception for good purposes.</p><p>What makes someone a trickster versus a villain? Intent and outcome. Villains trick people for selfish, harmful reasons. Tricksters might deceive, but their tricks often help others or teach valuable lessons.</p><p>The Wizard fits this pattern perfectly. Yes, he deceived everyone in Oz. He made them believe he had magical powers when he had none. But why? He was afraid. If people knew he was powerless, they might hurt him. So he created an illusion to protect himself.</p><p>More importantly, when Dorothy and her friends ask for help, the Wizard doesn't just send them away. He tries to help. He gives the Scarecrow "brains" (a mixture of bran and pins), the Tin Woodman a silk heart stuffed with sawdust, and the Lion a drink he calls "courage."</p><p>These gifts are fake in one sense — they're not magical. But they're real in another sense — they give the characters confidence. The Scarecrow believes he's smart now, so he acts smarter. The Tin Woodman believes he has a heart, so he acts kinder. The Lion believes he's brave, so he acts courageously.</p><p>This is the Wizard's real magic: understanding that belief shapes reality. If you believe you're capable, you become capable. The Wizard's "humbug" gifts work because they change how the characters see themselves.</p><p>The lesson? Sometimes the confidence to use our existing abilities is more valuable than gaining new ones. We often have what we need; we just need to believe in ourselves enough to use it.</p>
@@ -324,7 +300,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-11" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-11-count">0</span> / 100-150</p></div>
     </div>
 
@@ -340,7 +316,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

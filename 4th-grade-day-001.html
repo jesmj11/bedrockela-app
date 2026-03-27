@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Cyclone - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Cyclone - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Dorothy lived in the middle of the great Kansas prairies with Uncle Henry, who was a farmer, and Aunt Em, who was the farmer's wife. Their house was small — just one room — with a rusty stove, a cupboard, a table, and three or four chairs. There were no curtains, no pictures on the walls, and nothing pretty at all.</p><p style="margin-bottom: 15px;">Uncle Henry never laughed. He worked from morning till night and rarely spoke. Aunt Em had once been young and cheerful, but years of sun and wind on the dry prairie had taken the color from her eyes and cheeks. She never smiled anymore, either.</p><p style="margin-bottom: 15px;">It was Toto who made Dorothy laugh. Toto was a small, scrappy black dog with long silky hair and bright little eyes that twinkled on either side of his funny nose. Dorothy loved Toto dearly. He was the one thing in Kansas that was not gray.</p><p style="margin-bottom: 15px;">Everything around them was gray. The sun had baked the plowed land into a gray mass. Even the paint on the house had faded until it was as dull and gray as everything else. When Aunt Em first came to Kansas, the sun and wind had changed her, too. They had taken the sparkle from her eyes and left them a sober gray; they had taken the red from her cheeks and lips, and they were gray also.</p><p style="margin-bottom: 15px;">Dorothy often looked out at the flat, gray world and felt something like loneliness, though she did not know the word for it. Toto was not gray. He saved her from growing as gray as everything else around her.</p><p style="margin-bottom: 15px;">One afternoon, Uncle Henry sat on the doorstep and looked up at the sky, which was even grayer than usual. Dorothy stood in the doorway holding Toto and watching too. From the far north, they heard a low wail of the wind. They could see the long grass bowing in waves before the coming storm.</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Cyclone - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"There's a cyclone coming, Em," Uncle Henry called to his wife. "I'll go look after the stock." Then he ran toward the sheds where the cows and horses were kept.</p><p style="margin-bottom: 15px;">Aunt Em dropped what she was doing and hurried to the door. One look at the sky told her the danger was real. "Quick, Dorothy!" she screamed. "Run for the cellar!"</p><p style="margin-bottom: 15px;">Toto jumped out of Dorothy's arms and hid under the bed. Dorothy started to chase after him. Aunt Em threw open the trapdoor in the floor and climbed down into the small, dark hole beneath the house. Dorothy caught Toto at last and started to follow her aunt.</p><p style="margin-bottom: 15px;">But she was too late.</p><p style="margin-bottom: 15px;">Before she was halfway across the room, a terrible shriek came from the wind. The house shook so hard that Dorothy lost her footing and fell to the floor. Then a strange thing happened.</p><p style="margin-bottom: 15px;">The house tilted, then tilted more, and then — with a great groaning sound — it was lifted right up into the air by the cyclone, as easily as you might pick up a feather. Up and up and up it went, spinning slowly, carried by the mighty wind.</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Cyclone - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The house was caught in the very center of the cyclone. The wind on every side pressed against it equally, and it was carried along like a balloon, rising higher and higher. It was very dark, and the wind howled terribly around her, but Dorothy found, after the first few moments, that she was not being tossed about. The house swayed gently, like a baby being rocked in a cradle.</p><p style="margin-bottom: 15px;">Toto did not like it. He ran around the room, barking, but Dorothy sat quite still on the floor and waited to see what would happen.</p><p style="margin-bottom: 15px;">Once, Toto got too near the open trapdoor and fell in with a little yelp. Dorothy thought she had lost him. But his ear stuck up through the hole, and she grabbed it and pulled him back into the room. Then she closed the trapdoor so no more accidents could happen.</p><p style="margin-bottom: 15px;">Hours passed. Slowly, Dorothy got over her fright. She felt quite lonely with the wind screaming so loudly around her, but there was nothing to do except sit and wait. Eventually, she crawled across the swaying floor to her bed, and Toto followed her. Dorothy lay down and, despite the swaying and the howling wind, fell fast asleep.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Sentence Types: Statements and Questions</h2>
                         <div class="skill-explanation">
                             <p>There are four types of sentences, and today we'll focus on two: statements and questions.
@@ -300,7 +276,7 @@ Example: Where does Dorothy live?</p>
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: L. Frank Baum: The Man Behind Oz</h2>
                         <div class="informational-article">
                             <p>L. Frank Baum was born in 1856 in New York. As a young man, he tried many jobs — actor, newspaper reporter, store owner — but none made him truly happy. What he loved most was telling stories to children.</p><p>In 1899, Baum published his first successful children's book. But it was "The Wonderful Wizard of Oz," published in 1900, that made him famous. The story came to him while entertaining neighborhood children. He told them about a girl from Kansas who traveled to a magical land, and the children begged him to write it down.</p><p>Baum wanted to create a new kind of fairy tale — one that was purely American, without scary monsters or dark warnings. His stories were filled with wonder, friendship, and hope. He believed children deserved stories that made them smile, not nightmares that frightened them.</p><p>"The Wonderful Wizard of Oz" became an instant bestseller. Children loved Dorothy's adventures, and adults appreciated the book's deeper messages about courage, friendship, and finding your way home. Baum wrote 13 more Oz books before he died in 1919.</p><p>Today, over 120 years later, Dorothy and her friends are still beloved around the world. L. Frank Baum's dream of creating timeless American fairy tales came true.</p>
@@ -320,7 +296,7 @@ Example: Where does Dorothy live?</p>
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-1" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-1-count">0</span> / 100-150</p></div>
     </div>
 
@@ -336,7 +312,7 @@ Example: Where does Dorothy live?</p>
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -370,4 +346,4 @@ Example: Where does Dorothy live?</p>
     showPage(1);
   </script>
 </body>
-</html><!-- Cache bust Fri Mar 27 10:39:20 EDT 2026 -->
+</html>

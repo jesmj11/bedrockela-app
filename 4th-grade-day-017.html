@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Magic of Oz - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Magic of Oz - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The next morning, the little man who called himself Oz sent for the Scarecrow.</p><p style="margin-bottom: 15px;">"I cannot give you real brains," the man said. "But I can give you something that might work just as well."</p><p style="margin-bottom: 15px;">He opened the Scarecrow's head and removed the straw. Then he mixed together bran, pins, and needles, and stuffed the mixture inside. He sewed the head shut and stepped back.</p><p style="margin-bottom: 15px;">"There," the man said. "Bran-new brains. The pins and needles mean you will be very sharp."</p><p style="margin-bottom: 15px;">The Scarecrow reached up and touched his head. His painted eyes seemed to sparkle. "I feel wise already," he said. "I can feel thoughts — real thoughts — forming inside my head."</p><p style="margin-bottom: 15px;">"They were always there," the man said quietly. "You just needed something to believe in."</p><p style="margin-bottom: 15px;">The Scarecrow did not hear this. He was too busy thinking.</p><p style="margin-bottom: 15px;">Next came the Tin Woodman. The man cut a small hole in the Tin Woodman's chest and placed inside it a pretty heart made of red silk, stuffed with sawdust.</p><p style="margin-bottom: 15px;">"Is it a real heart?" the Tin Woodman asked, pressing his hand against his chest.</p><p style="margin-bottom: 15px;">"It is a very kind heart," the man said. "And that is what matters."</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Magic of Oz - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">A tear rolled down the Tin Woodman's cheek. "I can feel it beating," he said. "I am so happy."</p><p style="margin-bottom: 15px;">"You were always kind," the man said. "The heart is just a reminder."</p><p style="margin-bottom: 15px;">But the Tin Woodman was too moved to listen. He stood with his hand on his chest, feeling the silk heart shift inside him, and he smiled wider than Dorothy had ever seen him smile.</p><p style="margin-bottom: 15px;">Last came the Cowardly Lion. The man poured a green liquid into a golden dish.</p><p style="margin-bottom: 15px;">"Drink this," the man said.</p><p style="margin-bottom: 15px;">"What is it?" the Lion asked nervously.</p><p style="margin-bottom: 15px;">"Courage," the man said. "Pure, liquid courage. It has been in my cupboard for years. Drink it, and you will be full of courage."</p><p style="margin-bottom: 15px;">The Lion lapped it up. He stood taller immediately. His mane seemed to bristle with new energy. His eyes grew bright and fierce.</p><p style="margin-bottom: 15px;">"I feel brave!" the Lion roared. "I feel like I could fight a hundred enemies!"</p><p style="margin-bottom: 15px;">"You always could," the man said. "You simply did not believe it."</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Magic of Oz - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Dorothy watched all of this with mixed feelings. She was happy for her friends — truly happy. The Scarecrow was walking around making observations about everything, delighted with his "new" brains. The Tin Woodman was so full of feeling that he cried every few minutes and had to be oiled. The Lion strutted through the palace like a king.</p><p style="margin-bottom: 15px;">But Dorothy knew the truth. The brains were bran and pins. The heart was silk and sawdust. The courage was colored water. The man from Omaha had given them symbols, not magic.</p><p style="margin-bottom: 15px;">And yet — her friends were different. Not because the gifts had changed them, but because they finally believed in themselves. The Scarecrow had always been clever. The Tin Woodman had always been kind. The Lion had always been brave. They just needed someone to tell them so.</p><p style="margin-bottom: 15px;">Was that magic? Dorothy was not sure. But it worked.</p><p style="margin-bottom: 15px;">"Now," Dorothy said, turning to the man. "What about me? How will you send me home?"</p><p style="margin-bottom: 15px;">The man rubbed his chin. "I have been thinking about that," he said. "I came here in a balloon, and I believe I can leave in a balloon. If I build one large enough, we can fly over the desert that surrounds Oz and land in Kansas — or somewhere near it."</p><p style="margin-bottom: 15px;">"You would come with me?" Dorothy asked, surprised.</p><p style="margin-bottom: 15px;">"I would very much like to go home," the man said. His voice was soft and sad. "I have been pretending to be a wizard for so long that I have nearly forgotten who I really am. I am just a man from Omaha, and I miss it."</p><p style="margin-bottom: 15px;">Dorothy understood that feeling perfectly.</p><p style="margin-bottom: 15px;">"Then build your balloon," she said. "And let us go home."</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Plural Nouns</h2>
                         <div class="skill-explanation">
                             <p>Plural means more than one.
@@ -304,7 +280,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: The Science of Color: Why Green?</h2>
                         <div class="informational-article">
                             <p>The Emerald City's signature color isn't just a random choice — green has specific psychological and cultural meanings that enhance the story's themes.</p><p>In color psychology, green represents:
@@ -338,7 +314,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-17" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-17-count">0</span> / 100-150</p></div>
     </div>
 
@@ -354,7 +330,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

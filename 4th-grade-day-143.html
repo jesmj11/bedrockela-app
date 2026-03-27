@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 Glinda The Good Witch Grants Dorothy’s Wish - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 Glinda The Good Witch Grants Dorothy’s Wish - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Before they went to see Glinda, however, they were taken to a room of the Castle, where Dorothy washed her face and combed her hair, and the Lion shook the dust out of his mane, and the Scarecrow patted himself into his best shape, and the Woodman polished his tin and oiled his joints. When they were all quite presentable they followed the soldier girl into a big room where the Witch Glinda sat upon a throne of rubies. She was both beautiful and young to their eyes. Her hair was a rich red in color and fell in flowing ringlets over her shoulders. Her dress was pure white but her eyes were blue, and they looked kindly upon the little girl. “What can I do for you, my child?” she asked. Dorothy told the Witch all her story: how the cyclone had brought her to the Land of Oz, how she had found her companions, and of the wonderful adventures they had met with. “My greatest wish now,” she added, “is to get back to Kansas, for Aunt Em will surely think something dreadful has happened to me, and that will make her put on mourning; and unless the crops are better this year than they were last, I am sure Uncle Henry cannot afford it.” Glinda leaned forward and kissed the sweet, upturned face of the loving little girl. “Bless your dear heart,” she said, “I am sure I can tell you of a way to get back to Kansas.” Then she added, “But, if I do, you must give me the Golden Cap.” “Willingly!” exclaimed Dorothy; “indeed, it is of no use to me now, and when you have it you can command the Winged Monkeys three times.” “And I think I shall need their service just those three times,” answered Glinda, smiling. Dorothy then gave her the Golden Cap, and the Witch said to the Scarecrow, “What will you do when Dorothy has left us?” “I will return to the Emerald City,” he replied, “for Oz has made me its ruler and the people like me. The only thing that worries me is how to cross the hill of the Hammer-Heads.” “By means of the Golden Cap I shall command the Winged Monkeys to carry you to the gates of the Emerald City,” said Glinda, “for it would be a shame to deprive the people of so wonderful a ruler.” “Am I really wonderful?” asked the Scarecrow. “You are unusual,” replied Glinda. Turning to the Tin Woodman, she asked, “What will become of you when Dorothy leaves this country?” He leaned on his axe and thought a moment. Then he said, “The Winkies were very kind to me, and wanted me to rule over them after the Wicked Witch died. I am fond of the Winkies, and if I could get back again to the Country of the West, I should like nothing better than to rule over them forever.” “My second command to the Winged Monkeys,” said Glinda “will be that they carry you safely to the land of the Winkies. Your brain may not be so large to look at as those of the Scarecrow, but you are really brighter than he is—when you are well polished—and I am sure you will rule the Winkies wisely and well.” Then the Witch looked at the big, shaggy Lion and asked, “When Dorothy has returned to her own home, what will become of you?” “Over the hill of the Hammer-Heads,” he answered, “lies a grand old forest, and all the beasts that live there have made me their King. If I could only get back to this forest, I would pass my life very happily there.” “My third command to the Winged Monkeys,” said Glinda, “shall be to carry you to your forest. Then, having used up the powers of the Golden Cap, I shall give it to the King of the Monkeys, that he and his band may thereafter be free for evermore.” The Scarecrow and the Tin Woodman and the Lion now thanked the Good Witch earnestly for her kindness; and Dorothy exclaimed: “You are certainly as good as you are beautiful! But you have not yet told me how to get back to Kansas.” “Your Silver Shoes will carry you over the desert,” replied Glinda. “If you had known their power you could have gone back to your Aunt Em the very first day you came to this country.” “But then I should not have had my wonderful brains!” cried the Scarecrow. “I might have passed my whole life in the farmer’s cornfield.” “And I should not have had my lovely heart,” said the Tin Woodman. “I might have stood and rusted in the forest till the end of the world.” “And I should have lived a coward forever,” declared the Lion, “and no beast in all the forest would have had a good word to say to me.” “This is all true,” said Dorothy, “and I am glad I was of use to these good friends. But now that each of them has had what he most desired, and each is happy in having a kingdom to rule besides, I think I should like to go back to Kansas.” “The Silver Shoes,” said the Good Witch, “have wonderful powers. And one of the most curious things about them is that they can carry you to any place in the world in three steps, and each step will be made in the wink of an eye. All you have to do is to knock the heels together three times and command the shoes to carry you wherever you wish to go.” “If that is so,” said the child joyfully, “I will ask them to carry me back to Kansas at once.” She threw her arms around the Lion’s neck and kissed him, patting his big head tenderly. Then she kissed the Tin Woodman, who was weeping in a way most dangerous to his joints. But she hugged the soft, stuffed body of the Scarecrow in her arms instead of kissing his painted face, and found she was crying herself at this sorrowful parting from her loving comrades. Glinda the Good stepped down from her ruby throne to give the little girl a good-bye kiss, and Dorothy thanked her for all the kindness she had shown to her friends and herself. Dorothy now took Toto up solemnly in her arms, and having said one last good-bye she clapped the heels of her shoes together three times, saying: “Take me home to Aunt Em!” Instantly she was whirling through the air, so swiftly that all she could see or feel was the wind whistling past her ears. The Silver Shoes took but three steps, and then she stopped so suddenly that she rolled over upon the grass several times before she knew where she was. At length, however, she sat up and looked about her. “Good gracious!” she cried. For she was sitting on the broad Kansas prairie, and just before her was the new farmhouse Uncle Henry built after the cyclone had carried away the old one. Uncle Henry was milking the cows in the barnyard, and Toto had jumped out of her arms and was running toward the barn, barking furiously. Dorothy stood up and found she was in her stocking-feet. For the Silver Shoes had fallen off in her flight through the air, and were lost forever in the desert.</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 Glinda The Good Witch Grants Dorothy’s Wish - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 Glinda The Good Witch Grants Dorothy’s Wish - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Adverbs</h2>
                         <div class="skill-explanation">
                             <p>Adverbs describe verbs and often end in -ly.</p>
@@ -294,7 +270,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Did You Know?</h2>
                         <div class="informational-article">
                             <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
@@ -316,7 +292,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-143" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-143-count">0</span> / 100-150</p></div>
     </div>
 
@@ -332,7 +308,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

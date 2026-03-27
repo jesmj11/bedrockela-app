@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Cowardly Lion - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Cowardly Lion - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The forest grew darker and wilder. Strange sounds echoed through the trees — growls, rustling, and the snap of twigs. Dorothy walked closer to her friends.</p><p style="margin-bottom: 15px;">"How far is it to the Emerald City?" she asked.</p><p style="margin-bottom: 15px;">"I don't know," said the Tin Woodman. "I have never been there. But my father once told me it was a long, difficult journey."</p><p style="margin-bottom: 15px;">"I heard that the road passes through dangerous country," the Scarecrow added. "But since I have no brains, I am not afraid."</p><p style="margin-bottom: 15px;">"And since I have no heart," the Tin Woodman said, "I cannot be afraid either."</p><p style="margin-bottom: 15px;">Dorothy said nothing. She was the only one in the group who had both brains AND a heart, and she was quite frightened. Toto was frightened too. He pressed against Dorothy's legs and growled at the shadows.</p><p style="margin-bottom: 15px;">Suddenly, a great beast burst out of the trees with a terrible roar. It was an enormous lion, with a thick golden mane and huge paws. He knocked the Scarecrow spinning with one swipe and struck at the Tin Woodman with his claws, which scraped against the tin but did no real damage.</p><p style="margin-bottom: 15px;">Then the Lion opened his great mouth and lunged at Toto.</p><p style="margin-bottom: 15px;">Dorothy did not think. She did not plan. She did not hesitate. She ran forward and slapped the Lion as hard as she could, right on his nose.</p><p style="margin-bottom: 15px;">"Don't you dare bite Toto!" she cried. "You ought to be ashamed of yourself — a big beast like you, trying to bite a poor little dog!"</p><p style="margin-bottom: 15px;">The Lion looked shocked. He sat down and rubbed his nose with his paw.</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Cowardly Lion - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"I didn't bite him," the Lion said in a hurt voice.</p><p style="margin-bottom: 15px;">"No, but you tried to," Dorothy said. "You are nothing but a big coward."</p><p style="margin-bottom: 15px;">"I know it," the Lion said, hanging his great head in shame. "I have always known it. I am a disgrace."</p><p style="margin-bottom: 15px;">Dorothy stared at him. This was not what she had expected.</p><p style="margin-bottom: 15px;">"But you're a lion," she said. "Lions are supposed to be the king of beasts."</p><p style="margin-bottom: 15px;">"I know," the Lion said miserably. "Everyone expects me to be brave and fierce. But I am terrified of almost everything. I roar to scare other creatures away, because if they got close, they would see that I am really a coward."</p><p style="margin-bottom: 15px;">"That's terrible," said the Scarecrow, picking straw out of his clothes.</p><p style="margin-bottom: 15px;">"It is," the Lion agreed. "My roar is all I have. My heart pounds, my legs shake, and I want to run away. A real king of beasts would not be afraid. But I cannot help it."</p><p style="margin-bottom: 15px;">"Maybe you just need courage," Dorothy said thoughtfully. "We are on our way to the Emerald City to see the great Wizard of Oz. The Scarecrow is going to ask for brains, and the Tin Woodman wants a heart. Perhaps the Wizard could give you courage."</p><p style="margin-bottom: 15px;">The Lion's eyes grew wide. "Do you think he could?" he asked. "If I only had courage, I would be everything a lion is supposed to be."</p><p style="margin-bottom: 15px;">"Come with us," Dorothy said. "You can ask him yourself."</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Cowardly Lion - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"I will," said the Lion. "Because right now, my life is unbearable. Every day I wake up afraid, and every night I go to sleep ashamed. If the Wizard can fix that, it would be worth any journey."</p><p style="margin-bottom: 15px;">So the Lion joined the group. He was enormous — Dorothy barely reached his shoulder — and when he walked, the ground trembled slightly under his great paws. The Scarecrow walked on one side of Dorothy, the Tin Woodman on the other, and the Lion padded along behind them. Toto did not like the Lion at first and stayed as far away as possible, but after a while, the little dog decided that any creature who cried about being a coward was probably not very dangerous after all.</p><p style="margin-bottom: 15px;">"I am curious about something," Dorothy said as they walked. "You say you are a coward, but you jumped out of the trees and attacked all of us. That seems rather brave to me."</p><p style="margin-bottom: 15px;">"Oh, that," the Lion said, embarrassed. "I was more scared than any of you. My heart was pounding. I just roared and charged because I did not know what else to do."</p><p style="margin-bottom: 15px;">"But isn't that exactly what courage is?" the Scarecrow asked. "Doing something even when you are afraid?"</p><p style="margin-bottom: 15px;">The Lion thought about this for a long moment. "No," he said finally. "I think real courage means not being afraid at all."</p><p style="margin-bottom: 15px;">"I'm not sure about that," Dorothy said. But she did not argue.</p><p style="margin-bottom: 15px;">They walked on through the forest. Dorothy noticed something: the Scarecrow, who said he had no brains, was the one who figured out the safest path through the trees. The Tin Woodman, who said he had no heart, carefully moved a beetle off the road so it would not be stepped on. And the Lion, who said he had no courage, walked at the back of the group, keeping watch for danger.</p><p style="margin-bottom: 15px;">Dorothy kept these observations to herself. But she was beginning to wonder if her friends already had exactly what they were looking for, and simply did not know it.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Synonyms and Antonyms</h2>
                         <div class="skill-explanation">
                             <p>Synonyms are words with similar meanings. Antonyms are opposites.</p>
@@ -294,7 +270,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Scarecrows: Guardians of the Garden</h2>
                         <div class="informational-article">
                             <p>Scarecrows have been protecting crops for thousands of years. Ancient Egyptians used them along the Nile River. Greek farmers built wooden scarecrows to guard their vineyards. But the classic scarecrow we know today — stuffed with straw, wearing old clothes — became popular in America during the 1800s.</p><p>Why do farmers need scarecrows? Birds, especially crows and blackbirds, love to eat seeds and sprouting crops. A flock of birds can destroy a newly planted field in hours. Scarecrows are meant to frighten birds away by looking like a human standing guard.</p><p>In the 1890s when Dorothy meets the Scarecrow, most were simple: a wooden pole with a crossbar for arms, stuffed with straw, dressed in worn-out clothes and a hat. Farmers positioned them in fields to protect corn, wheat, and other grains.</p><p>But here's the problem: birds are smart. They quickly figure out that scarecrows don't move. Within days, crows might perch right on the scarecrow's shoulders, mocking it. That's why the Scarecrow in the story feels useless — the crows literally told him he was just "stuffed with straw."</p><p>Modern farmers use many methods to protect crops: nets, noise makers, reflective tape, and even robots. But the traditional scarecrow remains a symbol of farming life and harvest time.</p><p>L. Frank Baum's Scarecrow is different from a typical farm scarecrow. He can talk, walk, and think. He joins Dorothy's journey seeking a brain, yet throughout the story, he's the one who comes up with clever plans and solves problems. The lesson? Intelligence isn't about what's in your head — it's about how you use what you have.</p><p>The Scarecrow represents a universal truth: we often have the very thing we think we're missing. We just don't recognize it yet.</p>
@@ -314,7 +290,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-6" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-6-count">0</span> / 100-150</p></div>
     </div>
 
@@ -330,7 +306,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

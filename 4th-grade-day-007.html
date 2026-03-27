@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Journey to the Great Oz - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Journey to the Great Oz - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The next morning, they set off again on the yellow brick road. The forest was still thick around them, but the road was clear, and the four companions walked together in good spirits.</p><p style="margin-bottom: 15px;">They had not gone far when they came to a great ditch that stretched across the road. It was very wide and very deep, with jagged rocks at the bottom. There was no way around it.</p><p style="margin-bottom: 15px;">"What shall we do?" Dorothy asked.</p><p style="margin-bottom: 15px;">The Scarecrow thought for a moment. "We cannot fly, and we cannot climb down and back up — it's too deep. But the Lion is very large and strong. Perhaps he could jump across."</p><p style="margin-bottom: 15px;">"I can try," the Lion said nervously. "But what about the rest of you?"</p><p style="margin-bottom: 15px;">"You could carry us, one at a time," the Scarecrow said.</p><p style="margin-bottom: 15px;">The Lion looked at the ditch. It was a terrifying distance. His legs trembled. But he crouched low, gathered all his strength, and leaped — sailing through the air and landing safely on the other side.</p><p style="margin-bottom: 15px;">"It wasn't so bad," he called back, though his voice shook.</p><p style="margin-bottom: 15px;">He jumped back and carried the Scarecrow across first, since he was the lightest. Then Dorothy, holding Toto tightly. Finally, the Tin Woodman, who was the heaviest and made the Lion grunt with the effort. But the great beast managed it.</p><p style="margin-bottom: 15px;">"There," said the Scarecrow. "Problem solved."</p><p style="margin-bottom: 15px;">"That was your idea," Dorothy told him. "That was very clever."</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Journey to the Great Oz - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"Was it?" the Scarecrow said, surprised. "I suppose it just seemed like common sense."</p><p style="margin-bottom: 15px;">They continued walking. The forest thinned, and patches of sunlight began to break through the leaves. Then they heard a low, rumbling growl from the trees ahead.</p><p style="margin-bottom: 15px;">Two great beasts leaped onto the road — fierce, catlike creatures with long teeth and angry eyes. They snarled at the group and crouched, ready to spring.</p><p style="margin-bottom: 15px;">The Cowardly Lion stepped forward.</p><p style="margin-bottom: 15px;">"Stay behind me," he said, and his voice came out deeper and stronger than usual. He threw back his great head and let out a roar so loud and so terrible that the leaves shook on the trees and the two beasts stopped cold. They stared at the Lion, then turned and ran back into the forest.</p><p style="margin-bottom: 15px;">"They're gone," the Lion said, turning around. His legs were shaking. "My heart is still pounding."</p><p style="margin-bottom: 15px;">"You just saved us all," the Tin Woodman said.</p><p style="margin-bottom: 15px;">"I was terrified," the Lion admitted.</p><p style="margin-bottom: 15px;">"You were terrified and you did it anyway," Dorothy said. "That matters more than you think."</p><p style="margin-bottom: 15px;">They walked on. The forest grew lighter, and soon they emerged into open country filled with wildflowers. A sparkling river ran alongside the road, and they stopped to drink and rest.</p><p style="margin-bottom: 15px;">"I like this much better than the forest," the Lion said, lying down in the tall grass. "The open air makes me feel braver."</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Journey to the Great Oz - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"You were plenty brave in the forest," Dorothy said.</p><p style="margin-bottom: 15px;">The Lion shook his great mane. "I was pretending."</p><p style="margin-bottom: 15px;">"Everyone pretends sometimes," said the Tin Woodman quietly. "I pretend I do not feel sad, even though I do."</p><p style="margin-bottom: 15px;">"And I pretend I do not notice things," said the Scarecrow, "even though I notice quite a lot."</p><p style="margin-bottom: 15px;">Dorothy looked at her three friends — the one who said he had no brains, the one who said he had no heart, and the one who said he had no courage — and she thought they were the cleverest, kindest, bravest companions anyone could wish for.</p><p style="margin-bottom: 15px;">"We make a good team," she said.</p><p style="margin-bottom: 15px;">"We do," the Scarecrow agreed. "Though I cannot imagine why. A girl, a man of straw, a man of tin, and a cowardly lion — we are not exactly an army."</p><p style="margin-bottom: 15px;">"No," Dorothy said, smiling. "But we are friends. And that is better."</p><p style="margin-bottom: 15px;">They rested by the river as the afternoon sun warmed them, and Toto chased butterflies through the tall grass, and for a little while, everything was peaceful.</p><p style="margin-bottom: 15px;">But the yellow brick road stretched on ahead of them, and the Emerald City was still far away. There would be more dangers before they reached it.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Punctuation: Periods and Question Marks</h2>
                         <div class="skill-explanation">
                             <p>Every sentence needs ending punctuation!
@@ -300,7 +276,7 @@ Example: Does the Lion have courage?</p>
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: The Tin Man: From Folklore to Oz</h2>
                         <div class="informational-article">
                             <p>The Tin Woodman is one of L. Frank Baum's most original creations, but the idea of artificial people has fascinated humans for centuries. Ancient Greek myths told of bronze automatons created by gods. Fairy tales featured wooden puppets that came to life, like Pinocchio.</p><p>But Baum's Tin Woodman is unique. He wasn't built from scratch — he became tin piece by piece after a cursed axe kept cutting him. A tinsmith replaced each lost body part with metal until he was entirely made of tin. When the tinsmith forgot to give him a heart, the Woodman lost his ability to love.</p><p>This backstory is darker than most children's stories. The Wicked Witch of the East cursed the axe because she didn't want the Woodman to marry a Munchkin girl. His transformation from human to tin is both tragic and symbolic.</p><p>The Tin Woodman's greatest fear is rusting. When Dorothy finds him, he's been frozen for over a year, crying tears that rusted his joints. She saves him with an oil can — a simple act of kindness that frees him from his prison.</p><p>Throughout the story, the Tin Woodman insists he has no heart and cannot feel. Yet he's the most compassionate character. He carefully moves aside insects so he won't step on them. He cries when he accidentally crushes a beetle. He risks his own safety to protect Dorothy.</p><p>His constant need for oil represents our need for love and care. Just as the Tin Woodman rusts without oil, humans become hardened without kindness and connection.</p><p>The Tin Woodman's journey teaches us that having a heart isn't about biology — it's about how you treat others. Actions speak louder than anatomy. If you act with kindness and compassion, you have a heart, whether it's flesh or tin or something else entirely.</p>
@@ -320,7 +296,7 @@ Example: Does the Lion have courage?</p>
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-7" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-7-count">0</span> / 100-150</p></div>
     </div>
 
@@ -336,7 +312,7 @@ Example: Does the Lion have courage?</p>
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

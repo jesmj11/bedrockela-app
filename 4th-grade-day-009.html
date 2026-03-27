@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Queen of the Field Mice - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Queen of the Field Mice - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Dorothy and Toto lay sleeping on the grass beyond the poppy field. The Scarecrow and the Tin Woodman stood over them, relieved that they had carried their friends to safety, but sick with worry about the Lion. He lay deep in the field of poisonous flowers, too heavy for them to move, sinking into a sleep from which he might never wake.</p><p style="margin-bottom: 15px;">"We must do something," the Tin Woodman said. "He is our friend."</p><p style="margin-bottom: 15px;">"I know," the Scarecrow said. "Let me think."</p><p style="margin-bottom: 15px;">He thought very hard. The Scarecrow always said he had no brains, but in moments like this, his head seemed to work better than anyone's.</p><p style="margin-bottom: 15px;">Just then, a wildcat burst from the tall grass, chasing a tiny field mouse. Without thinking, the Tin Woodman raised his axe and brought it down. The wildcat fell, and the mouse was saved.</p><p style="margin-bottom: 15px;">The little mouse looked up at the Tin Woodman with bright, grateful eyes. "You have saved my life," she said in a small, squeaking voice. "I am the Queen of the Field Mice. My subjects and I are forever in your debt."</p><p style="margin-bottom: 15px;">"It was nothing," the Tin Woodman said, bowing low. He truly meant it — he simply could not bear to see any creature hurt.</p><p style="margin-bottom: 15px;">Hundreds of mice appeared from the grass, surrounding their queen. They were tiny — no bigger than Dorothy's thumb — but there were so many of them that the ground seemed to ripple with brown fur.</p><p style="margin-bottom: 15px;">The Scarecrow's eyes brightened. "Your Majesty," he said, "I have an idea. Our friend the Lion is trapped in the poppy field, asleep. He is far too heavy for us to carry. But if the Tin Woodman were to build a cart, could your mice pull it?"</p><p style="margin-bottom: 15px;">The Queen tilted her tiny head. "The Lion is very large," she said. "But we are very many. Yes — I believe we could do it."</p><p style="margin-bottom: 15px;">The Tin Woodman set to work immediately. He was a woodcutter by trade, and even though his body was tin, his skill with an axe was extraordinary. He felled small trees, trimmed branches, and built a rough but sturdy cart in less than an hour.</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Queen of the Field Mice - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Meanwhile, the Scarecrow organized the mice. He tied strings of braided grass to the cart and attached them to the mice in long rows — thousands of mice, each one pulling with all its tiny strength.</p><p style="margin-bottom: 15px;">Getting the Lion onto the cart was the hardest part. He was enormous — as heavy as a boulder and completely limp. The Scarecrow pushed from behind while the Tin Woodman lifted from the side, and inch by inch, groaning and straining, they rolled the great beast onto the wooden platform.</p><p style="margin-bottom: 15px;">"Now," said the Queen, "pull!"</p><p style="margin-bottom: 15px;">The mice surged forward. The cart creaked, rocked, and then began to move — slowly at first, then faster, rolling through the poppy field toward clean air. The Scarecrow walked alongside, pushing when the wheels stuck. The Tin Woodman walked on the other side, steadying the Lion when he threatened to slide off.</p><p style="margin-bottom: 15px;">The poppies swayed around them, their deadly perfume thick in the air. The Scarecrow and Tin Woodman felt nothing — straw and tin do not breathe — but they moved as fast as they could for the sake of the mice, who were flesh and blood and very small.</p><p style="margin-bottom: 15px;">At last, the cart rolled out of the poppy field and onto clean grass. The mice collapsed in exhaustion, their tiny sides heaving. The Lion lay on the cart, still deeply asleep, but breathing.</p><p style="margin-bottom: 15px;">"He will wake when the fresh air clears the poison from his lungs," the Queen said. "Give him time."</p><p style="margin-bottom: 15px;">"Thank you," the Scarecrow said. "You saved our friend's life."</p><p style="margin-bottom: 15px;">"And your friend saved mine," the Queen replied, nodding at the Tin Woodman. "We are even. But if you ever need us again, come to this field and call. We will come."</p><p style="margin-bottom: 15px;">The mice disappeared into the grass like a brown river flowing back into the earth. The Scarecrow and the Tin Woodman sat down to wait.</p><p style="margin-bottom: 15px;">Dorothy woke first. She blinked in the sunlight, saw the Lion on the cart beside her, and sat up in alarm. "What happened?"</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Queen of the Field Mice - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Scarecrow told her everything — the wildcat, the Queen, the cart, the rescue.</p><p style="margin-bottom: 15px;">"You did all that while I was asleep?" Dorothy asked.</p><p style="margin-bottom: 15px;">"You needed saving," the Tin Woodman said simply. "So we saved you."</p><p style="margin-bottom: 15px;">Dorothy felt tears prick her eyes. "You carried me out of the poppy field," she said. "And then you saved the Lion. You did all of this without being asked."</p><p style="margin-bottom: 15px;">"That is what friends do," the Scarecrow said.</p><p style="margin-bottom: 15px;">The Lion stirred. He opened one great eye, then the other. He yawned enormously, stretched, and looked around in confusion.</p><p style="margin-bottom: 15px;">"How did I get here?" he asked.</p><p style="margin-bottom: 15px;">"A thousand mice pulled you on a cart," Dorothy said.</p><p style="margin-bottom: 15px;">The Lion blinked. "I must still be dreaming."</p><p style="margin-bottom: 15px;">"You are not," the Tin Woodman said, smiling. "Welcome back."</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Pronouns: Replacing Nouns</h2>
                         <div class="skill-explanation">
                             <p>Pronouns replace nouns so we don't repeat the same words.
@@ -300,7 +276,7 @@ Example:
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Emerald City: A Study in Green</h2>
                         <div class="informational-article">
                             <p>The Emerald City is one of literature's most memorable places — a gleaming green metropolis that seems too beautiful to be real. And guess what? It isn't entirely real.</p><p>In the story, everyone entering the Emerald City must wear green-tinted spectacles. The Guardian says it's to protect their eyes from the brightness of all those emeralds. But later we discover the truth: the spectacles make everything look green. The city might not be as emerald as it appears.</p><p>This reveals one of the story's deepest themes: appearance versus reality. Things aren't always what they seem. The "great and powerful" Wizard is just an ordinary man. The Scarecrow has a brain. The Tin Woodman has a heart. The Lion has courage. And the Emerald City might not be truly emerald.</p><p>Why did Baum make the city green? Green symbolizes many things: growth, renewal, hope, money, and even envy. In American culture, green is associated with prosperity — "greenbacks" means money. The Emerald City represents wealth and power, everything the characters think they need.</p><p>The idea of tinted spectacles is clever. In the 1890s, colored glasses were becoming fashionable. People wore rose-tinted glasses to make the world look prettier, or dark glasses to reduce glare. Baum took this concept and turned it into a metaphor: we see what we're told to see. If someone puts green glasses on us and says the city is green, we believe it.</p><p>This is a warning about manipulation and propaganda. Those in power can control how we see the world simply by controlling what we're allowed to see. The Wizard uses green spectacles to maintain his illusion of a magnificent city.</p><p>But here's the wonderful part: even after Dorothy knows the truth, she still thinks the Emerald City is beautiful. Sometimes the perception of beauty matters more than objective reality. If everyone believes something is wonderful, does it matter if it's "really" wonderful?</p><p>The Emerald City teaches us to question what we see and ask who benefits from our beliefs.</p>
@@ -320,7 +296,7 @@ Example:
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><div class="writing-prompt"><textarea id="writing-9" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-9-count">0</span> / 100-150</p></div>
     </div>
 
@@ -336,7 +312,7 @@ Example:
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

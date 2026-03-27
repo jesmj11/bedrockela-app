@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Discovery of Oz the Terrible - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Discovery of Oz the Terrible - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The next morning, Dorothy and her friends returned to the throne room. Once again, the great voice boomed: "Come back tomorrow!"</p><p style="margin-bottom: 15px;">"No," Dorothy said.</p><p style="margin-bottom: 15px;">The room went silent.</p><p style="margin-bottom: 15px;">"We have done what you asked," Dorothy said, and her voice was steady even though her knees were not. "We killed the Wicked Witch of the West. You made us a promise. If you do not keep it, you are a very bad wizard."</p><p style="margin-bottom: 15px;">"And if you do not keep your promises," the Scarecrow added, "then you are not a great wizard at all."</p><p style="margin-bottom: 15px;">The Lion let out a roar — not because he was brave, but because he was angry and frightened, and roaring was the only thing he could think to do. The sound shook the walls of the throne room. Toto, startled by the noise, jumped sideways and knocked over a tall screen that stood in the corner.</p><p style="margin-bottom: 15px;">Behind the screen was a little old man.</p><p style="margin-bottom: 15px;">He was small and bald, with a wrinkled face and spectacles perched on his nose. He wore a plain green coat, and he was sitting behind a table covered with knobs, levers, and strange mechanical devices. Above the table hung a large round shape that looked very much like the giant head Dorothy had seen on her first visit — except now she could see the wires holding it up and the bellows that made its mouth move.</p><p style="margin-bottom: 15px;">The little man stared at them with wide, frightened eyes.</p><p style="margin-bottom: 15px;">"Who are you?" Dorothy demanded.</p><p style="margin-bottom: 15px;">"I," the little man said in a very small voice, "am Oz, the Great and Terrible."</p><p style="margin-bottom: 15px;">He did not look great. He did not look terrible. He looked like someone's grandfather caught doing something he should not.</p><p style="margin-bottom: 15px;">"You?" the Lion growled. "You are the Wizard?"</p><p style="margin-bottom: 15px;">"Please don't be angry," the man said, shrinking back. "Please, please don't hurt me. I'll explain everything."</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Discovery of Oz the Terrible - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"You're a humbug," the Scarecrow said. It was not a question.</p><p style="margin-bottom: 15px;">"Yes," the man admitted miserably. "I am a humbug. I am not a wizard at all. I never was."</p><p style="margin-bottom: 15px;">Dorothy felt the floor tilt beneath her. Everything she had believed — the great and powerful Oz who could grant wishes, who could send her home — was a lie.</p><p style="margin-bottom: 15px;">"But the giant head," she said. "The fairy, the beast, the ball of fire —"</p><p style="margin-bottom: 15px;">"Tricks," the man said. He pointed to his table of devices. "Ventriloquism for the voice. A paper-mâché head for the giant face. A costume for the beast. Chemicals for the fire. I am a very good trickster, you see. That is my real talent."</p><p style="margin-bottom: 15px;">"How could you deceive everyone?" the Tin Woodman asked. His voice was not angry. It was hurt. "The people of this city worship you."</p><p style="margin-bottom: 15px;">The old man sighed deeply and sank into his chair. "I suppose I should tell you my story," he said. "Please, sit down. It is not a long story, but it is an embarrassing one."</p><p style="margin-bottom: 15px;">They sat. Even the Lion lay down, though he kept one eye on the little man.</p><p style="margin-bottom: 15px;">"I was born in Omaha, Nebraska," the man began. "I was a circus performer — a balloonist. I traveled with the circus, going up in a hot-air balloon and doing tricks for the crowds. One day, the ropes of my balloon came untied while I was high in the air, and the wind carried me far, far away. I floated for days. When I finally came down, I landed here — in the land of Oz."</p><p style="margin-bottom: 15px;">"Just like me," Dorothy said softly. "The wind brought me here, too."</p><p style="margin-bottom: 15px;">"Yes," the man said. "When I landed, the people saw me floating down from the sky and believed I was a great wizard. I was too frightened to tell them the truth. So I let them believe it. I told them to build the Emerald City, and I had everyone wear green spectacles — which make everything look green, whether it is or not."</p><p style="margin-bottom: 15px;">"So the city isn't really green?" Dorothy asked.</p><p style="margin-bottom: 15px;">"It is a normal city," the man said. "Some of it is green. Most of it is not. But everyone wears the spectacles, so everyone believes."</p><p style="margin-bottom: 15px;">"You have been lying to them for years," the Scarecrow said.</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Discovery of Oz the Terrible - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"I have," the man said. "And I am deeply ashamed. But I was afraid. If anyone found out I was not a real wizard, the two Wicked Witches would have destroyed me. So I hid behind my tricks and my locked doors and hoped no one would ever look behind the screen."</p><p style="margin-bottom: 15px;">He looked at them with watery eyes. "I never thought anyone would actually kill a witch. When you did, I was terrified — because now you would come to me expecting miracles, and I have none to give."</p><p style="margin-bottom: 15px;">Dorothy felt many things at once: anger that she had been lied to, sadness that her hope of getting home had been stolen, and — underneath it all — a strange sympathy for this frightened little man from Nebraska who had been pretending for so long.</p><p style="margin-bottom: 15px;">"Can you give the Scarecrow brains?" she asked.</p><p style="margin-bottom: 15px;">"No," the man said.</p><p style="margin-bottom: 15px;">"Can you give the Tin Woodman a heart?"</p><p style="margin-bottom: 15px;">"No."</p><p style="margin-bottom: 15px;">"Can you give the Lion courage?"</p><p style="margin-bottom: 15px;">"No."</p><p style="margin-bottom: 15px;">"Can you send me home?"</p><p style="margin-bottom: 15px;">The man paused. "I don't know," he said. "But I will try."</p><p style="margin-bottom: 15px;">It was not much. But it was honest, and after so many lies, honesty felt like something.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Homophones</h2>
                         <div class="skill-explanation">
                             <p>Words that sound the same but have different meanings and spellings.</p>
@@ -294,7 +270,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: American Fairy Tales: Creating New Mythology</h2>
                         <div class="informational-article">
                             <p>When L. Frank Baum wrote "The Wonderful Wizard of Oz," he had a specific goal: to create an American fairy tale. European fairy tales dominated children's literature — stories from Germany's Grimm Brothers, France's Charles Perrault, and Denmark's Hans Christian Andersen. Baum wanted something uniquely American.</p><p>Traditional European fairy tales often featured castles, kings, and ancient forests. They took place in vague historical settings with "once upon a time" beginnings. Many included dark elements: evil stepmothers, children abandoned in woods, graphic violence, and cruel punishments.</p><p>Baum wanted something different. His fairy tale would begin in America — specifically Kansas, the heart of the country. It would feature ordinary people (farmers, not royalty) facing modern problems. And it would be optimistic, not dark. No child would be harmed, no villain would win, and friendship would triumph.</p><p>The Wizard of Oz reflects American values of the 1890s:
@@ -319,7 +295,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-16" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-16-count">0</span> / 100-150</p></div>
     </div>
 
@@ -335,7 +311,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Balloon - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Balloon - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The man from Omaha set to work building a hot-air balloon. He had done it many times in the circus, and his hands remembered the craft even after all these years.</p><p style="margin-bottom: 15px;">He cut strips of green silk — there was plenty of green silk in the Emerald City — and sewed them together into a great bag, wider at the top and narrow at the bottom. He coated the inside with thin glue to keep the hot air from leaking out. Then he attached the bag to a large wicker basket, big enough for two people and one small dog.</p><p style="margin-bottom: 15px;">While he worked, word spread through the city that the great Wizard of Oz was leaving. The people were upset, but the man calmed them.</p><p style="margin-bottom: 15px;">"I am going away on a journey," he announced from the palace balcony. "While I am gone, the Scarecrow will rule over you. He has brains now, and he will govern you wisely."</p><p style="margin-bottom: 15px;">The people cheered. They loved the Scarecrow, who had helped kill the Wicked Witch.</p><p style="margin-bottom: 15px;">The Scarecrow was nervous. "I don't know anything about ruling a city," he whispered to Dorothy.</p><p style="margin-bottom: 15px;">"You'll figure it out," Dorothy said. "You always do."</p><p style="margin-bottom: 15px;">On the morning of the launch, the balloon was inflated in the great square before the palace. A fire underneath heated the air inside, and the green silk bag swelled and rose, tugging at the ropes that held it down. The whole city turned out to watch.</p><p style="margin-bottom: 15px;">Dorothy hugged her friends one by one.</p><p style="margin-bottom: 15px;">"Goodbye, Scarecrow," she said. "You were always the smartest person I knew — even before the brains."</p><p style="margin-bottom: 15px;">"Goodbye, Dorothy," the Scarecrow said. "I will miss you terribly. But I will try to think of cheerful things, since I now have brains to think with."</p><p style="margin-bottom: 15px;">"Goodbye, Tin Woodman," Dorothy said. "You have the biggest heart of anyone, and you always did."</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Balloon - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Tin Woodman was crying so hard he could not speak. Dorothy oiled his jaw so it would not rust, and he managed to whisper, "You are the best friend I ever had."</p><p style="margin-bottom: 15px;">"Goodbye, Lion," Dorothy said. "You are the bravest creature in all of Oz."</p><p style="margin-bottom: 15px;">"Only because you believed in me," the Lion said. His great golden eyes were wet. "I was nothing before you came along."</p><p style="margin-bottom: 15px;">"That is not true," Dorothy said firmly. "You were always brave. You just didn't know it."</p><p style="margin-bottom: 15px;">The balloon strained against its ropes. The man from Omaha climbed into the basket and called to Dorothy. "Hurry! The balloon is ready! We must go now, before it lifts off without us!"</p><p style="margin-bottom: 15px;">Dorothy turned to get Toto — but the little dog had spotted a cat in the crowd and had run off barking. Dorothy chased after him.</p><p style="margin-bottom: 15px;">"Come back, Toto! Come back!"</p><p style="margin-bottom: 15px;">There was a snap. One of the ropes broke. Then another. The basket lurched upward.</p><p style="margin-bottom: 15px;">"Dorothy!" the man cried. "Hurry!"</p><p style="margin-bottom: 15px;">But Dorothy was still chasing Toto through the crowd. She caught him, scooped him up, and turned back — just in time to see the last rope break.</p><p style="margin-bottom: 15px;">The balloon rose into the air.</p><p style="margin-bottom: 15px;">"Come back!" Dorothy shouted. "Wait for me!"</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Balloon - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"I can't!" the man called down. His voice was already faint. The balloon was rising fast, caught by the wind. "I don't know how to bring it down! Goodbye, Dorothy! Goodbye!"</p><p style="margin-bottom: 15px;">The balloon sailed up and up, growing smaller against the blue sky, until it was nothing but a green speck, and then nothing at all.</p><p style="margin-bottom: 15px;">Dorothy stood in the square, holding Toto, and watched it disappear.</p><p style="margin-bottom: 15px;">The man from Omaha was gone. And Dorothy was still in Oz.</p><p style="margin-bottom: 15px;">She did not cry. Not right away. She stood very still, feeling the weight of it — the closed door, the vanished hope, the enormous distance between her and Kansas.</p><p style="margin-bottom: 15px;">Then the Scarecrow put his stuffed hand on her shoulder. The Tin Woodman stood on her other side. The Lion pressed his great warm body against her back.</p><p style="margin-bottom: 15px;">"We will find another way," the Scarecrow said.</p><p style="margin-bottom: 15px;">"We will not give up," the Tin Woodman said.</p><p style="margin-bottom: 15px;">"We are with you," the Lion said.</p><p style="margin-bottom: 15px;">Dorothy looked at her three friends — the ones who were supposed to need her help, who had turned out to be the ones helping her — and she allowed herself one small, tired smile.</p><p style="margin-bottom: 15px;">"All right," she said. "Another way."</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ Compound Words</h2>
                         <div class="skill-explanation">
                             <p>Two words combined to make one new word.</p>
@@ -294,7 +270,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Friendship Across Differences</h2>
                         <div class="informational-article">
                             <p>One of the most beautiful aspects of The Wizard of Oz is how four completely different individuals become loyal friends. Dorothy (human), the Scarecrow (straw), the Tin Woodman (metal), and the Lion (animal) have almost nothing in common — except their journey and their care for each other.</p><p>Each character believes they're missing something essential:
@@ -331,7 +307,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-18" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-18-count">0</span> / 100-150</p></div>
     </div>
 
@@ -347,7 +323,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));

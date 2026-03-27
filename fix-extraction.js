@@ -1,9 +1,55 @@
-<!DOCTYPE html>
+// Fix extraction - properly handle pages with render + onLoad
+
+const fs = require('fs');
+
+function extractPages(htmlFile) {
+  const content = fs.readFileSync(htmlFile, 'utf8');
+  
+  // Extract the pages array
+  const pagesMatch = content.match(/pages:\s*\[([\s\S]*?)\]\s*(?:};|,\s*})/m);
+  if (!pagesMatch) {
+    console.log(`⚠️  No pages array in ${htmlFile}`);
+    return null;
+  }
+  
+  const pagesArrayContent = pagesMatch[1];
+  
+  // Find each page object - they're comma-separated and look like:
+  // { render: () => `...` } or { render: () => `...`, onLoad: ... }
+  const pages = [];
+  
+  // Split on closing brace followed by comma (end of page object)
+  const pageObjects = pagesArrayContent.split(/}\s*,\s*{/);
+  
+  pageObjects.forEach((obj, idx) => {
+    // Add back the braces we split on
+    if (idx > 0) obj = '{' + obj;
+    if (idx < pageObjects.length - 1) obj = obj + '}';
+    
+    // Extract just the render template content
+    const renderMatch = obj.match(/render:\s*\(\)\s*=>\s*`([\s\S]*?)`/);
+    if (renderMatch) {
+      pages.push(renderMatch[1].trim());
+    }
+  });
+  
+  return pages.length > 0 ? pages : null;
+}
+
+function buildCleanHTML(pages, day) {
+  const cleanPages = pages.map(html => {
+    // Remove lesson-page-card wrappers
+    let clean = html.replace(/<div class="lesson-page-card[^"]*">/g, '');
+    clean = clean.replace(/<\/div>\s*$/g, '');
+    return clean.trim();
+  });
+  
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 4 - 4th Grade BedrockELA</title>
+  <title>Day ${day} - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -139,23 +185,16 @@
   
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 2</div>
+    <div class="day-info">Day ${day} - The Wizard of Oz</div>
+    <div class="page-progress" id="topProgress">Page 1 of ${pages.length}</div>
   </div>
   
   <div class="container">
-
-    <div class="page active" data-page="1">
-<h1>Week 25 Assessment</h1>
-                            <p style="font-size: 18px; margin-top: 20px;">Show what you've learned this week!</p>
+${cleanPages.map((html, idx) => `
+    <div class="page${idx === 0 ? ' active' : ''}" data-page="${idx + 1}">
+${html}
     </div>
-
-
-    <div class="page" data-page="2">
-<h2>🎯 Assessment Complete!</h2>
-                            <p>Great work this week! You're ready for the next chapter.</p>
-    </div>
-
+`).join('\n')}
   </div>
   
   <div class="bottom-nav">
@@ -168,11 +207,11 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 2;
+    const totalPages = ${pages.length};
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      const page = document.querySelector(\`.page[data-page="\${pageNum}"]\`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -180,7 +219,7 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = \`Page \${pageNum} of \${totalPages}\`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -202,4 +241,31 @@
     showPage(1);
   </script>
 </body>
-</html>
+</html>`;
+}
+
+// MAIN
+console.log('\n🔧 Fixing 4th Grade extraction (handle onLoad properly)\n');
+
+const files = fs.readdirSync('.').filter(f => f.match(/^4th-grade-day-\d{3}\.OLD\.html$/));
+let fixed = 0;
+
+files.forEach(oldFile => {
+  const newFile = oldFile.replace('.OLD.html', '.html');
+  const day = parseInt(oldFile.match(/\d+/)[0]);
+  
+  console.log(`Fixing Day ${day}...`);
+  const pages = extractPages(oldFile);
+  
+  if (!pages) {
+    console.log(`  ⚠️  Skipping - couldn't extract pages`);
+    return;
+  }
+  
+  const cleanHTML = buildCleanHTML(pages, day);
+  fs.writeFileSync(newFile, cleanHTML, 'utf8');
+  console.log(`  ✅ Fixed: ${newFile} (${pages.length} pages)`);
+  fixed++;
+});
+
+console.log(`\n✨ Fixed ${fixed} lessons!\n`);

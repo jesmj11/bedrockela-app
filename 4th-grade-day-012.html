@@ -6,14 +6,12 @@
   <title>Day 4 - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: #333;
       background: #f5f5f5;
     }
-    
     .top-nav {
       background: #305853;
       color: white;
@@ -26,7 +24,6 @@
       z-index: 100;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
     .top-nav .home-btn {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -35,35 +32,29 @@
       text-decoration: none;
       font-weight: 600;
     }
-    
     .top-nav .day-info {
       flex: 1;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
     .top-nav .page-progress {
       font-size: 0.9rem;
       opacity: 0.9;
     }
-    
     .container {
       max-width: 800px;
       margin: 0 auto;
       background: white;
       min-height: calc(100vh - 120px);
     }
-    
     .page {
       display: none;
       padding: 40px 30px 80px;
     }
-    
     .page.active {
       display: block;
     }
-    
     .bottom-nav {
       position: sticky;
       bottom: 0;
@@ -75,7 +66,6 @@
       align-items: center;
       gap: 20px;
     }
-    
     .bottom-nav button {
       padding: 12px 24px;
       background: #305853;
@@ -86,16 +76,13 @@
       font-weight: 600;
       cursor: pointer;
     }
-    
     .bottom-nav button:hover:not(:disabled) {
       background: #3d6b65;
     }
-    
     .bottom-nav button:disabled {
       background: #ccc;
       cursor: not-allowed;
     }
-    
     .bottom-nav .progress {
       flex: 1;
       height: 8px;
@@ -103,20 +90,17 @@
       border-radius: 10px;
       overflow: hidden;
     }
-    
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
       transition: width 0.3s;
     }
-    
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
     h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     p { margin-bottom: 1rem; line-height: 1.8; }
     ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
-    
     textarea, input[type="text"] {
       width: 100%;
       padding: 12px;
@@ -126,12 +110,10 @@
       font-size: 1rem;
       resize: vertical;
     }
-    
     textarea:focus, input:focus {
       outline: none;
       border-color: #305853;
     }
-    
     .vocab-word-card, .question-card, .exercise-card {
       padding: 20px;
       margin-bottom: 20px;
@@ -139,17 +121,14 @@
       border-radius: 8px;
       border-left: 4px solid #B06821;
     }
-    
     .story-content p {
       text-indent: 2em;
       margin-bottom: 15px;
     }
-    
     .title-page {
       text-align: center;
       padding: 60px 30px;
     }
-    
     .unit-label, .chapter-info {
       color: #666;
       margin-top: 10px;
@@ -161,7 +140,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Day 4 - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+    <div class="page-progress" id="topProgress">Page 1 of 11</div>
   </div>
   
   <div class="container">
@@ -229,21 +208,18 @@
                         </div>
                         
                         <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                    </div>
-                `,
-        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-    },
-    {
-        render: () => `
-                    
-                        <h2>📖 The Search for the Wicked Witch - Part 1</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Search for the Wicked Witch - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Wicked Witch of the West had only one eye, but it was as powerful as a telescope. She could see everything that happened in her domain, no matter how far away. So when Dorothy and her friends set out from the Emerald City heading west, the Witch saw them coming.</p><p style="margin-bottom: 15px;">"Fools," she muttered. She sat on her throne in her dark castle and planned her attack.</p><p style="margin-bottom: 15px;">First, she called a pack of forty great wolves. "Go to those strangers and tear them to pieces," she commanded.</p><p style="margin-bottom: 15px;">The wolves ran howling across the plains. The Tin Woodman heard them coming.</p><p style="margin-bottom: 15px;">"Stand behind me," he said. He planted his feet wide, raised his axe, and waited. When the wolves came, snarling and snapping, the Tin Woodman swung his axe with terrible skill. He was tireless, because he was made of tin, and the wolves could not bite through his metal body. One by one, they fell before him until not a single wolf remained.</p><p style="margin-bottom: 15px;">When the Witch saw what had happened, she flew into a rage. She sent forty crows — huge, black, vicious crows — with orders to peck out the strangers' eyes.</p><p style="margin-bottom: 15px;">The Scarecrow saw them coming. "Lie down," he told the others. "I will handle this."</p><p style="margin-bottom: 15px;">He stood in the middle of the road, spread his arms wide, and waited. When the crows dove at him, they found nothing but straw. The Scarecrow grabbed them one by one, wringing their necks with his stuffed hands. They could not hurt him, because he felt no pain. Soon the crows were finished.</p><p style="margin-bottom: 15px;">The Witch screamed with fury. She sent a swarm of black bees — thousands of them — to sting the strangers to death.</p><p style="margin-bottom: 15px;">"Quick!" the Scarecrow said. "Take my straw and cover Dorothy, Toto, and the Lion!"</p>
                         </div>
     </div>
 
 
-    <div class="page" data-page="5">
+    <div class="page" data-page="6">
 <h2>📖 The Search for the Wicked Witch - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Tin Woodman pulled handfuls of straw from the Scarecrow's body and piled it over the others, hiding them completely. The bees found only the Tin Woodman standing in the road, and when they stung his tin body, their stingers broke and they fell to the ground.</p><p style="margin-bottom: 15px;">The Scarecrow was a sorry sight afterward — flat and empty, his clothes hanging loosely. But Dorothy and the Tin Woodman stuffed him full again, and he declared himself as good as new.</p><p style="margin-bottom: 15px;">"Three attacks," Dorothy said. "Do you think she will stop?"</p><p style="margin-bottom: 15px;">"No," the Scarecrow said quietly. "She will not stop until she destroys us or we destroy her."</p><p style="margin-bottom: 15px;">He was right. The Witch had one final weapon — the most terrible of all. In her castle, locked in a cupboard, was a golden cap. Whoever wore it could command the Winged Monkeys three times, and three times only. The Witch had already used the cap twice. This would be her last command.</p><p style="margin-bottom: 15px;">She placed the cap on her head and spoke the magic words. The sky darkened. A rushing sound filled the air. Then they appeared — dozens of enormous monkeys with powerful wings, swooping down from the clouds like a nightmare.</p><p style="margin-bottom: 15px;">The Winged Monkeys seized the Tin Woodman and carried him high into the air, then dropped him onto sharp rocks far below. His body was battered and dented, his arms and legs bent at terrible angles. They pulled every wisp of straw from the Scarecrow's body and threw his empty clothes into the top of a tall tree. They tied the Lion with thick ropes and carried him to the Witch's castle, where they locked him in a small iron cage.</p><p style="margin-bottom: 15px;">But when the leader of the Winged Monkeys reached for Dorothy, he saw the mark on her forehead — the shining spot where the Witch of the North had kissed her.</p><p style="margin-bottom: 15px;">"We cannot harm this girl," the monkey said. "She is protected by the power of good. We will carry her to the Witch, but we cannot hurt her."</p><p style="margin-bottom: 15px;">So the Winged Monkeys carried Dorothy and Toto gently to the Witch's castle and set them down at the gate. The Witch was waiting.</p>
@@ -251,7 +227,7 @@
     </div>
 
 
-    <div class="page" data-page="6">
+    <div class="page" data-page="7">
 <h2>📖 The Search for the Wicked Witch - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">She looked at Dorothy with her one terrible eye and smiled a cruel smile. Then she saw the silver shoes on Dorothy's feet, and her smile vanished. She knew those shoes held great power — perhaps enough to destroy her.</p><p style="margin-bottom: 15px;">The Witch was afraid of Dorothy, though she would never show it. She was afraid of the dark, she was afraid of water, and she was deeply afraid of the silver shoes. But she was clever and cruel, and she had ruled the western lands for many years.</p><p style="margin-bottom: 15px;">"You will be my servant," the Witch told Dorothy. "You will cook and clean and scrub the floors."</p><p style="margin-bottom: 15px;">"I will not," Dorothy said. She was frightened — more frightened than she had been in the poppy field, or the dark forest, or even the throne room of Oz. But she planted her feet and looked the Witch in her one eye. "My friends will come for me."</p><p style="margin-bottom: 15px;">"Your friends are destroyed," the Witch said. "The Tin Woodman is smashed. The Scarecrow is scattered. The Lion is in chains. You are alone."</p><p style="margin-bottom: 15px;">Dorothy felt her heart break. But she did not cry — not in front of the Witch.</p><p style="margin-bottom: 15px;">"I am not alone," she said quietly. "I have Toto."</p><p style="margin-bottom: 15px;">The little dog pressed against her leg and growled at the Witch, and for that one small moment, Dorothy did not feel afraid at all.</p>
@@ -259,7 +235,7 @@
     </div>
 
 
-    <div class="page" data-page="7">
+    <div class="page" data-page="8">
 <h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
@@ -278,7 +254,7 @@
     </div>
 
 
-    <div class="page" data-page="8">
+    <div class="page" data-page="9">
 <h2>✏️ ABC Order</h2>
                         <div class="skill-explanation">
                             <p>Alphabetical order helps us organize and find words quickly.</p>
@@ -294,7 +270,7 @@
     </div>
 
 
-    <div class="page" data-page="9">
+    <div class="page" data-page="10">
 <h2>🌍 Informational Text: Hot Air Balloons: The Original Flying Machines</h2>
                         <div class="informational-article">
                             <p>When the Wizard attempts to return to Kansas in a hot air balloon, he's using technology that was cutting-edge in the 1890s. Hot air balloons were humanity's first successful method of flight — created over a hundred years before airplanes.</p><p>The Montgolfier brothers in France launched the first human-carrying hot air balloon in 1783. They discovered that hot air rises because it's lighter than cold air. By trapping hot air inside a large balloon and hanging a basket underneath, they could lift people into the sky.</p><p>By the 1890s, hot air balloons were used for scientific observations, military reconnaissance, and entertainment. "Aeronauts" (balloon pilots) became celebrities, performing at fairs and exhibitions. The Wizard of Oz's backstory — being a circus balloonist who accidentally drifted away — would have been believable to readers in 1900.</p><p>How do hot air balloons work? Fire heats the air inside the balloon, making it less dense than the outside air. Since hot air rises, the balloon lifts up. To descend, pilots let the air cool or release some of it through a vent. To steer... well, that's the problem. Early balloons couldn't be steered. They drifted wherever the wind carried them.</p><p>This is exactly what happens to the Wizard at the end of the story. Dorothy is supposed to climb into the basket, but Toto runs away and she chases him. The balloon's ropes slip loose, and the Wizard drifts away without her, unable to control where he's going.</p><p>This scene is both funny and sad. The "great and powerful Oz" can't even control his own balloon! He's at the mercy of wind and chance, just like he's always been. His whole life has been about things happening TO him rather than him controlling events.</p><p>Modern hot air balloons are safer and more controllable, with better materials and equipment. But they still can't truly steer — they go where the wind takes them.</p><p>The balloon's failure is symbolic. Dorothy can't get home through magic or tricks. She'll need to find another way — one that depends on what she's had all along.</p>
@@ -314,7 +290,7 @@
     </div>
 
 
-    <div class="page" data-page="10">
+    <div class="page" data-page="11">
 <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-12" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-12-count">0</span> / 100-150</p></div>
     </div>
 
@@ -330,7 +306,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 10;
+    const totalPages = 11;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
