@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 102 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899212">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767899212"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767899212"></script>
+    <script src="js/lesson-completion.js?v=1773767899212"></script>
+    <script src="js/lesson-autosave.js?v=1773767899212"></script>
+
+    <script>
+        const lesson102Config = {
+            lessonId: '4th-grade-day-102',
+            gradeLevel: '4th-grade',
+            title: 'Day 102 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 102</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 21</p>
+                        <p class="chapter-info">The Cowardly Lion</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 102!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Cowardly Lion</li>
+                                <li>Practice Homophones</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a journal activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. wisdom</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-102-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-102-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. friendship</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-102-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-102-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="wisdom" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">wisdom</div>
+                                <div class="match-word" data-word="friendship" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">friendship</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="wisdom" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something difficult to do</div>
+                                <div class="match-def" data-word="friendship" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A trip or experience</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cowardly Lion - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">All this time Dorothy and her companions had been walking through the thick woods. The road was still paved with yellow brick, but these were much covered by dried branches and dead leaves from the trees, and the walking was not at all good. There were few birds in this part of the forest, for birds love the open country where there is plenty of sunshine. But now and then there came a deep growl from some wild animal hidden among the trees. These sounds made the little girl’s heart beat fast, for she did not know what made them; but Toto knew, and he walked close to Dorothy’s side, and did not even bark in return. “How long will it be,” the child asked of the Tin Woodman, “before we are out of the forest?” “I cannot tell,” was the answer, “for I have never been to the Emerald City. But my father went there once, when I was a boy, and he said it was a long journey through a dangerous country, although nearer to the city where Oz dwells the country is beautiful. But I am not afraid so long as I have my oil-can, and nothing can hurt the Scarecrow, while you bear upon your forehead the mark of the Good Witch’s kiss, and that will protect you from harm.” “But Toto!” said the girl anxiously. “What will protect him?” “We must protect him ourselves if he is in danger,” replied the Tin Woodman. Just as he spoke there came from the forest a terrible roar, and the next moment a great Lion bounded into the road. With one blow of his paw he sent the Scarecrow spinning over and over to the edge of the road, and then he struck at the Tin Woodman with his sharp claws. But, to the Lion’s surprise, he could make no impression on the tin, although the Woodman fell over in the road and lay still. Little Toto, now that he had an enemy to face, ran barking toward the Lion, and the great beast had opened his mouth to bite the dog, when Dorothy, fearing Toto would be killed, and heedless of danger, rushed forward and slapped the Lion upon his nose as hard as she could, while she cried out: “Don’t you dare to bite Toto! You ought to be ashamed of yourself, a big beast like you, to bite a poor little dog!” “I didn’t bite him,” said the Lion, as he rubbed his nose with his paw where Dorothy had hit it. “No, but you tried to,” she retorted. “You are nothing but a big coward.” “I know it,” said the Lion, hanging his head in shame. “I’ve always known it. But how can I help it?” “I don’t know, I’m sure. To think of your striking a stuffed man, like the poor Scarecrow!” “Is he stuffed?” asked the Lion in surprise, as he watched her pick up the Scarecrow and set him upon his feet, while she patted him into shape again. “Of course he’s stuffed,” replied Dorothy, who was still angry. “That’s why he went over so easily,” remarked the Lion. “It astonished me to see him whirl around so. Is the other one stuffed also?” “No,” said Dorothy, “he’s made of tin.” And she helped the Woodman up again. “That’s why he nearly blunted my claws,” said the Lion. “When they scratched against the tin it made a cold shiver run down my back. What is that little animal you are so tender of?” “He is my dog, Toto,” answered Dorothy. “Is he made of tin, or stuffed?” asked the Lion. “Neither. He’s a—a—a meat dog,” said the girl. “Oh! He’s a curious animal and seems remarkably small, now that I look at him. No one would think of biting such a little thing, except a coward like me,” continued the Lion sadly. “What makes you a coward?” asked Dorothy, looking at the great beast in wonder, for he was as big as a small horse. “It’s a mystery,” replied the Lion. “I suppose I was born that way. All the other animals in the forest naturally expect me to be brave, for the Lion is everywhere thought to be the King of Beasts. I learned that if I roared very loudly every living thing was frightened and got out of my way. Whenever I’ve met a man I’ve been awfully scared; but I just roared at him, and he has always run away as fast as he could go. If the elephants and the tigers and the bears had ever tried to fight me, I should have run myself—I’m such a coward; but just as soon as they hear me roar they all try to get away from me, and of course I let them go.” “But that isn’t right. The King of Beasts shouldn’t be a coward,” said the Scarecrow. “I know it,” returned the Lion, wiping a tear from his eye with the tip of his tail. “It is my great sorrow, and makes my life very unhappy. But whenever there is danger, my heart begins to beat fast.” “Perhaps you have heart disease,” said the Tin Woodman. “It may be,” said the Lion. “If you have,” continued the Tin Woodman, “you ought to be glad, for it proves you have a heart. For my part, I have no heart; so I cannot have heart disease.” “Perhaps,” said the Lion thoughtfully, “if I had no heart I should not be a coward.” “Have you brains?” asked the Scarecrow. “I suppose so. I’ve never looked to see,” replied the Lion. “I am going to the Great Oz to ask him to give me some,” remarked the Scarecrow, “for my head is stuffed with straw.” “And I am going to ask him to give me a heart,” said the Woodman. “And I am going to ask him to send Toto and me back to Kansas,” added Dorothy. “Do you think Oz could give me courage?” asked the Cowardly Lion. “Just as easily as he could give me brains,” said the Scarecrow. “Or give me a heart,” said the Tin Woodman. “Or send me back to Kansas,” said Dorothy. “Then, if you don’t mind, I’ll go with you,” said the Lion, “for my life is simply unbearable without a bit of courage.” “You will be very welcome,” answered Dorothy, “for you will help to keep away the other wild beasts. It seems to me they must be more cowardly than you are if they allow you to scare them so easily.” “They really are,” said the Lion, “but that doesn’t make me any braver, and as long as I know myself to be a coward I shall be unhappy.” So once more the little company set off upon the journey, the Lion walking with stately strides at Dorothy’s side. Toto did not approve of this new comrade at first, for he could not forget how nearly he had been crushed between the Lion’s great jaws. But after a time he became more at ease, and presently Toto and the Cowardly Lion had grown to be good friends. During the rest of that day there was no other adventure to mar the peace of their journey. Once, indeed, the Tin Woodman stepped upon a beetle that was crawling along the road, and killed the poor little thing. This made the Tin Woodman very unhappy, for he was always careful not to hurt any living creature; and as he walked along he wept several tears of sorrow and regret. These tears ran slowly down his face and over the hinges of his jaw, and there they rusted. When Dorothy presently asked him a question the Tin Woodman could not open his mouth, for his jaws were tightly rusted together. He became greatly frightened at this and made many motions to Dorothy to relieve him, but she could not understand. The Lion was also puzzled to know what was wrong. But the Scarecrow seized the oil-can from Dorothy’s basket and oiled the Woodman’s jaws, so that after a few moments he could talk as well as before. “This will serve me a lesson,” said he, “to look where I step. For if I should kill another bug or beetle I should surely cry again, and crying rusts my jaws so that I cannot speak.” Thereafter he walked very carefully, with his eyes on the road, and when he saw a tiny ant toiling by he would step over it, so as not to harm it. The Tin Woodman knew very well he had no heart, and therefore he took great care never to be cruel or unkind to anything. “You people with hearts,” he said, “have something to guide you, and need never do wrong; but I have no heart, and so I must be very careful. When Oz gives me a heart of course I needn’t mind so much.”</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cowardly Lion - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Cowardly Lion - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> What was the main event in this chapter?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> The characters met someone new</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> They overcame a challenge</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> They learned something important</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> All of the above</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> How did the main character change or grow in this chapter?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> Think about what they learned or how they felt.</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-102" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-102-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Homophones</h2>
+                        <div class="skill-explanation">
+                            <p>Words that sound the same but have different meanings.</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>to/two/too</li><li>there/their/they're</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Use "their" and "there" correctly in sentences.</p><textarea id="skill-102-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-102-1-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: Did You Know?</h2>
+                        <div class="informational-article">
+                            <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-102-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-102-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-102-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-102-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were the main character? What would you do?</p><label>Write 100-150 words:</label><div class="journal-prompt"><textarea id="journal-102" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-102-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson102Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

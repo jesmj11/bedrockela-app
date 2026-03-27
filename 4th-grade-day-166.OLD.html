@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 166 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899217">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767899217"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767899217"></script>
+    <script src="js/lesson-completion.js?v=1773767899217"></script>
+    <script src="js/lesson-autosave.js?v=1773767899217"></script>
+
+    <script>
+        const lesson166Config = {
+            lessonId: '4th-grade-day-166',
+            gradeLevel: '4th-grade',
+            title: 'Day 166 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 166</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 34</p>
+                        <p class="chapter-info">The Country of the Quadlings</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 166!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Country of the Quadlings</li>
+                                <li>Practice Prefixes</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a journal activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. wisdom</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-166-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-166-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. friendship</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-166-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-166-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="wisdom" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">wisdom</div>
+                                <div class="match-word" data-word="friendship" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">friendship</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="wisdom" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something difficult to do</div>
+                                <div class="match-def" data-word="friendship" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">A trip or experience</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Country of the Quadlings - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The four travelers passed through the rest of the forest in safety, and when they came out from its gloom saw before them a steep hill, covered from top to bottom with great pieces of rock. “That will be a hard climb,” said the Scarecrow, “but we must get over the hill, nevertheless.” So he led the way and the others followed. They had nearly reached the first rock when they heard a rough voice cry out, “Keep back!” “Who are you?” asked the Scarecrow. Then a head showed itself over the rock and the same voice said, “This hill belongs to us, and we don’t allow anyone to cross it.” “But we must cross it,” said the Scarecrow. “We’re going to the country of the Quadlings.” “But you shall not!” replied the voice, and there stepped from behind the rock the strangest man the travelers had ever seen. He was quite short and stout and had a big head, which was flat at the top and supported by a thick neck full of wrinkles. But he had no arms at all, and, seeing this, the Scarecrow did not fear that so helpless a creature could prevent them from climbing the hill. So he said, “I’m sorry not to do as you wish, but we must pass over your hill whether you like it or not,” and he walked boldly forward. As quick as lightning the man’s head shot forward and his neck stretched out until the top of the head, where it was flat, struck the Scarecrow in the middle and sent him tumbling, over and over, down the hill. Almost as quickly as it came the head went back to the body, and the man laughed harshly as he said, “It isn’t as easy as you think!” A chorus of boisterous laughter came from the other rocks, and Dorothy saw hundreds of the armless Hammer-Heads upon the hillside, one behind every rock. The Lion became quite angry at the laughter caused by the Scarecrow’s mishap, and giving a loud roar that echoed like thunder, he dashed up the hill. Again a head shot swiftly out, and the great Lion went rolling down the hill as if he had been struck by a cannon ball. Dorothy ran down and helped the Scarecrow to his feet, and the Lion came up to her, feeling rather bruised and sore, and said, “It is useless to fight people with shooting heads; no one can withstand them.” “What can we do, then?” she asked. “Call the Winged Monkeys,” suggested the Tin Woodman. “You have still the right to command them once more.” “Very well,” she answered, and putting on the Golden Cap she uttered the magic words. The Monkeys were as prompt as ever, and in a few moments the entire band stood before her. “What are your commands?” inquired the King of the Monkeys, bowing low. “Carry us over the hill to the country of the Quadlings,” answered the girl. “It shall be done,” said the King, and at once the Winged Monkeys caught the four travelers and Toto up in their arms and flew away with them. As they passed over the hill the Hammer-Heads yelled with vexation, and shot their heads high in the air, but they could not reach the Winged Monkeys, which carried Dorothy and her comrades safely over the hill and set them down in the beautiful country of the Quadlings. “This is the last time you can summon us,” said the leader to Dorothy; “so good-bye and good luck to you.” “Good-bye, and thank you very much,” returned the girl; and the Monkeys rose into the air and were out of sight in a twinkling. The country of the Quadlings seemed rich and happy. There was field upon field of ripening grain, with well-paved roads running between, and pretty rippling brooks with strong bridges across them. The fences and houses and bridges were all painted bright red, just as they had been painted yellow in the country of the Winkies and blue in the country of the Munchkins. The Quadlings themselves, who were short and fat and looked chubby and good-natured, were dressed all in red, which showed bright against the green grass and the yellowing grain. The Monkeys had set them down near a farmhouse, and the four travelers walked up to it and knocked at the door. It was opened by the farmer’s wife, and when Dorothy asked for something to eat the woman gave them all a good dinner, with three kinds of cake and four kinds of cookies, and a bowl of milk for Toto. “How far is it to the Castle of Glinda?” asked the child. “It is not a great way,” answered the farmer’s wife. “Take the road to the South and you will soon reach it.” Thanking the good woman, they started afresh and walked by the fields and across the pretty bridges until they saw before them a very beautiful Castle. Before the gates were three young girls, dressed in handsome red uniforms trimmed with gold braid; and as Dorothy approached, one of them said to her: “Why have you come to the South Country?” “To see the Good Witch who rules here,” she answered. “Will you take me to her?” “Let me have your name, and I will ask Glinda if she will receive you.” They told who they were, and the girl soldier went into the Castle. After a few moments she came back to say that Dorothy and the others were to be admitted at once.</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Country of the Quadlings - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Country of the Quadlings - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;"></p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> What was the main event in this chapter?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> The characters met someone new</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> They overcame a challenge</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> They learned something important</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> All of the above</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> How did the main character change or grow in this chapter?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> Think about what they learned or how they felt.</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-166" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-166-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Prefixes</h2>
+                        <div class="skill-explanation">
+                            <p>Word parts added to the beginning (un-, re-, pre-).</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>unhappy</li><li>replay</li><li>preview</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Add a prefix to "do" to mean "do again".</p><textarea id="skill-166-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-166-1-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: Did You Know?</h2>
+                        <div class="informational-article">
+                            <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-166-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-166-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <label>Write 40-50 words:</label>
+                            <textarea id="info-166-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-166-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were the main character? What would you do?</p><label>Write 100-150 words:</label><div class="journal-prompt"><textarea id="journal-166" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-166-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson166Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

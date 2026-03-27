@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Day 79 - 4th Grade BedrockELA</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899210">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - 4th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    
+    .vocab-word-card, .question-card, .exercise-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .story-content p {
+      text-indent: 2em;
+      margin-bottom: 15px;
+    }
+    
+    .title-page {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .unit-label, .chapter-info {
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container"></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Day 4 - The Wizard of Oz</div>
+    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+  </div>
+  
+  <div class="container">
 
-    <script src="js/lesson-viewer.js?v=1773767899210"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=1773767899210"></script>
-    <script src="js/lesson-completion.js?v=1773767899210"></script>
-    <script src="js/lesson-autosave.js?v=1773767899210"></script>
-
-    <script>
-        const lesson79Config = {
-            lessonId: '4th-grade-day-079',
-            gradeLevel: '4th-grade',
-            title: 'Day 79 - The Wizard of Oz',
-            pages: [
-    {
-        render: () => `
-                    <div class="lesson-page-card title-page">
-                        <h1>Day 79</h1>
+    <div class="page active" data-page="1">
+<h1>Day 79</h1>
                         <h2>The Wizard of Oz</h2>
                         <p class="unit-label">4th Grade • Week 16</p>
                         <p class="chapter-info">The Journey to the Great Oz</p>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📚 Welcome to Day 79!</h2>
+    </div>
+
+
+    <div class="page" data-page="2">
+<h2>📚 Welcome to Day 79!</h2>
                         <div class="objectives-box">
                             <h3>Today's Learning Goals:</h3>
                             <ul>
@@ -50,13 +187,11 @@
                             </ul>
                             <p><strong>Estimated time:</strong> 45-60 minutes</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Vocabulary</h2>
+    </div>
+
+
+    <div class="page" data-page="3">
+<h2>📖 Vocabulary</h2>
                         <p>Look up and learn these 2 words before reading:</p>
                         
                         <div class="vocab-word-card">
@@ -72,13 +207,11 @@
                             <textarea id="vocab-79-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-79-2-count">0</span> / 20-30</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🎮 Vocabulary Matching Game</h2>
+    </div>
+
+
+    <div class="page" data-page="4">
+<h2>🎮 Vocabulary Matching Game</h2>
                         <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
                         <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
                         
@@ -102,38 +235,32 @@
     },
     {
         render: () => `
-                    <div class="lesson-page-card content-page">
+                    
                         <h2>📖 The Journey to the Great Oz - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">They were obliged to camp out that night under a large tree in the forest, for there were no houses near. The tree made a good, thick covering to protect them from the dew, and the Tin Woodman chopped a great pile of wood with his axe and Dorothy built a splendid fire that warmed her and made her feel less lonely. She and Toto ate the last of their bread, and now she did not know what they would do for breakfast. “If you wish,” said the Lion, “I will go into the forest and kill a deer for you. You can roast it by the fire, since your tastes are so peculiar that you prefer cooked food, and then you will have a very good breakfast.” “Don’t! Please don’t,” begged the Tin Woodman. “I should certainly weep if you killed a poor deer, and then my jaws would rust again.” But the Lion went away into the forest and found his own supper, and no one ever knew what it was, for he didn’t mention it. And the Scarecrow found a tree full of nuts and filled Dorothy’s basket with them, so that she would not be hungry for a long time. She thought this was very kind and thoughtful of the Scarecrow, but she laughed heartily at the awkward way in which the poor creature picked up the nuts. His padded hands were so clumsy and the nuts were so small that he dropped almost as many as he put in the basket. But the Scarecrow did not mind how long it took him to fill the basket, for it enabled him to keep away from the fire, as he feared a spark might get into his straw and burn him up. So he kept a good distance away from the flames, and only came near to cover Dorothy with dry leaves when she lay down to sleep. These kept her very snug and warm, and she slept soundly until morning. When it was daylight, the girl bathed her face in a little rippling brook, and soon after they all started toward the Emerald City. This was to be an eventful day for the travelers. They had hardly been walking an hour when they saw before them a great ditch that crossed the road and divided the forest as far as they could see on either side. It was a very wide ditch, and when they crept up to the edge and looked into it they could see it was also very deep, and there were many big, jagged rocks at the bottom. The sides were so steep that none of them could climb down, and for a moment it seemed that their journey must end. “What shall we do?” asked Dorothy despairingly. “I haven’t the faintest idea,” said the Tin Woodman, and the Lion shook his shaggy mane and looked thoughtful. But the Scarecrow said, “We cannot fly, that is certain. Neither can we climb down into this great ditch. Therefore, if we cannot jump over it, we must stop where we are.” “I think I could jump over it,” said the Cowardly Lion, after measuring the distance carefully in his mind. “Then we are all right,” answered the Scarecrow, “for you can carry us all over on your back, one at a time.” “Well, I’ll try it,” said the Lion. “Who will go first?” “I will,” declared the Scarecrow, “for, if you found that you could not jump over the gulf, Dorothy would be killed, or the Tin Woodman badly dented on the rocks below. But if I am on your back it will not matter so much, for the fall would not hurt me at all.” “I am terribly afraid of falling, myself,” said the Cowardly Lion, “but I suppose there is nothing to do but try it. So get on my back and we will make the attempt.” The Scarecrow sat upon the Lion’s back, and the big beast walked to the edge of the gulf and crouched down. “Why don’t you run and jump?” asked the Scarecrow. “Because that isn’t the way we Lions do these things,” he replied. Then giving a great spring, he shot through the air and landed safely on the other side. They were all greatly pleased to see how easily he did it, and after the Scarecrow had got down from his back the Lion sprang across the ditch again. Dorothy thought she would go next; so she took Toto in her arms and climbed on the Lion’s back, holding tightly to his mane with one hand. The next moment it seemed as if she were flying through the air; and then, before she had time to think about it, she was safe on the other side. The Lion went back a third time and got the Tin Woodman, and then they all sat down for a few moments to give the beast a chance to rest, for his great leaps had made his breath short, and he panted like a big dog that has been running too long. They found the forest very thick on this side, and it looked dark and gloomy. After the Lion had rested they started along the road of yellow brick, silently wondering, each in his own mind, if ever they would come to the end of the woods and reach the bright sunshine again. To add to their discomfort, they soon heard strange noises in the depths of the forest, and the Lion whispered to them that it was in this part of the country that the Kalidahs lived. “What are the Kalidahs?” asked the girl. “They are monstrous beasts with bodies like bears and heads like tigers,” replied the Lion, “and with claws so long and sharp that they could tear me in two as easily as I could kill Toto. I’m terribly afraid of the Kalidahs.” “I’m not surprised that you are,” returned Dorothy. “They must be dreadful beasts.” The Lion was about to reply when suddenly they came to another gulf across the road. But this one was so broad and deep that the Lion knew at once he could not leap across it. So they sat down to consider what they should do, and after serious thought the Scarecrow said: “Here is a great tree, standing close to the ditch. If the Tin Woodman can chop it down, so that it will fall to the other side, we can walk across it easily.” “That is a first-rate idea,” said the Lion. “One would almost suspect you had brains in your head, instead of straw.” The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through. Then the Lion put his strong front legs against the tree and pushed with all his might, and slowly the big tree tipped and fell with a crash across the ditch, with its top branches on the other side. They had just started to cross this queer bridge when a sharp growl made them all look up, and to their horror they saw running toward them two great beasts with bodies like bears and heads like tigers. “They are the Kalidahs!” said the Cowardly Lion, beginning to tremble. “Quick!” cried the Scarecrow. “Let us cross over.” So Dorothy went first, holding Toto in her arms, the Tin Woodman followed, and the Scarecrow came next. The Lion, although he was certainly afraid, turned to face the Kalidahs, and then he gave so loud and terrible a roar that Dorothy screamed and the Scarecrow fell over backward, while even the fierce beasts stopped short and looked at him in surprise. But, seeing they were bigger than the Lion, and remembering that there were two of them and only one of him, the Kalidahs again rushed forward, and the Lion crossed over the tree and turned to see what they would do next. Without stopping an instant the fierce beasts also began to cross the tree. And the Lion said to Dorothy: “We are lost, for they will surely tear us to pieces with their sharp claws. But stand close behind me, and I will fight them as long as I am alive.” “Wait a minute!” called the Scarecrow. He had been thinking what was best to be done, and now he asked the Woodman to chop away the end of the tree that rested on their side of the ditch. The Tin Woodman began to use his axe at once, and, just as the two Kalidahs were nearly across, the tree fell with a crash into the gulf, carrying the ugly, snarling brutes with it, and both were dashed to pieces on the sharp rocks at the bottom. “Well,” said the Cowardly Lion, drawing a long breath of relief, “I see we are going to live a little while longer, and I am glad of it, for it must be a very uncomfortable thing not to be alive. Those creatures frightened me so badly that my heart is beating yet.” “Ah,” said the Tin Woodman sadly, “I wish I had a heart to beat.” This adventure made the travelers more anxious than ever to get out of the forest, and they walked so fast that Dorothy became tired, and had to ride on the Lion’s back. To their great joy the trees became thinner the farther they advanced, and in the afternoon they suddenly came upon a broad river, flowing swiftly just before them. On the other side of the water they could see the road of yellow brick running through a beautiful country, with green meadows dotted with bright flowers and all the road bordered with trees hanging full of delicious fruits. They were greatly pleased to see this delightful country before them. “How shall we cross the river?” asked Dorothy. “That is easily done,” replied the Scarecrow. “The Tin Woodman must build us a raft, so we can float to the other side.” So the Woodman took his axe and began to chop down small trees to make a raft, and while he was busy at this the Scarecrow found on the riverbank a tree full of fine fruit. This pleased Dorothy, who had eaten nothing but nuts all day, and she made a hearty meal of the ripe fruit. But it takes time to make a raft, even when one is as industrious and untiring as the Tin Woodman, and when night came the work was not done. So they found a cozy place under the trees where they slept well until the morning; and Dorothy dreamed of the Emerald City, and of the good Wizard Oz, who would soon send her back to her own home again.</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Journey to the Great Oz - Part 2</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Journey to the Great Oz - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Journey to the Great Oz - Part 3</h2>
+    </div>
+
+
+    <div class="page" data-page="6">
+<h2>📖 The Journey to the Great Oz - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>💭 Reading Comprehension</h2>
+    </div>
+
+
+    <div class="page" data-page="7">
+<h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
                         <div class="question-card">
@@ -148,13 +275,11 @@
                             <textarea id="comp-short-79" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-79-count">0</span> / 75-100</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✏️ Sentence Types</h2>
+    </div>
+
+
+    <div class="page" data-page="8">
+<h2>✏️ Sentence Types</h2>
                         <div class="skill-explanation">
                             <p>Sentences can be statements, questions, commands, or exclamations.</p>
                         </div>
@@ -166,13 +291,11 @@
                         
                         <h3>Practice:</h3>
                         <div class="exercise-card"><p><strong>1.</strong> Write one of each sentence type.</p><textarea id="skill-79-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-79-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Identify the sentence type: "Close the door!"</p><textarea id="skill-79-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-79-2-count">0</span> / 40-50</p></div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🌍 Informational Text: Did You Know?</h2>
+    </div>
+
+
+    <div class="page" data-page="9">
+<h2>🌍 Informational Text: Did You Know?</h2>
                         <div class="informational-article">
                             <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
                         </div>
@@ -190,36 +313,57 @@
                             <textarea id="info-79-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-79-2-count">0</span> / 40-50</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-79" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-79-count">0</span> / 100-150</p></div>
-                    </div>
-                `
+    </div>
+
+
+    <div class="page" data-page="10">
+<h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-79" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-79-count">0</span> / 100-150</p></div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 10;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-]
-        };
-
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson79Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        }
-    </script>
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    showPage(1);
+  </script>
 </body>
 </html>

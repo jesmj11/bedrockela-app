@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Day 14 - 4th Grade BedrockELA</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767895574">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+
+    <script src="js/lesson-viewer.js?v=1773767895574"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js?v=1773767895574"></script>
+    <script src="js/lesson-completion.js?v=1773767895574"></script>
+    <script src="js/lesson-autosave.js?v=1773767895574"></script>
+
+    <script>
+        const lesson14Config = {
+            lessonId: '4th-grade-day-014',
+            gradeLevel: '4th-grade',
+            title: 'Day 14 - The Wizard of Oz',
+            pages: [
+    {
+        render: () => `
+                    <div class="lesson-page-card title-page">
+                        <h1>Day 14</h1>
+                        <h2>The Wizard of Oz</h2>
+                        <p class="unit-label">4th Grade • Week 3</p>
+                        <p class="chapter-info">The Melting of the Witch</p>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📚 Welcome to Day 14!</h2>
+                        <div class="objectives-box">
+                            <h3>Today's Learning Goals:</h3>
+                            <ul>
+                                <li>Learn 2 new vocabulary words</li>
+                                <li>Read The Melting of the Witch</li>
+                                <li>Practice Adjectives and Adverbs</li>
+                                <li>Explore informational text</li>
+                                <li>Complete a journal activity</li>
+                            </ul>
+                            <p><strong>Estimated time:</strong> 45-60 minutes</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 Vocabulary</h2>
+                        <p>Look up and learn these 2 words before reading:</p>
+                        
+                        <div class="vocab-word-card">
+                            <h3>1. dissolved</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-14-1" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-14-1-count">0</span> / 20-30</p>
+                        </div>
+                        
+                        <div class="vocab-word-card">
+                            <h3>2. liberated</h3>
+                            <label>Write your own definition (120px, 20-30 words):</label>
+                            <textarea id="vocab-14-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-14-2-count">0</span> / 20-30</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🎮 Vocabulary Matching Game</h2>
+                        <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+                        <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+                            <div id="wordColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+                                <div class="match-word" data-word="dissolved" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">dissolved</div>
+                                <div class="match-word" data-word="liberated" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">liberated</div>
+                            </div>
+                            <div id="defColumn" style="display: flex; flex-direction: column;">
+                                <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+                                <div class="match-def" data-word="dissolved" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Melted away or broke apart into nothing. Disappeared completely.</div>
+                                <div class="match-def" data-word="liberated" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Set free from imprisonment or control. Released from someone's power.</div>
+                            </div>
+                        </div>
+                        
+                        <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+                    </div>
+                `,
+        onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Melting of the Witch - Part 1</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">The next morning, Dorothy filled her bucket at the well and carried it into the kitchen. The Witch was waiting for her, wearing the stolen silver shoe on one foot and nothing on the other. She was in a foul mood.</p><p style="margin-bottom: 15px;">"Scrub faster!" the Witch snapped. "And when you are finished with the kitchen, scrub the hallway. And when you are finished with the hallway, scrub the stairs. I want every stone in this castle clean enough to eat from."</p><p style="margin-bottom: 15px;">Dorothy scrubbed. The water sloshed in the bucket, and the Witch kept her distance, watching from the doorway with her one terrible eye.</p><p style="margin-bottom: 15px;">It happened quickly.</p><p style="margin-bottom: 15px;">The Witch lunged forward, trying to snatch the second silver shoe from Dorothy's foot. Dorothy jumped back. The bucket tipped. Water splashed across the floor — and across the Witch.</p><p style="margin-bottom: 15px;">The Witch screamed.</p><p style="margin-bottom: 15px;">It was not a scream of anger. It was a scream of pure terror.</p><p style="margin-bottom: 15px;">"What have you done?" the Witch shrieked. She was shrinking. Her black robes were collapsing around her. Her body was dissolving, melting away like brown sugar in the rain. "Don't you know that water will be the end of me?"</p><p style="margin-bottom: 15px;">"I didn't know!" Dorothy cried, her heart hammering. "I'm sorry!"</p><p style="margin-bottom: 15px;">"I have been wicked in my day," the Witch wailed, her voice fading as she grew smaller and smaller. "But I never thought a little girl would be the end of me. Oh — I'm melting! Melting! What a world... what a world..."</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Melting of the Witch - Part 2</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">Her voice trailed off into nothing. Where the Wicked Witch of the West had stood, there was now only a brown puddle on the kitchen floor and a pointed black hat floating in it.</p><p style="margin-bottom: 15px;">Dorothy stood very still. The kitchen was silent. Toto crept out from under the table and sniffed at the puddle. Even he seemed surprised.</p><p style="margin-bottom: 15px;">"It was an accident," Dorothy whispered. She had not meant to do it. She had been carrying water, and the Witch had lunged, and the bucket had tipped. That was all.</p><p style="margin-bottom: 15px;">She picked up the silver shoe from the brown puddle, wiped it clean, and put it back on her foot. Both silver shoes were hers again.</p><p style="margin-bottom: 15px;">Then Dorothy took a deep breath and walked out of the kitchen.</p><p style="margin-bottom: 15px;">She found the Winkies in the courtyard. They were the people of the western land — small, quiet, frightened people who had served the Witch for years out of terror. They had watched Dorothy go into the kitchen carrying a bucket of water and heard the Witch's scream.</p><p style="margin-bottom: 15px;">"The Witch is dead," Dorothy told them.</p><p style="margin-bottom: 15px;">For a moment, no one moved. Then one Winkie began to cry. Then another. Then they were all crying and laughing at the same time, hugging each other and jumping up and down. Years of fear and cruelty dissolved in an instant, like the Witch herself.</p><p style="margin-bottom: 15px;">Dorothy ran to the Lion's cage and broke the lock. The great beast bounded out, stretching his cramped legs and shaking his mane.</p><p style="margin-bottom: 15px;">"Is it true?" the Lion asked. "She is really gone?"</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📖 The Melting of the Witch - Part 3</h2>
+                        <div class="story-content">
+                            <p style="margin-bottom: 15px;">"She is really gone," Dorothy said.</p><p style="margin-bottom: 15px;">"Then we must find the Scarecrow and the Tin Woodman," the Lion said. "We must put our friends back together."</p><p style="margin-bottom: 15px;">The Winkies were eager to help. They sent their best tinsmiths to find the Tin Woodman on the rocks where the Winged Monkeys had dropped him. He was badly dented — his arms bent at wrong angles, his legs twisted, one side of his body nearly flat. But the tinsmiths were the finest in Oz, and they worked for three days, hammering and shaping and polishing, until the Tin Woodman looked almost as good as new.</p><p style="margin-bottom: 15px;">When he opened his eyes and saw Dorothy, a tear rolled down his cheek. "I thought I would never see you again," he said.</p><p style="margin-bottom: 15px;">"Don't cry," Dorothy said, reaching for the oil can. "You'll rust."</p><p style="margin-bottom: 15px;">"Some tears are worth the rust," the Tin Woodman said.</p><p style="margin-bottom: 15px;">The Winkies found the Scarecrow's clothes in the top of a tall tree, empty and flat. They stuffed him with fresh, clean straw — the finest straw in the western land — and sewed him up carefully. When his painted eyes blinked open, the Scarecrow looked around and said, "Well. That was thoroughly unpleasant. But I must say, new straw feels wonderful. The old straw was getting quite lumpy."</p><p style="margin-bottom: 15px;">Dorothy threw her arms around him. Then around the Tin Woodman. Then around the Lion. Toto barked and ran in circles around all of them.</p><p style="margin-bottom: 15px;">They were together again. And the Wicked Witch was gone.</p><p style="margin-bottom: 15px;">"Now," Dorothy said, "let us go back to the Emerald City and tell Oz."</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>💭 Reading Comprehension</h2>
+                        <p>Answer these questions about today's reading:</p>
+                        
+                        <div class="question-card">
+                            <p><strong>1.</strong> How is the Wicked Witch destroyed?</p>
+                            <label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="A" style="margin-right: 10px;"><strong>A)</strong> Dorothy fights her with a sword</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="B" style="margin-right: 10px;"><strong>B)</strong> The Lion attacks her</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="C" style="margin-right: 10px;"><strong>C)</strong> Water accidentally splashes on her and she melts</label><label style="display: block; margin: 10px 0; padding: 12px; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;"><input type="radio" name="mc-q1" value="D" style="margin-right: 10px;"><strong>D)</strong> The Wizard sends a spell to destroy her</label>
+                        </div>
+                        
+                        <div class="question-card" style="margin-top: 20px;">
+                            <p><strong>2.</strong> The most powerful villain in the story is destroyed by an accident — a bucket of water. Dorothy did not plan it or mean to do it. What might the author be saying about the nature of wicked power? Is it as strong as it seems?</p>
+                            <p style="font-size: 14px; color: #666; margin-bottom: 10px;"><strong>Hint:</strong> The Witch ruled through FEAR. But her actual weakness was something ordinary. What does that tell you about bullies and fear?</p>
+                            <label>Your answer (150px, 75-100 words):</label>
+                            <textarea id="comp-short-14" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-14-count">0</span> / 75-100</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>✏️ Adjectives and Adverbs</h2>
+                        <div class="skill-explanation">
+                            <p>Adjectives describe nouns. Adverbs describe verbs (often end in -ly).</p>
+                        </div>
+                        
+                        <h3>Examples:</h3>
+                        <ul>
+                            <li>"The wicked witch" (adjective)</li><li>"Dorothy walked quickly" (adverb)</li>
+                        </ul>
+                        
+                        <h3>Practice:</h3>
+                        <div class="exercise-card"><p><strong>1.</strong> Find the adjective: "The yellow brick road"</p><textarea id="skill-14-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-14-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Find the adverb: "Toto barked loudly"</p><textarea id="skill-14-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-14-2-count">0</span> / 40-50</p></div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>🌍 Informational Text: From Page to Stage: The Wizard of Oz Adaptations</h2>
+                        <div class="informational-article">
+                            <p>"The Wonderful Wizard of Oz" became a phenomenon almost immediately after publication in 1900. Within two years, it was adapted into a Broadway musical. By 1939, it became one of the most famous movies ever made. Today, it exists in countless versions across all media.</p><p>The 1902 Broadway musical was very different from the book. It added characters, changed the story, and included adult humor. It was a spectacular production with elaborate sets and costumes. The show ran for years and toured across America, making the story even more popular.</p><p>Then came the 1939 MGM film — the version most people know today. This movie made several major changes:
+- The slippers are ruby instead of silver (because color film showed red better than silver)
+- Dorothy's journey might be a dream (the book makes it clear Oz is real)
+- The farmhands become the Scarecrow, Tin Man, and Lion (connecting Kansas to Oz)
+- The Wicked Witch of the West becomes the main villain</p><p>The film also gave us "Over the Rainbow," one of the most beloved songs in cinema history. Judy Garland's performance as Dorothy made her a star and defined the character for generations.</p><p>Why has this story been adapted so many times? Because it works on multiple levels. Young children enjoy the adventure and colorful characters. Older children relate to Dorothy's journey of self-discovery. Adults appreciate the deeper themes about courage, wisdom, compassion, and finding your place in the world.</p><p>The story also adapts well to different interpretations. Some versions focus on the fantasy and spectacle. Others emphasize the political allegory (some scholars think the story symbolizes American economic policies of the 1890s). Still others highlight the friendship and personal growth themes.</p><p>Modern adaptations continue to reimagine Oz. "Wicked" tells the story from the Witch's perspective. "The Wiz" retells it with an African American cast and urban setting. There are Oz prequels, sequels, and spin-offs exploring every corner of Baum's magical world.</p><p>Each generation discovers Oz anew and finds something meaningful in Dorothy's journey. The story's core themes — friendship, courage, home, and self-discovery — remain universal and timeless.</p>
+                        </div>
+                        
+                        <h3>Questions:</h3>
+                        <div class="question-card">
+                            <p><strong>1.</strong> What did you learn from this text?</p>
+                            <textarea id="info-14-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-14-1-count">0</span> / 40-50</p>
+                        </div>
+                        <div class="question-card">
+                            <p><strong>2.</strong> How does this information help you understand the story?</p>
+                            <textarea id="info-14-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
+                            <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-14-2-count">0</span> / 40-50</p>
+                        </div>
+                    </div>
+                `
+    },
+    {
+        render: () => `
+                    <div class="lesson-page-card content-page">
+                        <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-14" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-14-count">0</span> / 100-150</p></div>
+                    </div>
+                `
+    }
+]
+        };
+
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson14Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

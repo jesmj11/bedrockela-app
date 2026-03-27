@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Day 111 - 4th Grade BedrockELA</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899212">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - 4th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    
+    .vocab-word-card, .question-card, .exercise-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .story-content p {
+      text-indent: 2em;
+      margin-bottom: 15px;
+    }
+    
+    .title-page {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .unit-label, .chapter-info {
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container"></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Day 4 - The Wizard of Oz</div>
+    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+  </div>
+  
+  <div class="container">
 
-    <script src="js/lesson-viewer.js?v=1773767899212"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=1773767899212"></script>
-    <script src="js/lesson-completion.js?v=1773767899212"></script>
-    <script src="js/lesson-autosave.js?v=1773767899212"></script>
-
-    <script>
-        const lesson111Config = {
-            lessonId: '4th-grade-day-111',
-            gradeLevel: '4th-grade',
-            title: 'Day 111 - The Wizard of Oz',
-            pages: [
-    {
-        render: () => `
-                    <div class="lesson-page-card title-page">
-                        <h1>Day 111</h1>
+    <div class="page active" data-page="1">
+<h1>Day 111</h1>
                         <h2>The Wizard of Oz</h2>
                         <p class="unit-label">4th Grade • Week 23</p>
                         <p class="chapter-info">The Discovery of Oz, the Terrible</p>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📚 Welcome to Day 111!</h2>
+    </div>
+
+
+    <div class="page" data-page="2">
+<h2>📚 Welcome to Day 111!</h2>
                         <div class="objectives-box">
                             <h3>Today's Learning Goals:</h3>
                             <ul>
@@ -50,13 +187,11 @@
                             </ul>
                             <p><strong>Estimated time:</strong> 45-60 minutes</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Vocabulary</h2>
+    </div>
+
+
+    <div class="page" data-page="3">
+<h2>📖 Vocabulary</h2>
                         <p>Look up and learn these 2 words before reading:</p>
                         
                         <div class="vocab-word-card">
@@ -72,13 +207,11 @@
                             <textarea id="vocab-111-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-111-2-count">0</span> / 20-30</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🎮 Vocabulary Matching Game</h2>
+    </div>
+
+
+    <div class="page" data-page="4">
+<h2>🎮 Vocabulary Matching Game</h2>
                         <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
                         <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
                         
@@ -102,38 +235,32 @@
     },
     {
         render: () => `
-                    <div class="lesson-page-card content-page">
+                    
                         <h2>📖 The Discovery of Oz, the Terrible - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The four travelers walked up to the great gate of Emerald City and rang the bell. After ringing several times, it was opened by the same Guardian of the Gates they had met before. “What! are you back again?” he asked, in surprise. “Do you not see us?” answered the Scarecrow. “But I thought you had gone to visit the Wicked Witch of the West.” “We did visit her,” said the Scarecrow. “And she let you go again?” asked the man, in wonder. “She could not help it, for she is melted,” explained the Scarecrow. “Melted! Well, that is good news, indeed,” said the man. “Who melted her?” “It was Dorothy,” said the Lion gravely. “Good gracious!” exclaimed the man, and he bowed very low indeed before her. Then he led them into his little room and locked the spectacles from the great box on all their eyes, just as he had done before. Afterward they passed on through the gate into the Emerald City. When the people heard from the Guardian of the Gates that Dorothy had melted the Wicked Witch of the West, they all gathered around the travelers and followed them in a great crowd to the Palace of Oz. The soldier with the green whiskers was still on guard before the door, but he let them in at once, and they were again met by the beautiful green girl, who showed each of them to their old rooms at once, so they might rest until the Great Oz was ready to receive them. The soldier had the news carried straight to Oz that Dorothy and the other travelers had come back again, after destroying the Wicked Witch; but Oz made no reply. They thought the Great Wizard would send for them at once, but he did not. They had no word from him the next day, nor the next, nor the next. The waiting was tiresome and wearing, and at last they grew vexed that Oz should treat them in so poor a fashion, after sending them to undergo hardships and slavery. So the Scarecrow at last asked the green girl to take another message to Oz, saying if he did not let them in to see him at once they would call the Winged Monkeys to help them, and find out whether he kept his promises or not. When the Wizard was given this message he was so frightened that he sent word for them to come to the Throne Room at four minutes after nine o’clock the next morning. He had once met the Winged Monkeys in the Land of the West, and he did not wish to meet them again. The four travelers passed a sleepless night, each thinking of the gift Oz had promised to bestow on him. Dorothy fell asleep only once, and then she dreamed she was in Kansas, where Aunt Em was telling her how glad she was to have her little girl at home again. Promptly at nine o’clock the next morning the green-whiskered soldier came to them, and four minutes later they all went into the Throne Room of the Great Oz. Of course each one of them expected to see the Wizard in the shape he had taken before, and all were greatly surprised when they looked about and saw no one at all in the room. They kept close to the door and closer to one another, for the stillness of the empty room was more dreadful than any of the forms they had seen Oz take. Presently they heard a solemn Voice, that seemed to come from somewhere near the top of the great dome, and it said: “I am Oz, the Great and Terrible. Why do you seek me?” They looked again in every part of the room, and then, seeing no one, Dorothy asked, “Where are you?” “I am everywhere,” answered the Voice, “but to the eyes of common mortals I am invisible. I will now seat myself upon my throne, that you may converse with me.” Indeed, the Voice seemed just then to come straight from the throne itself; so they walked toward it and stood in a row while Dorothy said: “We have come to claim our promise, O Oz.” “What promise?” asked Oz. “You promised to send me back to Kansas when the Wicked Witch was destroyed,” said the girl. “And you promised to give me brains,” said the Scarecrow. “And you promised to give me a heart,” said the Tin Woodman. “And you promised to give me courage,” said the Cowardly Lion. “Is the Wicked Witch really destroyed?” asked the Voice, and Dorothy thought it trembled a little. “Yes,” she answered, “I melted her with a bucket of water.” “Dear me,” said the Voice, “how sudden! Well, come to me tomorrow, for I must have time to think it over.” “You’ve had plenty of time already,” said the Tin Woodman angrily. “We shan’t wait a day longer,” said the Scarecrow. “You must keep your promises to us!” exclaimed Dorothy. The Lion thought it might be as well to frighten the Wizard, so he gave a large, loud roar, which was so fierce and dreadful that Toto jumped away from him in alarm and tipped over the screen that stood in a corner. As it fell with a crash they looked that way, and the next moment all of them were filled with wonder. For they saw, standing in just the spot the screen had hidden, a little old man, with a bald head and a wrinkled face, who seemed to be as much surprised as they were. The Tin Woodman, raising his axe, rushed toward the little man and cried out, “Who are you?” “I am Oz, the Great and Terrible,” said the little man, in a trembling voice. “But don’t strike me—please don’t—and I’ll do anything you want me to.” Our friends looked at him in surprise and dismay. “I thought Oz was a great Head,” said Dorothy. “And I thought Oz was a lovely Lady,” said the Scarecrow. “And I thought Oz was a terrible Beast,” said the Tin Woodman. “And I thought Oz was a Ball of Fire,” exclaimed the Lion. “No, you are all wrong,” said the little man meekly. “I have been making believe.” “Making believe!” cried Dorothy. “Are you not a Great Wizard?” “Hush, my dear,” he said. “Don’t speak so loud, or you will be overheard—and I should be ruined. I’m supposed to be a Great Wizard.” “And aren’t you?” she asked. “Not a bit of it, my dear; I’m just a common man.” “You’re more than that,” said the Scarecrow, in a grieved tone; “you’re a humbug.” “Exactly so!” declared the little man, rubbing his hands together as if it pleased him. “I am a humbug.” “But this is terrible,” said the Tin Woodman. “How shall I ever get my heart?” “Or I my courage?” asked the Lion. “Or I my brains?” wailed the Scarecrow, wiping the tears from his eyes with his coat sleeve. “My dear friends,” said Oz, “I pray you not to speak of these little things. Think of me, and the terrible trouble I’m in at being found out.” “Doesn’t anyone else know you’re a humbug?” asked Dorothy. “No one knows it but you four—and myself,” replied Oz. “I have fooled everyone so long that I thought I should never be found out. It was a great mistake my ever letting you into the Throne Room. Usually I will not see even my subjects, and so they believe I am something terrible.” “But, I don’t understand,” said Dorothy, in bewilderment. “How was it that you appeared to me as a great Head?” “That was one of my tricks,” answered Oz. “Step this way, please, and I will tell you all about it.” He led the way to a small chamber in the rear of the Throne Room, and they all followed him. He pointed to one corner, in which lay the great Head, made out of many thicknesses of paper, and with a carefully painted face. “This I hung from the ceiling by a wire,” said Oz. “I stood behind the screen and pulled a thread, to make the eyes move and the mouth open.” “But how about the voice?” she inquired. “Oh, I am a ventriloquist,” said the little man. “I can throw the sound of my voice wherever I wish, so that you thought it was coming out of the Head. Here are the other things I used to deceive you.” He showed the Scarecrow the dress and the mask he had worn when he seemed to be the lovely Lady. And the Tin Woodman saw that his terrible Beast was nothing but a lot of skins, sewn together, with slats to keep their sides out. As for the Ball of Fire, the false Wizard had hung that also from the ceiling. It was really a ball of cotton, but when oil was poured upon it the ball burned fiercely. “Really,” said the Scarecrow, “you ought to be ashamed of yourself for being such a humbug.” “I am—I certainly am,” answered the little man sorrowfully; “but it was the only thing I could do. Sit down, please, there are plenty of chairs; and I will tell you my story.” So they sat down and listened while he told the following tale. “I was born in Omaha—” “Why, that isn’t very far from Kansas!” cried Dorothy. “No, but it’s farther from here,” he said, shaking his head at her sadly. “When I grew up I became a ventriloquist, and at that I was very well trained by a great master. I can imitate any kind of a bird or beast.” Here he mewed so like a kitten that Toto pricked up his ears and looked everywhere to see where she was. “After a time,” continued Oz, “I tired of that, and became a balloonist.” “What is that?” asked Dorothy. “A man who goes up in a balloon on circus day, so as to draw a crowd of people together and get them to pay to see the circus,” he explained. “Oh,” she said, “I know.” “Well, one day I went up in a balloon and the ropes got twisted, so that I couldn’t come down again. It went way up above the clouds, so far that a current of air struck it and carried it many, many miles away. For a day and a night I traveled through the air, and on the morning of the second day I awoke and found the balloon floating over a strange and beautiful country. “It came down gradually, and I was not hurt a bit. But I found myself in the midst of a strange people, who, seeing me come from the clouds, thought I was a great Wizard. Of course I let them think so, because they were afraid of me, and promised to do anything I wished them to. “Just to amuse myself, and keep the good people busy, I ordered them to build this City, and my Palace; and they did it all willingly and well. Then I thought, as the country was so green and beautiful, I would call it the Emerald City; and to make the name fit better I put green spectacles on all the people, so that everything they saw was green.” “But isn’t everything here green?” asked Dorothy. “No more than in any other city,” replied Oz; “but when you wear green spectacles, why of course everything you see looks green to you. The Emerald City was built a great many years ago, for I was a young man when the balloon brought me here, and I am a very old man now. But my people have worn green glasses on their eyes so long that most of them think it really is an Emerald City, and it certainly is a beautiful place, abounding in jewels and precious metals, and every good thing that is needed to make one happy. I have been good to the people, and they like me; but ever since this Palace was built, I have shut myself up and would not see any of them. “One of my greatest fears was the Witches, for while I had no magical powers at all I soon found out that the Witches were really able to do wonderful things. There were four of them in this country, and they ruled the people who live in the North and South and East and West. Fortunately, the Witches of the North and South were good, and I knew they would do me no harm; but the Witches of the East and West were terribly wicked, and had they not thought I was more powerful than they themselves, they would surely have destroyed me. As it was, I lived in deadly fear of them for many years; so you can imagine how pleased I was when I heard your house had fallen on the Wicked Witch of the East. When you came to me, I was willing to promise anything if you would only do away with the other Witch; but, now that you have melted her, I am ashamed to say that I cannot keep my promises.” “I think you are a very bad man,” said Dorothy. “Oh, no, my dear; I’m really a very good man, but I’m a very bad Wizard, I must admit.” “Can’t you give me brains?” asked the Scarecrow. “You don’t need them. You are learning something every day. A baby has brains, but it doesn’t know much. Experience is the only thing that brings knowledge, and the longer you are on earth the more experience you are sure to get.” “That may all be true,” said the Scarecrow, “but I shall be very unhappy unless you give me brains.” The false Wizard looked at him carefully. “Well,” he said with a sigh, “I’m not much of a magician, as I said; but if you will come to me tomorrow morning, I will stuff your head with brains. I cannot tell you how to use them, however; you must find that out for yourself.” “Oh, thank you—thank you!” cried the Scarecrow. “I’ll find a way to use them, never fear!” “But how about my courage?” asked the Lion anxiously. “You have plenty of courage, I am sure,” answered Oz. “All you need is confidence in yourself. There is no living thing that is not afraid when it faces danger. The True courage is in facing danger when you are afraid, and that kind of courage you have in plenty.” “Perhaps I have, but I’m scared just the same,” said the Lion. “I shall really be very unhappy unless you give me the sort of courage that makes one forget he is afraid.” “Very well, I will give you that sort of courage tomorrow,” replied Oz. “How about my heart?” asked the Tin Woodman. “Why, as for that,” answered Oz, “I think you are wrong to want a heart. It makes most people unhappy. If you only knew it, you are in luck not to have a heart.” “That must be a matter of opinion,” said the Tin Woodman. “For my part, I will bear all the unhappiness without a murmur, if you will give me the heart.” “Very well,” answered Oz meekly. “Come to me tomorrow and you shall have a heart. I have played Wizard for so many years that I may as well continue the part a little longer.” “And now,” said Dorothy, “how am I to get back to Kansas?” “We shall have to think about that,” replied the little man. “Give me two or three days to consider the matter and I’ll try to find a way to carry you over the desert. In the meantime you shall all be treated as my guests, and while you live in the Palace my people will wait upon you and obey your slightest wish. There is only one thing I ask in return for my help—such as it is. You must keep my secret and tell no one I am a humbug.” They agreed to say nothing of what they had learned, and went back to their rooms in high spirits. Even Dorothy had hope that “The Great and Terrible Humbug,” as she called him, would find a way to send her back to Kansas, and if he did she was willing to forgive him everything.</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Discovery of Oz, the Terrible - Part 2</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Discovery of Oz, the Terrible - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Discovery of Oz, the Terrible - Part 3</h2>
+    </div>
+
+
+    <div class="page" data-page="6">
+<h2>📖 The Discovery of Oz, the Terrible - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>💭 Reading Comprehension</h2>
+    </div>
+
+
+    <div class="page" data-page="7">
+<h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
                         <div class="question-card">
@@ -148,13 +275,11 @@
                             <textarea id="comp-short-111" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-111-count">0</span> / 75-100</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✏️ Verb Tenses</h2>
+    </div>
+
+
+    <div class="page" data-page="8">
+<h2>✏️ Verb Tenses</h2>
                         <div class="skill-explanation">
                             <p>Verbs show when something happens: past, present, or future.</p>
                         </div>
@@ -166,13 +291,11 @@
                         
                         <h3>Practice:</h3>
                         <div class="exercise-card"><p><strong>1.</strong> Change "run" to past tense.</p><textarea id="skill-111-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-111-1-count">0</span> / 40-50</p></div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🌍 Informational Text: Did You Know?</h2>
+    </div>
+
+
+    <div class="page" data-page="9">
+<h2>🌍 Informational Text: Did You Know?</h2>
                         <div class="informational-article">
                             <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
                         </div>
@@ -190,36 +313,57 @@
                             <textarea id="info-111-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-111-2-count">0</span> / 40-50</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-111" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-111-count">0</span> / 100-150</p></div>
-                    </div>
-                `
+    </div>
+
+
+    <div class="page" data-page="10">
+<h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-111" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-111-count">0</span> / 100-150</p></div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 10;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-]
-        };
-
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson111Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        }
-    </script>
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    showPage(1);
+  </script>
 </body>
 </html>

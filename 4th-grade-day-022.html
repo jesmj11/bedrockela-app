@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Day 22 - 4th Grade BedrockELA</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767895575">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - 4th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    
+    .vocab-word-card, .question-card, .exercise-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .story-content p {
+      text-indent: 2em;
+      margin-bottom: 15px;
+    }
+    
+    .title-page {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .unit-label, .chapter-info {
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container"></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Day 4 - The Wizard of Oz</div>
+    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+  </div>
+  
+  <div class="container">
 
-    <script src="js/lesson-viewer.js?v=1773767895575"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=1773767895575"></script>
-    <script src="js/lesson-completion.js?v=1773767895575"></script>
-    <script src="js/lesson-autosave.js?v=1773767895575"></script>
-
-    <script>
-        const lesson22Config = {
-            lessonId: '4th-grade-day-022',
-            gradeLevel: '4th-grade',
-            title: 'Day 22 - The Wizard of Oz',
-            pages: [
-    {
-        render: () => `
-                    <div class="lesson-page-card title-page">
-                        <h1>Day 22</h1>
+    <div class="page active" data-page="1">
+<h1>Day 22</h1>
                         <h2>The Wizard of Oz</h2>
                         <p class="unit-label">4th Grade • Week 5</p>
                         <p class="chapter-info">Glinda Grants Dorothy's Wish</p>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📚 Welcome to Day 22!</h2>
+    </div>
+
+
+    <div class="page" data-page="2">
+<h2>📚 Welcome to Day 22!</h2>
                         <div class="objectives-box">
                             <h3>Today's Learning Goals:</h3>
                             <ul>
@@ -50,13 +187,11 @@
                             </ul>
                             <p><strong>Estimated time:</strong> 45-60 minutes</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Vocabulary</h2>
+    </div>
+
+
+    <div class="page" data-page="3">
+<h2>📖 Vocabulary</h2>
                         <p>Look up and learn these 2 words before reading:</p>
                         
                         <div class="vocab-word-card">
@@ -72,13 +207,11 @@
                             <textarea id="vocab-22-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-22-2-count">0</span> / 20-30</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🎮 Vocabulary Matching Game</h2>
+    </div>
+
+
+    <div class="page" data-page="4">
+<h2>🎮 Vocabulary Matching Game</h2>
                         <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
                         <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
                         
@@ -102,38 +235,32 @@
     },
     {
         render: () => `
-                    <div class="lesson-page-card content-page">
+                    
                         <h2>📖 Glinda Grants Dorothy's Wish - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">Glinda sat on her throne of rubies and looked at Dorothy with warm, knowing eyes.</p><p style="margin-bottom: 15px;">"Before I tell you how to get home," Glinda said, "let me help your friends find their places in the world."</p><p style="margin-bottom: 15px;">She turned to the Scarecrow. "The people of the Emerald City have asked me to find them a good ruler. They love you, Scarecrow. You helped defeat the witches, and you governed wisely while the Wizard was... away. Will you return and lead them?"</p><p style="margin-bottom: 15px;">The Scarecrow straightened up. His painted face seemed to glow. "I will," he said. "I have brains now, and I will use them to make the Emerald City the wisest place in all of Oz."</p><p style="margin-bottom: 15px;">Glinda turned to the Tin Woodman. "The Winkies of the western land need a ruler, too. They remember how you fought for Dorothy, and how gently you treated them after the Witch was destroyed. Will you be their emperor?"</p><p style="margin-bottom: 15px;">The Tin Woodman placed both hands over his silk heart. "Emperor?" he said softly. "Of the Winkies?" He stood taller than Dorothy had ever seen him stand. "I would be honored. I will rule them with all the kindness I have."</p><p style="margin-bottom: 15px;">Glinda turned to the Lion. "And the animals of the great forest near here have no king. They need someone brave and strong to protect them from danger. Will you return and rule them?"</p><p style="margin-bottom: 15px;">The Lion's mane seemed to bristle with new energy. "I will," he said. "I will be a good king. I will protect every creature in the forest, large and small."</p><p style="margin-bottom: 15px;">Dorothy looked at her three friends — each of them standing tall, each of them exactly where they were meant to be. The Scarecrow who had been stuck on a pole. The Tin Woodman who had been rusted in a forest. The Lion who had been too afraid to leave his den. They had come so far.</p><p style="margin-bottom: 15px;">"But how will they reach their new homes?" Dorothy asked.</p><p style="margin-bottom: 15px;">"The Golden Cap," Glinda said. "You have two commands left, yes?"</p><p style="margin-bottom: 15px;">Dorothy took the cap from her basket. "Yes."</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Glinda Grants Dorothy's Wish - Part 2</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 Glinda Grants Dorothy's Wish - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">"Use the first to send all three of your friends to their new homes. The Winged Monkeys can carry the Scarecrow to the Emerald City, the Tin Woodman to the Winkies' land, and the Lion to the great forest — all at once."</p><p style="margin-bottom: 15px;">"And the second command?"</p><p style="margin-bottom: 15px;">"Give the cap to me," Glinda said. "I will use the final command to set the Winged Monkeys free forever, so that no one can ever force them to be slaves again."</p><p style="margin-bottom: 15px;">"Yes," Dorothy said at once. "They have been slaves long enough."</p><p style="margin-bottom: 15px;">Dorothy put on the Golden Cap and spoke the magic words. The sky darkened, the air hummed, and the Winged Monkeys appeared, circling above the ruby castle.</p><p style="margin-bottom: 15px;">"What do you command?" their leader asked.</p><p style="margin-bottom: 15px;">"Please carry my friends to their new homes," Dorothy said. "The Scarecrow to the Emerald City, the Tin Woodman to the land of the Winkies, and the Lion to the great forest."</p><p style="margin-bottom: 15px;">"It shall be done," the monkey king said.</p><p style="margin-bottom: 15px;">This was the moment Dorothy had been dreading. The goodbyes.</p><p style="margin-bottom: 15px;">She went to the Scarecrow first. He was trying not to look sad, but his painted eyes gave him away.</p><p style="margin-bottom: 15px;">"You are the best friend I ever had," the Scarecrow said. "Before you came along, I was stuck on a pole, and the crows laughed at me. You gave me a life."</p><p style="margin-bottom: 15px;">"You gave yourself a life," Dorothy said. "I just helped you off the pole." She hugged him tightly. He smelled like clean straw and sunshine.</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Glinda Grants Dorothy's Wish - Part 3</h2>
+    </div>
+
+
+    <div class="page" data-page="6">
+<h2>📖 Glinda Grants Dorothy's Wish - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Tin Woodman was next. He was crying so hard that Dorothy reached for the oil can without even thinking. She oiled his jaw, his cheeks, the hinges around his eyes.</p><p style="margin-bottom: 15px;">"Let them rust," the Tin Woodman whispered. "Some things are worth rusting for."</p><p style="margin-bottom: 15px;">Dorothy oiled him anyway. Then she hugged him, and his tin arms held her carefully, and his silk heart pressed against her cheek.</p><p style="margin-bottom: 15px;">The Lion knelt so Dorothy could wrap her arms around his great maned neck. His golden fur was warm, and his chest rumbled with a sound that was half purr, half sob.</p><p style="margin-bottom: 15px;">"You made me brave," the Lion said.</p><p style="margin-bottom: 15px;">"No," Dorothy said. "You were always brave. I just noticed."</p><p style="margin-bottom: 15px;">The Winged Monkeys lifted her three friends into the air. Dorothy watched them grow smaller against the sky — a man of straw, a man of tin, a great golden lion — until they were specks, and then nothing.</p><p style="margin-bottom: 15px;">She stood in the courtyard of the ruby castle, holding Toto, and allowed herself to cry.</p><p style="margin-bottom: 15px;">Then she wiped her eyes, took a breath, and turned back to Glinda.</p><p style="margin-bottom: 15px;">"Now," Dorothy said. "Tell me about the silver shoes."</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>💭 Reading Comprehension</h2>
+    </div>
+
+
+    <div class="page" data-page="7">
+<h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
                         <div class="question-card">
@@ -148,13 +275,11 @@
                             <textarea id="comp-short-22" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-22-count">0</span> / 75-100</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✏️ Cause and Effect Words</h2>
+    </div>
+
+
+    <div class="page" data-page="8">
+<h2>✏️ Cause and Effect Words</h2>
                         <div class="skill-explanation">
                             <p>Some words signal cause and effect: because, so, since, therefore.</p>
                         </div>
@@ -166,13 +291,11 @@
                         
                         <h3>Practice:</h3>
                         <div class="exercise-card"><p><strong>1.</strong> Write a sentence using "because"</p><textarea id="skill-22-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-22-1-count">0</span> / 40-50</p></div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🌍 Informational Text: The Hero's Journey: Dorothy's Transformation</h2>
+    </div>
+
+
+    <div class="page" data-page="9">
+<h2>🌍 Informational Text: The Hero's Journey: Dorothy's Transformation</h2>
                         <div class="informational-article">
                             <p>The Wizard of Oz follows a pattern that appears in stories across all cultures and time periods: the Hero's Journey. Identified by scholar Joseph Campbell, this pattern includes stages that Dorothy experiences almost exactly.</p><p>**Stage 1: The Ordinary World**
 Dorothy lives in gray Kansas, dissatisfied but accepting her life. She's ordinary, unhappy, but unaware of her potential.</p><p>**Stage 2: Call to Adventure**
@@ -200,36 +323,57 @@ Dorothy returns to Kansas transformed. She looks the same, but she's different i
                             <textarea id="info-22-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-22-2-count">0</span> / 40-50</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-22" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-22-count">0</span> / 100-150</p></div>
-                    </div>
-                `
+    </div>
+
+
+    <div class="page" data-page="10">
+<h2>📝 Journal Response</h2><p>Reflect on today's reading. How would you feel if you were Dorothy? What would you do?</p><div class="journal-prompt"><textarea id="journal-22" rows="12" placeholder="Your journal entry..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="journal-22-count">0</span> / 100-150</p></div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 10;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-]
-        };
-
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson22Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        }
-    </script>
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    showPage(1);
+  </script>
 </body>
 </html>

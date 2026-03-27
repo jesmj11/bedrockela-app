@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 Assessment - 4th Grade</title>
+    <link rel="stylesheet" href="css/lesson-viewer.css?v=1772665488">
+</head>
+<body class="lesson-viewer">
+    <div id="lesson-container"></div>
+    <script src="js/lesson-viewer.js?v=1772665488"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="js/lesson-completion.js?v=1772665488"></script>
+    <script src="js/lesson-autosave.js?v=1772665488"></script>
+    <script>
+        const lesson10Config = {
+            lessonId: '4th-grade-day-10',
+            gradeLevel: '4th-grade',
+            title: 'Day 10 - Week 2 Assessment',
+            pages: [
+                {
+                    render: () => `
+                        <div class="lesson-page-card title-page">
+                            <h1>Week 2 Assessment</h1>
+                            <p style="font-size: 18px; margin-top: 20px;">Show what you've learned this week!</p>
+                        </div>
+                    `
+                },
+                {
+                    render: () => `
+                        <div class="lesson-page-card content-page">
+                            <h2>🎯 Assessment Complete!</h2>
+                            <p>Great work this week! You're ready for the next chapter.</p>
+                        </div>
+                    `
+                }
+            ]
+        };
+        // Wait for DOM and all scripts to load before initializing
+        function safeInitLesson() {
+            if (typeof initLessonViewer === 'function') {
+                initLessonViewer(lesson10Config);
+            } else {
+                console.error('initLessonViewer function not found!');
+                // Retry after a short delay
+                setTimeout(safeInitLesson, 100);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeInitLesson);
+        } else {
+            // DOM already loaded
+            safeInitLesson();
+        }
+    </script>
+</body>
+</html>

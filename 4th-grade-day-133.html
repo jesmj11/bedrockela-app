@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Day 133 - 4th Grade BedrockELA</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css?v=1773767899215">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - 4th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    
+    .page.active {
+      display: block;
+    }
+    
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; }
+    
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    
+    textarea:focus, input:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    
+    .vocab-word-card, .question-card, .exercise-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    
+    .story-content p {
+      text-indent: 2em;
+      margin-bottom: 15px;
+    }
+    
+    .title-page {
+      text-align: center;
+      padding: 60px 30px;
+    }
+    
+    .unit-label, .chapter-info {
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container"></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Day 4 - The Wizard of Oz</div>
+    <div class="page-progress" id="topProgress">Page 1 of 10</div>
+  </div>
+  
+  <div class="container">
 
-    <script src="js/lesson-viewer.js?v=1773767899215"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=1773767899215"></script>
-    <script src="js/lesson-completion.js?v=1773767899215"></script>
-    <script src="js/lesson-autosave.js?v=1773767899215"></script>
-
-    <script>
-        const lesson133Config = {
-            lessonId: '4th-grade-day-133',
-            gradeLevel: '4th-grade',
-            title: 'Day 133 - The Wizard of Oz',
-            pages: [
-    {
-        render: () => `
-                    <div class="lesson-page-card title-page">
-                        <h1>Day 133</h1>
+    <div class="page active" data-page="1">
+<h1>Day 133</h1>
                         <h2>The Wizard of Oz</h2>
                         <p class="unit-label">4th Grade • Week 27</p>
                         <p class="chapter-info">The Rescue</p>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📚 Welcome to Day 133!</h2>
+    </div>
+
+
+    <div class="page" data-page="2">
+<h2>📚 Welcome to Day 133!</h2>
                         <div class="objectives-box">
                             <h3>Today's Learning Goals:</h3>
                             <ul>
@@ -50,13 +187,11 @@
                             </ul>
                             <p><strong>Estimated time:</strong> 45-60 minutes</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 Vocabulary</h2>
+    </div>
+
+
+    <div class="page" data-page="3">
+<h2>📖 Vocabulary</h2>
                         <p>Look up and learn these 2 words before reading:</p>
                         
                         <div class="vocab-word-card">
@@ -72,13 +207,11 @@
                             <textarea id="vocab-133-2" rows="5" placeholder="Your definition..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="vocab-133-2-count">0</span> / 20-30</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🎮 Vocabulary Matching Game</h2>
+    </div>
+
+
+    <div class="page" data-page="4">
+<h2>🎮 Vocabulary Matching Game</h2>
                         <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
                         <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
                         
@@ -102,38 +235,32 @@
     },
     {
         render: () => `
-                    <div class="lesson-page-card content-page">
+                    
                         <h2>📖 The Rescue - Part 1</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;">The Cowardly Lion was much pleased to hear that the Wicked Witch had been melted by a bucket of water, and Dorothy at once unlocked the gate of his prison and set him free. They went in together to the castle, where Dorothy’s first act was to call all the Winkies together and tell them that they were no longer slaves. There was great rejoicing among the yellow Winkies, for they had been made to work hard during many years for the Wicked Witch, who had always treated them with great cruelty. They kept this day as a holiday, then and ever after, and spent the time in feasting and dancing. “If our friends, the Scarecrow and the Tin Woodman, were only with us,” said the Lion, “I should be quite happy.” “Don’t you suppose we could rescue them?” asked the girl anxiously. “We can try,” answered the Lion. So they called the yellow Winkies and asked them if they would help to rescue their friends, and the Winkies said that they would be delighted to do all in their power for Dorothy, who had set them free from bondage. So she chose a number of the Winkies who looked as if they knew the most, and they all started away. They traveled that day and part of the next until they came to the rocky plain where the Tin Woodman lay, all battered and bent. His axe was near him, but the blade was rusted and the handle broken off short. The Winkies lifted him tenderly in their arms, and carried him back to the Yellow Castle again, Dorothy shedding a few tears by the way at the sad plight of her old friend, and the Lion looking sober and sorry. When they reached the castle Dorothy said to the Winkies: “Are any of your people tinsmiths?” “Oh, yes. Some of us are very good tinsmiths,” they told her. “Then bring them to me,” she said. And when the tinsmiths came, bringing with them all their tools in baskets, she inquired, “Can you straighten out those dents in the Tin Woodman, and bend him back into shape again, and solder him together where he is broken?” The tinsmiths looked the Woodman over carefully and then answered that they thought they could mend him so he would be as good as ever. So they set to work in one of the big yellow rooms of the castle and worked for three days and four nights, hammering and twisting and bending and soldering and polishing and pounding at the legs and body and head of the Tin Woodman, until at last he was straightened out into his old form, and his joints worked as well as ever. To be sure, there were several patches on him, but the tinsmiths did a good job, and as the Woodman was not a vain man he did not mind the patches at all. When, at last, he walked into Dorothy’s room and thanked her for rescuing him, he was so pleased that he wept tears of joy, and Dorothy had to wipe every tear carefully from his face with her apron, so his joints would not be rusted. At the same time her own tears fell thick and fast at the joy of meeting her old friend again, and these tears did not need to be wiped away. As for the Lion, he wiped his eyes so often with the tip of his tail that it became quite wet, and he was obliged to go out into the courtyard and hold it in the sun till it dried. “If we only had the Scarecrow with us again,” said the Tin Woodman, when Dorothy had finished telling him everything that had happened, “I should be quite happy.” “We must try to find him,” said the girl. So she called the Winkies to help her, and they walked all that day and part of the next until they came to the tall tree in the branches of which the Winged Monkeys had tossed the Scarecrow’s clothes. It was a very tall tree, and the trunk was so smooth that no one could climb it; but the Woodman said at once, “I’ll chop it down, and then we can get the Scarecrow’s clothes.” Now while the tinsmiths had been at work mending the Woodman himself, another of the Winkies, who was a goldsmith, had made an axe-handle of solid gold and fitted it to the Woodman’s axe, instead of the old broken handle. Others polished the blade until all the rust was removed and it glistened like burnished silver. As soon as he had spoken, the Tin Woodman began to chop, and in a short time the tree fell over with a crash, whereupon the Scarecrow’s clothes fell out of the branches and rolled off on the ground. Dorothy picked them up and had the Winkies carry them back to the castle, where they were stuffed with nice, clean straw; and behold! here was the Scarecrow, as good as ever, thanking them over and over again for saving him. Now that they were reunited, Dorothy and her friends spent a few happy days at the Yellow Castle, where they found everything they needed to make them comfortable. But one day the girl thought of Aunt Em, and said, “We must go back to Oz, and claim his promise.” “Yes,” said the Woodman, “at last I shall get my heart.” “And I shall get my brains,” added the Scarecrow joyfully. “And I shall get my courage,” said the Lion thoughtfully. “And I shall get back to Kansas,” cried Dorothy, clapping her hands. “Oh, let us start for the Emerald City tomorrow!” This they decided to do. The next day they called the Winkies together and bade them good-bye. The Winkies were sorry to have them go, and they had grown so fond of the Tin Woodman that they begged him to stay and rule over them and the Yellow Land of the West. Finding they were determined to go, the Winkies gave Toto and the Lion each a golden collar; and to Dorothy they presented a beautiful bracelet studded with diamonds; and to the Scarecrow they gave a gold-headed walking stick, to keep him from stumbling; and to the Tin Woodman they offered a silver oil-can, inlaid with gold and set with precious jewels. Every one of the travelers made the Winkies a pretty speech in return, and all shook hands with them until their arms ached. Dorothy went to the Witch’s cupboard to fill her basket with food for the journey, and there she saw the Golden Cap. She tried it on her own head and found that it fitted her exactly. She did not know anything about the charm of the Golden Cap, but she saw that it was pretty, so she made up her mind to wear it and carry her sunbonnet in the basket. Then, being prepared for the journey, they all started for the Emerald City; and the Winkies gave them three cheers and many good wishes to carry with them.</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Rescue - Part 2</h2>
+    </div>
+
+
+    <div class="page" data-page="5">
+<h2>📖 The Rescue - Part 2</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>📖 The Rescue - Part 3</h2>
+    </div>
+
+
+    <div class="page" data-page="6">
+<h2>📖 The Rescue - Part 3</h2>
                         <div class="story-content">
                             <p style="margin-bottom: 15px;"></p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>💭 Reading Comprehension</h2>
+    </div>
+
+
+    <div class="page" data-page="7">
+<h2>💭 Reading Comprehension</h2>
                         <p>Answer these questions about today's reading:</p>
                         
                         <div class="question-card">
@@ -148,13 +275,11 @@
                             <textarea id="comp-short-133" rows="8" placeholder="Your answer..." style="height: 150px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="comp-short-133-count">0</span> / 75-100</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✏️ Sentence Types</h2>
+    </div>
+
+
+    <div class="page" data-page="8">
+<h2>✏️ Sentence Types</h2>
                         <div class="skill-explanation">
                             <p>Sentences can be statements, questions, commands, or exclamations.</p>
                         </div>
@@ -166,13 +291,11 @@
                         
                         <h3>Practice:</h3>
                         <div class="exercise-card"><p><strong>1.</strong> Write one of each sentence type.</p><textarea id="skill-133-1" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-133-1-count">0</span> / 40-50</p></div><div class="exercise-card"><p><strong>2.</strong> Identify the sentence type: "Close the door!"</p><textarea id="skill-133-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="skill-133-2-count">0</span> / 40-50</p></div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>🌍 Informational Text: Did You Know?</h2>
+    </div>
+
+
+    <div class="page" data-page="9">
+<h2>🌍 Informational Text: Did You Know?</h2>
                         <div class="informational-article">
                             <p>Classic literature helps us understand different times and places. Stories teach us about courage, friendship, and overcoming challenges.</p><p>Reading builds vocabulary and critical thinking skills. The more you read, the better you understand the world around you.</p>
                         </div>
@@ -190,36 +313,57 @@
                             <textarea id="info-133-2" rows="6" placeholder="Your answer..." style="height: 120px; width: 100%; box-sizing: border-box;"></textarea>
                             <p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="info-133-2-count">0</span> / 40-50</p>
                         </div>
-                    </div>
-                `
-    },
-    {
-        render: () => `
-                    <div class="lesson-page-card content-page">
-                        <h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-133" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-133-count">0</span> / 100-150</p></div>
-                    </div>
-                `
+    </div>
+
+
+    <div class="page" data-page="10">
+<h2>✍️ Writing Practice</h2><p>Write a paragraph about today's chapter. Use both vocabulary words.</p><label>Write 100-150 words:</label><div class="writing-prompt"><textarea id="writing-133" rows="12" placeholder="Your paragraph..." style="height: 200px; width: 100%; box-sizing: border-box;"></textarea><p class="word-count" style="font-size: 12px; color: #666; margin-top: 5px;">Word count: <span id="writing-133-count">0</span> / 100-150</p></div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 10;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-]
-        };
-
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson133Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        }
-    </script>
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    showPage(1);
+  </script>
 </body>
 </html>
