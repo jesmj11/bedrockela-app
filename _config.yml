@@ -1,0 +1,10 @@
+exclude:
+  - functions/
+  - node_modules/
+  - "*.js"
+  - "*.json"
+  - README.md
+  - "*.md"
+  - vendor/
+  - .git/
+  - .gitignore
