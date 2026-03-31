@@ -443,7 +443,7 @@ window.editAnswer = function(questionId) {
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
-  const lessonMatch = window.location.pathname.match(/(\d+(?:st|nd|rd|th)-grade-day-\d+)/);
+  const lessonMatch = window.location.pathname.match(/(\d+(?:st|nd|rd|th)-grade-(?:day|lesson)-\d+)/);
   if (lessonMatch) {
     window.answerValidation = new AnswerValidation(lessonMatch[1]);
   }

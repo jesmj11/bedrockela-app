@@ -1,5 +1,5 @@
 // BedrockELA Service Worker - Offline Learning Support
-const CACHE_NAME = 'bedrockela-v2.2-fresh-2026-03-18';
+const CACHE_NAME = 'bedrockela-v2.3-fresh-2026-03-31';
 const OFFLINE_URL = '/offline.html';
 
 // Force immediate activation
@@ -119,7 +119,7 @@ self.addEventListener('fetch', (event) => {
         .then((response) => {
           // NEVER cache lesson HTML files - always fetch fresh
           const url = event.request.url;
-          const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-week-');
+          const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-lesson-') || url.includes('-grade-week-');
           
           if (!isLessonFile && response.status === 200) {
             // Only cache non-lesson pages (homepage, portals, etc.)
@@ -161,7 +161,7 @@ self.addEventListener('fetch', (event) => {
             if (response.status === 200) {
               const responseClone = response.clone();
               const url = event.request.url;
-              const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-week-');
+              const isLessonFile = url.includes('-grade-day-') || url.includes('-grade-lesson-') || url.includes('-grade-week-');
               
               // Cache curriculum content for offline access (EXCEPT lesson HTML files)
               if (!isLessonFile && (

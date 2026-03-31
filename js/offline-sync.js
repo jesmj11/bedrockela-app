@@ -114,9 +114,12 @@ class OfflineSync {
     // Normalize grade level (handle both "4th Grade" and "4th-grade")
     const normalizedGrade = gradeLevel.toLowerCase().replace(/\s+/g, '-');
     
-    // All lessons now use the "day-X" format
+    // 5th grade doesn't use zero-padding; others use 3-digit padding
+    if (normalizedGrade === '5th-grade') {
+      return `/${normalizedGrade}-lesson-${lessonNum}.html`;
+    }
     const paddedNum = String(lessonNum).padStart(3, "0");
-    return `/${normalizedGrade}-day-${paddedNum}.html`;
+    return `/${normalizedGrade}-lesson-${paddedNum}.html`;
   }
 
   // Save cache metadata
