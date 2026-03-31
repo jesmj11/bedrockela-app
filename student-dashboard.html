@@ -332,12 +332,12 @@
             } else if (gradeLevel === '3rd-grade') {
                 window.location.href = `3rd-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '4th-grade') {
-                // Temporary: Use github.io URL while bedrockela.com CDN cache clears
-                window.location.href = `https://jesmj11.github.io/bedrockela-app/4th-grade-day-${paddedLesson}.html`;
+                window.location.href = `4th-grade-lesson-${paddedLesson}.html`;
             } else if (gradeLevel === '5th-grade') {
-                window.location.href = `5th-grade-day-${paddedLesson}.html`;
+                // 5th grade doesn't use padding (lesson-1 not lesson-001)
+                window.location.href = `5th-grade-lesson-${currentLesson}.html`;
             } else if (gradeLevel === '6th-grade') {
-                window.location.href = `6th-grade-day-${paddedLesson}.html`;
+                window.location.href = `6th-grade-lesson-${paddedLesson}.html`;
             } else if (gradeLevel === '7th-grade') {
                 window.location.href = `7th-grade-day-${paddedLesson}.html`;
             } else if (gradeLevel === '8th-grade') {
