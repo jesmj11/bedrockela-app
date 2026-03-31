@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+
+const fs = require('fs');
+
+const assessmentTemplate = (lessonNum, weekNum, dayTitle) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 8 Assessment - 4th Grade BedrockELA</title>
+  <title>Week ${weekNum} Assessment - 4th Grade BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -115,14 +119,14 @@
   
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Week 8 Assessment - The Wizard of Oz</div>
+    <div class="day-info">${dayTitle}</div>
     <div class="page-progress" id="topProgress">Page 1 of 2</div>
   </div>
   
   <div class="container">
 
     <div class="page active" data-page="1">
-      <h1>Week 8 Assessment</h1>
+      <h1>Week ${weekNum} Assessment</h1>
       <p style="font-size: 18px; margin-top: 20px;">Show what you've learned this week!</p>
     </div>
 
@@ -147,7 +151,7 @@
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      const page = document.querySelector(\`.page[data-page="\${pageNum}"]\`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -155,7 +159,7 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = \`Page \${pageNum} of \${totalPages}\`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -177,4 +181,23 @@
     showPage(1);
   </script>
 </body>
-</html>
+</html>`;
+
+// Map lesson numbers to week numbers (every 5th lesson is an assessment)
+const assessments = [
+  { lesson: '035', week: 7, title: 'Week 7 Assessment - The Wizard of Oz' },
+  { lesson: '040', week: 8, title: 'Week 8 Assessment - The Wizard of Oz' },
+  { lesson: '045', week: 9, title: 'Week 9 Assessment - The Wizard of Oz' },
+  { lesson: '050', week: 10, title: 'Week 10 Assessment - The Wizard of Oz' },
+  { lesson: '055', week: 11, title: 'Week 11 Assessment - The Wizard of Oz' },
+  { lesson: '060', week: 12, title: 'Week 12 Assessment - The Wizard of Oz' },
+];
+
+assessments.forEach(({ lesson, week, title }) => {
+  const filename = `4th-grade-lesson-${lesson}.html`;
+  const content = assessmentTemplate(lesson, week, title);
+  fs.writeFileSync(filename, content);
+  console.log(`✅ Fixed: ${filename} (Week ${week} Assessment)`);
+});
+
+console.log(`\n✅ All 6 broken assessments fixed!`);
