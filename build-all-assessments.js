@@ -227,13 +227,28 @@ function buildAssessment(weekNum, vocabWords, skills, lessonNum) {
 
     <div class="page active" data-page="1">
       <h1>Week ${weekNum} Assessment</h1>
-      <p style="font-size: 18px; margin-top: 20px;">Show what you've learned this week!</p>
-      <p style="margin-top: 40px; color: #666;">This assessment covers:</p>
-      <ul style="color: #666; max-width: 400px; margin: 20px auto;">
-        <li>✓ ${vocabWords.length} vocabulary words</li>
-        <li>✓ ${skills.length} grammar & language skills</li>
-        <li>✓ Writing practice</li>
-      </ul>
+      <p style="font-size: 18px; margin-top: 20px; color: #666;">Show what you've learned this week!</p>
+      
+      <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 12px; border: 2px solid #305853;">
+        <h3 style="color: #305853; margin-bottom: 20px; font-size: 1.1rem;">📋 This assessment covers:</h3>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">📚 Vocabulary</h4>
+          <p style="color: #666; line-height: 1.6; margin: 0;">${vocabWords.join(', ')}</p>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">✏️ Grammar & Language Skills</h4>
+          <ul style="color: #666; line-height: 1.8; margin: 0; padding-left: 20px;">
+            ${skills.map(skill => `<li>${skill}</li>`).join('\n            ')}
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">✍️ Writing Practice</h4>
+          <p style="color: #666; margin: 0;">Paragraph with vocabulary words</p>
+        </div>
+      </div>
     </div>
 
     <div class="page" data-page="2">
