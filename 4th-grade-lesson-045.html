@@ -93,22 +93,58 @@
     .bottom-nav .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #305853, #B06821);
-      transition: width: 0.3s;
+      transition: width 0.3s;
     }
     h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
     h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
-    /* Title page (page 1) centered horizontally, pushed down 1.5 inches */
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
     [data-page="1"] {
       text-align: center;
       padding-top: 144px;
     }
     [data-page="1"] h1 { font-size: 2.5rem; }
-    /* Welcome page (page 2) also centered */
-    [data-page="2"] {
-      text-align: center;
-      padding-top: 144px;
-    }
     p { margin-bottom: 1rem; line-height: 1.8; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 0.5rem; }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    .question-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    .match-word, .match-def {
+      padding: 12px 16px;
+      margin: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .match-word {
+      background: #305853;
+      color: white;
+    }
+    .match-def {
+      background: white;
+      border: 2px solid #8B4513;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -116,7 +152,7 @@
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
     <div class="day-info">Week 9 Assessment - The Wizard of Oz</div>
-    <div class="page-progress" id="topProgress">Page 1 of 2</div>
+    <div class="page-progress" id="topProgress">Page 1 of 4</div>
   </div>
   
   <div class="container">
@@ -124,11 +160,77 @@
     <div class="page active" data-page="1">
       <h1>Week 9 Assessment</h1>
       <p style="font-size: 18px; margin-top: 20px;">Show what you've learned this week!</p>
+      <p style="margin-top: 40px; color: #666;">This assessment covers:</p>
+      <ul style="color: #666; max-width: 400px; margin: 20px auto;">
+        <li>✓ 8 vocabulary words</li>
+        <li>✓ 4 grammar & language skills</li>
+        <li>✓ Writing practice</li>
+      </ul>
     </div>
 
     <div class="page" data-page="2">
-      <h2>🎯 Assessment Complete!</h2>
-      <p>Great work this week! You're ready for the next chapter.</p>
+      <h2>🎮 Vocabulary Review</h2>
+      <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+      <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 8</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+          <div class="match-word" data-word="word1" onclick="selectWord(this)">word1</div>
+                                <div class="match-word" data-word="word2" onclick="selectWord(this)">word2</div>
+                                <div class="match-word" data-word="word2" onclick="selectWord(this)">word2</div>
+                                <div class="match-word" data-word="adventure" onclick="selectWord(this)">adventure</div>
+                                <div class="match-word" data-word="adventure" onclick="selectWord(this)">adventure</div>
+                                <div class="match-word" data-word="journey" onclick="selectWord(this)">journey</div>
+                                <div class="match-word" data-word="journey" onclick="selectWord(this)">journey</div>
+                                <div class="match-word" data-word="courage" onclick="selectWord(this)">courage</div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+          <div class="match-def" data-word="word1" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="journey" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="courage" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="adventure" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="word2" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="adventure" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="journey" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="word2" onclick="selectDef(this)">A word from this week's reading.</div>
+        </div>
+      </div>
+      
+      <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+    </div>
+
+    <div class="page" data-page="3">
+      <h2>📝 Skills Review</h2>
+      <p style="margin-bottom: 20px;">Answer these questions about what you learned this week.</p>
+      
+      <div class="question-card">
+        <p><strong>1. Adverbs:</strong> Explain what you learned about this topic.</p>
+        <textarea id="skill-1" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>2. Homophones:</strong> Explain what you learned about this topic.</p>
+        <textarea id="skill-2" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>3. Sentence Types:</strong> Explain what you learned about this topic.</p>
+        <textarea id="skill-3" placeholder="Your answer..."></textarea>
+      </div>
+    </div>
+
+    <div class="page" data-page="4">
+      <h2>✍️ Writing Assessment</h2>
+      <p style="margin-bottom: 20px;">Write a paragraph about this week's story. Try to use at least 3 vocabulary words from this week.</p>
+      <textarea id="writing" placeholder="Your paragraph (100-150 words)..." style="min-height: 250px;"></textarea>
+      <p class="word-count" style="font-size: 12px; color: #666; margin-top: 10px;">Word count: <span id="writing-count">0</span> / 100-150</p>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px; text-align: center;">
+        <h3 style="color: #155724;">🎉 Assessment Complete!</h3>
+        <p style="color: #155724; margin-top: 10px;">Great work this week! Ready for the next chapter.</p>
+      </div>
     </div>
 
   </div>
@@ -143,7 +245,7 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 2;
+    const totalPages = 4;
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -173,6 +275,103 @@
       if (e.key === 'ArrowRight') nextPage();
       if (e.key === 'ArrowLeft') prevPage();
     });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let score = 0;
+    let matchedPairs = new Set();
+    
+    function selectWord(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-word').forEach(w => {
+        w.style.transform = 'scale(1)';
+        w.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(48,88,83,0.4)';
+      selectedWord = word;
+      
+      if (selectedDef) checkMatch();
+    }
+    
+    function selectDef(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-def').forEach(d => {
+        d.style.transform = 'scale(1)';
+        d.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(139,69,19,0.4)';
+      selectedDef = word;
+      
+      if (selectedWord) checkMatch();
+    }
+    
+    function checkMatch() {
+      const feedback = document.getElementById('gameFeedback');
+      
+      if (selectedWord === selectedDef) {
+        score++;
+        matchedPairs.add(selectedWord);
+        document.getElementById('gameScore').textContent = score;
+        
+        const wordEl = document.querySelector(`.match-word[data-word="${selectedWord}"]`);
+        const defEl = document.querySelector(`.match-def[data-word="${selectedDef}"]`);
+        
+        wordEl.style.background = '#4CAF50';
+        wordEl.style.opacity = '0.6';
+        wordEl.style.pointerEvents = 'none';
+        defEl.style.background = '#4CAF50';
+        defEl.style.color = 'white';
+        defEl.style.opacity = '0.6';
+        defEl.style.pointerEvents = 'none';
+        
+        feedback.style.display = 'block';
+        feedback.style.background = '#d4edda';
+        feedback.style.color = '#155724';
+        feedback.textContent = '✓ Correct! Great match!';
+        
+        if (score === 8) {
+          setTimeout(() => {
+            feedback.textContent = '🎉 Perfect! You matched all the words!';
+          }, 1000);
+        }
+      } else {
+        feedback.style.display = 'block';
+        feedback.style.background = '#f8d7da';
+        feedback.style.color = '#721c24';
+        feedback.textContent = '✗ Not quite. Try again!';
+        
+        setTimeout(() => {
+          document.querySelectorAll('.match-word, .match-def').forEach(el => {
+            if (!matchedPairs.has(el.getAttribute('data-word'))) {
+              el.style.transform = 'scale(1)';
+              el.style.boxShadow = 'none';
+            }
+          });
+          feedback.style.display = 'none';
+        }, 1500);
+      }
+      
+      selectedWord = null;
+      selectedDef = null;
+    }
+    
+    // Word counter
+    const writingArea = document.getElementById('writing');
+    if (writingArea) {
+      writingArea.addEventListener('input', () => {
+        const words = writingArea.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('writing-count').textContent = words.length;
+      });
+    }
     
     showPage(1);
   </script>
