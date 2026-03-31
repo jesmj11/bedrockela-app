@@ -1,328 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 180: Week 38 Assessment</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 36 Assessment - 5th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    .page.active {
+      display: block;
+    }
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    [data-page="1"] {
+      text-align: center;
+      padding-top: 144px;
+    }
+    [data-page="1"] h1 { font-size: 2.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 0.5rem; }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    .question-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    .match-word, .match-def {
+      padding: 12px 16px;
+      margin: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .match-word {
+      background: #305853;
+      color: white;
+    }
+    .match-def {
+      background: white;
+      border: 2px solid #8B4513;
+      font-size: 14px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container" class="lesson-container"></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Week 36 Assessment - Robin Hood</div>
+    <div class="page-progress" id="topProgress">Page 1 of 4</div>
+  </div>
+  
+  <div class="container">
 
-    <script src="js/lesson-viewer.js"></script>
-    <script src="firebase-config.js"></script>
-    <script src="js/lesson-completion.js"></script>
-    <script src="js/lesson-autosave.js"></script>
-    <script src="js/save-button-injector.js"></script>
-    <script src="js/answer-validation.js"></script>
-    <script src="js/grade-normalizer.js"></script>
-    <script src="js/offline-sync.js"></script>
-    <script src="js/text-to-speech.js"></script>
-    <script src="js/digital-book.js"></script>
+    <div class="page active" data-page="1">
+      <h1>Week 36 Assessment</h1>
+      <p style="font-size: 18px; margin-top: 20px; color: #666;">Show what you've learned this week!</p>
+      
+      <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 12px; border: 2px solid #305853;">
+        <h3 style="color: #305853; margin-bottom: 20px; font-size: 1.1rem;">This assessment covers:</h3>
         
-    <script>
-        const lesson190Config = {
-            lessonId: '5th-grade-day-180',
-            gradeLevel: '5th-grade',
-            title: 'Day 180: Week 38 Assessment',
-            pages: [
-                {
-                    render: () => `
-<div class="lesson-page-card title-page">
-                            
-                            <h1>Lesson 190</h1>
-                            <div class="subtitle">5th Grade ELA</div>
-                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">
-                                Arabian Nights
-                            </p>
-                            <p style="color: #666; font-size: 16px; margin-top: 10px;">
-                                Weekly Assessment
-                            </p>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `<div class="page-header">
-        <div class="lesson-number">Day 180 • Week 38</div>
-        <div class="unit-label">Vocabulary Quiz</div>
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Vocabulary</h4>
+          <p style="color: #666; line-height: 1.6; margin: 0;">betray, anguished, betray, anguished, betray, anguished</p>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Grammar & Language Skills</h4>
+          <ul style="color: #666; line-height: 1.8; margin: 0; padding-left: 20px;">
+            <li>Reading Comprehension</li>
+            <li>Vocabulary</li>
+            <li>Writing Skills</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Writing Practice</h4>
+          <p style="color: #666; margin: 0;">Paragraph with vocabulary words</p>
+        </div>
       </div>
-      <h2>📖 Vocabulary Quiz</h2>
-      <p class="instructions">Write the definition for each word:</p>
-      <div class="vocab-quiz">
-        
-        <div class="quiz-item">
-          <div class="quiz-number">1.</div>
-          <div class="quiz-word">extraordinary</div>
-          <textarea class="answer-input" id="quiz1" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">2.</div>
-          <div class="quiz-word">contribute</div>
-          <textarea class="answer-input" id="quiz2" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">3.</div>
-          <div class="quiz-word">contemplation</div>
-          <textarea class="answer-input" id="quiz3" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">4.</div>
-          <div class="quiz-word">methodical</div>
-          <textarea class="answer-input" id="quiz4" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">5.</div>
-          <div class="quiz-word">impulsive</div>
-          <textarea class="answer-input" id="quiz5" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">6.</div>
-          <div class="quiz-word">negotiate</div>
-          <textarea class="answer-input" id="quiz6" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">7.</div>
-          <div class="quiz-word">pilgrimage</div>
-          <textarea class="answer-input" id="quiz7" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">8.</div>
-          <div class="quiz-word">testimony</div>
-          <textarea class="answer-input" id="quiz8" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-        <div class="quiz-item">
-          <div class="quiz-number">9.</div>
-          <div class="quiz-word">verdict</div>
-          <textarea class="answer-input" id="quiz9" rows="2" placeholder="Write the definition..."></textarea>
-        </div>
-        
-      </div>`
-                },
-                {
-                    render: () => `<div class="page-header">
-        <div class="lesson-number">Day 180 • Week 38</div>
-        <div class="unit-label">Language Skills</div>
-      </div>
-      <h2>✏️ Word Roots Explorer</h2>
-      <p class="instructions">Many English words come from Greek and Latin roots. Understanding these roots helps you figure out new words. Match each root to its meaning, then identify words that use that root.</p>
-      <div class="skill-questions">
-        
-        <div class="question-group">
-          <div class="question-number">Question 1</div>
-          
-          <p class="root-info"><strong>GRAPH (Greek: to write)</strong><br>Examples: calligraphy, biography, photograph</p>
-          <p class="question-text">What does 'calligraphy' mean?</p>
-          <div class="multiple-choice">
-            
-            <label class="choice-label">
-              <input type="radio" name="skill0" value="beautiful writing">
-              <span>beautiful writing</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill0" value="life story">
-              <span>life story</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill0" value="picture made with light">
-              <span>picture made with light</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill0" value="written message">
-              <span>written message</span>
-            </label>
-            
-          </div>
-        </div>
-        
-        <div class="question-group">
-          <div class="question-number">Question 2</div>
-          
-          <p class="root-info"><strong>MEDI (Latin: middle)</strong><br>Examples: medieval, Mediterranean, medium</p>
-          <p class="question-text">Why is the time period called 'medieval'?</p>
-          <div class="multiple-choice">
-            
-            <label class="choice-label">
-              <input type="radio" name="skill1" value="It was evil">
-              <span>It was evil</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill1" value="It was in the middle ages between ancient and modern times">
-              <span>It was in the middle ages between ancient and modern times</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill1" value="It was medical">
-              <span>It was medical</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill1" value="It was medium-sized">
-              <span>It was medium-sized</span>
-            </label>
-            
-          </div>
-        </div>
-        
-        <div class="question-group">
-          <div class="question-number">Question 3</div>
-          
-          <p class="root-info"><strong>VIS/VID (Latin: to see)</strong><br>Examples: visible, video, vision</p>
-          <p class="question-text">If something is 'invisible,' what is it?</p>
-          <div class="multiple-choice">
-            
-            <label class="choice-label">
-              <input type="radio" name="skill2" value="cannot be seen">
-              <span>cannot be seen</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill2" value="cannot be heard">
-              <span>cannot be heard</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill2" value="cannot be touched">
-              <span>cannot be touched</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill2" value="cannot be believed">
-              <span>cannot be believed</span>
-            </label>
-            
-          </div>
-        </div>
-        
-        <div class="question-group">
-          <div class="question-number">Question 4</div>
-          
-          <p class="root-info"><strong>PORT (Latin: to carry)</strong><br>Examples: transport, portable, export</p>
-          <p class="question-text">What does 'transport' mean?</p>
-          <div class="multiple-choice">
-            
-            <label class="choice-label">
-              <input type="radio" name="skill3" value="to carry across">
-              <span>to carry across</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill3" value="to see from far away">
-              <span>to see from far away</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill3" value="to write down">
-              <span>to write down</span>
-            </label>
-            
-            <label class="choice-label">
-              <input type="radio" name="skill3" value="to speak loudly">
-              <span>to speak loudly</span>
-            </label>
-            
-          </div>
-        </div>
-        
-      </div>`
-                },
-                {
-                    render: () => `<div class="page-header">
-        <div class="lesson-number">Day 180 • Week 38</div>
-        <div class="unit-label">Comprehension Review</div>
-      </div>
-      <h2>💭 This Week's Stories</h2>
-      <p class="instructions">Answer these questions about the stories you read this week:</p>
-      <div class="comprehension-questions">
-        <div class="question-group">
-          <div class="question-number">Question 1</div>
-          <p class="question-text">Which story from this week was your favorite? Why?</p>
-          <textarea class="answer-input" rows="3"></textarea>
-        </div>
-        <div class="question-group">
-          <div class="question-number">Question 2</div>
-          <p class="question-text">What lesson or theme did you notice appearing in multiple stories this week?</p>
-          <textarea class="answer-input" rows="3"></textarea>
-        </div>
-        <div class="question-group">
-          <div class="question-number">Question 3</div>
-          <p class="question-text">Choose one character from this week's stories. What made them memorable?</p>
-          <textarea class="answer-input" rows="3"></textarea>
-        </div>
-      </div>`
-                },
-                {
-                    render: () => `<div class="page-header">
-        <div class="lesson-number">Day 180 • Week 38</div>
-        <div class="unit-label">Writing</div>
-      </div>
-      <h2>✍️ Reflection</h2>
-      <div class="journal-prompt">
-        <p><strong>Writing Prompt:</strong></p>
-        <p>The Arabian Nights stories often feature characters who solve problems through cleverness rather than strength. Write about a time when you (or someone you know) solved a difficult problem by thinking creatively. What was the problem? What creative solution worked?</p>
-      </div>
-      <textarea class="answer-input journal-input" rows="10" placeholder="Write your reflection here..."></textarea>`
-                },
-                {
-                    render: () => `<div class="completion-container">
-        <div class="completion-icon">🎉</div>
-        <h1>Assessment Complete!</h1>
-        <p class="completion-message">Great work on Week 38!</p>
-        <div class="completion-stats">
-          <div class="stat-item">
-            <div class="stat-number">9</div>
-            <div class="stat-label">Vocab Words</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Language Skills</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Comprehension</div>
-          </div>
-        </div>
-        <button class="completion-button" onclick="markComplete()">Submit Assessment</button>
-        <div class="completion-footer">
-          <button class="nav-button prev-button" onclick="prevPage()">← Review Assessment</button>
-        </div>
-      </div>`
-                }
-            ]
-        };
+    </div>
 
-        // Initialize lesson viewer
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson190Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
+    <div class="page" data-page="2">
+      <h2>Vocabulary Review</h2>
+      <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+      <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 6</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+          <div class="match-word" data-word="betray" onclick="selectWord(this)">betray</div>
+                                <div class="match-word" data-word="anguished" onclick="selectWord(this)">anguished</div>
+                                <div class="match-word" data-word="betray" onclick="selectWord(this)">betray</div>
+                                <div class="match-word" data-word="anguished" onclick="selectWord(this)">anguished</div>
+                                <div class="match-word" data-word="betray" onclick="selectWord(this)">betray</div>
+                                <div class="match-word" data-word="anguished" onclick="selectWord(this)">anguished</div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+          <div class="match-def" data-word="anguished" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="anguished" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="betray" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="betray" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="betray" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="anguished" onclick="selectDef(this)">A word from this week's reading.</div>
+        </div>
+      </div>
+      
+      <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+    </div>
+
+    <div class="page" data-page="3">
+      <h2>Skills Review</h2>
+      <p style="margin-bottom: 20px;">Answer these questions about what you learned this week.</p>
+      
+      <div class="question-card">
+        <p><strong>1. Reading Comprehension:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-1" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>2. Vocabulary:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-2" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>3. Writing Skills:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-3" placeholder="Your answer..."></textarea>
+      </div>
+    </div>
+
+    <div class="page" data-page="4">
+      <h2>Writing Assessment</h2>
+      <p style="margin-bottom: 20px;">Write a paragraph about this week's story. Try to use at least 3 vocabulary words from this week.</p>
+      <textarea id="writing" placeholder="Your paragraph (100-150 words)..." style="min-height: 250px;"></textarea>
+      <p class="word-count" style="font-size: 12px; color: #666; margin-top: 10px;">Word count: <span id="writing-count">0</span> / 100-150</p>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px; text-align: center;">
+        <h3 style="color: #155724;">Assessment Complete!</h3>
+        <p style="color: #155724; margin-top: 10px;">Great work this week! Ready for the next chapter.</p>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 4;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let score = 0;
+    let matchedPairs = new Set();
+    
+    function selectWord(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-word').forEach(w => {
+        w.style.transform = 'scale(1)';
+        w.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(48,88,83,0.4)';
+      selectedWord = word;
+      
+      if (selectedDef) checkMatch();
+    }
+    
+    function selectDef(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-def').forEach(d => {
+        d.style.transform = 'scale(1)';
+        d.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(139,69,19,0.4)';
+      selectedDef = word;
+      
+      if (selectedWord) checkMatch();
+    }
+    
+    function checkMatch() {
+      const feedback = document.getElementById('gameFeedback');
+      
+      if (selectedWord === selectedDef) {
+        score++;
+        matchedPairs.add(selectedWord);
+        document.getElementById('gameScore').textContent = score;
+        
+        const wordEl = document.querySelector(`.match-word[data-word="${selectedWord}"]`);
+        const defEl = document.querySelector(`.match-def[data-word="${selectedDef}"]`);
+        
+        wordEl.style.background = '#4CAF50';
+        wordEl.style.opacity = '0.6';
+        wordEl.style.pointerEvents = 'none';
+        defEl.style.background = '#4CAF50';
+        defEl.style.color = 'white';
+        defEl.style.opacity = '0.6';
+        defEl.style.pointerEvents = 'none';
+        
+        feedback.style.display = 'block';
+        feedback.style.background = '#d4edda';
+        feedback.style.color = '#155724';
+        feedback.textContent = '✓ Correct! Great match!';
+        
+        if (score === 6) {
+          setTimeout(() => {
+            feedback.textContent = 'Perfect! You matched all the words!';
+          }, 1000);
+        }
+      } else {
+        feedback.style.display = 'block';
+        feedback.style.background = '#f8d7da';
+        feedback.style.color = '#721c24';
+        feedback.textContent = '✗ Not quite. Try again!';
+        
+        setTimeout(() => {
+          document.querySelectorAll('.match-word, .match-def').forEach(el => {
+            if (!matchedPairs.has(el.getAttribute('data-word'))) {
+              el.style.transform = 'scale(1)';
+              el.style.boxShadow = 'none';
             }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        } else {
-            console.error('lesson-viewer.js not loaded! Check file paths.');
-        }
-    </script>
+          });
+          feedback.style.display = 'none';
+        }, 1500);
+      }
+      
+      selectedWord = null;
+      selectedDef = null;
+    }
+    
+    // Word counter
+    const writingArea = document.getElementById('writing');
+    if (writingArea) {
+      writingArea.addEventListener('input', () => {
+        const words = writingArea.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('writing-count').textContent = words.length;
+      });
+    }
+    
+    showPage(1);
+  </script>
 </body>
 </html>

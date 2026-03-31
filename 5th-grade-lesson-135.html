@@ -1,199 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 135: Week 27 Assessment</title>
-    <link rel="stylesheet" href="css/lesson-viewer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 27 Assessment - 5th Grade BedrockELA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+    .top-nav {
+      background: #305853;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .top-nav .home-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .top-nav .day-info {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .top-nav .page-progress {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      min-height: calc(100vh - 120px);
+    }
+    .page {
+      display: none;
+      padding: 40px 30px 80px;
+    }
+    .page.active {
+      display: block;
+    }
+    .bottom-nav {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      border-top: 2px solid #eee;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .bottom-nav button {
+      padding: 12px 24px;
+      background: #305853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .bottom-nav button:hover:not(:disabled) {
+      background: #3d6b65;
+    }
+    .bottom-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .bottom-nav .progress {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bottom-nav .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #305853, #B06821);
+      transition: width 0.3s;
+    }
+    h1 { font-size: 2rem; margin-bottom: 1rem; color: #305853; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #B06821; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #305853; }
+    [data-page="1"] {
+      text-align: center;
+      padding-top: 144px;
+    }
+    [data-page="1"] h1 { font-size: 2.5rem; }
+    p { margin-bottom: 1rem; line-height: 1.8; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 0.5rem; }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #305853;
+    }
+    .question-card {
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      border-left: 4px solid #B06821;
+    }
+    .match-word, .match-def {
+      padding: 12px 16px;
+      margin: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .match-word {
+      background: #305853;
+      color: white;
+    }
+    .match-def {
+      background: white;
+      border: 2px solid #8B4513;
+      font-size: 14px;
+    }
+  </style>
 </head>
-<body class="lesson-viewer">
-    <div id="lesson-container" class="lesson-container"></div>
-    <script src="js/lesson-viewer.js"><\/script>
-    <script src="firebase-config.js"><\/script>
-    <script src="js/lesson-completion.js"><\/script>
-    <script src="js/lesson-autosave.js"><\/script>
-    <script src="js/save-button-injector.js"><\/script>
-    <script src="js/answer-validation.js"><\/script>
-    <script src="js/grade-normalizer.js"><\/script>
-    <script src="js/offline-sync.js"><\/script>
-    <script src="js/text-to-speech.js"><\/script>
-    <script src="js/digital-book.js"><\/script>
-    <script>
-        const lesson135Config = {
-            lessonId: '5th-grade-lesson-135',
-            gradeLevel: '5th-grade',
-            title: 'Lesson 135: Week 27 Assessment',
-            pages: [
-                {
-                    render: () => `
-<div class="lesson-page-card title-page">
-                            <h1>Lesson 135</h1>
-                            <div class="subtitle">5th Grade ELA</div>
-                            <p style="color: #8B4513; font-size: 20px; margin-top: 20px;">Roman Mythology</p>
-                            <p style="color: #666; font-size: 16px; margin-top: 10px;">Week 27 Assessment</p>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `
-<div class="lesson-page-card content-page">
-                            <h2>🎮 Vocabulary Review</h2>
-                            <p style="color: #666; margin-bottom: 5px;">Match all 9 vocabulary words from this week!</p>
-                            <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 9</p>
-                            
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
-                                <div id="wordColumn" style="display: flex; flex-direction: column;">
-                                    <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
-                                    <div class="match-word" data-word="piety" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">piety</div>
-                                    <div class="match-word" data-word="destiny" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">destiny</div>
-                                    <div class="match-word" data-word="refugee" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">refugee</div>
-                                    <div class="match-word" data-word="inevitable" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">inevitable</div>
-                                    <div class="match-word" data-word="opposition" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">opposition</div>
-                                    <div class="match-word" data-word="duty" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">duty</div>
-                                    <div class="match-word" data-word="ordeal" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">ordeal</div>
-                                    <div class="match-word" data-word="immortal" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">immortal</div>
-                                    <div class="match-word" data-word="perseverance" onclick="selectWord(this)" style="padding: 12px 16px; margin: 6px; background: #305853; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s;">perseverance</div>
-                                </div>
-                                <div id="defColumn" style="display: flex; flex-direction: column;">
-                                    <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
-                                    <div class="match-def" data-word="perseverance" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of perseverance</div>
-                                    <div class="match-def" data-word="immortal" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of immortal</div>
-                                    <div class="match-def" data-word="destiny" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of destiny</div>
-                                    <div class="match-def" data-word="ordeal" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of ordeal</div>
-                                    <div class="match-def" data-word="piety" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of piety</div>
-                                    <div class="match-def" data-word="refugee" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Look up the definition of refugee</div>
-                                    <div class="match-def" data-word="inevitable" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Certain to happen — impossible to prevent no matter what you do.</div>
-                                    <div class="match-def" data-word="opposition" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Active resistance or force working against you — someone or something blocking your progress.</div>
-                                    <div class="match-def" data-word="duty" onclick="selectDef(this)" style="padding: 12px 16px; margin: 6px; background: white; border: 2px solid #8B4513; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s;">Something you are obligated to do — an obligation that comes before personal preference.</div>
-                                </div>
-                            </div>
-                            
-                            <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
-                        </div>`
-                ,
-                    onLoad: () => { if(window.initVocabGame) window.initVocabGame(); }
-                },
-                {
-                    render: () => `
-<div class="lesson-page-card content-page">
-                            <h2>✏️ Grammar &amp; Language: Commas with Dependent Clauses</h2>
-                            <div style="margin: 20px 0; padding: 20px; background: rgba(48,88,83,0.08); border-radius: 12px;">
-                                <p style="margin-bottom: 10px;">When a dependent clause comes <strong>before</strong> the main clause, use a comma. When it comes <strong>after</strong>, usually no comma is needed.</p>
-                                <p style="font-style: italic; color: #555;">Example: ✅ Although he was afraid, he kept walking.<br>✅ He kept walking although he was afraid.</p>
-                            </div>
-                            <div style="margin: 20px 0;">
-                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #305853;">
-                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 1:</p>
-                                    <p style="margin-bottom: 12px; color: #444;">Add commas where needed in these sentences:</p>
-                                    <p style="margin: 15px 0; padding: 15px; background: #f0f0f0; border-radius: 8px; font-style: italic; white-space: pre-line;">1. When the storm hit the travelers sought shelter.
-2. The hero fought bravely because his friends were counting on him.
-3. Before the sun rose the army was already marching.</p>
-                                    <textarea id="grammar-1" style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" oninput="updateWordCount('grammar-1', 'wc-grammar-1', 20)" placeholder="Write your answer here (minimum 20 words)..."><\/textarea>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;"><span id="wc-grammar-1" style="font-size: 14px; color: #666;">0 / 20 words</span><span id="wc-grammar-1-status" style="font-size: 14px; font-weight: 600;"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `
-<div class="lesson-page-card content-page">
-                            <h2>✏️ Grammar &amp; Language: Commas with Dependent Clauses</h2>
-                            <div style="margin: 20px 0;">
-                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #305853;">
-                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 2:</p>
-                                    <p style="margin-bottom: 12px; color: #444;">Write two sentences about this week\'s reading — one with the dependent clause first (use a comma) and one with it last (no comma).</p>
-                                    
-                                    <textarea id="grammar-2" style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" oninput="updateWordCount('grammar-2', 'wc-grammar-2', 20)" placeholder="Write your answer here (minimum 20 words)..."><\/textarea>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;"><span id="wc-grammar-2" style="font-size: 14px; color: #666;">0 / 20 words</span><span id="wc-grammar-2-status" style="font-size: 14px; font-weight: 600;"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `
-<div class="lesson-page-card content-page">
-                            <h2>✏️ Grammar &amp; Language: Commas with Dependent Clauses</h2>
-                            <div style="margin: 20px 0;">
-                                <div style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 12px; border-left: 4px solid #305853;">
-                                    <p style="font-weight: 600; margin-bottom: 12px;">Question 3:</p>
-                                    <p style="margin-bottom: 12px; color: #444;">Fix this sentence by adding or removing commas:</p>
-                                    <p style="margin: 15px 0; padding: 15px; background: #f0f0f0; border-radius: 8px; font-style: italic; white-space: pre-line;">Because he had no choice, the character pressed forward, although he knew the danger.</p>
-                                    <textarea id="grammar-3" style="width: 100%; min-height: 120px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" oninput="updateWordCount('grammar-3', 'wc-grammar-3', 20)" placeholder="Write your answer here (minimum 20 words)..."><\/textarea>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;"><span id="wc-grammar-3" style="font-size: 14px; color: #666;">0 / 20 words</span><span id="wc-grammar-3-status" style="font-size: 14px; font-weight: 600;"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `
-<div class="lesson-page-card content-page">
-                            <h2>📝 Writing Assignment: Compare &amp; Contrast</h2>
-                            <div style="margin: 20px 0; padding: 20px; background: rgba(139,69,19,0.08); border-radius: 12px;">
-                                <p style="margin-bottom: 15px;">This week you read Roman myths and learned about ancient Rome, Roman law, Roman engineering.</p>
-                                <p><strong>Your task:</strong> Write a compare and contrast essay connecting the <em>fiction</em> you read this week with the <em>informational text</em>. How do the stories and the real-world information connect? What did the informational text help you understand about the story — or what did the story help you understand about the real world?</p>
-                            </div>
-                            
-                            <div style="margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 10px;">
-                                <p style="font-weight: 600; margin-bottom: 10px;">Your essay should include:</p>
-                                <ul style="line-height: 2; color: #444;">
-                                    <li>An introduction that names both the story and the informational text</li>
-                                    <li>At least 2 similarities between the fiction and non-fiction</li>
-                                    <li>At least 1 difference between the fiction and non-fiction</li>
-                                    <li>A conclusion with your own thoughts</li>
-                                </ul>
-                            </div>
-                            
-                            <textarea id="writing" style="width: 100%; min-height: 200px; padding: 10px; border: 2px solid #305853; border-radius: 8px; font-family: inherit; font-size: 16px; line-height: 1.6;" oninput="updateWordCount('writing', 'wc-writing', 150)" placeholder="Write your compare and contrast essay here (minimum 150 words)..."><\/textarea>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
-                                <span id="wc-writing" style="font-size: 14px; color: #666;">0 / 150 words</span>
-                                <span id="wc-writing-status" style="font-size: 14px; font-weight: 600;"></span>
-                            </div>
-                        </div>
-                    `
-                },
-                {
-                    render: () => `<div class="lesson-page-card completion-page">
-      <div class="completion-container">
-        <div class="completion-icon">⭐</div>
-        <h1>Assessment Complete!</h1>
-        <p class="completion-message">Great job on the Week 27 assessment!</p>
-        <div class="completion-stats">
-          <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">Vocab Reviewed</div></div>
-          <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">Grammar Questions</div></div>
-          <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Essay Written</div></div>
+<body>
+  
+  <div class="top-nav">
+    <a href="student-dashboard.html" class="home-btn">← Home</a>
+    <div class="day-info">Week 27 Assessment - Robin Hood</div>
+    <div class="page-progress" id="topProgress">Page 1 of 4</div>
+  </div>
+  
+  <div class="container">
+
+    <div class="page active" data-page="1">
+      <h1>Week 27 Assessment</h1>
+      <p style="font-size: 18px; margin-top: 20px; color: #666;">Show what you've learned this week!</p>
+      
+      <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 12px; border: 2px solid #305853;">
+        <h3 style="color: #305853; margin-bottom: 20px; font-size: 1.1rem;">This assessment covers:</h3>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Vocabulary</h4>
+          <p style="color: #666; line-height: 1.6; margin: 0;">piety, destiny</p>
         </div>
-        <button class="completion-button" onclick="markComplete()">Mark Complete &amp; Save Progress</button>
-        <div class="completion-footer"><button class="nav-button prev-button" onclick="prevPage()">← Review</button></div>
+        
+        <div style="margin-bottom: 25px;">
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Grammar & Language Skills</h4>
+          <ul style="color: #666; line-height: 1.8; margin: 0; padding-left: 20px;">
+            <li>Grammar</li>
+            <li>Writing Practice</li>
+            <li>Grammar</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Writing Practice</h4>
+          <p style="color: #666; margin: 0;">Paragraph with vocabulary words</p>
+        </div>
       </div>
-    </div>`
-                }
-            ]
-        };
+    </div>
 
-        // Wait for DOM and all scripts to load before initializing
-        function safeInitLesson() {
-            if (typeof initLessonViewer === 'function') {
-                initLessonViewer(lesson135Config);
-            } else {
-                console.error('initLessonViewer function not found!');
-                // Retry after a short delay
-                setTimeout(safeInitLesson, 100);
+    <div class="page" data-page="2">
+      <h2>Vocabulary Review</h2>
+      <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
+      <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 2</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
+          <div class="match-word" data-word="piety" onclick="selectWord(this)">piety</div>
+                                <div class="match-word" data-word="destiny" onclick="selectWord(this)">destiny</div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
+          <div class="match-def" data-word="destiny" onclick="selectDef(this)">A word from this week's reading.</div>
+                                <div class="match-def" data-word="piety" onclick="selectDef(this)">A word from this week's reading.</div>
+        </div>
+      </div>
+      
+      <div id="gameFeedback" style="margin-top: 20px; padding: 15px; border-radius: 10px; text-align: center; display: none;"></div>
+    </div>
+
+    <div class="page" data-page="3">
+      <h2>Skills Review</h2>
+      <p style="margin-bottom: 20px;">Answer these questions about what you learned this week.</p>
+      
+      <div class="question-card">
+        <p><strong>1. Grammar:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-1" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>2. Writing Practice:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-2" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question-card">
+        <p><strong>3. Grammar:</strong> Explain what you learned about this topic and give examples.</p>
+        <textarea id="skill-3" placeholder="Your answer..."></textarea>
+      </div>
+    </div>
+
+    <div class="page" data-page="4">
+      <h2>Writing Assessment</h2>
+      <p style="margin-bottom: 20px;">Write a paragraph about this week's story. Try to use at least 3 vocabulary words from this week.</p>
+      <textarea id="writing" placeholder="Your paragraph (100-150 words)..." style="min-height: 250px;"></textarea>
+      <p class="word-count" style="font-size: 12px; color: #666; margin-top: 10px;">Word count: <span id="writing-count">0</span> / 100-150</p>
+      
+      <div style="margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px; text-align: center;">
+        <h3 style="color: #155724;">Assessment Complete!</h3>
+        <p style="color: #155724; margin-top: 10px;">Great work this week! Ready for the next chapter.</p>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="bottom-nav">
+    <button id="prevBtn" onclick="prevPage()">← Previous</button>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button id="nextBtn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 4;
+    
+    function showPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      if (page) page.classList.add('active');
+      
+      document.getElementById('prevBtn').disabled = (pageNum === 1);
+      document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+      
+      const progress = (pageNum / totalPages) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      
+      currentPage = pageNum;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+    
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextPage();
+      if (e.key === 'ArrowLeft') prevPage();
+    });
+    
+    // Vocabulary Matching Game
+    let selectedWord = null;
+    let selectedDef = null;
+    let score = 0;
+    let matchedPairs = new Set();
+    
+    function selectWord(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-word').forEach(w => {
+        w.style.transform = 'scale(1)';
+        w.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(48,88,83,0.4)';
+      selectedWord = word;
+      
+      if (selectedDef) checkMatch();
+    }
+    
+    function selectDef(element) {
+      const word = element.getAttribute('data-word');
+      if (matchedPairs.has(word)) return;
+      
+      document.querySelectorAll('.match-def').forEach(d => {
+        d.style.transform = 'scale(1)';
+        d.style.boxShadow = 'none';
+      });
+      
+      element.style.transform = 'scale(1.05)';
+      element.style.boxShadow = '0 4px 12px rgba(139,69,19,0.4)';
+      selectedDef = word;
+      
+      if (selectedWord) checkMatch();
+    }
+    
+    function checkMatch() {
+      const feedback = document.getElementById('gameFeedback');
+      
+      if (selectedWord === selectedDef) {
+        score++;
+        matchedPairs.add(selectedWord);
+        document.getElementById('gameScore').textContent = score;
+        
+        const wordEl = document.querySelector(`.match-word[data-word="${selectedWord}"]`);
+        const defEl = document.querySelector(`.match-def[data-word="${selectedDef}"]`);
+        
+        wordEl.style.background = '#4CAF50';
+        wordEl.style.opacity = '0.6';
+        wordEl.style.pointerEvents = 'none';
+        defEl.style.background = '#4CAF50';
+        defEl.style.color = 'white';
+        defEl.style.opacity = '0.6';
+        defEl.style.pointerEvents = 'none';
+        
+        feedback.style.display = 'block';
+        feedback.style.background = '#d4edda';
+        feedback.style.color = '#155724';
+        feedback.textContent = '✓ Correct! Great match!';
+        
+        if (score === 2) {
+          setTimeout(() => {
+            feedback.textContent = 'Perfect! You matched all the words!';
+          }, 1000);
+        }
+      } else {
+        feedback.style.display = 'block';
+        feedback.style.background = '#f8d7da';
+        feedback.style.color = '#721c24';
+        feedback.textContent = '✗ Not quite. Try again!';
+        
+        setTimeout(() => {
+          document.querySelectorAll('.match-word, .match-def').forEach(el => {
+            if (!matchedPairs.has(el.getAttribute('data-word'))) {
+              el.style.transform = 'scale(1)';
+              el.style.boxShadow = 'none';
             }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', safeInitLesson);
-        } else {
-            // DOM already loaded
-            safeInitLesson();
-        }
-        window.addEventListener('DOMContentLoaded', () => {
-            createLessonViewer('lesson-container', lesson135Config);
-        });
-    <\/script>
+          });
+          feedback.style.display = 'none';
+        }, 1500);
+      }
+      
+      selectedWord = null;
+      selectedDef = null;
+    }
+    
+    // Word counter
+    const writingArea = document.getElementById('writing');
+    if (writingArea) {
+      writingArea.addEventListener('input', () => {
+        const words = writingArea.value.trim().split(/\s+/).filter(w => w.length > 0);
+        document.getElementById('writing-count').textContent = words.length;
+      });
+    }
+    
+    showPage(1);
+  </script>
 </body>
 </html>

@@ -1,9 +1,130 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+
+const fs = require('fs');
+
+// Extract vocab words from a lesson file
+function extractVocab(filename) {
+  if (!fs.existsSync(filename)) return [];
+  const content = fs.readFileSync(filename, 'utf8');
+  
+  // Try different vocab patterns
+  const patterns = [
+    /<h3>(\d+)\. (\w+)<\/h3>/g,  // 4th grade pattern
+    /<div class="vocab-word">(\w+)<\/div>/g,  // Alternative pattern
+    /data-word="(\w+)"/g  // From matching games
+  ];
+  
+  const words = new Set();
+  for (const pattern of patterns) {
+    const matches = content.matchAll(pattern);
+    for (const match of matches) {
+      const word = match[2] || match[1];
+      if (word && word.length > 2 && !words.has(word)) {
+        words.add(word);
+        if (words.size >= 2) break;
+      }
+    }
+    if (words.size >= 2) break;
+  }
+  
+  return Array.from(words).slice(0, 2);
+}
+
+// Extract skill name from a lesson file
+function extractSkill(filename) {
+  if (!fs.existsSync(filename)) return '';
+  const content = fs.readFileSync(filename, 'utf8');
+  
+  // Try different skill patterns
+  const patterns = [
+    /<h2>✏️ ([^<]+)<\/h2>/,
+    /<h2>📝 ([^<]+)<\/h2>/,
+    /<h2>Grammar[^:]*: ([^<]+)<\/h2>/i,
+    /<h2>Language[^:]*: ([^<]+)<\/h2>/i
+  ];
+  
+  for (const pattern of patterns) {
+    const match = content.match(pattern);
+    if (match) return match[1].trim();
+  }
+  
+  return '';
+}
+
+// Placeholder vocab definitions (will use generic for unknown words)
+const vocabDefs = {
+  'prairie': 'A large, flat area of grassland with few or no trees.',
+  'cyclone': 'A powerful, spinning windstorm that can cause great destruction.',
+  'extraordinary': 'Very unusual, remarkable, or surprising.',
+  'sorceress': 'A woman who practices magic or sorcery.',
+  'tiresome': 'Causing one to feel bored or annoyed.',
+  'companion': 'A person or animal with whom one spends time or travels.',
+  'gloomy': 'Dark, dim, or depressing in character or appearance.',
+  'undergrowth': 'Dense vegetation growing beneath trees in a forest.'
+};
+
+// Skill-specific questions
+function getSkillQuestion(skill) {
+  const questions = {
+    'Sentence Types: Statements and Questions': 'Write one statement and one question about the story.',
+    'Context Clues': 'How do context clues help you understand new words? Give an example.',
+    'Verbs: Action Words': 'List 5 action verbs from this week\'s story.',
+    'Prefixes and Suffixes': 'Explain how prefixes and suffixes change word meanings. Give 2 examples.',
+    'Adjectives': 'List 5 adjectives from the story and explain what they describe.',
+    'Nouns': 'Identify 5 different types of nouns from the reading.',
+    'Pronouns': 'Find pronouns in the story and identify what nouns they replace.',
+    'Adverbs': 'List adverbs from the story and explain which verbs they modify.'
+  };
+  return questions[skill] || 'Explain what you learned about this topic and give examples.';
+}
+
+// Get grade info
+function getGradeInfo(grade) {
+  const info = {
+    '2nd': { name: '2nd Grade', book: 'Classic Stories' },
+    '3rd': { name: '3rd Grade', book: 'Adventure Tales' },
+    '5th': { name: '5th Grade', book: 'Robin Hood' },
+    '6th': { name: '6th Grade', book: 'Tom Sawyer' }
+  };
+  return info[grade] || { name: grade + ' Grade', book: 'Classic Literature' };
+}
+
+// Build assessment HTML
+function buildAssessment(grade, weekNum, vocabWords, skills, lessonNum) {
+  const gradeInfo = getGradeInfo(grade);
+  const paddedNum = String(lessonNum).padStart(3, '0');
+  
+  // Handle case where not enough vocab or skills
+  if (vocabWords.length === 0) {
+    vocabWords = ['word1', 'word2', 'word3', 'word4', 'word5', 'word6', 'word7', 'word8'];
+  }
+  if (skills.length === 0) {
+    skills = ['Reading Comprehension', 'Vocabulary', 'Writing Skills'];
+  }
+  
+  // Shuffle definitions for matching game
+  const shuffledDefs = [...vocabWords].sort(() => Math.random() - 0.5);
+  
+  const vocabHTML = vocabWords.map(word => 
+    `<div class="match-word" data-word="${word}" onclick="selectWord(this)">${word}</div>`
+  ).join('\n                                ');
+  
+  const defsHTML = shuffledDefs.map(word => 
+    `<div class="match-def" data-word="${word}" onclick="selectDef(this)">${vocabDefs[word] || 'A word from this week\'s reading.'}</div>`
+  ).join('\n                                ');
+
+  const skillsHTML = skills.slice(0, 3).map((skill, i) => `
+      <div class="question-card">
+        <p><strong>${i + 1}. ${skill}:</strong> ${getSkillQuestion(skill)}</p>
+        <textarea id="skill-${i + 1}" placeholder="Your answer..."></textarea>
+      </div>`).join('\n');
+  
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 23 Assessment - 5th Grade BedrockELA</title>
+  <title>Week ${weekNum} Assessment - ${gradeInfo.name} BedrockELA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -151,14 +272,14 @@
   
   <div class="top-nav">
     <a href="student-dashboard.html" class="home-btn">← Home</a>
-    <div class="day-info">Week 23 Assessment - Robin Hood</div>
+    <div class="day-info">Week ${weekNum} Assessment - ${gradeInfo.book}</div>
     <div class="page-progress" id="topProgress">Page 1 of 4</div>
   </div>
   
   <div class="container">
 
     <div class="page active" data-page="1">
-      <h1>Week 23 Assessment</h1>
+      <h1>Week ${weekNum} Assessment</h1>
       <p style="font-size: 18px; margin-top: 20px; color: #666;">Show what you've learned this week!</p>
       
       <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 12px; border: 2px solid #305853;">
@@ -166,15 +287,13 @@
         
         <div style="margin-bottom: 25px;">
           <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Vocabulary</h4>
-          <p style="color: #666; line-height: 1.6; margin: 0;">word1, word2, word3, word4, word5, word6, word7, word8</p>
+          <p style="color: #666; line-height: 1.6; margin: 0;">${vocabWords.join(', ')}</p>
         </div>
         
         <div style="margin-bottom: 25px;">
           <h4 style="color: #B06821; font-size: 1rem; margin-bottom: 10px;">Grammar & Language Skills</h4>
           <ul style="color: #666; line-height: 1.8; margin: 0; padding-left: 20px;">
-            <li>Grammar</li>
-            <li>Writing Practice</li>
-            <li>Grammar</li>
+            ${skills.map(skill => `<li>${skill}</li>`).join('\n            ')}
           </ul>
         </div>
         
@@ -188,30 +307,16 @@
     <div class="page" data-page="2">
       <h2>Vocabulary Review</h2>
       <p style="color: #666; margin-bottom: 5px;">Match each word to its definition!</p>
-      <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / 8</p>
+      <p style="color: #305853; font-weight: 600; margin-bottom: 20px;">Score: <span id="gameScore">0</span> / ${vocabWords.length}</p>
       
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
         <div style="display: flex; flex-direction: column;">
           <h3 style="text-align: center; color: #305853; margin-bottom: 10px;">Words</h3>
-          <div class="match-word" data-word="word1" onclick="selectWord(this)">word1</div>
-                                <div class="match-word" data-word="word2" onclick="selectWord(this)">word2</div>
-                                <div class="match-word" data-word="word3" onclick="selectWord(this)">word3</div>
-                                <div class="match-word" data-word="word4" onclick="selectWord(this)">word4</div>
-                                <div class="match-word" data-word="word5" onclick="selectWord(this)">word5</div>
-                                <div class="match-word" data-word="word6" onclick="selectWord(this)">word6</div>
-                                <div class="match-word" data-word="word7" onclick="selectWord(this)">word7</div>
-                                <div class="match-word" data-word="word8" onclick="selectWord(this)">word8</div>
+          ${vocabHTML}
         </div>
         <div style="display: flex; flex-direction: column;">
           <h3 style="text-align: center; color: #8B4513; margin-bottom: 10px;">Definitions</h3>
-          <div class="match-def" data-word="word1" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word2" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word3" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word4" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word5" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word6" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word7" onclick="selectDef(this)">A word from this week's reading.</div>
-                                <div class="match-def" data-word="word8" onclick="selectDef(this)">A word from this week's reading.</div>
+          ${defsHTML}
         </div>
       </div>
       
@@ -221,21 +326,7 @@
     <div class="page" data-page="3">
       <h2>Skills Review</h2>
       <p style="margin-bottom: 20px;">Answer these questions about what you learned this week.</p>
-      
-      <div class="question-card">
-        <p><strong>1. Grammar:</strong> Explain what you learned about this topic and give examples.</p>
-        <textarea id="skill-1" placeholder="Your answer..."></textarea>
-      </div>
-
-      <div class="question-card">
-        <p><strong>2. Writing Practice:</strong> Explain what you learned about this topic and give examples.</p>
-        <textarea id="skill-2" placeholder="Your answer..."></textarea>
-      </div>
-
-      <div class="question-card">
-        <p><strong>3. Grammar:</strong> Explain what you learned about this topic and give examples.</p>
-        <textarea id="skill-3" placeholder="Your answer..."></textarea>
-      </div>
+      ${skillsHTML}
     </div>
 
     <div class="page" data-page="4">
@@ -266,7 +357,7 @@
     
     function showPage(pageNum) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      const page = document.querySelector(`.page[data-page="${pageNum}"]`);
+      const page = document.querySelector(\`.page[data-page="\${pageNum}"]\`);
       if (page) page.classList.add('active');
       
       document.getElementById('prevBtn').disabled = (pageNum === 1);
@@ -274,7 +365,7 @@
       
       const progress = (pageNum / totalPages) * 100;
       document.getElementById('progressBar').style.width = progress + '%';
-      document.getElementById('topProgress').textContent = `Page ${pageNum} of ${totalPages}`;
+      document.getElementById('topProgress').textContent = \`Page \${pageNum} of \${totalPages}\`;
       
       currentPage = pageNum;
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -339,8 +430,8 @@
         matchedPairs.add(selectedWord);
         document.getElementById('gameScore').textContent = score;
         
-        const wordEl = document.querySelector(`.match-word[data-word="${selectedWord}"]`);
-        const defEl = document.querySelector(`.match-def[data-word="${selectedDef}"]`);
+        const wordEl = document.querySelector(\`.match-word[data-word="\${selectedWord}"]\`);
+        const defEl = document.querySelector(\`.match-def[data-word="\${selectedDef}"]\`);
         
         wordEl.style.background = '#4CAF50';
         wordEl.style.opacity = '0.6';
@@ -355,7 +446,7 @@
         feedback.style.color = '#155724';
         feedback.textContent = '✓ Correct! Great match!';
         
-        if (score === 8) {
+        if (score === ${vocabWords.length}) {
           setTimeout(() => {
             feedback.textContent = 'Perfect! You matched all the words!';
           }, 1000);
@@ -385,7 +476,7 @@
     const writingArea = document.getElementById('writing');
     if (writingArea) {
       writingArea.addEventListener('input', () => {
-        const words = writingArea.value.trim().split(/\s+/).filter(w => w.length > 0);
+        const words = writingArea.value.trim().split(/\\s+/).filter(w => w.length > 0);
         document.getElementById('writing-count').textContent = words.length;
       });
     }
@@ -393,4 +484,46 @@
     showPage(1);
   </script>
 </body>
-</html>
+</html>`;
+}
+
+// Build all assessments for all grades
+const grades = ['2nd', '3rd', '5th', '6th'];
+
+console.log('Building comprehensive assessments for all grades...\n');
+
+let totalBuilt = 0;
+
+for (const grade of grades) {
+  console.log(`\n=== ${grade} Grade ===`);
+  
+  for (let week = 1; week <= 36; week++) {
+    const lessonNum = week * 5;
+    const startLesson = (week - 1) * 5 + 1;
+    
+    const weekVocab = [];
+    const weekSkills = [];
+    
+    // Collect vocab and skills from the 4 preceding lessons
+    for (let i = 0; i < 4; i++) {
+      const lesson = startLesson + i;
+      const filename = `${grade}-grade-lesson-${lesson}.html`;
+      
+      const vocab = extractVocab(filename);
+      weekVocab.push(...vocab);
+      
+      const skill = extractSkill(filename);
+      if (skill) weekSkills.push(skill);
+    }
+    
+    // Build assessment even if no vocab found (will use placeholders)
+    const assessmentHTML = buildAssessment(grade, week, weekVocab, weekSkills, lessonNum);
+    const outFile = `${grade}-grade-lesson-${lessonNum}.html`;
+    fs.writeFileSync(outFile, assessmentHTML);
+    console.log(`  Week ${week}: ${outFile} (${weekVocab.length} vocab, ${weekSkills.length} skills)`);
+    totalBuilt++;
+  }
+}
+
+console.log(`\n✅ Built ${totalBuilt} assessments across ${grades.length} grades!`);
+console.log(`   Total: ${totalBuilt} comprehensive 4-page assessments`);
