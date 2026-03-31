@@ -646,3 +646,14 @@ body.lesson-viewer {
 [data-page="1"] h2 { font-size: 2rem; margin-top: 1rem; }
 [data-page="1"] .unit-label { font-size: 1.1rem; color: #666; margin-top: 1.5rem; }
 [data-page="1"] .chapter-info { font-size: 1rem; color: #888; margin-top: 0.5rem; }
+
+/* Welcome page (page 2) also centered */
+[data-page="2"] {
+  text-align: center;
+  padding-top: 144px; /* 1.5 inches */
+}
+[data-page="2"] .objectives-box {
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+}
